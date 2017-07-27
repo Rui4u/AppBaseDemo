@@ -6,4 +6,6 @@ pod 'AFNetworking', '~> 3.0'
 
 platform :ios, '7.0'
 pod 'SDWebImage', '~> 4.0'
+
+pod 'MJRefresh'
 end
