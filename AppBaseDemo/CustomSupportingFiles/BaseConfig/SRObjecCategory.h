@@ -1,18 +1,18 @@
 //
-//  HZAgentObjecCategory.h
-//  HZAgentiOSClient
+//    SRObjecCategory.h
+//    SRiOSClient
 //
-//  Created by ZhentaiNing_Huizhong on 16/11/7.
-//  Copyright © 2016年 ZhentaiNing_Huizhong. All rights reserved.
+//  Created by sharui on 16/11/7.
+//  Copyright © 2016年 sharui. All rights reserved.
 //
 /**
- *  汇中面包客iOS App 所有类目配置文件
+ *  iOS App 所有类目配置文件
  */
 
 
 
-#ifndef HZAgentObjecCategory_h
-#define HZAgentObjecCategory_h
+#ifndef   SRObjecCategory_h
+#define   SRObjecCategory_h
 
 
 #import "NSString+SRString.h"
@@ -27,4 +27,4 @@
 #import <UIImageView+WebCache.h>
 #import <UIButton+WebCache.h>
 
-#endif /* HZAgentObjecCategory_h */
+#endif /*   SRObjecCategory_h */

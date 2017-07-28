@@ -1,9 +1,9 @@
 //
 //  CustomNavigationController.m
-//  HZAgentiOSClient
+//    SRiOSClient
 //
 //  Created by sharui on 2016/12/28.
-//  Copyright © 2016年 ZhentaiNing_Huizhong. All rights reserved.
+//  Copyright © 2016年 sharui. All rights reserved.
 //
 
 #import "CustomNavigationController.h"
@@ -44,7 +44,7 @@
     
 //    if (navigationController.viewControllers.count == 1 ||  [viewController isKindOfClass:[AuthenticationRootViewController class]] || [viewController isKindOfClass:[ProductDetailViewController class]]) {
 //        
-//        //如果是 rootViewController  // 世泽认证流程关闭 禁止滑动手势
+//        //如果是 rootViewController  //   关闭 禁止滑动手势
 //        self.interactivePopGestureRecognizer.enabled = NO;
 //    } else{
 //        //如果不是 就启用 滑动手势

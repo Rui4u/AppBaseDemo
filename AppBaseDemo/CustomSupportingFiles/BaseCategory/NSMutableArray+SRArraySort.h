@@ -1,15 +1,15 @@
 //
-//  NSMutableArray+HZAgentArraySort.h
-//  HZAgentiOSClient
+//  NSMutableArray+  SRArraySort.h
+//    SRiOSClient
 //
-//  Created by ZhentaiNing_Huizhong on 16/11/10.
-//  Copyright © 2016年 ZhentaiNing_Huizhong. All rights reserved.
+//  Created by sharui on 16/11/10.
+//  Copyright © 2016年 sharui. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
 /**
- *  汇中 世泽 array 元素排序
+ *       array 元素排序
  */
 @interface NSMutableArray (SRArraySort)
 

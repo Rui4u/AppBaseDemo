@@ -1,13 +1,13 @@
 //
-//  HZAgentGlobalConfig.h
-//  HZAgentiOSClient
+//    SRGlobalConfig.h
+//    SRiOSClient
 //
-//  Created by ZhentaiNing_Huizhong on 16/10/31.
-//  Copyright © 2016年 ZhentaiNing_Huizhong. All rights reserved.
+//  Created by sharui on 16/10/31.
+//  Copyright © 2016年 sharui. All rights reserved.
 //
 
-#ifndef HZAgentGlobalConfig_h
-#define HZAgentGlobalConfig_h
+#ifndef   SRGlobalConfig_h
+#define   SRGlobalConfig_h
 
 
 #import <MJRefresh.h>
@@ -19,7 +19,7 @@
 
 
 #pragma mark - 宏文件 UserDefaults
-#define hzAgentUserDefaults   [NSUserDefaults standardUserDefaults]
+#define   SRUserDefaults   [NSUserDefaults standardUserDefaults]
 
 #define iOS10Later ([UIDevice currentDevice].systemVersion.floatValue >= 10.0f)
 
@@ -46,8 +46,8 @@
 {\
     if (nil != (dataKey) && nil !=(dataValue))\
     {\
-        [hzAgentUserDefaults setObject:dataValue forKey:dataKey];\
-        [hzAgentUserDefaults synchronize];\
+        [  SRUserDefaults setObject:dataValue forKey:dataKey];\
+        [  SRUserDefaults synchronize];\
     }\
 }
 
@@ -55,4 +55,4 @@
 #define isNull(x)             (!x || [x isKindOfClass:[NSNull class]])
 
 
-#endif /* HZAgentGlobalConfig_h */
+#endif /*   SRGlobalConfig_h */

@@ -3,7 +3,7 @@
 //  HZPrivateEquityiOSClient
 //
 //  Created by sharui on 2016/10/19.
-//  Copyright © 2016年 ZhentaiNing_Huizhong. All rights reserved.
+//  Copyright © 2016年 sharui. All rights reserved.
 //
 
 #import "SRCustomTabBarController.h"

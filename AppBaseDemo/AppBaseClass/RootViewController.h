@@ -2,8 +2,8 @@
 //  RootViewController.h
 //  HZPrivateEquityiOSClient
 //
-//  Created by ZhentaiNing_Huizhong on 16/9/29.
-//  Copyright © 2016年 ZhentaiNing_Huizhong. All rights reserved.
+//  Created by sharui on 16/9/29.
+//  Copyright © 2016年 sharui. All rights reserved.
 //
 
 #import "BaseViewController.h"

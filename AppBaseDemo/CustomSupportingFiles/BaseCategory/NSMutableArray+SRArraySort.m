@@ -1,9 +1,9 @@
 //
-//  NSMutableArray+HZAgentArraySort.m
-//  HZAgentiOSClient
+//  NSMutableArray+  SRArraySort.m
+//    SRiOSClient
 //
-//  Created by ZhentaiNing_Huizhong on 16/11/10.
-//  Copyright © 2016年 ZhentaiNing_Huizhong. All rights reserved.
+//  Created by sharui on 16/11/10.
+//  Copyright © 2016年 sharui. All rights reserved.
 //
 
 #import "NSMutableArray+SRArraySort.H"

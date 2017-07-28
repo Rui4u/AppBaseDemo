@@ -2,8 +2,8 @@
 //  UIButton+SRButton.m
 //  HZPrivateEquityiOSClient
 //
-//  Created by ZhentaiNing_Huizhong on 16/10/9.
-//  Copyright © 2016年 ZhentaiNing_Huizhong. All rights reserved.
+//  Created by sharui on 16/10/9.
+//  Copyright © 2016年 sharui. All rights reserved.
 //
 
 #import "UIButton+SRButton.h"

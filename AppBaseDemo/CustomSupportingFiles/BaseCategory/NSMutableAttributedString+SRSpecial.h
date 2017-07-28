@@ -2,14 +2,14 @@
 //  NSMutableAttributedString+SRSpecial.h
 //  HZPrivateEquityiOSClient
 //
-//  Created by ZhentaiNing_Huizhong on 16/10/10.
-//  Copyright © 2016年 ZhentaiNing_Huizhong. All rights reserved.
+//  Created by sharui on 16/10/10.
+//  Copyright © 2016年 sharui. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
 /**
- *  汇中 世泽 针对 字符特殊处理
+ *       针对 字符特殊处理
  */
 @interface NSMutableAttributedString (SRSpecial)
 

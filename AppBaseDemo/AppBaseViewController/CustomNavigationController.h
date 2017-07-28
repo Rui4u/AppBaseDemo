@@ -1,9 +1,9 @@
 //
 //  CustomNavigationController.h
-//  HZAgentiOSClient
+//    SRiOSClient
 //
 //  Created by sharui on 2016/12/28.
-//  Copyright © 2016年 ZhentaiNing_Huizhong. All rights reserved.
+//  Copyright © 2016年 sharui. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

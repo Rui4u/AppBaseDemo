@@ -2,14 +2,14 @@
 //  UIColor+SRColor.h
 //  HZPrivateEquityiOSClient
 //
-//  Created by ZhentaiNing_Huizhong on 16/10/9.
-//  Copyright © 2016年 ZhentaiNing_Huizhong. All rights reserved.
+//  Created by sharui on 16/10/9.
+//  Copyright © 2016年 sharui. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
 /**
- *  汇中 UIColor 类目
+ *    UIColor 类目
  */
 @interface UIColor (SRColor)
 

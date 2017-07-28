@@ -1,9 +1,9 @@
 //
 //  UIImage+SRImage.m
-//  HZAgentiOSClient
+//    SRiOSClient
 //
 //  Created by sharui on 2017/2/22.
-//  Copyright © 2017年 ZhentaiNing_Huizhong. All rights reserved.
+//  Copyright © 2017年 sharui. All rights reserved.
 //
 
 #import "UIImage+SRImage.h"
