@@ -14,4 +14,6 @@
 #import "HZAgentObjecCategory.h"
 #import "HZAgentDebugConfig.h"
 #import "HZAgentViewConfig.h"
+#import "HZAgentGlobalConfig.h"
+#import "AppDelegate.h"
 #endif /* PrefixHeader_pch */

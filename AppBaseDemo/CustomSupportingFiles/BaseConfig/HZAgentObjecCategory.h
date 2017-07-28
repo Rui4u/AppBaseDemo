@@ -23,7 +23,8 @@
 #import "UIButton+HZPEButton.h"
 #import "UILabel+HZPEUILabel.h"
 #import "NSMutableAttributedString+HZPESpecial.h"
-
-
+#import <MJRefresh/MJRefresh.h>
+#import <UIImageView+WebCache.h>
+#import <UIButton+WebCache.h>
 
 #endif /* HZAgentObjecCategory_h */

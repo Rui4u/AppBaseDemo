@@ -8,13 +8,29 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
-
+#import "RootViewController.h"
+#import "HZPECustomTabBarController.h"
+#import "CustomNavigationController.h"
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
 @property (readonly, strong) NSPersistentContainer *persistentContainer;
 
+/**
+ *  RootViewController
+ */
+@property (nonatomic , strong) RootViewController * rootViewController ;
+
+/**
+ 根控制器navgationController
+ */
+@property (nonatomic ,strong ) CustomNavigationController * navgationController;
+
+/**
+ customTabBar
+ */
+@property (nonatomic ,strong ) HZPECustomTabBarController *customTabBar;
 - (void)saveContext;
 
 
