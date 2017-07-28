@@ -26,5 +26,5 @@
 #import <MJRefresh/MJRefresh.h>
 #import <UIImageView+WebCache.h>
 #import <UIButton+WebCache.h>
-
+#import <Masonry.h>
 #endif /*   SRObjecCategory_h */

@@ -7,15 +7,15 @@
 //
 
 #import "RootViewController.h"
-
+#import "HomeViewController.h"
 @interface RootViewController ()<UITabBarControllerDelegate,SRCustomTabBarViewDelegate>
 
 
 
 /**
- 精品优选
+ 首页
  */
-@property (nonatomic ,strong ) UIViewController * recommendationViewController;
+@property (nonatomic ,strong ) HomeViewController * homeViewController;
 
 /**
  产品中心
@@ -164,15 +164,15 @@
     
     
     
-    self.recommendationViewController = [[UIViewController alloc] init];
-    self.recommendationViewController.title = @"精品优选";
-    [self.recommendationViewController.tabBarItem setTitleTextAttributes:selectAtts forState:UIControlStateSelected];
+    self.homeViewController = [[HomeViewController alloc] init];
+    self.  homeViewController.title = @"首页";
+    [self.  homeViewController.tabBarItem setTitleTextAttributes:selectAtts forState:UIControlStateSelected];
     
     
     
-    self.recommendationViewController.tabBarItem.selectedImage = [[UIImage imageNamed:@"icon_selection_select"]
+    self.  homeViewController.tabBarItem.selectedImage = [[UIImage imageNamed:@"icon_selection_select"]
                                                                 imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    self.recommendationViewController.tabBarItem.image = [[UIImage imageNamed:@"icon_selection_normal"]
+    self.  homeViewController.tabBarItem.image = [[UIImage imageNamed:@"icon_selection_normal"]
                                                         imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
     
@@ -213,7 +213,7 @@
     
     
 	
-    [customTabBar addChildViewController:self.recommendationViewController];
+    [customTabBar addChildViewController:self.  homeViewController];
     [customTabBar addChildViewController:self.productViewController];
     [customTabBar addChildViewController:self.myTreasureViewController];
     [customTabBar addChildViewController:self.moreViewController];
@@ -230,7 +230,7 @@
 {
     if (_currentViewController == nil)
     {
-        _currentViewController = self.recommendationViewController;
+        _currentViewController = self.  homeViewController;
     }
     return _currentViewController;
 }
