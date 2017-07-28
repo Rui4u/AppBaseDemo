@@ -25,4 +25,5 @@
  @return <#return value description#>
  */
 + (UIColor *)colorWithHexString:(NSString *)stringToConvert  WithFloat:(CGFloat)colorFloat;
++ (UIColor *)randomOfColor;
 @end

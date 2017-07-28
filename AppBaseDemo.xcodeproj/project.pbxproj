@@ -41,6 +41,7 @@
 		2BA0254C1F2B0C32003EB25D /* TopAdvertisementView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA0254B1F2B0C32003EB25D /* TopAdvertisementView.m */; };
 		2BA0254F1F2B0D57003EB25D /* CustomPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA0254E1F2B0D57003EB25D /* CustomPageView.m */; };
 		2BA025521F2B108D003EB25D /* HomeTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA025511F2B108D003EB25D /* HomeTopView.m */; };
+		2BA025551F2B2A15003EB25D /* RecommendProductView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA025541F2B2A15003EB25D /* RecommendProductView.m */; };
 		65403DF437BA47C28C5B3CF7 /* libPods-AppBaseDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0152959586DFB41568D4F5C /* libPods-AppBaseDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -134,6 +135,8 @@
 		2BA0254E1F2B0D57003EB25D /* CustomPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPageView.m; sourceTree = "<group>"; };
 		2BA025501F2B108D003EB25D /* HomeTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTopView.h; sourceTree = "<group>"; };
 		2BA025511F2B108D003EB25D /* HomeTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTopView.m; sourceTree = "<group>"; };
+		2BA025531F2B2A15003EB25D /* RecommendProductView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendProductView.h; sourceTree = "<group>"; };
+		2BA025541F2B2A15003EB25D /* RecommendProductView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendProductView.m; sourceTree = "<group>"; };
 		C0152959586DFB41568D4F5C /* libPods-AppBaseDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppBaseDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9138079B95F4444D4017C4A /* Pods-AppBaseDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppBaseDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppBaseDemo/Pods-AppBaseDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		FC3237A11D175D8A56FDA2A8 /* Pods-AppBaseDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppBaseDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppBaseDemo/Pods-AppBaseDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -376,6 +379,8 @@
 				2BA0254B1F2B0C32003EB25D /* TopAdvertisementView.m */,
 				2BA025501F2B108D003EB25D /* HomeTopView.h */,
 				2BA025511F2B108D003EB25D /* HomeTopView.m */,
+				2BA025531F2B2A15003EB25D /* RecommendProductView.h */,
+				2BA025541F2B2A15003EB25D /* RecommendProductView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -619,6 +624,7 @@
 				2B38703D1F29BC0C00228620 /* NSArray+ ZXPUnicode.m in Sources */,
 				2BA0254F1F2B0D57003EB25D /* CustomPageView.m in Sources */,
 				2B38703E1F29BC0C00228620 /* NSDictionary+ZXPUnicode.m in Sources */,
+				2BA025551F2B2A15003EB25D /* RecommendProductView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -55,7 +55,7 @@ static NSString * const reuseIdentifier = @"AdvertisementView";
 //    [iamgeView sd_setImageWithURL:[NSURL URLWithString:]];
 	
 	
-	cell.backgroundColor =  [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1];
+	cell.backgroundColor =  [UIColor randomOfColor];
 	#warning url---
     cell.backgroundView = iamgeView;
 
