@@ -1,5 +1,5 @@
 //
-//  UITextField+HZPETextField.h
+//  UITextField+SRTextField.h
 //  HZPrivateEquityiOSClient
 //
 //  Created by sharui on 16/10/24.
@@ -7,7 +7,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UITextField (HZPETextField)
+@interface UITextField (SRTextField)
 + (UITextField * ) quickCreateTextFieldWithFrame : (CGRect) frame
                                placeholderString : (NSString * ) textString
                                             font : (CGFloat) font

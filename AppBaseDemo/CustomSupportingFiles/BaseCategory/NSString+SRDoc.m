@@ -1,17 +1,17 @@
 //
-//  NSString+HZPEDoc.m
+//  NSString+SRDoc.m
 //  HZPrivateEquityiOSClient
 //
 //  Created by ZhentaiNing_Huizhong on 16/10/26.
 //  Copyright © 2016年 ZhentaiNing_Huizhong. All rights reserved.
 //
 
-#import "NSString+HZPEDoc.h"
+#import "NSString+SRDoc.h"
 #import <sys/xattr.h>
 
 #import <CommonCrypto/CommonDigest.h>
 
-@implementation NSString (HZPEDoc)
+@implementation NSString (SRDoc)
 
 
 +(NSString *)documentPath

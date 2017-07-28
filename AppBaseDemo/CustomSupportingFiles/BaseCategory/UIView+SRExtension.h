@@ -1,5 +1,5 @@
 //
-//  UIView+HZPEExtension.h
+//  UIView+SRExtension.h
 //  HZPrivateEquityiOSClient
 //
 //  Created by sharui on 16/10/24.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIView (HZPEExtension)
+@interface UIView (SRExtension)
 
 /**
  设置和返回View的frame

@@ -21,7 +21,7 @@
 
 #define SYSTEM_IOS_8 (([[[UIDevice currentDevice] systemVersion] floatValue] >= 8) ? YES : NO)
 
-#define HZPEWindow               (UIWindow *)[[UIApplication sharedApplication] keyWindow]
+#define SRWindow               (UIWindow *)[[UIApplication sharedApplication] keyWindow]
 
 #pragma mark - 关于颜色
 #define COLOR_RGB(r,g,b) [UIColor colorWithRed:(r/255.0f) green:(g/255.0f) blue:(b/255.0f) alpha:1]

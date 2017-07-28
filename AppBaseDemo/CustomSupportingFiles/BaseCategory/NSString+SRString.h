@@ -1,5 +1,5 @@
 //
-//  NSString+HZPEString.h
+//  NSString+SRString.h
 //  HZPrivateEquityiOSClient
 //
 //  Created by ZhentaiNing_Huizhong on 16/10/9.
@@ -11,7 +11,7 @@
 /**
  *  汇中 世泽 String 类目
  */
-@interface NSString (HZPEString)
+@interface NSString (SRString)
 
 #pragma mark - Public object method
 /*字符串转 MD5*/

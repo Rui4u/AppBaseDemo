@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 #import "RootViewController.h"
-#import "HZPECustomTabBarController.h"
+#import "SRCustomTabBarController.h"
 #import "CustomNavigationController.h"
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -30,7 +30,7 @@
 /**
  customTabBar
  */
-@property (nonatomic ,strong ) HZPECustomTabBarController *customTabBar;
+@property (nonatomic ,strong ) SRCustomTabBarController *customTabBar;
 - (void)saveContext;
 
 

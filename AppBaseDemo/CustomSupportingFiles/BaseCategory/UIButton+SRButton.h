@@ -1,5 +1,5 @@
 //
-//  UIButton+HZPEButton.h
+//  UIButton+SRButton.h
 //  HZPrivateEquityiOSClient
 //
 //  Created by ZhentaiNing_Huizhong on 16/10/9.
@@ -20,7 +20,7 @@ typedef NS_ENUM(NSInteger , ButtonColor)
 /**
  *  汇中 世泽 UIButton 类目
  */
-@interface UIButton (HZPEButton)
+@interface UIButton (SRButton)
 
 //@property (nonatomic , assign) ButtonColor * _Nonnull type;
 

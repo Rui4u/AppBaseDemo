@@ -1,5 +1,5 @@
 //
-//  NSMutableAttributedString+HZPESpecial.h
+//  NSMutableAttributedString+SRSpecial.h
 //  HZPrivateEquityiOSClient
 //
 //  Created by ZhentaiNing_Huizhong on 16/10/10.
@@ -11,7 +11,7 @@
 /**
  *  汇中 世泽 针对 字符特殊处理
  */
-@interface NSMutableAttributedString (HZPESpecial)
+@interface NSMutableAttributedString (SRSpecial)
 
 /**
  *  根据输入的String 输出两段颜色不同的 字符

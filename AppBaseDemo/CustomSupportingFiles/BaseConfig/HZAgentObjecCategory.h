@@ -15,14 +15,14 @@
 #define HZAgentObjecCategory_h
 
 
-#import "NSString+HZPEString.h"
-#import "UITextField+HZPETextField.h"
-#import "UIColor+HZPEColor.h"
-#import "NSString+HZPEDoc.h"
-#import "UIView+HZPEExtension.h"
-#import "UIButton+HZPEButton.h"
-#import "UILabel+HZPEUILabel.h"
-#import "NSMutableAttributedString+HZPESpecial.h"
+#import "NSString+SRString.h"
+#import "UITextField+SRTextField.h"
+#import "UIColor+SRColor.h"
+#import "NSString+SRDoc.h"
+#import "UIView+SRExtension.h"
+#import "UIButton+SRButton.h"
+#import "UILabel+SRUILabel.h"
+#import "NSMutableAttributedString+SRSpecial.h"
 #import <MJRefresh/MJRefresh.h>
 #import <UIImageView+WebCache.h>
 #import <UIButton+WebCache.h>

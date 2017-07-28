@@ -1,14 +1,14 @@
 //
-//  UILabel+HZPEUILabel.m
+//  UILabel+SRUILabel.m
 //  HZPrivateEquityiOSClient
 //
 //  Created by sharui on 16/10/24.
 //  Copyright © 2017年 sharui. All rights reserved.
 //
 
-#import "UILabel+HZPEUILabel.h"
+#import "UILabel+SRUILabel.h"
 #import <CoreText/CoreText.h>
-@implementation UILabel (HZPEUILabel)
+@implementation UILabel (SRUILabel)
 
 + (instancetype)creatLabelWithText:(NSString *)text FontOfSize:(CGFloat)sizeOfFloat textColor:(NSString *)colorWithString{
 

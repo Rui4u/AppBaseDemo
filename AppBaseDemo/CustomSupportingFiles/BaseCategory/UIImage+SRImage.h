@@ -1,5 +1,5 @@
 //
-//  UIImage+HZPEImage.h
+//  UIImage+SRImage.h
 //  HZAgentiOSClient
 //
 //  Created by sharui on 2017/2/22.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIImage (HZPEImage)
+@interface UIImage (SRImage)
 
 /**
  根据颜色获取照片

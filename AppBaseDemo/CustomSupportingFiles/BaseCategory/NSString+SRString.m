@@ -1,15 +1,15 @@
 //
-//  NSString+HZPEString.m
+//  NSString+SRString.m
 //  HZPrivateEquityiOSClient
 //
 //  Created by ZhentaiNing_Huizhong on 16/10/9.
 //  Copyright © 2016年 ZhentaiNing_Huizhong. All rights reserved.
 //
 
-#import "NSString+HZPEString.h"
+#import "NSString+SRString.h"
 #import <CommonCrypto/CommonDigest.h>
 
-@implementation NSString (HZPEString)
+@implementation NSString (SRString)
 
 #pragma mark -
 

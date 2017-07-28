@@ -1,5 +1,5 @@
 //
-//  NSString+HZPEDoc.h
+//  NSString+SRDoc.h
 //  HZPrivateEquityiOSClient
 //
 //  Created by ZhentaiNing_Huizhong on 16/10/26.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSString (HZPEDoc)
+@interface NSString (SRDoc)
 +(NSString *)documentPath;
 +(NSString *)cachePath;
 +(NSString *)formatCurDate;

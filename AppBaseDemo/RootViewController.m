@@ -8,7 +8,7 @@
 
 #import "RootViewController.h"
 
-@interface RootViewController ()<UITabBarControllerDelegate,HZPECustomTabBarViewDelegate>
+@interface RootViewController ()<UITabBarControllerDelegate,SRCustomTabBarViewDelegate>
 
 
 
@@ -51,7 +51,7 @@
 
 - (void) privateReferRootReciveLoginSucess ;
 
-@property (nonatomic ,strong ) HZPECustomTabBarController *customTabBar;
+@property (nonatomic ,strong ) SRCustomTabBarController *customTabBar;
 @end
 
 @implementation RootViewController
@@ -145,7 +145,7 @@
 - (void)setUpCustomTabBar
 {
     
-    HZPECustomTabBarController *customTabBar = [[HZPECustomTabBarController alloc] init];
+    SRCustomTabBarController *customTabBar = [[SRCustomTabBarController alloc] init];
 	self.customTabBar = customTabBar;
     customTabBar.delegate = self;
     APP_DELEGATE.customTabBar = customTabBar;

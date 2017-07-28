@@ -1,14 +1,14 @@
 //
-//  NSMutableAttributedString+HZPESpecial.m
+//  NSMutableAttributedString+SRSpecial.m
 //  HZPrivateEquityiOSClient
 //
 //  Created by ZhentaiNing_Huizhong on 16/10/10.
 //  Copyright © 2016年 ZhentaiNing_Huizhong. All rights reserved.
 //
 
-#import "NSMutableAttributedString+HZPESpecial.h"
+#import "NSMutableAttributedString+SRSpecial.h"
 
-@implementation NSMutableAttributedString (HZPESpecial)
+@implementation NSMutableAttributedString (SRSpecial)
 
 + (NSMutableAttributedString *)setAttributeString : (NSString *)txt
                                              font : (CGFloat)font

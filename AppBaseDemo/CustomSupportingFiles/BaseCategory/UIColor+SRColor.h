@@ -1,5 +1,5 @@
 //
-//  UIColor+HZPEColor.h
+//  UIColor+SRColor.h
 //  HZPrivateEquityiOSClient
 //
 //  Created by ZhentaiNing_Huizhong on 16/10/9.
@@ -11,7 +11,7 @@
 /**
  *  汇中 UIColor 类目
  */
-@interface UIColor (HZPEColor)
+@interface UIColor (SRColor)
 
 + (UIColor *)colorWithHexString:(NSString *)stringToConvert ;
 

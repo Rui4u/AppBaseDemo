@@ -1,14 +1,14 @@
 //
-//  UIView+HZPEExtension.m
+//  UIView+SRExtension.m
 //  HZPrivateEquityiOSClient
 //
 //  Created by sharui on 16/10/24.
 //  Copyright © 2017年 sharui. All rights reserved.
 //
 
-#import "UIView+HZPEExtension.h"
+#import "UIView+SRExtension.h"
 
-@implementation UIView (HZPEExtension)
+@implementation UIView (SRExtension)
 
 - (void)setSize:(CGSize)size
 {

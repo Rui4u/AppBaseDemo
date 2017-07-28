@@ -1,14 +1,14 @@
 //
-//  UIButton+HZPEButton.m
+//  UIButton+SRButton.m
 //  HZPrivateEquityiOSClient
 //
 //  Created by ZhentaiNing_Huizhong on 16/10/9.
 //  Copyright © 2016年 ZhentaiNing_Huizhong. All rights reserved.
 //
 
-#import "UIButton+HZPEButton.h"
+#import "UIButton+SRButton.h"
 
-@implementation UIButton (HZPEButton)
+@implementation UIButton (SRButton)
 
 
 

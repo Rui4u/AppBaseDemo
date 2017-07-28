@@ -10,32 +10,32 @@
 		2B0000FC1F29C8C5004E242A /* BaseNetWorkClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0000FB1F29C8C5004E242A /* BaseNetWorkClient.m */; };
 		2B386F7B1F29B69A00228620 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B386F7A1F29B69A00228620 /* main.m */; };
 		2B386F7E1F29B69A00228620 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B386F7D1F29B69A00228620 /* AppDelegate.m */; };
-		2B386F811F29B69A00228620 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B386F801F29B69A00228620 /* BaseViewController.m */; };
 		2B386F841F29B69A00228620 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B386F821F29B69A00228620 /* Main.storyboard */; };
 		2B386F871F29B69A00228620 /* AppBaseDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2B386F851F29B69A00228620 /* AppBaseDemo.xcdatamodeld */; };
 		2B386F891F29B69A00228620 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B386F881F29B69A00228620 /* Assets.xcassets */; };
 		2B386F8C1F29B69A00228620 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B386F8A1F29B69A00228620 /* LaunchScreen.storyboard */; };
 		2B386F971F29B69A00228620 /* AppBaseDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B386F961F29B69A00228620 /* AppBaseDemoTests.m */; };
 		2B386FA21F29B69A00228620 /* AppBaseDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B386FA11F29B69A00228620 /* AppBaseDemoUITests.m */; };
-		2B3870331F29BC0C00228620 /* NSMutableArray+HZAgentArraySort.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3870141F29BC0C00228620 /* NSMutableArray+HZAgentArraySort.m */; };
-		2B3870341F29BC0C00228620 /* NSMutableAttributedString+HZPESpecial.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3870161F29BC0C00228620 /* NSMutableAttributedString+HZPESpecial.m */; };
-		2B3870351F29BC0C00228620 /* NSString+HZPEDoc.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3870181F29BC0C00228620 /* NSString+HZPEDoc.m */; };
-		2B3870361F29BC0C00228620 /* NSString+HZPEString.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B38701A1F29BC0C00228620 /* NSString+HZPEString.m */; };
-		2B3870371F29BC0C00228620 /* UIButton+HZPEButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B38701C1F29BC0C00228620 /* UIButton+HZPEButton.m */; };
-		2B3870381F29BC0C00228620 /* UIColor+HZPEColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B38701E1F29BC0C00228620 /* UIColor+HZPEColor.m */; };
-		2B3870391F29BC0C00228620 /* UIImage+HZPEImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3870201F29BC0C00228620 /* UIImage+HZPEImage.m */; };
-		2B38703A1F29BC0C00228620 /* UILabel+HZPEUILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3870221F29BC0C00228620 /* UILabel+HZPEUILabel.m */; };
-		2B38703B1F29BC0C00228620 /* UITextField+HZPETextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3870241F29BC0C00228620 /* UITextField+HZPETextField.m */; };
-		2B38703C1F29BC0C00228620 /* UIView+HZPEExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3870261F29BC0C00228620 /* UIView+HZPEExtension.m */; };
+		2B3870331F29BC0C00228620 /* NSMutableArray+SRArraySort.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3870141F29BC0C00228620 /* NSMutableArray+SRArraySort.m */; };
+		2B3870341F29BC0C00228620 /* NSMutableAttributedString+SRSpecial.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3870161F29BC0C00228620 /* NSMutableAttributedString+SRSpecial.m */; };
+		2B3870351F29BC0C00228620 /* NSString+SRDoc.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3870181F29BC0C00228620 /* NSString+SRDoc.m */; };
+		2B3870361F29BC0C00228620 /* NSString+SRString.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B38701A1F29BC0C00228620 /* NSString+SRString.m */; };
+		2B3870371F29BC0C00228620 /* UIButton+SRButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B38701C1F29BC0C00228620 /* UIButton+SRButton.m */; };
+		2B3870381F29BC0C00228620 /* UIColor+SRColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B38701E1F29BC0C00228620 /* UIColor+SRColor.m */; };
+		2B3870391F29BC0C00228620 /* UIImage+SRImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3870201F29BC0C00228620 /* UIImage+SRImage.m */; };
+		2B38703A1F29BC0C00228620 /* UILabel+SRUILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3870221F29BC0C00228620 /* UILabel+SRUILabel.m */; };
+		2B38703B1F29BC0C00228620 /* UITextField+SRTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3870241F29BC0C00228620 /* UITextField+SRTextField.m */; };
+		2B38703C1F29BC0C00228620 /* UIView+SRExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3870261F29BC0C00228620 /* UIView+SRExtension.m */; };
 		2B38703D1F29BC0C00228620 /* NSArray+ ZXPUnicode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3870281F29BC0C00228620 /* NSArray+ ZXPUnicode.m */; };
 		2B38703E1F29BC0C00228620 /* NSDictionary+ZXPUnicode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B38702B1F29BC0C00228620 /* NSDictionary+ZXPUnicode.m */; };
 		2B38703F1F29BC0C00228620 /* NSObject+ZXPUnicode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B38702D1F29BC0C00228620 /* NSObject+ZXPUnicode.m */; };
-		2BA025121F2AD24B003EB25D /* CustomNavBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA025101F2AD24B003EB25D /* CustomNavBarView.m */; };
 		2BA025171F2AD86B003EB25D /* TipLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA025161F2AD86B003EB25D /* TipLabel.m */; };
 		2BA0251B1F2ADCFB003EB25D /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA0251A1F2ADCFB003EB25D /* RootViewController.m */; };
-		2BA0251E1F2ADD27003EB25D /* HZPECustomTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA0251D1F2ADD27003EB25D /* HZPECustomTabBarController.m */; };
-		2BA025211F2ADD4B003EB25D /* HZPECustomTabBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA025201F2ADD4B003EB25D /* HZPECustomTabBarView.m */; };
-		2BA025241F2ADE18003EB25D /* CustomNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA025231F2ADE18003EB25D /* CustomNavigationController.m */; };
+		2BA025301F2AE470003EB25D /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA025271F2AE470003EB25D /* BaseViewController.m */; };
+		2BA025311F2AE470003EB25D /* CustomNavBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA025291F2AE470003EB25D /* CustomNavBarView.m */; };
+		2BA025321F2AE470003EB25D /* CustomNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA0252B1F2AE470003EB25D /* CustomNavigationController.m */; };
+		2BA025331F2AE470003EB25D /* SRCustomTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA0252D1F2AE470003EB25D /* SRCustomTabBarController.m */; };
+		2BA025341F2AE470003EB25D /* SRCustomTabBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA0252F1F2AE470003EB25D /* SRCustomTabBarView.m */; };
 		65403DF437BA47C28C5B3CF7 /* libPods-AppBaseDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0152959586DFB41568D4F5C /* libPods-AppBaseDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -63,8 +63,6 @@
 		2B386F7A1F29B69A00228620 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2B386F7C1F29B69A00228620 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2B386F7D1F29B69A00228620 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		2B386F7F1F29B69A00228620 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
-		2B386F801F29B69A00228620 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		2B386F831F29B69A00228620 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2B386F861F29B69A00228620 /* AppBaseDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AppBaseDemo.xcdatamodel; sourceTree = "<group>"; };
 		2B386F881F29B69A00228620 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -76,26 +74,26 @@
 		2B386F9D1F29B69A00228620 /* AppBaseDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppBaseDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B386FA11F29B69A00228620 /* AppBaseDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppBaseDemoUITests.m; sourceTree = "<group>"; };
 		2B386FA31F29B69A00228620 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2B3870131F29BC0C00228620 /* NSMutableArray+HZAgentArraySort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+HZAgentArraySort.h"; sourceTree = "<group>"; };
-		2B3870141F29BC0C00228620 /* NSMutableArray+HZAgentArraySort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+HZAgentArraySort.m"; sourceTree = "<group>"; };
-		2B3870151F29BC0C00228620 /* NSMutableAttributedString+HZPESpecial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+HZPESpecial.h"; sourceTree = "<group>"; };
-		2B3870161F29BC0C00228620 /* NSMutableAttributedString+HZPESpecial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+HZPESpecial.m"; sourceTree = "<group>"; };
-		2B3870171F29BC0C00228620 /* NSString+HZPEDoc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HZPEDoc.h"; sourceTree = "<group>"; };
-		2B3870181F29BC0C00228620 /* NSString+HZPEDoc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HZPEDoc.m"; sourceTree = "<group>"; };
-		2B3870191F29BC0C00228620 /* NSString+HZPEString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HZPEString.h"; sourceTree = "<group>"; };
-		2B38701A1F29BC0C00228620 /* NSString+HZPEString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HZPEString.m"; sourceTree = "<group>"; };
-		2B38701B1F29BC0C00228620 /* UIButton+HZPEButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+HZPEButton.h"; sourceTree = "<group>"; };
-		2B38701C1F29BC0C00228620 /* UIButton+HZPEButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+HZPEButton.m"; sourceTree = "<group>"; };
-		2B38701D1F29BC0C00228620 /* UIColor+HZPEColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HZPEColor.h"; sourceTree = "<group>"; };
-		2B38701E1F29BC0C00228620 /* UIColor+HZPEColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HZPEColor.m"; sourceTree = "<group>"; };
-		2B38701F1F29BC0C00228620 /* UIImage+HZPEImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+HZPEImage.h"; sourceTree = "<group>"; };
-		2B3870201F29BC0C00228620 /* UIImage+HZPEImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+HZPEImage.m"; sourceTree = "<group>"; };
-		2B3870211F29BC0C00228620 /* UILabel+HZPEUILabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+HZPEUILabel.h"; sourceTree = "<group>"; };
-		2B3870221F29BC0C00228620 /* UILabel+HZPEUILabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+HZPEUILabel.m"; sourceTree = "<group>"; };
-		2B3870231F29BC0C00228620 /* UITextField+HZPETextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+HZPETextField.h"; sourceTree = "<group>"; };
-		2B3870241F29BC0C00228620 /* UITextField+HZPETextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+HZPETextField.m"; sourceTree = "<group>"; };
-		2B3870251F29BC0C00228620 /* UIView+HZPEExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HZPEExtension.h"; sourceTree = "<group>"; };
-		2B3870261F29BC0C00228620 /* UIView+HZPEExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HZPEExtension.m"; sourceTree = "<group>"; };
+		2B3870131F29BC0C00228620 /* NSMutableArray+SRArraySort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+SRArraySort.h"; sourceTree = "<group>"; };
+		2B3870141F29BC0C00228620 /* NSMutableArray+SRArraySort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+SRArraySort.m"; sourceTree = "<group>"; };
+		2B3870151F29BC0C00228620 /* NSMutableAttributedString+SRSpecial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+SRSpecial.h"; sourceTree = "<group>"; };
+		2B3870161F29BC0C00228620 /* NSMutableAttributedString+SRSpecial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+SRSpecial.m"; sourceTree = "<group>"; };
+		2B3870171F29BC0C00228620 /* NSString+SRDoc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SRDoc.h"; sourceTree = "<group>"; };
+		2B3870181F29BC0C00228620 /* NSString+SRDoc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SRDoc.m"; sourceTree = "<group>"; };
+		2B3870191F29BC0C00228620 /* NSString+SRString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SRString.h"; sourceTree = "<group>"; };
+		2B38701A1F29BC0C00228620 /* NSString+SRString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SRString.m"; sourceTree = "<group>"; };
+		2B38701B1F29BC0C00228620 /* UIButton+SRButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+SRButton.h"; sourceTree = "<group>"; };
+		2B38701C1F29BC0C00228620 /* UIButton+SRButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+SRButton.m"; sourceTree = "<group>"; };
+		2B38701D1F29BC0C00228620 /* UIColor+SRColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+SRColor.h"; sourceTree = "<group>"; };
+		2B38701E1F29BC0C00228620 /* UIColor+SRColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SRColor.m"; sourceTree = "<group>"; };
+		2B38701F1F29BC0C00228620 /* UIImage+SRImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SRImage.h"; sourceTree = "<group>"; };
+		2B3870201F29BC0C00228620 /* UIImage+SRImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SRImage.m"; sourceTree = "<group>"; };
+		2B3870211F29BC0C00228620 /* UILabel+SRUILabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+SRUILabel.h"; sourceTree = "<group>"; };
+		2B3870221F29BC0C00228620 /* UILabel+SRUILabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+SRUILabel.m"; sourceTree = "<group>"; };
+		2B3870231F29BC0C00228620 /* UITextField+SRTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+SRTextField.h"; sourceTree = "<group>"; };
+		2B3870241F29BC0C00228620 /* UITextField+SRTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+SRTextField.m"; sourceTree = "<group>"; };
+		2B3870251F29BC0C00228620 /* UIView+SRExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SRExtension.h"; sourceTree = "<group>"; };
+		2B3870261F29BC0C00228620 /* UIView+SRExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SRExtension.m"; sourceTree = "<group>"; };
 		2B3870281F29BC0C00228620 /* NSArray+ ZXPUnicode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+ ZXPUnicode.m"; sourceTree = "<group>"; };
 		2B3870291F29BC0C00228620 /* NSArray+ZXPUnicode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+ZXPUnicode.h"; sourceTree = "<group>"; };
 		2B38702A1F29BC0C00228620 /* NSDictionary+ZXPUnicode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ZXPUnicode.h"; sourceTree = "<group>"; };
@@ -106,19 +104,21 @@
 		2B3870301F29BC0C00228620 /* HZAgentObjecCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZAgentObjecCategory.h; sourceTree = "<group>"; };
 		2B3870311F29BC0C00228620 /* HZAgentViewConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZAgentViewConfig.h; sourceTree = "<group>"; };
 		2B3870321F29BC0C00228620 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		2BA025101F2AD24B003EB25D /* CustomNavBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavBarView.m; sourceTree = "<group>"; };
-		2BA025111F2AD24B003EB25D /* CustomNavBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavBarView.h; sourceTree = "<group>"; };
 		2BA025151F2AD86B003EB25D /* TipLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipLabel.h; sourceTree = "<group>"; };
 		2BA025161F2AD86B003EB25D /* TipLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipLabel.m; sourceTree = "<group>"; };
 		2BA025181F2AD932003EB25D /* HZAgentGlobalConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZAgentGlobalConfig.h; sourceTree = "<group>"; };
 		2BA025191F2ADCFB003EB25D /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		2BA0251A1F2ADCFB003EB25D /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		2BA0251C1F2ADD27003EB25D /* HZPECustomTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZPECustomTabBarController.h; sourceTree = "<group>"; };
-		2BA0251D1F2ADD27003EB25D /* HZPECustomTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZPECustomTabBarController.m; sourceTree = "<group>"; };
-		2BA0251F1F2ADD4B003EB25D /* HZPECustomTabBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZPECustomTabBarView.h; sourceTree = "<group>"; };
-		2BA025201F2ADD4B003EB25D /* HZPECustomTabBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZPECustomTabBarView.m; sourceTree = "<group>"; };
-		2BA025221F2ADE18003EB25D /* CustomNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavigationController.h; sourceTree = "<group>"; };
-		2BA025231F2ADE18003EB25D /* CustomNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationController.m; sourceTree = "<group>"; };
+		2BA025261F2AE470003EB25D /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		2BA025271F2AE470003EB25D /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		2BA025281F2AE470003EB25D /* CustomNavBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavBarView.h; sourceTree = "<group>"; };
+		2BA025291F2AE470003EB25D /* CustomNavBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavBarView.m; sourceTree = "<group>"; };
+		2BA0252A1F2AE470003EB25D /* CustomNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavigationController.h; sourceTree = "<group>"; };
+		2BA0252B1F2AE470003EB25D /* CustomNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationController.m; sourceTree = "<group>"; };
+		2BA0252C1F2AE470003EB25D /* SRCustomTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRCustomTabBarController.h; sourceTree = "<group>"; };
+		2BA0252D1F2AE470003EB25D /* SRCustomTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRCustomTabBarController.m; sourceTree = "<group>"; };
+		2BA0252E1F2AE470003EB25D /* SRCustomTabBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRCustomTabBarView.h; sourceTree = "<group>"; };
+		2BA0252F1F2AE470003EB25D /* SRCustomTabBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRCustomTabBarView.m; sourceTree = "<group>"; };
 		C0152959586DFB41568D4F5C /* libPods-AppBaseDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppBaseDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9138079B95F4444D4017C4A /* Pods-AppBaseDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppBaseDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppBaseDemo/Pods-AppBaseDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		FC3237A11D175D8A56FDA2A8 /* Pods-AppBaseDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppBaseDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppBaseDemo/Pods-AppBaseDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -184,20 +184,11 @@
 		2B386F781F29B69A00228620 /* AppBaseDemo */ = {
 			isa = PBXGroup;
 			children = (
+				2BA025251F2AE443003EB25D /* AppBaseViewController */,
 				2BA025131F2AD85E003EB25D /* AppBaseTools */,
 				2B0000F91F29C8A1004E242A /* SRNetWorkClient */,
-				2B386F7F1F29B69A00228620 /* BaseViewController.h */,
-				2B386F801F29B69A00228620 /* BaseViewController.m */,
-				2BA0251C1F2ADD27003EB25D /* HZPECustomTabBarController.h */,
-				2BA0251D1F2ADD27003EB25D /* HZPECustomTabBarController.m */,
-				2BA0251F1F2ADD4B003EB25D /* HZPECustomTabBarView.h */,
-				2BA025201F2ADD4B003EB25D /* HZPECustomTabBarView.m */,
-				2BA025221F2ADE18003EB25D /* CustomNavigationController.h */,
-				2BA025231F2ADE18003EB25D /* CustomNavigationController.m */,
 				2BA025191F2ADCFB003EB25D /* RootViewController.h */,
 				2BA0251A1F2ADCFB003EB25D /* RootViewController.m */,
-				2BA025101F2AD24B003EB25D /* CustomNavBarView.m */,
-				2BA025111F2AD24B003EB25D /* CustomNavBarView.h */,
 				2B386F791F29B69A00228620 /* Supporting Files */,
 			);
 			path = AppBaseDemo;
@@ -250,26 +241,26 @@
 		2B3870121F29BC0C00228620 /* BaseCategory */ = {
 			isa = PBXGroup;
 			children = (
-				2B3870131F29BC0C00228620 /* NSMutableArray+HZAgentArraySort.h */,
-				2B3870141F29BC0C00228620 /* NSMutableArray+HZAgentArraySort.m */,
-				2B3870151F29BC0C00228620 /* NSMutableAttributedString+HZPESpecial.h */,
-				2B3870161F29BC0C00228620 /* NSMutableAttributedString+HZPESpecial.m */,
-				2B3870171F29BC0C00228620 /* NSString+HZPEDoc.h */,
-				2B3870181F29BC0C00228620 /* NSString+HZPEDoc.m */,
-				2B3870191F29BC0C00228620 /* NSString+HZPEString.h */,
-				2B38701A1F29BC0C00228620 /* NSString+HZPEString.m */,
-				2B38701B1F29BC0C00228620 /* UIButton+HZPEButton.h */,
-				2B38701C1F29BC0C00228620 /* UIButton+HZPEButton.m */,
-				2B38701D1F29BC0C00228620 /* UIColor+HZPEColor.h */,
-				2B38701E1F29BC0C00228620 /* UIColor+HZPEColor.m */,
-				2B38701F1F29BC0C00228620 /* UIImage+HZPEImage.h */,
-				2B3870201F29BC0C00228620 /* UIImage+HZPEImage.m */,
-				2B3870211F29BC0C00228620 /* UILabel+HZPEUILabel.h */,
-				2B3870221F29BC0C00228620 /* UILabel+HZPEUILabel.m */,
-				2B3870231F29BC0C00228620 /* UITextField+HZPETextField.h */,
-				2B3870241F29BC0C00228620 /* UITextField+HZPETextField.m */,
-				2B3870251F29BC0C00228620 /* UIView+HZPEExtension.h */,
-				2B3870261F29BC0C00228620 /* UIView+HZPEExtension.m */,
+				2B3870131F29BC0C00228620 /* NSMutableArray+SRArraySort.h */,
+				2B3870141F29BC0C00228620 /* NSMutableArray+SRArraySort.m */,
+				2B3870151F29BC0C00228620 /* NSMutableAttributedString+SRSpecial.h */,
+				2B3870161F29BC0C00228620 /* NSMutableAttributedString+SRSpecial.m */,
+				2B3870171F29BC0C00228620 /* NSString+SRDoc.h */,
+				2B3870181F29BC0C00228620 /* NSString+SRDoc.m */,
+				2B3870191F29BC0C00228620 /* NSString+SRString.h */,
+				2B38701A1F29BC0C00228620 /* NSString+SRString.m */,
+				2B38701B1F29BC0C00228620 /* UIButton+SRButton.h */,
+				2B38701C1F29BC0C00228620 /* UIButton+SRButton.m */,
+				2B38701D1F29BC0C00228620 /* UIColor+SRColor.h */,
+				2B38701E1F29BC0C00228620 /* UIColor+SRColor.m */,
+				2B38701F1F29BC0C00228620 /* UIImage+SRImage.h */,
+				2B3870201F29BC0C00228620 /* UIImage+SRImage.m */,
+				2B3870211F29BC0C00228620 /* UILabel+SRUILabel.h */,
+				2B3870221F29BC0C00228620 /* UILabel+SRUILabel.m */,
+				2B3870231F29BC0C00228620 /* UITextField+SRTextField.h */,
+				2B3870241F29BC0C00228620 /* UITextField+SRTextField.m */,
+				2B3870251F29BC0C00228620 /* UIView+SRExtension.h */,
+				2B3870261F29BC0C00228620 /* UIView+SRExtension.m */,
 				2B3870271F29BC0C00228620 /* UnicodeCategory */,
 			);
 			path = BaseCategory;
@@ -314,6 +305,23 @@
 				2BA025161F2AD86B003EB25D /* TipLabel.m */,
 			);
 			path = TipLabel;
+			sourceTree = "<group>";
+		};
+		2BA025251F2AE443003EB25D /* AppBaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2BA025261F2AE470003EB25D /* BaseViewController.h */,
+				2BA025271F2AE470003EB25D /* BaseViewController.m */,
+				2BA025281F2AE470003EB25D /* CustomNavBarView.h */,
+				2BA025291F2AE470003EB25D /* CustomNavBarView.m */,
+				2BA0252A1F2AE470003EB25D /* CustomNavigationController.h */,
+				2BA0252B1F2AE470003EB25D /* CustomNavigationController.m */,
+				2BA0252C1F2AE470003EB25D /* SRCustomTabBarController.h */,
+				2BA0252D1F2AE470003EB25D /* SRCustomTabBarController.m */,
+				2BA0252E1F2AE470003EB25D /* SRCustomTabBarView.h */,
+				2BA0252F1F2AE470003EB25D /* SRCustomTabBarView.m */,
+			);
+			path = AppBaseViewController;
 			sourceTree = "<group>";
 		};
 		5BA30CE97002972E8C43090A /* Pods */ = {
@@ -518,28 +526,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B0000FC1F29C8C5004E242A /* BaseNetWorkClient.m in Sources */,
-				2B3870351F29BC0C00228620 /* NSString+HZPEDoc.m in Sources */,
-				2B3870361F29BC0C00228620 /* NSString+HZPEString.m in Sources */,
-				2B38703A1F29BC0C00228620 /* UILabel+HZPEUILabel.m in Sources */,
-				2B3870371F29BC0C00228620 /* UIButton+HZPEButton.m in Sources */,
-				2BA025121F2AD24B003EB25D /* CustomNavBarView.m in Sources */,
+				2BA025301F2AE470003EB25D /* BaseViewController.m in Sources */,
+				2BA025341F2AE470003EB25D /* SRCustomTabBarView.m in Sources */,
+				2B3870351F29BC0C00228620 /* NSString+SRDoc.m in Sources */,
+				2B3870361F29BC0C00228620 /* NSString+SRString.m in Sources */,
+				2B38703A1F29BC0C00228620 /* UILabel+SRUILabel.m in Sources */,
+				2B3870371F29BC0C00228620 /* UIButton+SRButton.m in Sources */,
 				2BA025171F2AD86B003EB25D /* TipLabel.m in Sources */,
-				2B386F811F29B69A00228620 /* BaseViewController.m in Sources */,
-				2BA025211F2ADD4B003EB25D /* HZPECustomTabBarView.m in Sources */,
 				2BA0251B1F2ADCFB003EB25D /* RootViewController.m in Sources */,
-				2B3870381F29BC0C00228620 /* UIColor+HZPEColor.m in Sources */,
+				2B3870381F29BC0C00228620 /* UIColor+SRColor.m in Sources */,
 				2B386F871F29B69A00228620 /* AppBaseDemo.xcdatamodeld in Sources */,
 				2B386F7E1F29B69A00228620 /* AppDelegate.m in Sources */,
-				2B3870391F29BC0C00228620 /* UIImage+HZPEImage.m in Sources */,
+				2BA025311F2AE470003EB25D /* CustomNavBarView.m in Sources */,
+				2B3870391F29BC0C00228620 /* UIImage+SRImage.m in Sources */,
 				2B38703F1F29BC0C00228620 /* NSObject+ZXPUnicode.m in Sources */,
-				2B38703B1F29BC0C00228620 /* UITextField+HZPETextField.m in Sources */,
-				2B3870331F29BC0C00228620 /* NSMutableArray+HZAgentArraySort.m in Sources */,
+				2B38703B1F29BC0C00228620 /* UITextField+SRTextField.m in Sources */,
+				2B3870331F29BC0C00228620 /* NSMutableArray+SRArraySort.m in Sources */,
+				2BA025321F2AE470003EB25D /* CustomNavigationController.m in Sources */,
+				2BA025331F2AE470003EB25D /* SRCustomTabBarController.m in Sources */,
 				2B386F7B1F29B69A00228620 /* main.m in Sources */,
-				2B3870341F29BC0C00228620 /* NSMutableAttributedString+HZPESpecial.m in Sources */,
-				2B38703C1F29BC0C00228620 /* UIView+HZPEExtension.m in Sources */,
-				2BA0251E1F2ADD27003EB25D /* HZPECustomTabBarController.m in Sources */,
+				2B3870341F29BC0C00228620 /* NSMutableAttributedString+SRSpecial.m in Sources */,
+				2B38703C1F29BC0C00228620 /* UIView+SRExtension.m in Sources */,
 				2B38703D1F29BC0C00228620 /* NSArray+ ZXPUnicode.m in Sources */,
-				2BA025241F2ADE18003EB25D /* CustomNavigationController.m in Sources */,
 				2B38703E1F29BC0C00228620 /* NSDictionary+ZXPUnicode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,16 +1,16 @@
 //
-//  UITextField+HZPETextField.m
+//  UITextField+SRTextField.m
 //  HZPrivateEquityiOSClient
 //
 //  Created by sharui on 16/10/24.
 //  Copyright © 2017年 sharui. All rights reserved.
 //
 
-#import "UITextField+HZPETextField.h"
+#import "UITextField+SRTextField.h"
 /**
  快速创建 UITextField
  */
-@implementation UITextField (HZPETextField)
+@implementation UITextField (SRTextField)
 + (UITextField * ) quickCreateTextFieldWithFrame : (CGRect) frame
                                placeholderString : (NSString * ) textString
                                             font : (CGFloat) font

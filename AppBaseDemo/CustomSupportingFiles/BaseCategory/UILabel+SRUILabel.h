@@ -1,5 +1,5 @@
 //
-//  UILabel+HZPEUILabel.h
+//  UILabel+SRUILabel.h
 //  HZPrivateEquityiOSClient
 //
 //  Created by sharui on 16/10/24.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UILabel (HZPEUILabel)
+@interface UILabel (SRUILabel)
 
 /**
  创建自定义Label

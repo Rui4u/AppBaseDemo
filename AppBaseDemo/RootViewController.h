@@ -7,7 +7,7 @@
 //
 
 #import "BaseViewController.h"
-#import "HZPECustomTabBarController.h"
+#import "SRCustomTabBarController.h"
 
 /**
  *  RootViewController  AppDelegate RootVC
@@ -17,7 +17,7 @@
 /**
  tabbar
  */
-@property (nonatomic, strong) HZPECustomTabBarController *mainTabBar;
+@property (nonatomic, strong) SRCustomTabBarController *mainTabBar;
 
 
 @end

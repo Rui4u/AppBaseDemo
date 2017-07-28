@@ -6,9 +6,9 @@
 //  Copyright © 2016年 ZhentaiNing_Huizhong. All rights reserved.
 //
 
-#import "NSMutableArray+HZAgentArraySort.h"
+#import "NSMutableArray+SRArraySort.H"
 
-@implementation NSMutableArray (HZAgentArraySort)
+@implementation NSMutableArray (SRArraySort)
 
 + (NSMutableArray * ) sortDescriptorWithSourceArray : (nonnull NSMutableArray * ) sourceArray
                                                 key : (nullable NSString *)key

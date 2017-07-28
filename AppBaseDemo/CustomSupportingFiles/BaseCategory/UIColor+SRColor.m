@@ -1,14 +1,14 @@
 //
-//  UIColor+HZPEColor.m
+//  UIColor+SRColor.m
 //  HZPrivateEquityiOSClient
 //
 //  Created by ZhentaiNing_Huizhong on 16/10/9.
 //  Copyright © 2016年 ZhentaiNing_Huizhong. All rights reserved.
 //
 
-#import "UIColor+HZPEColor.h"
+#import "UIColor+SRColor.h"
 
-@implementation UIColor (HZPEColor)
+@implementation UIColor (SRColor)
 
 + (UIColor *)colorWithHexString:(NSString *)stringToConvert WithFloat:(CGFloat)colorFloat
 {

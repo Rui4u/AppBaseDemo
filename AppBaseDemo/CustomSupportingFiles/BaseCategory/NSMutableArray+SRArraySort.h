@@ -11,7 +11,7 @@
 /**
  *  汇中 世泽 array 元素排序
  */
-@interface NSMutableArray (HZAgentArraySort)
+@interface NSMutableArray (SRArraySort)
 
 
 /**
