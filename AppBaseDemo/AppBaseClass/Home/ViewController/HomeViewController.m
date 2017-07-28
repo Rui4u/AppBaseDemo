@@ -32,6 +32,8 @@
 	self.frontTopView = self.selectTypeView;
 	[self setUpSuperViewViewControllerUI];
 	self.DraggingHeight = 20 ;
+    [self initNavBarView:NAV_BAR_TYPE_ROOT_VIEW];
+    self.navBarView.alpha = 0;
 
 	
 }
@@ -40,6 +42,11 @@
 	return 0;
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [super scrollViewDidScroll:scrollView];
+    self.navBarView.alpha = scrollView.contentOffset.y/60.0;
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
