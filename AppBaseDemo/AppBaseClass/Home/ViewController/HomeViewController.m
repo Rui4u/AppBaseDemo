@@ -44,7 +44,10 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     [super scrollViewDidScroll:scrollView];
-    self.navBarView.alpha = scrollView.contentOffset.y/60.0;
+    if (scrollView == self.backScrollView) {
+            self.navBarView.alpha = scrollView.contentOffset.y/60.0;
+    }
+    
     
 }
 - (void)didReceiveMemoryWarning {
