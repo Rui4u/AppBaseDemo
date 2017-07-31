@@ -36,7 +36,7 @@
 	
 	self.customScrollSelectView = [[CustomScrollSelectView alloc] initWithFrame:CGRectMake(0, NAV_BAR_HEIGHT, SCREEN_WIDTH, 48)];
 	[self.view addSubview:self.customScrollSelectView];
-	self.customScrollSelectView.dataSourse = @[@"肉禽类",@"新鲜蔬菜",@"米面粮油",@"肉禽类",@"新鲜蔬菜",@"米面粮油"];
+	self.customScrollSelectView.dataSourse = @[@"肉禽类",@"新鲜蔬菜",@"米面粮油",@"肉禽类",@"新鲜蔬菜",@"米面粮油",@"米面粮油"];
 	self.customScrollSelectView.textColor = [UIColor blackColor];
 	[self.customScrollSelectView reloadeData];
 	[self.customScrollSelectView selectSwitchButtonAtIndex:0];
