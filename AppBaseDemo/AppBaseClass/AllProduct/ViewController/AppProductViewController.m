@@ -122,7 +122,7 @@
 - (UITableView *)leftTimeQuantumTableView {
 	
 	if (!_leftTimeQuantumTableView) {
-		_leftTimeQuantumTableView = [[UITableView alloc] initWithFrame:CGRectMake(0,CGRectGetMaxY(self.customScrollSelectView.frame), 80, SCREEN_HEIGHT - (CGRectGetMaxY(self.customScrollSelectView.frame))) style:UITableViewStylePlain];
+		_leftTimeQuantumTableView = [[UITableView alloc] initWithFrame:CGRectMake(0,CGRectGetMaxY(self.customScrollSelectView.frame), 80, SCREEN_HEIGHT - (CGRectGetMaxY(self.customScrollSelectView.frame)) - 49) style:UITableViewStylePlain];
 		_leftTimeQuantumTableView.delegate = self;
 		_leftTimeQuantumTableView.dataSource = self;
 		_leftTimeQuantumTableView.backgroundColor = [UIColor colorWithHexString:@"eeeeee"];
@@ -134,7 +134,7 @@
 - (UITableView *)mainTableView {
 	
 	if (!_mainTableView) {
-		_mainTableView = [[UITableView alloc] initWithFrame:CGRectMake(self.leftTimeQuantumTableView.width,CGRectGetMaxY(self.customScrollSelectView.frame), SCREEN_WIDTH - self.leftTimeQuantumTableView.width, SCREEN_HEIGHT - CGRectGetMaxY(self.customScrollSelectView.frame)) style:UITableViewStylePlain];
+		_mainTableView = [[UITableView alloc] initWithFrame:CGRectMake(self.leftTimeQuantumTableView.width,CGRectGetMaxY(self.customScrollSelectView.frame), SCREEN_WIDTH - self.leftTimeQuantumTableView.width, SCREEN_HEIGHT - CGRectGetMaxY(self.customScrollSelectView.frame) - 49) style:UITableViewStylePlain];
 		_mainTableView.delegate = self;
 		_mainTableView.dataSource = self;
 		_mainTableView.backgroundColor = [UIColor colorWithHexString:@"eeeeee"];
