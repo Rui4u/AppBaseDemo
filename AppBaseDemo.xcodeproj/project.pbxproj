@@ -34,6 +34,9 @@
 		2B90F89C1F2EDC0C00698C38 /* SelectViewTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B90F89B1F2EDC0C00698C38 /* SelectViewTitle.m */; };
 		2B90F8A61F2F0E9B00698C38 /* AppProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B90F8A51F2F0E9B00698C38 /* AppProductViewController.m */; };
 		2B90F8A91F2F124200698C38 /* AppProductViewControllerLeftCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B90F8A81F2F124200698C38 /* AppProductViewControllerLeftCell.m */; };
+		2B90F8AC1F2F21C700698C38 /* AppProductMainCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B90F8AB1F2F21C700698C38 /* AppProductMainCellView.m */; };
+		2B90F8AE1F2F21CE00698C38 /* AppProductMainCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B90F8AD1F2F21CE00698C38 /* AppProductMainCellView.xib */; };
+		2B90F8B11F2F25A500698C38 /* AppProductMainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B90F8B01F2F25A500698C38 /* AppProductMainCell.m */; };
 		2BA025171F2AD86B003EB25D /* TipLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA025161F2AD86B003EB25D /* TipLabel.m */; };
 		2BA025301F2AE470003EB25D /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA025271F2AE470003EB25D /* BaseViewController.m */; };
 		2BA025311F2AE470003EB25D /* CustomNavBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA025291F2AE470003EB25D /* CustomNavBarView.m */; };
@@ -125,6 +128,11 @@
 		2B90F8A51F2F0E9B00698C38 /* AppProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppProductViewController.m; sourceTree = "<group>"; };
 		2B90F8A71F2F124200698C38 /* AppProductViewControllerLeftCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppProductViewControllerLeftCell.h; sourceTree = "<group>"; };
 		2B90F8A81F2F124200698C38 /* AppProductViewControllerLeftCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppProductViewControllerLeftCell.m; sourceTree = "<group>"; };
+		2B90F8AA1F2F21C700698C38 /* AppProductMainCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppProductMainCellView.h; sourceTree = "<group>"; };
+		2B90F8AB1F2F21C700698C38 /* AppProductMainCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppProductMainCellView.m; sourceTree = "<group>"; };
+		2B90F8AD1F2F21CE00698C38 /* AppProductMainCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppProductMainCellView.xib; sourceTree = "<group>"; };
+		2B90F8AF1F2F25A500698C38 /* AppProductMainCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppProductMainCell.h; sourceTree = "<group>"; };
+		2B90F8B01F2F25A500698C38 /* AppProductMainCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppProductMainCell.m; sourceTree = "<group>"; };
 		2BA025151F2AD86B003EB25D /* TipLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipLabel.h; sourceTree = "<group>"; };
 		2BA025161F2AD86B003EB25D /* TipLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipLabel.m; sourceTree = "<group>"; };
 		2BA025181F2AD932003EB25D /* SRGlobalConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRGlobalConfig.h; sourceTree = "<group>"; };
@@ -336,6 +344,11 @@
 			children = (
 				2B90F8A71F2F124200698C38 /* AppProductViewControllerLeftCell.h */,
 				2B90F8A81F2F124200698C38 /* AppProductViewControllerLeftCell.m */,
+				2B90F8AA1F2F21C700698C38 /* AppProductMainCellView.h */,
+				2B90F8AB1F2F21C700698C38 /* AppProductMainCellView.m */,
+				2B90F8AD1F2F21CE00698C38 /* AppProductMainCellView.xib */,
+				2B90F8AF1F2F25A500698C38 /* AppProductMainCell.h */,
+				2B90F8B01F2F25A500698C38 /* AppProductMainCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -583,6 +596,7 @@
 				2B386F8C1F29B69A00228620 /* LaunchScreen.storyboard in Resources */,
 				2B90F8991F2ED5E800698C38 /* SelectViewTitle.xib in Resources */,
 				2B386F891F29B69A00228620 /* Assets.xcassets in Resources */,
+				2B90F8AE1F2F21CE00698C38 /* AppProductMainCellView.xib in Resources */,
 				2B386F841F29B69A00228620 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -672,6 +686,7 @@
 				2B90F89C1F2EDC0C00698C38 /* SelectViewTitle.m in Sources */,
 				2B386F7E1F29B69A00228620 /* AppDelegate.m in Sources */,
 				2BA025311F2AE470003EB25D /* CustomNavBarView.m in Sources */,
+				2B90F8B11F2F25A500698C38 /* AppProductMainCell.m in Sources */,
 				2B3870391F29BC0C00228620 /* UIImage+SRImage.m in Sources */,
 				2BA0253F1F2B06AD003EB25D /* RootViewController.m in Sources */,
 				2B38703F1F29BC0C00228620 /* NSObject+ZXPUnicode.m in Sources */,
@@ -686,6 +701,7 @@
 				2B3870341F29BC0C00228620 /* NSMutableAttributedString+SRSpecial.m in Sources */,
 				2B38703C1F29BC0C00228620 /* UIView+SRExtension.m in Sources */,
 				2BA025491F2B0C09003EB25D /* HomeViewController.m in Sources */,
+				2B90F8AC1F2F21C700698C38 /* AppProductMainCellView.m in Sources */,
 				2B38703D1F29BC0C00228620 /* NSArray+ ZXPUnicode.m in Sources */,
 				2BA0254F1F2B0D57003EB25D /* CustomPageView.m in Sources */,
 				2B38703E1F29BC0C00228620 /* NSDictionary+ZXPUnicode.m in Sources */,

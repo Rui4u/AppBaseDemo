@@ -9,6 +9,7 @@
 #import "AppProductViewController.h"
 #import "CustomScrollSelectView.h"
 #import "AppProductViewControllerLeftCell.h"
+#import "AppProductMainCell.h"
 @interface AppProductViewController ()<UITableViewDelegate,UITableViewDataSource>
 /**
  左侧时间tableview
@@ -64,7 +65,7 @@
 	if (tableView == _leftTimeQuantumTableView) {
 		return 44;
 	}else {
-		return 70;
+		return 150;
 	}
 
 }
@@ -83,14 +84,13 @@
 		return cell;
 		
 	}else {
-		static NSString * const UITableViewCellID = @"UITableViewCellID";
+		static NSString * const AppProductMainCellID = @"AppProductMainCellID";
 		
-		UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:UITableViewCellID];;
+		AppProductMainCell * cell = [tableView dequeueReusableCellWithIdentifier:AppProductMainCellID];;
 		if (cell == nil) {
-			cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:UITableViewCellID];
+			cell = [[AppProductMainCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:AppProductMainCellID];
 		}
 		
-		cell.textLabel.text = @"呵呵呵呵呵";
 		cell.selectionStyle = UITableViewCellSelectionStyleGray;
 		return cell;
 	}
