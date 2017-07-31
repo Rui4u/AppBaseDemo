@@ -8,6 +8,7 @@
 
 #import "RootViewController.h"
 #import "HomeViewController.h"
+#import "AppProductViewController.h"
 @interface RootViewController ()<UITabBarControllerDelegate,SRCustomTabBarViewDelegate>
 
 
@@ -20,7 +21,7 @@
 /**
  产品中心
  */
-@property (nonatomic ,strong ) UIViewController * productViewController;
+@property (nonatomic ,strong ) AppProductViewController * productViewController;
 
 /**
  我的财富
@@ -177,7 +178,7 @@
     
     
     
-    self.productViewController = [[UIViewController alloc] init];
+    self.productViewController = [[AppProductViewController alloc] init];
 	
     self.productViewController.title = @"产品中心";
     [self.productViewController.tabBarItem setTitleTextAttributes:selectAtts forState:UIControlStateSelected];

@@ -100,8 +100,8 @@
     if (scrollView == self.backScrollView) {
         NSLog(@"backScrollView  :  %f",scrollView.contentOffset.y);
 
-        if (self.backScrollView.contentOffset.y >= CGRectGetMaxY(_rearTopView.frame) - 20) {
-            self.backScrollView.contentOffset = CGPointMake(0, CGRectGetMaxY(_rearTopView.frame) - 20);
+        if (self.backScrollView.contentOffset.y >= CGRectGetMaxY(_rearTopView.frame) - 64) {
+            self.backScrollView.contentOffset = CGPointMake(0, CGRectGetMaxY(_rearTopView.frame) - 64);
             self.frontScrollView.scrollEnabled = YES;
             self.backScrollView.scrollEnabled = NO;
         }

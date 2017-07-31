@@ -28,6 +28,12 @@
 		2B38703D1F29BC0C00228620 /* NSArray+ ZXPUnicode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3870281F29BC0C00228620 /* NSArray+ ZXPUnicode.m */; };
 		2B38703E1F29BC0C00228620 /* NSDictionary+ZXPUnicode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B38702B1F29BC0C00228620 /* NSDictionary+ZXPUnicode.m */; };
 		2B38703F1F29BC0C00228620 /* NSObject+ZXPUnicode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B38702D1F29BC0C00228620 /* NSObject+ZXPUnicode.m */; };
+		2B90F8941F2EC86200698C38 /* CustomScrollSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B90F8931F2EC86200698C38 /* CustomScrollSelectView.m */; };
+		2B90F8971F2ECFF100698C38 /* SelectTypeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B90F8961F2ECFF100698C38 /* SelectTypeView.m */; };
+		2B90F8991F2ED5E800698C38 /* SelectViewTitle.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B90F8981F2ED5E800698C38 /* SelectViewTitle.xib */; };
+		2B90F89C1F2EDC0C00698C38 /* SelectViewTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B90F89B1F2EDC0C00698C38 /* SelectViewTitle.m */; };
+		2B90F8A61F2F0E9B00698C38 /* AppProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B90F8A51F2F0E9B00698C38 /* AppProductViewController.m */; };
+		2B90F8A91F2F124200698C38 /* AppProductViewControllerLeftCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B90F8A81F2F124200698C38 /* AppProductViewControllerLeftCell.m */; };
 		2BA025171F2AD86B003EB25D /* TipLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA025161F2AD86B003EB25D /* TipLabel.m */; };
 		2BA025301F2AE470003EB25D /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA025271F2AE470003EB25D /* BaseViewController.m */; };
 		2BA025311F2AE470003EB25D /* CustomNavBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA025291F2AE470003EB25D /* CustomNavBarView.m */; };
@@ -108,6 +114,17 @@
 		2B3870301F29BC0C00228620 /* SRObjecCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRObjecCategory.h; sourceTree = "<group>"; };
 		2B3870311F29BC0C00228620 /* SRViewConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRViewConfig.h; sourceTree = "<group>"; };
 		2B3870321F29BC0C00228620 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		2B90F8921F2EC86200698C38 /* CustomScrollSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomScrollSelectView.h; sourceTree = "<group>"; };
+		2B90F8931F2EC86200698C38 /* CustomScrollSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomScrollSelectView.m; sourceTree = "<group>"; };
+		2B90F8951F2ECFF100698C38 /* SelectTypeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectTypeView.h; sourceTree = "<group>"; };
+		2B90F8961F2ECFF100698C38 /* SelectTypeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectTypeView.m; sourceTree = "<group>"; };
+		2B90F8981F2ED5E800698C38 /* SelectViewTitle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectViewTitle.xib; sourceTree = "<group>"; };
+		2B90F89A1F2EDC0C00698C38 /* SelectViewTitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectViewTitle.h; sourceTree = "<group>"; };
+		2B90F89B1F2EDC0C00698C38 /* SelectViewTitle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectViewTitle.m; sourceTree = "<group>"; };
+		2B90F8A41F2F0E9B00698C38 /* AppProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppProductViewController.h; sourceTree = "<group>"; };
+		2B90F8A51F2F0E9B00698C38 /* AppProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppProductViewController.m; sourceTree = "<group>"; };
+		2B90F8A71F2F124200698C38 /* AppProductViewControllerLeftCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppProductViewControllerLeftCell.h; sourceTree = "<group>"; };
+		2B90F8A81F2F124200698C38 /* AppProductViewControllerLeftCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppProductViewControllerLeftCell.m; sourceTree = "<group>"; };
 		2BA025151F2AD86B003EB25D /* TipLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipLabel.h; sourceTree = "<group>"; };
 		2BA025161F2AD86B003EB25D /* TipLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipLabel.m; sourceTree = "<group>"; };
 		2BA025181F2AD932003EB25D /* SRGlobalConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRGlobalConfig.h; sourceTree = "<group>"; };
@@ -297,6 +314,41 @@
 			path = BaseConfig;
 			sourceTree = "<group>";
 		};
+		2B90F8A01F2F0E4F00698C38 /* AllProduct */ = {
+			isa = PBXGroup;
+			children = (
+				2B90F8A11F2F0E4F00698C38 /* Model */,
+				2B90F8A21F2F0E4F00698C38 /* View */,
+				2B90F8A31F2F0E4F00698C38 /* ViewController */,
+			);
+			path = AllProduct;
+			sourceTree = "<group>";
+		};
+		2B90F8A11F2F0E4F00698C38 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2B90F8A21F2F0E4F00698C38 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2B90F8A71F2F124200698C38 /* AppProductViewControllerLeftCell.h */,
+				2B90F8A81F2F124200698C38 /* AppProductViewControllerLeftCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2B90F8A31F2F0E4F00698C38 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2B90F8A41F2F0E9B00698C38 /* AppProductViewController.h */,
+				2B90F8A51F2F0E9B00698C38 /* AppProductViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		2BA025131F2AD85E003EB25D /* AppBaseTools */ = {
 			isa = PBXGroup;
 			children = (
@@ -346,6 +398,7 @@
 		2BA0253C1F2B0682003EB25D /* AppBaseClass */ = {
 			isa = PBXGroup;
 			children = (
+				2B90F8A01F2F0E4F00698C38 /* AllProduct */,
 				2BA025431F2B0C09003EB25D /* Home */,
 				2BA0253D1F2B06AD003EB25D /* RootViewController.h */,
 				2BA0253E1F2B06AD003EB25D /* RootViewController.m */,
@@ -373,6 +426,8 @@
 		2BA025451F2B0C09003EB25D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2B90F8921F2EC86200698C38 /* CustomScrollSelectView.h */,
+				2B90F8931F2EC86200698C38 /* CustomScrollSelectView.m */,
 				2BA0254D1F2B0D57003EB25D /* CustomPageView.h */,
 				2BA0254E1F2B0D57003EB25D /* CustomPageView.m */,
 				2BA0254A1F2B0C32003EB25D /* TopAdvertisementView.h */,
@@ -381,6 +436,11 @@
 				2BA025511F2B108D003EB25D /* HomeTopView.m */,
 				2BA025531F2B2A15003EB25D /* RecommendProductView.h */,
 				2BA025541F2B2A15003EB25D /* RecommendProductView.m */,
+				2B90F8951F2ECFF100698C38 /* SelectTypeView.h */,
+				2B90F8961F2ECFF100698C38 /* SelectTypeView.m */,
+				2B90F8981F2ED5E800698C38 /* SelectViewTitle.xib */,
+				2B90F89A1F2EDC0C00698C38 /* SelectViewTitle.h */,
+				2B90F89B1F2EDC0C00698C38 /* SelectViewTitle.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -521,6 +581,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B386F8C1F29B69A00228620 /* LaunchScreen.storyboard in Resources */,
+				2B90F8991F2ED5E800698C38 /* SelectViewTitle.xib in Resources */,
 				2B386F891F29B69A00228620 /* Assets.xcassets in Resources */,
 				2B386F841F29B69A00228620 /* Main.storyboard in Resources */,
 			);
@@ -603,9 +664,12 @@
 				2B3870371F29BC0C00228620 /* UIButton+SRButton.m in Sources */,
 				2BA025171F2AD86B003EB25D /* TipLabel.m in Sources */,
 				2B3870381F29BC0C00228620 /* UIColor+SRColor.m in Sources */,
+				2B90F8971F2ECFF100698C38 /* SelectTypeView.m in Sources */,
 				2B386F871F29B69A00228620 /* AppBaseDemo.xcdatamodeld in Sources */,
+				2B90F8A91F2F124200698C38 /* AppProductViewControllerLeftCell.m in Sources */,
 				2BA025371F2B05E9003EB25D /* CustomViewController.m in Sources */,
 				2BA0253B1F2B0658003EB25D /* BaseNetWorkClient.m in Sources */,
+				2B90F89C1F2EDC0C00698C38 /* SelectViewTitle.m in Sources */,
 				2B386F7E1F29B69A00228620 /* AppDelegate.m in Sources */,
 				2BA025311F2AE470003EB25D /* CustomNavBarView.m in Sources */,
 				2B3870391F29BC0C00228620 /* UIImage+SRImage.m in Sources */,
@@ -615,6 +679,7 @@
 				2B38703B1F29BC0C00228620 /* UITextField+SRTextField.m in Sources */,
 				2B3870331F29BC0C00228620 /* NSMutableArray+SRArraySort.m in Sources */,
 				2BA025321F2AE470003EB25D /* CustomNavigationController.m in Sources */,
+				2B90F8A61F2F0E9B00698C38 /* AppProductViewController.m in Sources */,
 				2BA0254C1F2B0C32003EB25D /* TopAdvertisementView.m in Sources */,
 				2BA025331F2AE470003EB25D /* SRCustomTabBarController.m in Sources */,
 				2B386F7B1F29B69A00228620 /* main.m in Sources */,
@@ -624,6 +689,7 @@
 				2B38703D1F29BC0C00228620 /* NSArray+ ZXPUnicode.m in Sources */,
 				2BA0254F1F2B0D57003EB25D /* CustomPageView.m in Sources */,
 				2B38703E1F29BC0C00228620 /* NSDictionary+ZXPUnicode.m in Sources */,
+				2B90F8941F2EC86200698C38 /* CustomScrollSelectView.m in Sources */,
 				2BA025551F2B2A15003EB25D /* RecommendProductView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

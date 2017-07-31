@@ -25,7 +25,7 @@
         
         self.bType = type;
         self.backgroundColor = [UIColor clearColor];
-        self.backgroundColor = [UIColor colorWithHexString:@"323137"];
+        self.backgroundColor = [UIColor colorWithHexString:@"ffffff"];
         float offset = SYSTEM_DEV_IOS_7 ? 20 : 0;
         
         
@@ -82,7 +82,7 @@
         self.titleLabel.backgroundColor = [UIColor clearColor];
         self.titleLabel.font = [UIFont systemFontOfSize:17];
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
-        self.titleLabel.textColor = [UIColor whiteColor];
+        self.titleLabel.textColor = [UIColor blackColor];
         [self addSubview:self.titleLabel];
         
     }
