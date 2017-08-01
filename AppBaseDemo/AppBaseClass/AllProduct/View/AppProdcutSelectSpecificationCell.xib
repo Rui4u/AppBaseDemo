@@ -63,18 +63,28 @@
                             <constraint firstAttribute="height" constant="22" id="AHK-Aa-0NO"/>
                         </constraints>
                     </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hU8-k9-lL3">
+                        <rect key="frame" x="15" y="192.5" width="398" height="1"/>
+                        <color key="backgroundColor" red="0.42100959117071729" green="0.42454953008617269" blue="0.43319717639593913" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="wj7-fK-fiA"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="mQ4-S4-lRC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="5c6-HM-QJv"/>
                     <constraint firstItem="mQ4-S4-lRC" firstAttribute="top" secondItem="rZc-ju-tfk" secondAttribute="bottom" constant="5" id="AW9-AB-ZBB"/>
                     <constraint firstItem="iGj-pp-pjA" firstAttribute="top" secondItem="rZc-ju-tfk" secondAttribute="bottom" constant="5" id="FsM-hy-5Ko"/>
+                    <constraint firstItem="hU8-k9-lL3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="LN9-JS-IMu"/>
                     <constraint firstItem="rZc-ju-tfk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Lj4-HE-dXO"/>
                     <constraint firstItem="iGj-pp-pjA" firstAttribute="leading" secondItem="Wse-ia-Et2" secondAttribute="trailing" constant="5" id="Mtj-9A-ATN"/>
+                    <constraint firstAttribute="bottom" secondItem="hU8-k9-lL3" secondAttribute="bottom" id="Vpy-AS-bRS"/>
                     <constraint firstItem="rZc-ju-tfk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="eyO-wW-G3c"/>
                     <constraint firstItem="iGj-pp-pjA" firstAttribute="centerY" secondItem="Wse-ia-Et2" secondAttribute="centerY" id="fCS-4a-YOw"/>
                     <constraint firstItem="IzD-d7-JCm" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="gS8-eK-tEm"/>
                     <constraint firstAttribute="trailing" secondItem="IzD-d7-JCm" secondAttribute="trailing" constant="15" id="hZz-C3-lra"/>
                     <constraint firstItem="Wse-ia-Et2" firstAttribute="leading" secondItem="mQ4-S4-lRC" secondAttribute="trailing" constant="2" id="k4l-fI-Ov9"/>
+                    <constraint firstAttribute="trailing" secondItem="hU8-k9-lL3" secondAttribute="trailing" id="xpb-nL-Hln"/>
                     <constraint firstItem="Wse-ia-Et2" firstAttribute="centerY" secondItem="mQ4-S4-lRC" secondAttribute="centerY" id="yw4-oK-UID"/>
                 </constraints>
             </tableViewCellContentView>

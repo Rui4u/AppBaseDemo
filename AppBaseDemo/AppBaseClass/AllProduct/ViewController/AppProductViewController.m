@@ -30,6 +30,8 @@
 @property (nonatomic ,strong ) AppProductViewControllerLeftCell * lastCell;
 
 @property (nonatomic ,strong ) NSMutableArray<AppProductModel *> * productDataSourse;
+
+@property (nonatomic ,strong ) NSMutableArray * leftNameDataSourse;
 /**
  记录刷新的indexpath
  */
@@ -65,22 +67,31 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-	return self.productDataSourse.count;
+	if(tableView == self.mainTableView) {
+		return self.productDataSourse.count;
+	}else {
+		return 1;
+	}
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	if (self.productDataSourse[section].isOpen) {
-		
-		return 5;
-	}else {
-		return 0;
-	}
+	
+	if(tableView == self.mainTableView) {
+		if (self.productDataSourse[section].isOpen) {
+			
+			return self.productDataSourse[section].moreSpecificationArray.count;
+		}else {
+			return 0;
+		}
+	} else {
+		return self.leftNameDataSourse.count;
+		}
 	
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 	if (tableView == _leftTimeQuantumTableView) {
 		return 44;
 	}else {
-		return 44;
+		return 70;
 	}
 
 }
@@ -94,7 +105,7 @@
 			cell = [[AppProductViewControllerLeftCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:AppProductViewControllerLeftCellID];
 		}
 		
-		cell.nameLabel.text = @"1";
+		cell.nameLabel.text = _leftNameDataSourse[indexPath.row];
 		cell.selectionStyle = UITableViewCellSelectionStyleGray;
 		return cell;
 		
@@ -210,4 +221,13 @@
 	return _productDataSourse;
 }
 
+- (NSMutableArray *)leftNameDataSourse {
+	if (_leftNameDataSourse == nil) {
+		_leftNameDataSourse = [[NSMutableArray alloc] init];
+		[_leftNameDataSourse addObjectsFromArray:@[@"男人",@"女人",@"乐乐",@"男人",@"女人",@"乐乐",@"男人",@"女人",@"乐乐"]];
+	}
+	return _leftNameDataSourse;
+
+
+}
 @end

@@ -14,4 +14,5 @@
  */
 @property (nonatomic ,assign ,getter=isOpen) BOOL open;
 
+@property (nonatomic ,strong ) NSArray * moreSpecificationArray;
 @end
