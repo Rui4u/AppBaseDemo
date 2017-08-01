@@ -10,7 +10,11 @@
 #import "CustomScrollSelectView.h"
 #import "AppProductViewControllerLeftCell.h"
 #import "AppProductMainCell.h"
-@interface AppProductViewController ()<UITableViewDelegate,UITableViewDataSource>
+#import "AppProdcutSelectSpecificationCell.h"
+#import "AppProductMainCellView.h"
+#import "AppProductModel.h"
+
+@interface AppProductViewController ()<UITableViewDelegate,UITableViewDataSource,AppProductMainCellViewDelegate>
 /**
  左侧时间tableview
  */
@@ -25,6 +29,11 @@
  */
 @property (nonatomic ,strong ) AppProductViewControllerLeftCell * lastCell;
 
+@property (nonatomic ,strong ) NSMutableArray<AppProductModel *> * productDataSourse;
+/**
+ 记录刷新的indexpath
+ */
+@property (nonatomic ,assign ) NSIndexPath * mainIndexPath;
 @end
 
 @implementation AppProductViewController
@@ -56,16 +65,22 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-	return 1;
+	return self.productDataSourse.count;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return 20;
+	if (self.productDataSourse[section].isOpen) {
+		
+		return 5;
+	}else {
+		return 0;
+	}
+	
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 	if (tableView == _leftTimeQuantumTableView) {
 		return 44;
 	}else {
-		return 150;
+		return 44;
 	}
 
 }
@@ -84,17 +99,41 @@
 		return cell;
 		
 	}else {
-		static NSString * const AppProductMainCellID = @"AppProductMainCellID";
+
 		
-		AppProductMainCell * cell = [tableView dequeueReusableCellWithIdentifier:AppProductMainCellID];;
+		
+		static NSString * const AppProdcutSelectSpecificationCellID = @"AppProdcutSelectSpecificationCellID";
+		
+		AppProdcutSelectSpecificationCell * cell = [tableView dequeueReusableCellWithIdentifier:AppProdcutSelectSpecificationCellID];;
 		if (cell == nil) {
-			cell = [[AppProductMainCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:AppProductMainCellID];
+			cell = [[NSBundle mainBundle]loadNibNamed:@"AppProdcutSelectSpecificationCell" owner:nil options:nil].lastObject;
 		}
 		
 		cell.selectionStyle = UITableViewCellSelectionStyleGray;
 		return cell;
 	}
 
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+	if (tableView == self.mainTableView) {
+		AppProductMainCellView * appProductMainCellView = [[[NSBundle mainBundle] loadNibNamed:@"AppProductMainCellView" owner:self options:nil] lastObject];
+		appProductMainCellView.delegate = self;
+		appProductMainCellView.section = section;
+		return appProductMainCellView;
+	}
+	return nil;
+	
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+	if (tableView == self.mainTableView) {
+		return 150;
+	}else {
+		return 0;
+	}
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+	return .1;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
@@ -118,6 +157,21 @@
 	}
 }
 
+
+- (void)clickProductButtonWith:(UIButton *)sender withSection:(NSInteger)section{
+
+	self.productDataSourse[section].open = !self.productDataSourse[section].open;
+	NSIndexPath *indexPath = [NSIndexPath indexPathForItem:0 inSection:section];
+	self.mainIndexPath = indexPath;
+	NSRange rang = NSMakeRange(indexPath.section, 1);
+	NSIndexSet *set = [NSIndexSet indexSetWithIndexesInRange:rang];
+	[self.mainTableView reloadSections:set withRowAnimation:UITableViewRowAnimationFade];
+
+//	[self.mainTableView reloadData];
+	
+	
+}
+
 #pragma mark - 懒加载
 - (UITableView *)leftTimeQuantumTableView {
 	
@@ -134,7 +188,7 @@
 - (UITableView *)mainTableView {
 	
 	if (!_mainTableView) {
-		_mainTableView = [[UITableView alloc] initWithFrame:CGRectMake(self.leftTimeQuantumTableView.width,CGRectGetMaxY(self.customScrollSelectView.frame), SCREEN_WIDTH - self.leftTimeQuantumTableView.width, SCREEN_HEIGHT - CGRectGetMaxY(self.customScrollSelectView.frame) - 49) style:UITableViewStylePlain];
+		_mainTableView = [[UITableView alloc] initWithFrame:CGRectMake(self.leftTimeQuantumTableView.width,CGRectGetMaxY(self.customScrollSelectView.frame), SCREEN_WIDTH - self.leftTimeQuantumTableView.width, SCREEN_HEIGHT - CGRectGetMaxY(self.customScrollSelectView.frame) - 49) style:UITableViewStyleGrouped];
 		_mainTableView.delegate = self;
 		_mainTableView.dataSource = self;
 		_mainTableView.backgroundColor = [UIColor colorWithHexString:@"eeeeee"];
@@ -143,6 +197,17 @@
 	}
 	
 	return _mainTableView;
+}
+- (NSMutableArray<AppProductModel *> *)productDataSourse {
+	if (_productDataSourse == nil) {
+		_productDataSourse = [[NSMutableArray alloc] init];
+		for (int i = 0; i < 5; i ++) {
+			AppProductModel * model = [[AppProductModel alloc] init];
+			model.open = NO;
+			[_productDataSourse addObject:model];
+		}
+	}
+	return _productDataSourse;
 }
 
 @end

@@ -28,6 +28,9 @@
 		2B38703D1F29BC0C00228620 /* NSArray+ ZXPUnicode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3870281F29BC0C00228620 /* NSArray+ ZXPUnicode.m */; };
 		2B38703E1F29BC0C00228620 /* NSDictionary+ZXPUnicode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B38702B1F29BC0C00228620 /* NSDictionary+ZXPUnicode.m */; };
 		2B38703F1F29BC0C00228620 /* NSObject+ZXPUnicode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B38702D1F29BC0C00228620 /* NSObject+ZXPUnicode.m */; };
+		2B3AE0CE1F3020F400DE03B0 /* AppProdcutSelectSpecificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3AE0CC1F3020F400DE03B0 /* AppProdcutSelectSpecificationCell.m */; };
+		2B3AE0CF1F3020F400DE03B0 /* AppProdcutSelectSpecificationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B3AE0CD1F3020F400DE03B0 /* AppProdcutSelectSpecificationCell.xib */; };
+		2B3AE0D21F304C2D00DE03B0 /* AppProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3AE0D11F304C2D00DE03B0 /* AppProductModel.m */; };
 		2B90F8941F2EC86200698C38 /* CustomScrollSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B90F8931F2EC86200698C38 /* CustomScrollSelectView.m */; };
 		2B90F8971F2ECFF100698C38 /* SelectTypeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B90F8961F2ECFF100698C38 /* SelectTypeView.m */; };
 		2B90F8991F2ED5E800698C38 /* SelectViewTitle.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B90F8981F2ED5E800698C38 /* SelectViewTitle.xib */; };
@@ -117,6 +120,11 @@
 		2B3870301F29BC0C00228620 /* SRObjecCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRObjecCategory.h; sourceTree = "<group>"; };
 		2B3870311F29BC0C00228620 /* SRViewConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRViewConfig.h; sourceTree = "<group>"; };
 		2B3870321F29BC0C00228620 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		2B3AE0CB1F3020F400DE03B0 /* AppProdcutSelectSpecificationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppProdcutSelectSpecificationCell.h; sourceTree = "<group>"; };
+		2B3AE0CC1F3020F400DE03B0 /* AppProdcutSelectSpecificationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppProdcutSelectSpecificationCell.m; sourceTree = "<group>"; };
+		2B3AE0CD1F3020F400DE03B0 /* AppProdcutSelectSpecificationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppProdcutSelectSpecificationCell.xib; sourceTree = "<group>"; };
+		2B3AE0D01F304C2D00DE03B0 /* AppProductModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppProductModel.h; sourceTree = "<group>"; };
+		2B3AE0D11F304C2D00DE03B0 /* AppProductModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppProductModel.m; sourceTree = "<group>"; };
 		2B90F8921F2EC86200698C38 /* CustomScrollSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomScrollSelectView.h; sourceTree = "<group>"; };
 		2B90F8931F2EC86200698C38 /* CustomScrollSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomScrollSelectView.m; sourceTree = "<group>"; };
 		2B90F8951F2ECFF100698C38 /* SelectTypeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectTypeView.h; sourceTree = "<group>"; };
@@ -335,6 +343,8 @@
 		2B90F8A11F2F0E4F00698C38 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2B3AE0D01F304C2D00DE03B0 /* AppProductModel.h */,
+				2B3AE0D11F304C2D00DE03B0 /* AppProductModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -347,6 +357,9 @@
 				2B90F8AA1F2F21C700698C38 /* AppProductMainCellView.h */,
 				2B90F8AB1F2F21C700698C38 /* AppProductMainCellView.m */,
 				2B90F8AD1F2F21CE00698C38 /* AppProductMainCellView.xib */,
+				2B3AE0CB1F3020F400DE03B0 /* AppProdcutSelectSpecificationCell.h */,
+				2B3AE0CC1F3020F400DE03B0 /* AppProdcutSelectSpecificationCell.m */,
+				2B3AE0CD1F3020F400DE03B0 /* AppProdcutSelectSpecificationCell.xib */,
 				2B90F8AF1F2F25A500698C38 /* AppProductMainCell.h */,
 				2B90F8B01F2F25A500698C38 /* AppProductMainCell.m */,
 			);
@@ -596,6 +609,7 @@
 				2B386F8C1F29B69A00228620 /* LaunchScreen.storyboard in Resources */,
 				2B90F8991F2ED5E800698C38 /* SelectViewTitle.xib in Resources */,
 				2B386F891F29B69A00228620 /* Assets.xcassets in Resources */,
+				2B3AE0CF1F3020F400DE03B0 /* AppProdcutSelectSpecificationCell.xib in Resources */,
 				2B90F8AE1F2F21CE00698C38 /* AppProductMainCellView.xib in Resources */,
 				2B386F841F29B69A00228620 /* Main.storyboard in Resources */,
 			);
@@ -681,10 +695,12 @@
 				2B90F8971F2ECFF100698C38 /* SelectTypeView.m in Sources */,
 				2B386F871F29B69A00228620 /* AppBaseDemo.xcdatamodeld in Sources */,
 				2B90F8A91F2F124200698C38 /* AppProductViewControllerLeftCell.m in Sources */,
+				2B3AE0CE1F3020F400DE03B0 /* AppProdcutSelectSpecificationCell.m in Sources */,
 				2BA025371F2B05E9003EB25D /* CustomViewController.m in Sources */,
 				2BA0253B1F2B0658003EB25D /* BaseNetWorkClient.m in Sources */,
 				2B90F89C1F2EDC0C00698C38 /* SelectViewTitle.m in Sources */,
 				2B386F7E1F29B69A00228620 /* AppDelegate.m in Sources */,
+				2B3AE0D21F304C2D00DE03B0 /* AppProductModel.m in Sources */,
 				2BA025311F2AE470003EB25D /* CustomNavBarView.m in Sources */,
 				2B90F8B11F2F25A500698C38 /* AppProductMainCell.m in Sources */,
 				2B3870391F29BC0C00228620 /* UIImage+SRImage.m in Sources */,
