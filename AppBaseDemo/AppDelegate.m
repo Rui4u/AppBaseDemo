@@ -10,6 +10,7 @@
 #import "RootViewController.h"
 #import "DESEncryption.h"
 #import "LoginViewRootController.h"
+#import "NSObject+SBJson.h"
 @interface AppDelegate ()
 
 @end
@@ -20,10 +21,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	// Override point for customization after application launch.
 	RootViewController* rootViewController = [[RootViewController alloc] init];
+	NSDictionary * param = @{@"storeTelephone":@"13552770525",
+							 @"storePwd":@"123456"};
 	
-//	NSString * handlerDESEncryStr = [DESEncryption TripleDES:@"cLl5hzUAYfhIzipp2okbMhBSGzxvDSP3H0a0cuo2G70="
-//											encryptOrDecrypt:(CCAlgorithm)kCCDecrypt key:@"guoshuguoshu"];
-//	NSLog(@"%@",handlerDESEncryStr);
+	NSString * paramString = [param JSONRepresentation];
+
+	NSString * handlerDESEncryStr = [DESEncryption TripleDES:paramString
+											encryptOrDecrypt:(CCAlgorithm)kCCEncrypt key:@"guoshuguoshu"];
+	NSLog(@"%@",handlerDESEncryStr);
 	
 	
 	self.rootViewController = rootViewController;

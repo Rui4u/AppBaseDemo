@@ -9,9 +9,10 @@
 #import "BaseNetWorkClient.h"
 #import <AFHTTPSessionManager.h>
 #import <AFNetworkReachabilityManager.h>
-
+#import "NSObject+SBJson.h"
+#import "DESEncryption.h"
 @implementation BaseNetWorkClient
-+ (void) jsonFormPOSTRequestWithUrl : (NSString  *)        url
++ (void) jsonFormGetRequestWithUrl : (NSString  *)        url
 							  param : (NSDictionary *)     param
 							success : (void(^)(id))        success
 				   operationFailure : (void(^)(NSString * ))  operationFailure
@@ -21,12 +22,19 @@
 	manager.requestSerializer = [AFHTTPRequestSerializer serializer];
 	manager.responseSerializer = [AFJSONResponseSerializer serializer];
 
+	manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json",@"text/html" , @"text/javascript", nil];
 	
-	[manager POST:url parameters:param progress:^(NSProgress * _Nonnull uploadProgress) {
+
+	NSString * paramString = [param JSONRepresentation];
+	
+	NSString * handlerDESEncryStr = [DESEncryption TripleDES:paramString
+											encryptOrDecrypt:(CCAlgorithm)kCCEncrypt key:@"guoshuguoshu"];
+	
+	NSDictionary * dict = @{@"params":handlerDESEncryStr};
+	[manager GET:url parameters:dict progress:^(NSProgress * _Nonnull downloadProgress) {
 		
 	} success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
 		success(responseObject);
-
 	} failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
 		failure(error);
 	}];

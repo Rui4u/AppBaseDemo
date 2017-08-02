@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface BaseNetWorkClient : NSObject
-+ (void) jsonFormPOSTRequestWithUrl : (NSString  *)        url
++ (void) jsonFormGetRequestWithUrl : (NSString  *)        url
 							  param : (NSDictionary *)     param
 							success : (void(^)(id))        success
 				   operationFailure : (void(^)(NSString * ))  operationFailure

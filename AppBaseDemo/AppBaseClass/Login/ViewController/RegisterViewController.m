@@ -7,7 +7,7 @@
 //
 
 #import "RegisterViewController.h"
-
+#import "RegisterBusiness.h"
 @interface RegisterViewController ()
 
 @end
@@ -31,7 +31,13 @@
 
 - (void)clickPhoneButton {
 
-
+	[RegisterBusiness registerWithStoreTelephone:@"13552770525" storePwd:@"123456" verificationCode:nil completionSuccessHandler:^(BOOL sucessFlag) {
+		
+	} completionFailHandler:^(NSString *failMessage) {
+		
+	} completionError:^(NSString *netWorkErrorMessage) {
+		
+	}];
 }
 
 - (void)didReceiveMemoryWarning {
