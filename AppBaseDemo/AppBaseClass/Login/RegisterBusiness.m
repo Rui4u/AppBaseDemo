@@ -27,7 +27,11 @@
 										 success:^(id success)
 	 {
 		 NSDictionary * responeMp = (NSDictionary * ) success ;
-		 completionHandler(YES);//注册成功
+         
+         if ([[responeMp objectForKey:@"isSucceed"] isEqualToString:@"yes"]) {
+             completionHandler(YES);//注册成功
+         }
+
 		 
 	 } operationFailure:^(id failure) {
 		 

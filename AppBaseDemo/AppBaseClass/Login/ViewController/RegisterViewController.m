@@ -9,10 +9,36 @@
 #import "RegisterViewController.h"
 #import "RegisterBusiness.h"
 @interface RegisterViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *phoneNumber;
+@property (weak, nonatomic) IBOutlet UITextField *verificationCode;
+@property (weak, nonatomic) IBOutlet UITextField *userPassword;
+@property (weak, nonatomic) IBOutlet UIButton *registerButton;
+@property (weak, nonatomic) IBOutlet UIButton *getVerificationCoderButton;
 
 @end
 
 @implementation RegisterViewController
+- (IBAction)clickGetVerificationCoderButton:(UIButton *)sender {
+    NSLog(@"获取验证码");
+}
+- (IBAction)clickRegisterButton:(UIButton *)sender {
+    NSLog(@"注册");
+    
+    [RegisterBusiness registerWithStoreTelephone:self.phoneNumber.text
+                                        storePwd:self.userPassword.text
+                                verificationCode:nil completionSuccessHandler:^(BOOL sucessFlag)
+    {
+        if (sucessFlag == YES) [self showToastWithMessage:@"注册成功" showTime:1];
+        
+    } completionFailHandler:^(NSString *failMessage) {
+        [self showToastWithMessage:failMessage showTime:1];
+    } completionError:^(NSString *netWorkErrorMessage) {
+        [self showToastWithMessage:netWorkErrorMessage showTime:1];
+    }];
+}
+- (IBAction)clickServiceForH5Button:(id)sender {
+    NSLog(@"点击注册服务条款");
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -31,13 +57,7 @@
 
 - (void)clickPhoneButton {
 
-	[RegisterBusiness registerWithStoreTelephone:@"13552770525" storePwd:@"123456" verificationCode:nil completionSuccessHandler:^(BOOL sucessFlag) {
-		
-	} completionFailHandler:^(NSString *failMessage) {
-		
-	} completionError:^(NSString *netWorkErrorMessage) {
-		
-	}];
+	
 }
 
 - (void)didReceiveMemoryWarning {

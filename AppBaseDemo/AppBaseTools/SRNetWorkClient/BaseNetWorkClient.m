@@ -34,7 +34,7 @@
 	[manager GET:url parameters:dict progress:^(NSProgress * _Nonnull downloadProgress) {
 		
 	} success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-		success(responseObject);
+		success([responseObject objectForKey:@"body"]);
 	} failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
 		failure(error);
 	}];
