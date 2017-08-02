@@ -54,6 +54,8 @@
 		2BA0254F1F2B0D57003EB25D /* CustomPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA0254E1F2B0D57003EB25D /* CustomPageView.m */; };
 		2BA025521F2B108D003EB25D /* HomeTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA025511F2B108D003EB25D /* HomeTopView.m */; };
 		2BA025551F2B2A15003EB25D /* RecommendProductView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA025541F2B2A15003EB25D /* RecommendProductView.m */; };
+		2BA8DAB11F319BA9000190C1 /* DESEncryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA8DAB01F319BA9000190C1 /* DESEncryption.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2BA8DAB61F319BCE000190C1 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA8DAB41F319BCE000190C1 /* GTMBase64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -Wno-shorten-64-to-32"; }; };
 		65403DF437BA47C28C5B3CF7 /* libPods-AppBaseDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0152959586DFB41568D4F5C /* libPods-AppBaseDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -170,6 +172,11 @@
 		2BA025511F2B108D003EB25D /* HomeTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTopView.m; sourceTree = "<group>"; };
 		2BA025531F2B2A15003EB25D /* RecommendProductView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendProductView.h; sourceTree = "<group>"; };
 		2BA025541F2B2A15003EB25D /* RecommendProductView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendProductView.m; sourceTree = "<group>"; };
+		2BA8DAAF1F319BA9000190C1 /* DESEncryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DESEncryption.h; sourceTree = "<group>"; };
+		2BA8DAB01F319BA9000190C1 /* DESEncryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DESEncryption.m; sourceTree = "<group>"; };
+		2BA8DAB31F319BCE000190C1 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
+		2BA8DAB41F319BCE000190C1 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
+		2BA8DAB51F319BCE000190C1 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
 		C0152959586DFB41568D4F5C /* libPods-AppBaseDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppBaseDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9138079B95F4444D4017C4A /* Pods-AppBaseDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppBaseDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppBaseDemo/Pods-AppBaseDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		FC3237A11D175D8A56FDA2A8 /* Pods-AppBaseDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppBaseDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppBaseDemo/Pods-AppBaseDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -378,6 +385,8 @@
 		2BA025131F2AD85E003EB25D /* AppBaseTools */ = {
 			isa = PBXGroup;
 			children = (
+				2BA8DAB21F319BCE000190C1 /* GTMBase64 */,
+				2BA8DAAE1F319BA9000190C1 /* DESEncryption */,
 				2BA025381F2B0658003EB25D /* SRNetWorkClient */,
 				2BA025141F2AD86B003EB25D /* TipLabel */,
 			);
@@ -478,6 +487,25 @@
 				2BA025481F2B0C09003EB25D /* HomeViewController.m */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		2BA8DAAE1F319BA9000190C1 /* DESEncryption */ = {
+			isa = PBXGroup;
+			children = (
+				2BA8DAAF1F319BA9000190C1 /* DESEncryption.h */,
+				2BA8DAB01F319BA9000190C1 /* DESEncryption.m */,
+			);
+			path = DESEncryption;
+			sourceTree = "<group>";
+		};
+		2BA8DAB21F319BCE000190C1 /* GTMBase64 */ = {
+			isa = PBXGroup;
+			children = (
+				2BA8DAB31F319BCE000190C1 /* GTMBase64.h */,
+				2BA8DAB41F319BCE000190C1 /* GTMBase64.m */,
+				2BA8DAB51F319BCE000190C1 /* GTMDefines.h */,
+			);
+			path = GTMBase64;
 			sourceTree = "<group>";
 		};
 		5BA30CE97002972E8C43090A /* Pods */ = {
@@ -685,6 +713,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BA025301F2AE470003EB25D /* BaseViewController.m in Sources */,
+				2BA8DAB11F319BA9000190C1 /* DESEncryption.m in Sources */,
 				2BA025341F2AE470003EB25D /* SRCustomTabBarView.m in Sources */,
 				2B3870351F29BC0C00228620 /* NSString+SRDoc.m in Sources */,
 				2B3870361F29BC0C00228620 /* NSString+SRString.m in Sources */,
@@ -720,6 +749,7 @@
 				2B90F8AC1F2F21C700698C38 /* AppProductMainCellView.m in Sources */,
 				2B38703D1F29BC0C00228620 /* NSArray+ ZXPUnicode.m in Sources */,
 				2BA0254F1F2B0D57003EB25D /* CustomPageView.m in Sources */,
+				2BA8DAB61F319BCE000190C1 /* GTMBase64.m in Sources */,
 				2B38703E1F29BC0C00228620 /* NSDictionary+ZXPUnicode.m in Sources */,
 				2B90F8941F2EC86200698C38 /* CustomScrollSelectView.m in Sources */,
 				2BA025551F2B2A15003EB25D /* RecommendProductView.m in Sources */,
