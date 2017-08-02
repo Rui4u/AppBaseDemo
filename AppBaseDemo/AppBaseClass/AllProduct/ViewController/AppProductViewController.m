@@ -13,6 +13,7 @@
 #import "AppProdcutSelectSpecificationCell.h"
 #import "AppProductMainCellView.h"
 #import "AppProductModel.h"
+#import "LoginViewRootController.h"
 
 @interface AppProductViewController ()<UITableViewDelegate,UITableViewDataSource,AppProductMainCellViewDelegate>
 /**
@@ -64,6 +65,8 @@
 }
 - (void)didselectedMonthForRequestCommissionData {
 	NSLog(@"左侧请求");
+	LoginViewRootController * loginViewRootController = [[LoginViewRootController alloc] init];
+	[self presentViewController:loginViewRootController animated:YES completion:nil];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

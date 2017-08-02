@@ -161,8 +161,8 @@
     // 更改文字大小
     selectAtts[NSFontAttributeName]=[UIFont systemFontOfSize:12];
     // 更改文字颜色
-    selectAtts[NSForegroundColorAttributeName] = [UIColor colorWithHexString:MAIN_BLUE_COLOR];
-    
+	selectAtts[NSForegroundColorAttributeName] = MAIN_GREEN_COLOR;
+	
     
     
     self.homeViewController = [[HomeViewController alloc] init];

@@ -9,6 +9,7 @@
 #import "HomeViewController.h"
 #import "HomeTopView.h"
 #import "SelectTypeView.h"
+#import "LoginViewRootController.h"
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic ,strong ) HomeTopView * topView;
 @property (nonatomic ,strong ) SelectTypeView * selectTypeView;
@@ -36,7 +37,11 @@
     [self initNavBarView:NAV_BAR_TYPE_ROOT_VIEW];
     self.navBarView.alpha = 0;
 
+}
+- (void)viewDidAppear:(BOOL)animated {
+	[super viewDidAppear:animated];
 	
+
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 

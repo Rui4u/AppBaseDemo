@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "RootViewController.h"
 #import "DESEncryption.h"
+#import "LoginViewRootController.h"
 @interface AppDelegate ()
 
 @end
@@ -20,9 +21,11 @@
 	// Override point for customization after application launch.
 	RootViewController* rootViewController = [[RootViewController alloc] init];
 	
-	NSString * handlerDESEncryStr = [DESEncryption TripleDES:@"WkhyUUk3THRKRklDeCtIOE1BRlhXSXpyU1NqaVJoUWVlUTJ1LytUSmgwST0="
-											encryptOrDecrypt:(CCAlgorithm)kCCDecrypt key:@"guoshuguoshu"];
-	NSLog(@"%@",handlerDESEncryStr);
+//	NSString * handlerDESEncryStr = [DESEncryption TripleDES:@"cLl5hzUAYfhIzipp2okbMhBSGzxvDSP3H0a0cuo2G70="
+//											encryptOrDecrypt:(CCAlgorithm)kCCDecrypt key:@"guoshuguoshu"];
+//	NSLog(@"%@",handlerDESEncryStr);
+	
+	
 	self.rootViewController = rootViewController;
 	
 	self.navgationController  = [[CustomNavigationController alloc] initWithRootViewController:rootViewController];
@@ -36,6 +39,7 @@
 	self.navgationController.navigationBar.hidden = YES;
 	[self.window makeKeyAndVisible];
 
+	
 	return YES;
 }
 

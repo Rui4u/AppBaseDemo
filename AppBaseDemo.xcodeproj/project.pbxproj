@@ -56,6 +56,12 @@
 		2BA025551F2B2A15003EB25D /* RecommendProductView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA025541F2B2A15003EB25D /* RecommendProductView.m */; };
 		2BA8DAB11F319BA9000190C1 /* DESEncryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA8DAB01F319BA9000190C1 /* DESEncryption.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		2BA8DAB61F319BCE000190C1 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA8DAB41F319BCE000190C1 /* GTMBase64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -Wno-shorten-64-to-32"; }; };
+		2BC14D8B1F31AE2D00919808 /* LoginViewRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BC14D8A1F31AE2D00919808 /* LoginViewRootController.m */; };
+		2BC14D8F1F31AE5800919808 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BC14D8D1F31AE5800919808 /* LoginViewController.m */; };
+		2BC14D901F31AE5800919808 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BC14D8E1F31AE5800919808 /* LoginViewController.xib */; };
+		2BC14D941F31AE9C00919808 /* CommonNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BC14D931F31AE9C00919808 /* CommonNotification.m */; };
+		2BC14D981F31B64B00919808 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BC14D961F31B64B00919808 /* RegisterViewController.m */; };
+		2BC14D991F31B64B00919808 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BC14D971F31B64B00919808 /* RegisterViewController.xib */; };
 		65403DF437BA47C28C5B3CF7 /* libPods-AppBaseDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0152959586DFB41568D4F5C /* libPods-AppBaseDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -177,6 +183,16 @@
 		2BA8DAB31F319BCE000190C1 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
 		2BA8DAB41F319BCE000190C1 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
 		2BA8DAB51F319BCE000190C1 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		2BC14D891F31AE2D00919808 /* LoginViewRootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewRootController.h; sourceTree = "<group>"; };
+		2BC14D8A1F31AE2D00919808 /* LoginViewRootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewRootController.m; sourceTree = "<group>"; };
+		2BC14D8C1F31AE5800919808 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		2BC14D8D1F31AE5800919808 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		2BC14D8E1F31AE5800919808 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		2BC14D921F31AE9C00919808 /* CommonNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonNotification.h; sourceTree = "<group>"; };
+		2BC14D931F31AE9C00919808 /* CommonNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonNotification.m; sourceTree = "<group>"; };
+		2BC14D951F31B64B00919808 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		2BC14D961F31B64B00919808 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		2BC14D971F31B64B00919808 /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
 		C0152959586DFB41568D4F5C /* libPods-AppBaseDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppBaseDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9138079B95F4444D4017C4A /* Pods-AppBaseDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppBaseDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppBaseDemo/Pods-AppBaseDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		FC3237A11D175D8A56FDA2A8 /* Pods-AppBaseDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppBaseDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppBaseDemo/Pods-AppBaseDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -385,6 +401,7 @@
 		2BA025131F2AD85E003EB25D /* AppBaseTools */ = {
 			isa = PBXGroup;
 			children = (
+				2BC14D911F31AE9C00919808 /* CommonNotification */,
 				2BA8DAB21F319BCE000190C1 /* GTMBase64 */,
 				2BA8DAAE1F319BA9000190C1 /* DESEncryption */,
 				2BA025381F2B0658003EB25D /* SRNetWorkClient */,
@@ -433,6 +450,7 @@
 		2BA0253C1F2B0682003EB25D /* AppBaseClass */ = {
 			isa = PBXGroup;
 			children = (
+				2BC14D851F31ADEB00919808 /* Login */,
 				2B90F8A01F2F0E4F00698C38 /* AllProduct */,
 				2BA025431F2B0C09003EB25D /* Home */,
 				2BA0253D1F2B06AD003EB25D /* RootViewController.h */,
@@ -506,6 +524,54 @@
 				2BA8DAB51F319BCE000190C1 /* GTMDefines.h */,
 			);
 			path = GTMBase64;
+			sourceTree = "<group>";
+		};
+		2BC14D851F31ADEB00919808 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				2BC14D861F31ADEB00919808 /* Model */,
+				2BC14D871F31ADEB00919808 /* View */,
+				2BC14D881F31ADEB00919808 /* ViewController */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		2BC14D861F31ADEB00919808 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2BC14D871F31ADEB00919808 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2BC14D881F31ADEB00919808 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2BC14D891F31AE2D00919808 /* LoginViewRootController.h */,
+				2BC14D8A1F31AE2D00919808 /* LoginViewRootController.m */,
+				2BC14D8C1F31AE5800919808 /* LoginViewController.h */,
+				2BC14D8D1F31AE5800919808 /* LoginViewController.m */,
+				2BC14D8E1F31AE5800919808 /* LoginViewController.xib */,
+				2BC14D951F31B64B00919808 /* RegisterViewController.h */,
+				2BC14D961F31B64B00919808 /* RegisterViewController.m */,
+				2BC14D971F31B64B00919808 /* RegisterViewController.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		2BC14D911F31AE9C00919808 /* CommonNotification */ = {
+			isa = PBXGroup;
+			children = (
+				2BC14D921F31AE9C00919808 /* CommonNotification.h */,
+				2BC14D931F31AE9C00919808 /* CommonNotification.m */,
+			);
+			path = CommonNotification;
 			sourceTree = "<group>";
 		};
 		5BA30CE97002972E8C43090A /* Pods */ = {
@@ -639,7 +705,9 @@
 				2B386F891F29B69A00228620 /* Assets.xcassets in Resources */,
 				2B3AE0CF1F3020F400DE03B0 /* AppProdcutSelectSpecificationCell.xib in Resources */,
 				2B90F8AE1F2F21CE00698C38 /* AppProductMainCellView.xib in Resources */,
+				2BC14D901F31AE5800919808 /* LoginViewController.xib in Resources */,
 				2B386F841F29B69A00228620 /* Main.storyboard in Resources */,
+				2BC14D991F31B64B00919808 /* RegisterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -718,6 +786,7 @@
 				2B3870351F29BC0C00228620 /* NSString+SRDoc.m in Sources */,
 				2B3870361F29BC0C00228620 /* NSString+SRString.m in Sources */,
 				2B38703A1F29BC0C00228620 /* UILabel+SRUILabel.m in Sources */,
+				2BC14D8B1F31AE2D00919808 /* LoginViewRootController.m in Sources */,
 				2B3870371F29BC0C00228620 /* UIButton+SRButton.m in Sources */,
 				2BA025171F2AD86B003EB25D /* TipLabel.m in Sources */,
 				2B3870381F29BC0C00228620 /* UIColor+SRColor.m in Sources */,
@@ -731,6 +800,7 @@
 				2B386F7E1F29B69A00228620 /* AppDelegate.m in Sources */,
 				2B3AE0D21F304C2D00DE03B0 /* AppProductModel.m in Sources */,
 				2BA025311F2AE470003EB25D /* CustomNavBarView.m in Sources */,
+				2BC14D8F1F31AE5800919808 /* LoginViewController.m in Sources */,
 				2B90F8B11F2F25A500698C38 /* AppProductMainCell.m in Sources */,
 				2B3870391F29BC0C00228620 /* UIImage+SRImage.m in Sources */,
 				2BA0253F1F2B06AD003EB25D /* RootViewController.m in Sources */,
@@ -741,6 +811,7 @@
 				2BA025321F2AE470003EB25D /* CustomNavigationController.m in Sources */,
 				2B90F8A61F2F0E9B00698C38 /* AppProductViewController.m in Sources */,
 				2BA0254C1F2B0C32003EB25D /* TopAdvertisementView.m in Sources */,
+				2BC14D941F31AE9C00919808 /* CommonNotification.m in Sources */,
 				2BA025331F2AE470003EB25D /* SRCustomTabBarController.m in Sources */,
 				2B386F7B1F29B69A00228620 /* main.m in Sources */,
 				2B3870341F29BC0C00228620 /* NSMutableAttributedString+SRSpecial.m in Sources */,
@@ -749,6 +820,7 @@
 				2B90F8AC1F2F21C700698C38 /* AppProductMainCellView.m in Sources */,
 				2B38703D1F29BC0C00228620 /* NSArray+ ZXPUnicode.m in Sources */,
 				2BA0254F1F2B0D57003EB25D /* CustomPageView.m in Sources */,
+				2BC14D981F31B64B00919808 /* RegisterViewController.m in Sources */,
 				2BA8DAB61F319BCE000190C1 /* GTMBase64.m in Sources */,
 				2B38703E1F29BC0C00228620 /* NSDictionary+ZXPUnicode.m in Sources */,
 				2B90F8941F2EC86200698C38 /* CustomScrollSelectView.m in Sources */,

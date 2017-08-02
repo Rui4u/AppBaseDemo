@@ -28,10 +28,10 @@
 #define COLOR_RGBA(r,g,b,a) [UIColor colorWithRed:(r/255.0f) green:(g/255.0f) blue:(b/255.0f) alpha:a]
 #define kPLRGB_16(rgbValue)     [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
-#define MAIN_GRAY_COLOR COLOR_RGBA(152,152,152,1) //主色调-灰色
-#define MAIN_BLUE_COLOR @"3dadf4" //主色调-蓝色
-#define MAIN_ORANGE_COLOR COLOR_RGBA(247,175,1,1) //主色调-橘黄色
-#define MAIN_BLACK_COLOR COLOR_RGBA(54,54,54,1) //主色调-黑色
+
+
+#define MAIN_GREEN_COLOR COLOR_RGBA(34,188,35,1)  //绿色
+
 #define MAIN_RED_COLOR @"#d43c33"
 
 #pragma mark - 依据屏幕绝对高度判断机型
