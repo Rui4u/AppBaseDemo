@@ -57,6 +57,7 @@
 		2BA025551F2B2A15003EB25D /* RecommendProductView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA025541F2B2A15003EB25D /* RecommendProductView.m */; };
 		2BA8DAB11F319BA9000190C1 /* DESEncryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA8DAB01F319BA9000190C1 /* DESEncryption.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		2BA8DAB61F319BCE000190C1 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA8DAB41F319BCE000190C1 /* GTMBase64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -Wno-shorten-64-to-32"; }; };
+		2BAFB5121F333054001236B8 /* GetCityListBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BAFB5111F333054001236B8 /* GetCityListBusiness.m */; };
 		2BBFAFEB1F32F38C002506D1 /* SelectLocation.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 2BBFAFE91F32F38C002506D1 /* SelectLocation.geojson */; };
 		2BBFAFEF1F32F4B0002506D1 /* NSDictionary+SRExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBFAFEE1F32F4B0002506D1 /* NSDictionary+SRExtension.m */; };
 		2BBFAFF51F330181002506D1 /* RegisterBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBFAFF41F330181002506D1 /* RegisterBusiness.m */; };
@@ -204,6 +205,8 @@
 		2BA8DAB31F319BCE000190C1 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
 		2BA8DAB41F319BCE000190C1 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
 		2BA8DAB51F319BCE000190C1 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		2BAFB5101F333054001236B8 /* GetCityListBusiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetCityListBusiness.h; sourceTree = "<group>"; };
+		2BAFB5111F333054001236B8 /* GetCityListBusiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetCityListBusiness.m; sourceTree = "<group>"; };
 		2BBFAFE91F32F38C002506D1 /* SelectLocation.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SelectLocation.geojson; sourceTree = "<group>"; };
 		2BBFAFED1F32F4B0002506D1 /* NSDictionary+SRExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+SRExtension.h"; sourceTree = "<group>"; };
 		2BBFAFEE1F32F4B0002506D1 /* NSDictionary+SRExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+SRExtension.m"; sourceTree = "<group>"; };
@@ -692,6 +695,8 @@
 				2BBFAFF41F330181002506D1 /* RegisterBusiness.m */,
 				2BBFAFFD1F330AE8002506D1 /* LoginBusiness.h */,
 				2BBFAFFE1F330AE8002506D1 /* LoginBusiness.m */,
+				2BAFB5101F333054001236B8 /* GetCityListBusiness.h */,
+				2BAFB5111F333054001236B8 /* GetCityListBusiness.m */,
 			);
 			path = Bussiness;
 			sourceTree = "<group>";
@@ -920,6 +925,7 @@
 				2B3870381F29BC0C00228620 /* UIColor+SRColor.m in Sources */,
 				2BBFAFFB1F3301F6002506D1 /* Parser.m in Sources */,
 				2B90F8971F2ECFF100698C38 /* SelectTypeView.m in Sources */,
+				2BAFB5121F333054001236B8 /* GetCityListBusiness.m in Sources */,
 				2B386F871F29B69A00228620 /* AppBaseDemo.xcdatamodeld in Sources */,
 				2BBFAFEF1F32F4B0002506D1 /* NSDictionary+SRExtension.m in Sources */,
 				2B90F8A91F2F124200698C38 /* AppProductViewControllerLeftCell.m in Sources */,

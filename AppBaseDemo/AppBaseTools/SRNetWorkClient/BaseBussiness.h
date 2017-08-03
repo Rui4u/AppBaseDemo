@@ -21,8 +21,11 @@
 
 
 //注册
-#define kRegisterBusinessUrl                 [NSString stringWithFormat :@"%@//gs/store/insert?",kHTTP_HOST_URL]
-#define kLoginBusinessUrl                 [NSString stringWithFormat :@"%@//gs/store/login?",kHTTP_HOST_URL]
+#define kRegisterBusinessUrl                 [NSString stringWithFormat :@"%@/gs/store/insert?",kHTTP_HOST_URL]
+//登录
+#define kLoginBusinessUrl                 [NSString stringWithFormat :@"%@/gs/store/login?",kHTTP_HOST_URL]
+//开通城市列表
+#define kCityListBusinessUrl                 [NSString stringWithFormat :@"%@/gs/city/listAPI?",kHTTP_HOST_URL]
 
 
 NS_ASSUME_NONNULL_BEGIN

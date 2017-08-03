@@ -29,6 +29,8 @@
 
 #pragma mark - token值
 #define TOKEN    (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]
+#pragma mark - 是否完善信息 1 完善0 未完善
+#define IsFinish    (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:@"isFinish"]
 
 #pragma mark - 一次性全部清除 UserDefaults中存储的数据
 #define clearUserDefaults()\

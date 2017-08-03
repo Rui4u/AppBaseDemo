@@ -9,14 +9,14 @@
 #import "BaseBussiness.h"
 
 
-typedef void (^LoginBusinessSuccessBlock)(BOOL sucessFlag);
+typedef void (^LoginBusinessSuccessBlock)(BOOL isFinishInfo);
 typedef void (^LoginBusinessFailBlock) (NSString * failMessage);
 typedef void (^LoginBusinessErrorBlcok)(NSString * netWorkErrorMessage);
 
 /**
  注册接口
  */
-@interface LoginBusiness : NSObject
+@interface LoginBusiness : BaseNetWorkClient
 
 
 /**

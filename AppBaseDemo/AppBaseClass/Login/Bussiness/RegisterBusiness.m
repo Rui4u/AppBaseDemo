@@ -7,7 +7,6 @@
 //
 
 #import "RegisterBusiness.h"
-#import "BaseNetWorkClient.h"
 @implementation RegisterBusiness
 
 + (void) registerWithStoreTelephone : (NSString * ) storeTelephone

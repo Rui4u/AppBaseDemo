@@ -8,6 +8,7 @@
 
 #import "BaseBussiness.h"
 
+
 typedef void (^RegisterSuccessBlock)(BOOL sucessFlag);
 typedef void (^RegisterFailBlock) (NSString * failMessage);
 typedef void (^RegisterErrorBlcok)(NSString * netWorkErrorMessage);
@@ -15,7 +16,7 @@ typedef void (^RegisterErrorBlcok)(NSString * netWorkErrorMessage);
 /**
  注册接口
  */
-@interface RegisterBusiness : NSObject
+@interface RegisterBusiness : BaseNetWorkClient
 
 
 /**

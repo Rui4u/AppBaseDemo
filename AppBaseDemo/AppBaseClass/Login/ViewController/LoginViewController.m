@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "RegisterViewController.h"
 #import "LoginBusiness.h"
+#import "SelectLocationViewController.h"
 @interface LoginViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumberTextField;
 @property (weak, nonatomic) IBOutlet UITextField *userPwdTextField;
@@ -20,7 +21,14 @@
 - (IBAction)clickLoginButton:(UIButton *)sender {
     
     NSLog(@"点击登录");
-    [LoginBusiness loginWithStoreTelephone:self.phoneNumberTextField.text storePwd:self.userPwdTextField.text completionSuccessHandler:^(BOOL sucessFlag) {
+    [LoginBusiness loginWithStoreTelephone:self.phoneNumberTextField.text storePwd:self.userPwdTextField.text completionSuccessHandler:^(BOOL isFinishInfo) {
+        
+    
+        if (isFinishInfo == NO) {
+            SelectLocationViewController * selectLocationViewController= [[SelectLocationViewController alloc] init];
+            [self.navigationController pushViewController:selectLocationViewController animated:YES];
+        }
+        
         
     } completionFailHandler:^(NSString *failMessage) {
         [self showToastWithMessage:failMessage showTime:1];
@@ -46,6 +54,12 @@
     [self.phoneNumberTextField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     [self.userPwdTextField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     self.userPwdTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    
+    //已登录 为注册店铺 直接跳转
+    if ((!isNotLogin) && [IsFinish isEqualToString:@"0"]) {
+        SelectLocationViewController * selectLocationViewController= [[SelectLocationViewController alloc] init];
+        [self.navigationController pushViewController:selectLocationViewController animated:NO];
+    }
 }
 - (void)textFieldDidChange:(UITextField *)textFiled {
 

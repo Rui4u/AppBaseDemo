@@ -8,6 +8,7 @@
 
 #import "SelectLocationViewController.h"
 #import "Parser.h"
+#import "GetCityListBusiness.h"
 @interface SelectLocationViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic ,strong ) UITableView * mainTableView;
 @property (nonatomic ,strong ) NSArray *dataSourse;
@@ -24,8 +25,18 @@
     NSString *parseJason = [[NSString alloc] initWithContentsOfFile:strPath encoding:NSUTF8StringEncoding error:nil];
 
     NSDictionary * dict = [NSDictionary translateDictionaryForjsonString:parseJason];
-    self.dataSourse = [dict objectForKey:@"locationList"];
+    self.dataSourse = [dict objectForKey:@"cityList"];
     [self.mainTableView reloadData];
+    
+//    
+//    [GetCityListBusiness requestGetCityListWithToken:TOKEN completionSuccessHandler:^(NSArray *listArray) {
+//        self.dataSourse = listArray;
+//        [self.mainTableView reloadData];
+//    } completionFailHandler:^(NSString *failMessage) {
+//        [self showToastWithMessage:failMessage showTime:1];
+//    } completionError:^(NSString *netWorkErrorMessage) {
+//        [self showToastWithMessage:netWorkErrorMessage showTime:1];
+//    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,7 +65,7 @@
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:UITableViewCellID];
         }
         
-        cell.textLabel.text = @"13";
+    cell.textLabel.text = [[self.dataSourse[indexPath.section] objectForKey:@"info"] [indexPath.row] objectForKey:@"cityCaption"];
         cell.selectionStyle = UITableViewCellSelectionStyleGray;
         return cell;
         
@@ -62,7 +73,7 @@
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    UILabel * label = [UILabel creatLabelWithText:@"12" FontOfSize:14 textColor:@"333333"];
+    UILabel * label = [UILabel creatLabelWithText:[self.dataSourse[section] valueForKey:@"name"] FontOfSize:14 textColor:@"333333"];
     return label;
     
 }
@@ -86,8 +97,6 @@
         _mainTableView.delegate = self;
         _mainTableView.dataSource = self;
         _mainTableView.backgroundColor = [UIColor colorWithHexString:@"eeeeee"];
-        _mainTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        
     }
     
     return _mainTableView;
