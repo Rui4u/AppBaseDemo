@@ -9,4 +9,5 @@ pod 'SDWebImage', '~> 4.0'
 
 pod 'MJRefresh'
 pod 'Masonry'
+pod 'BaiduMapKit'
 end
