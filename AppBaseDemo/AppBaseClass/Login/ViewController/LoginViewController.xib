@@ -86,7 +86,7 @@
                         <constraint firstItem="gJd-Xt-hzM" firstAttribute="top" secondItem="Fdk-wh-jn8" secondAttribute="top" constant="15" id="ur7-Cc-yfh"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJw-7e-6z7">
+                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJw-7e-6z7">
                     <rect key="frame" x="15" y="160" width="570" height="44"/>
                     <color key="backgroundColor" red="0.85537822850203071" green="0.85163376655911371" blue="0.85632138324873097" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>

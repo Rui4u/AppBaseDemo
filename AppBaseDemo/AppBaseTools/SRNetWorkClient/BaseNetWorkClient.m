@@ -60,7 +60,7 @@
         BLOCK_SAFE_RUN(handlerSuccess ,[resquest objectForKey:@"body"]);
 
     }else {
-        BLOCK_SAFE_RUN(handlerException ,[resquest objectForKey:[[resquest valueForKey:@"header"]valueForKey:@"errorMsg"]]);
+        BLOCK_SAFE_RUN(handlerException,[[resquest valueForKey:@"header"] valueForKey:@"errorMsg"]);
     }
 
 

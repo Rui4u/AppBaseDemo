@@ -22,9 +22,10 @@
 - (IBAction)clickGetVerificationCoderButton:(UIButton *)sender {
     NSLog(@"获取验证码");
 }
+
 - (IBAction)clickRegisterButton:(UIButton *)sender {
     NSLog(@"注册");
-    
+
     
     
     [RegisterBusiness registerWithStoreTelephone:self.phoneNumber.text

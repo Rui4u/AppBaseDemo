@@ -23,9 +23,9 @@
     [LoginBusiness loginWithStoreTelephone:self.phoneNumberTextField.text storePwd:self.userPwdTextField.text completionSuccessHandler:^(BOOL sucessFlag) {
         
     } completionFailHandler:^(NSString *failMessage) {
-        
+        [self showToastWithMessage:failMessage showTime:1];
     } completionError:^(NSString *netWorkErrorMessage) {
-        
+        [self showToastWithMessage:netWorkErrorMessage showTime:1];
     }];
 }
 
@@ -45,20 +45,27 @@
 
     [self.phoneNumberTextField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     [self.userPwdTextField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
-
+    self.userPwdTextField.clearButtonMode = UITextFieldViewModeUnlessEditing;
 }
 - (void)textFieldDidChange:(UITextField *)textFiled {
 
     if ([self.phoneNumberTextField.text isEqualToString:@""]|| [self.userPwdTextField.text isEqualToString:@""]) {
         
         [self.loginButton setBackgroundColor:[UIColor lightGrayColor]];
+        self.loginButton.enabled = NO;
     }else {
         [self.loginButton setBackgroundColor:MAIN_GREEN_COLOR];
+        self.loginButton.enabled = YES;
     }
 
 
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.phoneNumberTextField resignFirstResponder];
+    [self.userPwdTextField resignFirstResponder];
+
+}
 - (void)clickRegisterButton {
 	RegisterViewController * registerViewController = [[RegisterViewController alloc] init];
 	[self.navigationController pushViewController:registerViewController animated:YES];
