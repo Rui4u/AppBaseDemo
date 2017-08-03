@@ -45,7 +45,7 @@
 
     [self.phoneNumberTextField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     [self.userPwdTextField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
-    self.userPwdTextField.clearButtonMode = UITextFieldViewModeUnlessEditing;
+    self.userPwdTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
 }
 - (void)textFieldDidChange:(UITextField *)textFiled {
 
