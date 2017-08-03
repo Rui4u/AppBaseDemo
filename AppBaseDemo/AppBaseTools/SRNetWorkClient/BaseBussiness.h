@@ -22,6 +22,8 @@
 
 //注册
 #define kRegisterBusinessUrl                 [NSString stringWithFormat :@"%@//gs/store/insert?",kHTTP_HOST_URL]
+#define kLoginBusinessUrl                 [NSString stringWithFormat :@"%@//gs/store/login?",kHTTP_HOST_URL]
+
 
 NS_ASSUME_NONNULL_BEGIN
 typedef void (^netWorkFailBlock)(NSString * netWorkMeeage);

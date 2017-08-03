@@ -14,4 +14,6 @@
 							success : (void(^)(id))        success
 				   operationFailure : (void(^)(NSString * ))  operationFailure
 							failure : (void(^)(NSError *)) failure;
+
+#define BLOCK_SAFE_RUN(block, ...) block ? block(__VA_ARGS__) : nil;
 @end

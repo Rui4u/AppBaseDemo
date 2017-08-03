@@ -1,0 +1,119 @@
+{
+    "locationList": [
+                    {
+                    "info" : [
+                              {
+                              "adCode" : "110107",
+                              "cityAttribute" : "3",
+                              "cityCaption" : "石景山区",
+                              "cityCode" : "010",
+                              "cityDesc" : "石景山区",
+                              "cityOrder" : 7,
+                              "cityState" : 1,
+                              "parentCode" : "110000",
+                              "parentLevel" : 1
+                              },
+                              {
+                              "adCode" : "110108",
+                              "cityAttribute" : "3",
+                              "cityCaption" : "海淀区",
+                              "cityCode" : "010",
+                              "cityDesc" : "海淀区",
+                              "cityOrder" : 8,
+                              "cityState" : 1,
+                              "parentCode" : "110000",
+                              "parentLevel" : 1
+                              },
+                              {
+                              "adCode" : "110109",
+                              "cityAttribute" : "3",
+                              "cityCaption" : "门头沟区",
+                              "cityCode" : "010",
+                              "cityDesc" : "门头沟区",
+                              "cityOrder" : 9,
+                              "cityState" : 1,
+                              "parentCode" : "110000",
+                              "parentLevel" : 1
+                              }
+                              ],
+                    "name" : "热门"
+                    },
+                    {
+                    "info" : [
+                              {
+                              "adCode" : "110107",
+                              "cityAttribute" : "3",
+                              "cityCaption" : "石景山区",
+                              "cityCode" : "010",
+                              "cityDesc" : "石景山区",
+                              "cityOrder" : 7,
+                              "cityState" : 1,
+                              "parentCode" : "110000",
+                              "parentLevel" : 1
+                              },
+                              {
+                              "adCode" : "110108",
+                              "cityAttribute" : "3",
+                              "cityCaption" : "海淀区",
+                              "cityCode" : "010",
+                              "cityDesc" : "海淀区",
+                              "cityOrder" : 8,
+                              "cityState" : 1,
+                              "parentCode" : "110000",
+                              "parentLevel" : 1
+                              },
+                              {
+                              "adCode" : "110109",
+                              "cityAttribute" : "3",
+                              "cityCaption" : "门头沟区",
+                              "cityCode" : "010",
+                              "cityDesc" : "门头沟区",
+                              "cityOrder" : 9,
+                              "cityState" : 1,
+                              "parentCode" : "110000",
+                              "parentLevel" : 1
+                              }
+                              ],
+                    "name" : "A"
+                    },
+                    {
+                    "info" : [
+                              {
+                              "adCode" : "110107",
+                              "cityAttribute" : "3",
+                              "cityCaption" : "石景山区",
+                              "cityCode" : "010",
+                              "cityDesc" : "石景山区",
+                              "cityOrder" : 7,
+                              "cityState" : 1,
+                              "parentCode" : "110000",
+                              "parentLevel" : 1
+                              },
+                              {
+                              "adCode" : "110108",
+                              "cityAttribute" : "3",
+                              "cityCaption" : "海淀区",
+                              "cityCode" : "010",
+                              "cityDesc" : "海淀区",
+                              "cityOrder" : 8,
+                              "cityState" : 1,
+                              "parentCode" : "110000",
+                              "parentLevel" : 1
+                              },
+                              {
+                              "adCode" : "110109",
+                              "cityAttribute" : "3",
+                              "cityCaption" : "门头沟区",
+                              "cityCode" : "010",
+                              "cityDesc" : "门头沟区",
+                              "cityOrder" : 9,
+                              "cityState" : 1,
+                              "parentCode" : "110000",
+                              "parentLevel" : 1
+                              }
+                             ],
+                    "name" : "B"
+                        }
+                    ]
+}
+

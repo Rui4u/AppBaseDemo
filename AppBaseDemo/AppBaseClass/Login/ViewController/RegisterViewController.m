@@ -8,6 +8,7 @@
 
 #import "RegisterViewController.h"
 #import "RegisterBusiness.h"
+#import "SelectLocationViewController.h"
 @interface RegisterViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumber;
 @property (weak, nonatomic) IBOutlet UITextField *verificationCode;
@@ -24,11 +25,16 @@
 - (IBAction)clickRegisterButton:(UIButton *)sender {
     NSLog(@"注册");
     
+    
+    
     [RegisterBusiness registerWithStoreTelephone:self.phoneNumber.text
                                         storePwd:self.userPassword.text
                                 verificationCode:nil completionSuccessHandler:^(BOOL sucessFlag)
     {
         if (sucessFlag == YES) [self showToastWithMessage:@"注册成功" showTime:1];
+    
+        SelectLocationViewController * selectLocationViewController = [[SelectLocationViewController alloc] init];
+        [self.navigationController pushViewController:selectLocationViewController animated:YES];
         
     } completionFailHandler:^(NSString *failMessage) {
         [self showToastWithMessage:failMessage showTime:1];

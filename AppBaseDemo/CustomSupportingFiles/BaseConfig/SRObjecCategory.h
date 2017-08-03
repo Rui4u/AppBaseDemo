@@ -14,7 +14,7 @@
 #ifndef   SRObjecCategory_h
 #define   SRObjecCategory_h
 
-
+#import "NSDictionary+SRExtension.h"
 #import "NSString+SRString.h"
 #import "UITextField+SRTextField.h"
 #import "UIColor+SRColor.h"

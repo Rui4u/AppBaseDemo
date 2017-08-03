@@ -31,6 +31,7 @@
 		2B3AE0CE1F3020F400DE03B0 /* AppProdcutSelectSpecificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3AE0CC1F3020F400DE03B0 /* AppProdcutSelectSpecificationCell.m */; };
 		2B3AE0CF1F3020F400DE03B0 /* AppProdcutSelectSpecificationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B3AE0CD1F3020F400DE03B0 /* AppProdcutSelectSpecificationCell.xib */; };
 		2B3AE0D21F304C2D00DE03B0 /* AppProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3AE0D11F304C2D00DE03B0 /* AppProductModel.m */; };
+		2B8FD7F31F32CC6F00DAB9B9 /* SelectLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8FD7F21F32CC6F00DAB9B9 /* SelectLocationViewController.m */; };
 		2B90F8941F2EC86200698C38 /* CustomScrollSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B90F8931F2EC86200698C38 /* CustomScrollSelectView.m */; };
 		2B90F8971F2ECFF100698C38 /* SelectTypeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B90F8961F2ECFF100698C38 /* SelectTypeView.m */; };
 		2B90F8991F2ED5E800698C38 /* SelectViewTitle.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B90F8981F2ED5E800698C38 /* SelectViewTitle.xib */; };
@@ -56,6 +57,12 @@
 		2BA025551F2B2A15003EB25D /* RecommendProductView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA025541F2B2A15003EB25D /* RecommendProductView.m */; };
 		2BA8DAB11F319BA9000190C1 /* DESEncryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA8DAB01F319BA9000190C1 /* DESEncryption.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		2BA8DAB61F319BCE000190C1 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA8DAB41F319BCE000190C1 /* GTMBase64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -Wno-shorten-64-to-32"; }; };
+		2BBFAFEB1F32F38C002506D1 /* SelectLocation.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 2BBFAFE91F32F38C002506D1 /* SelectLocation.geojson */; };
+		2BBFAFEF1F32F4B0002506D1 /* NSDictionary+SRExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBFAFEE1F32F4B0002506D1 /* NSDictionary+SRExtension.m */; };
+		2BBFAFF51F330181002506D1 /* RegisterBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBFAFF41F330181002506D1 /* RegisterBusiness.m */; };
+		2BBFAFFB1F3301F6002506D1 /* Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBFAFF81F3301F6002506D1 /* Parser.m */; };
+		2BBFAFFC1F3301F6002506D1 /* ParserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBFAFFA1F3301F6002506D1 /* ParserManager.m */; };
+		2BBFAFFF1F330AE8002506D1 /* LoginBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBFAFFE1F330AE8002506D1 /* LoginBusiness.m */; };
 		2BC14D8B1F31AE2D00919808 /* LoginViewRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BC14D8A1F31AE2D00919808 /* LoginViewRootController.m */; };
 		2BC14D8F1F31AE5800919808 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BC14D8D1F31AE5800919808 /* LoginViewController.m */; };
 		2BC14D901F31AE5800919808 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BC14D8E1F31AE5800919808 /* LoginViewController.xib */; };
@@ -74,7 +81,6 @@
 		2BC14DC01F31CD3500919808 /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BC14DB21F31CD3500919808 /* SBJsonTokeniser.m */; };
 		2BC14DC11F31CD3500919808 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BC14DB41F31CD3500919808 /* SBJsonUTF8Stream.m */; };
 		2BC14DC21F31CD3500919808 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BC14DB61F31CD3500919808 /* SBJsonWriter.m */; };
-		2BC14DC61F31CDEF00919808 /* RegisterBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BC14DC51F31CDEF00919808 /* RegisterBusiness.m */; };
 		65403DF437BA47C28C5B3CF7 /* libPods-AppBaseDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0152959586DFB41568D4F5C /* libPods-AppBaseDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -146,6 +152,8 @@
 		2B3AE0CD1F3020F400DE03B0 /* AppProdcutSelectSpecificationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppProdcutSelectSpecificationCell.xib; sourceTree = "<group>"; };
 		2B3AE0D01F304C2D00DE03B0 /* AppProductModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppProductModel.h; sourceTree = "<group>"; };
 		2B3AE0D11F304C2D00DE03B0 /* AppProductModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppProductModel.m; sourceTree = "<group>"; };
+		2B8FD7F11F32CC6F00DAB9B9 /* SelectLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectLocationViewController.h; sourceTree = "<group>"; };
+		2B8FD7F21F32CC6F00DAB9B9 /* SelectLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectLocationViewController.m; sourceTree = "<group>"; };
 		2B90F8921F2EC86200698C38 /* CustomScrollSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomScrollSelectView.h; sourceTree = "<group>"; };
 		2B90F8931F2EC86200698C38 /* CustomScrollSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomScrollSelectView.m; sourceTree = "<group>"; };
 		2B90F8951F2ECFF100698C38 /* SelectTypeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectTypeView.h; sourceTree = "<group>"; };
@@ -196,6 +204,17 @@
 		2BA8DAB31F319BCE000190C1 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
 		2BA8DAB41F319BCE000190C1 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
 		2BA8DAB51F319BCE000190C1 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		2BBFAFE91F32F38C002506D1 /* SelectLocation.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SelectLocation.geojson; sourceTree = "<group>"; };
+		2BBFAFED1F32F4B0002506D1 /* NSDictionary+SRExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+SRExtension.h"; sourceTree = "<group>"; };
+		2BBFAFEE1F32F4B0002506D1 /* NSDictionary+SRExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+SRExtension.m"; sourceTree = "<group>"; };
+		2BBFAFF31F330181002506D1 /* RegisterBusiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterBusiness.h; sourceTree = "<group>"; };
+		2BBFAFF41F330181002506D1 /* RegisterBusiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterBusiness.m; sourceTree = "<group>"; };
+		2BBFAFF71F3301F6002506D1 /* Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parser.h; sourceTree = "<group>"; };
+		2BBFAFF81F3301F6002506D1 /* Parser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parser.m; sourceTree = "<group>"; };
+		2BBFAFF91F3301F6002506D1 /* ParserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParserManager.h; sourceTree = "<group>"; };
+		2BBFAFFA1F3301F6002506D1 /* ParserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParserManager.m; sourceTree = "<group>"; };
+		2BBFAFFD1F330AE8002506D1 /* LoginBusiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginBusiness.h; sourceTree = "<group>"; };
+		2BBFAFFE1F330AE8002506D1 /* LoginBusiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginBusiness.m; sourceTree = "<group>"; };
 		2BC14D891F31AE2D00919808 /* LoginViewRootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewRootController.h; sourceTree = "<group>"; };
 		2BC14D8A1F31AE2D00919808 /* LoginViewRootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewRootController.m; sourceTree = "<group>"; };
 		2BC14D8C1F31AE5800919808 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -231,8 +250,6 @@
 		2BC14DB41F31CD3500919808 /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonUTF8Stream.m; sourceTree = "<group>"; };
 		2BC14DB51F31CD3500919808 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		2BC14DB61F31CD3500919808 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
-		2BC14DC41F31CDEF00919808 /* RegisterBusiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterBusiness.h; sourceTree = "<group>"; };
-		2BC14DC51F31CDEF00919808 /* RegisterBusiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterBusiness.m; sourceTree = "<group>"; };
 		2BC14DC81F31D2CA00919808 /* BaseBussiness.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseBussiness.h; sourceTree = "<group>"; };
 		C0152959586DFB41568D4F5C /* libPods-AppBaseDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppBaseDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9138079B95F4444D4017C4A /* Pods-AppBaseDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppBaseDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppBaseDemo/Pods-AppBaseDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -366,6 +383,8 @@
 				2B3870251F29BC0C00228620 /* UIView+SRExtension.h */,
 				2B3870261F29BC0C00228620 /* UIView+SRExtension.m */,
 				2B3870271F29BC0C00228620 /* UnicodeCategory */,
+				2BBFAFED1F32F4B0002506D1 /* NSDictionary+SRExtension.h */,
+				2BBFAFEE1F32F4B0002506D1 /* NSDictionary+SRExtension.m */,
 			);
 			path = BaseCategory;
 			sourceTree = "<group>";
@@ -442,6 +461,7 @@
 		2BA025131F2AD85E003EB25D /* AppBaseTools */ = {
 			isa = PBXGroup;
 			children = (
+				2BBFAFF61F3301F6002506D1 /* BaseParse */,
 				2BC14D9D1F31CD3500919808 /* SBJSON */,
 				2BC14D911F31AE9C00919808 /* CommonNotification */,
 				2BA8DAB21F319BCE000190C1 /* GTMBase64 */,
@@ -569,31 +589,42 @@
 			path = GTMBase64;
 			sourceTree = "<group>";
 		};
-		2BC14D851F31ADEB00919808 /* Login */ = {
+		2BBFAFE81F32F38C002506D1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2BC14DC41F31CDEF00919808 /* RegisterBusiness.h */,
-				2BC14DC51F31CDEF00919808 /* RegisterBusiness.m */,
-				2BC14DC31F31CD8300919808 /* Bussiness */,
-				2BC14D861F31ADEB00919808 /* Model */,
-				2BC14D871F31ADEB00919808 /* View */,
-				2BC14D881F31ADEB00919808 /* ViewController */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		2BC14D861F31ADEB00919808 /* Model */ = {
-			isa = PBXGroup;
-			children = (
+				2BBFAFE91F32F38C002506D1 /* SelectLocation.geojson */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		2BC14D871F31ADEB00919808 /* View */ = {
+		2BBFAFEA1F32F38C002506D1 /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		2BBFAFF61F3301F6002506D1 /* BaseParse */ = {
+			isa = PBXGroup;
+			children = (
+				2BBFAFF71F3301F6002506D1 /* Parser.h */,
+				2BBFAFF81F3301F6002506D1 /* Parser.m */,
+				2BBFAFF91F3301F6002506D1 /* ParserManager.h */,
+				2BBFAFFA1F3301F6002506D1 /* ParserManager.m */,
+			);
+			name = BaseParse;
+			path = HZAgentParse;
+			sourceTree = "<group>";
+		};
+		2BC14D851F31ADEB00919808 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				2BBFAFE81F32F38C002506D1 /* Model */,
+				2BBFAFEA1F32F38C002506D1 /* View */,
+				2BC14DC31F31CD8300919808 /* Bussiness */,
+				2BC14D881F31ADEB00919808 /* ViewController */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		2BC14D881F31ADEB00919808 /* ViewController */ = {
@@ -607,6 +638,8 @@
 				2BC14D951F31B64B00919808 /* RegisterViewController.h */,
 				2BC14D961F31B64B00919808 /* RegisterViewController.m */,
 				2BC14D971F31B64B00919808 /* RegisterViewController.xib */,
+				2B8FD7F11F32CC6F00DAB9B9 /* SelectLocationViewController.h */,
+				2B8FD7F21F32CC6F00DAB9B9 /* SelectLocationViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -655,6 +688,10 @@
 		2BC14DC31F31CD8300919808 /* Bussiness */ = {
 			isa = PBXGroup;
 			children = (
+				2BBFAFF31F330181002506D1 /* RegisterBusiness.h */,
+				2BBFAFF41F330181002506D1 /* RegisterBusiness.m */,
+				2BBFAFFD1F330AE8002506D1 /* LoginBusiness.h */,
+				2BBFAFFE1F330AE8002506D1 /* LoginBusiness.m */,
 			);
 			path = Bussiness;
 			sourceTree = "<group>";
@@ -785,6 +822,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BBFAFEB1F32F38C002506D1 /* SelectLocation.geojson in Resources */,
 				2B386F8C1F29B69A00228620 /* LaunchScreen.storyboard in Resources */,
 				2B90F8991F2ED5E800698C38 /* SelectViewTitle.xib in Resources */,
 				2B386F891F29B69A00228620 /* Assets.xcassets in Resources */,
@@ -871,6 +909,7 @@
 				2BA025341F2AE470003EB25D /* SRCustomTabBarView.m in Sources */,
 				2B3870351F29BC0C00228620 /* NSString+SRDoc.m in Sources */,
 				2B3870361F29BC0C00228620 /* NSString+SRString.m in Sources */,
+				2B8FD7F31F32CC6F00DAB9B9 /* SelectLocationViewController.m in Sources */,
 				2B38703A1F29BC0C00228620 /* UILabel+SRUILabel.m in Sources */,
 				2BC14DC21F31CD3500919808 /* SBJsonWriter.m in Sources */,
 				2BC14DBD1F31CD3500919808 /* SBJsonStreamWriter.m in Sources */,
@@ -879,8 +918,10 @@
 				2BA025171F2AD86B003EB25D /* TipLabel.m in Sources */,
 				2BC14DB81F31CD3500919808 /* SBJsonParser.m in Sources */,
 				2B3870381F29BC0C00228620 /* UIColor+SRColor.m in Sources */,
+				2BBFAFFB1F3301F6002506D1 /* Parser.m in Sources */,
 				2B90F8971F2ECFF100698C38 /* SelectTypeView.m in Sources */,
 				2B386F871F29B69A00228620 /* AppBaseDemo.xcdatamodeld in Sources */,
+				2BBFAFEF1F32F4B0002506D1 /* NSDictionary+SRExtension.m in Sources */,
 				2B90F8A91F2F124200698C38 /* AppProductViewControllerLeftCell.m in Sources */,
 				2B3AE0CE1F3020F400DE03B0 /* AppProdcutSelectSpecificationCell.m in Sources */,
 				2BA025371F2B05E9003EB25D /* CustomViewController.m in Sources */,
@@ -909,15 +950,17 @@
 				2BC14DBA1F31CD3500919808 /* SBJsonStreamParserAccumulator.m in Sources */,
 				2BA025331F2AE470003EB25D /* SRCustomTabBarController.m in Sources */,
 				2B386F7B1F29B69A00228620 /* main.m in Sources */,
-				2BC14DC61F31CDEF00919808 /* RegisterBusiness.m in Sources */,
 				2B3870341F29BC0C00228620 /* NSMutableAttributedString+SRSpecial.m in Sources */,
 				2B38703C1F29BC0C00228620 /* UIView+SRExtension.m in Sources */,
 				2BA025491F2B0C09003EB25D /* HomeViewController.m in Sources */,
 				2B90F8AC1F2F21C700698C38 /* AppProductMainCellView.m in Sources */,
 				2BC14DB91F31CD3500919808 /* SBJsonStreamParser.m in Sources */,
 				2BC14DB71F31CD3500919808 /* NSObject+SBJson.m in Sources */,
+				2BBFAFF51F330181002506D1 /* RegisterBusiness.m in Sources */,
+				2BBFAFFF1F330AE8002506D1 /* LoginBusiness.m in Sources */,
 				2B38703D1F29BC0C00228620 /* NSArray+ ZXPUnicode.m in Sources */,
 				2BA0254F1F2B0D57003EB25D /* CustomPageView.m in Sources */,
+				2BBFAFFC1F3301F6002506D1 /* ParserManager.m in Sources */,
 				2BC14D981F31B64B00919808 /* RegisterViewController.m in Sources */,
 				2BA8DAB61F319BCE000190C1 /* GTMBase64.m in Sources */,
 				2B38703E1F29BC0C00228620 /* NSDictionary+ZXPUnicode.m in Sources */,

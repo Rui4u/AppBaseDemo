@@ -21,16 +21,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	// Override point for customization after application launch.
 	RootViewController* rootViewController = [[RootViewController alloc] init];
-	NSDictionary * param = @{@"storeTelephone":@"13552770525",
-							 @"storePwd":@"123456"};
-	
-	NSString * paramString = [param JSONRepresentation];
+    NSString *strPath = [[NSBundle mainBundle] pathForResource:@"SelectLocation" ofType:@"geojson"];
 
-	NSString * handlerDESEncryStr = [DESEncryption TripleDES:paramString
-											encryptOrDecrypt:(CCAlgorithm)kCCEncrypt key:@"guoshuguoshu"];
-	NSLog(@"%@",handlerDESEncryStr);
-	
-	
+    NSString *parseJason = [[NSString alloc] initWithContentsOfFile:strPath encoding:NSUTF8StringEncoding error:nil];
+
+    
+    NSDictionary *dict = [NSDictionary translateDictionaryForjsonString:parseJason];
+    
 	self.rootViewController = rootViewController;
 	
 	self.navgationController  = [[CustomNavigationController alloc] initWithRootViewController:rootViewController];

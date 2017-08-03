@@ -29,14 +29,40 @@
 	
 	NSString * handlerDESEncryStr = [DESEncryption TripleDES:paramString
 											encryptOrDecrypt:(CCAlgorithm)kCCEncrypt key:@"guoshuguoshu"];
+
+    
+    
+    
 	
 	NSDictionary * dict = @{@"params":handlerDESEncryStr};
 	[manager GET:url parameters:dict progress:^(NSProgress * _Nonnull downloadProgress) {
 		
 	} success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-		success([responseObject objectForKey:@"body"]);
+        
+        [BaseNetWorkClient  handlerRequest:(NSDictionary *)responseObject
+                                  succerss:success
+                          operationFailure:operationFailure
+                                   failure:failure
+                                       url:url];
+        
 	} failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
 		failure(error);
 	}];
+}
++ (void) handlerRequest : (id)                     resquest
+                       succerss : (void (^)(id JSON))      handlerSuccess
+               operationFailure : (void (^)(id JSON))      handlerException
+                        failure : (void (^)(NSError * err)) handlerFailure
+                            url : (NSString * ) url {
+
+    if ( [[[resquest valueForKey:@"header"]valueForKey:@"errorCode"] isEqualToString:@"200"]) {
+        
+        BLOCK_SAFE_RUN(handlerSuccess ,[resquest objectForKey:@"body"]);
+
+    }else {
+        BLOCK_SAFE_RUN(handlerException ,[resquest objectForKey:[[resquest valueForKey:@"header"]valueForKey:@"errorMsg"]]);
+    }
+
+
 }
 @end

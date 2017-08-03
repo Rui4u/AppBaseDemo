@@ -24,6 +24,11 @@
 #define iOS10Later ([UIDevice currentDevice].systemVersion.floatValue >= 10.0f)
 
 
+#pragma mark - 没有登录
+#define isNotLogin  ([(NSString *)[[NSUserDefaults standardUserDefaults]objectForKey:@"token"] isEqualToString:@""] ||(NSString *)[[NSUserDefaults standardUserDefaults]objectForKey:@"token"] == nil)
+
+#pragma mark - token值
+#define TOKEN    (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]
 
 #pragma mark - 一次性全部清除 UserDefaults中存储的数据
 #define clearUserDefaults()\

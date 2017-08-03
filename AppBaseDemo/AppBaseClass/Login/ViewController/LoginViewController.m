@@ -8,11 +8,26 @@
 
 #import "LoginViewController.h"
 #import "RegisterViewController.h"
-@interface LoginViewController ()
+#import "LoginBusiness.h"
+@interface LoginViewController ()<UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *phoneNumberTextField;
+@property (weak, nonatomic) IBOutlet UITextField *userPwdTextField;
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
 
 @end
 
 @implementation LoginViewController
+- (IBAction)clickLoginButton:(UIButton *)sender {
+    
+    NSLog(@"点击登录");
+    [LoginBusiness loginWithStoreTelephone:self.phoneNumberTextField.text storePwd:self.userPwdTextField.text completionSuccessHandler:^(BOOL sucessFlag) {
+        
+    } completionFailHandler:^(NSString *failMessage) {
+        
+    } completionError:^(NSString *netWorkErrorMessage) {
+        
+    }];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -27,8 +42,23 @@
 	[registerButton setTitleColor:MAIN_GREEN_COLOR forState:UIControlStateNormal];
 	[self.navBarView addSubview:registerButton];
 	
-	
+
+    [self.phoneNumberTextField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    [self.userPwdTextField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+
 }
+- (void)textFieldDidChange:(UITextField *)textFiled {
+
+    if ([self.phoneNumberTextField.text isEqualToString:@""]|| [self.userPwdTextField.text isEqualToString:@""]) {
+        
+        [self.loginButton setBackgroundColor:[UIColor lightGrayColor]];
+    }else {
+        [self.loginButton setBackgroundColor:MAIN_GREEN_COLOR];
+    }
+
+
+}
+
 - (void)clickRegisterButton {
 	RegisterViewController * registerViewController = [[RegisterViewController alloc] init];
 	[self.navigationController pushViewController:registerViewController animated:YES];

@@ -9,5 +9,4 @@ pod 'SDWebImage', '~> 4.0'
 
 pod 'MJRefresh'
 pod 'Masonry'
-pod 'SBJson5', '~> 5.0.0'
 end
