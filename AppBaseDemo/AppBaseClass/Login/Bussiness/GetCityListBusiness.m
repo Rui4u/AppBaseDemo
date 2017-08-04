@@ -7,10 +7,10 @@
 //
 
 #import "GetCityListBusiness.h"
-
+#import "SelectCityModel.h"
 @implementation GetCityListBusiness
 
-+ (void) requestGetCityListWithToken : (NSString * ) token
++ (void) requestGetCityListWithToken : (NSString* ) token
             completionSuccessHandler : (GetCityListSuccessBlock) completionHandler
                completionFailHandler : (GetCityListFailBlock) completionFailHandler
                      completionError : (GetCityListErrorBlcok) completionError
@@ -24,9 +24,10 @@
                                          success:^(id success)
      {
          NSDictionary * responeMp = (NSDictionary * ) success ;
+         SelectCityModel *result = [SelectCityModel mj_objectWithKeyValues:responeMp];
+
          
-         
-             completionHandler(responeMp);//注册成功
+             completionHandler(result);//注册成功
          
          
      } operationFailure:^(id failure) {

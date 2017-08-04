@@ -7,8 +7,8 @@
 //
 
 #import "BaseBussiness.h"
-
-typedef void (^GetCityListSuccessBlock)(NSArray * listArray);
+@class SelectCityModel;
+typedef void (^GetCityListSuccessBlock)(SelectCityModel * listArray);
 typedef void (^GetCityListFailBlock) (NSString * failMessage);
 typedef void (^GetCityListErrorBlcok)(NSString * netWorkErrorMessage);
 

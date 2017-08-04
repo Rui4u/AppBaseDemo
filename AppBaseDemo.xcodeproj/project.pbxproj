@@ -58,7 +58,9 @@
 		2BA8DAB11F319BA9000190C1 /* DESEncryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA8DAB01F319BA9000190C1 /* DESEncryption.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		2BA8DAB61F319BCE000190C1 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA8DAB41F319BCE000190C1 /* GTMBase64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -Wno-shorten-64-to-32"; }; };
 		2BAFB5121F333054001236B8 /* GetCityListBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BAFB5111F333054001236B8 /* GetCityListBusiness.m */; };
-		2BBFAFEB1F32F38C002506D1 /* SelectLocation.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 2BBFAFE91F32F38C002506D1 /* SelectLocation.geojson */; };
+		2BBDCC4E1F34AD86003FE167 /* HomeDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBDCC4D1F34AD86003FE167 /* HomeDataModel.m */; };
+		2BBDCC501F34B422003FE167 /* Directions.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 2BBDCC4F1F34B422003FE167 /* Directions.geojson */; };
+		2BBDCC561F34BC6B003FE167 /* SelectCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBDCC551F34BC6B003FE167 /* SelectCityModel.m */; };
 		2BBFAFEF1F32F4B0002506D1 /* NSDictionary+SRExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBFAFEE1F32F4B0002506D1 /* NSDictionary+SRExtension.m */; };
 		2BBFAFF51F330181002506D1 /* RegisterBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBFAFF41F330181002506D1 /* RegisterBusiness.m */; };
 		2BBFAFFB1F3301F6002506D1 /* Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBFAFF81F3301F6002506D1 /* Parser.m */; };
@@ -207,7 +209,11 @@
 		2BA8DAB51F319BCE000190C1 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
 		2BAFB5101F333054001236B8 /* GetCityListBusiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetCityListBusiness.h; sourceTree = "<group>"; };
 		2BAFB5111F333054001236B8 /* GetCityListBusiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetCityListBusiness.m; sourceTree = "<group>"; };
-		2BBFAFE91F32F38C002506D1 /* SelectLocation.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SelectLocation.geojson; sourceTree = "<group>"; };
+		2BBDCC4C1F34AD86003FE167 /* HomeDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeDataModel.h; sourceTree = "<group>"; };
+		2BBDCC4D1F34AD86003FE167 /* HomeDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeDataModel.m; sourceTree = "<group>"; };
+		2BBDCC4F1F34B422003FE167 /* Directions.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Directions.geojson; sourceTree = "<group>"; };
+		2BBDCC541F34BC6B003FE167 /* SelectCityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectCityModel.h; sourceTree = "<group>"; };
+		2BBDCC551F34BC6B003FE167 /* SelectCityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectCityModel.m; sourceTree = "<group>"; };
 		2BBFAFED1F32F4B0002506D1 /* NSDictionary+SRExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+SRExtension.h"; sourceTree = "<group>"; };
 		2BBFAFEE1F32F4B0002506D1 /* NSDictionary+SRExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+SRExtension.m"; sourceTree = "<group>"; };
 		2BBFAFF31F330181002506D1 /* RegisterBusiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterBusiness.h; sourceTree = "<group>"; };
@@ -538,6 +544,9 @@
 		2BA025441F2B0C09003EB25D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2BBDCC4F1F34B422003FE167 /* Directions.geojson */,
+				2BBDCC4C1F34AD86003FE167 /* HomeDataModel.h */,
+				2BBDCC4D1F34AD86003FE167 /* HomeDataModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -595,7 +604,8 @@
 		2BBFAFE81F32F38C002506D1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2BBFAFE91F32F38C002506D1 /* SelectLocation.geojson */,
+				2BBDCC541F34BC6B003FE167 /* SelectCityModel.h */,
+				2BBDCC551F34BC6B003FE167 /* SelectCityModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -827,7 +837,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BBFAFEB1F32F38C002506D1 /* SelectLocation.geojson in Resources */,
+				2BBDCC501F34B422003FE167 /* Directions.geojson in Resources */,
 				2B386F8C1F29B69A00228620 /* LaunchScreen.storyboard in Resources */,
 				2B90F8991F2ED5E800698C38 /* SelectViewTitle.xib in Resources */,
 				2B386F891F29B69A00228620 /* Assets.xcassets in Resources */,
@@ -940,6 +950,7 @@
 				2BA025311F2AE470003EB25D /* CustomNavBarView.m in Sources */,
 				2BC14D8F1F31AE5800919808 /* LoginViewController.m in Sources */,
 				2B90F8B11F2F25A500698C38 /* AppProductMainCell.m in Sources */,
+				2BBDCC561F34BC6B003FE167 /* SelectCityModel.m in Sources */,
 				2BC14DBF1F31CD3500919808 /* SBJsonStreamWriterState.m in Sources */,
 				2B3870391F29BC0C00228620 /* UIImage+SRImage.m in Sources */,
 				2BA0253F1F2B06AD003EB25D /* RootViewController.m in Sources */,
@@ -963,6 +974,7 @@
 				2BC14DB91F31CD3500919808 /* SBJsonStreamParser.m in Sources */,
 				2BC14DB71F31CD3500919808 /* NSObject+SBJson.m in Sources */,
 				2BBFAFF51F330181002506D1 /* RegisterBusiness.m in Sources */,
+				2BBDCC4E1F34AD86003FE167 /* HomeDataModel.m in Sources */,
 				2BBFAFFF1F330AE8002506D1 /* LoginBusiness.m in Sources */,
 				2B38703D1F29BC0C00228620 /* NSArray+ ZXPUnicode.m in Sources */,
 				2BA0254F1F2B0D57003EB25D /* CustomPageView.m in Sources */,

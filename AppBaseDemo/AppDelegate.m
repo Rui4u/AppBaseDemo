@@ -21,12 +21,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	// Override point for customization after application launch.
 	RootViewController* rootViewController = [[RootViewController alloc] init];
-    NSString *strPath = [[NSBundle mainBundle] pathForResource:@"SelectLocation" ofType:@"geojson"];
-
-    NSString *parseJason = [[NSString alloc] initWithContentsOfFile:strPath encoding:NSUTF8StringEncoding error:nil];
-
-    
-    NSDictionary *dict = [NSDictionary translateDictionaryForjsonString:parseJason];
     
 	self.rootViewController = rootViewController;
 	

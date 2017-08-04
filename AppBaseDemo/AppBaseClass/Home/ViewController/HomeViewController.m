@@ -10,6 +10,8 @@
 #import "HomeTopView.h"
 #import "SelectTypeView.h"
 #import "LoginViewRootController.h"
+#import <MJExtension.h>
+#import "HomeDataModel.h"
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic ,strong ) HomeTopView * topView;
 @property (nonatomic ,strong ) SelectTypeView * selectTypeView;
@@ -36,6 +38,14 @@
 	self.DraggingHeight = 20 ;
     [self initNavBarView:NAV_BAR_TYPE_ROOT_VIEW];
     self.navBarView.alpha = 0;
+    
+//    
+//    NSString *strPath = [[NSBundle mainBundle] pathForResource:@"Directions" ofType:@"geojson"];
+//    NSString *parseJason = [[NSString alloc] initWithContentsOfFile:strPath encoding:NSUTF8StringEncoding error:nil];
+//    
+//    NSDictionary * dict = [NSDictionary translateDictionaryForjsonString:parseJason];
+//
+//    HomeDataModel *result = [HomeDataModel mj_objectWithKeyValues:dict];
 
 }
 - (void)viewDidAppear:(BOOL)animated {

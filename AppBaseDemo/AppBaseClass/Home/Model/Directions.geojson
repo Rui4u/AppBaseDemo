@@ -1,0 +1,113 @@
+
+
+{
+    "body" : {
+        "bannerList" : [
+                        {
+                        "channelType" : 1,
+                        "detail" : "http://www.mianbaoyun.cn/h5-wap/activity/invite/not-login.html",
+                        "imageUrl" : "/resources/banner/invate_new_banner-3.png"
+                        },
+                        {
+                        "channelType" : 1,
+                        "detail" : "http://www.mianbaoyun.cn/h5-wap/activity/invite/not-login.html",
+                        "imageUrl" : "/resources/banner/invate_new_banner-3.png"
+                        },
+                        {
+                        "channelType" : 1,
+                        "detail" : "http://www.mianbaoyun.cn/h5-wap/activity/invite/not-login.html",
+                        "imageUrl" : "/resources/banner/invate_new_banner-3.png"
+                        }
+                        ],
+        "bottomBanner" : {
+            "channelType" : 1,
+            "detail" : "http://www.mianbaoyun.cn/h5-wap/activity/invite/not-login.html",
+            "imageUrl" : "/resources/banner/invate_new_banner-3.png"
+        },
+        "productInfoList" : [
+                         {
+                         "productList" : [
+                                          {
+                                          "companyName" : "德大",
+                                          "guige" : [
+                                                     {
+                                                     "averagePrice" : "￥2.4/斤",
+                                                     "guigeId" : "1",
+                                                     "totolPrice" : "￥25.6/袋(6斤)"
+                                                     },
+                                                     {
+                                                     "averagePrice" : "￥2.4/斤",
+                                                     "guigeId" : "2",
+                                                     "totolPrice" : "￥25.6/袋(6斤)"
+                                                     },
+                                                     {
+                                                     "averagePrice" : "￥2.4/斤",
+                                                     "guigeId" : "3",
+                                                     "totolPrice" : "￥25.6/袋(6斤)"
+                                                     }
+                                                     ],
+                                          "productImageUrl" : "url",
+                                          "productName" : "鸡腿"
+                                          }
+                                          ],
+                         "protuctType" : "肉类"
+                         },
+                         {
+                         "" : "",
+                         "productList" : [
+                                          {
+                                          "companyName" : "德大",
+                                          "guige" : [
+                                                     {
+                                                     "averagePrice" : "￥2.4/斤",
+                                                     "guigeId" : "1",
+                                                     "totolPrice" : "￥25.6/袋(6斤)"
+                                                     },
+                                                     {
+                                                     "averagePrice" : "￥2.4/斤",
+                                                     "guigeId" : "2",
+                                                     "totolPrice" : "￥25.6/袋(6斤)"
+                                                     },
+                                                     {
+                                                     "averagePrice" : "￥2.4/斤",
+                                                     "guigeId" : "3",
+                                                     "totolPrice" : "￥25.6/袋(6斤)"
+                                                     }
+                                                     ],
+                                          "productId" : "1",
+                                          "productImageUrl" : "",
+                                          "productName" : "鸡腿"
+                                          },
+                                          {
+                                          "companyName" : "德大",
+                                          "guige" : [
+                                                     {
+                                                     "averagePrice" : "￥2.4/斤",
+                                                     "guigeId" : "1",
+                                                     "totolPrice" : "￥25.6/袋(6斤)"
+                                                     },
+                                                     {
+                                                     "averagePrice" : "￥2.4/斤",
+                                                     "guigeId" : "2",
+                                                     "totolPrice" : "￥25.6/袋(6斤)"
+                                                     },
+                                                     {
+                                                     "averagePrice" : "￥2.4/斤",
+                                                     "guigeId" : "3",
+                                                     "totolPrice" : "￥25.6/袋(6斤)"
+                                                     }
+                                                     ],
+                                          "productId" : "2",
+                                          "productName" : "鸡熊"
+                                          }
+                                          ],
+                         "protuctType" : "菜类"
+                         }
+                         ]
+    },
+    "header" : {
+        "errorCode" : "200",
+        "errorMsg" : "success",
+        "serverTime" : "2017-08-03 18:37:47"
+    }
+}
