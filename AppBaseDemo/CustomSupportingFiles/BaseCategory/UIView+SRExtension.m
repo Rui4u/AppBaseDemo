@@ -114,6 +114,11 @@
 {
     return self.center.y;
 }
-
+- (CGFloat)right {
+    return CGRectGetMaxX(self.frame);
+}
+- (CGFloat)bottom {
+    return CGRectGetMaxY(self.frame);
+}
 
 @end

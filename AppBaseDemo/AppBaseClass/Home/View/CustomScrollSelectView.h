@@ -45,8 +45,7 @@
 /**
  数据源
  */
-@property (nonatomic ,strong ) NSArray
-* dataSourse;
+@property (nonatomic ,strong ) NSArray* dataSourse;
 
 /**
  刷新数据

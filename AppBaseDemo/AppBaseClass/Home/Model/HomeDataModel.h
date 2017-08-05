@@ -30,6 +30,9 @@
 @end
 
 @interface ProductList :NSObject
+
+@property (nonatomic ,assign) NSInteger height;
+@property (nonatomic ,assign , getter=isOpen) BOOL open;
 @property (nonatomic , copy) NSString              * productImageUrl;
 @property (nonatomic , copy) NSString              * productName;
 @property (nonatomic , copy) NSString              * productId;
@@ -51,14 +54,9 @@
 
 @end
 
-@interface Body :NSObject
+@interface HomeDataModel :NSObject
 @property (nonatomic , strong) BottomBanner              * bottomBanner;
 @property (nonatomic , strong) NSArray<ProductInfoList *>              * productInfoList;
 @property (nonatomic , strong) NSArray<BannerList *>              * bannerList;
 
-@end
-
-@interface HomeDataModel :NSObject
-@property (nonatomic , strong) Header              * header;
-@property (nonatomic , strong) Body              * body;
 @end

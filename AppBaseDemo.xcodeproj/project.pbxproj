@@ -31,6 +31,8 @@
 		2B3AE0CE1F3020F400DE03B0 /* AppProdcutSelectSpecificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3AE0CC1F3020F400DE03B0 /* AppProdcutSelectSpecificationCell.m */; };
 		2B3AE0CF1F3020F400DE03B0 /* AppProdcutSelectSpecificationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B3AE0CD1F3020F400DE03B0 /* AppProdcutSelectSpecificationCell.xib */; };
 		2B3AE0D21F304C2D00DE03B0 /* AppProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3AE0D11F304C2D00DE03B0 /* AppProductModel.m */; };
+		2B7DCC021F3579CC00E88B38 /* HomeProductListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7DCC011F3579CC00E88B38 /* HomeProductListTableViewCell.m */; };
+		2B7DCC0C1F358CC400E88B38 /* SelectSpecificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7DCC0B1F358CC400E88B38 /* SelectSpecificationView.m */; };
 		2B8FD7F31F32CC6F00DAB9B9 /* SelectLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8FD7F21F32CC6F00DAB9B9 /* SelectLocationViewController.m */; };
 		2B90F8941F2EC86200698C38 /* CustomScrollSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B90F8931F2EC86200698C38 /* CustomScrollSelectView.m */; };
 		2B90F8971F2ECFF100698C38 /* SelectTypeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B90F8961F2ECFF100698C38 /* SelectTypeView.m */; };
@@ -155,6 +157,10 @@
 		2B3AE0CD1F3020F400DE03B0 /* AppProdcutSelectSpecificationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppProdcutSelectSpecificationCell.xib; sourceTree = "<group>"; };
 		2B3AE0D01F304C2D00DE03B0 /* AppProductModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppProductModel.h; sourceTree = "<group>"; };
 		2B3AE0D11F304C2D00DE03B0 /* AppProductModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppProductModel.m; sourceTree = "<group>"; };
+		2B7DCC001F3579CC00E88B38 /* HomeProductListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeProductListTableViewCell.h; sourceTree = "<group>"; };
+		2B7DCC011F3579CC00E88B38 /* HomeProductListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeProductListTableViewCell.m; sourceTree = "<group>"; };
+		2B7DCC0A1F358CC400E88B38 /* SelectSpecificationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectSpecificationView.h; sourceTree = "<group>"; };
+		2B7DCC0B1F358CC400E88B38 /* SelectSpecificationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectSpecificationView.m; sourceTree = "<group>"; };
 		2B8FD7F11F32CC6F00DAB9B9 /* SelectLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectLocationViewController.h; sourceTree = "<group>"; };
 		2B8FD7F21F32CC6F00DAB9B9 /* SelectLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectLocationViewController.m; sourceTree = "<group>"; };
 		2B90F8921F2EC86200698C38 /* CustomScrollSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomScrollSelectView.h; sourceTree = "<group>"; };
@@ -569,6 +575,10 @@
 				2B90F8981F2ED5E800698C38 /* SelectViewTitle.xib */,
 				2B90F89A1F2EDC0C00698C38 /* SelectViewTitle.h */,
 				2B90F89B1F2EDC0C00698C38 /* SelectViewTitle.m */,
+				2B7DCC001F3579CC00E88B38 /* HomeProductListTableViewCell.h */,
+				2B7DCC011F3579CC00E88B38 /* HomeProductListTableViewCell.m */,
+				2B7DCC0A1F358CC400E88B38 /* SelectSpecificationView.h */,
+				2B7DCC0B1F358CC400E88B38 /* SelectSpecificationView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -937,6 +947,7 @@
 				2B90F8971F2ECFF100698C38 /* SelectTypeView.m in Sources */,
 				2BAFB5121F333054001236B8 /* GetCityListBusiness.m in Sources */,
 				2B386F871F29B69A00228620 /* AppBaseDemo.xcdatamodeld in Sources */,
+				2B7DCC021F3579CC00E88B38 /* HomeProductListTableViewCell.m in Sources */,
 				2BBFAFEF1F32F4B0002506D1 /* NSDictionary+SRExtension.m in Sources */,
 				2B90F8A91F2F124200698C38 /* AppProductViewControllerLeftCell.m in Sources */,
 				2B3AE0CE1F3020F400DE03B0 /* AppProdcutSelectSpecificationCell.m in Sources */,
@@ -945,6 +956,7 @@
 				2B90F89C1F2EDC0C00698C38 /* SelectViewTitle.m in Sources */,
 				2B386F7E1F29B69A00228620 /* AppDelegate.m in Sources */,
 				2B3AE0D21F304C2D00DE03B0 /* AppProductModel.m in Sources */,
+				2B7DCC0C1F358CC400E88B38 /* SelectSpecificationView.m in Sources */,
 				2BC14DBE1F31CD3500919808 /* SBJsonStreamWriterAccumulator.m in Sources */,
 				2BC14DBC1F31CD3500919808 /* SBJsonStreamParserState.m in Sources */,
 				2BA025311F2AE470003EB25D /* CustomNavBarView.m in Sources */,

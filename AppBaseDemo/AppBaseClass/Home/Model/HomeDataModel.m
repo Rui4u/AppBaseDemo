@@ -9,12 +9,6 @@
 #import "HomeDataModel.h"
 
 @implementation HomeDataModel
-
-@end
-
-@implementation Header
-@end
-@implementation Body
 + (NSDictionary *)objectClassInArray{
     return @{
              @"bottomBanner":@"BottomBanner",
@@ -22,8 +16,11 @@
              @"bannerList":@"BannerList"
              };
 }
-
 @end
+
+@implementation Header
+@end
+
 @implementation BottomBanner
 
 @end
@@ -31,6 +28,8 @@
 
 @end
 @implementation ProductList
+
+
 + (NSDictionary *)objectClassInArray{
     return @{
              @"guige":@"Guige",

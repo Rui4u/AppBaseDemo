@@ -12,9 +12,14 @@
 #import "LoginViewRootController.h"
 #import <MJExtension.h>
 #import "HomeDataModel.h"
-@interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>
+#import "HomeProductListTableViewCell.h"
+@interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource,HomeProductListTableViewCellDelegate>
 @property (nonatomic ,strong ) HomeTopView * topView;
 @property (nonatomic ,strong ) SelectTypeView * selectTypeView;
+/**
+ 数据源
+ */
+@property (nonatomic ,strong) HomeDataModel *dataSourse;
 @end
 
 @implementation HomeViewController
@@ -26,6 +31,7 @@
 	self.rearTopView = self.topView;
 
 	UITableView * tableViewList = [[UITableView alloc] initWithFrame:CGRectMake(0, 100, SCREEN_WIDTH, 0) style:UITableViewStyleGrouped];
+    
 	tableViewList.separatorStyle = UITableViewCellSelectionStyleNone;
 	tableViewList.backgroundColor = [UIColor colorWithHexString:@"eeeeee"];
 	tableViewList.dataSource = self;
@@ -40,12 +46,13 @@
     self.navBarView.alpha = 0;
     
 //    
-//    NSString *strPath = [[NSBundle mainBundle] pathForResource:@"Directions" ofType:@"geojson"];
-//    NSString *parseJason = [[NSString alloc] initWithContentsOfFile:strPath encoding:NSUTF8StringEncoding error:nil];
-//    
-//    NSDictionary * dict = [NSDictionary translateDictionaryForjsonString:parseJason];
-//
-//    HomeDataModel *result = [HomeDataModel mj_objectWithKeyValues:dict];
+    NSString *strPath = [[NSBundle mainBundle] pathForResource:@"Directions" ofType:@"geojson"];
+    NSString *parseJason = [[NSString alloc] initWithContentsOfFile:strPath encoding:NSUTF8StringEncoding error:nil];
+    
+    NSDictionary * dict = [NSDictionary translateDictionaryForjsonString:parseJason];
+
+    self.dataSourse = [HomeDataModel mj_objectWithKeyValues:[dict objectForKey:@"body"]];
+    [(UITableView *)self.frontScrollView reloadData];
 
 }
 - (void)viewDidAppear:(BOOL)animated {
@@ -55,9 +62,38 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-	return 0;
+    return self.dataSourse.productInfoList[section].productList.count;
+}
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return self.dataSourse.productInfoList.count;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return self.dataSourse.productInfoList[indexPath.section].productList[indexPath.row].height;
 }
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    static NSString * const HomeProductListTableViewCellID = @"HomeProductListTableViewCellID";
+    
+    HomeProductListTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:HomeProductListTableViewCellID];;
+    if (cell == nil) {
+        cell = [[HomeProductListTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:HomeProductListTableViewCellID];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.delegate = self;
+    }
+    cell.indexPath = indexPath;
+    cell.dataSourse = self.dataSourse.productInfoList[indexPath.section].productList[indexPath.row];
+    return cell;
+
+}
+
+
+- (void)ClickSelectSpecificationWithIndexPath:(NSIndexPath *)indexPath {
+    
+    [(UITableView *)self.frontScrollView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
+
+
+}
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     [super scrollViewDidScroll:scrollView];
     if (scrollView == self.backScrollView) {
@@ -70,15 +106,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
