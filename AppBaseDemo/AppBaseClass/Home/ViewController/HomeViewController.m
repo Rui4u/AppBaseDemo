@@ -13,6 +13,7 @@
 #import <MJExtension.h>
 #import "HomeDataModel.h"
 #import "HomeProductListTableViewCell.h"
+#import "UserLocationViewController.h"
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource,HomeProductListTableViewCellDelegate>
 @property (nonatomic ,strong ) HomeTopView * topView;
 @property (nonatomic ,strong ) SelectTypeView * selectTypeView;
@@ -57,7 +58,8 @@
 }
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
-	
+	UserLocationViewController * vc = [[UserLocationViewController alloc] init];
+	[self presentViewController:vc animated:YES completion:nil];
 
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

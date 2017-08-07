@@ -11,7 +11,9 @@
 #import "RootViewController.h"
 #import "SRCustomTabBarController.h"
 #import "CustomNavigationController.h"
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+#import <BaiduMapAPI_Base/BMKBaseComponent.h>
+
+@interface AppDelegate : UIResponder <UIApplicationDelegate,BMKGeneralDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
@@ -31,6 +33,8 @@
  customTabBar
  */
 @property (nonatomic ,strong ) SRCustomTabBarController *customTabBar;
+
+@property (nonatomic ,strong ) BMKMapManager* mapManager;
 - (void)saveContext;
 
 
