@@ -24,12 +24,27 @@
 #import <BaiduMapAPI_Map/BMKMapView.h>//只引入所需的单个头文件
 #import <CoreLocation/CoreLocation.h> 
 #import <CoreLocation/CLLocationManagerDelegate.h>
-@interface UserLocationViewController ()<BMKMapViewDelegate,BMKLocationServiceDelegate,BMKPoiSearchDelegate>
+@interface UserLocationViewController ()<BMKMapViewDelegate,BMKLocationServiceDelegate,BMKPoiSearchDelegate,BMKGeoCodeSearchDelegate>
 @property (nonatomic ,strong ) BMKMapView* mapView;
 @property (nonatomic ,strong ) BMKLocationService * locService;
 
 @property (nonatomic ,strong ) BMKPoiSearch * searcher;
 @property (nonatomic ,strong ) BMKNearbySearchOption *option;
+
+/**
+ <#Description#>
+ */
+@property (nonatomic ,strong) BMKPointAnnotation* annotation;
+
+/**
+ 附近信息
+ */
+@property (nonatomic ,strong) NSMutableArray * poiListArray;
+
+/**
+ 根据location返编译信息
+ */
+@property (nonatomic ,strong) BMKGeoCodeSearch * geocodesearch;
 @end
 
 @implementation UserLocationViewController
@@ -41,33 +56,24 @@
 	_locService = [[BMKLocationService alloc]init];
 	_locService.delegate = self;
 	
-	
 	//启动LocationService
 	[_locService startUserLocationService];
-	_mapView.showsUserLocation = YES;//显示定位图层
-	
-	
 	
 	_searcher =[[BMKPoiSearch alloc]init];
 	_searcher.delegate = self;
-	//发起检索
-	BMKNearbySearchOption *option = [[BMKNearbySearchOption alloc]init];
-	self.option = option;
-	option.pageIndex = 0;
-	option.pageCapacity = 10;
-	option.location = CLLocationCoordinate2DMake(39.8984940000,116.4722310000);
-	option.sortType = BMK_POI_SORT_BY_DISTANCE;
-	option.keyword = @"鸭脖";
-	BOOL flag = [_searcher poiSearchNearBy:option];
+    
+    self.annotation = [[BMKPointAnnotation alloc]init];
+    
+    [_mapView addAnnotation:self.annotation];
 	
-	if(flag)
-	{
-		NSLog(@"周边检索发送成功");
-	}
-	else
-	{
-		NSLog(@"周边检索发送失败");
-	}
+    
+    
+    _geocodesearch = [[BMKGeoCodeSearch alloc]init];
+//    _coordinateXText.text = @"116.403981";
+//    _coordinateYText.text = @"39.915101";
+//    _cityText.text = @"北京";
+//    _addrText.text = @"海淀区上地十街10号";
+    [_mapView setZoomLevel:14];
 }
 
 //实现PoiSearchDeleage处理回调结果
@@ -101,40 +107,28 @@
 //处理位置坐标更新
 - (void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation
 {
-	//NSLog(@"didUpdateUserLocation lat %f,long %f",userLocation.location.coordinate.latitude,userLocation.location.coordinate.longitude);
 	[_mapView updateLocationData:userLocation];
-//	_searcher =[[BMKPoiSearch alloc]init];
-//	_searcher.delegate = self;
-//	//发起检索
-//	BMKNearbySearchOption *option = [[BMKNearbySearchOption alloc]init];
-//	self.option = option;
-//	option.pageIndex = 0;
-//	option.pageCapacity = 10;
-//	option.location = CLLocationCoordinate2DMake(39.8984940000,116.4722310000);
-//	option.sortType = BMK_POI_SORT_BY_DISTANCE;
-//	option.keyword = @"鸭脖";
-//	BOOL flag = [_searcher poiSearchNearBy:option];
-//	
-//	if(flag)
-//	{
-//		NSLog(@"周边检索发送成功");
-//	}
-//	else
-//	{
-//		NSLog(@"周边检索发送失败");
-//	}
+    [self testLat:userLocation.location.coordinate.latitude andLog:userLocation.location.coordinate.longitude];
+
+    
+    [_mapView setCenterCoordinate:CLLocationCoordinate2DMake(userLocation.location.coordinate.latitude,userLocation.location.coordinate.longitude) animated:YES];
+    [_locService stopUserLocationService];
+
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
 	[_mapView viewWillAppear];
 	_mapView.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
+    _geocodesearch.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
+
 }
 -(void)viewWillDisappear:(BOOL)animated
 {
 	[_mapView viewWillDisappear];
 	_mapView.delegate = nil; // 不用时，置nil
 	_searcher.delegate = nil;
+    _geocodesearch.delegate = nil; // 此处记得不用的时候需要置nil，否则影响内存的释放
 
 }
 
@@ -150,26 +144,19 @@
     // Dispose of any resources that can be recreated.
 }
 
-//-(void)viewWillAppear:(BOOL)animated
-//{
-//	[_mapView viewWillAppear];
-//	_mapView.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
-//}
-//-(void)viewWillDisappear:(BOOL)animated
-//{
-//	[_mapView viewWillDisappear];
-//	_mapView.delegate = nil; // 不用时，置nil
-//}
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+///反向地理编码
+-(void) onGetReverseGeoCodeResult:(BMKGeoCodeSearch *)searcher result:(BMKReverseGeoCodeResult *)result errorCode:(BMKSearchErrorCode)error
+{
+    
+    
+    [_poiListArray removeAllObjects];
+    for(BMKPoiInfo *poiInfo in result.poiList)
+    {
+        NSLog(@"%@",poiInfo.address);
+        [_poiListArray addObject:poiInfo.address];
+    }
 }
-*/
 
 
 /**
@@ -181,12 +168,51 @@
 	
 	NSLog(@"%s",__func__);
 	
-	NSLog(@"%f,%f",mapView.centerCoordinate.latitude,mapView.centerCoordinate.longitude);
-	
-	
-	
+    [self testLat:mapView.centerCoordinate.latitude andLog:mapView.centerCoordinate.longitude];
+  	
 }
+- (void) testLat:(CGFloat )latitude andLog:(CGFloat)longitude {
+    CLLocationCoordinate2D coor;
+    coor.latitude = latitude;
+    coor.longitude = longitude;
+    self.annotation.coordinate = coor;
+    
+    NSLog(@"%f,%f",latitude,longitude);
+    
+    BMKNearbySearchOption *option = [[BMKNearbySearchOption alloc]init];
+    self.option = option;
+    option.pageIndex = 0;
+    option.pageCapacity = 10;
+    option.location = CLLocationCoordinate2DMake(latitude,longitude);
+    option.sortType = BMK_POI_SORT_BY_DISTANCE;
+    option.keyword = @"商家";
+    BOOL flag = [_searcher poiSearchNearBy:option];
+    
+    if(flag)
+    {
+        NSLog(@"周边检索发送成功");
+    }
+    else
+    {
+        NSLog(@"周边检索发送失败");
+    }
+    
+    CLLocationCoordinate2D pt = (CLLocationCoordinate2D){latitude, longitude};
 
+    BMKReverseGeoCodeOption *reverseGeocodeSearchOption = [[BMKReverseGeoCodeOption alloc]init];
+    reverseGeocodeSearchOption.reverseGeoPoint = pt;
+    flag = [_geocodesearch reverseGeoCode:reverseGeocodeSearchOption];
+    if(flag)
+    {
+        NSLog(@"反geo检索发送成功");
+    }
+    else
+    {
+        NSLog(@"反geo检索发送失败");
+    }
+
+
+}
 
 
 @end
