@@ -10,9 +10,32 @@
 #import "Parser.h"
 #import "GetCityListBusiness.h"
 #import "SelectCityModel.h"
-@interface SelectLocationViewController ()<UITableViewDelegate,UITableViewDataSource>
+#import <BaiduMapAPI_Base/BMKBaseComponent.h>//引入base相关所有的头文件
+
+#import <BaiduMapAPI_Map/BMKMapComponent.h>//引入地图功能所有的头文件
+
+#import <BaiduMapAPI_Search/BMKSearchComponent.h>//引入检索功能所有的头文件
+
+
+#import <BaiduMapAPI_Location/BMKLocationComponent.h>//引入定位功能所有的头文件
+
+#import <BaiduMapAPI_Utils/BMKUtilsComponent.h>//引入计算工具所有的头文件
+
+#import <BaiduMapAPI_Radar/BMKRadarComponent.h>//引入周边雷达功能所有的头文件
+
+#import <BaiduMapAPI_Map/BMKMapView.h>//只引入所需的单个头文件
+@interface SelectLocationViewController ()<UITableViewDelegate,UITableViewDataSource,BMKLocationServiceDelegate,BMKGeoCodeSearchDelegate>
 @property (nonatomic ,strong ) UITableView * mainTableView;
-@property (nonatomic ,strong ) NSArray <CityList *>*dataSourse;
+@property (nonatomic ,strong ) NSMutableArray <CityList *>*dataSourse;
+
+@property (nonatomic ,strong ) BMKLocationService * locService;
+/**
+ 根据location返编译信息
+ */
+@property (nonatomic ,strong) BMKGeoCodeSearch * geocodesearch;
+
+@property (nonatomic ,assign ) BOOL cityInService;
+
 @end
 
 @implementation SelectLocationViewController
@@ -27,24 +50,119 @@
 //
 //    NSDictionary * dict = [NSDictionary translateDictionaryForjsonString:parseJason];
 //    self.dataSourse = [dict objectForKey:@"cityList"];
-    [self.mainTableView reloadData];
-    
+//    [self.mainTableView reloadData];
+	
+	[self setBaiduMap];
+	self.dataSourse = [NSMutableArray arrayWithCapacity:10];
     
     [GetCityListBusiness requestGetCityListWithToken:TOKEN completionSuccessHandler:^(SelectCityModel *selectModel) {
         
-        self.dataSourse = selectModel.cityList;
+        [self.dataSourse addObjectsFromArray: selectModel.cityList];
         [self.mainTableView reloadData];
     } completionFailHandler:^(NSString *failMessage) {
         [self showToastWithMessage:failMessage showTime:1];
     } completionError:^(NSString *netWorkErrorMessage) {
         [self showToastWithMessage:netWorkErrorMessage showTime:1];
     }];
+	
+	
+}
+#pragma mark - 地图相关
+- (void)setBaiduMap {
+	_geocodesearch = [[BMKGeoCodeSearch alloc]init];
+	_geocodesearch.delegate = self;
+	
+	_locService = [[BMKLocationService alloc]init];
+	_locService.delegate = self;
+	
+	//启动LocationService
+	[_locService startUserLocationService];
+
+
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)viewWillDisappear:(BOOL)animated
+{
+	_locService.delegate = self;
+	_geocodesearch.delegate = nil; // 此处记得不用的时候需要置nil，否则影响内存的释放
+	
 }
+
+
+/**
+ *用户位置更新后，会调用此函数
+ *@param userLocation 新的用户位置
+ */
+- (void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation{
+	
+	[self detailLocation:userLocation.location.coordinate.latitude andLog:userLocation.location.coordinate.longitude];
+	
+}
+
+
+- (void) detailLocation:(CGFloat )latitude andLog:(CGFloat)longitude {
+	
+	
+	CLLocationCoordinate2D pt = (CLLocationCoordinate2D){latitude, longitude};
+	
+	BMKReverseGeoCodeOption *reverseGeocodeSearchOption = [[BMKReverseGeoCodeOption alloc]init];
+	reverseGeocodeSearchOption.reverseGeoPoint = pt;
+	BOOL flag = [_geocodesearch reverseGeoCode:reverseGeocodeSearchOption];
+	if(flag) {
+		NSLog(@"反geo检索发送成功");
+		[self.locService stopUserLocationService];
+	} else
+	{
+		NSLog(@"反geo检索发送失败");
+	}
+	
+	
+}
+/**
+ *定位失败后，会调用此函数
+ *@param error 错误号
+ */
+- (void)didFailToLocateUserWithError:(NSError *)error {
+
+	[self showToastWithMessage:@"定位失败" showTime:1];
+}
+
+///反向地理编码
+-(void) onGetReverseGeoCodeResult:(BMKGeoCodeSearch *)searcher result:(BMKReverseGeoCodeResult *)result errorCode:(BMKSearchErrorCode)error
+{
+	
+	if (result != nil) {
+		CityList * cityList = [[CityList alloc] init];
+		cityList.name = @"当前城市";
+		Info * info = [[Info alloc] init];
+		info.cityCode = result.cityCode;
+		info.cityCaption = result.addressDetail.city;
+		NSArray<Info *> *infoArray = @[info];
+		cityList.info = infoArray;
+		
+		for (CityList * list in self.dataSourse) {
+			for (Info *listInfo in list.info) {
+				if ([listInfo.cityCode intValue] == [info.cityCode intValue]) {
+					self.cityInService = YES;
+					break;
+				}else {
+					self.cityInService = NO;
+					
+				}
+			}
+			if(self.cityInService == YES){
+				break;
+			}
+		}
+		
+		
+		[self.dataSourse insertObject:cityList atIndex:0];
+		
+		[self.mainTableView reloadData];
+	}
+	
+}
+
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -67,7 +185,14 @@
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:UITableViewCellID];
         }
         
-    cell.textLabel.text = self.dataSourse[indexPath.section].info[indexPath.row].cityCaption;
+		cell.textLabel.text = self.dataSourse[indexPath.section].info[indexPath.row].cityCaption;
+	
+		if (!self.cityInService && indexPath.section == 0) {
+			cell.textLabel.textColor = [UIColor redColor];
+		}else {
+			cell.textLabel.textColor = [UIColor blackColor];
+		}
+	
         cell.selectionStyle = UITableViewCellSelectionStyleGray;
         return cell;
         

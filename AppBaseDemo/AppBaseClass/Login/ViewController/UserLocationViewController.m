@@ -13,7 +13,6 @@
 
 #import <BaiduMapAPI_Search/BMKSearchComponent.h>//引入检索功能所有的头文件
 
-#import <BaiduMapAPI_Cloud/BMKCloudSearchComponent.h>//引入云检索功能所有的头文件
 
 #import <BaiduMapAPI_Location/BMKLocationComponent.h>//引入定位功能所有的头文件
 
@@ -26,10 +25,14 @@
 #import <CoreLocation/CLLocationManagerDelegate.h>
 @interface UserLocationViewController ()<BMKMapViewDelegate,BMKLocationServiceDelegate,BMKPoiSearchDelegate,BMKGeoCodeSearchDelegate>
 @property (nonatomic ,strong ) BMKMapView* mapView;
+//定位
 @property (nonatomic ,strong ) BMKLocationService * locService;
 
+/**
+ poi搜索
+ */
 @property (nonatomic ,strong ) BMKPoiSearch * searcher;
-@property (nonatomic ,strong ) BMKNearbySearchOption *option;
+@property (nonatomic ,strong ) BMKNearbySearchOption *option; //附近搜索选项
 
 /**
  <#Description#>

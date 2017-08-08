@@ -28,7 +28,7 @@
 	NSString * paramString = [param JSONRepresentation];
 	
 	NSString * handlerDESEncryStr = [DESEncryption TripleDES:paramString
-											encryptOrDecrypt:(CCAlgorithm)kCCEncrypt key:@"guoshuguoshu"];
+											encryptOrDecrypt:(CCAlgorithm)kCCEncrypt key:@"scguoshu"];
 
     
     

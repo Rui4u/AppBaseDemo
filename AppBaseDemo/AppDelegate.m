@@ -12,7 +12,7 @@
 #import "LoginViewRootController.h"
 #import "NSObject+SBJson.h"
 #import "UserLocationViewController.h"
-
+#import "SelectLocationViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -23,6 +23,29 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	// Override point for customization after application launch.
 	
+	[self setUpBaiduMapManager];
+	
+	
+	RootViewController* rootViewController = [[SelectLocationViewController alloc] init];
+    
+	self.rootViewController = rootViewController;
+	
+	self.navgationController  = [[CustomNavigationController alloc] initWithRootViewController:rootViewController];
+	
+	
+	self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+	self.window.backgroundColor = [UIColor whiteColor];
+	self.window.rootViewController = self.navgationController;
+	
+	//隐藏navigationController naviagtionBar
+	self.navgationController.navigationBar.hidden = YES;
+	[self.window makeKeyAndVisible];
+
+	
+	return YES;
+}
+
+- (void)setUpBaiduMapManager {
 	// 要使用百度地图，请先启动BaiduMapManager
 	_mapManager = [[BMKMapManager alloc]init];
 	
@@ -41,25 +64,6 @@
 	if (!ret) {
 		NSLog(@"manager start failed!");
 	}
-	
-	
-	RootViewController* rootViewController = [[UserLocationViewController alloc] init];
-    
-	self.rootViewController = rootViewController;
-	
-	self.navgationController  = [[CustomNavigationController alloc] initWithRootViewController:rootViewController];
-	
-	
-	self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-	self.window.backgroundColor = [UIColor whiteColor];
-	self.window.rootViewController = self.navgationController;
-	
-	//隐藏navigationController naviagtionBar
-	self.navgationController.navigationBar.hidden = YES;
-	[self.window makeKeyAndVisible];
-
-	
-	return YES;
 }
 
 
