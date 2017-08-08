@@ -10,31 +10,60 @@
 #import "Parser.h"
 #import "GetCityListBusiness.h"
 #import "SelectCityModel.h"
-#import <BaiduMapAPI_Base/BMKBaseComponent.h>//引入base相关所有的头文件
-
-#import <BaiduMapAPI_Map/BMKMapComponent.h>//引入地图功能所有的头文件
-
+#import "ZYPinYinSearch.h"
+#import <objc/runtime.h>
 #import <BaiduMapAPI_Search/BMKSearchComponent.h>//引入检索功能所有的头文件
-
-
 #import <BaiduMapAPI_Location/BMKLocationComponent.h>//引入定位功能所有的头文件
+@interface SelectLocationViewController ()<UITableViewDelegate,UITableViewDataSource,BMKLocationServiceDelegate,BMKGeoCodeSearchDelegate,UISearchBarDelegate>
 
-#import <BaiduMapAPI_Utils/BMKUtilsComponent.h>//引入计算工具所有的头文件
-
-#import <BaiduMapAPI_Radar/BMKRadarComponent.h>//引入周边雷达功能所有的头文件
-
-#import <BaiduMapAPI_Map/BMKMapView.h>//只引入所需的单个头文件
-@interface SelectLocationViewController ()<UITableViewDelegate,UITableViewDataSource,BMKLocationServiceDelegate,BMKGeoCodeSearchDelegate>
+/**
+ 主talbview
+ */
 @property (nonatomic ,strong ) UITableView * mainTableView;
+
+/**
+ 数据源
+ */
 @property (nonatomic ,strong ) NSMutableArray <CityList *>*dataSourse;
 
+/**
+ w定位服务
+ */
 @property (nonatomic ,strong ) BMKLocationService * locService;
 /**
  根据location返编译信息
  */
 @property (nonatomic ,strong) BMKGeoCodeSearch * geocodesearch;
 
+/**
+ 当前城市是否在服务区
+ */
 @property (nonatomic ,assign ) BOOL cityInService;
+
+/**
+ 搜索
+ */
+@property (nonatomic ,strong ) UITableView * searchHeadTableView;
+
+/**
+ 搜索控件
+ */
+@property (nonatomic ,strong ) UIView * searchBarView;
+@property (nonatomic ,strong ) UISearchBar *searchBar;
+/**
+ 搜索结果
+ */
+@property (nonatomic ,strong ) NSMutableArray <Info *>* searchResultDataSource;
+
+/**
+ 要搜索的数据源
+ */
+@property (nonatomic ,strong ) NSArray <CityList *>* searchDataSource;
+/**
+ 搜索button
+ */
+@property (nonatomic ,strong ) UIButton *searchButton;
+
 
 @end
 
@@ -44,7 +73,9 @@
     [super viewDidLoad];
     [self initNavBarView:NAV_BAR_TYPE_SECOND_LEVEL_VIEW];
     [self.navBarView setTitle:@"当前定位"];
+	[self.view addSubview:self.searchHeadTableView];
     [self.view addSubview:self.mainTableView];
+
 //    NSString *strPath = [[NSBundle mainBundle] pathForResource:@"SelectLocation" ofType:@"geojson"];
 //    NSString *parseJason = [[NSString alloc] initWithContentsOfFile:strPath encoding:NSUTF8StringEncoding error:nil];
 //
@@ -163,21 +194,101 @@
 	
 }
 
+#pragma mark - 搜索
+- (void)clickSearchButton:(UIButton *)sender {
+	if ([sender.titleLabel.text isEqualToString:@"取消"]) {
+		[self.searchBar resignFirstResponder];
+		self.searchBar.text = @"";
+		[self.view bringSubviewToFront:self.mainTableView];
+		[_searchResultDataSource removeAllObjects];
+		[self.searchHeadTableView reloadData];
+		
+		
+	}
+	
+}
 
+#pragma mark - UISearchBarDelegate
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+	if ([searchText isEqualToString:@""]) {
+		//清空数据
+		[self.searchResultDataSource removeAllObjects];
+		NSArray * array = CITYHISTORY ;
+		[self.searchResultDataSource addObjectsFromArray:array];
+		[self.searchHeadTableView reloadData];
+		
+	}else  {
+		[self.view bringSubviewToFront:self.searchHeadTableView];
+		
+		[_searchResultDataSource removeAllObjects];
+		NSArray *ary = self.dataSourse;
+		self.searchResultDataSource = [NSMutableArray array];
+		
+		
+		if (searchBar.text.length == 0) {
+			[_searchResultDataSource addObjectsFromArray:ary];
+		}else {
+			for (CityList *cityList in ary) {
+			NSArray	*temp = [ZYPinYinSearch searchWithOriginalArray:cityList.info andSearchText:searchBar.text andSearchByPropertyName:@"cityCaption"];
+				
+				[_searchResultDataSource addObjectsFromArray:temp];
+			}
+	
+		}
+		
+		
+		[self.searchHeadTableView reloadData];
+		
+	}
+}
+
+- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {
+	[self.view bringSubviewToFront:self.searchHeadTableView];
+	//显示历史记录
+	[self.searchResultDataSource removeAllObjects];
+	NSArray * array = CITYHISTORY ;
+	[self.searchResultDataSource addObjectsFromArray:array];
+	[self.searchHeadTableView reloadData];
+	return YES;
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.dataSourse.count;
+	if ([tableView isEqual:self.searchHeadTableView]) {
+		return 1;
+	}else {
+		return self.dataSourse.count;
+	}
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.dataSourse[section].info.count;
-    
+	if ([tableView isEqual:self.searchHeadTableView]) {
+		return self.searchResultDataSource.count;
+
+	}else {
+		return self.dataSourse[section].info.count;
+	}
+	
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
         return 44;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+	
+	
+	if ([tableView isEqual:self.searchHeadTableView]) {
+		
+			
+			UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"UIHeaderTableViewCell"];
+			if ( cell == nil) {
+				cell =  [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"UIHeaderTableViewCell"];
+			}
+			[cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+//			((CityTableViewCell *) cell).cityName = _searchResultDataSource[indexPath.row].cityName;
+			cell.textLabel.text = self.searchResultDataSource[indexPath.row].cityCaption;
+			return cell;
+		
+	}else {
+	
         static NSString * const UITableViewCellID = @"UITableViewCellID";
         
         UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:UITableViewCellID];;
@@ -195,38 +306,123 @@
 	
         cell.selectionStyle = UITableViewCellSelectionStyleGray;
         return cell;
-        
+	}
     
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    UILabel * label = [UILabel creatLabelWithText:self.dataSourse[section].name FontOfSize:14 textColor:@"333333"];
-    return label;
-    
+	
+	if ([tableView isEqual:self.searchHeadTableView]){
+		return self.searchBarView;
+	}else {
+		UILabel * label = [UILabel creatLabelWithText:self.dataSourse[section].name FontOfSize:14 textColor:@"333333"];
+		return label;
+;	}
+	
+	
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    
-        return 30;
-    
+	
+	if ([tableView isEqual:self.searchHeadTableView]){
+		return 50;
+	}else {
+		return 30;
+	}
+	
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     return .1;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-   
+	
+	if ([tableView isEqual:self.searchHeadTableView]) {
+//
+//	//搜索
+		
+		
+	}
+
 }
 
 - (UITableView *)mainTableView {
-    
+	
     if (!_mainTableView) {
-        _mainTableView = [[UITableView alloc] initWithFrame:CGRectMake(0,NAV_BAR_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGHT -NAV_BAR_HEIGHT) style:UITableViewStyleGrouped];
+        _mainTableView = [[UITableView alloc] initWithFrame:CGRectMake(0,NAV_BAR_HEIGHT + 50, SCREEN_WIDTH, SCREEN_HEIGHT -NAV_BAR_HEIGHT - 50) style:UITableViewStyleGrouped];
         _mainTableView.delegate = self;
         _mainTableView.dataSource = self;
         _mainTableView.backgroundColor = [UIColor colorWithHexString:@"eeeeee"];
     }
-    
+	
     return _mainTableView;
 }
 
+- (UITableView *)searchHeadTableView {
+	if (_searchHeadTableView == nil) {
+		_searchHeadTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, NAV_BAR_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGHT - NAV_BAR_HEIGHT) style:UITableViewStylePlain];
+		_searchHeadTableView.delegate = self;
+		_searchHeadTableView.dataSource = self;
+//		[_searchHeadTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+	}
+	return _searchHeadTableView;
+}
+
+#pragma mark - 懒加载
+- (UIView *)searchBarView {
+	
+	if (!_searchBarView) {
+		
+		_searchBarView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 50)];
+		_searchBarView.backgroundColor = [UIColor colorWithHexString:@"eeeeee"];
+		
+		UISearchBar *searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(15, 10, WIDTH_AUTO(303), 30)];
+		self.searchBar = searchBar;
+		searchBar.backgroundColor = [UIColor whiteColor];
+		searchBar.delegate = self;
+		searchBar.placeholder = @"输入城市名或拼音查询";
+		searchBar.showsCancelButton = NO;
+		[_searchBarView addSubview:searchBar];
+		UIImage* searchBarBg = [self GetImageWithColor:[UIColor whiteColor] andHeight:searchBar.height];
+		//设置背景图片
+		[searchBar setBackgroundImage:searchBarBg];
+		//设置背景色
+		[searchBar setBackgroundColor:[UIColor clearColor]];
+		//设置文本框背景
+		[searchBar setSearchFieldBackgroundImage:searchBarBg forState:UIControlStateNormal];
+		searchBar.layer.masksToBounds = YES;
+		searchBar.layer.cornerRadius = 2;
+		
+		UIButton *searchButton = [[UIButton alloc ]initWithFrame:CGRectMake(CGRectGetMaxX(searchBar.frame), 0, WIDTH_AUTO(55), _searchBarView.height)];
+		self.searchButton = searchButton;
+		[searchButton setTitle:@"取消" forState:UIControlStateNormal];
+		[searchButton addTarget:self action:@selector(clickSearchButton:) forControlEvents:UIControlEventTouchUpInside];
+		[searchButton setTitleColor:[UIColor colorWithHexString: @"1556da"] forState:UIControlStateNormal];
+		searchButton.titleLabel.font = [UIFont systemFontOfSize:14];
+		
+		[_searchBarView addSubview:searchButton];
+	}
+	return _searchBarView;
+}
+
+/**
+ *  生成图片
+ *
+ *  @param color  图片颜色
+ *  @param height 图片高度
+ *
+ *  @return 生成的图片
+ */
+- (UIImage*) GetImageWithColor:(UIColor*)color andHeight:(CGFloat)height
+{
+	CGRect r= CGRectMake(0.0f, 0.0f, 1.0f, height);
+	UIGraphicsBeginImageContext(r.size);
+	CGContextRef context = UIGraphicsGetCurrentContext();
+	
+	CGContextSetFillColorWithColor(context, [color CGColor]);
+	CGContextFillRect(context, r);
+	
+	UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+	UIGraphicsEndImageContext();
+	
+	return img;
+}
 @end

@@ -27,10 +27,14 @@
 #pragma mark - 没有登录
 #define isNotLogin  ([(NSString *)[[NSUserDefaults standardUserDefaults]objectForKey:@"token"] isEqualToString:@""] ||(NSString *)[[NSUserDefaults standardUserDefaults]objectForKey:@"token"] == nil)
 
+
 #pragma mark - token值
 #define TOKEN    (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]
 #pragma mark - 是否完善信息 1 完善0 未完善
 #define IsFinish    (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:@"isFinish"]
+
+#pragma 搜索历史
+#define CITYHISTORY   (NSArray *)[NSKeyedUnarchiver unarchiveObjectWithData: (NSData *)[[NSUserDefaults standardUserDefaults] objectForKey:@"cityHistory"]]
 
 #pragma mark - 一次性全部清除 UserDefaults中存储的数据
 #define clearUserDefaults()\
