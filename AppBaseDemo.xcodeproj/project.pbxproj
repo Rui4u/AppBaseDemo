@@ -98,6 +98,7 @@
 		2BD5D70D1F39871700BE1994 /* PinyinHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD5D7031F39871700BE1994 /* PinyinHelper.m */; };
 		2BD5D70E1F39871700BE1994 /* unicode_to_hanyu_pinyin.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2BD5D7041F39871700BE1994 /* unicode_to_hanyu_pinyin.txt */; };
 		2BD5D70F1F39871700BE1994 /* ZYPinYinSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD5D7061F39871700BE1994 /* ZYPinYinSearch.m */; };
+		2BD5D7181F39925100BE1994 /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD5D7161F39925100BE1994 /* UserInfoViewController.m */; };
 		65403DF437BA47C28C5B3CF7 /* libPods-AppBaseDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0152959586DFB41568D4F5C /* libPods-AppBaseDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -301,6 +302,8 @@
 		2BD5D7041F39871700BE1994 /* unicode_to_hanyu_pinyin.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = unicode_to_hanyu_pinyin.txt; sourceTree = "<group>"; };
 		2BD5D7051F39871700BE1994 /* ZYPinYinSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYPinYinSearch.h; sourceTree = "<group>"; };
 		2BD5D7061F39871700BE1994 /* ZYPinYinSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYPinYinSearch.m; sourceTree = "<group>"; };
+		2BD5D7151F39925100BE1994 /* UserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoViewController.h; sourceTree = "<group>"; };
+		2BD5D7161F39925100BE1994 /* UserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoViewController.m; sourceTree = "<group>"; };
 		C0152959586DFB41568D4F5C /* libPods-AppBaseDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppBaseDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9138079B95F4444D4017C4A /* Pods-AppBaseDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppBaseDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppBaseDemo/Pods-AppBaseDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		FC3237A11D175D8A56FDA2A8 /* Pods-AppBaseDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppBaseDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppBaseDemo/Pods-AppBaseDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -705,6 +708,8 @@
 				2B8FD7F21F32CC6F00DAB9B9 /* SelectLocationViewController.m */,
 				2B580D631F38582900AEA6BF /* UserLocationViewController.h */,
 				2B580D641F38582900AEA6BF /* UserLocationViewController.m */,
+				2BD5D7151F39925100BE1994 /* UserInfoViewController.h */,
+				2BD5D7161F39925100BE1994 /* UserInfoViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1041,6 +1046,7 @@
 				2BC14DBF1F31CD3500919808 /* SBJsonStreamWriterState.m in Sources */,
 				2B3870391F29BC0C00228620 /* UIImage+SRImage.m in Sources */,
 				2BD5D70F1F39871700BE1994 /* ZYPinYinSearch.m in Sources */,
+				2BD5D7181F39925100BE1994 /* UserInfoViewController.m in Sources */,
 				2BD5D70C1F39871700BE1994 /* PinYinForObjc.m in Sources */,
 				2BA0253F1F2B06AD003EB25D /* RootViewController.m in Sources */,
 				2B38703F1F29BC0C00228620 /* NSObject+ZXPUnicode.m in Sources */,

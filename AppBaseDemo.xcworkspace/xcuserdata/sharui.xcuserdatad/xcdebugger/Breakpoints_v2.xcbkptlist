@@ -36,60 +36,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AppBaseDemo/AppBaseClass/Login/ViewController/UserLocationViewController.m"
-            timestampString = "523853006.372226"
+            timestampString = "523872446.95167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AppBaseDemo/AppBaseClass/Login/ViewController/UserLocationViewController.m"
-            timestampString = "523853006.372226"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
+            startingLineNumber = "197"
+            endingLineNumber = "197"
             landmarkName = "-didUpdateBMKUserLocation:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AppBaseDemo/AppBaseClass/Login/ViewController/UserLocationViewController.m"
-            timestampString = "523853006.372226"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
-            landmarkName = "-onGetReverseGeoCodeResult:result:errorCode:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AppBaseDemo/AppBaseClass/Login/ViewController/UserLocationViewController.m"
-            timestampString = "523853006.372226"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "181"
-            endingLineNumber = "181"
-            landmarkName = "-testLat:andLog:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -123,6 +75,102 @@
             endingLineNumber = "36"
             landmarkName = "+loginWithStoreTelephone:storePwd:completionSuccessHandler:completionFailHandler:completionError:"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AppBaseDemo/AppBaseClass/Login/ViewController/UserLocationViewController.m"
+            timestampString = "523876032.704949"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "228"
+            endingLineNumber = "228"
+            landmarkName = "-mapViewDidFinishLoading:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AppBaseDemo/AppBaseClass/Login/ViewController/UserLocationViewController.m"
+            timestampString = "523876033.310732"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "236"
+            endingLineNumber = "236"
+            landmarkName = "-mapView:regionDidChangeAnimated:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AppBaseDemo/AppBaseClass/Login/ViewController/UserLocationViewController.m"
+            timestampString = "523876033.851177"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "242"
+            endingLineNumber = "242"
+            landmarkName = "-testLat:andLog:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AppBaseDemo/AppBaseClass/Login/ViewController/UserLocationViewController.m"
+            timestampString = "523876034.864699"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "212"
+            endingLineNumber = "212"
+            landmarkName = "-onGetReverseGeoCodeResult:result:errorCode:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[UserLocationViewController onGetReverseGeoCodeResult:result:errorCode:]"
+                  moduleName = "AppBaseDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hzcf/Desktop/AppBaseDemo/AppBaseDemo/AppBaseClass/Login/ViewController/UserLocationViewController.m"
+                  timestampString = "523876035.696822"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "212"
+                  endingLineNumber = "212"
+                  offsetFromSymbolStart = "212">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[UserLocationViewController onGetReverseGeoCodeResult:result:errorCode:]"
+                  moduleName = "AppBaseDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hzcf/Desktop/AppBaseDemo/AppBaseDemo/AppBaseClass/Login/ViewController/UserLocationViewController.m"
+                  timestampString = "523876035.698433"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "212"
+                  endingLineNumber = "212"
+                  offsetFromSymbolStart = "220">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
