@@ -257,7 +257,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="Rhe-2i-cac"/>
                     </constraints>
-                    <state key="normal" title="登录">
+                    <state key="normal" title="提交">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>

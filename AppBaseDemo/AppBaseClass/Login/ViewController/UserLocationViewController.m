@@ -88,12 +88,17 @@
  选择城市button
  */
 @property (nonatomic ,strong ) UIButton * selectCityButton;
+/**
+ 确认按钮
+ */
+@property (nonatomic ,strong ) UIButton * sureButton;
 @end
 
 @implementation UserLocationViewController
 
--(void)viewWillAppear:(BOOL)animated
-{
+-(void)viewWillAppear:(BOOL)animated {
+	
+	[super viewWillAppear:animated];
 	[_mapView viewWillAppear];
 	_mapView.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
 	_geocodesearch.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
@@ -101,8 +106,9 @@
 	_searcher.delegate = self;
 	
 }
--(void)viewWillDisappear:(BOOL)animated
-{
+-(void)viewWillDisappear:(BOOL)animated {
+	[super viewWillDisappear:animated];
+	
 	[_mapView viewWillDisappear];
 	_mapView.delegate = nil; // 不用时，置nil
 	_geocodesearch.delegate = nil; // 此处记得不用的时候需要置nil，否则影响内存的释放
@@ -130,13 +136,23 @@
 	self.cancelButton = [UIButton quickCreateButtonWithFrame: CGRectMake(self.searchTextField.right, self.searchTextField.y, 100, 44)title:@"取消" addTarget:self action:@"clickCancelButton:"];
 	[self.cancelButton setTitleColor:MAIN_GREEN_COLOR forState:UIControlStateNormal];
 	[self.navBarView addSubview:self.cancelButton];
+
+	
+	self.sureButton = [UIButton quickCreateButtonWithFrame:CGRectMake(0, SCREEN_HEIGHT - 50, SCREEN_WIDTH, 50) title:@"确认" addTarget:self action:@"clickSureButton:"];
+	self.sureButton.backgroundColor = [UIColor randomOfColor];
+	[self.view addSubview:self.sureButton];
+	[self.view bringSubviewToFront:self.sureButton];
 	
 	[self.view addSubview:self.searchHeadTableView];
 	[self  setUpBaiduMap];
 	[self setUpBaiduMapSubViews];
 	[self.view addSubview:self.mainTableView];
-	
-	
+
+}
+- (void)clickSureButton:(UIButton *)sender {
+
+
+
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
@@ -152,6 +168,7 @@
 	self.searchTextField.text = @"";
 	[self.view bringSubviewToFront:self.mapView];
 	[self.view bringSubviewToFront:self.mainTableView];
+	[self.view bringSubviewToFront:self.sureButton];
 
 
 }
@@ -391,13 +408,15 @@
 	
 	UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:UITableViewCellID];;
 	if (cell == nil) {
-		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:UITableViewCellID];
+		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:UITableViewCellID];
 	}
 	
 	if ([tableView isEqual: self.searchHeadTableView]) {
 		cell.textLabel.text = self.searchDataSource[indexPath.row].name;
+		cell.detailTextLabel.text = self.searchDataSource[indexPath.row].address;
 	}else {
 		cell.textLabel.text = self.dataSource[indexPath.row].name;
+		cell.detailTextLabel.text = self.dataSource[indexPath.row].address;
 	}
 	
 	cell.selectionStyle = UITableViewCellSelectionStyleGray;
@@ -421,7 +440,7 @@
 - (UITableView *)mainTableView {
 	
 	if (!_mainTableView) {
-		_mainTableView = [[UITableView alloc] initWithFrame:CGRectMake(0,self.mapView.bottom, SCREEN_WIDTH, SCREEN_HEIGHT -self.mapView.bottom) style:UITableViewStylePlain];
+		_mainTableView = [[UITableView alloc] initWithFrame:CGRectMake(0,self.mapView.bottom, SCREEN_WIDTH, SCREEN_HEIGHT -self.mapView.bottom - _sureButton.height) style:UITableViewStylePlain];
 		_mainTableView.delegate = self;
 		_mainTableView.dataSource = self;
 		_mainTableView.backgroundColor = [UIColor colorWithHexString:@"eeeeee"];
