@@ -60,6 +60,7 @@
 		2BA0254F1F2B0D57003EB25D /* CustomPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA0254E1F2B0D57003EB25D /* CustomPageView.m */; };
 		2BA025521F2B108D003EB25D /* HomeTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA025511F2B108D003EB25D /* HomeTopView.m */; };
 		2BA025551F2B2A15003EB25D /* RecommendProductView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA025541F2B2A15003EB25D /* RecommendProductView.m */; };
+		2BA709281F3A9FCB00B0B520 /* UserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BA709271F3A9FCB00B0B520 /* UserInfoViewController.xib */; };
 		2BA8DAB11F319BA9000190C1 /* DESEncryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA8DAB01F319BA9000190C1 /* DESEncryption.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		2BA8DAB61F319BCE000190C1 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA8DAB41F319BCE000190C1 /* GTMBase64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -Wno-shorten-64-to-32"; }; };
 		2BAFB5121F333054001236B8 /* GetCityListBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BAFB5111F333054001236B8 /* GetCityListBusiness.m */; };
@@ -227,6 +228,7 @@
 		2BA025511F2B108D003EB25D /* HomeTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTopView.m; sourceTree = "<group>"; };
 		2BA025531F2B2A15003EB25D /* RecommendProductView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendProductView.h; sourceTree = "<group>"; };
 		2BA025541F2B2A15003EB25D /* RecommendProductView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendProductView.m; sourceTree = "<group>"; };
+		2BA709271F3A9FCB00B0B520 /* UserInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInfoViewController.xib; sourceTree = "<group>"; };
 		2BA8DAAF1F319BA9000190C1 /* DESEncryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DESEncryption.h; sourceTree = "<group>"; };
 		2BA8DAB01F319BA9000190C1 /* DESEncryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DESEncryption.m; sourceTree = "<group>"; };
 		2BA8DAB31F319BCE000190C1 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
@@ -710,6 +712,7 @@
 				2B580D641F38582900AEA6BF /* UserLocationViewController.m */,
 				2BD5D7151F39925100BE1994 /* UserInfoViewController.h */,
 				2BD5D7161F39925100BE1994 /* UserInfoViewController.m */,
+				2BA709271F3A9FCB00B0B520 /* UserInfoViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -927,6 +930,7 @@
 				2B3AE0CF1F3020F400DE03B0 /* AppProdcutSelectSpecificationCell.xib in Resources */,
 				2B90F8AE1F2F21CE00698C38 /* AppProductMainCellView.xib in Resources */,
 				2BC14D901F31AE5800919808 /* LoginViewController.xib in Resources */,
+				2BA709281F3A9FCB00B0B520 /* UserInfoViewController.xib in Resources */,
 				2B386F841F29B69A00228620 /* Main.storyboard in Resources */,
 				2BC14D991F31B64B00919808 /* RegisterViewController.xib in Resources */,
 			);

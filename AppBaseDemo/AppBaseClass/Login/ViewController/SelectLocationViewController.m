@@ -9,7 +9,6 @@
 #import "SelectLocationViewController.h"
 #import "Parser.h"
 #import "GetCityListBusiness.h"
-#import "SelectCityModel.h"
 #import "ZYPinYinSearch.h"
 #import <objc/runtime.h>
 #import <BaiduMapAPI_Search/BMKSearchComponent.h>//引入检索功能所有的头文件
@@ -75,7 +74,7 @@
     [self.navBarView setTitle:@"当前定位"];
 	[self.view addSubview:self.searchHeadTableView];
     [self.view addSubview:self.mainTableView];
-
+	
 //    NSString *strPath = [[NSBundle mainBundle] pathForResource:@"SelectLocation" ofType:@"geojson"];
 //    NSString *parseJason = [[NSString alloc] initWithContentsOfFile:strPath encoding:NSUTF8StringEncoding error:nil];
 //
@@ -168,6 +167,8 @@
 		Info * info = [[Info alloc] init];
 		info.cityCode = result.cityCode;
 		info.cityCaption = result.addressDetail.city;
+		info.latitude = [NSString stringWithFormat:@"%f",result.location.latitude];
+		info.longitude = [NSString stringWithFormat:@"%f",result.location.longitude];
 		NSArray<Info *> *infoArray = @[info];
 		cityList.info = infoArray;
 		
@@ -336,11 +337,21 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	
 	if ([tableView isEqual:self.searchHeadTableView]) {
-//
 //	//搜索
 		
+		Info *info = self.searchResultDataSource[indexPath.row];
+		if (self.locationBlock) {
+			self.locationBlock(info);
+		}
+	}else {
+	
+		Info *info = self.dataSourse[indexPath.section].info[indexPath.row];
+		if (self.locationBlock) {
+			self.locationBlock(info);
+		}
 		
 	}
+	[self.navigationController popViewControllerAnimated:YES];
 
 }
 

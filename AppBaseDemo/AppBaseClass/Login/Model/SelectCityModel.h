@@ -21,7 +21,8 @@
 @property (nonatomic , assign) NSInteger              cityState;
 @property (nonatomic , copy) NSString              * cityDesc;
 @property (nonatomic , copy) NSString              * parentCode;
-
+@property (nonatomic ,copy ) NSString * latitude;
+@property (nonatomic ,copy ) NSString * longitude;
 @end
 
 @interface CityList :NSObject

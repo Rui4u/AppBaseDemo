@@ -7,7 +7,7 @@
 //
 
 #import "BaseViewController.h"
-
+#import "SelectCityModel.h"
 @interface SelectLocationViewController : BaseViewController
-
+@property (nonatomic ,copy ) void (^locationBlock)(Info *dict);
 @end
