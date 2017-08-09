@@ -10,6 +10,7 @@
 #import "RegisterViewController.h"
 #import "LoginBusiness.h"
 #import "SelectLocationViewController.h"
+#import "UserInfoViewController.h"
 @interface LoginViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumberTextField;
 @property (weak, nonatomic) IBOutlet UITextField *userPwdTextField;
@@ -25,8 +26,8 @@
         
     
         if (isFinishInfo == NO) {
-            SelectLocationViewController * selectLocationViewController= [[SelectLocationViewController alloc] init];
-            [self.navigationController pushViewController:selectLocationViewController animated:YES];
+            UserInfoViewController * userInfoViewController= [[UserInfoViewController alloc] init];
+            [self.navigationController pushViewController:userInfoViewController animated:YES];
         }
         
         

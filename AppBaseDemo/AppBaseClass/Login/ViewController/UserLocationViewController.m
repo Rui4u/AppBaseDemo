@@ -8,6 +8,7 @@
 
 #import "UserLocationViewController.h"
 #import "SelectLocationViewController.h"
+#import "GetCityListBusiness.h"
 #import <BaiduMapAPI_Base/BMKBaseComponent.h>//引入base相关所有的头文件
 #import <BaiduMapAPI_Map/BMKMapComponent.h>//引入地图功能所有的头文件
 #import <BaiduMapAPI_Search/BMKSearchComponent.h>//引入检索功能所有的头文件
@@ -92,6 +93,14 @@
  确认按钮
  */
 @property (nonatomic ,strong ) UIButton * sureButton;
+
+@property (nonatomic ,copy ) NSString * currentAdCode;
+
+
+/**
+ 当前开通城市adcitylist
+ */
+@property (nonatomic ,strong ) NSArray * openCityAdcodeList;
 @end
 
 @implementation UserLocationViewController
@@ -106,6 +115,7 @@
 	_searcher.delegate = self;
 	
 }
+
 -(void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];
 	
@@ -147,8 +157,29 @@
 	[self  setUpBaiduMap];
 	[self setUpBaiduMapSubViews];
 	[self.view addSubview:self.mainTableView];
+	[self.view bringSubviewToFront:self.sureButton];
+
+	
+	[GetCityListBusiness requestGetCityListWithToken:TOKEN completionSuccessHandler:^(SelectCityModel *selectModel) {
+		
+		NSMutableArray * array = [NSMutableArray array];
+		for (CityList  *cityList in selectModel.cityList) {
+				for (Info *info in cityList.info) {
+					[array addObject:info.adCode];
+				
+			}
+			
+		}
+		self.openCityAdcodeList = array.copy;
+		
+	} completionFailHandler:^(NSString *failMessage) {
+		[self showToastWithMessage:failMessage showTime:1];
+	} completionError:^(NSString *netWorkErrorMessage) {
+		[self showToastWithMessage:netWorkErrorMessage showTime:1];
+	}];
 
 }
+
 - (void)clickSureButton:(UIButton *)sender {
 
 
@@ -212,6 +243,7 @@
 	};
 
 }
+
 - (void)setUpBaiduMap {
 	
 	_mapView = [[BMKMapView alloc]initWithFrame:CGRectMake(0, NAV_BAR_HEIGHT, SCREEN_WIDTH, (SCREEN_HEIGHT - NAV_BAR_HEIGHT)/2)];
@@ -306,6 +338,7 @@
 		NSLog(@"抱歉，未找到结果");
 	}
 }
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
 		[self.searchTextField resignFirstResponder];
 }
@@ -326,15 +359,29 @@
 {
 	self.result = result;
 	self.currentCityName = result.addressDetail.city;
-//
     [_poiListArray removeAllObjects];
     for(BMKPoiInfo *poiInfo in result.poiList)
     {
         NSLog(@"%@",poiInfo.address);
         [_poiListArray addObject:poiInfo.address];
     }
-	self.dataSource = result.poiList;
+	if (result.addressDetail.adCode!= nil) {
+		self.currentAdCode = [NSString stringWithFormat:@"%@00",[result.addressDetail.adCode substringWithRange:NSMakeRange(0, 4)]];
+		
+
+	}else {
+		self.currentAdCode = nil;
+	}
+	
+	
+	if ([self.openCityAdcodeList containsObject:self.currentAdCode]) {
+		self.dataSource = result.poiList;
+		
+	}else {
+		self.dataSource = nil;
+	}
 	[self.mainTableView reloadData];
+	
 }
 
 
@@ -348,6 +395,7 @@
 	[self testLat:mapView.centerCoordinate.latitude andLog:mapView.centerCoordinate.longitude];
 
 }
+
 - (void)mapView:(BMKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
 	
 	NSLog(@"%s",__func__);
@@ -355,6 +403,7 @@
     [self testLat:mapView.centerCoordinate.latitude andLog:mapView.centerCoordinate.longitude];
   	
 }
+
 - (void) testLat:(CGFloat )latitude andLog:(CGFloat)longitude {
 	
     CLLocationCoordinate2D pt = (CLLocationCoordinate2D){latitude, longitude};
@@ -389,9 +438,11 @@
 	coor.longitude = mapView.centerCoordinate.longitude;
 	self.annotation.coordinate = coor;
 }
+
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
 	return 50;
 }
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	
 	if ([tableView isEqual: self.searchHeadTableView]) {
@@ -400,9 +451,11 @@
 		return self.dataSource.count;
 	}
 }
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
 	return 44;
 }
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
  static NSString * const UITableViewCellID = @"UserLocationViewControllerCellID";
 	
@@ -423,6 +476,7 @@
 	return cell;
 
 }
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
 	if ([tableView isEqual:self.searchHeadTableView]) {
@@ -432,8 +486,19 @@
 		CGFloat log = self.searchDataSource[indexPath.row].pt.longitude;
 		[self testLat:lat andLog:log];
 		[_mapView setCenterCoordinate:CLLocationCoordinate2DMake(lat,log) animated:YES];
-		
-		
+	}else {
+	
+		[self.navigationController popViewControllerAnimated:YES];
+		if (self.locationBlock) {
+			NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+			[dict setValue:self.dataSource[indexPath.row].address forKey:@"address"];
+			[dict setValue:self.dataSource[indexPath.row].name forKey:@"name"];
+			[dict setValue:[NSString stringWithFormat:@"%f",self.dataSource[indexPath.row].pt.latitude] forKey:@"latitude"];
+			[dict setValue:[NSString stringWithFormat:@"%f",self.dataSource[indexPath.row].pt.longitude] forKey:@"longitude"];
+			[dict setValue:self.currentAdCode forKey:@"adCode"];
+			self.locationBlock(dict);
+		}
+	
 	}
 }
 
@@ -444,6 +509,8 @@
 		_mainTableView.delegate = self;
 		_mainTableView.dataSource = self;
 		_mainTableView.backgroundColor = [UIColor colorWithHexString:@"eeeeee"];
+		_mainTableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
+
 	}
 	
 	return _mainTableView;
@@ -456,6 +523,8 @@
 		_searchHeadTableView.delegate = self;
 		_searchHeadTableView.dataSource = self;
 		//		[_searchHeadTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+		_searchHeadTableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
+
 	}
 	return _searchHeadTableView;
 }

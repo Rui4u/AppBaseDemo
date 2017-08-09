@@ -35,94 +35,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AppBaseDemo/AppBaseClass/Login/Bussiness/LoginBusiness.m"
-            timestampString = "523854496.123336"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "+loginWithStoreTelephone:storePwd:completionSuccessHandler:completionFailHandler:completionError:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AppBaseDemo/AppBaseClass/Login/Bussiness/LoginBusiness.m"
-            timestampString = "523854609.766261"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "+loginWithStoreTelephone:storePwd:completionSuccessHandler:completionFailHandler:completionError:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "AppBaseDemo/AppBaseClass/Login/ViewController/UserLocationViewController.m"
-            timestampString = "523959883.775692"
+            timestampString = "523967327.970263"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "293"
-            endingLineNumber = "293"
-            landmarkName = "-onGetPoiResult:result:errorCode:"
+            startingLineNumber = "377"
+            endingLineNumber = "377"
+            landmarkName = "-onGetReverseGeoCodeResult:result:errorCode:"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AppBaseDemo/AppBaseClass/Login/ViewController/UserLocationViewController.m"
-            timestampString = "523959883.775692"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "291"
-            endingLineNumber = "291"
-            landmarkName = "-onGetPoiResult:result:errorCode:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[UserLocationViewController onGetPoiResult:result:errorCode:]"
-                  moduleName = "AppBaseDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hzcf/Desktop/AppBaseDemo/AppBaseDemo/AppBaseClass/Login/ViewController/UserLocationViewController.m"
-                  timestampString = "523959405.018097"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "276"
-                  endingLineNumber = "276"
-                  offsetFromSymbolStart = "152">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[UserLocationViewController onGetPoiResult:result:errorCode:]"
-                  moduleName = "AppBaseDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hzcf/Desktop/AppBaseDemo/AppBaseDemo/AppBaseClass/Login/ViewController/UserLocationViewController.m"
-                  timestampString = "523959405.019472"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "276"
-                  endingLineNumber = "276"
-                  offsetFromSymbolStart = "168">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

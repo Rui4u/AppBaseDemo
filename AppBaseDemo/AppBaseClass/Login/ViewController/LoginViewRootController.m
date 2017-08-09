@@ -10,7 +10,7 @@
 #import "LoginViewRootController.h"
 #import "LoginViewController.h"
 #import "CommonNotification.h"
-
+#import "UserInfoViewController.h"
 @interface LoginViewRootController ()
 
 
@@ -37,8 +37,15 @@
 #pragma mark - 推出检测手机号页面
 - (void) setRootViewController
 {
-    LoginViewController * login = [[LoginViewController alloc] init];
-    [self pushViewController:login animated:NO];
+	if (isNotLogin) {
+		LoginViewController * login = [[LoginViewController alloc] init];
+		[self pushViewController:login animated:NO];
+	}else {
+		
+		UserInfoViewController *userInfoVc = [[UserInfoViewController alloc] init];
+		[self pushViewController:userInfoVc animated:NO];
+	}
+	
 }
 
 - (void)loginViewRootControllerBlock:(NSNotification *)notification {

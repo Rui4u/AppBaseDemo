@@ -8,13 +8,14 @@
 
 #import "UserInfoViewController.h"
 #import "UserLocationViewController.h"
+#import "StoreInfoBusiness.h"
 @interface UserInfoViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *storeNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *managerNameTextField;
 @property (weak, nonatomic) IBOutlet UIButton *storeAdressButton;
 @property (weak, nonatomic) IBOutlet UITextField *storeAdressDesTextField;
 @property (weak, nonatomic) IBOutlet UITextField *joinCode;
-
+@property (nonatomic ,strong ) NSDictionary * storeLocation;
 @end
 
 @implementation UserInfoViewController
@@ -23,12 +24,35 @@
 	
 	UserLocationViewController * userLocationViewController = [[UserLocationViewController alloc] init];
 	[self.navigationController pushViewController:userLocationViewController animated:YES];
+	
+	userLocationViewController.locationBlock = ^(NSDictionary *dict) {
+	
+	
+	};
+	
 
 }
 
 //提交
 - (IBAction)clickSubmitButton:(UIButton *)sender {
 	
+	
+	[StoreInfoBusiness requestStoreInfoWithToken:TOKEN
+									   storeName:self.storeNameTextField.text
+									 managerName:self.managerNameTextField.text
+									storeAddress:self.storeAdressButton.titleLabel.text
+									   longitude:@""
+										latitude: @""
+										  adCode:@""
+						completionSuccessHandler:^(BOOL succeed)
+	{
+							
+	
+	} completionFailHandler:^(NSString *failMessage) {
+		
+	} completionError:^(NSString *netWorkErrorMessage) {
+		
+	}];
 }
 
 

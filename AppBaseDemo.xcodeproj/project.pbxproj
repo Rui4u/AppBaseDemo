@@ -61,6 +61,10 @@
 		2BA025521F2B108D003EB25D /* HomeTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA025511F2B108D003EB25D /* HomeTopView.m */; };
 		2BA025551F2B2A15003EB25D /* RecommendProductView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA025541F2B2A15003EB25D /* RecommendProductView.m */; };
 		2BA709281F3A9FCB00B0B520 /* UserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BA709271F3A9FCB00B0B520 /* UserInfoViewController.xib */; };
+		2BA709331F3B087800B0B520 /* StoreInfoBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA709321F3B087800B0B520 /* StoreInfoBusiness.m */; };
+		2BA709361F3B0F7600B0B520 /* storeAdressInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA709351F3B0F7600B0B520 /* storeAdressInfoModel.m */; };
+		2BA709401F3B1E3900B0B520 /* CityNotInOpenCityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BA7093E1F3B1E3900B0B520 /* CityNotInOpenCityView.xib */; };
+		2BA709431F3B1E6300B0B520 /* CityNotInOpenCityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA709421F3B1E6300B0B520 /* CityNotInOpenCityView.m */; };
 		2BA8DAB11F319BA9000190C1 /* DESEncryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA8DAB01F319BA9000190C1 /* DESEncryption.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		2BA8DAB61F319BCE000190C1 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA8DAB41F319BCE000190C1 /* GTMBase64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -Wno-shorten-64-to-32"; }; };
 		2BAFB5121F333054001236B8 /* GetCityListBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BAFB5111F333054001236B8 /* GetCityListBusiness.m */; };
@@ -229,6 +233,13 @@
 		2BA025531F2B2A15003EB25D /* RecommendProductView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendProductView.h; sourceTree = "<group>"; };
 		2BA025541F2B2A15003EB25D /* RecommendProductView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendProductView.m; sourceTree = "<group>"; };
 		2BA709271F3A9FCB00B0B520 /* UserInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInfoViewController.xib; sourceTree = "<group>"; };
+		2BA709311F3B087800B0B520 /* StoreInfoBusiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreInfoBusiness.h; sourceTree = "<group>"; };
+		2BA709321F3B087800B0B520 /* StoreInfoBusiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreInfoBusiness.m; sourceTree = "<group>"; };
+		2BA709341F3B0F7600B0B520 /* storeAdressInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = storeAdressInfoModel.h; sourceTree = "<group>"; };
+		2BA709351F3B0F7600B0B520 /* storeAdressInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = storeAdressInfoModel.m; sourceTree = "<group>"; };
+		2BA7093E1F3B1E3900B0B520 /* CityNotInOpenCityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CityNotInOpenCityView.xib; sourceTree = "<group>"; };
+		2BA709411F3B1E6300B0B520 /* CityNotInOpenCityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityNotInOpenCityView.h; sourceTree = "<group>"; };
+		2BA709421F3B1E6300B0B520 /* CityNotInOpenCityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityNotInOpenCityView.m; sourceTree = "<group>"; };
 		2BA8DAAF1F319BA9000190C1 /* DESEncryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DESEncryption.h; sourceTree = "<group>"; };
 		2BA8DAB01F319BA9000190C1 /* DESEncryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DESEncryption.m; sourceTree = "<group>"; };
 		2BA8DAB31F319BCE000190C1 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
@@ -661,6 +672,8 @@
 			children = (
 				2BBDCC541F34BC6B003FE167 /* SelectCityModel.h */,
 				2BBDCC551F34BC6B003FE167 /* SelectCityModel.m */,
+				2BA709341F3B0F7600B0B520 /* storeAdressInfoModel.h */,
+				2BA709351F3B0F7600B0B520 /* storeAdressInfoModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -668,6 +681,9 @@
 		2BBFAFEA1F32F38C002506D1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2BA7093E1F3B1E3900B0B520 /* CityNotInOpenCityView.xib */,
+				2BA709411F3B1E6300B0B520 /* CityNotInOpenCityView.h */,
+				2BA709421F3B1E6300B0B520 /* CityNotInOpenCityView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -767,6 +783,8 @@
 				2BBFAFFE1F330AE8002506D1 /* LoginBusiness.m */,
 				2BAFB5101F333054001236B8 /* GetCityListBusiness.h */,
 				2BAFB5111F333054001236B8 /* GetCityListBusiness.m */,
+				2BA709311F3B087800B0B520 /* StoreInfoBusiness.h */,
+				2BA709321F3B087800B0B520 /* StoreInfoBusiness.m */,
 			);
 			path = Bussiness;
 			sourceTree = "<group>";
@@ -931,6 +949,7 @@
 				2B90F8AE1F2F21CE00698C38 /* AppProductMainCellView.xib in Resources */,
 				2BC14D901F31AE5800919808 /* LoginViewController.xib in Resources */,
 				2BA709281F3A9FCB00B0B520 /* UserInfoViewController.xib in Resources */,
+				2BA709401F3B1E3900B0B520 /* CityNotInOpenCityView.xib in Resources */,
 				2B386F841F29B69A00228620 /* Main.storyboard in Resources */,
 				2BC14D991F31B64B00919808 /* RegisterViewController.xib in Resources */,
 			);
@@ -1069,6 +1088,7 @@
 				2B386F7B1F29B69A00228620 /* main.m in Sources */,
 				2B3870341F29BC0C00228620 /* NSMutableAttributedString+SRSpecial.m in Sources */,
 				2B38703C1F29BC0C00228620 /* UIView+SRExtension.m in Sources */,
+				2BA709331F3B087800B0B520 /* StoreInfoBusiness.m in Sources */,
 				2BA025491F2B0C09003EB25D /* HomeViewController.m in Sources */,
 				2B90F8AC1F2F21C700698C38 /* AppProductMainCellView.m in Sources */,
 				2BC14DB91F31CD3500919808 /* SBJsonStreamParser.m in Sources */,
@@ -1076,6 +1096,7 @@
 				2BBFAFF51F330181002506D1 /* RegisterBusiness.m in Sources */,
 				2BBDCC4E1F34AD86003FE167 /* HomeDataModel.m in Sources */,
 				2BBFAFFF1F330AE8002506D1 /* LoginBusiness.m in Sources */,
+				2BA709431F3B1E6300B0B520 /* CityNotInOpenCityView.m in Sources */,
 				2B38703D1F29BC0C00228620 /* NSArray+ ZXPUnicode.m in Sources */,
 				2BA0254F1F2B0D57003EB25D /* CustomPageView.m in Sources */,
 				2BBFAFFC1F3301F6002506D1 /* ParserManager.m in Sources */,
@@ -1083,6 +1104,7 @@
 				2BA8DAB61F319BCE000190C1 /* GTMBase64.m in Sources */,
 				2B38703E1F29BC0C00228620 /* NSDictionary+ZXPUnicode.m in Sources */,
 				2B90F8941F2EC86200698C38 /* CustomScrollSelectView.m in Sources */,
+				2BA709361F3B0F7600B0B520 /* storeAdressInfoModel.m in Sources */,
 				2BA025551F2B2A15003EB25D /* RecommendProductView.m in Sources */,
 				2B580D6B1F385A8E00AEA6BF /* BaiduMapManager.m in Sources */,
 			);

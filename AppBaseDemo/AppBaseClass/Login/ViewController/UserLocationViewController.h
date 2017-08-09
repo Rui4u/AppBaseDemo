@@ -9,5 +9,6 @@
 #import "BaseViewController.h"
 
 @interface UserLocationViewController : BaseViewController
+@property (nonatomic ,copy ) void (^locationBlock)(NSDictionary *dict);
 
 @end

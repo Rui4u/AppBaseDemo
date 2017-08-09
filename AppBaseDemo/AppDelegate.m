@@ -11,9 +11,6 @@
 #import "DESEncryption.h"
 #import "LoginViewRootController.h"
 #import "NSObject+SBJson.h"
-#import "UserLocationViewController.h"
-#import "SelectLocationViewController.h"
-#import "UserInfoViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -27,7 +24,7 @@
 	[self setUpBaiduMapManager];
 	
 	
-	RootViewController* rootViewController = [[UserInfoViewController alloc] init];
+	RootViewController* rootViewController = [[RootViewController alloc] init];
     
 	self.rootViewController = rootViewController;
 	
