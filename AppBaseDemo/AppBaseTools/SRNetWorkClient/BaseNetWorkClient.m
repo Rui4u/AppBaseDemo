@@ -11,6 +11,7 @@
 #import <AFNetworkReachabilityManager.h>
 #import "NSObject+SBJson.h"
 #import "DESEncryption.h"
+#import "LoginViewRootController.h"
 @implementation BaseNetWorkClient
 + (void) jsonFormGetRequestWithUrl : (NSString  *)        url
 							  param : (NSDictionary *)     param
@@ -59,9 +60,15 @@
         
         BLOCK_SAFE_RUN(handlerSuccess ,[resquest objectForKey:@"body"]);
 
-    }else {
-        BLOCK_SAFE_RUN(handlerException,[[resquest valueForKey:@"header"] valueForKey:@"errorMsg"]);
     }
+	else if ( [[[resquest valueForKey:@"header"]valueForKey:@"errorCode"] isEqualToString:@"-4"]) {
+		clearUserDefaults();
+
+		BLOCK_SAFE_RUN(handlerException,[[resquest valueForKey:@"header"] valueForKey:@"errorMsg"]);
+		//token失效跳转登录界面
+		[[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:[[LoginViewRootController alloc ]init] animated:YES completion:nil];
+
+	}
 
 
 }

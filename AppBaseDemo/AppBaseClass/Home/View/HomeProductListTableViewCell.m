@@ -124,7 +124,7 @@
 
 - (void)setDataSourse:(GoodsList *)dataSourse {
     _dataSourse = dataSourse;
-    self.titleLabel.text = [NSString stringWithFormat:@"[%@]%@",dataSourse.fullName,dataSourse.feature];
+    self.titleLabel.text = [NSString stringWithFormat:@"%@ %@",dataSourse.fullName,dataSourse.feature];
     for (UIView *view  in self.bottomBgView.subviews) {
         [view removeFromSuperview];
     }
