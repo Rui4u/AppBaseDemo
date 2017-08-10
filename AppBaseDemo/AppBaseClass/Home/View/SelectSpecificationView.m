@@ -29,9 +29,17 @@
     averagePrice.frame = CGRectMake(0, totolPriceLabel.bottom, self.width, 16);
     [self addSubview:averagePrice];
         
-    UIButton * addButton = [[UIButton alloc] initWithFrame:CGRectMake(self.width - 44 - 15,(self.height - 44)/2, 44, 44)];
-    addButton.backgroundColor = [UIColor randomOfColor];
+    UIButton * addButton = [UIButton buttonWithType:UIButtonTypeContactAdd];
+	addButton.frame = CGRectMake(self.width - 44 - 15,(self.height - 44)/2, 44, 44);
+	
+	[addButton addTarget:self action:@selector(clickAddButton:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:addButton];
+
+}
+- (void)clickAddButton:(UIButton *)sender {
+	if ([self.delegate respondsToSelector:@selector(selectSpecificationWithIndex:)]) {
+		[self.delegate selectSpecificationWithIndex:self.index];
+	}
 
 }
 @end

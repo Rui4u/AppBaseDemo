@@ -7,12 +7,14 @@
 //
 
 #import "HomeTopView.h"
+#import "HomeDataModel.h"
 #import "TopAdvertisementView.h"
 #import "RecommendProductView.h"
 @interface HomeTopView()<AdvertisementViewDelegate>
 @property (nonatomic ,strong ) TopAdvertisementView *bannerScrollView; //广告位
 @property (nonatomic ,strong ) UIView * headLineView;  //标题View
 @property (nonatomic ,strong ) UIView * recommendProductBgView;  //推荐产品View
+@property (nonatomic ,strong ) UIButton * bottomAdv;
 @end
 @implementation HomeTopView
 
@@ -38,43 +40,21 @@
 - (void)privateSetUpUI {
 
 	[self addSubview:self.bannerScrollView];
-	self.bannerScrollView.bannerListArray = @[@1,@2,@3,@4];
-	[self.bannerScrollView.collectionView reloadData];
 
 	[self setUpHeadLineView];
-	[self setUpRecommendProductView];
+//	[self setUpRecommendProductView];
 	[self setUpBoomView];
 }
 
 - (void)setUpBoomView {
 
-	UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.recommendProductBgView.frame), SCREEN_WIDTH, 110)];
-	button.backgroundColor = [UIColor randomOfColor];
-	[self addSubview:button];
-	self.height =CGRectGetMaxY(button.frame);
+	self.bottomAdv = [[UIButton alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.headLineView.frame), SCREEN_WIDTH, 110)];
+	[self addSubview:self.bottomAdv];
+	self.height =CGRectGetMaxY(self.bottomAdv.frame);
+	[self.bottomAdv sd_setBackgroundImageWithURL:[NSURL URLWithString:self.homeDataModel.activityList.firstObject.activityImg] forState:UIControlStateNormal];
 }
 
-- (void)setUpRecommendProductView {
 
-	NSArray * titleArray = @[@"开始购买",@"常用清单",@"活动中心",@"我的订单"];
-	CGFloat width = SCREEN_WIDTH/2.0;
-	CGFloat height = SCREEN_WIDTH/4.0;
-	UIView * recommendProductBgView = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.headLineView.frame), SCREEN_WIDTH, height * ceil(titleArray.count/2))];
-	self.recommendProductBgView = recommendProductBgView;
-	[self addSubview:recommendProductBgView];
-	
-	NSInteger totalColumns = 2;
-	
-	for (int index = 0 ; index < titleArray.count; index ++) {
-		// 计算行号  和   列号
-		int row = index / totalColumns;
-		int col = index % totalColumns;
-		UIView * view = [[RecommendProductView alloc] initWithFrame:CGRectMake(col * width, row * height, width, height)];
-		view.backgroundColor = [UIColor randomOfColor];
-		[self.recommendProductBgView addSubview:view];
-	}
-	
-}
 
 - (void)setUpHeadLineView {
 	NSArray * titleArray = @[@"开始购买",@"常用清单",@"活动中心",@"我的订单"];
@@ -106,4 +86,39 @@
 	
 	
 }
+
+- (void)setHomeDataModel:(HomeDataModel *)homeDataModel {
+	_homeDataModel = homeDataModel;
+
+	self.bannerScrollView.bannerListArray = homeDataModel.bannerList;
+	[self.bannerScrollView.collectionView reloadData];
+	NSString * iamgeUrl = homeDataModel.activityList.firstObject.activityImg;
+	[self.bottomAdv sd_setBackgroundImageWithURL:[NSURL URLWithString:iamgeUrl] forState:UIControlStateNormal];
+}
+
+
+
+
+
+//- (void)setUpRecommendProductView {
+//
+//	NSArray * titleArray = @[@"开始购买",@"常用清单",@"活动中心",@"我的订单"];
+//	CGFloat width = SCREEN_WIDTH/2.0;
+//	CGFloat height = SCREEN_WIDTH/4.0;
+//	UIView * recommendProductBgView = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.headLineView.frame), SCREEN_WIDTH, height * ceil(titleArray.count/2))];
+//	self.recommendProductBgView = recommendProductBgView;
+//	[self addSubview:recommendProductBgView];
+//
+//	NSInteger totalColumns = 2;
+//
+//	for (int index = 0 ; index < titleArray.count; index ++) {
+//		// 计算行号  和   列号
+//		int row = index / totalColumns;
+//		int col = index % totalColumns;
+//		UIView * view = [[RecommendProductView alloc] initWithFrame:CGRectMake(col * width, row * height, width, height)];
+//		view.backgroundColor = [UIColor randomOfColor];
+//		[self.recommendProductBgView addSubview:view];
+//	}
+//
+//}
 @end

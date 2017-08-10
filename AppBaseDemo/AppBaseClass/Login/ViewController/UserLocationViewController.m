@@ -8,6 +8,7 @@
 
 #import "UserLocationViewController.h"
 #import "SelectLocationViewController.h"
+#import "CityNotInOpenCityView.h"
 #import "GetCityListBusiness.h"
 #import <BaiduMapAPI_Base/BMKBaseComponent.h>//引入base相关所有的头文件
 #import <BaiduMapAPI_Map/BMKMapComponent.h>//引入地图功能所有的头文件
@@ -19,7 +20,7 @@
 #import <CoreLocation/CoreLocation.h> 
 #import <CoreLocation/CLLocationManagerDelegate.h>
 
-@interface UserLocationViewController ()<BMKMapViewDelegate,BMKLocationServiceDelegate,BMKPoiSearchDelegate,BMKGeoCodeSearchDelegate,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
+@interface UserLocationViewController ()<BMKMapViewDelegate,BMKLocationServiceDelegate,BMKPoiSearchDelegate,BMKGeoCodeSearchDelegate,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,CityNotInOpenCityViewDelegate>
 
 /**
  主tableview
@@ -101,6 +102,11 @@
  当前开通城市adcitylist
  */
 @property (nonatomic ,strong ) NSArray * openCityAdcodeList;
+
+/**
+ 城市没有开通
+ */
+@property (nonatomic ,strong ) CityNotInOpenCityView * cityNotInOpenCityView;
 @end
 
 @implementation UserLocationViewController
@@ -160,15 +166,14 @@
 	[self.view bringSubviewToFront:self.sureButton];
 
 	
+	
 	[GetCityListBusiness requestGetCityListWithToken:TOKEN completionSuccessHandler:^(SelectCityModel *selectModel) {
 		
 		NSMutableArray * array = [NSMutableArray array];
 		for (CityList  *cityList in selectModel.cityList) {
 				for (Info *info in cityList.info) {
 					[array addObject:info.adCode];
-				
 			}
-			
 		}
 		self.openCityAdcodeList = array.copy;
 		
@@ -180,8 +185,18 @@
 
 }
 
-- (void)clickSureButton:(UIButton *)sender {
+- (void)clickCityNotInOpenCityViewForBackHome {
 
+}
+
+- (void)clickCityNotInOpenCityViewForSelectCityView {
+	[self clickLocationCityButton:nil];
+}
+
+#pragma mark - 点击事件
+
+- (void)clickSureButton:(UIButton *)sender {
+	
 
 
 }
@@ -240,6 +255,7 @@
 		self.currentCityName = info.cityCaption;
 		[self testLat:info.latitude.floatValue andLog:info.longitude.floatValue];
 		[_mapView setCenterCoordinate:CLLocationCoordinate2DMake(info.latitude.floatValue,info.longitude.floatValue) animated:YES];
+		[self.selectCityButton setTitle:info.cityCaption forState:UIControlStateNormal];
 	};
 
 }
@@ -359,15 +375,16 @@
 {
 	self.result = result;
 	self.currentCityName = result.addressDetail.city;
+	[self.selectCityButton setTitle:self.currentCityName forState:UIControlStateNormal];
+	
     [_poiListArray removeAllObjects];
     for(BMKPoiInfo *poiInfo in result.poiList)
     {
         NSLog(@"%@",poiInfo.address);
         [_poiListArray addObject:poiInfo.address];
     }
-	if (result.addressDetail.adCode!= nil) {
-		self.currentAdCode = [NSString stringWithFormat:@"%@00",[result.addressDetail.adCode substringWithRange:NSMakeRange(0, 4)]];
-		
+	if (result.addressDetail.adCode!= nil && result.addressDetail.adCode.length == 6) {
+		self.currentAdCode = [result.addressDetail.adCode stringByReplacingCharactersInRange:NSMakeRange(4, 2) withString:@"00"];
 
 	}else {
 		self.currentAdCode = nil;
@@ -376,9 +393,10 @@
 	
 	if ([self.openCityAdcodeList containsObject:self.currentAdCode]) {
 		self.dataSource = result.poiList;
-		
+		self.cityNotInOpenCityView.hidden = YES;
 	}else {
 		self.dataSource = nil;
+		self.cityNotInOpenCityView.hidden = NO;
 	}
 	[self.mainTableView reloadData];
 	
@@ -527,5 +545,18 @@
 
 	}
 	return _searchHeadTableView;
+}
+
+- (CityNotInOpenCityView *)cityNotInOpenCityView {
+	if (_cityNotInOpenCityView == nil) {
+		
+		
+		_cityNotInOpenCityView = [[NSBundle mainBundle]loadNibNamed:@"CityNotInOpenCityView" owner:self options:nil].firstObject;
+		_cityNotInOpenCityView.frame = self.mainTableView.bounds;
+		[self.mainTableView addSubview:_cityNotInOpenCityView];
+		_cityNotInOpenCityView.hidden = YES;
+		_cityNotInOpenCityView.deleagte = self;
+	}
+	return _cityNotInOpenCityView;
 }
 @end

@@ -16,7 +16,7 @@ typedef void (^RegisterErrorBlcok)(NSString * netWorkErrorMessage);
 /**
  注册接口
  */
-@interface RegisterBusiness : BaseNetWorkClient
+@interface RegisterBusiness : BaseBussiness
 
 
 /**

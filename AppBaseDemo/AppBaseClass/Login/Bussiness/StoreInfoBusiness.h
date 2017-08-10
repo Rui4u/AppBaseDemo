@@ -15,7 +15,7 @@ typedef void (^StoreInfoErrorBlcok)(NSString * netWorkErrorMessage);
 /**
  店铺更新接口
  */
-@interface StoreInfoBusiness : BaseNetWorkClient
+@interface StoreInfoBusiness : BaseBussiness
 + (void) requestStoreInfoWithToken : (NSString *) token
 						  storeName: (NSString *) storeName
 						managerName: (NSString *) managerName

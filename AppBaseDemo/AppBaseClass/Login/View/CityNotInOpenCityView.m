@@ -7,8 +7,14 @@
 //
 
 #import "CityNotInOpenCityView.h"
+@interface CityNotInOpenCityView ()
 
+@property (weak, nonatomic) IBOutlet UIButton *selectCity;
+@property (weak, nonatomic) IBOutlet UIButton *backHome;
+
+@end
 @implementation CityNotInOpenCityView
+
 
 - (IBAction)clickSelectCity:(UIButton *)sender {
 	if ([self.deleagte respondsToSelector:@selector(clickCityNotInOpenCityViewForSelectCityView)]) {
@@ -20,6 +26,15 @@
 		[self.deleagte clickCityNotInOpenCityViewForBackHome];
 	}
 }
-
+//- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+//	
+//	for (UIView * view in self.subviews) {
+//		  CGPoint chatP = [self convertPoint:point toView:view];
+//		if ([view pointInside:chatP withEvent:event]) {
+//			return view;
+//		}
+//	}
+//	return [super hitTest:point withEvent:event];
+//}
 
 @end

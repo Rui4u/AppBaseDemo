@@ -8,7 +8,7 @@
 
 #import "TopAdvertisementView.h"
 #import "CustomPageView.h"
-
+#import "HomeDataModel.h"
 @interface TopAdvertisementView()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 
@@ -52,11 +52,9 @@ static NSString * const reuseIdentifier = @"AdvertisementView";
     UICollectionViewCell *cell  = [collectionView dequeueReusableCellWithReuseIdentifier:@"AdvertisementView" forIndexPath:indexPath];
 
     UIImageView * iamgeView =[[UIImageView alloc] initWithFrame:_collectionView.bounds];
-//    [iamgeView sd_setImageWithURL:[NSURL URLWithString:]];
+    [iamgeView sd_setImageWithURL:[NSURL URLWithString:self.bannerListArray[indexPath.item].url]];
 	
 	
-	cell.backgroundColor =  [UIColor randomOfColor];
-	#warning url---
     cell.backgroundView = iamgeView;
 
     cell.size = self.bounds.size;
@@ -66,7 +64,7 @@ static NSString * const reuseIdentifier = @"AdvertisementView";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
 }
-- (void)setBannerListArray:(NSArray *)bannerListArray
+- (void)setBannerListArray:(NSArray<BannerList *>*)bannerListArray
 {
     _bannerListArray = bannerListArray;
 

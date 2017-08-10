@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+@class BannerList;
 @protocol AdvertisementViewDelegate<NSObject>
 - (void)clickAdverrismentWithUrl:(NSString *)url withUrlTitle:(NSString *)urlTitle;
 @end
@@ -15,7 +16,7 @@
  */
 @interface TopAdvertisementView : UIView
 
-@property (nonatomic ,strong ) NSArray *bannerListArray;
+@property (nonatomic ,strong ) NSArray <BannerList *>*bannerListArray;
 
 @property (nonatomic , weak)id <AdvertisementViewDelegate>delegate;
 /**

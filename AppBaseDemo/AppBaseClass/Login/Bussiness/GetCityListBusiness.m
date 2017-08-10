@@ -36,28 +36,8 @@
          
      } failure:^(NSError * error)
      {
-         if (error)
-         {
-             if (error.code == 1001)//服务器链接异常,请稍后重试.
-             {
-                 if (error.domain)
-                 {
-                     completionError([error.domain copy]);
-                 }
-             }
-             else if (error.code == 1010)//网络异常,请稍后重试。
-             {
-                 if (error.domain)
-                 {
-                     completionError([error.domain copy]);
-                 }
-             }
-             else
-             {
-                 NSString * errorMessage = @"网络异常,请稍后重试。";
-                 completionError(errorMessage);
-             }
-         }
+		 completionError([super netWorkFailWithErroe:error]);
+
      }];
 }
 @end

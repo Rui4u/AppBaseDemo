@@ -15,7 +15,7 @@ typedef void (^GetCityListErrorBlcok)(NSString * netWorkErrorMessage);
 /**
  获取开通城市列表
  */
-@interface GetCityListBusiness : BaseNetWorkClient
+@interface GetCityListBusiness : BaseBussiness
 
 
 

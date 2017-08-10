@@ -15,7 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *storeAdressButton;
 @property (weak, nonatomic) IBOutlet UITextField *storeAdressDesTextField;
 @property (weak, nonatomic) IBOutlet UITextField *joinCode;
-@property (nonatomic ,strong ) NSDictionary * storeLocation;
+@property (nonatomic ,strong ) NSDictionary * storeInfo;
 @end
 
 @implementation UserInfoViewController
@@ -26,8 +26,9 @@
 	[self.navigationController pushViewController:userLocationViewController animated:YES];
 	
 	userLocationViewController.locationBlock = ^(NSDictionary *dict) {
-	
-	
+		self.storeInfo = dict;
+		[self.storeAdressButton setTitle:[dict objectForKey:@"name"] forState:UIControlStateNormal];
+		self.storeAdressDesTextField.text =  [dict objectForKey:@"address"];
 	};
 	
 
@@ -41,13 +42,14 @@
 									   storeName:self.storeNameTextField.text
 									 managerName:self.managerNameTextField.text
 									storeAddress:self.storeAdressButton.titleLabel.text
-									   longitude:@""
-										latitude: @""
-										  adCode:@""
+									   longitude:[self.storeInfo objectForKey:@"longitude"]
+										latitude: [self.storeInfo objectForKey:@"latitude"]
+										  adCode:[self.storeInfo objectForKey:@"adCode"]
 						completionSuccessHandler:^(BOOL succeed)
 	{
 							
-	
+		[self dismissViewControllerAnimated:YES completion:nil];
+		[self showToastWithMessage:@"提交成功" showTime:1];
 	} completionFailHandler:^(NSString *failMessage) {
 		
 	} completionError:^(NSString *netWorkErrorMessage) {

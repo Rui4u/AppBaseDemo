@@ -7,13 +7,8 @@
 //
 
 
-#ifndef BaseBussiness_h
-#define BaseBussiness_h
+#import <Foundation/Foundation.h>
 
-
-
-
-#endif /* BaseBussiness_h */
 
 
 
@@ -26,6 +21,14 @@
 #define kLoginBusinessUrl                 [NSString stringWithFormat :@"%@/gs/store/login?",kHTTP_HOST_URL]
 //开通城市列表
 #define kCityListBusinessUrl                 [NSString stringWithFormat :@"%@/gs/city/listAPI?",kHTTP_HOST_URL]
+//完善用户信息
+#define KStoreInfoBussinessUrl            [NSString stringWithFormat :@"%@/gs/store/update?",kHTTP_HOST_URL]
+
+
+//首页
+#define KHomeBussinessUrl            [NSString stringWithFormat :@"%@/gs/index/indexList?",kHTTP_HOST_URL]
+//全部商品
+#define KGoodslistAllBussinessUrl            [NSString stringWithFormat :@"%@/gs/goods/goodslistAll?",kHTTP_HOST_URL]
 
 
 NS_ASSUME_NONNULL_BEGIN

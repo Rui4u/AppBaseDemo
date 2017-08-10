@@ -251,7 +251,7 @@
                         <constraint firstAttribute="bottom" secondItem="3n1-es-WBu" secondAttribute="bottom" id="zdB-pD-fAE"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4b-MT-6cb">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4b-MT-6cb">
                     <rect key="frame" x="15" y="367" width="753" height="44"/>
                     <color key="backgroundColor" red="0.1083281678" green="0.85632138319999995" blue="0.103644001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>

@@ -10,42 +10,47 @@
 
 @implementation HomeDataModel
 + (NSDictionary *)objectClassInArray{
-    return @{
-             @"bottomBanner":@"BottomBanner",
-             @"productInfoList" : @"ProductInfoList",
-             @"bannerList":@"BannerList"
-             };
+	return @{
+			 @"activityList":@"ActivityList",
+			 @"ProductionInfoList" : @"ProductionInfoList",
+			 @"bannerList":@"BannerList"
+			 };
 }
 @end
 
-@implementation Header
-@end
 
-@implementation BottomBanner
-
+@implementation ActivityList
++ (NSDictionary *)replacedKeyFromPropertyName{
+	return @{@"activityID" : @"id"};
+}
 @end
 @implementation Guige
-
-@end
-@implementation ProductList
-
-
-+ (NSDictionary *)objectClassInArray{
-    return @{
-             @"guige":@"Guige",
-             };
++ (NSDictionary *)replacedKeyFromPropertyName{
+	return @{@"guigeID" : @"id"};
 }
 @end
-@implementation ProductInfoList
+@implementation GoodsList
++ (NSDictionary *)replacedKeyFromPropertyName{
+	return @{@"goodsListID" : @"id"};
+}
 + (NSDictionary *)objectClassInArray{
-    return @{
-             @"productList" : @"ProductList",
-             
-             };
+	return @{
+			 @"guige":@"Guige",
+			 };
+}
+@end
+@implementation ProductionInfoList
++ (NSDictionary *)objectClassInArray{
+	return @{
+			 @"goodsList":@"GoodsList",
+			 };
 }
 @end
 @implementation BannerList
-
++ (NSDictionary *)replacedKeyFromPropertyName{
+	return @{@"bannerListID" : @"id"};
+}
 @end
+
 
 

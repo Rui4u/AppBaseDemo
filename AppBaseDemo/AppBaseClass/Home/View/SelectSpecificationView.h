@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol SelectSpecificationViewDelegate <NSObject>
+
+/**
+ 选择哪个产品
+
+ @param index 角标
+ */
+- (void)selectSpecificationWithIndex:(NSInteger)index;
+
+@end
 /**
  选择规格view
  */
@@ -20,4 +30,11 @@
  平均价
  */
 @property (nonatomic ,strong) UILabel * averagePrice;
+
+/**
+ 选择的角标
+ */
+@property (nonatomic ,assign ) NSInteger index;
+
+@property (nonatomic ,weak ) id<SelectSpecificationViewDelegate> delegate;
 @end

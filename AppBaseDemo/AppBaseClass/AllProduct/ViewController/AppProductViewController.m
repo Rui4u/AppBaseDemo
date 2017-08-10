@@ -14,6 +14,7 @@
 #import "AppProductMainCellView.h"
 #import "AppProductModel.h"
 #import "LoginViewRootController.h"
+#import "GetAppProductListBusiness.h"
 
 @interface AppProductViewController ()<UITableViewDelegate,UITableViewDataSource,AppProductMainCellViewDelegate>
 /**
@@ -52,11 +53,23 @@
 	self.customScrollSelectView.dataSourse = @[@"肉禽类",@"新鲜蔬菜",@"米面粮油",@"肉禽类",@"新鲜蔬菜",@"米面粮油",@"米面粮油"];
 	self.customScrollSelectView.textColor = [UIColor blackColor];
 	[self.customScrollSelectView reloadeData];
-	[self.customScrollSelectView selectSwitchButtonAtIndex:0];
+//	[self.customScrollSelectView selectSwitchButtonAtIndex:0];
 
-	
+	[self GetAppProductListBusiness];
 	[self.view addSubview:self.mainTableView];
 	[self.view addSubview:self.leftTimeQuantumTableView];
+}
+
+- (void)GetAppProductListBusiness {
+	[GetAppProductListBusiness requestGetAppProductListWithToken:TOKEN completionSuccessHandler:^(HomeDataModel *listArray) {
+		
+	} completionFailHandler:^(NSString *failMessage) {
+		[self showToastWithMessage:failMessage showTime:1];
+	} completionError:^(NSString *netWorkErrorMessage) {
+		[self showToastWithMessage:netWorkErrorMessage showTime:1];
+		
+	}];
+
 }
 
 - (void)didReceiveMemoryWarning {

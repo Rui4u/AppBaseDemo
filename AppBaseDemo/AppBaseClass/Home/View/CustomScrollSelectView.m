@@ -28,6 +28,8 @@
  按钮集合
  */
 @property (nonatomic ,strong ) NSMutableArray * buttonArray;
+
+@property (nonatomic ,assign ) BOOL canClick;
 @end
 
 
@@ -112,7 +114,7 @@
 		
 	}
 	self.bgScrollView.contentSize = CGSizeMake( _lastX , 0);
-	
+	self.canClick = YES;
 	
 	[self.bgScrollView addSubview:self.changeView];
 	
@@ -154,11 +156,13 @@
 	lable.textColor = self.textSelectColor;
 	
 	
-	
-	if([self.delegate respondsToSelector:@selector(customScrollSelectView:didSelectWithProductTypeModel:)]){
-		
-		[self.delegate customScrollSelectView:self didSelectWithProductTypeModel:self.dataSourse[sender.view.tag - 1000]];
+	if (self.canClick) {
+		if([self.delegate respondsToSelector:@selector(customScrollSelectView:didSelectWithProductTypeModel:)]){
+			
+			[self.delegate customScrollSelectView:self didSelectWithProductTypeModel:sender.view.tag - 1000];
+		}
 	}
+	
 	
 	self.oldLable = lable;
 }
@@ -187,8 +191,10 @@
 
 
 
-- (void)selectSwitchButtonAtIndex:(NSInteger) index {
+- (void)selectSwitchButtonAtIndex:(NSInteger) index withClick:(BOOL)canClick{
+	self.canClick = canClick;
 	[self onTapClick: ((UIView *)self.buttonArray[index]).gestureRecognizers.firstObject];
+	self.canClick = YES;
 }
 
 

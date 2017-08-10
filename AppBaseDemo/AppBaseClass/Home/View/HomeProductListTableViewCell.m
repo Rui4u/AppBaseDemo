@@ -9,7 +9,7 @@
 #import "HomeProductListTableViewCell.h"
 #import "SelectSpecificationView.h"
 #import "HomeDataModel.h"
-@interface HomeProductListTableViewCell ()
+@interface HomeProductListTableViewCell () <SelectSpecificationViewDelegate>
 
 /**
  procut图片
@@ -34,6 +34,11 @@
  <#Description#>
  */
 @property (nonatomic ,strong) UIView * bgView;
+
+/**
+ 选规格 标签
+ */
+@property (nonatomic ,strong ) UILabel *selectLabel;
 @end
 
 @implementation HomeProductListTableViewCell
@@ -59,12 +64,12 @@
 - (void)privateSetUpUI {
 
     self.bgView = [[UIView alloc] initWithFrame:CGRectMake(5, 5, SCREEN_WIDTH - 10, 100)];
-    self.bgView.backgroundColor = [UIColor randomOfColor];
+//    self.bgView.backgroundColor = [UIColor randomOfColor];
     [self.contentView addSubview:self.bgView];
     
     self.iconView = [[UIImageView alloc] initWithFrame:CGRectMake(15, 15, 72, 72)];
     [self.bgView addSubview:self.iconView];
-    self.iconView.backgroundColor = [UIColor randomOfColor];
+//    self.iconView.backgroundColor = [UIColor randomOfColor];
 
     self.topBgView = [[UIView alloc] initWithFrame:CGRectMake(self.iconView.right + 10, self.iconView.y,self.bgView.width - self.iconView.right -10 , 38)];
     [self.bgView addSubview:self.topBgView];
@@ -75,10 +80,11 @@
 
     
     UIButton * deleteButton = [[UIButton alloc] initWithFrame:CGRectMake(self.topBgView.width - 44 - 15, 0, self.topBgView.height, self.topBgView.height)];
-    deleteButton.backgroundColor = [UIColor randomOfColor];
+	[deleteButton setTitle:@"删除" forState:UIControlStateNormal];
     [self.topBgView addSubview:deleteButton];
     
     UILabel *selectLabel = [UILabel creatLabelWithText:@"选规格 " FontOfSize:12 textColor:Main_Font_Gary_Color];
+	self.selectLabel = selectLabel;
     selectLabel.userInteractionEnabled = YES;
     [selectLabel sizeToFit];
     
@@ -101,35 +107,64 @@
     self.bottomBgView.clipsToBounds = YES;
     [self.contentView addSubview:self.bottomBgView];
     self.contentView.clipsToBounds = YES;
+	
+	
+	UIView * bottomLintView = [[UIView alloc] init];
+	bottomLintView.backgroundColor = [UIColor colorWithHexString:Main_Line_Gary_Color];
+	[self.contentView addSubview:bottomLintView];
+	[bottomLintView mas_makeConstraints:^(MASConstraintMaker *make) {
+		make.bottom.equalTo(self.contentView.mas_bottom);
+		make.left.equalTo(self.contentView.mas_left);
+		make.right.equalTo(self.contentView.mas_right);
+		make.height.mas_offset(5);
+	}];
+
 
 }
 
-- (void)setDataSourse:(ProductList *)dataSourse {
+- (void)setDataSourse:(GoodsList *)dataSourse {
     _dataSourse = dataSourse;
-    self.titleLabel.text = [NSString stringWithFormat:@"[%@]%@",dataSourse.companyName,dataSourse.productName];
+    self.titleLabel.text = [NSString stringWithFormat:@"[%@]%@",dataSourse.fullName,dataSourse.feature];
     for (UIView *view  in self.bottomBgView.subviews) {
         [view removeFromSuperview];
     }
-    
+	[self.iconView sd_setImageWithURL:[NSURL URLWithString:dataSourse.image] placeholderImage:nil];
     CGFloat selectViewHeight = 0;
     
     NSInteger count = 0 ;
     if (self.dataSourse.isOpen) {count = dataSourse.guige.count;}
     else {count = 1;}
-    
+	
+	if (self.dataSourse.guige.count <= 1) {
+		self.selectLabel.hidden = YES;
+	}else {
+		self.selectLabel.hidden = NO;
+	}
+	
     for (int i = 0; i < count;  i ++) {
         Guige * guige = dataSourse.guige[i];
         
         SelectSpecificationView * selectSpecificationView = [[SelectSpecificationView alloc] initWithFrame:CGRectMake(0,i *selectViewHeight,self.bottomBgView.width,66)];
+		selectSpecificationView.index = i;
         selectViewHeight = selectSpecificationView.height;
+		selectSpecificationView.delegate = self;
         [self.bottomBgView addSubview:selectSpecificationView];
         
-        selectSpecificationView.totolPriceLabel.text = guige.totolPrice;
-        selectSpecificationView.averagePrice.text = guige.averagePrice;
+        selectSpecificationView.totolPriceLabel.text = [NSString stringWithFormat:@"￥%@/%@(%@斤)",guige.currentPrice,dataSourse.baseSpec,dataSourse.totalWeight];
+        selectSpecificationView.averagePrice.text = guige.avgPrice;
         self.bottomBgView.height = selectSpecificationView.bottom;
         self.bgView.height = self.bottomBgView.bottom;
         self.dataSourse.height = self.bgView.height + 10;
     }
+}
+
+//选择
+- (void)selectSpecificationWithIndex:(NSInteger)index {
+	
+	if ([self.delegate respondsToSelector:@selector(addProduct)]) {
+		[self.delegate addProduct];
+	}
+
 }
 
 -(void)Actiondo:(id)sender {
@@ -140,7 +175,9 @@
     if (self.dataSourse.isOpen) {
         self.dataSourse.height = self.topBgView.height + self.dataSourse.guige.count * 66 + 10;
     }
-    
-    [self.delegate ClickSelectSpecificationWithIndexPath:_indexPath];
+	if ([self.delegate respondsToSelector:@selector(ClickSelectSpecificationWithIndexPath:)]) {
+		[self.delegate ClickSelectSpecificationWithIndexPath:_indexPath];
+
+	}
 }
 @end

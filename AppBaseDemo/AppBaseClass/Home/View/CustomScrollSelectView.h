@@ -15,7 +15,7 @@
 @protocol CustomScrollSelectViewDelegate <NSObject>
 
 - (void)customScrollSelectView:(CustomScrollSelectView *)customScrollSelectView
- didSelectWithProductTypeModel:(id )productTypeMode;
+ didSelectWithProductTypeModel:(NSInteger )index;
 @end
 
 /**
@@ -29,7 +29,7 @@
  
  @param index <#index description#>
  */
-- (void)selectSwitchButtonAtIndex:(NSInteger) index;
+- (void)selectSwitchButtonAtIndex:(NSInteger) index withClick:(BOOL)canClick;
 @property (nonatomic,weak) id <CustomScrollSelectViewDelegate>delegate;
 
 

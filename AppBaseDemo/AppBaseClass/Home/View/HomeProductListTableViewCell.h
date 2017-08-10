@@ -7,17 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
-@class ProductList;
+@class GoodsList;
 
 @protocol HomeProductListTableViewCellDelegate <NSObject>
+//选择打开规格
 - (void)ClickSelectSpecificationWithIndexPath:(NSIndexPath *)indexPath;
+- (void)addProduct;
 
 @end
 @interface HomeProductListTableViewCell : UITableViewCell
 /**
  数据源
  */
-@property (nonatomic ,strong) ProductList * dataSourse;
+@property (nonatomic ,strong) GoodsList * dataSourse;
 
 /**
  <#Description#>
@@ -25,7 +27,7 @@
 @property (nonatomic ,weak) id <HomeProductListTableViewCellDelegate> delegate;
 
 /**
- <#Description#>
+ 商品角标
  */
 @property (nonatomic ,strong) NSIndexPath * indexPath;
 @end

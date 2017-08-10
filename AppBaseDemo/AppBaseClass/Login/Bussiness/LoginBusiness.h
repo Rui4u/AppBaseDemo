@@ -16,7 +16,7 @@ typedef void (^LoginBusinessErrorBlcok)(NSString * netWorkErrorMessage);
 /**
  注册接口
  */
-@interface LoginBusiness : BaseNetWorkClient
+@interface LoginBusiness : BaseBussiness
 
 
 /**

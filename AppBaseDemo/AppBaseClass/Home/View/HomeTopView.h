@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class HomeDataModel;
 @interface HomeTopView : UIView
-
+@property (nonatomic ,strong ) HomeDataModel * homeDataModel;
 @end

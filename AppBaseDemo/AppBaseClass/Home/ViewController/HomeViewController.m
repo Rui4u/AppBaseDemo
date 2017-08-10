@@ -14,7 +14,8 @@
 #import "HomeDataModel.h"
 #import "HomeProductListTableViewCell.h"
 #import "UserLocationViewController.h"
-@interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource,HomeProductListTableViewCellDelegate>
+#import "GetHomeBusiness.h"
+@interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource,HomeProductListTableViewCellDelegate,SelectTypeViewDelegate>
 @property (nonatomic ,strong ) HomeTopView * topView;
 @property (nonatomic ,strong ) SelectTypeView * selectTypeView;
 /**
@@ -39,21 +40,41 @@
 	self.frontScrollView = tableViewList;
 	
 	self.selectTypeView = [[SelectTypeView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 74)];
+	self.selectTypeView.delegate = self;
 	self.selectTypeView.backgroundColor = [UIColor whiteColor];
 	self.frontTopView = self.selectTypeView;
 	[self setUpSuperViewViewControllerUI];
 	self.DraggingHeight = 20 ;
     [self initNavBarView:NAV_BAR_TYPE_ROOT_VIEW];
     self.navBarView.alpha = 0;
-    
-//    
-    NSString *strPath = [[NSBundle mainBundle] pathForResource:@"Directions" ofType:@"geojson"];
-    NSString *parseJason = [[NSString alloc] initWithContentsOfFile:strPath encoding:NSUTF8StringEncoding error:nil];
-    
-    NSDictionary * dict = [NSDictionary translateDictionaryForjsonString:parseJason];
 
-    self.dataSourse = [HomeDataModel mj_objectWithKeyValues:[dict objectForKey:@"body"]];
-    [(UITableView *)self.frontScrollView reloadData];
+	self.backScrollView.mj_header = [MJRefreshStateHeader headerWithRefreshingTarget:self refreshingAction:@selector(pullToRefresh)];
+	[self.backScrollView.mj_header beginRefreshing];
+
+}
+- (void)pullToRefresh {
+
+	[GetHomeBusiness requestGetHomeWithToken:TOKEN completionSuccessHandler:^(HomeDataModel *homeDataModel)
+	 {
+		 self.dataSourse = homeDataModel;
+		 self.topView.homeDataModel = homeDataModel;
+		 [(UITableView *)self.frontScrollView reloadData];
+		 [self.backScrollView.mj_header endRefreshing];
+			NSMutableArray * selectTitle = [NSMutableArray arrayWithCapacity:3];
+		 for (ProductionInfoList *infoList in self.dataSourse.ProductionInfoList) {
+			 [selectTitle addObject:infoList.goodsBaseType];
+		 }
+		 self.selectTypeView.dataSourse = selectTitle;
+		 
+		 
+	 } completionFailHandler:^(NSString *failMessage) {
+		 [self showToastWithMessage:failMessage showTime:1];
+		 [self.backScrollView.mj_header endRefreshing];
+
+	 } completionError:^(NSString *netWorkErrorMessage) {
+		 [self.backScrollView.mj_header endRefreshing];
+		 [self showToastWithMessage:netWorkErrorMessage showTime:1];
+	 }];
 
 }
 - (void)viewDidAppear:(BOOL)animated {
@@ -64,13 +85,13 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return self.dataSourse.productInfoList[section].productList.count;
+    return self.dataSourse.ProductionInfoList[section].goodsList.count;
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.dataSourse.productInfoList.count;
+    return self.dataSourse.ProductionInfoList.count;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return self.dataSourse.productInfoList[indexPath.section].productList[indexPath.row].height;
+    return self.dataSourse.ProductionInfoList[indexPath.section].goodsList[indexPath.row].height;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -84,11 +105,23 @@
         cell.delegate = self;
     }
     cell.indexPath = indexPath;
-    cell.dataSourse = self.dataSourse.productInfoList[indexPath.section].productList[indexPath.row];
+    cell.dataSourse = self.dataSourse.ProductionInfoList[indexPath.section].goodsList[indexPath.row];
+	[self.selectTypeView.customScrollSelectView selectSwitchButtonAtIndex:indexPath.section withClick:NO];
     return cell;
+	
+	
 
 }
 
+
+- (void)didSelectWithProductTypeModel:(NSInteger)index {
+
+	
+	NSIndexPath * dayOne = [NSIndexPath indexPathForRow:0 inSection:index];
+	[(UITableView *)self.frontScrollView scrollToRowAtIndexPath:dayOne atScrollPosition:UITableViewScrollPositionTop animated:YES];
+	self.backScrollView.contentOffset = CGPointMake(0, self.topView.height);
+
+}
 
 - (void)ClickSelectSpecificationWithIndexPath:(NSIndexPath *)indexPath {
     
@@ -101,9 +134,9 @@
     if (scrollView == self.backScrollView) {
             self.navBarView.alpha = scrollView.contentOffset.y/60.0;
     }
-    
-    
+	
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
