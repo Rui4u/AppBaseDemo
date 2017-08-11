@@ -10,6 +10,7 @@
 #import "HomeDataModel.h"
 #import "TopAdvertisementView.h"
 #import "RecommendProductView.h"
+#import "LCVerticalBadgeBtn.h"
 @interface HomeTopView()<AdvertisementViewDelegate>
 @property (nonatomic ,strong ) TopAdvertisementView *bannerScrollView; //广告位
 @property (nonatomic ,strong ) UIView * headLineView;  //标题View
@@ -66,8 +67,12 @@
 	
 	for (int i = 0 ; i < titleArray.count; i ++) {
 		
-		UIView * view = [[UIView alloc] initWithFrame:CGRectMake(i * width, 0, width, height)];
-		view.backgroundColor = [UIColor randomOfColor];
+		LCVerticalBadgeBtn * view = [[LCVerticalBadgeBtn alloc] init];
+		[view setImage:[UIImage imageNamed:@"homeLoginTemp"] forState:UIControlStateNormal];
+		[view setTitle:titleArray[i] forState:UIControlStateNormal];
+		view.titleLabel.font = [UIFont systemFontOfSize:12];
+		[view setTitleColor:[UIColor colorWithHexString:@"333333"] forState:UIControlStateNormal];
+		view.frame = CGRectMake(i * width, 0, width, height);
 		[headLineView addSubview:view];
 	}
 }

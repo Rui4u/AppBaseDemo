@@ -165,7 +165,11 @@
     
     //通过调节文本和图片的内边距到达目的
     self.imageEdgeInsets = UIEdgeInsetsMake(- 8,(btnWidth )/2 ,btnHeight,-(btnWidth )/2);
-    [self setTitleEdgeInsets:UIEdgeInsetsMake(self.imageView.image.size.height + 8, -self.imageView.image.size.width/2,0,self.imageView.image.size.width/2)];
+//    [self setTitleEdgeInsets:UIEdgeInsetsMake(self.imageView.image.size.height + 8, -self.imageView.image.size.width/2,0,self.imageView.image.size.width/2)];
+	
+	
+	[self setTitleEdgeInsets:UIEdgeInsetsMake(self.imageView.frame.size.height ,-self.imageView.frame.size.width, 0.0,0.0)];//文字距离上边框的距离增加imageView的高度，距离左边框减少imageView的宽度，距离下边框和右边框距离不变
+//	[self setImageEdgeInsets:UIEdgeInsetsMake(0.0, 0.0,0.0, -self.titleLabel.bounds.size.width)];//图片距离右边框距离减少图片的宽度，其它不边
 }
 
 

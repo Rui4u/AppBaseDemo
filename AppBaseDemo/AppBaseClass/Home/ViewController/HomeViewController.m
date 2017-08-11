@@ -83,13 +83,27 @@
 	[self presentViewController:vc animated:YES completion:nil];
 
 }
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+	SRCustomLabel * label = [SRCustomLabel creatLabelWithText: self.dataSourse.ProductionInfoList[section].goodsBaseType FontOfSize:14 textColor:@"333333"];
+	label.textInsets = UIEdgeInsetsMake(0, 15, 0, 0);
+	return label;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
     return self.dataSourse.ProductionInfoList[section].goodsList.count;
 }
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+	return 44;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+	return .1;
+}
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return self.dataSourse.ProductionInfoList.count;
 }
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return self.dataSourse.ProductionInfoList[indexPath.section].goodsList[indexPath.row].height;
 }

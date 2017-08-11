@@ -42,6 +42,13 @@
 		2B5AA4BC1F3D444D00C3EE31 /* MoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B5AA4BA1F3D444D00C3EE31 /* MoreViewController.xib */; };
 		2B5AA4BF1F3D45E700C3EE31 /* MoreBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5AA4BE1F3D45E700C3EE31 /* MoreBaseView.m */; };
 		2B5AA4C11F3D466200C3EE31 /* MoreBaseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B5AA4C01F3D466200C3EE31 /* MoreBaseView.xib */; };
+		2B5AA4C91F3D886F00C3EE31 /* LCVerticalBadgeBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5AA4C81F3D886F00C3EE31 /* LCVerticalBadgeBtn.m */; };
+		2B5AA4CC1F3D8A8000C3EE31 /* GoodslistAllModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5AA4CB1F3D8A8000C3EE31 /* GoodslistAllModel.m */; };
+		2B5AA4CF1F3D900900C3EE31 /* GetSelectGoodsListBussiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5AA4CE1F3D900900C3EE31 /* GetSelectGoodsListBussiness.m */; };
+		2B5AA4D21F3D906500C3EE31 /* GetSelectedProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5AA4D11F3D906500C3EE31 /* GetSelectedProductModel.m */; };
+		2B5AA4D41F3DA13600C3EE31 /* SelectAddView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B5AA4D31F3DA13600C3EE31 /* SelectAddView.xib */; };
+		2B5AA4D71F3DA1BF00C3EE31 /* SelectAddView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5AA4D61F3DA1BF00C3EE31 /* SelectAddView.m */; };
+		2B5AA4DA1F3DB19400C3EE31 /* SRCustomLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5AA4D91F3DB19400C3EE31 /* SRCustomLabel.m */; };
 		2B7DCC021F3579CC00E88B38 /* HomeProductListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7DCC011F3579CC00E88B38 /* HomeProductListTableViewCell.m */; };
 		2B7DCC0C1F358CC400E88B38 /* SelectSpecificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7DCC0B1F358CC400E88B38 /* SelectSpecificationView.m */; };
 		2B8FD7F31F32CC6F00DAB9B9 /* SelectLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8FD7F21F32CC6F00DAB9B9 /* SelectLocationViewController.m */; };
@@ -200,6 +207,19 @@
 		2B5AA4BD1F3D45E700C3EE31 /* MoreBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreBaseView.h; sourceTree = "<group>"; };
 		2B5AA4BE1F3D45E700C3EE31 /* MoreBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreBaseView.m; sourceTree = "<group>"; };
 		2B5AA4C01F3D466200C3EE31 /* MoreBaseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreBaseView.xib; sourceTree = "<group>"; };
+		2B5AA4C71F3D886F00C3EE31 /* LCVerticalBadgeBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCVerticalBadgeBtn.h; sourceTree = "<group>"; };
+		2B5AA4C81F3D886F00C3EE31 /* LCVerticalBadgeBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCVerticalBadgeBtn.m; sourceTree = "<group>"; };
+		2B5AA4CA1F3D8A8000C3EE31 /* GoodslistAllModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodslistAllModel.h; sourceTree = "<group>"; };
+		2B5AA4CB1F3D8A8000C3EE31 /* GoodslistAllModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodslistAllModel.m; sourceTree = "<group>"; };
+		2B5AA4CD1F3D900900C3EE31 /* GetSelectGoodsListBussiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetSelectGoodsListBussiness.h; sourceTree = "<group>"; };
+		2B5AA4CE1F3D900900C3EE31 /* GetSelectGoodsListBussiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetSelectGoodsListBussiness.m; sourceTree = "<group>"; };
+		2B5AA4D01F3D906500C3EE31 /* GetSelectedProductModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetSelectedProductModel.h; sourceTree = "<group>"; };
+		2B5AA4D11F3D906500C3EE31 /* GetSelectedProductModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetSelectedProductModel.m; sourceTree = "<group>"; };
+		2B5AA4D31F3DA13600C3EE31 /* SelectAddView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectAddView.xib; sourceTree = "<group>"; };
+		2B5AA4D51F3DA1BF00C3EE31 /* SelectAddView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectAddView.h; sourceTree = "<group>"; };
+		2B5AA4D61F3DA1BF00C3EE31 /* SelectAddView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectAddView.m; sourceTree = "<group>"; };
+		2B5AA4D81F3DB19400C3EE31 /* SRCustomLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRCustomLabel.h; sourceTree = "<group>"; };
+		2B5AA4D91F3DB19400C3EE31 /* SRCustomLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRCustomLabel.m; sourceTree = "<group>"; };
 		2B7DCC001F3579CC00E88B38 /* HomeProductListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeProductListTableViewCell.h; sourceTree = "<group>"; };
 		2B7DCC011F3579CC00E88B38 /* HomeProductListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeProductListTableViewCell.m; sourceTree = "<group>"; };
 		2B7DCC0A1F358CC400E88B38 /* SelectSpecificationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectSpecificationView.h; sourceTree = "<group>"; };
@@ -380,6 +400,8 @@
 			children = (
 				2B2E10A91F3C530F00092EAA /* GetAppProductListBusiness.h */,
 				2B2E10AA1F3C530F00092EAA /* GetAppProductListBusiness.m */,
+				2B5AA4CD1F3D900900C3EE31 /* GetSelectGoodsListBussiness.h */,
+				2B5AA4CE1F3D900900C3EE31 /* GetSelectGoodsListBussiness.m */,
 			);
 			path = Bussiness;
 			sourceTree = "<group>";
@@ -578,6 +600,10 @@
 			children = (
 				2B3AE0D01F304C2D00DE03B0 /* AppProductModel.h */,
 				2B3AE0D11F304C2D00DE03B0 /* AppProductModel.m */,
+				2B5AA4CA1F3D8A8000C3EE31 /* GoodslistAllModel.h */,
+				2B5AA4CB1F3D8A8000C3EE31 /* GoodslistAllModel.m */,
+				2B5AA4D01F3D906500C3EE31 /* GetSelectedProductModel.h */,
+				2B5AA4D11F3D906500C3EE31 /* GetSelectedProductModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -611,6 +637,10 @@
 		2BA025131F2AD85E003EB25D /* AppBaseTools */ = {
 			isa = PBXGroup;
 			children = (
+				2B5AA4D81F3DB19400C3EE31 /* SRCustomLabel.h */,
+				2B5AA4D91F3DB19400C3EE31 /* SRCustomLabel.m */,
+				2B5AA4C71F3D886F00C3EE31 /* LCVerticalBadgeBtn.h */,
+				2B5AA4C81F3D886F00C3EE31 /* LCVerticalBadgeBtn.m */,
 				2BD5D6F51F39871700BE1994 /* PinYinSearchLib */,
 				2BBFAFF61F3301F6002506D1 /* BaseParse */,
 				2BC14D9D1F31CD3500919808 /* SBJSON */,
@@ -720,6 +750,9 @@
 				2B7DCC011F3579CC00E88B38 /* HomeProductListTableViewCell.m */,
 				2B7DCC0A1F358CC400E88B38 /* SelectSpecificationView.h */,
 				2B7DCC0B1F358CC400E88B38 /* SelectSpecificationView.m */,
+				2B5AA4D31F3DA13600C3EE31 /* SelectAddView.xib */,
+				2B5AA4D51F3DA1BF00C3EE31 /* SelectAddView.h */,
+				2B5AA4D61F3DA1BF00C3EE31 /* SelectAddView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1035,6 +1068,7 @@
 				2B5AA4BC1F3D444D00C3EE31 /* MoreViewController.xib in Resources */,
 				2B3AE0CF1F3020F400DE03B0 /* AppProdcutSelectSpecificationCell.xib in Resources */,
 				2B90F8AE1F2F21CE00698C38 /* AppProductMainCellView.xib in Resources */,
+				2B5AA4D41F3DA13600C3EE31 /* SelectAddView.xib in Resources */,
 				2BC14D901F31AE5800919808 /* LoginViewController.xib in Resources */,
 				2BA709281F3A9FCB00B0B520 /* UserInfoViewController.xib in Resources */,
 				2B386F841F29B69A00228620 /* Main.storyboard in Resources */,
@@ -1127,6 +1161,7 @@
 				2BC14DC21F31CD3500919808 /* SBJsonWriter.m in Sources */,
 				2BC14DBD1F31CD3500919808 /* SBJsonStreamWriter.m in Sources */,
 				2BD5D70D1F39871700BE1994 /* PinyinHelper.m in Sources */,
+				2B5AA4D71F3DA1BF00C3EE31 /* SelectAddView.m in Sources */,
 				2BC14D8B1F31AE2D00919808 /* LoginViewRootController.m in Sources */,
 				2B3870371F29BC0C00228620 /* UIButton+SRButton.m in Sources */,
 				2BA025171F2AD86B003EB25D /* TipLabel.m in Sources */,
@@ -1134,8 +1169,10 @@
 				2B580D681F38592400AEA6BF /* ViewController.mm in Sources */,
 				2B3870381F29BC0C00228620 /* UIColor+SRColor.m in Sources */,
 				2BBFAFFB1F3301F6002506D1 /* Parser.m in Sources */,
+				2B5AA4D21F3D906500C3EE31 /* GetSelectedProductModel.m in Sources */,
 				2B90F8971F2ECFF100698C38 /* SelectTypeView.m in Sources */,
 				2BAFB5121F333054001236B8 /* GetCityListBusiness.m in Sources */,
+				2B5AA4CF1F3D900900C3EE31 /* GetSelectGoodsListBussiness.m in Sources */,
 				2B386F871F29B69A00228620 /* AppBaseDemo.xcdatamodeld in Sources */,
 				2B5AA4BB1F3D444D00C3EE31 /* MoreViewController.m in Sources */,
 				2B7DCC021F3579CC00E88B38 /* HomeProductListTableViewCell.m in Sources */,
@@ -1164,10 +1201,12 @@
 				2BD5D7181F39925100BE1994 /* UserInfoViewController.m in Sources */,
 				2BD5D70C1F39871700BE1994 /* PinYinForObjc.m in Sources */,
 				2BA0253F1F2B06AD003EB25D /* RootViewController.m in Sources */,
+				2B5AA4C91F3D886F00C3EE31 /* LCVerticalBadgeBtn.m in Sources */,
 				2B38703F1F29BC0C00228620 /* NSObject+ZXPUnicode.m in Sources */,
 				2BC14DC01F31CD3500919808 /* SBJsonTokeniser.m in Sources */,
 				2BA025521F2B108D003EB25D /* HomeTopView.m in Sources */,
 				2B38703B1F29BC0C00228620 /* UITextField+SRTextField.m in Sources */,
+				2B5AA4CC1F3D8A8000C3EE31 /* GoodslistAllModel.m in Sources */,
 				2B3870331F29BC0C00228620 /* NSMutableArray+SRArraySort.m in Sources */,
 				2BA025321F2AE470003EB25D /* CustomNavigationController.m in Sources */,
 				2B90F8A61F2F0E9B00698C38 /* AppProductViewController.m in Sources */,
@@ -1196,6 +1235,7 @@
 				2BA8DAB61F319BCE000190C1 /* GTMBase64.m in Sources */,
 				2B38703E1F29BC0C00228620 /* NSDictionary+ZXPUnicode.m in Sources */,
 				2B90F8941F2EC86200698C38 /* CustomScrollSelectView.m in Sources */,
+				2B5AA4DA1F3DB19400C3EE31 /* SRCustomLabel.m in Sources */,
 				2BA709361F3B0F7600B0B520 /* storeAdressInfoModel.m in Sources */,
 				2BA025551F2B2A15003EB25D /* RecommendProductView.m in Sources */,
 				2B580D6B1F385A8E00AEA6BF /* BaiduMapManager.m in Sources */,

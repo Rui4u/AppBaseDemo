@@ -29,6 +29,8 @@
 #define KHomeBussinessUrl            [NSString stringWithFormat :@"%@/gs/index/indexList?",kHTTP_HOST_URL]
 //全部商品
 #define KGoodslistAllBussinessUrl            [NSString stringWithFormat :@"%@/gs/goods/goodslistAll?",kHTTP_HOST_URL]
+//选择类目商品
+#define kSelectGoodsListlBussinessUrl            [NSString stringWithFormat :@"%@/gs/goods/selectGoodsList?",kHTTP_HOST_URL]
 
 
 NS_ASSUME_NONNULL_BEGIN

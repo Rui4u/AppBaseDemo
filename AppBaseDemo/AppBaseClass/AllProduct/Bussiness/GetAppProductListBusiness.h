@@ -7,8 +7,8 @@
 //
 
 #import "BaseBussiness.h"
-@class HomeDataModel;
-typedef void (^GetAppProductListSuccessBlock)(HomeDataModel * listArray);
+@class GoodslistAllModel;
+typedef void (^GetAppProductListSuccessBlock)(GoodslistAllModel * listArray);
 typedef void (^GetAppProductListFailBlock) (NSString * failMessage);
 typedef void (^GetAppProductListErrorBlcok)(NSString * netWorkErrorMessage);
 

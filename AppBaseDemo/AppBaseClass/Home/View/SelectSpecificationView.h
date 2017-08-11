@@ -32,6 +32,14 @@
 @property (nonatomic ,strong) UILabel * averagePrice;
 
 /**
+ 降价标签
+ */
+@property (nonatomic ,strong ) UIImageView* disCountView;
+/**
+ 是否显示降价标签
+ */
+@property (nonatomic ,assign ) BOOL showDisCountView;
+/**
  选择的角标
  */
 @property (nonatomic ,assign ) NSInteger index;

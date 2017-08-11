@@ -25,7 +25,7 @@
 	[self setUpBaiduMapManager];
 	
 	
-	RootViewController* rootViewController = [[MoreViewController alloc] init];
+	RootViewController* rootViewController = [[RootViewController alloc] init];
     
 	self.rootViewController = rootViewController;
 	

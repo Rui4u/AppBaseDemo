@@ -29,5 +29,7 @@
 #import <Masonry.h>
 #import <MJExtension.h>
 #import "BaseNetWorkClient.h"
+#import "SRCustomLabel.h"
+
 
 #endif /*   SRObjecCategory_h */

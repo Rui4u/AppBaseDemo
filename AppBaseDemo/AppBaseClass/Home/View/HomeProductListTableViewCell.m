@@ -9,6 +9,7 @@
 #import "HomeProductListTableViewCell.h"
 #import "SelectSpecificationView.h"
 #import "HomeDataModel.h"
+#import "SelectAddView.h"
 @interface HomeProductListTableViewCell () <SelectSpecificationViewDelegate>
 
 /**
@@ -128,7 +129,7 @@
     for (UIView *view  in self.bottomBgView.subviews) {
         [view removeFromSuperview];
     }
-	[self.iconView sd_setImageWithURL:[NSURL URLWithString:dataSourse.image] placeholderImage:nil];
+	[self.iconView sd_setImageWithURL:[NSURL URLWithString:dataSourse.image] placeholderImage:[UIImage imageNamed:@"guess_bancai"]];
     CGFloat selectViewHeight = 0;
     
     NSInteger count = 0 ;
@@ -149,9 +150,16 @@
         selectViewHeight = selectSpecificationView.height;
 		selectSpecificationView.delegate = self;
         [self.bottomBgView addSubview:selectSpecificationView];
-        
-        selectSpecificationView.totolPriceLabel.text = [NSString stringWithFormat:@"￥%@/%@(%@斤)",guige.currentPrice,dataSourse.baseSpec,dataSourse.totalWeight];
-        selectSpecificationView.averagePrice.text = guige.avgPrice;
+		
+        selectSpecificationView.totolPriceLabel.text = [NSString stringWithFormat:@"￥%@/%@(%@斤)",guige.currentPrice,dataSourse.baseSpec,guige.totalWeight];
+		selectSpecificationView.averagePrice.text = [NSString stringWithFormat:@"￥%@",guige.avgPrice];
+		
+		
+		if ([dataSourse.discount isEqualToString:@"1"]) {
+			selectSpecificationView.showDisCountView = YES;
+		}else {
+			selectSpecificationView.showDisCountView = NO;
+		}
         self.bottomBgView.height = selectSpecificationView.bottom;
         self.bgView.height = self.bottomBgView.bottom;
         self.dataSourse.height = self.bgView.height + 10;

@@ -7,7 +7,7 @@
 //
 
 #import "GetAppProductListBusiness.h"
-#import "HomeDataModel.h"
+#import "GoodslistAllModel.h"
 @implementation GetAppProductListBusiness
 
 + (void) requestGetAppProductListWithToken : (NSString* ) token
@@ -24,7 +24,7 @@
                                          success:^(id success)
      {
          NSDictionary * responeMp = (NSDictionary * ) success ;
-         HomeDataModel *result = [HomeDataModel mj_objectWithKeyValues:responeMp];
+         GoodslistAllModel *result = [GoodslistAllModel mj_objectWithKeyValues:responeMp];
 
          
              completionHandler(result);

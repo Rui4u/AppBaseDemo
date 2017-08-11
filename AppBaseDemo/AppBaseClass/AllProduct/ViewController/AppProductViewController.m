@@ -15,8 +15,10 @@
 #import "AppProductModel.h"
 #import "LoginViewRootController.h"
 #import "GetAppProductListBusiness.h"
+#import "GoodslistAllModel.h"
+#import "GetSelectGoodsListBussiness.h"
 
-@interface AppProductViewController ()<UITableViewDelegate,UITableViewDataSource,AppProductMainCellViewDelegate>
+@interface AppProductViewController ()<UITableViewDelegate,UITableViewDataSource,AppProductMainCellViewDelegate,CustomScrollSelectViewDelegate>
 /**
  左侧时间tableview
  */
@@ -33,11 +35,20 @@
 
 @property (nonatomic ,strong ) NSMutableArray<AppProductModel *> * productDataSourse;
 
-@property (nonatomic ,strong ) NSMutableArray * leftNameDataSourse;
+
+/**
+ 商品标题
+ */
+@property (nonatomic ,strong ) NSArray <GoodsCategoryList *> *goodsCategoryList;
+/**
+ 商品左侧标题
+ */
+@property (nonatomic ,strong ) NSArray <GoodsCategories *> *leftCategories;
 /**
  记录刷新的indexpath
  */
 @property (nonatomic ,assign ) NSIndexPath * mainIndexPath;
+
 @end
 
 @implementation AppProductViewController
@@ -50,10 +61,10 @@
 	
 	self.customScrollSelectView = [[CustomScrollSelectView alloc] initWithFrame:CGRectMake(0, NAV_BAR_HEIGHT, SCREEN_WIDTH, 48)];
 	[self.view addSubview:self.customScrollSelectView];
-	self.customScrollSelectView.dataSourse = @[@"肉禽类",@"新鲜蔬菜",@"米面粮油",@"肉禽类",@"新鲜蔬菜",@"米面粮油",@"米面粮油"];
 	self.customScrollSelectView.textColor = [UIColor blackColor];
+	self.customScrollSelectView.delegate = self;
 	[self.customScrollSelectView reloadeData];
-//	[self.customScrollSelectView selectSwitchButtonAtIndex:0];
+
 
 	[self GetAppProductListBusiness];
 	[self.view addSubview:self.mainTableView];
@@ -61,8 +72,19 @@
 }
 
 - (void)GetAppProductListBusiness {
-	[GetAppProductListBusiness requestGetAppProductListWithToken:TOKEN completionSuccessHandler:^(HomeDataModel *listArray) {
+	[GetAppProductListBusiness requestGetAppProductListWithToken:TOKEN completionSuccessHandler:^(GoodslistAllModel *goodslistAllModel) {
 		
+		NSMutableArray * array = [NSMutableArray arrayWithCapacity:10];
+		self.goodsCategoryList = goodslistAllModel.GoodsCategoryList;
+		//获取标题
+		for (GoodsCategoryList * list in goodslistAllModel.GoodsCategoryList) {
+			[array addObject:list.categoryName];
+		}
+		
+		self.customScrollSelectView.dataSourse = array;
+		[self.customScrollSelectView reloadeData];
+		[self.customScrollSelectView selectSwitchButtonAtIndex:0 withClick:YES];
+
 	} completionFailHandler:^(NSString *failMessage) {
 		[self showToastWithMessage:failMessage showTime:1];
 	} completionError:^(NSString *netWorkErrorMessage) {
@@ -72,14 +94,37 @@
 
 }
 
+#pragma mark - 代理
+- (void)customScrollSelectView:(CustomScrollSelectView *)customScrollSelectView didSelectWithProductTypeModel:(NSInteger)index {
+
+	
+	self.leftCategories = self.goodsCategoryList[index].goodsCategories;
+	[self.leftTimeQuantumTableView reloadData];
+	if (self.leftCategories.count > 0) {
+		[self tableView:self.leftTimeQuantumTableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+	}
+	
+
+
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (void)didselectedMonthForRequestCommissionData {
+- (void)didselectedMonthForRequestCommissionDataWithIndex:(NSInteger) index {
 	NSLog(@"左侧请求");
-	LoginViewRootController * loginViewRootController = [[LoginViewRootController alloc] init];
-	[self presentViewController:loginViewRootController animated:YES completion:nil];
+	[GetSelectGoodsListBussiness requestGetSelectGoodsListWithToken:TOKEN
+														   parented:self.leftCategories[index].parentId
+													  categoryIdTwo:self.leftCategories[index].categoryId
+										   completionSuccessHandler:^(GetSelectedProductModel *getSelectedProductModel) {
+	
+	
+	} completionFailHandler:^(NSString *failMessage) {
+	
+	} completionError:^(NSString *netWorkErrorMessage) {
+	
+	
+	}];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -99,7 +144,7 @@
 			return 0;
 		}
 	} else {
-		return self.leftNameDataSourse.count;
+		return self.leftCategories.count;
 		}
 	
 }
@@ -121,7 +166,7 @@
 			cell = [[AppProductViewControllerLeftCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:AppProductViewControllerLeftCellID];
 		}
 		
-		cell.nameLabel.text = _leftNameDataSourse[indexPath.row];
+		cell.nameLabel.text = self.leftCategories[indexPath.row].categoryName;
 		cell.selectionStyle = UITableViewCellSelectionStyleGray;
 		return cell;
 		
@@ -177,7 +222,7 @@
 		self.lastCell.nameLabel.textColor = [UIColor colorWithHexString:@"7a7a7a"];
 		self.lastCell.contentView.backgroundColor = [UIColor colorWithHexString:@"eeeeee"];
 		self.lastCell = cell;
-		[self didselectedMonthForRequestCommissionData];
+		[self didselectedMonthForRequestCommissionDataWithIndex:indexPath.row];
 	}else
 	{
 		
@@ -237,13 +282,4 @@
 	return _productDataSourse;
 }
 
-- (NSMutableArray *)leftNameDataSourse {
-	if (_leftNameDataSourse == nil) {
-		_leftNameDataSourse = [[NSMutableArray alloc] init];
-		[_leftNameDataSourse addObjectsFromArray:@[@"男人",@"女人",@"乐乐",@"男人",@"女人",@"乐乐",@"男人",@"女人",@"乐乐"]];
-	}
-	return _leftNameDataSourse;
-
-
-}
 @end
