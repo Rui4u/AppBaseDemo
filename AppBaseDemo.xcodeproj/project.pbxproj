@@ -38,6 +38,10 @@
 		2B580D651F38582900AEA6BF /* UserLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B580D641F38582900AEA6BF /* UserLocationViewController.m */; };
 		2B580D681F38592400AEA6BF /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2B580D671F38592400AEA6BF /* ViewController.mm */; };
 		2B580D6B1F385A8E00AEA6BF /* BaiduMapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B580D6A1F385A8E00AEA6BF /* BaiduMapManager.m */; };
+		2B5AA4BB1F3D444D00C3EE31 /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5AA4B91F3D444D00C3EE31 /* MoreViewController.m */; };
+		2B5AA4BC1F3D444D00C3EE31 /* MoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B5AA4BA1F3D444D00C3EE31 /* MoreViewController.xib */; };
+		2B5AA4BF1F3D45E700C3EE31 /* MoreBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5AA4BE1F3D45E700C3EE31 /* MoreBaseView.m */; };
+		2B5AA4C11F3D466200C3EE31 /* MoreBaseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B5AA4C01F3D466200C3EE31 /* MoreBaseView.xib */; };
 		2B7DCC021F3579CC00E88B38 /* HomeProductListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7DCC011F3579CC00E88B38 /* HomeProductListTableViewCell.m */; };
 		2B7DCC0C1F358CC400E88B38 /* SelectSpecificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7DCC0B1F358CC400E88B38 /* SelectSpecificationView.m */; };
 		2B8FD7F31F32CC6F00DAB9B9 /* SelectLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8FD7F21F32CC6F00DAB9B9 /* SelectLocationViewController.m */; };
@@ -190,6 +194,12 @@
 		2B580D671F38592400AEA6BF /* ViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
 		2B580D691F385A8E00AEA6BF /* BaiduMapManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiduMapManager.h; sourceTree = "<group>"; };
 		2B580D6A1F385A8E00AEA6BF /* BaiduMapManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaiduMapManager.m; sourceTree = "<group>"; };
+		2B5AA4B81F3D444D00C3EE31 /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreViewController.h; sourceTree = "<group>"; };
+		2B5AA4B91F3D444D00C3EE31 /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
+		2B5AA4BA1F3D444D00C3EE31 /* MoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreViewController.xib; sourceTree = "<group>"; };
+		2B5AA4BD1F3D45E700C3EE31 /* MoreBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreBaseView.h; sourceTree = "<group>"; };
+		2B5AA4BE1F3D45E700C3EE31 /* MoreBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreBaseView.m; sourceTree = "<group>"; };
+		2B5AA4C01F3D466200C3EE31 /* MoreBaseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreBaseView.xib; sourceTree = "<group>"; };
 		2B7DCC001F3579CC00E88B38 /* HomeProductListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeProductListTableViewCell.h; sourceTree = "<group>"; };
 		2B7DCC011F3579CC00E88B38 /* HomeProductListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeProductListTableViewCell.m; sourceTree = "<group>"; };
 		2B7DCC0A1F358CC400E88B38 /* SelectSpecificationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectSpecificationView.h; sourceTree = "<group>"; };
@@ -507,6 +517,51 @@
 			path = BaseConfig;
 			sourceTree = "<group>";
 		};
+		2B5AA4B31F3D439700C3EE31 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				2B5AA4B41F3D439700C3EE31 /* Bussiness */,
+				2B5AA4B51F3D439700C3EE31 /* Model */,
+				2B5AA4B61F3D439700C3EE31 /* View */,
+				2B5AA4B71F3D439700C3EE31 /* ViewController */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		2B5AA4B41F3D439700C3EE31 /* Bussiness */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Bussiness;
+			sourceTree = "<group>";
+		};
+		2B5AA4B51F3D439700C3EE31 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2B5AA4B61F3D439700C3EE31 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2B5AA4BD1F3D45E700C3EE31 /* MoreBaseView.h */,
+				2B5AA4BE1F3D45E700C3EE31 /* MoreBaseView.m */,
+				2B5AA4C01F3D466200C3EE31 /* MoreBaseView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2B5AA4B71F3D439700C3EE31 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2B5AA4B81F3D444D00C3EE31 /* MoreViewController.h */,
+				2B5AA4B91F3D444D00C3EE31 /* MoreViewController.m */,
+				2B5AA4BA1F3D444D00C3EE31 /* MoreViewController.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		2B90F8A01F2F0E4F00698C38 /* AllProduct */ = {
 			isa = PBXGroup;
 			children = (
@@ -612,6 +667,7 @@
 		2BA0253C1F2B0682003EB25D /* AppBaseClass */ = {
 			isa = PBXGroup;
 			children = (
+				2B5AA4B31F3D439700C3EE31 /* Mine */,
 				2BC14D851F31ADEB00919808 /* Login */,
 				2B90F8A01F2F0E4F00698C38 /* AllProduct */,
 				2BA025431F2B0C09003EB25D /* Home */,
@@ -969,12 +1025,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B5AA4C11F3D466200C3EE31 /* MoreBaseView.xib in Resources */,
 				2B2E10511F3C015D00092EAA /* CityNotInOpenCityView.xib in Resources */,
 				2BBDCC501F34B422003FE167 /* Directions.geojson in Resources */,
 				2B386F8C1F29B69A00228620 /* LaunchScreen.storyboard in Resources */,
 				2B90F8991F2ED5E800698C38 /* SelectViewTitle.xib in Resources */,
 				2B386F891F29B69A00228620 /* Assets.xcassets in Resources */,
 				2BD5D70E1F39871700BE1994 /* unicode_to_hanyu_pinyin.txt in Resources */,
+				2B5AA4BC1F3D444D00C3EE31 /* MoreViewController.xib in Resources */,
 				2B3AE0CF1F3020F400DE03B0 /* AppProdcutSelectSpecificationCell.xib in Resources */,
 				2B90F8AE1F2F21CE00698C38 /* AppProductMainCellView.xib in Resources */,
 				2BC14D901F31AE5800919808 /* LoginViewController.xib in Resources */,
@@ -1063,6 +1121,7 @@
 				2B3870361F29BC0C00228620 /* NSString+SRString.m in Sources */,
 				2BD5D70A1F39871700BE1994 /* NSString+PinYin4Cocoa.m in Sources */,
 				2BD5D7071F39871700BE1994 /* ChineseInclude.m in Sources */,
+				2B5AA4BF1F3D45E700C3EE31 /* MoreBaseView.m in Sources */,
 				2B8FD7F31F32CC6F00DAB9B9 /* SelectLocationViewController.m in Sources */,
 				2B38703A1F29BC0C00228620 /* UILabel+SRUILabel.m in Sources */,
 				2BC14DC21F31CD3500919808 /* SBJsonWriter.m in Sources */,
@@ -1078,6 +1137,7 @@
 				2B90F8971F2ECFF100698C38 /* SelectTypeView.m in Sources */,
 				2BAFB5121F333054001236B8 /* GetCityListBusiness.m in Sources */,
 				2B386F871F29B69A00228620 /* AppBaseDemo.xcdatamodeld in Sources */,
+				2B5AA4BB1F3D444D00C3EE31 /* MoreViewController.m in Sources */,
 				2B7DCC021F3579CC00E88B38 /* HomeProductListTableViewCell.m in Sources */,
 				2BBFAFEF1F32F4B0002506D1 /* NSDictionary+SRExtension.m in Sources */,
 				2B90F8A91F2F124200698C38 /* AppProductViewControllerLeftCell.m in Sources */,
