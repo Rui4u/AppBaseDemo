@@ -8,12 +8,19 @@
 
 #import "BaseViewController.h"
 #import "TipLabel.h"
-@interface BaseViewController ()<CustomNavBarViewDelegate>
+#import "CommonSearchController.h"
+@interface BaseViewController ()<CustomNavBarViewDelegate,UISearchBarDelegate,HZCustomSearchBarDelegate>
 
 /**
  navBar 类型
  */
 @property (nonatomic ,assign )  NAV_BAR_TYPE navBarType;
+/**
+ search搜索类型
+ */
+@property (nonatomic ,assign ) SearchType searchType;
+@property (nonatomic ,copy ) NSString * searchBarPlaceholder;
+
 @end
 
 @implementation BaseViewController
@@ -85,4 +92,75 @@
 }
 
 
+- (void)initSearchBarViewWithPlaceholder:(NSString *)placeholder withSearchType:(SearchType) searchType{
+	self.searchType = searchType;
+	self.searchBarPlaceholder = placeholder;
+	
+	HZCustomSearchBar *searchBar;
+	if (self.navBarType == NAV_BAR_TYPE_SECOND_LEVEL_VIEW ) {
+		searchBar = [[HZCustomSearchBar alloc]initWithFrame:CGRectMake(55, NAV_BAR_HEIGHT - 30 - 7, SCREEN_WIDTH - 70, 30)];
+	}else {
+		
+		searchBar = [[HZCustomSearchBar alloc]initWithFrame:CGRectMake(15, NAV_BAR_HEIGHT - 30 - 7, SCREEN_WIDTH - 30, 30)];
+		
+	}
+	self.searchBar = searchBar;
+	searchBar.delegate = self;
+	searchBar.placeholder = placeholder;
+	searchBar.searchBarBackgroundColor = [UIColor colorWithHexString:@"232226"];
+	
+	//    UITextField * searchField = [_searchBar valueForKey:@"_searchField"];
+	//    [searchField setValue:[UIColor colorWithHexString:@"8d8d8e"] forKeyPath:@"_placeholderLabel.textColor"];
+	//    [searchField setValue:[UIFont boldSystemFontOfSize:13] forKeyPath:@"_placeholderLabel.font"];
+	//
+	//    searchField.textColor = [UIColor colorWithHexString:@"ffffff"];
+	//    searchBar.showsCancelButton = NO;
+	//    [searchBar setContentMode:UIViewContentModeLeft];
+	//    UIImage* searchBarBg = [self GetImageWithColor:[UIColor colorWithHexString:@"232226"] andHeight:searchBar.height];
+	//    //设置背景图片
+	//    [searchBar setBackgroundImage:searchBarBg];
+	//    //设置背景色
+	//    [searchBar setBackgroundColor:[UIColor clearColor]];
+	//    //设置文本框背景
+	//    [searchBar setSearchFieldBackgroundImage:searchBarBg forState:UIControlStateNormal];
+	searchBar.layer.masksToBounds = YES;
+	searchBar.layer.cornerRadius = 3;
+	[self.navBarView addSubview:self.searchBar];
+	
+}
+
+- (void)searchBarShouldBeginEditing
+{
+	
+		CommonSearchController * commonSearchController = [[CommonSearchController alloc] init];
+		commonSearchController.searchType = self.searchType;
+		commonSearchController.searchBarPlaceholder = self.searchBarPlaceholder;
+		
+		[self.navigationController pushViewController:commonSearchController animated:YES];
+		
+	
+}
+
+/**
+*  生成图片
+*
+*  @param color  图片颜色
+*  @param height 图片高度
+*
+*  @return 生成的图片
+*/
+- (UIImage*) GetImageWithColor:(UIColor*)color andHeight:(CGFloat)height
+{
+	CGRect r= CGRectMake(0.0f, 0.0f, 1.0f, height);
+	UIGraphicsBeginImageContext(r.size);
+	CGContextRef context = UIGraphicsGetCurrentContext();
+	
+	CGContextSetFillColorWithColor(context, [color CGColor]);
+	CGContextFillRect(context, r);
+	
+	UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+	UIGraphicsEndImageContext();
+	
+	return img;
+}
 @end

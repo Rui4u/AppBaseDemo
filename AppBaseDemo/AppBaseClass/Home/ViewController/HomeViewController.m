@@ -32,6 +32,8 @@
 	self.topView= [[HomeTopView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, HEIGHT_AUTO(259))];
 	self.rearTopView = self.topView;
 
+
+
 	UITableView * tableViewList = [[UITableView alloc] initWithFrame:CGRectMake(0, 100, SCREEN_WIDTH, 0) style:UITableViewStyleGrouped];
     
 	tableViewList.separatorStyle = UITableViewCellSelectionStyleNone;
@@ -50,6 +52,10 @@
 
 	self.backScrollView.mj_header = [MJRefreshStateHeader headerWithRefreshingTarget:self refreshingAction:@selector(pullToRefresh)];
 	[self.backScrollView.mj_header beginRefreshing];
+	
+	
+	[self initSearchBarViewWithPlaceholder:@"额呵呵哈"
+							withSearchType:SearchType_AgentName|SearchType_ShopName];
 
 }
 - (void)pullToRefresh {

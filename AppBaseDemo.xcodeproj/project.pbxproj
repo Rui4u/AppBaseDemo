@@ -49,6 +49,8 @@
 		2B5AA4D41F3DA13600C3EE31 /* SelectAddView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B5AA4D31F3DA13600C3EE31 /* SelectAddView.xib */; };
 		2B5AA4D71F3DA1BF00C3EE31 /* SelectAddView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5AA4D61F3DA1BF00C3EE31 /* SelectAddView.m */; };
 		2B5AA4DA1F3DB19400C3EE31 /* SRCustomLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5AA4D91F3DB19400C3EE31 /* SRCustomLabel.m */; };
+		2B5AA4DD1F3DB74000C3EE31 /* HZCustomSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5AA4DC1F3DB74000C3EE31 /* HZCustomSearchBar.m */; };
+		2B5AA4E01F3DB83400C3EE31 /* CommonSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5AA4DF1F3DB83400C3EE31 /* CommonSearchController.m */; };
 		2B7DCC021F3579CC00E88B38 /* HomeProductListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7DCC011F3579CC00E88B38 /* HomeProductListTableViewCell.m */; };
 		2B7DCC0C1F358CC400E88B38 /* SelectSpecificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7DCC0B1F358CC400E88B38 /* SelectSpecificationView.m */; };
 		2B8FD7F31F32CC6F00DAB9B9 /* SelectLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8FD7F21F32CC6F00DAB9B9 /* SelectLocationViewController.m */; };
@@ -220,6 +222,10 @@
 		2B5AA4D61F3DA1BF00C3EE31 /* SelectAddView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectAddView.m; sourceTree = "<group>"; };
 		2B5AA4D81F3DB19400C3EE31 /* SRCustomLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRCustomLabel.h; sourceTree = "<group>"; };
 		2B5AA4D91F3DB19400C3EE31 /* SRCustomLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRCustomLabel.m; sourceTree = "<group>"; };
+		2B5AA4DB1F3DB74000C3EE31 /* HZCustomSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZCustomSearchBar.h; sourceTree = "<group>"; };
+		2B5AA4DC1F3DB74000C3EE31 /* HZCustomSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZCustomSearchBar.m; sourceTree = "<group>"; };
+		2B5AA4DE1F3DB83400C3EE31 /* CommonSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonSearchController.h; sourceTree = "<group>"; };
+		2B5AA4DF1F3DB83400C3EE31 /* CommonSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonSearchController.m; sourceTree = "<group>"; };
 		2B7DCC001F3579CC00E88B38 /* HomeProductListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeProductListTableViewCell.h; sourceTree = "<group>"; };
 		2B7DCC011F3579CC00E88B38 /* HomeProductListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeProductListTableViewCell.m; sourceTree = "<group>"; };
 		2B7DCC0A1F358CC400E88B38 /* SelectSpecificationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectSpecificationView.h; sourceTree = "<group>"; };
@@ -637,6 +643,10 @@
 		2BA025131F2AD85E003EB25D /* AppBaseTools */ = {
 			isa = PBXGroup;
 			children = (
+				2B5AA4DB1F3DB74000C3EE31 /* HZCustomSearchBar.h */,
+				2B5AA4DC1F3DB74000C3EE31 /* HZCustomSearchBar.m */,
+				2B5AA4DE1F3DB83400C3EE31 /* CommonSearchController.h */,
+				2B5AA4DF1F3DB83400C3EE31 /* CommonSearchController.m */,
 				2B5AA4D81F3DB19400C3EE31 /* SRCustomLabel.h */,
 				2B5AA4D91F3DB19400C3EE31 /* SRCustomLabel.m */,
 				2B5AA4C71F3D886F00C3EE31 /* LCVerticalBadgeBtn.h */,
@@ -1156,6 +1166,7 @@
 				2BD5D70A1F39871700BE1994 /* NSString+PinYin4Cocoa.m in Sources */,
 				2BD5D7071F39871700BE1994 /* ChineseInclude.m in Sources */,
 				2B5AA4BF1F3D45E700C3EE31 /* MoreBaseView.m in Sources */,
+				2B5AA4DD1F3DB74000C3EE31 /* HZCustomSearchBar.m in Sources */,
 				2B8FD7F31F32CC6F00DAB9B9 /* SelectLocationViewController.m in Sources */,
 				2B38703A1F29BC0C00228620 /* UILabel+SRUILabel.m in Sources */,
 				2BC14DC21F31CD3500919808 /* SBJsonWriter.m in Sources */,
@@ -1166,6 +1177,7 @@
 				2B3870371F29BC0C00228620 /* UIButton+SRButton.m in Sources */,
 				2BA025171F2AD86B003EB25D /* TipLabel.m in Sources */,
 				2BC14DB81F31CD3500919808 /* SBJsonParser.m in Sources */,
+				2B5AA4E01F3DB83400C3EE31 /* CommonSearchController.m in Sources */,
 				2B580D681F38592400AEA6BF /* ViewController.mm in Sources */,
 				2B3870381F29BC0C00228620 /* UIColor+SRColor.m in Sources */,
 				2BBFAFFB1F3301F6002506D1 /* Parser.m in Sources */,

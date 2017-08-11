@@ -8,9 +8,23 @@
 
 #import <UIKit/UIKit.h>
 #import "CustomNavBarView.h"
+#import "HZCustomSearchBar.h"
+typedef NS_ENUM ( NSInteger , SearchType) {
+	
+	SearchType_AgentName = 1, //面包客
+	SearchType_ShopName = 1 << 1,// 店铺名
+	SearchType_SabourUnion  = 1 << 2//团队
+	
+};
+
 @interface BaseViewController : UIViewController
 
 @property(nonatomic,strong) CustomNavBarView * _Nullable navBarView;
+
+/**
+ 搜索控件
+ */
+@property (nonatomic ,strong ) HZCustomSearchBar *searchBar;
 
 - (void) showLoginViewController:(void (^_Nullable)( BOOL loginStatus)) loginBlock;
 /**
@@ -27,5 +41,8 @@
 - (void)back;
 - (void)initNavBarView:(NAV_BAR_TYPE)type;
 
+- (void)initSearchBarViewWithPlaceholder:(NSString * _Nullable)placeholder withSearchType:(SearchType) searchType;
+
+- (UIImage*) GetImageWithColor:(UIColor*)color andHeight:(CGFloat)height;
 @end
 
