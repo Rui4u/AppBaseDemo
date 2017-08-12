@@ -80,7 +80,7 @@
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <state key="normal" title="获取验证码">
-                                <color key="titleColor" red="0.74901960784313726" green="0.74901960784313726" blue="0.74901960784313726" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleColor" red="0.18823529410000001" green="0.78039215689999997" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
                                 <action selector="clickGetVerificationCoderButton:" destination="-1" eventType="touchUpInside" id="4E4-Uc-DZQ"/>

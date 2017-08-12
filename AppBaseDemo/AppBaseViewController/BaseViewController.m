@@ -10,6 +10,7 @@
 #import "TipLabel.h"
 #import "CommonSearchController.h"
 #import "LoginViewRootController.h"
+#import "DispatchTimer.h"
 @interface BaseViewController ()<CustomNavBarViewDelegate,UISearchBarDelegate,HZCustomSearchBarDelegate>
 
 /**
@@ -21,6 +22,8 @@
  */
 @property (nonatomic ,assign ) SearchType searchType;
 @property (nonatomic ,copy ) NSString * searchBarPlaceholder;
+
+@property (nonatomic , strong) DispatchTimer * dispatchTimer;
 
 @end
 
@@ -144,5 +147,97 @@
 	UIGraphicsEndImageContext();
 	
 	return img;
+}
+
+#pragma mark - 定时器
+- (void)openTimerWithTime:(NSInteger)time
+             countDownBtn:(UIButton *)countDownBtn
+        againAcquireColor:(NSString *)againAcquireColor
+           countDownColor:(NSString *)countDownColor
+{
+    __weak typeof(self) weakSelf = self;
+    __block NSInteger timeout = time; //倒计时时间
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    if (self.dispatchTimer.timer)
+    {
+        dispatch_source_cancel(self.dispatchTimer.timer);
+    }
+    self.dispatchTimer.timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0,queue);
+    
+    dispatch_source_set_timer(self.dispatchTimer.timer,dispatch_walltime(NULL, 0),1.0 *NSEC_PER_SEC, 0); //每60秒执行
+    
+    
+    dispatch_source_set_event_handler(self.dispatchTimer.timer, ^{
+        
+        dispatch_async(dispatch_get_main_queue(),^{
+            
+            if (timeout<= 0)
+            {
+                countDownBtn.userInteractionEnabled = YES;
+                dispatch_source_cancel(weakSelf.dispatchTimer.timer);
+                [countDownBtn setTitle:@"重新获取" forState:UIControlStateNormal];
+                [countDownBtn setTitleColor:[UIColor colorWithHexString:againAcquireColor] forState:UIControlStateNormal];
+                NSLog(@"-----------------------------------");
+            }
+            else
+            {
+                countDownBtn.userInteractionEnabled = NO;
+                [countDownBtn setTitleColor:[UIColor colorWithHexString:countDownColor] forState:UIControlStateNormal];
+                [countDownBtn setTitle:[NSString stringWithFormat:@"%lds",(long)timeout] forState:UIControlStateNormal];
+                NSLog(@"++++++++++++++++++++++++++++++++++");
+                
+            }
+            timeout --;
+        });
+    });
+    //启动dispatch_source_t
+    dispatch_resume(self.dispatchTimer.timer);
+}
+- (DispatchTimer *)dispatchTimer
+{
+    return [DispatchTimer sharedDispathTimer];
+}
+#pragma mark - NSObject dealloc
+- (void) dealloc
+{
+    if (self.dispatchTimer.timer)
+    {
+        if (dispatch_source_testcancel(self.dispatchTimer.timer) != 0)
+        {
+            self.dispatchTimer.timer = nil;
+        }
+        else
+        {
+            dispatch_source_cancel(self.dispatchTimer.timer);
+            self.dispatchTimer.timer = nil;
+        }
+    }
+    
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    
+    [self.searchBar resignFirstResponder];
+    self.searchBar.text = @"";
+    [super viewWillDisappear:animated];
+    
+    
+    DDLog(@" \n viewWillDisappear  class is  = %@  \n" , self.class);
+    
+    if (self.dispatchTimer.timer)
+    {
+        if (dispatch_source_testcancel(self.dispatchTimer.timer) != 0)
+        {
+            self.dispatchTimer.timer = nil;
+        }
+        else
+        {
+            dispatch_source_cancel(self.dispatchTimer.timer);
+            self.dispatchTimer.timer = nil;
+        }
+    }
+    
+    
 }
 @end

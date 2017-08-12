@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B09B0DB1F3F604B00C7B3B2 /* DispatchTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B09B0DA1F3F604B00C7B3B2 /* DispatchTimer.m */; };
 		2B2E10511F3C015D00092EAA /* CityNotInOpenCityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B2E10501F3C015D00092EAA /* CityNotInOpenCityView.xib */; };
 		2B2E109A1F3C0AF900092EAA /* BaseBussiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2E10991F3C0A8800092EAA /* BaseBussiness.m */; };
 		2B2E10A41F3C0EDF00092EAA /* GetHomeBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2E109D1F3C0EDF00092EAA /* GetHomeBusiness.m */; };
@@ -140,6 +141,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B09B0D91F3F604B00C7B3B2 /* DispatchTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DispatchTimer.h; sourceTree = "<group>"; };
+		2B09B0DA1F3F604B00C7B3B2 /* DispatchTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DispatchTimer.m; sourceTree = "<group>"; };
 		2B2E10501F3C015D00092EAA /* CityNotInOpenCityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CityNotInOpenCityView.xib; sourceTree = "<group>"; };
 		2B2E10991F3C0A8800092EAA /* BaseBussiness.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseBussiness.m; sourceTree = "<group>"; };
 		2B2E109C1F3C0EDF00092EAA /* GetHomeBusiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetHomeBusiness.h; sourceTree = "<group>"; };
@@ -676,6 +679,8 @@
 			children = (
 				2BA025351F2B05E9003EB25D /* CustomViewController.h */,
 				2BA025361F2B05E9003EB25D /* CustomViewController.m */,
+				2B09B0D91F3F604B00C7B3B2 /* DispatchTimer.h */,
+				2B09B0DA1F3F604B00C7B3B2 /* DispatchTimer.m */,
 				2BA025261F2AE470003EB25D /* BaseViewController.h */,
 				2BA025271F2AE470003EB25D /* BaseViewController.m */,
 				2BA025281F2AE470003EB25D /* CustomNavBarView.h */,
@@ -1205,6 +1210,7 @@
 				2BD5D7081F39871700BE1994 /* ChineseToPinyinResource.m in Sources */,
 				2BC14DBF1F31CD3500919808 /* SBJsonStreamWriterState.m in Sources */,
 				2B3870391F29BC0C00228620 /* UIImage+SRImage.m in Sources */,
+				2B09B0DB1F3F604B00C7B3B2 /* DispatchTimer.m in Sources */,
 				2BD5D70F1F39871700BE1994 /* ZYPinYinSearch.m in Sources */,
 				2BD5D7181F39925100BE1994 /* UserInfoViewController.m in Sources */,
 				2BD5D70C1F39871700BE1994 /* PinYinForObjc.m in Sources */,

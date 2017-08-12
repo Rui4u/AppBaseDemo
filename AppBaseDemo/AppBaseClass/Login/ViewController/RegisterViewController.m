@@ -32,7 +32,9 @@
     }
 }
 - (IBAction)clickGetVerificationCoderButton:(UIButton *)sender {
-    NSLog(@"获取验证码");
+    [self openTimerWithTime:60 countDownBtn:sender againAcquireColor:Main_Font_Green_Color countDownColor:Main_Font_Gary_Color];
+    NSLog(@"验证码");
+
 }
 - (IBAction)ClickopenOrClosr:(UIButton *)sender {
     

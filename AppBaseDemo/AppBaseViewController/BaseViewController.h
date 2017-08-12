@@ -43,6 +43,19 @@ typedef NS_ENUM ( NSInteger , SearchType) {
 
 - (void)initSearchBarViewWithPlaceholder:(NSString * _Nullable)placeholder withSearchType:(SearchType) searchType;
 
+
+/**
+ 定时器
+
+ @param color <#color description#>
+ @param height <#height description#>
+ @return <#return value description#>
+ */
 - (UIImage*) GetImageWithColor:(UIColor*)color andHeight:(CGFloat)height;
+
+- (void)openTimerWithTime:(NSInteger)time
+             countDownBtn:(UIButton *)countDownBtn
+        againAcquireColor:(NSString *)againAcquireColor
+           countDownColor:(NSString *)countDownColor;
 @end
 
