@@ -49,7 +49,7 @@
 
 - (void)setUpBoomView {
 
-	self.bottomAdv = [[UIButton alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.headLineView.frame), SCREEN_WIDTH, 110)];
+	self.bottomAdv = [[UIButton alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.headLineView.frame) + 8, SCREEN_WIDTH, 110)];
 	[self addSubview:self.bottomAdv];
 	self.height =CGRectGetMaxY(self.bottomAdv.frame);
 	[self.bottomAdv sd_setBackgroundImageWithURL:[NSURL URLWithString:self.homeDataModel.activityList.firstObject.activityImg] forState:UIControlStateNormal];
@@ -62,6 +62,7 @@
 	CGFloat width = SCREEN_WIDTH/4.0;
 	CGFloat height = SCREEN_WIDTH/4.0;
 	UIView * headLineView = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.bannerScrollView.frame), SCREEN_WIDTH, height)];
+    headLineView.backgroundColor = [UIColor colorWithHexString:@"ffffff"];
 	self.headLineView = headLineView;
 	[self addSubview:headLineView];
 	
@@ -81,7 +82,7 @@
 - (TopAdvertisementView *)bannerScrollView {
 	if (!_bannerScrollView) {
 		
-		_bannerScrollView = [[TopAdvertisementView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, AutoHeight(100))];
+		_bannerScrollView = [[TopAdvertisementView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, AutoHeight(130))];
 		_bannerScrollView.delegate = self;
 	}
 	return _bannerScrollView;

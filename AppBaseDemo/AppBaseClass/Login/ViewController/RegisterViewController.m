@@ -8,8 +8,8 @@
 
 #import "RegisterViewController.h"
 #import "RegisterBusiness.h"
-#import "SelectLocationViewController.h"
-@interface RegisterViewController ()
+#import "UserInfoViewController.h"
+@interface RegisterViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumber;
 @property (weak, nonatomic) IBOutlet UITextField *verificationCode;
 @property (weak, nonatomic) IBOutlet UITextField *userPassword;
@@ -19,6 +19,18 @@
 @end
 
 @implementation RegisterViewController
+
+- (void)textFieldDidChange:(UITextField *)textFiled {
+    
+    if ([self.phoneNumber.text isEqualToString:@""]|| [self.verificationCode.text isEqualToString:@""]||[self.userPassword.text isEqualToString:@""]) {
+        
+        [self.registerButton setBackgroundColor:[UIColor colorWithHexString:Main_Button_Gary_Color]];
+        self.registerButton.enabled = NO;
+    }else {
+        [self.registerButton setBackgroundColor:[UIColor colorWithHexString:Main_Font_Green_Color]];
+        self.registerButton.enabled = YES;
+    }
+}
 - (IBAction)clickGetVerificationCoderButton:(UIButton *)sender {
     NSLog(@"获取验证码");
 }
@@ -40,7 +52,7 @@
     {
         if (sucessFlag == YES) [self showToastWithMessage:@"注册成功" showTime:1];
     
-        SelectLocationViewController * selectLocationViewController = [[SelectLocationViewController alloc] init];
+        UserInfoViewController * selectLocationViewController = [[UserInfoViewController alloc] init];
         [self.navigationController pushViewController:selectLocationViewController animated:YES];
         
     } completionFailHandler:^(NSString *failMessage) {
@@ -67,6 +79,10 @@
     phontButton.contentHorizontalAlignment  = UIControlContentHorizontalAlignmentRight;
 	[phontButton setTitleColor:[UIColor colorWithHexString:Main_Font_Green_Color] forState:UIControlStateNormal];
 	[self.navBarView addSubview:phontButton];
+    
+    [self.phoneNumber addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    [self.verificationCode addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    [self.userPassword addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
 }
 
 - (void)clickPhoneButton {

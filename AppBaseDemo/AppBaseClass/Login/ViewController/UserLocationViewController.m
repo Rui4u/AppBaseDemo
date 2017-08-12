@@ -139,23 +139,31 @@
 	
 	[self initNavBarView:NAV_BAR_TYPE_SECOND_LEVEL_VIEW];
 
-	self.selectCityButton = [UIButton quickCreateButtonWithFrame:CGRectMake(60, 20, 100, 44) title:@"位置" addTarget:self action:@"clickLocationCityButton:"];
-	self.selectCityButton.backgroundColor = [UIColor randomOfColor];
+	self.selectCityButton = [UIButton quickCreateButtonWithFrame:CGRectMake(30, 20, 100, 44) title:@"位置" addTarget:self action:@"clickLocationCityButton:"];
+    self.selectCityButton.titleLabel.font = [UIFont systemFontOfSize:13];
+    [self.selectCityButton setTitleColor:[UIColor colorWithHexString:@"666666"] forState:UIControlStateNormal];
+    
 	[self.navBarView addSubview:self.selectCityButton];
 	
-	self.searchTextField = [[UITextField alloc] initWithFrame:CGRectMake(SCREEN_WIDTH/2, 20, 100, 44)];
+    UIView * lineView = [[UIView alloc] initWithFrame:CGRectMake(CGRectGetMaxX(self.selectCityButton.frame), 30, 1, 24)];
+    lineView.backgroundColor = [UIColor colorWithHexString:Main_Line_Gary_Color];
+    [self.navBarView addSubview:lineView];
+    
+	self.searchTextField = [[UITextField alloc] initWithFrame:CGRectMake(CGRectGetMaxX(lineView.frame) ,20,SCREEN_WIDTH - CGRectGetMaxX(lineView.frame) - 60, 44)];
 	self.searchTextField.delegate = self;
 	[self.searchTextField addTarget:self action:@selector(clickSearchCityButton:) forControlEvents:UIControlEventEditingChanged];
-	self.searchTextField.backgroundColor = [UIColor randomOfColor];
+    self.searchTextField.placeholder = @"查找小区/街道/商厦等";
+	self.searchTextField.backgroundColor = [UIColor whiteColor];
 	[self.navBarView addSubview:self.searchTextField];
 	
-	self.cancelButton = [UIButton quickCreateButtonWithFrame: CGRectMake(self.searchTextField.right, self.searchTextField.y, 100, 44)title:@"取消" addTarget:self action:@"clickCancelButton:"];
+	self.cancelButton = [UIButton quickCreateButtonWithFrame: CGRectMake(self.searchTextField.right, self.searchTextField.y, 60, 44)title:@"取消" addTarget:self action:@"clickCancelButton:"];
+    self.cancelButton.titleLabel.font = [UIFont systemFontOfSize:13];
 	[self.cancelButton setTitleColor:[UIColor colorWithHexString:Main_Font_Green_Color] forState:UIControlStateNormal];
 	[self.navBarView addSubview:self.cancelButton];
 
 	
 	self.sureButton = [UIButton quickCreateButtonWithFrame:CGRectMake(0, SCREEN_HEIGHT - 50, SCREEN_WIDTH, 50) title:@"确认" addTarget:self action:@"clickSureButton:"];
-	self.sureButton.backgroundColor = [UIColor randomOfColor];
+	self.sureButton.backgroundColor = [UIColor colorWithHexString:Main_Font_Green_Color];
 	[self.view addSubview:self.sureButton];
 	[self.view bringSubviewToFront:self.sureButton];
 	

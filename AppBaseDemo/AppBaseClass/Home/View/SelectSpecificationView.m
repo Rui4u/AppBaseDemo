@@ -25,28 +25,28 @@
 
 - (void)setUpUI {
     
-    UILabel * totolPriceLabel = [UILabel creatLabelWithText:@"￥25.6/袋(6斤)" FontOfSize:12 textColor:@"333333"];
-    totolPriceLabel.frame = CGRectMake(0, 0, self.width, 35);
+    UILabel * totolPriceLabel = [UILabel creatLabelWithText:@"￥25.6/袋(6斤)" FontOfSize:12 textColor:Main_Font_Gary_Color];
+    totolPriceLabel.frame = CGRectMake(0, 12, self.width, 12);
 	self.totolPriceLabel = totolPriceLabel;
     [self addSubview:totolPriceLabel];
     
 
 	UIImageView * imageView = [[UIImageView alloc] initWithImage:nil];
 	imageView.backgroundColor = [UIColor randomOfColor];
-	imageView.frame = CGRectMake(0, totolPriceLabel.bottom, 16, 16);
+	imageView.frame = CGRectMake(0, totolPriceLabel.bottom + 12, 16, 16);
 	self.disCountView = imageView;
 	[self addSubview:self.disCountView];
 	
-	UILabel * averagePrice = [UILabel creatLabelWithText:@"￥2.4/斤" FontOfSize:16 textColor:Main_Font_Red_Color];
+	UILabel * averagePrice = [UILabel creatLabelWithText:@"￥2.4/斤" FontOfSize:15 textColor:Main_Font_Red_Color];
 	self.averagePrice = averagePrice;
-	averagePrice.frame = CGRectMake(CGRectGetMaxX(imageView.frame) + 5, totolPriceLabel.bottom, self.width, 16);
+	averagePrice.frame = CGRectMake(CGRectGetMaxX(imageView.frame) + 3, imageView.y, self.width, 16);
 	[self addSubview:averagePrice];
 	
 	
 	SelectAddView * selectAddView = [[NSBundle mainBundle] loadNibNamed:@"SelectAddView" owner:self options:nil].firstObject;
 	self.selectAddView = selectAddView;
     selectAddView.delegate = self;
-	selectAddView.frame = CGRectMake(self.width - 90 - 15,(self.height - 24)/2, 90 , 24);
+	selectAddView.frame = CGRectMake(self.width - 90 - 10,imageView.bottom - 30 , 90 , 30);
 	[self addSubview:selectAddView];
 
 }
@@ -62,10 +62,10 @@
 	_showDisCountView = showDisCountView;
 	
 	if (_showDisCountView == YES) {
-		self.disCountView.frame = CGRectMake(0, self.totolPriceLabel.bottom, 16, 16);
-		self.averagePrice.frame = CGRectMake(CGRectGetMaxX(self.disCountView.frame) + 5, self.totolPriceLabel.bottom, self.width, 16);
+        self.disCountView.x = 0;
+        self.averagePrice.x = CGRectGetMaxX(self.disCountView.frame) + 3;
 	}else {
-		self.averagePrice.frame = CGRectMake(0, self.totolPriceLabel.bottom, self.width, 16);
+        self.averagePrice.x = 0;
 		
 	}
 	self.disCountView.hidden = !_showDisCountView;

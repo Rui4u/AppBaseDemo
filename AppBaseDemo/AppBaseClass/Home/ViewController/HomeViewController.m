@@ -37,7 +37,6 @@
 	UITableView * tableViewList = [[UITableView alloc] initWithFrame:CGRectMake(0, 100, SCREEN_WIDTH, 0) style:UITableViewStyleGrouped];
     
 	tableViewList.separatorStyle = UITableViewCellSelectionStyleNone;
-	tableViewList.backgroundColor = [UIColor colorWithHexString:@"eeeeee"];
 	tableViewList.dataSource = self;
 	self.frontScrollView = tableViewList;
 	
@@ -45,16 +44,18 @@
 	self.selectTypeView.delegate = self;
 	self.selectTypeView.backgroundColor = [UIColor whiteColor];
 	self.frontTopView = self.selectTypeView;
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    tableViewList.contentInset = UIEdgeInsetsMake(0, 0, 44, 0);
 	[self setUpSuperViewViewControllerUI];
 	self.DraggingHeight = 20 ;
     [self initNavBarView:NAV_BAR_TYPE_ROOT_VIEW];
-    self.navBarView.alpha = 0;
+    
 
 	self.backScrollView.mj_header = [MJRefreshStateHeader headerWithRefreshingTarget:self refreshingAction:@selector(pullToRefresh)];
 	[self.backScrollView.mj_header beginRefreshing];
 	
 	
-	[self initSearchBarViewWithPlaceholder:@"额呵呵哈"
+	[self initSearchBarViewWithPlaceholder:@"鸡蛋"
 							withSearchType:SearchType_AgentName|SearchType_ShopName];
 
 }
@@ -96,8 +97,10 @@
 
 }
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-	SRCustomLabel * label = [SRCustomLabel creatLabelWithText: self.dataSourse.ProductionInfoList[section].goodsBaseType FontOfSize:14 textColor:@"333333"];
+	SRCustomLabel * label = [SRCustomLabel creatLabelWithText: self.dataSourse.ProductionInfoList[section].goodsBaseType FontOfSize:12 textColor:@"333333"];
 	label.textInsets = UIEdgeInsetsMake(0, 15, 0, 0);
+    label.backgroundColor = [UIColor colorWithHexString:Main_BackGround_Color];
+    
 	return label;
 }
 
@@ -106,7 +109,7 @@
     return self.dataSourse.ProductionInfoList[section].goodsList.count;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-	return 44;
+	return 35;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
@@ -157,7 +160,8 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     [super scrollViewDidScroll:scrollView];
     if (scrollView == self.backScrollView) {
-            self.navBarView.alpha = scrollView.contentOffset.y/60.0;
+
+        self.navBarView.backgroundColor = [UIColor colorWithWhite:1 alpha:scrollView.contentOffset.y/60.0];
     }
 	
 }

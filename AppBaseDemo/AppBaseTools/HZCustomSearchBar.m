@@ -15,6 +15,10 @@
  */
 @property (nonatomic , strong) UITextField * textField;
 
+/**
+ <#Description#>
+ */
+@property (nonatomic ,strong) UIImageView * cusImageView;
 @end
 
 
@@ -35,7 +39,8 @@
 - (void) privateBuildUI:(CGRect)frame
 {
     UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, (CGRectGetHeight(frame)-17)/2, 17, 17)];
-    imageView.image = [UIImage imageNamed:@"search_bar"];
+    self.cusImageView = imageView;
+    imageView.image = [UIImage imageNamed:@"icon_search"];
     [self addSubview:imageView];
     
     self.textField = [UITextField quickCreateTextFieldWithFrame:CGRectMake(CGRectGetMaxX(imageView.frame)+7.5, 0, CGRectGetWidth(frame)-32.5, CGRectGetHeight(frame))
@@ -45,7 +50,10 @@
 
 //    [self.textField setValue:[UIColor colorWithHexString:@"8d8d8e"] forKeyPath:@"_placeholderLabel.textColor"];
 //    [self.textField setValue:[UIFont boldSystemFontOfSize:13] forKeyPath:@"_placeholderLabel.font"];
+    
+    
     self.textField.enabled = NO;
+    self.textField.textAlignment = NSTextAlignmentCenter;
     [self addSubview:self.textField];
 }
 
@@ -61,7 +69,11 @@
 {
     _placeholder = placeholder;
     self.textField.placeholder = placeholder;
-    self.textField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:placeholder attributes:@{NSForegroundColorAttributeName: [UIColor colorWithHexString:@"8d8d8e"]}];
+    self.textField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:placeholder attributes:@{NSForegroundColorAttributeName: [UIColor colorWithHexString:@"ffffff"]}];
+    [self.textField sizeToFit];
+    
+    self.textField.frame = CGRectMake((self.width - self.textField.width - self.cusImageView.width + 10 )/2, (self.height - self.textField.height)/2, self.textField.width, self.textField.height);
+    self.cusImageView.x = self.textField.x - self.cusImageView.width;
 }
 
 - (void)HZCustomSearchBarClick

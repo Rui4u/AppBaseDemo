@@ -68,14 +68,14 @@
 //    self.bgView.backgroundColor = [UIColor randomOfColor];
     [self.contentView addSubview:self.bgView];
     
-    self.iconView = [[UIImageView alloc] initWithFrame:CGRectMake(15, 15, 72, 72)];
+    self.iconView = [[UIImageView alloc] initWithFrame:CGRectMake(8, 8, 65, 65)];
     [self.bgView addSubview:self.iconView];
 //    self.iconView.backgroundColor = [UIColor randomOfColor];
 
-    self.topBgView = [[UIView alloc] initWithFrame:CGRectMake(self.iconView.right + 10, self.iconView.y,self.bgView.width - self.iconView.right -10 , 38)];
+    self.topBgView = [[UIView alloc] initWithFrame:CGRectMake(self.iconView.right + 10, self.iconView.y,self.bgView.width - self.iconView.right -10 , 40)];
     [self.bgView addSubview:self.topBgView];
     
-    self.titleLabel = [UILabel creatLabelWithText:@"香菜" FontOfSize:14 textColor:@"333333"];
+    self.titleLabel = [UILabel creatLabelWithText:@"" FontOfSize:14 textColor:@"333333"];
     self.titleLabel.frame = CGRectMake(0,0, 200, self.topBgView.height);
     [self.topBgView addSubview:self.titleLabel];
 
@@ -104,14 +104,14 @@
     
     self.titleLabel.width = selectLabel.x - self.titleLabel.x - 5;
     
-    self.bottomBgView = [[UIView alloc] initWithFrame:CGRectMake(self.iconView.right + 10, self.topBgView.bottom,self.bgView.width - self.iconView.right -10 , 60)];
+    self.bottomBgView = [[UIView alloc] initWithFrame:CGRectMake(self.iconView.right + 8, self.topBgView.bottom,self.bgView.width - self.iconView.right - 8 , 65)];
     self.bottomBgView.clipsToBounds = YES;
     [self.contentView addSubview:self.bottomBgView];
     self.contentView.clipsToBounds = YES;
 	
 	
 	UIView * bottomLintView = [[UIView alloc] init];
-	bottomLintView.backgroundColor = [UIColor colorWithHexString:Main_Line_Gary_Color];
+	bottomLintView.backgroundColor = [UIColor colorWithHexString:Main_BackGround_Color];
 	[self.contentView addSubview:bottomLintView];
 	[bottomLintView mas_makeConstraints:^(MASConstraintMaker *make) {
 		make.bottom.equalTo(self.contentView.mas_bottom);
@@ -145,7 +145,7 @@
     for (int i = 0; i < count;  i ++) {
         Guige * guige = dataSourse.guige[i];
         
-        SelectSpecificationView * selectSpecificationView = [[SelectSpecificationView alloc] initWithFrame:CGRectMake(0,i *selectViewHeight,self.bottomBgView.width,66)];
+        SelectSpecificationView * selectSpecificationView = [[SelectSpecificationView alloc] initWithFrame:CGRectMake(8,i *selectViewHeight,self.bottomBgView.width- 8,65)];
 		selectSpecificationView.index = i;
         selectViewHeight = selectSpecificationView.height;
 		selectSpecificationView.delegate = self;

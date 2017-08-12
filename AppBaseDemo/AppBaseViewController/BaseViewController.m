@@ -96,30 +96,17 @@
 		searchBar = [[HZCustomSearchBar alloc]initWithFrame:CGRectMake(55, NAV_BAR_HEIGHT - 30 - 7, SCREEN_WIDTH - 70, 30)];
 	}else {
 		
-		searchBar = [[HZCustomSearchBar alloc]initWithFrame:CGRectMake(15, NAV_BAR_HEIGHT - 30 - 7, SCREEN_WIDTH - 30, 30)];
+		searchBar = [[HZCustomSearchBar alloc]initWithFrame:CGRectMake(60, NAV_BAR_HEIGHT - 30 - 7, SCREEN_WIDTH - 120, 30)];
 		
 	}
 	self.searchBar = searchBar;
 	searchBar.delegate = self;
 	searchBar.placeholder = placeholder;
-	searchBar.searchBarBackgroundColor = [UIColor colorWithHexString:@"232226"];
+	searchBar.searchBarBackgroundColor = [UIColor colorWithWhite:0 alpha:.3];
+    
 	
-	//    UITextField * searchField = [_searchBar valueForKey:@"_searchField"];
-	//    [searchField setValue:[UIColor colorWithHexString:@"8d8d8e"] forKeyPath:@"_placeholderLabel.textColor"];
-	//    [searchField setValue:[UIFont boldSystemFontOfSize:13] forKeyPath:@"_placeholderLabel.font"];
-	//
-	//    searchField.textColor = [UIColor colorWithHexString:@"ffffff"];
-	//    searchBar.showsCancelButton = NO;
-	//    [searchBar setContentMode:UIViewContentModeLeft];
-	//    UIImage* searchBarBg = [self GetImageWithColor:[UIColor colorWithHexString:@"232226"] andHeight:searchBar.height];
-	//    //设置背景图片
-	//    [searchBar setBackgroundImage:searchBarBg];
-	//    //设置背景色
-	//    [searchBar setBackgroundColor:[UIColor clearColor]];
-	//    //设置文本框背景
-	//    [searchBar setSearchFieldBackgroundImage:searchBarBg forState:UIControlStateNormal];
 	searchBar.layer.masksToBounds = YES;
-	searchBar.layer.cornerRadius = 3;
+	searchBar.layer.cornerRadius = 15;
 	[self.navBarView addSubview:self.searchBar];
 	
 }
