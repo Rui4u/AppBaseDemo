@@ -43,12 +43,13 @@
 	[self initNavBarView:NAV_BAR_TYPE_SECOND_LEVEL_VIEW];
 	[self.navBarView setTitle:@"登录"];
 	
-	UIButton * registerButton = [UIButton quickCreateButtonWithFrame:CGRectMake(SCREEN_WIDTH-AutoHeight(60)-AutoHeight(10), 20, AutoHeight(60), AutoHeight(44))
+	UIButton * registerButton = [UIButton quickCreateButtonWithFrame:CGRectMake(SCREEN_WIDTH-AutoHeight(60)- 20, 20, AutoHeight(60), AutoHeight(44))
 													  title:@"注册"
 												  addTarget:self
 													 action:@"clickRegisterButton"];
-	registerButton.titleLabel.font = [UIFont systemFontOfSize:12];
-	[registerButton setTitleColor:MAIN_GREEN_COLOR forState:UIControlStateNormal];
+	registerButton.titleLabel.font = [UIFont systemFontOfSize:15];
+    registerButton.contentHorizontalAlignment  = UIControlContentHorizontalAlignmentRight;
+	[registerButton setTitleColor:[UIColor colorWithHexString:Main_Font_Green_Color] forState:UIControlStateNormal];
 	[self.navBarView addSubview:registerButton];
 	
 
@@ -66,10 +67,10 @@
 
     if ([self.phoneNumberTextField.text isEqualToString:@""]|| [self.userPwdTextField.text isEqualToString:@""]) {
         
-        [self.loginButton setBackgroundColor:[UIColor lightGrayColor]];
+        [self.loginButton setBackgroundColor:[UIColor colorWithHexString:Main_Button_Gary_Color]];
         self.loginButton.enabled = NO;
     }else {
-        [self.loginButton setBackgroundColor:MAIN_GREEN_COLOR];
+        [self.loginButton setBackgroundColor:[UIColor colorWithHexString:Main_Font_Green_Color]];
         self.loginButton.enabled = YES;
     }
 

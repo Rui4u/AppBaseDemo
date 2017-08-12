@@ -22,6 +22,12 @@
 - (IBAction)clickGetVerificationCoderButton:(UIButton *)sender {
     NSLog(@"获取验证码");
 }
+- (IBAction)ClickopenOrClosr:(UIButton *)sender {
+    
+    
+    self.userPassword.secureTextEntry = !self.userPassword.secureTextEntry;
+    sender.selected = !sender.selected;
+}
 
 - (IBAction)clickRegisterButton:(UIButton *)sender {
     NSLog(@"注册");
@@ -53,12 +59,13 @@
 	[self.navBarView setTitle:@"注册"];
 	
 	
-	UIButton * phontButton = [UIButton quickCreateButtonWithFrame:CGRectMake(SCREEN_WIDTH-AutoHeight(60)-AutoHeight(10), 20, AutoHeight(60), AutoHeight(44))
+	UIButton * phontButton = [UIButton quickCreateButtonWithFrame:CGRectMake(SCREEN_WIDTH-AutoHeight(70) - 20, 20, AutoHeight(70), AutoHeight(44))
 															   title:@"客服电话"
 														   addTarget:self
 															  action:@"clickPhoneButton"];
-	phontButton.titleLabel.font = [UIFont systemFontOfSize:12];
-	[phontButton setTitleColor:MAIN_GREEN_COLOR forState:UIControlStateNormal];
+	phontButton.titleLabel.font = [UIFont systemFontOfSize:15];
+    phontButton.contentHorizontalAlignment  = UIControlContentHorizontalAlignmentRight;
+	[phontButton setTitleColor:[UIColor colorWithHexString:Main_Font_Green_Color] forState:UIControlStateNormal];
 	[self.navBarView addSubview:phontButton];
 }
 

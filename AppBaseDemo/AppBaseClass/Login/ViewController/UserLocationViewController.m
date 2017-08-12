@@ -150,7 +150,7 @@
 	[self.navBarView addSubview:self.searchTextField];
 	
 	self.cancelButton = [UIButton quickCreateButtonWithFrame: CGRectMake(self.searchTextField.right, self.searchTextField.y, 100, 44)title:@"取消" addTarget:self action:@"clickCancelButton:"];
-	[self.cancelButton setTitleColor:MAIN_GREEN_COLOR forState:UIControlStateNormal];
+	[self.cancelButton setTitleColor:[UIColor colorWithHexString:Main_Font_Green_Color] forState:UIControlStateNormal];
 	[self.navBarView addSubview:self.cancelButton];
 
 	

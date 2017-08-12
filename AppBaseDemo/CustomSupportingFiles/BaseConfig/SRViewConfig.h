@@ -30,12 +30,12 @@
 
 
 
-#define MAIN_GREEN_COLOR COLOR_RGBA(34,188,35,1)  //绿色
-
-#define MAIN_RED_COLOR @"#d43c33"
-#define Main_Font_Gary_Color @"#AAAAAA" //字灰色
-#define Main_Line_Gary_Color @"#ECECEC" //分割线灰色
+#define Main_Font_Green_Color @"#0bbe06" //绿色
+#define Main_Font_Gary_Color @"#bfbfbf" //字灰色
+#define Main_Line_Gary_Color @"#dddddd" //分割线灰色
 #define Main_Font_Red_Color @"#EE5C56" //字红色
+#define Main_Button_Gary_Color @"#e1e1e1" //字红色
+#define Main_BackGround_Color @"#f5f5f5" //背景色
 
 
 

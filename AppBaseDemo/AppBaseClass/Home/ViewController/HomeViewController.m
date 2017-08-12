@@ -60,6 +60,12 @@
 }
 - (void)pullToRefresh {
 
+    if (isNotLogin) {
+        [self showLoginViewController:nil];
+        [self.backScrollView.mj_header endRefreshing];
+        return;
+    }
+    
 	[GetHomeBusiness requestGetHomeWithToken:TOKEN completionSuccessHandler:^(HomeDataModel *homeDataModel)
 	 {
 		 self.dataSourse = homeDataModel;

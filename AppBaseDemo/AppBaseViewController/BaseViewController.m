@@ -9,6 +9,7 @@
 #import "BaseViewController.h"
 #import "TipLabel.h"
 #import "CommonSearchController.h"
+#import "LoginViewRootController.h"
 @interface BaseViewController ()<CustomNavBarViewDelegate,UISearchBarDelegate,HZCustomSearchBarDelegate>
 
 /**
@@ -31,7 +32,7 @@
 	
 	self.navigationController.navigationBar.hidden = YES;
 	self.automaticallyAdjustsScrollViewInsets = NO;
-	self.view.backgroundColor = [UIColor colorWithHexString:@"e8e8e8"];
+	self.view.backgroundColor = [UIColor colorWithHexString:Main_BackGround_Color];
 	
 	
 }
@@ -81,14 +82,8 @@
 }
 - (void) showLoginViewController:(void (^ __nullable )( BOOL loginStatus)) loginBlock
 {
-	
-//	LoginViewRootController *loginViewRootController =  [[LoginViewRootController alloc ]init];
-//	loginViewRootController.loginInBlock = loginBlock;
-//	//token失效跳转登录界面
-//	[[UIApplication sharedApplication].keyWindow.rootViewController
-//	 presentViewController:loginViewRootController animated:YES completion:nil];
-	
-	
+    LoginViewRootController * login = [[LoginViewRootController alloc] init];
+    [self presentViewController:login animated:YES completion:nil];
 }
 
 
