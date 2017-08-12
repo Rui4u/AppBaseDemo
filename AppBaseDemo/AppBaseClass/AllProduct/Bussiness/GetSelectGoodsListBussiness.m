@@ -9,6 +9,7 @@
 
 #import "GetSelectGoodsListBussiness.h"
 #import "GetSelectedProductModel.h"
+
 @implementation GetSelectGoodsListBussiness
 
 + (void) requestGetSelectGoodsListWithToken : (NSString* ) token

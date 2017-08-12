@@ -37,7 +37,9 @@
 	if (i < 0) {
 		return;
 	}
+    
 	self.numberLabel.text = [NSString stringWithFormat:@"%d",i];
+    [self.delegate changeNumberWith:self.numberLabel.text];
 }
 - (IBAction)clickAddButton:(id)sender {
 	
@@ -48,6 +50,9 @@
 	}
 	
 	self.numberLabel.text = [NSString stringWithFormat:@"%d",i];
+    
+        [self.delegate changeNumberWith:self.numberLabel.text];
+    
 	if (i >= 1) {
 		self.reduceButton.hidden = NO;
 		self.numberLabel.hidden = NO;
@@ -67,12 +72,7 @@
 	}
 
 }
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
+
+
 
 @end

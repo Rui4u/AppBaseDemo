@@ -166,6 +166,11 @@
     }
 }
 
+- (void)changeProcutNumberBagWith:(NSString *)count with:(NSInteger)row {
+    
+    [self.delegate changeProcutNumberBagWithCount:count withIndexPath:[NSIndexPath indexPathForRow:row inSection:self.indexPath.row]];
+}
+
 //选择
 - (void)selectSpecificationWithIndex:(NSInteger)index {
 	

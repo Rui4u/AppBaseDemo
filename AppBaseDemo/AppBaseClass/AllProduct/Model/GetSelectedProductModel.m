@@ -9,5 +9,9 @@
 #import "GetSelectedProductModel.h"
 
 @implementation GetSelectedProductModel
-
++ (NSDictionary *)objectClassInArray{
+    return @{
+             @"goodsListInfoList":@"GoodsList",
+             };
+}
 @end

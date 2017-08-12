@@ -28,6 +28,9 @@
         if (isFinishInfo == NO) {
             UserInfoViewController * userInfoViewController= [[UserInfoViewController alloc] init];
             [self.navigationController pushViewController:userInfoViewController animated:YES];
+        }else {
+            [self dismissViewControllerAnimated:YES completion:nil];
+            
         }
         
         
@@ -38,6 +41,12 @@
     }];
 }
 
+- (IBAction)ClickopenOrClosr:(UIButton *)sender {
+    
+    
+    self.userPwdTextField.secureTextEntry = !self.userPwdTextField.secureTextEntry;
+    sender.selected = !sender.selected;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
 	[self initNavBarView:NAV_BAR_TYPE_SECOND_LEVEL_VIEW];

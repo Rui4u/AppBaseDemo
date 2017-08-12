@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "HomeDataModel.h"
 
-/**
- 选择后的商品模型
- */
-@interface GetSelectedProductModel : NSObject
+@interface GetSelectedProductModel :NSObject
+@property (nonatomic , strong) NSArray<GoodsList *>              * goodsListInfoList;
+@property (nonatomic , copy) NSString              * isSucceed;
 
 @end

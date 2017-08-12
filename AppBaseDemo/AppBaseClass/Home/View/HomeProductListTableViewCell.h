@@ -10,6 +10,9 @@
 @class GoodsList;
 
 @protocol HomeProductListTableViewCellDelegate <NSObject>
+@optional
+- (void)changeProcutNumberBagWithCount:(NSString *)count withIndexPath:(NSIndexPath *)indexPath;
+
 //选择打开规格
 - (void)ClickSelectSpecificationWithIndexPath:(NSIndexPath *)indexPath;
 - (void)addProduct;

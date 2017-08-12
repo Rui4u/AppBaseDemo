@@ -16,8 +16,8 @@
 #import "GetAppProductListBusiness.h"
 #import "GoodslistAllModel.h"
 #import "GetSelectGoodsListBussiness.h"
-
-@interface AppProductViewController ()<UITableViewDelegate,UITableViewDataSource,AppProductMainCellViewDelegate,CustomScrollSelectViewDelegate>
+#import "GetSelectedProductModel.h"
+@interface AppProductViewController ()<UITableViewDelegate,UITableViewDataSource,AppProductMainCellViewDelegate,CustomScrollSelectViewDelegate,AppProdcutSelectSpecificationCellDelegate>
 /**
  左侧时间tableview
  */
@@ -31,8 +31,6 @@
  上一个左侧cell
  */
 @property (nonatomic ,strong ) AppProductViewControllerLeftCell * lastCell;
-
-@property (nonatomic ,strong ) NSMutableArray<AppProductModel *> * productDataSourse;
 
 
 /**
@@ -48,6 +46,10 @@
  */
 @property (nonatomic ,assign ) NSIndexPath * mainIndexPath;
 
+/**
+ 产品列表
+ */
+@property (nonatomic ,strong)  NSArray<GoodsList *> * goodsListInfoList;
 @end
 
 @implementation AppProductViewController
@@ -115,9 +117,11 @@
 	[GetSelectGoodsListBussiness requestGetSelectGoodsListWithToken:TOKEN
 														   parented:self.leftCategories[index].parentId
 													  categoryIdTwo:self.leftCategories[index].categoryId
-										   completionSuccessHandler:^(GetSelectedProductModel *getSelectedProductModel) {
+										   completionSuccessHandler:^(GetSelectedProductModel *getSelectedProductModel)
+    {
 	
-	
+        self.goodsListInfoList = getSelectedProductModel.goodsListInfoList;
+        [self.mainTableView reloadData];
 	} completionFailHandler:^(NSString *failMessage) {
 	
 	} completionError:^(NSString *netWorkErrorMessage) {
@@ -128,7 +132,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 	if(tableView == self.mainTableView) {
-		return self.productDataSourse.count;
+		return self.goodsListInfoList.count;
 	}else {
 		return 1;
 	}
@@ -136,12 +140,14 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	
 	if(tableView == self.mainTableView) {
-		if (self.productDataSourse[section].isOpen) {
-			
-			return self.productDataSourse[section].moreSpecificationArray.count;
+        
+		if (self.goodsListInfoList[section].isOpen) {
+            if (self.goodsListInfoList[section].guige.count > 1) return self.goodsListInfoList[section].guige.count;
+            else return 0;
 		}else {
 			return 0;
 		}
+        
 	} else {
 		return self.leftCategories.count;
 		}
@@ -175,11 +181,14 @@
 		
 		static NSString * const AppProdcutSelectSpecificationCellID = @"AppProdcutSelectSpecificationCellID";
 		
-		AppProdcutSelectSpecificationCell * cell = [tableView dequeueReusableCellWithIdentifier:AppProdcutSelectSpecificationCellID];;
-		if (cell == nil) {
-			cell = [[NSBundle mainBundle]loadNibNamed:@"AppProdcutSelectSpecificationCell" owner:nil options:nil].lastObject;
-		}
-		
+        
+        AppProdcutSelectSpecificationCell * cell = [tableView dequeueReusableCellWithIdentifier:AppProdcutSelectSpecificationCellID];;
+        if (cell == nil) {
+            cell = [[AppProdcutSelectSpecificationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:AppProdcutSelectSpecificationCellID];
+        }
+        cell.indexPath = indexPath;
+        cell.delegate = self;
+        cell.dataSourse = self.goodsListInfoList[indexPath.section];
 		cell.selectionStyle = UITableViewCellSelectionStyleGray;
 		return cell;
 	}
@@ -191,6 +200,7 @@
 		AppProductMainCellView * appProductMainCellView = [[[NSBundle mainBundle] loadNibNamed:@"AppProductMainCellView" owner:self options:nil] lastObject];
 		appProductMainCellView.delegate = self;
 		appProductMainCellView.section = section;
+        appProductMainCellView.dataSourse = self.goodsListInfoList[section];
 		return appProductMainCellView;
 	}
 	return nil;
@@ -231,17 +241,43 @@
 
 - (void)clickProductButtonWith:(UIButton *)sender withSection:(NSInteger)section{
 
-	self.productDataSourse[section].open = !self.productDataSourse[section].open;
-	NSIndexPath *indexPath = [NSIndexPath indexPathForItem:0 inSection:section];
-	self.mainIndexPath = indexPath;
-	NSRange rang = NSMakeRange(indexPath.section, 1);
-	NSIndexSet *set = [NSIndexSet indexSetWithIndexesInRange:rang];
-	[self.mainTableView reloadSections:set withRowAnimation:UITableViewRowAnimationFade];
-
-//	[self.mainTableView reloadData];
-	
+    if (self.goodsListInfoList[section].guige.count > 1) {
+        
+        self.goodsListInfoList[section].open = !self.goodsListInfoList[section].open;
+        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:0 inSection:section];
+        self.mainIndexPath = indexPath;
+        NSRange rang = NSMakeRange(indexPath.section, 1);
+        NSIndexSet *set = [NSIndexSet indexSetWithIndexesInRange:rang];
+        [self.mainTableView reloadSections:set withRowAnimation:UITableViewRowAnimationFade];
+        
+    }else {
+        [self addProductWithIndexPath:[NSIndexPath indexPathForRow:0 inSection:section]];
+    }
 	
 }
+
+- (void)selectSpecificationWithIndexPath:(NSIndexPath *)indexPath {
+    
+    [self addProductWithIndexPath:indexPath];
+}
+
+- (void)addProductWithIndexPath:(NSIndexPath *)indexPath{
+
+    NSLog(@"%@",indexPath);
+    NSLog(@"购物车");
+
+
+}
+
+-(void)changeProcutNumberBagWithCount:(NSString *)count withIndexPath:(NSIndexPath *)indexPath {
+    
+        if(count.integerValue == 0){
+            NSLog(@"删除");
+        }else {
+            NSLog(@"个数:%@, 角标%@",count,indexPath);
+        }
+}
+
 
 #pragma mark - 懒加载
 - (UITableView *)leftTimeQuantumTableView {
@@ -264,21 +300,10 @@
 		_mainTableView.dataSource = self;
 		_mainTableView.backgroundColor = [UIColor colorWithHexString:@"eeeeee"];
 		_mainTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-		
+        _mainTableView.clipsToBounds = NO;
 	}
 	
 	return _mainTableView;
-}
-- (NSMutableArray<AppProductModel *> *)productDataSourse {
-	if (_productDataSourse == nil) {
-		_productDataSourse = [[NSMutableArray alloc] init];
-		for (int i = 0; i < 5; i ++) {
-			AppProductModel * model = [[AppProductModel alloc] init];
-			model.open = NO;
-			[_productDataSourse addObject:model];
-		}
-	}
-	return _productDataSourse;
 }
 
 @end

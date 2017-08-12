@@ -7,7 +7,12 @@
 //
 
 #import "AppProductMainCell.h"
+#import "GetSelectedProductModel.h"
 #import "AppProductMainCellView.h"
+@interface AppProductMainCell ()
+@property (nonatomic , strong)AppProductMainCellView * appProductMainCellView;
+@end
+
 @implementation AppProductMainCell
 
 - (void)awakeFromNib {
@@ -26,11 +31,15 @@
 	if (self) {
 	
 		AppProductMainCellView * appProductMainCellView = [[[NSBundle mainBundle] loadNibNamed:@"AppProductMainCellView" owner:self options:nil] lastObject];
+        self.appProductMainCellView = appProductMainCellView;
 		appProductMainCellView.frame = self.bounds;
 		[self.contentView addSubview:appProductMainCellView];
 	}
 	return self;
 }
 
+- (void)setDataSourse:(GoodsList *)dataSourse {
+    self.appProductMainCellView.dataSourse = dataSourse;
+}
 
 @end

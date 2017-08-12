@@ -153,7 +153,6 @@
     
     [(UITableView *)self.frontScrollView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
 
-
 }
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     [super scrollViewDidScroll:scrollView];
@@ -162,6 +161,16 @@
     }
 	
 }
+
+
+-(void)changeProcutNumberBagWithCount:(NSString *)count withIndexPath:(NSIndexPath *)indexPath {
+    if(count.integerValue == 0){
+        NSLog(@"删除");
+    }else {
+        NSLog(@"个数:%@, 角标%@",count,indexPath);
+    }
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

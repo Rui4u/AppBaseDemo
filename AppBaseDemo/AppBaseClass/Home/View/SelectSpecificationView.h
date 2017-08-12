@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @protocol SelectSpecificationViewDelegate <NSObject>
-
+@optional;
+- (void)changeProcutNumberBagWith:(NSString *)count with:(NSInteger) row;
 /**
  选择哪个产品
 

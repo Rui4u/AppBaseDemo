@@ -7,12 +7,64 @@
 //
 
 #import "AppProdcutSelectSpecificationCell.h"
-
+#import "SelectSpecificationView.h"
+#import "GetSelectedProductModel.h"
+@interface AppProdcutSelectSpecificationCell () <SelectSpecificationViewDelegate>
+/**
+ <#Description#>
+ */
+@property (nonatomic ,strong) SelectSpecificationView * selectSpecificationView;
+@end
 @implementation AppProdcutSelectSpecificationCell
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        [self setUpUI];
+    }
+    return self;
+}
+
+- (void)setUpUI {
+
+    SelectSpecificationView * selectSpecificationView = [[SelectSpecificationView alloc] initWithFrame:CGRectMake(15,0,SCREEN_WIDTH - 80 - 15,66)];
+    self.selectSpecificationView = selectSpecificationView;
+    selectSpecificationView.index = self.indexPath.row;
+    selectSpecificationView.delegate = self;
+    [self.contentView addSubview:selectSpecificationView];
+    
+
+
+}
+
+-(void)selectSpecificationWithIndex:(NSInteger)index {
+    if ([self.delegate respondsToSelector:@selector(selectSpecificationWithIndexPath:)]) {
+        
+        NSIndexPath * indexPath = [NSIndexPath indexPathForRow:index inSection:self.indexPath.section];
+        [self.delegate selectSpecificationWithIndexPath:indexPath];
+    }
+
+}
+- (void)setDataSourse:(GoodsList *)dataSourse {
+    _dataSourse = dataSourse;
+    
+    self.selectSpecificationView.totolPriceLabel.text = [NSString stringWithFormat:@"￥%@/%@(%@斤)",dataSourse.guige[self.indexPath.row].currentPrice,dataSourse.baseSpec,dataSourse.guige[self.indexPath.row].totalWeight];
+    
+    self.selectSpecificationView.averagePrice.text = [NSString stringWithFormat:@"￥%@",dataSourse.guige[self.indexPath.row].avgPrice];
+    
+    
+    if ([dataSourse.discount isEqualToString:@"1"]) {
+        self.selectSpecificationView.showDisCountView = YES;
+    }else {
+        self.selectSpecificationView.showDisCountView = NO;
+    }
+    
+    
+}
+
+
+- (void)changeProcutNumberBagWith:(NSString *)count with:(NSInteger) row {
+    [self.delegate changeProcutNumberBagWithCount:count withIndexPath:[NSIndexPath indexPathForRow:row inSection:self.indexPath.section]];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

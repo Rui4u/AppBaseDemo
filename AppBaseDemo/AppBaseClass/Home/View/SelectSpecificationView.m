@@ -8,7 +8,7 @@
 
 #import "SelectSpecificationView.h"
 #import "SelectAddView.h"
-@interface SelectSpecificationView ()
+@interface SelectSpecificationView ()<SelectAddViewDelegate>
 @property (nonatomic ,strong ) SelectAddView * selectAddView;
 @end
 
@@ -45,22 +45,19 @@
 	
 	SelectAddView * selectAddView = [[NSBundle mainBundle] loadNibNamed:@"SelectAddView" owner:self options:nil].firstObject;
 	self.selectAddView = selectAddView;
+    selectAddView.delegate = self;
 	selectAddView.frame = CGRectMake(self.width - 90 - 15,(self.height - 24)/2, 90 , 24);
 	[self addSubview:selectAddView];
-	
-//    UIButton * addButton = [UIButton buttonWithType:UIButtonTypeContactAdd];
-//	addButton.frame = CGRectMake(self.width - 44 - 15,(self.height - 44)/2, 44, 44);
-//	
-//	[addButton addTarget:self action:@selector(clickAddButton:) forControlEvents:UIControlEventTouchUpInside];
-//    [self addSubview:addButton];
 
 }
-- (void)clickAddButton:(UIButton *)sender {
-	if ([self.delegate respondsToSelector:@selector(selectSpecificationWithIndex:)]) {
-		[self.delegate selectSpecificationWithIndex:self.index];
-	}
 
+#pragma mark - 购物车
+- (void)changeNumberWith:(NSString *)count {
+    [self.delegate changeProcutNumberBagWith:count with:self.index];
 }
+
+
+
 - (void)setShowDisCountView:(BOOL)showDisCountView {
 	_showDisCountView = showDisCountView;
 	

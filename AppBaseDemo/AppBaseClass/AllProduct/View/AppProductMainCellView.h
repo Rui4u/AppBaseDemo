@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+@class GoodsList;
 @protocol AppProductMainCellViewDelegate <NSObject>
 
 /**
@@ -20,4 +21,11 @@
 
 @property (nonatomic ,assign )  NSInteger section;
 @property (nonatomic ,weak ) id <AppProductMainCellViewDelegate> delegate;
+
+/**
+ 数据源
+ */
+@property (nonatomic ,strong) GoodsList * dataSourse;
+
+
 @end
