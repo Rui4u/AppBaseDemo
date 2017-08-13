@@ -15,7 +15,16 @@
 
  @param sender <#sender description#>
  */
-- (void)clickProductButtonWith:(UIButton *)sender withSection:(NSInteger) section;
+
+- (void)clickProductButtonWith:(UIButton *)sender withSection:(NSInteger) section withCount:(NSString *)count;
+
+/**
+ 点击开关
+
+ @param sender <#sender description#>
+ */
+- (void)clickOpenOrCloseButton:(UIButton *)sender withIndex:(NSInteger) index;
+
 @end
 @interface AppProductMainCellView : UIView
 

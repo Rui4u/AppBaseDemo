@@ -32,6 +32,8 @@
 //选择类目商品
 #define kSelectGoodsListlBussinessUrl            [NSString stringWithFormat :@"%@/gs/goods/selectGoodsList?",kHTTP_HOST_URL]
 
+//修改购物车个数
+#define kAddCarBussinessUrl            [NSString stringWithFormat :@"%@/gs/shopCar/addCar?",kHTTP_HOST_URL]
 
 NS_ASSUME_NONNULL_BEGIN
 typedef void (^netWorkFailBlock)(NSString * netWorkMeeage);

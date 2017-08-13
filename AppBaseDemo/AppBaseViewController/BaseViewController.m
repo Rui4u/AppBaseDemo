@@ -77,7 +77,20 @@
 	TipLabel * tip = [[TipLabel alloc] init];
 	[tip showToastWithMessage:message showTime:interval];
 }
-	
+
+/**
+ *  显示Toast形式提示
+ *
+ *  @param message  Toast Message
+ *  @param interval Toas showTime
+ */
++ (void)showToastWithMessage:(NSString *)message showTime:(float)interval {
+    
+    if (message == nil || [message isEqualToString:@""]) return;
+    
+    TipLabel * tip = [[TipLabel alloc] init];
+    [tip showToastWithMessage:message showTime:interval];
+}
 - (void)back {
 	
 	[self.navigationController popViewControllerAnimated:YES];

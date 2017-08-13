@@ -9,25 +9,37 @@
 #import "AppProductMainCellView.h"
 #import "SelectSpecificationView.h"
 #import "GetSelectedProductModel.h"
-@interface AppProductMainCellView ()
+#import "SelectAddView.h"
+@interface AppProductMainCellView ()<SelectAddViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *productImage;
 @property (weak, nonatomic) IBOutlet UILabel *productName;
-@property (weak, nonatomic) IBOutlet UIButton *addButtonOrOpenButton;
+@property (weak, nonatomic) IBOutlet UIButton *addOpenOrCloseButton;
 
 /**
  <#Description#>
  */
 @property (nonatomic ,strong) SelectSpecificationView * selectSpecificationView;;
 
+/**
+ SelectAddView * selectAddView
+ */
+@property (nonatomic ,strong) SelectAddView * selectAddView;
 @end
 @implementation AppProductMainCellView
 
-- (IBAction)clickProductButton:(UIButton *)sender {
-	if ([self.delegate respondsToSelector:@selector(clickProductButtonWith:withSection:)]) {
-		[self.delegate clickProductButtonWith:sender withSection:self.section];
-	}
+- (IBAction)clickOpenAndCloseButton:(id)sender {
+    
+    if ([self.delegate respondsToSelector:@selector(clickOpenOrCloseButton:withIndex:)]) {
+        [self.delegate clickOpenOrCloseButton:sender withIndex:self.section];
+    }
 }
 
+-(void)changeNumberWith:(NSString *)count {
+    
+    if ([self.delegate respondsToSelector:@selector(clickProductButtonWith:withSection:withCount:)]) {
+        [self.delegate clickProductButtonWith:_addOpenOrCloseButton withSection:self.section withCount:count];
+    }
+}
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -37,8 +49,20 @@
     self.selectSpecificationView = selectSpecificationView;
     selectSpecificationView.index = 0;
     [self addSubview:selectSpecificationView];
-//    
-//
+
+    _selectAddView = ({
+        SelectAddView * selectAddView = [[NSBundle mainBundle] loadNibNamed:@"SelectAddView" owner:self options:nil].firstObject;
+        selectAddView.delegate = self;
+        selectAddView;
+    });
+    
+    [self addSubview:_selectAddView];
+    
+    [_selectAddView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.mas_right).offset(-15);
+        make.bottom.equalTo(self.mas_bottom).offset(-15);
+        make.size.mas_offset(CGSizeMake(90, 30));
+    }];
 }
 /*
 // Only override drawRect: if you perform custom drawing.
@@ -49,6 +73,12 @@
 */
 - (void)setDataSourse:(GoodsList *)dataSourse {
     _dataSourse = dataSourse;
+    
+    if ([dataSourse.discount isEqualToString:@"1"]) {
+        _selectAddView.isDiscount = YES;
+    }else {
+        _selectAddView.isDiscount = NO;
+    }
     
     self.productName.text = [NSString stringWithFormat:@"%@ %@",dataSourse.fullName,dataSourse.feature];
     
@@ -79,9 +109,13 @@
             self.selectSpecificationView.showDisCountView = NO;
         }
     if (dataSourse.guige.count > 1) {
-        [self.addButtonOrOpenButton setImage:[UIImage imageNamed:@"selectGuiGe"] forState:UIControlStateNormal];
+        [self.addOpenOrCloseButton setImage:[UIImage imageNamed:@"selectGuiGe"] forState:UIControlStateNormal];
+        self.selectAddView.hidden = YES;
+        self.addOpenOrCloseButton.hidden = NO;
     } else {
-        [self.addButtonOrOpenButton setImage:[UIImage imageNamed:@"add"] forState:UIControlStateNormal];
+        [self.addOpenOrCloseButton setImage:[UIImage imageNamed:@"add"] forState:UIControlStateNormal];
+        self.selectAddView.hidden = NO;
+        self.addOpenOrCloseButton.hidden = YES;
     }
 }
 

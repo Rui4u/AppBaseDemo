@@ -15,27 +15,12 @@
             <rect key="frame" x="0.0" y="0.0" width="309" height="181"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVA-Cw-zmG">
-                    <rect key="frame" x="29" y="0.0" width="32" height="24"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bj5-8Q-aog">
-                    <rect key="frame" x="66" y="0.0" width="24" height="24"/>
+                    <rect key="frame" x="66" y="3" width="24" height="24"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" image="add"/>
                     <connections>
                         <action selector="clickAddButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="l2a-uL-5NP"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3yY-Qd-PNF">
-                    <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" image="sub"/>
-                    <connections>
-                        <action selector="clickReduceButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="VKF-cK-dyb"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Oy-jO-Jbm">
@@ -51,6 +36,21 @@
                         <action selector="clickAddButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="pdX-Tn-aWS"/>
                     </connections>
                 </button>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x2M-a5-tS8">
+                    <rect key="frame" x="24" y="0.0" width="42" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3yY-Qd-PNF">
+                    <rect key="frame" x="0.0" y="3" width="24" height="24"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" image="sub"/>
+                    <connections>
+                        <action selector="clickReduceButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="VKF-cK-dyb"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -62,7 +62,7 @@
             <connections>
                 <outlet property="addButton" destination="bj5-8Q-aog" id="zmw-2L-vCE"/>
                 <outlet property="disCountButton" destination="7Oy-jO-Jbm" id="vSb-hf-AjS"/>
-                <outlet property="numberLabel" destination="FVA-Cw-zmG" id="qkO-UP-fbG"/>
+                <outlet property="numberLabel" destination="x2M-a5-tS8" id="yUb-EO-aCM"/>
                 <outlet property="reduceButton" destination="3yY-Qd-PNF" id="jlW-gt-kFz"/>
             </connections>
             <point key="canvasLocation" x="13.5" y="-189.5"/>

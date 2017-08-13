@@ -37,6 +37,5 @@
 @property (nonatomic ,strong ) BMKMapManager* mapManager;
 - (void)saveContext;
 
-
 @end
 

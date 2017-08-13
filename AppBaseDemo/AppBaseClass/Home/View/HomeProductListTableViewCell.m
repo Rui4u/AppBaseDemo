@@ -177,7 +177,7 @@
 
 - (void)changeProcutNumberBagWith:(NSString *)count with:(NSInteger)row {
     
-    [self.delegate changeProcutNumberBagWithCount:count withIndexPath:[NSIndexPath indexPathForRow:row inSection:self.indexPath.row]];
+    [self.delegate changeProcutNumberBagWithCount:count withIndexPath:[NSIndexPath indexPathForRow:row inSection:self.indexPath.row]andTypeIndex:self.indexPath.section];
 }
 
 //选择

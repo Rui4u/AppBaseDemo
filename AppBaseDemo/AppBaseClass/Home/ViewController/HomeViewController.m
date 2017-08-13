@@ -15,6 +15,7 @@
 #import "HomeProductListTableViewCell.h"
 #import "UserLocationViewController.h"
 #import "GetHomeBusiness.h"
+#import "ShoppingCartChangeNumBussiness.h"
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource,HomeProductListTableViewCellDelegate,SelectTypeViewDelegate>
 @property (nonatomic ,strong ) HomeTopView * topView;
 @property (nonatomic ,strong ) SelectTypeView * selectTypeView;
@@ -168,11 +169,24 @@
 }
 
 
--(void)changeProcutNumberBagWithCount:(NSString *)count withIndexPath:(NSIndexPath *)indexPath {
+-(void)changeProcutNumberBagWithCount:(NSString *)count withIndexPath:(NSIndexPath *)indexPath andTypeIndex:(NSInteger)typeIndex{
     if(count.integerValue == 0){
         NSLog(@"删除");
     }else {
         NSLog(@"个数:%@, 角标%@",count,indexPath);
+        
+        [ShoppingCartChangeNumBussiness requestShoppingCartChangeNumWithToken:TOKEN
+                                                                      goodsId:self.dataSourse.ProductionInfoList[typeIndex].goodsList[indexPath.section].goodsListID
+                                                                       specId:self.dataSourse.ProductionInfoList[typeIndex].goodsList[indexPath.section].guige[indexPath.row].guigeID
+                                                                          num:count
+                                                     completionSuccessHandler:^(NSString *succeed)
+        {
+            
+        } completionFailHandler:^(NSString *failMessage) {
+            
+        } completionError:^(NSString *netWorkErrorMessage) {
+            
+        }];
     }
 }
 

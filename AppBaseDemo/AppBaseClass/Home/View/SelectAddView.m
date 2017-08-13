@@ -7,9 +7,10 @@
 //
 
 #import "SelectAddView.h"
-@interface SelectAddView ()
+#import "AddToCartKeyBoard.h"
+@interface SelectAddView ()<UITextFieldDelegate>
 
-@property (weak, nonatomic) IBOutlet UILabel *numberLabel;
+@property (weak, nonatomic) IBOutlet UITextField *numberLabel;
 @property (weak, nonatomic) IBOutlet UIButton *addButton;
 @property (weak, nonatomic) IBOutlet UIButton *reduceButton;
 @property (weak, nonatomic) IBOutlet UIButton *disCountButton;
@@ -20,7 +21,7 @@
 	[super awakeFromNib];
 	self.reduceButton.hidden = YES;
 	self.numberLabel.hidden = YES;
-
+    _numberLabel.delegate = self;
 }
 - (IBAction)clickReduceButton:(id)sender {
 	
@@ -73,6 +74,19 @@
 
 }
 
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+
+    AddToCartKeyBoard * addToCartKeyBoard = [[NSBundle mainBundle] loadNibNamed:@"AddToCartKeyBoard" owner:self options:nil].lastObject;
+    addToCartKeyBoard.frame = APP_DELEGATE.window.bounds;
+    [APP_DELEGATE.window addSubview:addToCartKeyBoard];
+    
+    __weak typeof(self) weakself = self;
+    addToCartKeyBoard.sureBoardBlack = ^(NSString * num){
+        _numberLabel.text = num;
+        [weakself.delegate changeNumberWith:self.numberLabel.text];
+    };
+    return NO;
+}
 
 
 @end

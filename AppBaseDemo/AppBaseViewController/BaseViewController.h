@@ -34,7 +34,7 @@ typedef NS_ENUM ( NSInteger , SearchType) {
  *  @param interval Toas showTime
  */
 - (void)showToastWithMessage:(NSString * _Nullable )message showTime:(float)interval;
-
++ (void)showToastWithMessage:(NSString *_Nullable)message showTime:(float)interval;
 /**
  返回
  */

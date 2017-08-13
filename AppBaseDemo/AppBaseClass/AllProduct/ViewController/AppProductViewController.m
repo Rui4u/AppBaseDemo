@@ -17,6 +17,7 @@
 #import "GoodslistAllModel.h"
 #import "GetSelectGoodsListBussiness.h"
 #import "GetSelectedProductModel.h"
+#import "ShoppingCartChangeNumBussiness.h"
 @interface AppProductViewController ()<UITableViewDelegate,UITableViewDataSource,AppProductMainCellViewDelegate,CustomScrollSelectViewDelegate,AppProdcutSelectSpecificationCellDelegate>
 /**
  左侧时间tableview
@@ -59,10 +60,9 @@
     // Do any additional setup after loading the view.
 	[self initNavBarView:NAV_BAR_TYPE_ROOT_VIEW];
     
-    [self initSearchBarViewWithPlaceholder:@"鸡蛋"
-                            withSearchType:SearchType_AgentName|SearchType_ShopName];
-	
-	self.customScrollSelectView = [[CustomScrollSelectView alloc] initWithFrame:CGRectMake(0, NAV_BAR_HEIGHT, SCREEN_WIDTH, 48)];
+    [self initSearchBarViewWithPlaceholder:@"鸡蛋" withSearchType:SearchType_AgentName|SearchType_ShopName];
+	self.customScrollSelectView = [[CustomScrollSelectView alloc]
+                                   initWithFrame:CGRectMake(0, NAV_BAR_HEIGHT, SCREEN_WIDTH, 48)];
 	[self.view addSubview:self.customScrollSelectView];
 	self.customScrollSelectView.textColor = [UIColor blackColor];
 	self.customScrollSelectView.delegate = self;
@@ -102,7 +102,7 @@
 #pragma mark - 代理
 - (void)customScrollSelectView:(CustomScrollSelectView *)customScrollSelectView didSelectWithProductTypeModel:(NSInteger)index {
 
-    self.lastCell = nil;
+    
 	self.leftCategories = self.goodsCategoryList[index].goodsCategories;
 	[self.leftTimeQuantumTableView reloadData];
 	if (self.leftCategories.count > 0) {
@@ -232,10 +232,6 @@
 		cell.nameLabel.textColor = [UIColor colorWithHexString:Main_Font_Green_Color];
 		cell.contentView.backgroundColor = [UIColor whiteColor];
 		
-		if ([self.lastCell isEqual:cell]) {
-			return;
-		}
-		
 		self.lastCell.nameLabel.textColor = [UIColor colorWithHexString:@"7a7a7a"];
 		self.lastCell.contentView.backgroundColor = [UIColor colorWithHexString:@"eeeeee"];
 		self.lastCell = cell;
@@ -246,36 +242,25 @@
 	}
 }
 
+#pragma mark - 选规格
+- (void)clickOpenOrCloseButton:(UIButton *)sender withIndex:(NSInteger)section {
+    self.goodsListInfoList[section].open = !self.goodsListInfoList[section].open;
+    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:0 inSection:section];
+    self.mainIndexPath = indexPath;
+    NSRange rang = NSMakeRange(indexPath.section, 1);
+    NSIndexSet *set = [NSIndexSet indexSetWithIndexesInRange:rang];
+    [self.mainTableView reloadSections:set withRowAnimation:UITableViewRowAnimationFade];
 
-- (void)clickProductButtonWith:(UIButton *)sender withSection:(NSInteger)section{
-
-    if (self.goodsListInfoList[section].guige.count > 1) {
-        
-        self.goodsListInfoList[section].open = !self.goodsListInfoList[section].open;
-        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:0 inSection:section];
-        self.mainIndexPath = indexPath;
-        NSRange rang = NSMakeRange(indexPath.section, 1);
-        NSIndexSet *set = [NSIndexSet indexSetWithIndexesInRange:rang];
-        [self.mainTableView reloadSections:set withRowAnimation:UITableViewRowAnimationFade];
-        
-    }else {
-        [self addProductWithIndexPath:[NSIndexPath indexPathForRow:0 inSection:section]];
-    }
-	
 }
 
-- (void)selectSpecificationWithIndexPath:(NSIndexPath *)indexPath {
+
+#pragma mark - 选择无规格产品
+- (void)clickProductButtonWith:(UIButton *)sender withSection:(NSInteger)section withCount:(NSString *)count{
+
+    [self changeProcutNumberBagWithCount:count withIndexPath:[NSIndexPath indexPathForRow:0 inSection:section]];
     
-    [self addProductWithIndexPath:indexPath];
 }
-
-- (void)addProductWithIndexPath:(NSIndexPath *)indexPath{
-
-    NSLog(@"%@",indexPath);
-    NSLog(@"购物车");
-
-
-}
+#pragma mark - 选择有规格产品
 
 -(void)changeProcutNumberBagWithCount:(NSString *)count withIndexPath:(NSIndexPath *)indexPath {
     
@@ -283,6 +268,18 @@
             NSLog(@"删除");
         }else {
             NSLog(@"个数:%@, 角标%@",count,indexPath);
+            
+            [ShoppingCartChangeNumBussiness requestShoppingCartChangeNumWithToken:TOKEN
+                                                                          goodsId:self.goodsListInfoList[indexPath.section].goodsListID
+                                                                           specId:self.goodsListInfoList[indexPath.section].guige[indexPath.row].guigeID                                                                              num:count
+                                                         completionSuccessHandler:^(NSString *succeed)
+             {
+                 
+             } completionFailHandler:^(NSString *failMessage) {
+                 
+             } completionError:^(NSString *netWorkErrorMessage) {
+                 
+             }];
         }
 }
 

@@ -11,7 +11,9 @@
 
 @protocol HomeProductListTableViewCellDelegate <NSObject>
 @optional
-- (void)changeProcutNumberBagWithCount:(NSString *)count withIndexPath:(NSIndexPath *)indexPath;
+- (void)changeProcutNumberBagWithCount:(NSString *)count
+                         withIndexPath:(NSIndexPath *)indexPath
+                          andTypeIndex:(NSInteger)typeIndex;
 
 //选择打开规格
 - (void)ClickSelectSpecificationWithIndexPath:(NSIndexPath *)indexPath;
