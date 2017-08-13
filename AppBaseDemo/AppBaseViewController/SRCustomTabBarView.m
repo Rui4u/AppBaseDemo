@@ -73,7 +73,7 @@
 		UILabel * iconButtonLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, iconButton.height -15, iconButton.width, 15)];
 		iconButtonLabel.textAlignment = NSTextAlignmentCenter;
 		iconButtonLabel.font = [UIFont systemFontOfSize:10];
-		iconButtonLabel.textColor = [UIColor colorWithHexString:@"333333"];
+		iconButtonLabel.textColor = [UIColor colorWithHexString:Main_Font_Black_Color];
 		iconButtonLabel.text = nameArray[i];
 		[iconButton addSubview:iconButtonLabel];
 		
@@ -226,7 +226,7 @@
 				NSInteger currentTag = _currentButton.tag - iconButtonTag;
 				NSInteger lastTag = _lastButton.tag - iconButtonTag;
 				self.buttonLabelArray[currentTag].textColor = [UIColor orangeColor];
-				self.buttonLabelArray[lastTag].textColor = [UIColor colorWithHexString:@"333333"];
+				self.buttonLabelArray[lastTag].textColor = [UIColor colorWithHexString:Main_Font_Black_Color];
 				_lastButton = _currentButton;
 
 			}

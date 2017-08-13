@@ -34,7 +34,9 @@
     [self.contentView addSubview:selectSpecificationView];
     
 
-
+    UIView *imaginaryLine= [[UIView alloc] initWithFrame:CGRectMake(15,66,SCREEN_WIDTH - 80 - 15,.5)];
+    [UIView drawDashLine:imaginaryLine lineLength:4 lineSpacing: 2 lineColor:[UIColor colorWithHexString:Main_Line_Gary_Color]];
+    [self.contentView addSubview:imaginaryLine];
 }
 
 -(void)selectSpecificationWithIndex:(NSInteger)index {
@@ -48,9 +50,12 @@
 - (void)setDataSourse:(GoodsList *)dataSourse {
     _dataSourse = dataSourse;
     
+   
+    
+    
     self.selectSpecificationView.totolPriceLabel.text = [NSString stringWithFormat:@"￥%@/%@(%@斤)",dataSourse.guige[self.indexPath.row].currentPrice,dataSourse.baseSpec,dataSourse.guige[self.indexPath.row].totalWeight];
     
-    self.selectSpecificationView.averagePrice.text = [NSString stringWithFormat:@"￥%@",dataSourse.guige[self.indexPath.row].avgPrice];
+    self.selectSpecificationView.averagePrice.text = [NSString stringWithFormat:@"￥%@/%@",dataSourse.guige[self.indexPath.row].avgPrice,dataSourse.baseSpec];
     
     
     if ([dataSourse.discount isEqualToString:@"1"]) {

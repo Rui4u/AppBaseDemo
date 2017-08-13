@@ -107,7 +107,7 @@
 	searchBar.placeholder = placeholder;
 	searchBar.searchBarBackgroundColor = [UIColor colorWithWhite:0 alpha:.3];
     
-	
+//	searchBar.searchBarBackgroundColor = [UIColor colorWithWhite:1 alpha:1];
 	searchBar.layer.masksToBounds = YES;
 	searchBar.layer.cornerRadius = 15;
 	[self.navBarView addSubview:self.searchBar];

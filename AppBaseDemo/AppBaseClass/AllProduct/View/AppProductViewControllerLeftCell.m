@@ -31,11 +31,23 @@
 	self.nameLabel = [UILabel creatLabelWithText:@"" FontOfSize:14 textColor:@"7a7a7a"];
 	self.nameLabel.textAlignment = NSTextAlignmentCenter;
 	[self.contentView addSubview:self.nameLabel];
-	self.nameLabel.frame = CGRectMake(0,0,80, 50);
+	[self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.contentView.mas_top);
+        make.left.equalTo(self.contentView.mas_left);
+        make.right.equalTo(self.contentView.mas_right);
+        make.bottom.equalTo(self.contentView.mas_bottom);
+    }];
 	
-	UIView * lineView  = [[UIView alloc] initWithFrame:CGRectMake( 0, 49, 80, .5)];
-	lineView.backgroundColor = [UIColor colorWithHexString:@"d5d5d5"];
+    UIView * lineView  = [[UIView alloc] init];
+	lineView.backgroundColor = [UIColor colorWithHexString:Main_Line_Gary_Color];
 	[self.contentView addSubview:lineView];
+    
+    [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(1);
+        make.left.equalTo(self.contentView.mas_left);
+        make.right.equalTo(self.contentView.mas_right);
+        make.bottom.equalTo(self.contentView.mas_bottom);
+    }];
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

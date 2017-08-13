@@ -72,7 +72,7 @@
 		[view setImage:[UIImage imageNamed:@"homeLoginTemp"] forState:UIControlStateNormal];
 		[view setTitle:titleArray[i] forState:UIControlStateNormal];
 		view.titleLabel.font = [UIFont systemFontOfSize:12];
-		[view setTitleColor:[UIColor colorWithHexString:@"333333"] forState:UIControlStateNormal];
+		[view setTitleColor:[UIColor colorWithHexString:Main_Font_Black_Color] forState:UIControlStateNormal];
 		view.frame = CGRectMake(i * width, 0, width, height);
 		[headLineView addSubview:view];
 	}

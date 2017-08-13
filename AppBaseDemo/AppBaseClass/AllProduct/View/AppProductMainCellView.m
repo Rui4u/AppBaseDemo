@@ -33,7 +33,7 @@
     [super awakeFromNib];
     
     
-    SelectSpecificationView * selectSpecificationView = [[SelectSpecificationView alloc] initWithFrame:CGRectMake(CGRectGetMinX(self.productName.frame)  ,CGRectGetMaxY(self.productName.frame) + 5,self.width,66)];
+    SelectSpecificationView * selectSpecificationView = [[SelectSpecificationView alloc] initWithFrame:CGRectMake(CGRectGetMinX(self.productName.frame)  ,CGRectGetMaxY(self.productName.frame),self.width,66)];
     self.selectSpecificationView = selectSpecificationView;
     selectSpecificationView.index = 0;
     [self addSubview:selectSpecificationView];
@@ -50,9 +50,27 @@
 - (void)setDataSourse:(GoodsList *)dataSourse {
     _dataSourse = dataSourse;
     
+    self.productName.text = [NSString stringWithFormat:@"%@ %@",dataSourse.fullName,dataSourse.feature];
+    
+    [self.productImage sd_setImageWithURL:[NSURL URLWithString:dataSourse.image] placeholderImage:[UIImage imageNamed:@"guess_bancai"]];
+    
+    
     self.selectSpecificationView.totolPriceLabel.text = [NSString stringWithFormat:@"￥%@/%@(%@斤)",dataSourse.guige.firstObject.currentPrice,dataSourse.baseSpec,dataSourse.guige.firstObject.totalWeight];
 
-    self.selectSpecificationView.averagePrice.text = [NSString stringWithFormat:@"￥%@",dataSourse.guige.firstObject.avgPrice];
+    self.selectSpecificationView.averagePrice.text = [NSString stringWithFormat:@"{￥%@}{/%@}",dataSourse.guige.firstObject.avgPrice,dataSourse.baseSpec];
+    
+    
+  
+    self.selectSpecificationView.averagePrice.attributedText =
+    [NSMutableAttributedString setAttributeString:self.selectSpecificationView.averagePrice.text
+                                             font:15
+                                        textcolor:[UIColor colorWithHexString:Main_Font_Red_Color]
+                                      secondcolor:[UIColor colorWithHexString:Main_Font_Gary_Color]
+                                       secondfont:12];
+
+ 
+    
+    
     
     
         if ([dataSourse.discount isEqualToString:@"1"]) {

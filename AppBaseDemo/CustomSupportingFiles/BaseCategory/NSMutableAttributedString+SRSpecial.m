@@ -40,7 +40,7 @@
     txt = [txt stringByReplacingOccurrencesOfString:@"}" withString:@""];
     
     NSMutableParagraphStyle *ps = [[NSMutableParagraphStyle alloc] init];
-    [ps setAlignment:NSTextAlignmentCenter];
+    [ps setAlignment:NSTextAlignmentLeft];
     
     NSDictionary *attribs = @{
                               NSFontAttributeName:[UIFont systemFontOfSize:font],

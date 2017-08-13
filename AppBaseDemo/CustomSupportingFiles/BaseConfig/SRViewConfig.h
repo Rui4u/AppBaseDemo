@@ -32,6 +32,9 @@
 
 #define Main_Font_Green_Color @"#0bbe06" //绿色
 #define Main_Font_Gary_Color @"#bfbfbf" //字灰色
+#define Main_Font_SecondBlack_Color @"#6f6f6f" //字黑
+#define Main_Font_Black_Color @"#333333" //字黑
+
 #define Main_Line_Gary_Color @"#dddddd" //分割线灰色
 #define Main_Font_Red_Color @"#EE5C56" //字红色
 #define Main_Button_Gary_Color @"#e1e1e1" //字红色

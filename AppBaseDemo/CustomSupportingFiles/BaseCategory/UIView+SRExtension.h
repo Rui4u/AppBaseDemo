@@ -23,4 +23,11 @@
 @property (nonatomic, assign) CGFloat right;
 @property (nonatomic, assign) CGFloat bottom;
 
+/**
+ ** lineView:       需要绘制成虚线的view
+ ** lineLength:     虚线的宽度
+ ** lineSpacing:    虚线的间距
+ ** lineColor:      虚线的颜色
+ **/
++ (void)drawDashLine:(UIView *)lineView lineLength:(int)lineLength lineSpacing:(int)lineSpacing lineColor:(UIColor *)lineColor;
 @end

@@ -25,7 +25,7 @@
 
 - (void)setUpUI {
     
-    UILabel * totolPriceLabel = [UILabel creatLabelWithText:@"￥25.6/袋(6斤)" FontOfSize:12 textColor:Main_Font_Gary_Color];
+    UILabel * totolPriceLabel = [UILabel creatLabelWithText:@"￥25.6/袋(6斤)" FontOfSize:12 textColor:Main_Font_SecondBlack_Color];
     totolPriceLabel.frame = CGRectMake(0, 12, self.width, 12);
 	self.totolPriceLabel = totolPriceLabel;
     [self addSubview:totolPriceLabel];
@@ -37,7 +37,7 @@
 	self.disCountView = imageView;
 	[self addSubview:self.disCountView];
 	
-	UILabel * averagePrice = [UILabel creatLabelWithText:@"￥2.4/斤" FontOfSize:15 textColor:Main_Font_Red_Color];
+	UILabel * averagePrice = [UILabel creatLabelWithText:@"￥2.4/斤" FontOfSize:12 textColor:Main_Font_Gary_Color];
 	self.averagePrice = averagePrice;
 	averagePrice.frame = CGRectMake(CGRectGetMaxX(imageView.frame) + 3, imageView.y, self.width, 16);
 	[self addSubview:averagePrice];

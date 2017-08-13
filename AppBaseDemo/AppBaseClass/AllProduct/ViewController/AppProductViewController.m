@@ -58,7 +58,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 	[self initNavBarView:NAV_BAR_TYPE_ROOT_VIEW];
-	
+    
+    [self initSearchBarViewWithPlaceholder:@"鸡蛋"
+                            withSearchType:SearchType_AgentName|SearchType_ShopName];
 	
 	self.customScrollSelectView = [[CustomScrollSelectView alloc] initWithFrame:CGRectMake(0, NAV_BAR_HEIGHT, SCREEN_WIDTH, 48)];
 	[self.view addSubview:self.customScrollSelectView];
@@ -70,6 +72,8 @@
 	[self GetAppProductListBusiness];
 	[self.view addSubview:self.mainTableView];
 	[self.view addSubview:self.leftTimeQuantumTableView];
+    
+    
 }
 
 - (void)GetAppProductListBusiness {
@@ -98,12 +102,15 @@
 #pragma mark - 代理
 - (void)customScrollSelectView:(CustomScrollSelectView *)customScrollSelectView didSelectWithProductTypeModel:(NSInteger)index {
 
-	
+    self.lastCell = nil;
 	self.leftCategories = self.goodsCategoryList[index].goodsCategories;
 	[self.leftTimeQuantumTableView reloadData];
 	if (self.leftCategories.count > 0) {
 		[self tableView:self.leftTimeQuantumTableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-	}
+    }else {
+        self.goodsListInfoList = nil;
+        [self.mainTableView reloadData];
+    }
 	
 
 
@@ -122,6 +129,7 @@
 	
         self.goodsListInfoList = getSelectedProductModel.goodsListInfoList;
         [self.mainTableView reloadData];
+     
 	} completionFailHandler:^(NSString *failMessage) {
 	
 	} completionError:^(NSString *netWorkErrorMessage) {
@@ -155,7 +163,7 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 	if (tableView == _leftTimeQuantumTableView) {
-		return 44;
+		return 45;
 	}else {
 		return 70;
 	}
@@ -221,7 +229,7 @@
 	if (tableView == _leftTimeQuantumTableView )
 	{
 		AppProductViewControllerLeftCell* cell = [tableView cellForRowAtIndexPath:indexPath];
-		cell.nameLabel.textColor = [UIColor colorWithHexString:@"1ebfe5"];
+		cell.nameLabel.textColor = [UIColor colorWithHexString:Main_Font_Green_Color];
 		cell.contentView.backgroundColor = [UIColor whiteColor];
 		
 		if ([self.lastCell isEqual:cell]) {
@@ -298,9 +306,9 @@
 		_mainTableView = [[UITableView alloc] initWithFrame:CGRectMake(self.leftTimeQuantumTableView.width,CGRectGetMaxY(self.customScrollSelectView.frame), SCREEN_WIDTH - self.leftTimeQuantumTableView.width, SCREEN_HEIGHT - CGRectGetMaxY(self.customScrollSelectView.frame) - 49) style:UITableViewStyleGrouped];
 		_mainTableView.delegate = self;
 		_mainTableView.dataSource = self;
-		_mainTableView.backgroundColor = [UIColor colorWithHexString:@"eeeeee"];
+		_mainTableView.backgroundColor = [UIColor colorWithHexString:@"ffffff"];
 		_mainTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        _mainTableView.clipsToBounds = NO;
+        
 	}
 	
 	return _mainTableView;

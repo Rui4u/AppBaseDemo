@@ -451,7 +451,7 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
 
-	UILabel *label = [UILabel creatLabelWithText:self.result.address FontOfSize:12 textColor:@"333333"];
+	UILabel *label = [UILabel creatLabelWithText:self.result.address FontOfSize:12 textColor:Main_Font_Black_Color];
 	label.backgroundColor = [UIColor whiteColor];
 	
 	return label;

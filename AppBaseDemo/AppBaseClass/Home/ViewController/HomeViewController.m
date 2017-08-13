@@ -57,6 +57,7 @@
 	
 	[self initSearchBarViewWithPlaceholder:@"鸡蛋"
 							withSearchType:SearchType_AgentName|SearchType_ShopName];
+    self.searchBar.searchBarBackgroundColor = [UIColor colorWithWhite:0 alpha:.3];
 
 }
 - (void)pullToRefresh {
@@ -97,7 +98,7 @@
 
 }
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-	SRCustomLabel * label = [SRCustomLabel creatLabelWithText: self.dataSourse.ProductionInfoList[section].goodsBaseType FontOfSize:12 textColor:@"333333"];
+	SRCustomLabel * label = [SRCustomLabel creatLabelWithText: self.dataSourse.ProductionInfoList[section].goodsBaseType FontOfSize:12 textColor:Main_Font_Black_Color];
 	label.textInsets = UIEdgeInsetsMake(0, 15, 0, 0);
     label.backgroundColor = [UIColor colorWithHexString:Main_BackGround_Color];
     

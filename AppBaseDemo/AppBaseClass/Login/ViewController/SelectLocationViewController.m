@@ -316,7 +316,7 @@
 	if ([tableView isEqual:self.searchHeadTableView]){
 		return self.searchBarView;
 	}else {
-		UILabel * label = [UILabel creatLabelWithText:self.dataSourse[section].name FontOfSize:14 textColor:@"333333"];
+		UILabel * label = [UILabel creatLabelWithText:self.dataSourse[section].name FontOfSize:14 textColor:Main_Font_Black_Color];
 		return label;
 ;	}
 	

@@ -75,7 +75,7 @@
     self.topBgView = [[UIView alloc] initWithFrame:CGRectMake(self.iconView.right + 10, self.iconView.y,self.bgView.width - self.iconView.right -10 , 40)];
     [self.bgView addSubview:self.topBgView];
     
-    self.titleLabel = [UILabel creatLabelWithText:@"" FontOfSize:14 textColor:@"333333"];
+    self.titleLabel = [UILabel creatLabelWithText:@"" FontOfSize:14 textColor:Main_Font_Black_Color];
     self.titleLabel.frame = CGRectMake(0,0, 200, self.topBgView.height);
     [self.topBgView addSubview:self.titleLabel];
 
@@ -84,7 +84,7 @@
 	[deleteButton setTitle:@"删除" forState:UIControlStateNormal];
     [self.topBgView addSubview:deleteButton];
     
-    UILabel *selectLabel = [UILabel creatLabelWithText:@"选规格 " FontOfSize:12 textColor:Main_Font_Gary_Color];
+    UILabel *selectLabel = [UILabel creatLabelWithText:@"选规格 " FontOfSize:12 textColor:Main_Font_SecondBlack_Color];
 	self.selectLabel = selectLabel;
     selectLabel.userInteractionEnabled = YES;
     [selectLabel sizeToFit];
@@ -152,9 +152,18 @@
         [self.bottomBgView addSubview:selectSpecificationView];
 		
         selectSpecificationView.totolPriceLabel.text = [NSString stringWithFormat:@"￥%@/%@(%@斤)",guige.currentPrice,dataSourse.baseSpec,guige.totalWeight];
-		selectSpecificationView.averagePrice.text = [NSString stringWithFormat:@"￥%@",guige.avgPrice];
+		selectSpecificationView.averagePrice.text = [NSString stringWithFormat:@"{￥%@}/%@",guige.avgPrice,dataSourse.baseSpec];
 		
-		
+        
+        selectSpecificationView.averagePrice.attributedText =
+        [NSMutableAttributedString setAttributeString:selectSpecificationView.averagePrice.text
+                                                 font:15
+                                            textcolor:[UIColor colorWithHexString:Main_Font_Red_Color]
+                                          secondcolor:[UIColor colorWithHexString:Main_Font_Gary_Color]
+                                           secondfont:12];
+
+        
+        
 		if ([dataSourse.discount isEqualToString:@"1"]) {
 			selectSpecificationView.showDisCountView = YES;
 		}else {
