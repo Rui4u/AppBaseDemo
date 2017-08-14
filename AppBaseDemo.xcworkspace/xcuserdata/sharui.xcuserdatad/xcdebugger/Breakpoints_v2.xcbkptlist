@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AppBaseDemo/AppBaseClass/Home/View/SelectAddView.m"
-            timestampString = "524326417.043135"
+            filePath = "AppBaseDemo/AppBaseClass/Home/ViewController/HomeViewController.m"
+            timestampString = "524417976.332754"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "-clickReduceButton:"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
+            landmarkName = "-changeProcutNumberBagWithCount:withIndexPath:andTypeIndex:withRect:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AppBaseDemo/AppBaseClass/AllProduct/ProductDetail/View/ProductDetailTopView.m"
-            timestampString = "524395981.421206"
+            filePath = "AppBaseDemo/AppBaseClass/AllProduct/ProductDetail/Bussiness/ProductDetailBussiness.m"
+            timestampString = "524418782.938618"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "187"
-            endingLineNumber = "187"
-            landmarkName = "-changeNumberWith:"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "+requestProductDetailWithToken:goodsId:completionSuccessHandler:completionFailHandler:completionError:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

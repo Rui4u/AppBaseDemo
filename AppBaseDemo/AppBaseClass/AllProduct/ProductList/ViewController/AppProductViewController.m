@@ -18,6 +18,7 @@
 #import "GetSelectGoodsListBussiness.h"
 #import "GetSelectedProductModel.h"
 #import "ShoppingCartChangeNumBussiness.h"
+#import "ProductDetailViewController.h"
 @interface AppProductViewController ()<UITableViewDelegate,UITableViewDataSource,AppProductMainCellViewDelegate,CustomScrollSelectViewDelegate,AppProdcutSelectSpecificationCellDelegate>
 /**
  左侧时间tableview
@@ -209,10 +210,21 @@
 		appProductMainCellView.delegate = self;
 		appProductMainCellView.section = section;
         appProductMainCellView.dataSourse = self.goodsListInfoList[section];
+        
+        UITapGestureRecognizer *tapGesture=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(event:)];
+        [appProductMainCellView addGestureRecognizer:tapGesture];
 		return appProductMainCellView;
 	}
 	return nil;
 	
+}
+- (void)event:(UITapGestureRecognizer *)gesture {
+    
+    ProductDetailViewController * productDetailViewController = [[ProductDetailViewController alloc] init];
+    productDetailViewController.goodsId = self.goodsListInfoList[((AppProductMainCellView *)gesture.view).section].goodsListID;
+    productDetailViewController.guigeId = self.goodsListInfoList[((AppProductMainCellView *)gesture.view).section].guige[0].guigeID;
+    [self.navigationController pushViewController:productDetailViewController animated:YES];
+
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
 	if (tableView == self.mainTableView) {
@@ -238,7 +250,11 @@
 		[self didselectedMonthForRequestCommissionDataWithIndex:indexPath.row];
 	}else
 	{
-		
+        
+        ProductDetailViewController * productDetailViewController = [[ProductDetailViewController alloc] init];
+        productDetailViewController.goodsId = self.goodsListInfoList[indexPath.section].goodsListID;
+        productDetailViewController.guigeId = self.goodsListInfoList[indexPath.section].guige[indexPath.row].guigeID;
+        [self.navigationController pushViewController:productDetailViewController animated:YES];
 	}
 }
 
@@ -255,14 +271,14 @@
 
 
 #pragma mark - 选择无规格产品
-- (void)clickProductButtonWith:(UIButton *)sender withSection:(NSInteger)section withCount:(NSString *)count{
+- (void)clickProductButtonWith:(UIButton *)sender withSection:(NSInteger)section withCount:(NSString *)count withRect:(CGRect)rect{
 
-    [self changeProcutNumberBagWithCount:count withIndexPath:[NSIndexPath indexPathForRow:0 inSection:section]];
+    [self changeProcutNumberBagWithCount:count withIndexPath:[NSIndexPath indexPathForRow:0 inSection:section] withRect:rect];
     
 }
 #pragma mark - 选择有规格产品
 
--(void)changeProcutNumberBagWithCount:(NSString *)count withIndexPath:(NSIndexPath *)indexPath {
+-(void)changeProcutNumberBagWithCount:(NSString *)count withIndexPath:(NSIndexPath *)indexPath withRect:(CGRect)rect{
     
         if(count.integerValue == 0){
             NSLog(@"删除");

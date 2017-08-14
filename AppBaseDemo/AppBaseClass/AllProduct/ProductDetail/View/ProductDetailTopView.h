@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+@class Goods;
 @protocol ProductDetailTopViewDelegate <NSObject>
 - (void)clickPriceButtonWithIndex:(NSInteger) index;
 @end
@@ -14,4 +15,9 @@
 
 @property (nonatomic ,weak ) id<ProductDetailTopViewDelegate> delegate;
 @property (nonatomic ,assign ) CGFloat viewHeight;
+/**
+ <#Description#>
+ */
+@property (nonatomic ,strong) Goods * goodsDataSourse;
+- (instancetype)initWithFrame:(CGRect)frame withGootDataSourse:(Goods *)goodsDataSourse;
 @end

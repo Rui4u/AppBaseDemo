@@ -8,8 +8,8 @@
 
 
 #import "BaseBussiness.h"
-@class HomeDataModel;
-typedef void (^ProductDetailSuccessBlock)(HomeDataModel * listArray);
+@class ProductDetaiModel;
+typedef void (^ProductDetailSuccessBlock)(ProductDetaiModel * listArray);
 typedef void (^ProductDetailFailBlock) (NSString * failMessage);
 typedef void (^ProductDetailErrorBlcok)(NSString * netWorkErrorMessage);
 

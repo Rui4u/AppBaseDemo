@@ -7,7 +7,7 @@
 //
 
 #import "ProductDetailBussiness.h"
-
+#import "ProductDetaiModel.h"
 @implementation ProductDetailBussiness
 
 + (void) requestProductDetailWithToken : (NSString* ) token
@@ -28,7 +28,9 @@
          NSDictionary * responeMp = (NSDictionary * ) success ;
          
          
-//         completionHandler(result);
+         ProductDetaiModel * model = [ProductDetaiModel mj_objectWithKeyValues:responeMp];
+
+         completionHandler(model);
 //
          
      } operationFailure:^(id failure) {

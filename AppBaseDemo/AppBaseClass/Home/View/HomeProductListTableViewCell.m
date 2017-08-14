@@ -185,9 +185,9 @@
     }
 }
 
-- (void)changeProcutNumberBagWith:(NSString *)count with:(NSInteger)row {
+- (void)changeProcutNumberBagWith:(NSString *)count with:(NSInteger)row withRect:(CGRect)rect{
     
-    [self.delegate changeProcutNumberBagWithCount:count withIndexPath:[NSIndexPath indexPathForRow:row inSection:self.indexPath.row]andTypeIndex:self.indexPath.section];
+    [self.delegate changeProcutNumberBagWithCount:count withIndexPath:[NSIndexPath indexPathForRow:row inSection:self.indexPath.row]andTypeIndex:self.indexPath.section withRect:rect];
 }
 
 #pragma mark -点击进入商品详情

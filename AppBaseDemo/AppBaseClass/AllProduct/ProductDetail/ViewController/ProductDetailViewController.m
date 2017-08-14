@@ -12,6 +12,8 @@
 #import "ProductDetailTopView.h"
 #import "ProductSpecificationParameterView.h"
 #import "ProcudtDetailedInformationView.h"
+#import "ProductDetailBussiness.h"
+#import  "ProductDetaiModel.h"
 @interface ProductDetailViewController ()<CustomScrollSelectViewDelegate,UIScrollViewDelegate>
 @property (nonatomic ,strong ) CustomScrollSelectView * customScrollSelectView; //顶部
 @property (nonatomic ,strong ) ProdcutDetailBottomView * prodcutDetailBottomView; //购物车
@@ -19,22 +21,52 @@
 @property (nonatomic ,strong ) ProcudtDetailedInformationView * procudtDetailedInformationView;
 @property (nonatomic ,strong ) ProductSpecificationParameterView * productSpecificationParameterView;
 @property (nonatomic ,strong ) UIScrollView * bgScrollView;
+/**
+ <#Description#>
+ */
+@property (nonatomic ,strong) Goods * goodsDataSourse;
+/**
+ <#Description#>
+ */
+@property (nonatomic ,assign) BOOL canScroll;
 @end
 
 @implementation ProductDetailViewController
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+    [self setNavUI];
+    [self setBottomViewUI];
 
-	[self setBottomViewUI];
-	
-	[self setBgScrollViewUI];
-	
-	[self setNavUI];
-	self.navBarView.hidden = YES;
-	self.prodcutDetailBottomView.hidden = YES;
+    [self pullToRefresh];
+
 }
 
+- (void)pullToRefresh {
+
+    [ProductDetailBussiness requestProductDetailWithToken:TOKEN goodsId:self.goodsId completionSuccessHandler:^(ProductDetaiModel *productModel) {
+        
+        self.goodsDataSourse = productModel.goods;
+        [self reloadeData];
+        [self.bgScrollView.mj_header endRefreshing];
+        
+    } completionFailHandler:^(NSString *failMessage) {
+        [self showToastWithMessage:failMessage showTime:1];
+        [self.bgScrollView.mj_header endRefreshing];
+    } completionError:^(NSString *netWorkErrorMessage) {
+        [self showToastWithMessage:netWorkErrorMessage showTime:1];
+        [self.bgScrollView.mj_header endRefreshing];
+    }];
+
+}
+- (void)reloadeData {
+    
+    [self setBgScrollViewUI];
+    [self.view bringSubviewToFront:self.navBarView];
+    [self.view bringSubviewToFront:_prodcutDetailBottomView];
+    
+    self.navBarView.alpha = 0;
+}
 #pragma mark - 点击反馈
 - (void)clickRightButton {
 
@@ -43,8 +75,15 @@
 
 #pragma mark - 点击title代理
 - (void)customScrollSelectView:(CustomScrollSelectView *)customScrollSelectView didSelectWithProductTypeModel:(NSInteger)index {
-	
-	
+    
+    self.canScroll = NO;
+    if (index == 0) {
+        [self.bgScrollView setContentOffset:CGPointMake(0, -1) animated:YES];
+    }else if (index == 1) {
+        [self.bgScrollView setContentOffset:CGPointMake(0, self.productDetailTopView.height - self.navBarView.height)animated:YES];
+    }else if (index == 2) {
+        [self.bgScrollView setContentOffset:CGPointMake(0,self.procudtDetailedInformationView.bottom - self.bgScrollView.height + 100) animated:YES];
+    }
 	
 	
 }
@@ -76,7 +115,7 @@
 
 }
 - (void)setUPTopViewUI{
-	_productDetailTopView = [[ProductDetailTopView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 800)];
+	_productDetailTopView = [[ProductDetailTopView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 800) withGootDataSourse:self.goodsDataSourse];
 	[self.bgScrollView addSubview:_productDetailTopView];
     
     UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 22, 50, 44)];
@@ -161,5 +200,31 @@
 	}
 	return _bgScrollView;
 }
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
 
+    self.canScroll = YES;
+}
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+    self.navBarView.alpha = scrollView.contentOffset.y/120;
+
+    if (self.canScroll) {
+        
+        if (self.bgScrollView.contentOffset.y > self.productDetailTopView.height - self.navBarView.height) {
+            NSLog(@"%f",self.procudtDetailedInformationView.bottom - self.bgScrollView.height);
+            if (self.bgScrollView.contentOffset.y > self.procudtDetailedInformationView.bottom - self.bgScrollView.height) {
+                [self.customScrollSelectView selectSwitchButtonAtIndex:2 withClick:NO];
+            }else {
+                [self.customScrollSelectView selectSwitchButtonAtIndex:1 withClick:NO];
+            }
+        }else {
+            [self.customScrollSelectView selectSwitchButtonAtIndex:0 withClick:NO];
+        }
+    }
+}
+
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
+
+    self.canScroll = YES;
+}
 @end

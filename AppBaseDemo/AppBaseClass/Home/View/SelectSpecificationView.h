@@ -10,7 +10,7 @@
 
 @protocol SelectSpecificationViewDelegate <NSObject>
 @optional;
-- (void)changeProcutNumberBagWith:(NSString *)count with:(NSInteger) row;
+- (void)changeProcutNumberBagWith:(NSString *)count with:(NSInteger) row withRect:(CGRect)rect;
 /**
  选择哪个产品
 

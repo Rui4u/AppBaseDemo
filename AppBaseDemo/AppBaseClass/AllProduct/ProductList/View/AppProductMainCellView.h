@@ -16,7 +16,7 @@
  @param sender <#sender description#>
  */
 
-- (void)clickProductButtonWith:(UIButton *)sender withSection:(NSInteger) section withCount:(NSString *)count;
+- (void)clickProductButtonWith:(UIButton *)sender withSection:(NSInteger) section withCount:(NSString *)count withRect:(CGRect)rect;
 
 /**
  点击开关

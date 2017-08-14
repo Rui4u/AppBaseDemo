@@ -13,7 +13,8 @@
 @optional
 - (void)changeProcutNumberBagWithCount:(NSString *)count
                          withIndexPath:(NSIndexPath *)indexPath
-                          andTypeIndex:(NSInteger)typeIndex;
+                          andTypeIndex:(NSInteger)typeIndex
+                              withRect:(CGRect)rect;
 
 - (void)clickGoToProductDetailWith:(NSIndexPath *)indexPath andGuiGeIndex:(NSInteger)index;
 //选择打开规格

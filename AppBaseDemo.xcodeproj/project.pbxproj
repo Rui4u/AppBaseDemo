@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2B09B0DB1F3F604B00C7B3B2 /* DispatchTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B09B0DA1F3F604B00C7B3B2 /* DispatchTimer.m */; };
 		2B0E70BD1F41C3ED0037B4A7 /* ProductDetailBussiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0E70BC1F41C3ED0037B4A7 /* ProductDetailBussiness.m */; };
+		2B0E70C01F41E86E0037B4A7 /* ProductDetaiModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0E70BF1F41E86E0037B4A7 /* ProductDetaiModel.m */; };
 		2B2E10511F3C015D00092EAA /* CityNotInOpenCityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B2E10501F3C015D00092EAA /* CityNotInOpenCityView.xib */; };
 		2B2E109A1F3C0AF900092EAA /* BaseBussiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2E10991F3C0A8800092EAA /* BaseBussiness.m */; };
 		2B2E10A41F3C0EDF00092EAA /* GetHomeBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2E109D1F3C0EDF00092EAA /* GetHomeBusiness.m */; };
@@ -161,6 +162,8 @@
 		2B09B0DA1F3F604B00C7B3B2 /* DispatchTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DispatchTimer.m; sourceTree = "<group>"; };
 		2B0E70BB1F41C3ED0037B4A7 /* ProductDetailBussiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailBussiness.h; sourceTree = "<group>"; };
 		2B0E70BC1F41C3ED0037B4A7 /* ProductDetailBussiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailBussiness.m; sourceTree = "<group>"; };
+		2B0E70BE1F41E86E0037B4A7 /* ProductDetaiModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetaiModel.h; sourceTree = "<group>"; };
+		2B0E70BF1F41E86E0037B4A7 /* ProductDetaiModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetaiModel.m; sourceTree = "<group>"; };
 		2B2E10501F3C015D00092EAA /* CityNotInOpenCityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CityNotInOpenCityView.xib; sourceTree = "<group>"; };
 		2B2E10991F3C0A8800092EAA /* BaseBussiness.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseBussiness.m; sourceTree = "<group>"; };
 		2B2E109C1F3C0EDF00092EAA /* GetHomeBusiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetHomeBusiness.h; sourceTree = "<group>"; };
@@ -447,6 +450,8 @@
 		2B0E70BA1F41C3E20037B4A7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2B0E70BE1F41E86E0037B4A7 /* ProductDetaiModel.h */,
+				2B0E70BF1F41E86E0037B4A7 /* ProductDetaiModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1404,6 +1409,7 @@
 				2BFCFDED1F413B63001DA10D /* AppProductViewControllerLeftCell.m in Sources */,
 				2BFCFDE91F413B63001DA10D /* AppProdcutSelectSpecificationCell.m in Sources */,
 				2BFCFDEB1F413B63001DA10D /* AppProductMainCellView.m in Sources */,
+				2B0E70C01F41E86E0037B4A7 /* ProductDetaiModel.m in Sources */,
 				2BC14DC11F31CD3500919808 /* SBJsonUTF8Stream.m in Sources */,
 				2BC14DBA1F31CD3500919808 /* SBJsonStreamParserAccumulator.m in Sources */,
 				2BA025331F2AE470003EB25D /* SRCustomTabBarController.m in Sources */,

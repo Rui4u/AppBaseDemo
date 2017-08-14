@@ -68,8 +68,8 @@
 }
 
 
-- (void)changeProcutNumberBagWith:(NSString *)count with:(NSInteger) row {
-    [self.delegate changeProcutNumberBagWithCount:count withIndexPath:[NSIndexPath indexPathForRow:row inSection:self.indexPath.section]];
+- (void)changeProcutNumberBagWith:(NSString *)count with:(NSInteger) row withRect:(CGRect)rect{
+    [self.delegate changeProcutNumberBagWithCount:count withIndexPath:[NSIndexPath indexPathForRow:row inSection:self.indexPath.section] withRect:rect];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

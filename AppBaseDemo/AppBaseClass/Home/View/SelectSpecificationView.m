@@ -52,8 +52,8 @@
 }
 
 #pragma mark - 购物车
-- (void)changeNumberWith:(NSString *)count {
-    [self.delegate changeProcutNumberBagWith:count with:self.index];
+- (void)changeNumberWith:(NSString *)count withRect:(CGRect)rect{
+    [self.delegate changeProcutNumberBagWith:count with:self.index withRect:rect];
 }
 
 

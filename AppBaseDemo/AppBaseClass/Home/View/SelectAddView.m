@@ -22,6 +22,8 @@
 	self.reduceButton.hidden = YES;
 	self.numberLabel.hidden = YES;
     _numberLabel.delegate = self;
+    
+    
 }
 - (IBAction)clickReduceButton:(id)sender {
 	
@@ -40,7 +42,8 @@
 	}
     
 	self.numberLabel.text = [NSString stringWithFormat:@"%d",i];
-    [self.delegate changeNumberWith:self.numberLabel.text];
+    
+    [self didselectChangeNumber];
 }
 - (IBAction)clickAddButton:(id)sender {
 	
@@ -52,7 +55,7 @@
 	
 	self.numberLabel.text = [NSString stringWithFormat:@"%d",i];
     
-        [self.delegate changeNumberWith:self.numberLabel.text];
+    [self didselectChangeNumber];
     
 	if (i >= 1) {
 		self.reduceButton.hidden = NO;
@@ -83,9 +86,18 @@
     __weak typeof(self) weakself = self;
     addToCartKeyBoard.sureBoardBlack = ^(NSString * num){
         _numberLabel.text = num;
-        [weakself.delegate changeNumberWith:self.numberLabel.text];
+        [weakself didselectChangeNumber];
+        
     };
     return NO;
+}
+- (void)didselectChangeNumber {
+    CGRect rect=[_addButton convertRect: _addButton.bounds toView:APP_DELEGATE.window];
+    if ([self.delegate respondsToSelector:@selector(changeNumberWith:withRect:)]) {
+        [self.delegate changeNumberWith:self.numberLabel.text withRect:rect];
+    }
+    
+    
 }
 
 

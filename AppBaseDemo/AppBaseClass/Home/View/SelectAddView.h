@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @protocol SelectAddViewDelegate <NSObject>
 @optional
--(void)changeNumberWith:(NSString *)count;
+-(void)changeNumberWith:(NSString *)count withRect:(CGRect) rect;
 @end
 @interface SelectAddView : UIView
 @property (nonatomic ,assign ) BOOL  isDiscount;

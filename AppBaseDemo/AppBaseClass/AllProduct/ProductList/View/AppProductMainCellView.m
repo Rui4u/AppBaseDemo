@@ -34,10 +34,10 @@
     }
 }
 
--(void)changeNumberWith:(NSString *)count {
+-(void)changeNumberWith:(NSString *)count withRect:(CGRect)rect{
     
-    if ([self.delegate respondsToSelector:@selector(clickProductButtonWith:withSection:withCount:)]) {
-        [self.delegate clickProductButtonWith:_addOpenOrCloseButton withSection:self.section withCount:count];
+    if ([self.delegate respondsToSelector:@selector(clickProductButtonWith:withSection:withCount:withRect:)]) {
+        [self.delegate clickProductButtonWith:_addOpenOrCloseButton withSection:self.section withCount:count withRect:rect];
     }
 }
 

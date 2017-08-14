@@ -11,6 +11,8 @@
 #import "ProductDetailTitleView.h" //title 和加入清单
 #import "SelectAddView.h"
 #import "ProductInfoView.h"
+#import "ProductDetaiModel.h"
+#import "ShoppingCartChangeNumBussiness.h"
 @interface ProductDetailTopView()<AdvertisementViewDelegate,SelectAddViewDelegate>
 @property (nonatomic ,strong ) TopAdvertisementView * bannerScrollView;//banner
 @property (nonatomic ,strong ) ProductDetailTitleView * productDetailTitleView;//名称
@@ -27,15 +29,17 @@
 @end
 @implementation ProductDetailTopView
 
-- (instancetype)initWithFrame:(CGRect)frame
+- (instancetype)initWithFrame:(CGRect)frame withGootDataSourse:(Goods *)goodsDataSourse
 {
 	self = [super initWithFrame:frame];
 	if (self) {
+        self.goodsDataSourse = goodsDataSourse;
 		[self setUpBannerUI];
 		_productDetailTitleView = [[NSBundle mainBundle] loadNibNamed:@"ProductDetailTitleView" owner:self options:nil].firstObject;
 		[self addSubview:_productDetailTitleView];
 
-		
+        _productDetailTitleView.titleLabel.text = [NSString stringWithFormat:@"%@ %@",goodsDataSourse.fullName,goodsDataSourse.feature];
+
 		[_productDetailTitleView mas_makeConstraints:^(MASConstraintMaker *make) {
 			make.left.equalTo(self.mas_left);
 			make.right.equalTo(self.mas_right);
@@ -46,8 +50,11 @@
 		[self setUpSpecificationUI];
 		[self setUpPriceViewUI];
 		[self setUpProductInfoViewUI];
-		
-		[self layoutIfNeeded];
+        
+        [self layoutIfNeeded];
+        [self selectButton:self.buttonArray[0]];
+
+
 		self.height = _productInfoView.bottom + 10;
 	}
 	return self;
@@ -58,12 +65,15 @@
 }
 - (void)setUpProductInfoViewUI {
 	ProductInfoView * productInfoView = [[NSBundle mainBundle] loadNibNamed:@"ProductInfoView" owner:self options:nil].lastObject;
+    productInfoView.anotherName.text = self.goodsDataSourse.goodsAlias;
+    productInfoView.desLabel.text = self.goodsDataSourse.introduction;
 	productInfoView.backgroundColor = [UIColor whiteColor];
 	self.productInfoView = productInfoView;
 	[self  setNeedsLayout];
 	
 	[self addSubview:productInfoView];
 	
+    
 	[productInfoView mas_makeConstraints:^(MASConstraintMaker *make) {
 		make.left.equalTo(self.mas_left);
 		make.right.equalTo(self.mas_right);
@@ -82,13 +92,13 @@
 	
 	
 	_priceDesLabel = ({
-		UILabel * priceDesLabel = [UILabel creatLabelWithText:@"￥12.3/袋(10斤)" FontOfSize:16 textColor:Main_Font_Red_Color];
+		UILabel * priceDesLabel = [UILabel creatLabelWithText:@"" FontOfSize:16 textColor:Main_Font_Red_Color];
 		priceDesLabel.frame = CGRectMake(10, 11, SCREEN_WIDTH, 16);
 		priceDesLabel;
 	});
 	
 	_advPrice = ({
-		UILabel * advPrice = [UILabel creatLabelWithText:@"￥12.3/斤" FontOfSize:12 textColor:Main_Font_Gary_Color];
+		UILabel * advPrice = [UILabel creatLabelWithText:@"" FontOfSize:12 textColor:Main_Font_Gary_Color];
 		self.advPrice = advPrice;
 		advPrice.frame = CGRectMake(10, _priceDesLabel.bottom + 9, SCREEN_WIDTH, 12);
 		advPrice;
@@ -127,7 +137,7 @@
 	
 
 	_specificationBgView = ({
-		UIView * specificationBgView = [[UIView alloc] initWithFrame:CGRectMake(0, _bannerScrollView.bottom + 88, SCREEN_WIDTH, 105)];
+		UIView * specificationBgView = [[UIView alloc] initWithFrame:CGRectMake(0, _bannerScrollView.bottom + 54, SCREEN_WIDTH, 105)];
 		specificationBgView.backgroundColor = [UIColor whiteColor];
 		specificationBgView;
 	});
@@ -138,7 +148,7 @@
 	titleSelect.frame = CGRectMake(10, 0, SCREEN_WIDTH, 35);
 	[_specificationBgView addSubview:titleSelect];
 	
-	NSArray * titleArray = @[@"开始购买",@"常用清单",@"活动中心",@"我的订单"];
+	NSArray <Guige *>* titleArray = self.goodsDataSourse.guige;
 	CGFloat width = (_specificationBgView.width  - 50 )/4.0;
 	CGFloat height = 33;
 
@@ -148,10 +158,12 @@
 		// 计算行号  和   列号
 		int row = index / totalColumns;
 		int col = index % totalColumns;
-		UIButton * priceButton = [[UIButton alloc] initWithFrame:CGRectMake(col * (width + 10) + 10, row * height + titleSelect.bottom, width, height)];
+		UIButton * priceButton = [[UIButton alloc] initWithFrame:CGRectMake(col * (width + 10) + 10, row * (height +10) + titleSelect.bottom, width, height)];
 		[self.buttonArray addObject:priceButton];
 		[priceButton addTarget:self action:@selector(selectButton:) forControlEvents:UIControlEventTouchUpInside];
-		[priceButton setTitle:titleArray[index] forState:UIControlStateNormal];
+        
+        
+		[priceButton setTitle:[NSString stringWithFormat:@"1*%@(%@斤)",self.goodsDataSourse.baseSpec,titleArray[index].totalWeight ] forState:UIControlStateNormal];
 		[priceButton setTitleColor:[UIColor colorWithHexString:Main_Button_Gary_Color] forState:UIControlStateNormal];
 		[priceButton setTitleColor:[UIColor colorWithHexString:Main_Font_Green_Color] forState:UIControlStateSelected];
 		priceButton.titleLabel.font = [UIFont systemFontOfSize:12];
@@ -160,7 +172,6 @@
 		[_specificationBgView addSubview:priceButton];
 		_specificationBgView.height = priceButton.bottom + 10;
 	}
-	
 	UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(10, _specificationBgView.height- .5, SCREEN_WIDTH - 10, .5)];
 	lineView.backgroundColor = [UIColor colorWithHexString:Main_Line_Gary_Color];
 	[_specificationBgView addSubview:lineView];
@@ -171,6 +182,10 @@
 - (void)selectButton:(UIButton *)sender {
 	self.lastButton.selected = NO;
 	sender.selected = YES;
+    NSInteger tag = sender.tag - 1000;
+    NSString * string = [NSString stringWithFormat:@"￥%@*%@(%@斤)",self.goodsDataSourse.guige[tag].currentPrice,self.goodsDataSourse.baseSpec,self.goodsDataSourse.guige[tag].totalWeight];
+    self.priceDesLabel.text = string;
+    self.advPrice.text = [NSString stringWithFormat:@"￥%@/斤",self.goodsDataSourse.guige[tag].avgPrice];
 	if ([self.delegate respondsToSelector:@selector(clickPriceButtonWithIndex:)]) {
 		[self.delegate clickPriceButtonWithIndex:sender.tag - 1000];
 	}
@@ -183,8 +198,18 @@
 	
 }
 
--(void)changeNumberWith:(NSString *)count{
-	
+-(void)changeNumberWith:(NSString *)count withRect:(CGRect)rect{
+	   [ShoppingCartChangeNumBussiness requestShoppingCartChangeNumWithToken:TOKEN
+                                                                     goodsId:self.goodsDataSourse.goodsId
+                                                                      specId:self.goodsDataSourse.guige[self.lastButton.tag - 1000].guigeID                                                               num:count
+                                                    completionSuccessHandler:^(NSString *succeed)
+        {
+            
+        } completionFailHandler:^(NSString *failMessage) {
+            
+        } completionError:^(NSString *netWorkErrorMessage) {
+            
+        }];
 }
 - (TopAdvertisementView *)bannerScrollView {
 	if (!_bannerScrollView) {
@@ -193,6 +218,11 @@
 		_bannerScrollView.delegate = self;
 	}
 	return _bannerScrollView;
+}
+
+- (void)setGoodsDataSourse:(Goods *)goodsDataSourse {
+    _goodsDataSourse = goodsDataSourse;
+
 }
 
 @end

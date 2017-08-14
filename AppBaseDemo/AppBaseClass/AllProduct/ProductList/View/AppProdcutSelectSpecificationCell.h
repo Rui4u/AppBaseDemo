@@ -18,7 +18,7 @@
  @param count <#count description#>
  @param indexPath <#indexPath description#>
  */
-- (void)changeProcutNumberBagWithCount:(NSString *)count withIndexPath:(NSIndexPath *)indexPath;
+- (void)changeProcutNumberBagWithCount:(NSString *)count withIndexPath:(NSIndexPath *)indexPath withRect:(CGRect)rect;
 
 /**
  打开关闭刷新
