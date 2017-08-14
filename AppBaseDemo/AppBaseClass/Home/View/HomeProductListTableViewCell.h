@@ -15,9 +15,9 @@
                          withIndexPath:(NSIndexPath *)indexPath
                           andTypeIndex:(NSInteger)typeIndex;
 
+- (void)clickGoToProductDetailWith:(NSIndexPath *)indexPath andGuiGeIndex:(NSInteger)index;
 //选择打开规格
 - (void)ClickSelectSpecificationWithIndexPath:(NSIndexPath *)indexPath;
-- (void)addProduct;
 
 @end
 @interface HomeProductListTableViewCell : UITableViewCell

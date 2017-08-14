@@ -39,7 +39,7 @@
 /**
  选规格 标签
  */
-@property (nonatomic ,strong ) UILabel *selectLabel;
+@property (nonatomic ,strong ) UIButton *selectLabel;
 @end
 
 @implementation HomeProductListTableViewCell
@@ -84,17 +84,12 @@
 	[deleteButton setTitle:@"删除" forState:UIControlStateNormal];
     [self.topBgView addSubview:deleteButton];
     
-    UILabel *selectLabel = [UILabel creatLabelWithText:@"选规格 " FontOfSize:12 textColor:Main_Font_SecondBlack_Color];
-	self.selectLabel = selectLabel;
-    selectLabel.userInteractionEnabled = YES;
-    [selectLabel sizeToFit];
     
-    UITapGestureRecognizer*tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(Actiondo:)];
-    
-    [selectLabel addGestureRecognizer:tapGesture];
-    
-    selectLabel.frame = CGRectMake(deleteButton.x - selectLabel.width, 0, selectLabel.width,self.topBgView.height);
-    [self.topBgView addSubview:selectLabel];
+//    l = [UILabel creatLabelWithText:@"选规格 " FontOfSize:12 textColor:Main_Font_SecondBlack_Color];
+    self.selectLabel = [UIButton quickCreateButtonWithFrame:CGRectMake(deleteButton.x - 70, 0, 70,self.topBgView.height) title:@"选规格" addTarget:self action:@"Actiondo:"];
+    self.selectLabel.titleLabel.font = [UIFont systemFontOfSize:12];
+    [self.selectLabel setTitleColor:[UIColor colorWithHexString:Main_Font_SecondBlack_Color] forState:UIControlStateNormal];
+    [self.topBgView addSubview:_selectLabel];
     
     
     UIView * lineView = [[UIView alloc] initWithFrame:CGRectMake(0, self.topBgView.height - 1, self.topBgView.width,1)];
@@ -102,14 +97,17 @@
     
     [self.topBgView addSubview:lineView];
     
-    self.titleLabel.width = selectLabel.x - self.titleLabel.x - 5;
+    self.titleLabel.width = _selectLabel.x - self.titleLabel.x - 5;
     
     self.bottomBgView = [[UIView alloc] initWithFrame:CGRectMake(self.iconView.right + 8, self.topBgView.bottom,self.bgView.width - self.iconView.right - 8 , 65)];
     self.bottomBgView.clipsToBounds = YES;
     [self.contentView addSubview:self.bottomBgView];
     self.contentView.clipsToBounds = YES;
-	
-	
+    
+    UITapGestureRecognizer *tapGesture2=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(event:)];
+	[self.contentView addGestureRecognizer:tapGesture2];
+    self.contentView.tag = 1000;
+    
 	UIView * bottomLintView = [[UIView alloc] init];
 	bottomLintView.backgroundColor = [UIColor colorWithHexString:Main_BackGround_Color];
 	[self.contentView addSubview:bottomLintView];
@@ -147,6 +145,10 @@
         
         SelectSpecificationView * selectSpecificationView = [[SelectSpecificationView alloc] initWithFrame:CGRectMake(8,i *selectViewHeight,self.bottomBgView.width- 8,65)];
 		selectSpecificationView.index = i;
+        selectSpecificationView.tag = 1000+ i;
+        UITapGestureRecognizer *tapGesture=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(event:)];
+        [selectSpecificationView addGestureRecognizer:tapGesture];
+        
         selectViewHeight = selectSpecificationView.height;
 		selectSpecificationView.delegate = self;
         [self.bottomBgView addSubview:selectSpecificationView];
@@ -169,6 +171,14 @@
 		}else {
 			selectSpecificationView.showDisCountView = NO;
 		}
+        
+        if (i != 0) {
+            UIView *imaginaryLine= [[UIView alloc] initWithFrame:CGRectMake(0,0,SCREEN_WIDTH - 80,.5)];
+            [UIView drawDashLine:imaginaryLine lineLength:4 lineSpacing: 2 lineColor:[UIColor colorWithHexString:Main_Line_Gary_Color]];
+            [selectSpecificationView addSubview:imaginaryLine];
+        }
+        
+        
         self.bottomBgView.height = selectSpecificationView.bottom;
         self.bgView.height = self.bottomBgView.bottom;
         self.dataSourse.height = self.bgView.height + 10;
@@ -180,15 +190,18 @@
     [self.delegate changeProcutNumberBagWithCount:count withIndexPath:[NSIndexPath indexPathForRow:row inSection:self.indexPath.row]andTypeIndex:self.indexPath.section];
 }
 
-//选择
-- (void)selectSpecificationWithIndex:(NSInteger)index {
-	
-	if ([self.delegate respondsToSelector:@selector(addProduct)]) {
-		[self.delegate addProduct];
-	}
-
+#pragma mark -点击进入商品详情
+- (void)event:(UITapGestureRecognizer *)gesture
+{
+    NSInteger  index = gesture.view.tag - 1000;
+    
+    if ([self.delegate respondsToSelector:@selector(clickGoToProductDetailWith:andGuiGeIndex:)]) {
+        [self.delegate clickGoToProductDetailWith:self.indexPath andGuiGeIndex:index];
+    }
+    
 }
 
+#pragma mark - 选择规格
 -(void)Actiondo:(id)sender {
     
     
@@ -197,9 +210,9 @@
     if (self.dataSourse.isOpen) {
         self.dataSourse.height = self.topBgView.height + self.dataSourse.guige.count * 66 + 10;
     }
-	if ([self.delegate respondsToSelector:@selector(ClickSelectSpecificationWithIndexPath:)]) {
-		[self.delegate ClickSelectSpecificationWithIndexPath:_indexPath];
-
-	}
+    if ([self.delegate respondsToSelector:@selector(ClickSelectSpecificationWithIndexPath:)]) {
+        [self.delegate ClickSelectSpecificationWithIndexPath:_indexPath];
+    }
+	
 }
 @end

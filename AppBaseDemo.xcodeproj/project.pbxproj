@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2B09B0DB1F3F604B00C7B3B2 /* DispatchTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B09B0DA1F3F604B00C7B3B2 /* DispatchTimer.m */; };
+		2B0E70BD1F41C3ED0037B4A7 /* ProductDetailBussiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0E70BC1F41C3ED0037B4A7 /* ProductDetailBussiness.m */; };
 		2B2E10511F3C015D00092EAA /* CityNotInOpenCityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B2E10501F3C015D00092EAA /* CityNotInOpenCityView.xib */; };
 		2B2E109A1F3C0AF900092EAA /* BaseBussiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2E10991F3C0A8800092EAA /* BaseBussiness.m */; };
 		2B2E10A41F3C0EDF00092EAA /* GetHomeBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2E109D1F3C0EDF00092EAA /* GetHomeBusiness.m */; };
@@ -158,6 +159,8 @@
 /* Begin PBXFileReference section */
 		2B09B0D91F3F604B00C7B3B2 /* DispatchTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DispatchTimer.h; sourceTree = "<group>"; };
 		2B09B0DA1F3F604B00C7B3B2 /* DispatchTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DispatchTimer.m; sourceTree = "<group>"; };
+		2B0E70BB1F41C3ED0037B4A7 /* ProductDetailBussiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailBussiness.h; sourceTree = "<group>"; };
+		2B0E70BC1F41C3ED0037B4A7 /* ProductDetailBussiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailBussiness.m; sourceTree = "<group>"; };
 		2B2E10501F3C015D00092EAA /* CityNotInOpenCityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CityNotInOpenCityView.xib; sourceTree = "<group>"; };
 		2B2E10991F3C0A8800092EAA /* BaseBussiness.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseBussiness.m; sourceTree = "<group>"; };
 		2B2E109C1F3C0EDF00092EAA /* GetHomeBusiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetHomeBusiness.h; sourceTree = "<group>"; };
@@ -432,6 +435,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B0E70B91F41C3E20037B4A7 /* Bussiness */ = {
+			isa = PBXGroup;
+			children = (
+				2B0E70BB1F41C3ED0037B4A7 /* ProductDetailBussiness.h */,
+				2B0E70BC1F41C3ED0037B4A7 /* ProductDetailBussiness.m */,
+			);
+			path = Bussiness;
+			sourceTree = "<group>";
+		};
+		2B0E70BA1F41C3E20037B4A7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		2B2E109B1F3C0EDF00092EAA /* Bussiness */ = {
 			isa = PBXGroup;
 			children = (
@@ -994,26 +1013,12 @@
 		2BFCFDC51F413B63001DA10D /* ProductDetail */ = {
 			isa = PBXGroup;
 			children = (
-				2BFCFDC61F413B63001DA10D /* Bussiness */,
-				2BFCFDC71F413B63001DA10D /* Model */,
+				2B0E70B91F41C3E20037B4A7 /* Bussiness */,
+				2B0E70BA1F41C3E20037B4A7 /* Model */,
 				2BFCFDC81F413B63001DA10D /* View */,
 				2BFCFDC91F413B63001DA10D /* ViewController */,
 			);
 			path = ProductDetail;
-			sourceTree = "<group>";
-		};
-		2BFCFDC61F413B63001DA10D /* Bussiness */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Bussiness;
-			sourceTree = "<group>";
-		};
-		2BFCFDC71F413B63001DA10D /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		2BFCFDC81F413B63001DA10D /* View */ = {
@@ -1426,6 +1431,7 @@
 				2BB9D96F1F407CC10092A9CF /* AddToCartKeyBoard.m in Sources */,
 				2BA025551F2B2A15003EB25D /* RecommendProductView.m in Sources */,
 				2B580D6B1F385A8E00AEA6BF /* BaiduMapManager.m in Sources */,
+				2B0E70BD1F41C3ED0037B4A7 /* ProductDetailBussiness.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

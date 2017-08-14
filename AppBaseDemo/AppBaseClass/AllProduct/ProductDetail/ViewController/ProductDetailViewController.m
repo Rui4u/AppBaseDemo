@@ -78,7 +78,20 @@
 - (void)setUPTopViewUI{
 	_productDetailTopView = [[ProductDetailTopView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 800)];
 	[self.bgScrollView addSubview:_productDetailTopView];
+    
+    UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 22, 50, 44)];
+    backButton.backgroundColor = [UIColor clearColor];
+    
+    [backButton setImage:[UIImage imageNamed:@"icon_fanhui"]
+                  forState:UIControlStateNormal];
+    
+    [backButton addTarget:self
+                     action:@selector(backButtonPressed:)
+           forControlEvents:UIControlEventTouchUpInside];
+    [_productDetailTopView addSubview:backButton];
 }
+
+
 #pragma mark - 底部去购物车UI
 - (void)setBottomViewUI {
 	
@@ -130,6 +143,9 @@
 
 }
 
+- (void)backButtonPressed:(UIButton *)sender {
+    [self back];
+}
 - (void)didReceiveMemoryWarning {
 	[super didReceiveMemoryWarning];
 	// Dispose of any resources that can be recreated.

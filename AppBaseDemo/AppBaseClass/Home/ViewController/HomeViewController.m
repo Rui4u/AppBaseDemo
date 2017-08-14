@@ -16,6 +16,7 @@
 #import "UserLocationViewController.h"
 #import "GetHomeBusiness.h"
 #import "ShoppingCartChangeNumBussiness.h"
+#import "ProductDetailViewController.h"
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource,HomeProductListTableViewCellDelegate,SelectTypeViewDelegate>
 @property (nonatomic ,strong ) HomeTopView * topView;
 @property (nonatomic ,strong ) SelectTypeView * selectTypeView;
@@ -141,6 +142,17 @@
     return cell;
 	
 	
+
+}
+
+
+- (void)clickGoToProductDetailWith:(NSIndexPath *)indexPath andGuiGeIndex:(NSInteger)index {
+    
+    ProductDetailViewController * productDetailViewController = [[ProductDetailViewController alloc] init];
+    productDetailViewController.goodsId = self.dataSourse.ProductionInfoList[indexPath.section].goodsList[indexPath.row].goodsListID;
+    productDetailViewController.guigeId = self.dataSourse.ProductionInfoList[indexPath.section].goodsList[indexPath.row].guige[index].guigeID;
+    [self.navigationController pushViewController:productDetailViewController animated:YES];
+
 
 }
 
