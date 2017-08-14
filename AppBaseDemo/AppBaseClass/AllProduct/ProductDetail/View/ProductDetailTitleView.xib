@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ProductDetailTitleView">
+            <rect key="frame" x="0.0" y="0.0" width="440" height="88"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlz-8Q-bV0">
+                    <rect key="frame" x="10" y="0.5" width="369.5" height="87.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pta-Oa-rsv">
+                    <rect key="frame" x="380" y="22" width="60" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="6Pg-Sr-PG4"/>
+                        <constraint firstAttribute="height" constant="44" id="UFf-BB-XxT"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="clickAddToProductList:" destination="iN0-l3-epB" eventType="touchUpInside" id="5Uh-Xm-BIa"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jcf-Bf-LVU">
+                    <rect key="frame" x="0.0" y="0.0" width="440" height="0.5"/>
+                    <color key="backgroundColor" red="0.85490196080000003" green="0.85098039219999999" blue="0.85490196080000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="YoC-eV-mrZ"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H8k-FO-Hp0">
+                    <rect key="frame" x="379.5" y="0.5" width="0.5" height="87.5"/>
+                    <color key="backgroundColor" red="0.85490196080000003" green="0.85098039219999999" blue="0.85490196080000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="0.5" id="Vnv-ZD-mHu"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="H8k-FO-Hp0" firstAttribute="leading" secondItem="qlz-8Q-bV0" secondAttribute="trailing" id="04U-Qa-1xC"/>
+                <constraint firstItem="pta-Oa-rsv" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="0Nx-hF-MTZ"/>
+                <constraint firstAttribute="bottom" secondItem="qlz-8Q-bV0" secondAttribute="bottom" id="AR1-uK-RSS"/>
+                <constraint firstAttribute="trailing" secondItem="pta-Oa-rsv" secondAttribute="trailing" id="LEU-DP-0Wo"/>
+                <constraint firstItem="Jcf-Bf-LVU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Q95-0i-ENp"/>
+                <constraint firstAttribute="trailing" secondItem="Jcf-Bf-LVU" secondAttribute="trailing" id="TY7-Lc-4Of"/>
+                <constraint firstItem="Jcf-Bf-LVU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="X1Z-nz-1Hb"/>
+                <constraint firstAttribute="bottom" secondItem="H8k-FO-Hp0" secondAttribute="bottom" id="lZY-Tu-yi8"/>
+                <constraint firstItem="qlz-8Q-bV0" firstAttribute="top" secondItem="Jcf-Bf-LVU" secondAttribute="bottom" id="okf-Lc-JeL"/>
+                <constraint firstItem="qlz-8Q-bV0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="tDJ-m0-GWq"/>
+                <constraint firstItem="H8k-FO-Hp0" firstAttribute="top" secondItem="Jcf-Bf-LVU" secondAttribute="bottom" id="x5t-T1-vGY"/>
+                <constraint firstItem="pta-Oa-rsv" firstAttribute="leading" secondItem="H8k-FO-Hp0" secondAttribute="trailing" id="zOY-tV-FTN"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="addProductListButton" destination="pta-Oa-rsv" id="rhR-No-5pZ"/>
+                <outlet property="titleLabel" destination="qlz-8Q-bV0" id="Yok-kM-oeS"/>
+            </connections>
+            <point key="canvasLocation" x="66" y="-235"/>
+        </view>
+    </objects>
+</document>

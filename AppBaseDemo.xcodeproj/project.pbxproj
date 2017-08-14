@@ -48,6 +48,15 @@
 		2B7DCC021F3579CC00E88B38 /* HomeProductListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7DCC011F3579CC00E88B38 /* HomeProductListTableViewCell.m */; };
 		2B7DCC0C1F358CC400E88B38 /* SelectSpecificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7DCC0B1F358CC400E88B38 /* SelectSpecificationView.m */; };
 		2B8460691F41446E0013D26D /* ProdcutDetailBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B8460681F41446E0013D26D /* ProdcutDetailBottomView.xib */; };
+		2B84606C1F417C850013D26D /* ProductDetailTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B84606B1F417C850013D26D /* ProductDetailTopView.m */; };
+		2B84606F1F417F7F0013D26D /* ProductDetailTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B84606E1F417F7F0013D26D /* ProductDetailTitleView.m */; };
+		2B8460711F417F880013D26D /* ProductDetailTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B8460701F417F880013D26D /* ProductDetailTitleView.xib */; };
+		2B8460741F418F040013D26D /* ProductInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8460731F418F040013D26D /* ProductInfoView.m */; };
+		2B8460761F418F0D0013D26D /* ProductInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B8460751F418F0D0013D26D /* ProductInfoView.xib */; };
+		2B8460791F419DAC0013D26D /* ProcudtDetailedInformationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8460781F419DAC0013D26D /* ProcudtDetailedInformationView.m */; };
+		2B84607C1F419DDD0013D26D /* ProcudtDetailedInformationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B84607B1F419DDD0013D26D /* ProcudtDetailedInformationView.xib */; };
+		2B84607F1F419EB20013D26D /* ProductSpecificationParameterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B84607E1F419EB20013D26D /* ProductSpecificationParameterView.m */; };
+		2B8460811F419EBE0013D26D /* ProductSpecificationParameterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B8460801F419EBE0013D26D /* ProductSpecificationParameterView.xib */; };
 		2B8FD7F31F32CC6F00DAB9B9 /* SelectLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8FD7F21F32CC6F00DAB9B9 /* SelectLocationViewController.m */; };
 		2B90F8941F2EC86200698C38 /* CustomScrollSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B90F8931F2EC86200698C38 /* CustomScrollSelectView.m */; };
 		2B90F8971F2ECFF100698C38 /* SelectTypeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B90F8961F2ECFF100698C38 /* SelectTypeView.m */; };
@@ -226,6 +235,20 @@
 		2B7DCC0A1F358CC400E88B38 /* SelectSpecificationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectSpecificationView.h; sourceTree = "<group>"; };
 		2B7DCC0B1F358CC400E88B38 /* SelectSpecificationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectSpecificationView.m; sourceTree = "<group>"; };
 		2B8460681F41446E0013D26D /* ProdcutDetailBottomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProdcutDetailBottomView.xib; sourceTree = "<group>"; };
+		2B84606A1F417C850013D26D /* ProductDetailTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailTopView.h; sourceTree = "<group>"; };
+		2B84606B1F417C850013D26D /* ProductDetailTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailTopView.m; sourceTree = "<group>"; };
+		2B84606D1F417F7F0013D26D /* ProductDetailTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailTitleView.h; sourceTree = "<group>"; };
+		2B84606E1F417F7F0013D26D /* ProductDetailTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailTitleView.m; sourceTree = "<group>"; };
+		2B8460701F417F880013D26D /* ProductDetailTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductDetailTitleView.xib; sourceTree = "<group>"; };
+		2B8460721F418F040013D26D /* ProductInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductInfoView.h; sourceTree = "<group>"; };
+		2B8460731F418F040013D26D /* ProductInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductInfoView.m; sourceTree = "<group>"; };
+		2B8460751F418F0D0013D26D /* ProductInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductInfoView.xib; sourceTree = "<group>"; };
+		2B8460771F419DAC0013D26D /* ProcudtDetailedInformationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProcudtDetailedInformationView.h; sourceTree = "<group>"; };
+		2B8460781F419DAC0013D26D /* ProcudtDetailedInformationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProcudtDetailedInformationView.m; sourceTree = "<group>"; };
+		2B84607B1F419DDD0013D26D /* ProcudtDetailedInformationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProcudtDetailedInformationView.xib; sourceTree = "<group>"; };
+		2B84607D1F419EB20013D26D /* ProductSpecificationParameterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductSpecificationParameterView.h; sourceTree = "<group>"; };
+		2B84607E1F419EB20013D26D /* ProductSpecificationParameterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductSpecificationParameterView.m; sourceTree = "<group>"; };
+		2B8460801F419EBE0013D26D /* ProductSpecificationParameterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductSpecificationParameterView.xib; sourceTree = "<group>"; };
 		2B8FD7F11F32CC6F00DAB9B9 /* SelectLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectLocationViewController.h; sourceTree = "<group>"; };
 		2B8FD7F21F32CC6F00DAB9B9 /* SelectLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectLocationViewController.m; sourceTree = "<group>"; };
 		2B90F8921F2EC86200698C38 /* CustomScrollSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomScrollSelectView.h; sourceTree = "<group>"; };
@@ -594,6 +617,21 @@
 				2B5AA4BA1F3D444D00C3EE31 /* MoreViewController.xib */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		2B84607A1F419DBD0013D26D /* ProductTopView */ = {
+			isa = PBXGroup;
+			children = (
+				2B84606A1F417C850013D26D /* ProductDetailTopView.h */,
+				2B84606B1F417C850013D26D /* ProductDetailTopView.m */,
+				2B84606D1F417F7F0013D26D /* ProductDetailTitleView.h */,
+				2B84606E1F417F7F0013D26D /* ProductDetailTitleView.m */,
+				2B8460701F417F880013D26D /* ProductDetailTitleView.xib */,
+				2B8460721F418F040013D26D /* ProductInfoView.h */,
+				2B8460731F418F040013D26D /* ProductInfoView.m */,
+				2B8460751F418F0D0013D26D /* ProductInfoView.xib */,
+			);
+			name = ProductTopView;
 			sourceTree = "<group>";
 		};
 		2BA025131F2AD85E003EB25D /* AppBaseTools */ = {
@@ -981,9 +1019,16 @@
 		2BFCFDC81F413B63001DA10D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2B84607A1F419DBD0013D26D /* ProductTopView */,
 				2BFCFDEF1F413B9F001DA10D /* ProdcutDetailBottomView.h */,
 				2BFCFDF01F413B9F001DA10D /* ProdcutDetailBottomView.m */,
 				2B8460681F41446E0013D26D /* ProdcutDetailBottomView.xib */,
+				2B8460771F419DAC0013D26D /* ProcudtDetailedInformationView.h */,
+				2B8460781F419DAC0013D26D /* ProcudtDetailedInformationView.m */,
+				2B84607B1F419DDD0013D26D /* ProcudtDetailedInformationView.xib */,
+				2B84607D1F419EB20013D26D /* ProductSpecificationParameterView.h */,
+				2B84607E1F419EB20013D26D /* ProductSpecificationParameterView.m */,
+				2B8460801F419EBE0013D26D /* ProductSpecificationParameterView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1187,14 +1232,18 @@
 				2B5AA4C11F3D466200C3EE31 /* MoreBaseView.xib in Resources */,
 				2B2E10511F3C015D00092EAA /* CityNotInOpenCityView.xib in Resources */,
 				2BFCFDEC1F413B63001DA10D /* AppProductMainCellView.xib in Resources */,
+				2B8460761F418F0D0013D26D /* ProductInfoView.xib in Resources */,
 				2BBDCC501F34B422003FE167 /* Directions.geojson in Resources */,
+				2B8460711F417F880013D26D /* ProductDetailTitleView.xib in Resources */,
 				2B386F8C1F29B69A00228620 /* LaunchScreen.storyboard in Resources */,
+				2B8460811F419EBE0013D26D /* ProductSpecificationParameterView.xib in Resources */,
 				2B90F8991F2ED5E800698C38 /* SelectViewTitle.xib in Resources */,
 				2B386F891F29B69A00228620 /* Assets.xcassets in Resources */,
 				2BD5D70E1F39871700BE1994 /* unicode_to_hanyu_pinyin.txt in Resources */,
 				2B5AA4BC1F3D444D00C3EE31 /* MoreViewController.xib in Resources */,
 				2B5AA4D41F3DA13600C3EE31 /* SelectAddView.xib in Resources */,
 				2BC14D901F31AE5800919808 /* LoginViewController.xib in Resources */,
+				2B84607C1F419DDD0013D26D /* ProcudtDetailedInformationView.xib in Resources */,
 				2BA709281F3A9FCB00B0B520 /* UserInfoViewController.xib in Resources */,
 				2BB9D9711F407CCA0092A9CF /* AddToCartKeyBoard.xib in Resources */,
 				2B386F841F29B69A00228620 /* Main.storyboard in Resources */,
@@ -1294,6 +1343,7 @@
 				2BC14D8B1F31AE2D00919808 /* LoginViewRootController.m in Sources */,
 				2B3870371F29BC0C00228620 /* UIButton+SRButton.m in Sources */,
 				2BA025171F2AD86B003EB25D /* TipLabel.m in Sources */,
+				2B84606F1F417F7F0013D26D /* ProductDetailTitleView.m in Sources */,
 				2BC14DB81F31CD3500919808 /* SBJsonParser.m in Sources */,
 				2B5AA4E01F3DB83400C3EE31 /* CommonSearchController.m in Sources */,
 				2B580D681F38592400AEA6BF /* ViewController.mm in Sources */,
@@ -1314,10 +1364,12 @@
 				2B90F89C1F2EDC0C00698C38 /* SelectViewTitle.m in Sources */,
 				2B386F7E1F29B69A00228620 /* AppDelegate.m in Sources */,
 				2B7DCC0C1F358CC400E88B38 /* SelectSpecificationView.m in Sources */,
+				2B8460741F418F040013D26D /* ProductInfoView.m in Sources */,
 				2BC14DBE1F31CD3500919808 /* SBJsonStreamWriterAccumulator.m in Sources */,
 				2BFCFDE81F413B63001DA10D /* GoodslistAllModel.m in Sources */,
 				2BFCFDF41F413ED8001DA10D /* ProductDetailViewController.m in Sources */,
 				2BC14DBC1F31CD3500919808 /* SBJsonStreamParserState.m in Sources */,
+				2B84606C1F417C850013D26D /* ProductDetailTopView.m in Sources */,
 				2BFCFDE41F413B63001DA10D /* GetAppProductListBusiness.m in Sources */,
 				2BA025311F2AE470003EB25D /* CustomNavBarView.m in Sources */,
 				2BC14D8F1F31AE5800919808 /* LoginViewController.m in Sources */,
@@ -1331,6 +1383,7 @@
 				2BFCFDEA1F413B63001DA10D /* AppProductMainCell.m in Sources */,
 				2BD5D70C1F39871700BE1994 /* PinYinForObjc.m in Sources */,
 				2BFCFDE71F413B63001DA10D /* GetSelectedProductModel.m in Sources */,
+				2B8460791F419DAC0013D26D /* ProcudtDetailedInformationView.m in Sources */,
 				2BA0253F1F2B06AD003EB25D /* RootViewController.m in Sources */,
 				2BFCFDE61F413B63001DA10D /* AppProductModel.m in Sources */,
 				2B5AA4C91F3D886F00C3EE31 /* LCVerticalBadgeBtn.m in Sources */,
@@ -1357,6 +1410,7 @@
 				2BC14DB91F31CD3500919808 /* SBJsonStreamParser.m in Sources */,
 				2BC14DB71F31CD3500919808 /* NSObject+SBJson.m in Sources */,
 				2BBFAFF51F330181002506D1 /* RegisterBusiness.m in Sources */,
+				2B84607F1F419EB20013D26D /* ProductSpecificationParameterView.m in Sources */,
 				2BBDCC4E1F34AD86003FE167 /* HomeDataModel.m in Sources */,
 				2BBFAFFF1F330AE8002506D1 /* LoginBusiness.m in Sources */,
 				2BA709431F3B1E6300B0B520 /* CityNotInOpenCityView.m in Sources */,

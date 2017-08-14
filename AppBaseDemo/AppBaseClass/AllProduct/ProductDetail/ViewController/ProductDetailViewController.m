@@ -9,17 +9,30 @@
 #import "ProductDetailViewController.h"
 #import "CustomScrollSelectView.h" //顶部
 #import "ProdcutDetailBottomView.h"//底部
-@interface ProductDetailViewController ()<CustomScrollSelectViewDelegate>
-@property (nonatomic ,strong ) CustomScrollSelectView * customScrollSelectView;
+#import "ProductDetailTopView.h"
+#import "ProductSpecificationParameterView.h"
+#import "ProcudtDetailedInformationView.h"
+@interface ProductDetailViewController ()<CustomScrollSelectViewDelegate,UIScrollViewDelegate>
+@property (nonatomic ,strong ) CustomScrollSelectView * customScrollSelectView; //顶部
 @property (nonatomic ,strong ) ProdcutDetailBottomView * prodcutDetailBottomView; //购物车
+@property (nonatomic ,strong ) ProductDetailTopView * productDetailTopView; //头部
+@property (nonatomic ,strong ) ProcudtDetailedInformationView * procudtDetailedInformationView;
+@property (nonatomic ,strong ) ProductSpecificationParameterView * productSpecificationParameterView;
+@property (nonatomic ,strong ) UIScrollView * bgScrollView;
 @end
 
 @implementation ProductDetailViewController
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-//	[self setNavUI];
-//	[self setBottomViewUI];
+
+	[self setBottomViewUI];
+	
+	[self setBgScrollViewUI];
+	
+	[self setNavUI];
+	self.navBarView.hidden = YES;
+	self.prodcutDetailBottomView.hidden = YES;
 }
 
 #pragma mark - 点击反馈
@@ -34,6 +47,37 @@
 	
 	
 	
+}
+- (void)setBgScrollViewUI {
+	[self.view addSubview:self.bgScrollView];
+	
+	[self setUPTopViewUI];
+	[self.view setNeedsLayout];
+	
+	self.procudtDetailedInformationView = [[NSBundle mainBundle]loadNibNamed:@"ProcudtDetailedInformationView" owner:self
+																								 options:nil].firstObject;
+	[self.bgScrollView addSubview:self.procudtDetailedInformationView];
+	
+	
+	self.productSpecificationParameterView = [[NSBundle mainBundle]loadNibNamed:@"ProductSpecificationParameterView" owner:self
+																								 options:nil].firstObject;
+	[self.bgScrollView addSubview:self.productSpecificationParameterView];
+	
+	self.procudtDetailedInformationView.frame = CGRectMake(0, CGRectGetMaxY(_productDetailTopView.frame) , SCREEN_WIDTH, 800);
+	
+	self.productSpecificationParameterView.frame = CGRectMake(0, self.procudtDetailedInformationView.bottom + 10, SCREEN_WIDTH, 800);
+
+	self.bgScrollView.contentSize = CGSizeMake(0, self.productSpecificationParameterView.bottom + 20);
+	
+}
+
+- (void)viewDidLayoutSubviews {
+	[super viewDidLayoutSubviews];
+
+}
+- (void)setUPTopViewUI{
+	_productDetailTopView = [[ProductDetailTopView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 800)];
+	[self.bgScrollView addSubview:_productDetailTopView];
 }
 #pragma mark - 底部去购物车UI
 - (void)setBottomViewUI {
@@ -90,15 +134,16 @@
 	[super didReceiveMemoryWarning];
 	// Dispose of any resources that can be recreated.
 }
-
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+#pragma mark -lazyLoad
+- (UIScrollView *)bgScrollView {
+	if (_bgScrollView == nil) {
+		_bgScrollView = [[UIScrollView alloc] init];
+		_bgScrollView.showsVerticalScrollIndicator = NO;
+		_bgScrollView.showsHorizontalScrollIndicator = NO;
+		_bgScrollView.delegate = self;
+		_bgScrollView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 60);
+	}
+	return _bgScrollView;
+}
 
 @end
