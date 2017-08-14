@@ -64,12 +64,16 @@
 	
 	for (NSInteger i = 0; i < self.dataSourse.count; i++) {
 		
-		UIView *productTypeView = [[UIView alloc] initWithFrame:CGRectMake(_lastX, 0, LabelWidth, 44)];
+		
+		
+		UIView *productTypeView = [[UIView alloc] initWithFrame:CGRectMake(_lastX, 0, SCREEN_WIDTH /self.dataSourse.count, 44)];
+		
 		productTypeView.tag = 1000 + i;
         productTypeView.backgroundColor = [UIColor clearColor];
 		[self.buttonArray addObject:productTypeView];
 		//文字
 		UILabel *lable = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, productTypeView.width, 44)];
+		
 		
 		lable.font = [UIFont systemFontOfSize:14];
 		
@@ -81,17 +85,21 @@
 		
 		lable.text = (NSString *)self.dataSourse[i];
 		
-		//根据字大小 设置width  间隔为7
-		CGRect rect = lable.frame;
-		[lable sizeToFit];
-		CGFloat width = lable.width;
-		lable.frame = rect;
-		lable.width = width;
-		productTypeView.width = lable.width + WIDTH_AUTO(14);
-		lable.x = WIDTH_AUTO(7);
-		if (IS_IPHONE_6_PLUS) {
-			productTypeView.width = lable.width + 20;
-			lable.x = 10;
+		
+		if (self.customTextAlignment == CustomTextAlignmentLeft) {
+			
+			//根据字大小 设置width  间隔为7
+			CGRect rect = lable.frame;
+			[lable sizeToFit];
+			CGFloat width = lable.width;
+			lable.frame = rect;
+			lable.width = width;
+			productTypeView.width = lable.width + WIDTH_AUTO(14);
+			lable.x = WIDTH_AUTO(7);
+			if (IS_IPHONE_6_PLUS) {
+				productTypeView.width = lable.width + 20;
+				lable.x = 10;
+			}
 		}
 		_lastX = CGRectGetMaxX(productTypeView.frame);
 		

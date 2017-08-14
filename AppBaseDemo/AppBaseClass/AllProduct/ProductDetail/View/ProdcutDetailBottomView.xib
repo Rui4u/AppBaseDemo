@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ProdcutDetailBottomView">
+            <rect key="frame" x="0.0" y="0.0" width="417" height="184"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCS-bL-qV7">
+                    <rect key="frame" x="317" y="0.0" width="100" height="184"/>
+                    <color key="backgroundColor" red="0.18823529411764706" green="0.7803921568627451" blue="0.17254901960784313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="Nd7-EW-Zgu"/>
+                    </constraints>
+                    <state key="normal" title="呵呵呵呵">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="clcikGoProductCartButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="O9T-Ze-Mli"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="sb0-i3-46e">
+                    <rect key="frame" x="260" y="0.0" width="42" height="184"/>
+                    <constraints>
+                        <constraint firstAttribute="width" priority="200" constant="42" id="5Ao-Uf-WUa"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xs5-bA-j2g">
+                    <rect key="frame" x="15" y="-15" width="44" height="44"/>
+                    <color key="backgroundColor" red="0.18823529410000001" green="0.78039215689999997" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="44" id="ZCm-7M-hCI"/>
+                        <constraint firstAttribute="height" constant="44" id="cRy-j8-YSY"/>
+                    </constraints>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="15" translatesAutoresizingMaskIntoConstraints="NO" id="swL-WA-dTs">
+                    <rect key="frame" x="44" y="-15" width="15" height="15"/>
+                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="15" id="7g1-oa-lnC"/>
+                        <constraint firstAttribute="width" constant="15" id="ofS-cY-ZB5"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <real key="value" value="7.5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="sb0-i3-46e" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="0Cv-CV-A39"/>
+                <constraint firstItem="xs5-bA-j2g" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="-15" id="7E1-7h-39F"/>
+                <constraint firstItem="HCS-bL-qV7" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Hb6-vJ-wRU"/>
+                <constraint firstItem="swL-WA-dTs" firstAttribute="trailing" secondItem="xs5-bA-j2g" secondAttribute="trailing" id="Itu-0g-JH2"/>
+                <constraint firstItem="HCS-bL-qV7" firstAttribute="leading" secondItem="sb0-i3-46e" secondAttribute="trailing" constant="15" id="S4A-NM-FMa"/>
+                <constraint firstAttribute="bottom" secondItem="HCS-bL-qV7" secondAttribute="bottom" id="aSL-Jn-P8m"/>
+                <constraint firstItem="xs5-bA-j2g" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="jx8-Qv-pCv"/>
+                <constraint firstAttribute="trailing" secondItem="HCS-bL-qV7" secondAttribute="trailing" id="lUN-90-hg8"/>
+                <constraint firstAttribute="bottom" secondItem="sb0-i3-46e" secondAttribute="bottom" id="mZ6-Ef-Lf7"/>
+                <constraint firstItem="swL-WA-dTs" firstAttribute="top" secondItem="xs5-bA-j2g" secondAttribute="top" id="uXC-3Q-pCU"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="clipToBounds" value="NO"/>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="LabelWidth" destination="ofS-cY-ZB5" id="XED-Qs-Bah"/>
+                <outlet property="goProductCartButton" destination="HCS-bL-qV7" id="3O3-LW-vn7"/>
+                <outlet property="numberLabel" destination="swL-WA-dTs" id="pKf-3H-d6t"/>
+                <outlet property="priceLabel" destination="sb0-i3-46e" id="Jt1-CX-F0m"/>
+                <outlet property="productCartButton" destination="xs5-bA-j2g" id="otH-R1-zp1"/>
+            </connections>
+            <point key="canvasLocation" x="-93.5" y="128"/>
+        </view>
+    </objects>
+</document>

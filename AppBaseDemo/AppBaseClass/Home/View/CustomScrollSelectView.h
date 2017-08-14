@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSUInteger, CustomTextAlignment) {
+	CustomTextAlignmentLeft,
+	CustomTextAlignmentCenter
+};
+
 @class CustomScrollSelectView;
 /**
  点击不同产品类型时触发
@@ -32,7 +37,10 @@
 - (void)selectSwitchButtonAtIndex:(NSInteger) index withClick:(BOOL)canClick;
 @property (nonatomic,weak) id <CustomScrollSelectViewDelegate>delegate;
 
-
+/**
+ 默认左侧对其
+ */
+@property (nonatomic ,assign ) CustomTextAlignment customTextAlignment;
 /**
  文字颜色
  */
@@ -51,4 +59,5 @@
  刷新数据
  */
 - (void)reloadeData;
+
 @end

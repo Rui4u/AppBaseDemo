@@ -10,8 +10,8 @@
 #import "RootViewController.h"
 #import "DESEncryption.h"
 #import "LoginViewRootController.h"
-#import "NSObject+SBJson.h"
 #import "MoreViewController.h"
+#import "ProductDetailViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -25,7 +25,7 @@
 	[self setUpBaiduMapManager];
 	
 	
-	RootViewController* rootViewController = [[RootViewController alloc] init];
+	RootViewController* rootViewController = [[ProductDetailViewController alloc] init];
     
 	self.rootViewController = rootViewController;
 	
