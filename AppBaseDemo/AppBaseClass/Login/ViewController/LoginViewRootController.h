@@ -16,6 +16,6 @@
 /**
  登录完成后回调
  */
-@property (nonatomic ,copy ) void (^loginInBlock)(NSString *loginStatus);
+@property (nonatomic ,copy ) void (^loginInBlock)(BOOL loginStatus);
 
 @end

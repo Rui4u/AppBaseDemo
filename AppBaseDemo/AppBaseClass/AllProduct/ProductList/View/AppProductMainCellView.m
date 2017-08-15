@@ -79,8 +79,17 @@
     }else {
         _selectAddView.isDiscount = NO;
     }
-    
-    self.productName.text = [NSString stringWithFormat:@"%@ %@",dataSourse.fullName,dataSourse.feature];
+	
+	if (dataSourse.brand == nil) {
+		dataSourse.brand = @"";
+	}else{
+		dataSourse.brand = [NSString stringWithFormat:@"[%@]",dataSourse.brand];
+	}
+	if (dataSourse.feature == nil) {
+		dataSourse.feature = @"";
+	}
+	self.productName.text = [NSString stringWithFormat:@"%@%@ %@",dataSourse.brand,dataSourse.fullName,dataSourse.feature];
+	
     
     [self.productImage sd_setImageWithURL:[NSURL URLWithString:dataSourse.image] placeholderImage:[UIImage imageNamed:@"guess_bancai"]];
     

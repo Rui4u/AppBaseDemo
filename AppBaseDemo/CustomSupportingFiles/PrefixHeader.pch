@@ -16,4 +16,5 @@
 #import "SRViewConfig.h"
 #import "SRGlobalConfig.h"
 #import "AppDelegate.h"
+#import "CommonNotification.h"
 #endif /* PrefixHeader_pch */

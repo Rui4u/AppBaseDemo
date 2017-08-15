@@ -29,11 +29,13 @@
             UserInfoViewController * userInfoViewController= [[UserInfoViewController alloc] init];
             [self.navigationController pushViewController:userInfoViewController animated:YES];
         }else {
+			
+			[[NSNotificationCenter defaultCenter] postNotificationName:LoginViewRootControllerBlock object:nil userInfo:nil];
+			
             [self dismissViewControllerAnimated:YES completion:nil];
-            
         }
-        
-        
+		
+		
     } completionFailHandler:^(NSString *failMessage) {
         [self showToastWithMessage:failMessage showTime:1];
     } completionError:^(NSString *netWorkErrorMessage) {

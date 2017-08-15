@@ -123,7 +123,16 @@
 
 - (void)setDataSourse:(GoodsList *)dataSourse {
     _dataSourse = dataSourse;
-    self.titleLabel.text = [NSString stringWithFormat:@"%@ %@",dataSourse.fullName,dataSourse.feature];
+	
+	if (dataSourse.brand == nil) {
+			dataSourse.brand = @"";
+	}else{
+		dataSourse.brand = [NSString stringWithFormat:@"[%@]",dataSourse.brand];
+	}
+	if (dataSourse.feature == nil) {
+		dataSourse.feature = @"";
+	}
+	self.titleLabel.text = [NSString stringWithFormat:@"%@%@ %@",dataSourse.brand,dataSourse.fullName,dataSourse.feature];
     for (UIView *view  in self.bottomBgView.subviews) {
         [view removeFromSuperview];
     }

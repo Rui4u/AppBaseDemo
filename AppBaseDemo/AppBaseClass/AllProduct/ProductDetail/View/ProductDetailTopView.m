@@ -7,14 +7,14 @@
 //
 
 #import "ProductDetailTopView.h"
-#import "TopAdvertisementView.h"
+#import "TopProductImageScrollView.h"
 #import "ProductDetailTitleView.h" //title 和加入清单
 #import "SelectAddView.h"
 #import "ProductInfoView.h"
 #import "ProductDetaiModel.h"
 #import "ShoppingCartChangeNumBussiness.h"
-@interface ProductDetailTopView()<AdvertisementViewDelegate,SelectAddViewDelegate>
-@property (nonatomic ,strong ) TopAdvertisementView * bannerScrollView;//banner
+@interface ProductDetailTopView()<ProductDetailTopViewDelegate,SelectAddViewDelegate,ProductImageScrollViewDelegate>
+@property (nonatomic ,strong ) TopProductImageScrollView * bannerScrollView;//banner
 @property (nonatomic ,strong ) ProductDetailTitleView * productDetailTitleView;//名称
 @property (nonatomic ,strong ) UIView * specificationBgView; //选择规格
 
@@ -34,21 +34,15 @@
 	self = [super initWithFrame:frame];
 	if (self) {
         self.goodsDataSourse = goodsDataSourse;
+		//banner
 		[self setUpBannerUI];
-		_productDetailTitleView = [[NSBundle mainBundle] loadNibNamed:@"ProductDetailTitleView" owner:self options:nil].firstObject;
-		[self addSubview:_productDetailTitleView];
-
-        _productDetailTitleView.titleLabel.text = [NSString stringWithFormat:@"%@ %@",goodsDataSourse.fullName,goodsDataSourse.feature];
-
-		[_productDetailTitleView mas_makeConstraints:^(MASConstraintMaker *make) {
-			make.left.equalTo(self.mas_left);
-			make.right.equalTo(self.mas_right);
-			make.top.equalTo(self.bannerScrollView.mas_bottom);
-			make.height.mas_equalTo(44);
-		}];
-		
+		//title
+		[self setUpProductTitleViewUI];
+		//选择规格
 		[self setUpSpecificationUI];
+		//规格价格
 		[self setUpPriceViewUI];
+		//商品信息
 		[self setUpProductInfoViewUI];
         
         [self layoutIfNeeded];
@@ -58,6 +52,29 @@
 		self.height = _productInfoView.bottom + 10;
 	}
 	return self;
+}
+
+- (void) setUpProductTitleViewUI{
+	_productDetailTitleView = [[NSBundle mainBundle] loadNibNamed:@"ProductDetailTitleView" owner:self options:nil].firstObject;
+	[self addSubview:_productDetailTitleView];
+	
+	if (_goodsDataSourse.brand == nil) {
+		_goodsDataSourse.brand = @"";
+	}else{
+		_goodsDataSourse.brand = [NSString stringWithFormat:@"[%@]",_goodsDataSourse.brand];
+	}
+	if (_goodsDataSourse.feature == nil) {
+		_goodsDataSourse.feature = @"";
+	}
+	
+	_productDetailTitleView.titleLabel.text = [NSString stringWithFormat:@"%@%@ %@",_goodsDataSourse.brand,_goodsDataSourse.fullName,_goodsDataSourse.feature];
+	
+	[_productDetailTitleView mas_makeConstraints:^(MASConstraintMaker *make) {
+		make.left.equalTo(self.mas_left);
+		make.right.equalTo(self.mas_right);
+		make.top.equalTo(self.bannerScrollView.mas_bottom);
+		make.height.mas_equalTo(44);
+	}];
 }
 - (void)layoutSubviews {
 	[super layoutSubviews];
@@ -130,6 +147,9 @@
 
 -(void)setUpBannerUI{
 	[self addSubview:self.bannerScrollView];
+	NSArray * bannerArray = [self.goodsDataSourse.image componentsSeparatedByString:@","];
+	self.bannerScrollView.dataSourse = bannerArray;
+	[self.bannerScrollView.collectionView reloadData];
 }
 
 - (void)setUpSpecificationUI{
@@ -211,10 +231,10 @@
             
         }];
 }
-- (TopAdvertisementView *)bannerScrollView {
+- (TopProductImageScrollView *)bannerScrollView {
 	if (!_bannerScrollView) {
 		
-		_bannerScrollView = [[TopAdvertisementView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, AutoHeight(183))];
+		_bannerScrollView = [[TopProductImageScrollView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, AutoHeight(183))];
 		_bannerScrollView.delegate = self;
 	}
 	return _bannerScrollView;

@@ -99,6 +99,7 @@
 - (void) showLoginViewController:(void (^ __nullable )( BOOL loginStatus)) loginBlock
 {
     LoginViewRootController * login = [[LoginViewRootController alloc] init];
+	login.loginInBlock = loginBlock;
     [self presentViewController:login animated:YES completion:nil];
 }
 

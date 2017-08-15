@@ -65,7 +65,9 @@
 - (void)pullToRefresh {
 
     if (isNotLogin) {
-        [self showLoginViewController:nil];
+        [self showLoginViewController:^(BOOL loginStatus) {
+			[self.backScrollView.mj_header beginRefreshing];
+		}];
         [self.backScrollView.mj_header endRefreshing];
         return;
     }

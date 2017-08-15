@@ -9,7 +9,6 @@
 
 #import "LoginViewRootController.h"
 #import "LoginViewController.h"
-#import "CommonNotification.h"
 #import "UserInfoViewController.h"
 @interface LoginViewRootController ()
 
@@ -50,6 +49,9 @@
 
 - (void)loginViewRootControllerBlock:(NSNotification *)notification {
 	NSLog(@"登录后回调");
+	if (self.loginInBlock) {
+		self.loginInBlock(YES);
+	}
 	
 }
 

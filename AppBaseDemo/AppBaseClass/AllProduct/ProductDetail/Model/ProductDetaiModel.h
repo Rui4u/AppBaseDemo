@@ -15,12 +15,15 @@
 @property (nonatomic , copy) NSString              * modifyDate;
 @property (nonatomic , copy) NSString              * spec;
 @property (nonatomic , copy) NSString              * listId;
+@property (nonatomic , copy) NSString              * image;
 @property (nonatomic , strong) NSArray<Guige *>              * guige;
 @property (nonatomic , copy) NSString              * baseSpec;
-@property (nonatomic , copy) NSString              * goodsState;
+@property (nonatomic , copy) NSString              * brand;
+@property (nonatomic ,copy ) NSString * place;
+@property (nonatomic , copy) NSString              * goodsFresh;
 @property (nonatomic , copy) NSString              * discount;
 @property (nonatomic , copy) NSString              * avgPrice;
-@property (nonatomic , copy) NSString              * goodsFresh;
+@property (nonatomic , copy) NSString              * goodsState;
 @property (nonatomic , copy) NSString              * goodsAlias;
 @property (nonatomic , copy) NSString              * oldPrice;
 @property (nonatomic , copy) NSString              * productCategory;
@@ -34,10 +37,13 @@
 @property (nonatomic , copy) NSString              * introduction;
 @property (nonatomic , copy) NSString              * createDate;
 @property (nonatomic , copy) NSString              * isGift;
+@property (nonatomic , copy) NSString              * detailsImage;
 @property (nonatomic , copy) NSString              * fullName;
 @property (nonatomic , copy) NSString              * seoKeywords;
+@property (nonatomic ,copy ) NSString * producer;
 
 @end
+
 
 @interface ProductDetaiModel :NSObject
 @property (nonatomic , strong) Goods              * goods;

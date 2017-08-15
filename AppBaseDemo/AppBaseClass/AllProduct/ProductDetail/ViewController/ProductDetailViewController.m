@@ -14,6 +14,7 @@
 #import "ProcudtDetailedInformationView.h"
 #import "ProductDetailBussiness.h"
 #import  "ProductDetaiModel.h"
+#import  "ProductDetailGuiGeInfo.h"
 @interface ProductDetailViewController ()<CustomScrollSelectViewDelegate,UIScrollViewDelegate>
 @property (nonatomic ,strong ) CustomScrollSelectView * customScrollSelectView; //顶部
 @property (nonatomic ,strong ) ProdcutDetailBottomView * prodcutDetailBottomView; //购物车
@@ -93,19 +94,78 @@
 	[self setUPTopViewUI];
 	[self.view setNeedsLayout];
 	
-	self.procudtDetailedInformationView = [[NSBundle mainBundle]loadNibNamed:@"ProcudtDetailedInformationView" owner:self
-																								 options:nil].firstObject;
+	
+	self.procudtDetailedInformationView = [[NSBundle mainBundle]loadNibNamed:@"ProcudtDetailedInformationView"
+																	   owner:self
+																	 options:nil].firstObject;
 	[self.bgScrollView addSubview:self.procudtDetailedInformationView];
-	
-	
-	self.productSpecificationParameterView = [[NSBundle mainBundle]loadNibNamed:@"ProductSpecificationParameterView" owner:self
-																								 options:nil].firstObject;
-	[self.bgScrollView addSubview:self.productSpecificationParameterView];
-	
-	self.procudtDetailedInformationView.frame = CGRectMake(0, CGRectGetMaxY(_productDetailTopView.frame) , SCREEN_WIDTH, 800);
-	
-	self.productSpecificationParameterView.frame = CGRectMake(0, self.procudtDetailedInformationView.bottom + 10, SCREEN_WIDTH, 800);
+	CGFloat tempHeight = 50;
+	NSArray * detailInfoImage = [self.goodsDataSourse.detailsImage componentsSeparatedByString:@","];
+	for (int i = 0; i <detailInfoImage.count; i++) {
+		
+		UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 50 + i * (AutoHeight(200) + 10), SCREEN_WIDTH, AutoHeight(300))];
+		[imageView sd_setImageWithURL:[NSURL URLWithString:detailInfoImage[i]] placeholderImage:nil];
+		[_procudtDetailedInformationView addSubview:imageView];
+		tempHeight = imageView.bottom;
+	}
+	self.procudtDetailedInformationView.frame = CGRectMake(0, CGRectGetMaxY(_productDetailTopView.frame) , SCREEN_WIDTH, tempHeight);
 
+	
+	
+	
+	self.productSpecificationParameterView = [[NSBundle mainBundle]loadNibNamed:@"ProductSpecificationParameterView"
+																		  owner:self
+																		options:nil].firstObject;
+	
+	
+	[self.bgScrollView addSubview:self.productSpecificationParameterView];
+	NSMutableArray * tempArray = [NSMutableArray arrayWithCapacity:1];
+
+	
+	if (self.goodsDataSourse.brand != nil && ![self.goodsDataSourse.brand isEqualToString:@""]) {
+	[tempArray addObject:@{	@"text":self.goodsDataSourse.brand,
+						   @"title":@"品牌"
+							}];
+	}
+
+	[tempArray addObject:@{	@"text":[NSString stringWithFormat:@"%@(%@斤)",self.goodsDataSourse.baseSpec,self.goodsDataSourse.guige.firstObject.totalWeight],
+								@"title":@"规格"
+								}];
+	
+	if (self.goodsDataSourse.feature != nil) {
+		[tempArray addObject:@{	@"text":self.goodsDataSourse.feature,
+								@"title":@"等级"
+								}];
+	}
+	if (self.goodsDataSourse.baseSpec != nil) {
+		[tempArray addObject:@{	@"text":self.goodsDataSourse.baseSpec,
+								@"title":@"包装"
+								}];
+	}
+	if (self.goodsDataSourse.place != nil) {
+		[tempArray addObject:@{	@"text":self.goodsDataSourse.place,
+								@"title":@"生产地"
+								}];
+	}
+	if (self.goodsDataSourse.producer != nil) {
+		[tempArray addObject:@{	@"text":self.goodsDataSourse.producer,
+								@"title":@"生产商"
+								}];
+	}
+	
+	
+	
+	for (int i= 0; i <tempArray.count; i ++) {
+		ProductDetailGuiGeInfo * productDetailGuiGeInfo = [[NSBundle mainBundle]loadNibNamed:@"ProductDetailGuiGeInfo" owner:self options:nil].firstObject;
+		productDetailGuiGeInfo.frame = CGRectMake(0, 50 + i * 40, SCREEN_WIDTH, 40);
+		productDetailGuiGeInfo.guigeTitle.text = tempArray[i][@"title"];
+		productDetailGuiGeInfo.guigeTextLabel.text = tempArray[i][@"text"];
+		tempHeight = productDetailGuiGeInfo.bottom + 10;
+		[self.productSpecificationParameterView addSubview:productDetailGuiGeInfo];
+	}
+	
+	self.productSpecificationParameterView.frame = CGRectMake(0, self.procudtDetailedInformationView.bottom + 10, SCREEN_WIDTH, tempHeight);
+	
 	self.bgScrollView.contentSize = CGSizeMake(0, self.productSpecificationParameterView.bottom + 20);
 	
 }
@@ -115,6 +175,7 @@
 
 }
 - (void)setUPTopViewUI{
+	
 	_productDetailTopView = [[ProductDetailTopView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 800) withGootDataSourse:self.goodsDataSourse];
 	[self.bgScrollView addSubview:_productDetailTopView];
     
