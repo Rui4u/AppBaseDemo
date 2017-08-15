@@ -78,7 +78,7 @@
 @end
 
 @interface ProductionInfoList :NSObject
-@property (nonatomic , strong) NSArray<Goods *>              * goodsList;
+@property (nonatomic , strong) NSMutableArray<Goods *>              * goodsList;
 @property (nonatomic , copy) NSString              * goodsBaseType;
 
 @end
@@ -95,6 +95,6 @@
 
 @interface HomeDataModel :NSObject
 @property (nonatomic , strong) NSArray<ActivityList *>              * activityList;
-@property (nonatomic , strong) NSArray<ProductionInfoList *>              * ProductionInfoList;
+@property (nonatomic , strong) NSMutableArray<ProductionInfoList *>              * ProductionInfoList;
 @property (nonatomic , strong) NSArray<BannerList *>              * bannerList;
 @end

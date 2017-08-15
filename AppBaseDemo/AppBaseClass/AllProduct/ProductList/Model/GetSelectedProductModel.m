@@ -11,7 +11,7 @@
 @implementation GetSelectedProductModel
 + (NSDictionary *)objectClassInArray{
     return @{
-             @"goodsListInfoList":@"GoodsList",
+             @"goodsListInfoList":@"Goods",
              };
 }
 @end

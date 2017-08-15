@@ -51,9 +51,15 @@
     _dataSourse = dataSourse;
     
    
-    
-    
-    self.selectSpecificationView.totolPriceLabel.text = [NSString stringWithFormat:@"￥%@/%@(%@斤)",dataSourse.guige[self.indexPath.row].currentPrice,dataSourse.baseSpec,dataSourse.guige[self.indexPath.row].totalWeight];
+    if (dataSourse.brand == nil) {
+        self.selectSpecificationView.totolPriceLabel.text = [NSString stringWithFormat:@"%@ %@",dataSourse.fullName,dataSourse.feature];
+        
+    }else{
+        if (dataSourse.feature == nil) {
+            dataSourse.feature = @"";
+        }
+        self.selectSpecificationView.totolPriceLabel.text = [NSString stringWithFormat:@"[%@]%@ %@",dataSourse.brand,dataSourse.fullName,dataSourse.feature];
+    }
     
     self.selectSpecificationView.averagePrice.text = [NSString stringWithFormat:@"￥%@/%@",dataSourse.guige[self.indexPath.row].avgPrice,dataSourse.baseSpec];
     
@@ -63,6 +69,7 @@
     }else {
         self.selectSpecificationView.showDisCountView = NO;
     }
+    self.selectSpecificationView.carGoodsNum = dataSourse.cartTotalNum;
     
     
 }

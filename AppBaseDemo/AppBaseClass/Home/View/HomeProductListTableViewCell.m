@@ -81,7 +81,10 @@
 
     
     UIButton * deleteButton = [[UIButton alloc] initWithFrame:CGRectMake(self.topBgView.width - 44 - 15, 0, self.topBgView.height, self.topBgView.height)];
+    [deleteButton setTitleColor:[UIColor colorWithHexString:Main_Font_SecondBlack_Color] forState:UIControlStateNormal];
+    [deleteButton addTarget:self action:@selector(clickDeteleButton:) forControlEvents:UIControlEventTouchUpInside];
 	[deleteButton setTitle:@"删除" forState:UIControlStateNormal];
+    deleteButton.titleLabel.font = [UIFont systemFontOfSize:12];
     [self.topBgView addSubview:deleteButton];
     
     
@@ -125,14 +128,15 @@
     _dataSourse = dataSourse;
 	
 	if (dataSourse.brand == nil) {
-			dataSourse.brand = @"";
+        self.titleLabel.text = [NSString stringWithFormat:@"%@ %@",dataSourse.fullName,dataSourse.feature];
+			
 	}else{
-		dataSourse.brand = [NSString stringWithFormat:@"[%@]",dataSourse.brand];
+        if (dataSourse.feature == nil) {
+            dataSourse.feature = @"";
+        }
+        self.titleLabel.text = [NSString stringWithFormat:@"[%@]%@ %@",dataSourse.brand,dataSourse.fullName,dataSourse.feature];
 	}
-	if (dataSourse.feature == nil) {
-		dataSourse.feature = @"";
-	}
-	self.titleLabel.text = [NSString stringWithFormat:@"%@%@ %@",dataSourse.brand,dataSourse.fullName,dataSourse.feature];
+
     for (UIView *view  in self.bottomBgView.subviews) {
         [view removeFromSuperview];
     }
@@ -153,7 +157,6 @@
         Guige * guige = dataSourse.guige[i];
         
         SelectSpecificationView * selectSpecificationView = [[SelectSpecificationView alloc] initWithFrame:CGRectMake(8,i *selectViewHeight,self.bottomBgView.width- 8,65)];
-		selectSpecificationView.carGoodsNum = guige.carGoodsNum;
 		selectSpecificationView.index = i;
         selectSpecificationView.tag = 1000+ i;
         UITapGestureRecognizer *tapGesture=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(event:)];
@@ -181,6 +184,9 @@
 		}else {
 			selectSpecificationView.showDisCountView = NO;
 		}
+        
+        selectSpecificationView.carGoodsNum = guige.carGoodsNum;
+
         
         if (i != 0) {
             UIView *imaginaryLine= [[UIView alloc] initWithFrame:CGRectMake(0,0,SCREEN_WIDTH - 80,.5)];
@@ -224,5 +230,11 @@
         [self.delegate ClickSelectSpecificationWithIndexPath:_indexPath];
     }
 	
+}
+- (void)clickDeteleButton:(UIButton *)sender {
+    if ([self.delegate respondsToSelector:@selector(clickDeteleGoodsWith:)]) {
+        [self.delegate clickDeteleGoodsWith:self.indexPath];
+    }
+
 }
 @end

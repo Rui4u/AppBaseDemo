@@ -21,4 +21,7 @@
  */
 @property (nonatomic ,strong) Goods * goodsDataSourse;
 - (instancetype)initWithFrame:(CGRect)frame withGootDataSourse:(Goods *)goodsDataSourse;
+
+@property (nonatomic ,copy )void(^clickAddProductListButton)(UIButton *sender);
+
 @end

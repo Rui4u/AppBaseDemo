@@ -7,6 +7,7 @@
 //
 
 #import "SRCustomTabBarView.h"
+#import "LCVerticalBadgeBtn.h"
 #define iconButtonTag 10000
 
 @interface SRCustomTabBarView()<CAAnimationDelegate>
@@ -52,24 +53,28 @@
 	self.backgroundColor = [UIColor whiteColor];
 	NSArray * imageArray = @[@"tabBarIcon_homeNormal",@"tabBarIcon_MineNormal",@"tabBarIcon_ChannelNormal",@"tabBarIcon_moreNormal"];
 	NSArray * imageSelectedArray = @[@"tabBarIcon_homeSelecetd",@"tabBarIcon_MineSelecetd",@"tabBarIcon_ChannelSelected",@"tabBarIcon_moreSelecetd"];
-	self.imageInArray = @[@"tabBarIcon_homeSelecetd",@"tabBarIcon_MineSelecetd",@"tabBarIcon_ChannelSelected",@"tabBarIcon_moreSelecetd"];
+
 	NSArray * nameArray = @[@"首页",@"我的",@"频道",@"更多"];
 	
 	for (int  i = 0; i < imageArray.count; i++ ) {
 		
 		CGFloat width = SCREEN_WIDTH / imageArray.count;
 		
-		UIButton *iconButton = [[UIButton alloc] initWithFrame:CGRectMake(width * i, 0, width, self.height)];
+		LCVerticalBadgeBtn *iconButton = [[LCVerticalBadgeBtn alloc] initWithFrame:CGRectMake(width * i, 0, width, self.height)];
 		iconButton.imageEdgeInsets = UIEdgeInsetsMake(-5, 0, 5, 0);
 		iconButton.tag = iconButtonTag + i;
+        
 		[iconButton setImage:[UIImage imageNamed:imageArray[i]] forState:UIControlStateNormal];
 		[iconButton setImage:[UIImage imageNamed:imageSelectedArray[i]] forState:UIControlStateSelected];
 		[iconButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
 		iconButton.titleLabel.font = [UIFont systemFontOfSize:12];
 		[iconButton addTarget:self action:@selector(selectCustomTabBarButton:) forControlEvents:UIControlEventTouchUpInside];
 		[self addSubview:iconButton];
-		
-		
+        if ( i == 2) {
+            self.shoppingCartButton = iconButton;
+            iconButton.badgeString = @"50";
+        }
+    
 		UILabel * iconButtonLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, iconButton.height -15, iconButton.width, 15)];
 		iconButtonLabel.textAlignment = NSTextAlignmentCenter;
 		iconButtonLabel.font = [UIFont systemFontOfSize:10];
@@ -105,6 +110,7 @@
 	if (self.animating) {
 		return;
 	}
+    sender.selected = YES;
 	self.currentButton = sender;
 	
 	if (_lastButton == nil ) {
@@ -126,8 +132,17 @@
 		return;
 	}
 	
+    
+				
 	_lastButton.selected = NO;
-	[self selectButtonAnimation:sender];
+    
+    NSInteger currentTag = _currentButton.tag - iconButtonTag;
+    NSInteger lastTag = _lastButton.tag - iconButtonTag;
+    if ([self.delegate respondsToSelector:@selector(selectCustomTabBarAtCurrentIndex:withLastIndex:)]) {
+        [self.delegate selectCustomTabBarAtCurrentIndex:currentTag withLastIndex:lastTag];
+        _currentButton.selected = YES;
+    }
+    _lastButton = _currentButton;
 	
 }
 

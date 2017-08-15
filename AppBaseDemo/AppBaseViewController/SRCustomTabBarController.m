@@ -14,10 +14,10 @@
 {
 	self = [super init];
 	if (self) {
-//		self.tabBar.hidden = YES;
-//		SRCustomTabBarView * tabBarView = [[SRCustomTabBarView alloc] init];
-//		self.tabBarView = tabBarView;
-//		[self.view addSubview:tabBarView];
+		self.tabBar.hidden = YES;
+		SRCustomTabBarView * tabBarView = [[SRCustomTabBarView alloc] init];
+		self.tabBarView = tabBarView;
+		[self.view addSubview:tabBarView];
 	}
 	return self;
 }

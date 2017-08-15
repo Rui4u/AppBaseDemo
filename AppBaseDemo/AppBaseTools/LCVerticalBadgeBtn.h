@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface LCVerticalBadgeBtn : UIButton
-@property (nonatomic,retain)UILabel * badgeLabel;
+@property (nonatomic,strong)UILabel * badgeLabel;
 @property (nonatomic,copy)NSString * badgeString;
 @end

@@ -12,5 +12,5 @@
 @property (weak, nonatomic) IBOutlet UIButton *addProductListButton;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
-@property (nonatomic ,copy )void(^clickAddProductListButton)(NSString *info);
+@property (nonatomic ,copy )void(^clickAddProductListButton)(UIButton *sender);
 @end

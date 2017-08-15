@@ -14,7 +14,7 @@
 - (IBAction)clickAddToProductList:(UIButton *)sender {
 	
 	if (self.clickAddProductListButton) {
-		self.clickAddProductListButton(@"1");
+		self.clickAddProductListButton(sender);
 	}
 }
 

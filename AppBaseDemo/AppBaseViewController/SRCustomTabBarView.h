@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LCVerticalBadgeBtn.h"
 @protocol SRCustomTabBarViewDelegate <NSObject>
 
 
@@ -29,7 +30,10 @@
  点击代理
  */
 @property (nonatomic ,weak ) id<SRCustomTabBarViewDelegate> delegate;
-
+/**
+ 当前button
+ */
+@property (nonatomic ,strong ) LCVerticalBadgeBtn * shoppingCartButton;
 /**
  设置默认tabbar
  */

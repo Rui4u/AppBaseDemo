@@ -69,7 +69,6 @@
 		_goodsDataSourse.feature = @"";
 	}
 	
-	_productDetailTitleView.titleLabel.text = [NSString stringWithFormat:@"%@%@ %@",_goodsDataSourse.brand,_goodsDataSourse.fullName,_goodsDataSourse.feature];
 	
 	[_productDetailTitleView mas_makeConstraints:^(MASConstraintMaker *make) {
 		make.left.equalTo(self.mas_left);
@@ -77,6 +76,18 @@
 		make.top.equalTo(self.bannerScrollView.mas_bottom);
 		make.height.mas_equalTo(44);
 	}];
+    
+    _productDetailTitleView.titleLabel.text = [NSString stringWithFormat:@"%@%@ %@",_goodsDataSourse.brand,_goodsDataSourse.fullName,_goodsDataSourse.feature];
+    
+    if (![_goodsDataSourse.listId isEqualToString:@"0"]) { //已加入清单
+        _productDetailTitleView.addProductListButton.selected = YES;
+        _productDetailTitleView.addProductListButton.enabled = NO;
+    }
+    __weak typeof(self) weakSelf = self;
+     _productDetailTitleView.clickAddProductListButton = ^(UIButton *sender) {
+         weakSelf.clickAddProductListButton(sender);
+     };
+//
 }
 - (void)layoutSubviews {
 	[super layoutSubviews];

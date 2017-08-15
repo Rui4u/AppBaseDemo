@@ -16,7 +16,9 @@
     
     //NNSLog(@"label--%@",label);
     if (self.badgeString && ![self.badgeString isEqualToString:@"0"]) {
-        
+        if (badgeString.integerValue > 99) {
+            _badgeString = badgeString = @"99+";
+        }
        // Drawing code
         if (self.badgeLabel) {
             [self.badgeLabel removeFromSuperview];
@@ -29,8 +31,14 @@
             self.badgeLabel.textColor = [UIColor whiteColor];
             self.badgeLabel.textAlignment = NSTextAlignmentCenter;
             self.badgeLabel.font = [UIFont systemFontOfSize:10];
-
+        self.badgeLabel.backgroundColor = [UIColor redColor];
+        
+    
+        if (badgeString.length < 2) {
             self.badgeLabel.bounds = CGRectMake(0, 0, 16, 16);
+        }else {
+            self.badgeLabel.bounds = CGRectMake(0, 0, badgeString.length * 10, 16);
+        }
         
             [self addSubview:self.badgeLabel];
         

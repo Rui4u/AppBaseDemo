@@ -77,6 +77,20 @@
 
 }
 
+- (void)setCarGoodsNum:(NSString *)carGoodsNum {
+    _carGoodsNum = carGoodsNum;
+    
+    if (carGoodsNum.integerValue > 0) {
+        self.reduceButton.hidden = NO;
+        self.numberLabel.hidden = NO;
+        self.addButton.hidden = NO;
+        self.disCountButton.hidden = YES;
+        
+        
+    }
+    self.numberLabel.text = carGoodsNum;
+}
+
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
 
     AddToCartKeyBoard * addToCartKeyBoard = [[NSBundle mainBundle] loadNibNamed:@"AddToCartKeyBoard" owner:self options:nil].lastObject;
@@ -100,18 +114,6 @@
     
     
 }
-- (void)setCarGoodsNum:(NSString *)carGoodsNum {
-	_carGoodsNum = carGoodsNum;
-	
-	if (carGoodsNum.integerValue > 0) {
-		self.reduceButton.hidden = NO;
-		self.numberLabel.hidden = NO;
-		
-	}else {
-		self.reduceButton.hidden = YES;
-		self.numberLabel.hidden = YES;
-	}
-	self.numberLabel.text = carGoodsNum;
-}
+
 
 @end

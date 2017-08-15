@@ -27,6 +27,11 @@
  */
 -(void)selectSpecificationWithIndexPath:(NSIndexPath *)indexPath;
 @end
+
+
+/**
+ 产品列表cell
+ */
 @interface AppProdcutSelectSpecificationCell : UITableViewCell
 /**
  <#Description#>

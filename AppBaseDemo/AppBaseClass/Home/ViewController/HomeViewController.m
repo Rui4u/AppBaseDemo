@@ -19,6 +19,7 @@
 #import "ProductDetailViewController.h"
 #import "AddToShoppingCartAnimation.h"
 #import "DeleteCartBusiness.h"
+#import "ProductRemoveListBussiness.h"
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource,HomeProductListTableViewCellDelegate,SelectTypeViewDelegate>
 @property (nonatomic ,strong ) HomeTopView * topView;
 @property (nonatomic ,strong ) SelectTypeView * selectTypeView;
@@ -88,7 +89,6 @@
 		 }
 		 self.selectTypeView.dataSourse = selectTitle;
 		 
-		 
 	 } completionFailHandler:^(NSString *failMessage) {
 		 [self showToastWithMessage:failMessage showTime:1];
 		 [self.backScrollView.mj_header endRefreshing];
@@ -150,6 +150,22 @@
 	
 
 }
+#pragma mark 删除清单
+- (void)clickDeteleGoodsWith:(NSIndexPath *)indexPath {
+
+    [ProductRemoveListBussiness requestProductRemoveListWithToken:TOKEN goodsId:self.dataSourse.ProductionInfoList[indexPath.section].goodsList[indexPath.row].goodsID completionSuccessHandler:^(BOOL succeed) {
+        NSLog(@"删除清单成功");
+    [self.dataSourse.ProductionInfoList[indexPath.section].goodsList removeObjectAtIndex:indexPath.row];
+    
+    [(UITableView *)self.frontScrollView reloadData];
+        
+    } completionFailHandler:^(NSString *failMessage) {
+        [self showToastWithMessage:failMessage showTime:1];
+    } completionError:^(NSString *netWorkErrorMessage) {
+        [self showToastWithMessage:netWorkErrorMessage showTime:1];
+    }];
+
+}
 
 #pragma mark - 去详情
 - (void)clickGoToProductDetailWith:(NSIndexPath *)indexPath andGuiGeIndex:(NSInteger)index {
@@ -188,12 +204,15 @@
 #pragma mark - 点击添加删除购物车
 -(void)changeProcutNumberBagWithCount:(NSString *)count withIndexPath:(NSIndexPath *)indexPath andTypeIndex:(NSInteger)typeIndex withRect:(CGRect)rect{
     
+    
     Goods * selectGoods = self.dataSourse.ProductionInfoList[typeIndex].goodsList[indexPath.section];
     Guige * selectGuige = selectGoods.guige[indexPath.row];
     
-    NSInteger tempAddNum =  selectGuige.carGoodsNum.integerValue;
-    selectGuige.tempAddGoodsNum = [NSString stringWithFormat:@"%tu",tempAddNum];
+    NSInteger tempAddNum = count.integerValue - selectGuige.carGoodsNum.integerValue;
 
+    [APP_DELEGATE.customTabBar.tabBarView.shoppingCartButton setBadgeString:[NSString stringWithFormat:@"%tu",APP_DELEGATE.customTabBar.tabBarView.shoppingCartButton.badgeString.integerValue + tempAddNum]];
+    
+    selectGuige.carGoodsNum = count;
     
     if(count.integerValue == 0){
         NSLog(@"删除");
@@ -224,8 +243,9 @@
 		
 		if (count.integerValue > self.count) {
 			
-	
-				[[AddToShoppingCartAnimation sharedAnimation] animationWith:self.view andPoint:rect.origin andEndPoint:CGPointMake(SCREEN_WIDTH/4 * 3, SCREEN_HEIGHT - 44)];
+            CGRect endRect = [APP_DELEGATE.customTabBar.tabBarView.shoppingCartButton convertRect: APP_DELEGATE.customTabBar.tabBarView.shoppingCartButton.bounds toView:APP_DELEGATE.window];
+            
+				[[AddToShoppingCartAnimation sharedAnimation] animationWith:self.view andPoint:rect.origin andEndPoint:CGPointMake(endRect.origin.x +endRect.size.width, endRect.origin.y)];
 		}
 		self.count = count.integerValue;
 		

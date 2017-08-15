@@ -39,7 +39,10 @@
 #define kAddCarBussinessUrl            [NSString stringWithFormat :@"%@/gs/shopCar/addCar?",kHTTP_HOST_URL]
 //删除购物车
 #define kDleteCarBussinessUrl            [NSString stringWithFormat :@"%@/gs/shopCar/deleteCar?",kHTTP_HOST_URL]
-
+//添加清单
+#define kProductAddListBussinessUrl  [NSString stringWithFormat :@"%@/gs/store/addList?",kHTTP_HOST_URL]
+//移除清单
+#define kProductRemoveListBussinessUrl [NSString stringWithFormat :@"%@/gs/store/removeList?",kHTTP_HOST_URL]
 
 NS_ASSUME_NONNULL_BEGIN
 typedef void (^netWorkFailBlock)(NSString * netWorkMeeage);

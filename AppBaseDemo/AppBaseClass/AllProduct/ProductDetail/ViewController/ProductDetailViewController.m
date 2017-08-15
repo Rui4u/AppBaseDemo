@@ -19,6 +19,7 @@
 #import "AddToShoppingCartAnimation.h"
 #import "ShoppingCartChangeNumBussiness.h"
 #import "DeleteCartBusiness.h"
+#import "ProductAddListBussiness.h"
 @interface ProductDetailViewController () <ProductDetailTopViewDelegate,CustomScrollSelectViewDelegate,UIScrollViewDelegate>
 @property (nonatomic ,strong ) CustomScrollSelectView * customScrollSelectView; //顶部
 @property (nonatomic ,strong ) ProdcutDetailBottomView * prodcutDetailBottomView; //购物车
@@ -279,6 +280,22 @@
     
     [_bgScrollView addSubview:_productDetailTopView];
     [_productDetailTopView addSubview:backButton];
+    
+    __weak typeof(self) weakSelf = self;
+    _productDetailTopView.clickAddProductListButton = ^(UIButton *sender) {
+        sender.selected = YES;
+        [ProductAddListBussiness requestProductAddListWithToken:TOKEN goodsId:weakSelf.goodsId completionSuccessHandler:^(BOOL succeed) {
+            NSLog(@"加入清单成功");
+            
+            sender.selected = succeed;
+            sender.enabled = !succeed;
+            
+        } completionFailHandler:^(NSString *failMessage) {
+            [weakSelf showToastWithMessage:failMessage showTime:1];
+        } completionError:^(NSString *netWorkErrorMessage) {
+            [weakSelf showToastWithMessage:netWorkErrorMessage showTime:1];
+        }];
+    };
 }
 
 #pragma mark - 底部去购物车UI

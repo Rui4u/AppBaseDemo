@@ -12,7 +12,6 @@
 #import "AppProductMainCell.h"
 #import "AppProdcutSelectSpecificationCell.h"
 #import "AppProductMainCellView.h"
-#import "AppProductModel.h"
 #import "GetAppProductListBusiness.h"
 #import "GoodslistAllModel.h"
 #import "GetSelectGoodsListBussiness.h"

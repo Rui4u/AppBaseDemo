@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShoppingCartGuiGeTableViewCell" rowHeight="204" id="KGk-i7-Jjw" customClass="ShoppingCartGuiGeTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="562" height="204"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="562" height="203.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AcS-iV-J4L" userLabel="lineView">
+                        <rect key="frame" x="0.0" y="203" width="562" height="1"/>
+                        <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="AXC-gz-Fag"/>
+                        </constraints>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="88E-1g-OIG">
+                        <rect key="frame" x="10" y="90.5" width="23" height="23"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="23" id="gB5-qK-u2b"/>
+                            <constraint firstAttribute="height" constant="23" id="qX6-PI-fMR"/>
+                        </constraints>
+                        <state key="normal" image="check_box_default"/>
+                        <state key="selected" image="check_box_right"/>
+                        <connections>
+                            <action selector="clickGuigeSelectButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="vXu-ld-qPy"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥27.80/袋(4斤)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HKQ-bD-Dga">
+                        <rect key="frame" x="43" y="12" width="511" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22" id="WMJ-jy-WEt"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥6.95/斤" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ykc-Ei-zR9">
+                        <rect key="frame" x="43" y="170" width="511" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="8Ai-O0-Zu9"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="HKQ-bD-Dga" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="0Xq-6g-nvd"/>
+                    <constraint firstAttribute="trailing" secondItem="AcS-iV-J4L" secondAttribute="trailing" id="2EU-R5-iTM"/>
+                    <constraint firstAttribute="bottom" secondItem="AcS-iV-J4L" secondAttribute="bottom" id="3GZ-GZ-Ziy"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="HKQ-bD-Dga" secondAttribute="trailing" id="9vC-1f-kcU"/>
+                    <constraint firstItem="88E-1g-OIG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="IiG-pJ-SYC"/>
+                    <constraint firstItem="AcS-iV-J4L" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="N9l-2Z-4pb"/>
+                    <constraint firstItem="Ykc-Ei-zR9" firstAttribute="leading" secondItem="88E-1g-OIG" secondAttribute="trailing" constant="10" id="SRl-th-cQC"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Ykc-Ei-zR9" secondAttribute="trailing" id="Szf-NE-ItF"/>
+                    <constraint firstItem="AcS-iV-J4L" firstAttribute="top" secondItem="Ykc-Ei-zR9" secondAttribute="bottom" constant="12" id="fws-fc-V2D"/>
+                    <constraint firstItem="88E-1g-OIG" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="mma-wg-0fG"/>
+                    <constraint firstItem="HKQ-bD-Dga" firstAttribute="leading" secondItem="88E-1g-OIG" secondAttribute="trailing" constant="10" id="pHK-21-YgK"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="averagePriceLabel" destination="Ykc-Ei-zR9" id="x0C-G8-3fU"/>
+                <outlet property="guigeSelectButton" destination="88E-1g-OIG" id="Noz-qb-Bn6"/>
+                <outlet property="totalPriceLabel" destination="HKQ-bD-Dga" id="wjD-eD-91V"/>
+            </connections>
+            <point key="canvasLocation" x="24" y="65"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="check_box_default" width="32" height="32"/>
+        <image name="check_box_right" width="32" height="32"/>
+    </resources>
+</document>

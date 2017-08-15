@@ -74,22 +74,18 @@
 - (void)setDataSourse:(Goods *)dataSourse {
     _dataSourse = dataSourse;
     
-    if ([dataSourse.discount isEqualToString:@"1"]) {
-        _selectAddView.isDiscount = YES;
-    }else {
-        _selectAddView.isDiscount = NO;
+  
+    
+    if (dataSourse.brand == nil) {
+        self.productName.text = [NSString stringWithFormat:@"%@ %@",dataSourse.fullName,dataSourse.feature];
+        
+    }else{
+        if (dataSourse.feature == nil) {
+            dataSourse.feature = @"";
+        }
+        self.productName.text = [NSString stringWithFormat:@"[%@]%@ %@",dataSourse.brand,dataSourse.fullName,dataSourse.feature];
     }
-	
-	if (dataSourse.brand == nil) {
-		dataSourse.brand = @"";
-	}else{
-		dataSourse.brand = [NSString stringWithFormat:@"[%@]",dataSourse.brand];
-	}
-	if (dataSourse.feature == nil) {
-		dataSourse.feature = @"";
-	}
-	self.productName.text = [NSString stringWithFormat:@"%@%@ %@",dataSourse.brand,dataSourse.fullName,dataSourse.feature];
-	
+
     
     [self.productImage sd_setImageWithURL:[NSURL URLWithString:dataSourse.image] placeholderImage:[UIImage imageNamed:@"guess_bancai"]];
     
@@ -117,6 +113,10 @@
         }else {
             self.selectSpecificationView.showDisCountView = NO;
         }
+    
+
+        _selectAddView.carGoodsNum = dataSourse.guige.firstObject.carGoodsNum;
+
     if (dataSourse.guige.count > 1) {
         [self.addOpenOrCloseButton setImage:[UIImage imageNamed:@"selectGuiGe"] forState:UIControlStateNormal];
         self.selectAddView.hidden = YES;
