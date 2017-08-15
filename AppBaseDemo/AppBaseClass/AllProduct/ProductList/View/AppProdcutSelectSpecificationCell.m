@@ -47,7 +47,7 @@
     }
 
 }
-- (void)setDataSourse:(GoodsList *)dataSourse {
+- (void)setDataSourse:(Goods *)dataSourse {
     _dataSourse = dataSourse;
     
    

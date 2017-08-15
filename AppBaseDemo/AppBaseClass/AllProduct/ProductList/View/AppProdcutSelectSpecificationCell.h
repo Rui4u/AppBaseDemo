@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-@class GoodsList;
+@class Goods;
 @protocol  AppProdcutSelectSpecificationCellDelegate<NSObject>
 
 @optional
@@ -36,7 +36,7 @@
 /**
  数据源
  */
-@property (nonatomic ,strong) GoodsList * dataSourse;
+@property (nonatomic ,strong) Goods * dataSourse;
 
 /**
  代理

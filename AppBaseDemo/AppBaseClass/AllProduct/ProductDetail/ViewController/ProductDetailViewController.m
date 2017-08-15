@@ -18,7 +18,7 @@
 #import  "ProductDetailGuiGeInfo.h"
 #import "AddToShoppingCartAnimation.h"
 #import "ShoppingCartChangeNumBussiness.h"
-
+#import "DeleteCartBusiness.h"
 @interface ProductDetailViewController () <ProductDetailTopViewDelegate,CustomScrollSelectViewDelegate,UIScrollViewDelegate>
 @property (nonatomic ,strong ) CustomScrollSelectView * customScrollSelectView; //顶部
 @property (nonatomic ,strong ) ProdcutDetailBottomView * prodcutDetailBottomView; //购物车
@@ -80,6 +80,34 @@
 
 -(void)changeNumberWith:(NSString *)count withRect:(CGRect)rect withGuiGeIndex:(NSInteger)index{
 	
+	NSString * guigeId = self.goodsDataSourse.guige[index].guigeID;
+	NSString * goodsId = self.goodsDataSourse.goodsID;
+ if(count.integerValue == 0){
+	 NSLog(@"删除");
+		
+		NSMutableArray * goodListArray = [[NSMutableArray alloc] init];
+		NSMutableDictionary * goodInfoDict = [[NSMutableDictionary alloc] init];
+		NSMutableArray * goodsSpecArray = [[NSMutableArray alloc] init];
+		NSMutableDictionary * goodsSpecDict = [[NSMutableDictionary alloc] init];
+		
+		
+		goodsSpecDict = @{@"id":guigeId}.mutableCopy;
+		[goodsSpecArray addObject:goodsSpecDict];
+		[goodInfoDict  setValue:goodsId forKey:@"id"];
+		[goodInfoDict  setValue:goodsSpecArray forKey:@"goodsSpec"];
+		
+		[goodListArray addObject:goodInfoDict];
+		
+		[DeleteCartBusiness requestDeleteCartWithToken:TOKEN goodsList:goodListArray completionSuccessHandler:^(NSString *getSelectedProductModel) {
+			
+		} completionFailHandler:^(NSString *failMessage) {
+			[self showToastWithMessage:failMessage showTime:1];
+		} completionError:^(NSString *netWorkErrorMessage) {
+			[self showToastWithMessage:netWorkErrorMessage showTime:1];
+		}];
+		
+ }else {
+	
 	if (count.integerValue > self.count) {
 		
 
@@ -89,8 +117,8 @@
 	}
 	self.count = count.integerValue;
 	[ShoppingCartChangeNumBussiness requestShoppingCartChangeNumWithToken:TOKEN
-																  goodsId:self.goodsDataSourse.goodsId
-																   specId:self.goodsDataSourse.guige[index].guigeID                                                               num:count
+																  goodsId:goodsId
+																   specId:guigeId                                                               num:count
 												 completionSuccessHandler:^(NSString *succeed)
 	 {
 		 
@@ -99,6 +127,7 @@
 	 } completionError:^(NSString *netWorkErrorMessage) {
 		 
 	 }];
+ }
 }
 #pragma mark - 点击反馈
 - (void)clickRightButton {

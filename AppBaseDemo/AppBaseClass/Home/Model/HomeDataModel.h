@@ -30,7 +30,7 @@
 
 @end
 
-@interface GoodsList :NSObject
+@interface Goods :NSObject
 @property (nonatomic ,assign) NSInteger height;
 @property (nonatomic ,assign , getter=isOpen) BOOL open;
 @property (nonatomic ,copy ) NSString			   * image;
@@ -50,7 +50,7 @@
 @property (nonatomic , copy) NSString              * productCategory;
 @property (nonatomic , copy) NSString              * goodsBaseName;
 @property (nonatomic , copy) NSString              * isTop;
-@property (nonatomic , copy) NSString              * goodsListID;
+@property (nonatomic , copy) NSString              * goodsID;
 @property (nonatomic , copy) NSString              * categoryIdOne;
 @property (nonatomic , copy) NSString              * goodsBaseType;
 @property (nonatomic , copy) NSString              * categoryIdTwo;
@@ -63,11 +63,16 @@
 @property (nonatomic , copy) NSString              * producer;
 @property (nonatomic , copy) NSString              * fullName;
 @property (nonatomic , copy) NSString              * seoKeywords;
-
+@property (nonatomic , copy) NSString              * modifyDate;
+@property (nonatomic , copy) NSString              * listId;
+@property (nonatomic , copy) NSString              * goodsState;
+@property (nonatomic , copy) NSString              * goodsId;;
+@property (nonatomic , copy) NSString              * goodsNum;
+@property (nonatomic , copy) NSString              * detailsImage;
 @end
 
 @interface ProductionInfoList :NSObject
-@property (nonatomic , strong) NSArray<GoodsList *>              * goodsList;
+@property (nonatomic , strong) NSArray<Goods *>              * goodsList;
 @property (nonatomic , copy) NSString              * goodsBaseType;
 
 @end

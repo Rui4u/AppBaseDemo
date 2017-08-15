@@ -8,16 +8,7 @@
 
 #import "ProductDetaiModel.h"
 
-@implementation Goods
-+ (NSDictionary *)objectClassInArray{
-    return @{
-             @"guige":@"Guige",
-             };
-}
-+ (NSDictionary *)replacedKeyFromPropertyName{
-	return @{@"goodsId" : @"id"};
-}
-@end
+
 @implementation ProductDetaiModel
 
 @end

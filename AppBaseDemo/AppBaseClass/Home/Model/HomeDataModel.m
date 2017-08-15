@@ -29,9 +29,9 @@
 	return @{@"guigeID" : @"id"};
 }
 @end
-@implementation GoodsList
+@implementation Goods
 + (NSDictionary *)replacedKeyFromPropertyName{
-	return @{@"goodsListID" : @"id"};
+	return @{@"goodsID" : @"id"};
 }
 + (NSDictionary *)objectClassInArray{
 	return @{
@@ -42,7 +42,7 @@
 @implementation ProductionInfoList
 + (NSDictionary *)objectClassInArray{
 	return @{
-			 @"goodsList":@"GoodsList",
+			 @"goodsList":@"Goods",
 			 };
 }
 @end

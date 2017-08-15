@@ -10,7 +10,7 @@
 #import "HomeDataModel.h"
 
 @interface GetSelectedProductModel :NSObject
-@property (nonatomic , strong) NSArray<GoodsList *>              * goodsListInfoList;
+@property (nonatomic , strong) NSArray<Goods*>              * goodsListInfoList;
 @property (nonatomic , copy) NSString              * isSucceed;
 
 @end

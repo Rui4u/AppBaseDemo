@@ -89,29 +89,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AppBaseDemo/AppBaseTools/SRNetWorkClient/BaseNetWorkClient.m"
-            timestampString = "524482093.025297"
+            filePath = "AppBaseDemo/AppBaseClass/Home/Bussiness/GetHomeBusiness.m"
+            timestampString = "524484047.767581"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "+jsonFormGetRequestWithUrl:param:success:operationFailure:failure:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AppBaseDemo/AppBaseTools/SRNetWorkClient/BaseNetWorkClient.m"
-            timestampString = "524482093.921087"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "+jsonFormGetRequestWithUrl:param:success:operationFailure:failure:"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "+requestGetHomeWithToken:completionSuccessHandler:completionFailHandler:completionError:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

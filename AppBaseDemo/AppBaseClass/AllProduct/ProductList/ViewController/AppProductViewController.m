@@ -53,7 +53,7 @@
 /**
  产品列表
  */
-@property (nonatomic ,strong)  NSArray<GoodsList *> * goodsListInfoList;
+@property (nonatomic ,strong)  NSArray<Goods *> * goodsListInfoList;
 
 @property (nonatomic ,assign ) NSInteger count;
 @end
@@ -225,7 +225,7 @@
 - (void)event:(UITapGestureRecognizer *)gesture {
     
     ProductDetailViewController * productDetailViewController = [[ProductDetailViewController alloc] init];
-    productDetailViewController.goodsId = self.goodsListInfoList[((AppProductMainCellView *)gesture.view).section].goodsListID;
+    productDetailViewController.goodsId = self.goodsListInfoList[((AppProductMainCellView *)gesture.view).section].goodsID;
     productDetailViewController.guigeId = self.goodsListInfoList[((AppProductMainCellView *)gesture.view).section].guige[0].guigeID;
     [self.navigationController pushViewController:productDetailViewController animated:YES];
 
@@ -256,7 +256,7 @@
 	{
         
         ProductDetailViewController * productDetailViewController = [[ProductDetailViewController alloc] init];
-        productDetailViewController.goodsId = self.goodsListInfoList[indexPath.section].goodsListID;
+        productDetailViewController.goodsId = self.goodsListInfoList[indexPath.section].goodsID;
         productDetailViewController.guigeId = self.goodsListInfoList[indexPath.section].guige[indexPath.row].guigeID;
         [self.navigationController pushViewController:productDetailViewController animated:YES];
 	}
@@ -294,8 +294,8 @@
 			
 			goodsSpecDict = @{@"id":self.goodsListInfoList[indexPath.section].guige[indexPath.row].guigeID}.mutableCopy;
 			[goodsSpecArray addObject:goodsSpecDict];
-			[goodInfoDict  setValue:self.goodsListInfoList[indexPath.section].goodsListID forKey:@"id"];
-			[goodInfoDict  setValue:goodsSpecDict forKey:@"goodsSpec"];
+			[goodInfoDict  setValue:self.goodsListInfoList[indexPath.section].goodsID forKey:@"id"];
+			[goodInfoDict  setValue:goodsSpecArray forKey:@"goodsSpec"];
 			
 			[goodListArray addObject:goodInfoDict];
 			
@@ -316,7 +316,7 @@
 			self.count = count.integerValue;
             
             [ShoppingCartChangeNumBussiness requestShoppingCartChangeNumWithToken:TOKEN
-                                                                          goodsId:self.goodsListInfoList[indexPath.section].goodsListID
+                                                                          goodsId:self.goodsListInfoList[indexPath.section].goodsID
                                                                            specId:self.goodsListInfoList[indexPath.section].guige[indexPath.row].guigeID                                                                              num:count
                                                          completionSuccessHandler:^(NSString *succeed)
              {

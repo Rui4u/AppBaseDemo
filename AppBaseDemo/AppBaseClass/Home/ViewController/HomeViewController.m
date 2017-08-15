@@ -154,7 +154,7 @@
 - (void)clickGoToProductDetailWith:(NSIndexPath *)indexPath andGuiGeIndex:(NSInteger)index {
     
     ProductDetailViewController * productDetailViewController = [[ProductDetailViewController alloc] init];
-    productDetailViewController.goodsId = self.dataSourse.ProductionInfoList[indexPath.section].goodsList[indexPath.row].goodsListID;
+    productDetailViewController.goodsId = self.dataSourse.ProductionInfoList[indexPath.section].goodsList[indexPath.row].goodsID;
     productDetailViewController.guigeId = self.dataSourse.ProductionInfoList[indexPath.section].goodsList[indexPath.row].guige[index].guigeID;
     [self.navigationController pushViewController:productDetailViewController animated:YES];
 
@@ -198,8 +198,8 @@
 		
 		goodsSpecDict = @{@"id":self.dataSourse.ProductionInfoList[typeIndex].goodsList[indexPath.section].guige[indexPath.row].guigeID}.mutableCopy;
 		[goodsSpecArray addObject:goodsSpecDict];
-		[goodInfoDict  setValue:self.dataSourse.ProductionInfoList[typeIndex].goodsList[indexPath.section].goodsListID forKey:@"id"];
-		[goodInfoDict  setValue:goodsSpecDict forKey:@"goodsSpec"];
+		[goodInfoDict  setValue:self.dataSourse.ProductionInfoList[typeIndex].goodsList[indexPath.section].goodsID forKey:@"id"];
+		[goodInfoDict  setValue:goodsSpecArray forKey:@"goodsSpec"];
 		
 		[goodListArray addObject:goodInfoDict];
 		
@@ -223,12 +223,12 @@
 		
 		
         [ShoppingCartChangeNumBussiness requestShoppingCartChangeNumWithToken:TOKEN
-                                                                      goodsId:self.dataSourse.ProductionInfoList[typeIndex].goodsList[indexPath.section].goodsListID
+                                                                      goodsId:self.dataSourse.ProductionInfoList[typeIndex].goodsList[indexPath.section].goodsID
                                                                        specId:self.dataSourse.ProductionInfoList[typeIndex].goodsList[indexPath.section].guige[indexPath.row].guigeID
                                                                           num:count
                                                      completionSuccessHandler:^(NSString *succeed)
         {
-            
+			
         } completionFailHandler:^(NSString *failMessage) {
             
         } completionError:^(NSString *netWorkErrorMessage) {

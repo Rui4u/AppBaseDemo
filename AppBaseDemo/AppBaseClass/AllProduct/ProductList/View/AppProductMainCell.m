@@ -38,7 +38,7 @@
 	return self;
 }
 
-- (void)setDataSourse:(GoodsList *)dataSourse {
+- (void)setDataSourse:(Goods *)dataSourse {
 
     
     self.appProductMainCellView.dataSourse = dataSourse;

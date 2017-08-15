@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-@class GoodsList;
+@class Goods;
 
 @protocol HomeProductListTableViewCellDelegate <NSObject>
 @optional
@@ -25,7 +25,7 @@
 /**
  数据源
  */
-@property (nonatomic ,strong) GoodsList * dataSourse;
+@property (nonatomic ,strong) Goods * dataSourse;
 
 /**
  <#Description#>
