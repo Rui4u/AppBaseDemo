@@ -82,6 +82,10 @@
 	
 	NSString * guigeId = self.goodsDataSourse.guige[index].guigeID;
 	NSString * goodsId = self.goodsDataSourse.goodsID;
+	
+	NSInteger  newTotalNumber =	(self.goodsDataSourse.cartTotalNum.integerValue - self.goodsDataSourse.guige[index].carGoodsNum.integerValue + count.integerValue);
+	_prodcutDetailBottomView.numText = [NSString stringWithFormat:@"%tu",newTotalNumber];
+	
  if(count.integerValue == 0){
 	 NSLog(@"删除");
 		
@@ -116,6 +120,8 @@
 		[[AddToShoppingCartAnimation sharedAnimation] animationWith:self.view andPoint:rect.origin andEndPoint:CGPointMake(endRect.origin.x +endRect.size.width, endRect.origin.y)];
 	}
 	self.count = count.integerValue;
+	 
+	 
 	[ShoppingCartChangeNumBussiness requestShoppingCartChangeNumWithToken:TOKEN
 																  goodsId:goodsId
 																   specId:guigeId                                                               num:count
@@ -228,7 +234,9 @@
 	self.productSpecificationParameterView.frame = CGRectMake(0, self.procudtDetailedInformationView.bottom + 10, SCREEN_WIDTH, tempHeight);
 	
 	self.bgScrollView.contentSize = CGSizeMake(0, self.productSpecificationParameterView.bottom + 20);
-	
+
+	_prodcutDetailBottomView.numText = self.goodsDataSourse.cartTotalNum;
+
 }
 
 - (void)viewDidLayoutSubviews {
@@ -263,7 +271,7 @@
 	});
 	[self.view addSubview:_prodcutDetailBottomView];
 	
-	_prodcutDetailBottomView.numText = @"100";
+	_prodcutDetailBottomView.numText = self.goodsDataSourse.cartTotalNum;
 	NSString * price = [NSString stringWithFormat:@"{价格：}{￥%@}",@"1231"];
 	_prodcutDetailBottomView.priceText = price;
 
@@ -278,7 +286,7 @@
 #pragma mark - navbar
 - (void)setNavUI {
 	[self initNavBarView:NAV_BAR_TYPE_SECOND_LEVEL_VIEW];
-	[self.navBarView setTitle:@"去购物车"];
+	[self.navBarView setTitle:@"商品信息"];
 	
 	_customScrollSelectView = ({
 		CustomScrollSelectView * selectView= [[CustomScrollSelectView alloc] initWithFrame:CGRectMake(0, NAV_BAR_HEIGHT, SCREEN_WIDTH, 48)];

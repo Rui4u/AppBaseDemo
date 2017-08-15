@@ -30,6 +30,14 @@
 }
 @end
 @implementation Goods
+
+- (NSString *)cartTotalNum {
+	if (_cartTotalNum == nil) {
+		_cartTotalNum = @"4";
+	}
+	return _cartTotalNum;
+}
+
 + (NSDictionary *)replacedKeyFromPropertyName{
 	return @{@"goodsID" : @"id"};
 }

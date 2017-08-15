@@ -69,6 +69,9 @@
 @property (nonatomic , copy) NSString              * goodsId;;
 @property (nonatomic , copy) NSString              * goodsNum;
 @property (nonatomic , copy) NSString              * detailsImage;
+
+
+@property (nonatomic ,copy ) NSString * cartTotalNum;
 @end
 
 @interface ProductionInfoList :NSObject
