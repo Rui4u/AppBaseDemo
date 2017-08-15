@@ -12,7 +12,6 @@
 
 //改变的蓝条
 @property (nonatomic,strong) UIView *changeView;
-
 //上次的Lable
 @property (nonatomic,strong) UILabel *oldLable;
 

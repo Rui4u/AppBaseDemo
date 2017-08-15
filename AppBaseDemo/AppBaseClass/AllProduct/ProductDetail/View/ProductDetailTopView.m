@@ -25,6 +25,8 @@
 @property (nonatomic ,strong ) ProductInfoView * productInfoView; //商品信息
 @property (nonatomic ,strong ) UIButton * lastButton;
 @property (nonatomic ,strong ) NSMutableArray * buttonArray;
+/** 添加按钮*/
+@property (nonatomic ,strong) SelectAddView * selectAddView;
 
 @end
 @implementation ProductDetailTopView
@@ -122,7 +124,7 @@
 		
 	});
 	
-	SelectAddView * selectAddView = ({
+	_selectAddView = ({
 		SelectAddView *selectAddView = [[NSBundle mainBundle] loadNibNamed:@"SelectAddView" owner:self options:nil].firstObject;
 		selectAddView.delegate = self;
 		selectAddView.isDiscount = NO;
@@ -139,7 +141,7 @@
 	[self addSubview:_priceBgView];
 	[_priceBgView addSubview:_priceDesLabel];
 	[_priceBgView addSubview:_advPrice];
-	[_priceBgView addSubview:selectAddView];
+	[_priceBgView addSubview:_selectAddView];
 	[_priceBgView addSubview:lineView];
 
 	
@@ -206,9 +208,9 @@
     NSString * string = [NSString stringWithFormat:@"￥%@*%@(%@斤)",self.goodsDataSourse.guige[tag].currentPrice,self.goodsDataSourse.baseSpec,self.goodsDataSourse.guige[tag].totalWeight];
     self.priceDesLabel.text = string;
     self.advPrice.text = [NSString stringWithFormat:@"￥%@/斤",self.goodsDataSourse.guige[tag].avgPrice];
-	if ([self.delegate respondsToSelector:@selector(clickPriceButtonWithIndex:)]) {
-		[self.delegate clickPriceButtonWithIndex:sender.tag - 1000];
-	}
+    
+    _selectAddView.carGoodsNum = [NSString stringWithFormat:@"%tu",self.goodsDataSourse.guige[tag].carGoodsNum.integerValue + self.goodsDataSourse.guige[tag].tempAddGoodsNum.integerValue];
+  
 	self.lastButton = sender;
 	
 }

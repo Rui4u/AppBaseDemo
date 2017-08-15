@@ -65,6 +65,7 @@
     self.searchBar.searchBarBackgroundColor = [UIColor colorWithWhite:0 alpha:.3];
 
 }
+#pragma mark - 网络请求
 - (void)pullToRefresh {
 
     if (isNotLogin) {
@@ -150,7 +151,7 @@
 
 }
 
-
+#pragma mark - 去详情
 - (void)clickGoToProductDetailWith:(NSIndexPath *)indexPath andGuiGeIndex:(NSInteger)index {
     
     ProductDetailViewController * productDetailViewController = [[ProductDetailViewController alloc] init];
@@ -161,16 +162,15 @@
 
 }
 
-
+#pragma mark -选择产品类型
 - (void)didSelectWithProductTypeModel:(NSInteger)index {
-
 	
 	NSIndexPath * dayOne = [NSIndexPath indexPathForRow:0 inSection:index];
 	[(UITableView *)self.frontScrollView scrollToRowAtIndexPath:dayOne atScrollPosition:UITableViewScrollPositionTop animated:YES];
 	self.backScrollView.contentOffset = CGPointMake(0, self.topView.height);
 
 }
-
+#pragma mark - 打开关闭规格
 - (void)ClickSelectSpecificationWithIndexPath:(NSIndexPath *)indexPath {
     
     [(UITableView *)self.frontScrollView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
@@ -185,8 +185,16 @@
 	
 }
 
-
+#pragma mark - 点击添加删除购物车
 -(void)changeProcutNumberBagWithCount:(NSString *)count withIndexPath:(NSIndexPath *)indexPath andTypeIndex:(NSInteger)typeIndex withRect:(CGRect)rect{
+    
+    Goods * selectGoods = self.dataSourse.ProductionInfoList[typeIndex].goodsList[indexPath.section];
+    Guige * selectGuige = selectGoods.guige[indexPath.row];
+    
+    NSInteger tempAddNum =  selectGuige.carGoodsNum.integerValue;
+    selectGuige.tempAddGoodsNum = [NSString stringWithFormat:@"%tu",tempAddNum];
+
+    
     if(count.integerValue == 0){
         NSLog(@"删除");
 		
@@ -196,9 +204,9 @@
 		NSMutableDictionary * goodsSpecDict = [[NSMutableDictionary alloc] init];
 		
 		
-		goodsSpecDict = @{@"id":self.dataSourse.ProductionInfoList[typeIndex].goodsList[indexPath.section].guige[indexPath.row].guigeID}.mutableCopy;
+		goodsSpecDict = @{@"id":selectGuige.guigeID}.mutableCopy;
 		[goodsSpecArray addObject:goodsSpecDict];
-		[goodInfoDict  setValue:self.dataSourse.ProductionInfoList[typeIndex].goodsList[indexPath.section].goodsID forKey:@"id"];
+		[goodInfoDict  setValue:selectGoods.goodsID forKey:@"id"];
 		[goodInfoDict  setValue:goodsSpecArray forKey:@"goodsSpec"];
 		
 		[goodListArray addObject:goodInfoDict];
@@ -230,9 +238,9 @@
         {
 			
         } completionFailHandler:^(NSString *failMessage) {
-            
+            [self showToastWithMessage:failMessage showTime:1];
         } completionError:^(NSString *netWorkErrorMessage) {
-            
+            [self showToastWithMessage:netWorkErrorMessage showTime:1];
         }];
     }
 }

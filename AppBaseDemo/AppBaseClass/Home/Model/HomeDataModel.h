@@ -27,6 +27,9 @@
 @property (nonatomic , copy) NSString              * spec;
 @property (nonatomic , copy) NSString              * avgPrice;
 @property (nonatomic ,copy ) NSString			   * carGoodsNum;
+@property (nonatomic ,copy ) NSString			   * tempAddGoodsNum;
+@property (nonatomic ,copy ) NSString			   * tempAddPrice;
+
 
 @end
 
