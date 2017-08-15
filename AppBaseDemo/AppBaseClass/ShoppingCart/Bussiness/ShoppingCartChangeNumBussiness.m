@@ -35,7 +35,7 @@
      {
          NSDictionary * responeMp = (NSDictionary * ) success ;
          
-         
+		 NSLog(@"改变成功");
          completionHandler(@"1");
          
          
