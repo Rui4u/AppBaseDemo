@@ -19,6 +19,7 @@
 #import "GetSelectedProductModel.h"
 #import "ShoppingCartChangeNumBussiness.h"
 #import "ProductDetailViewController.h"
+#import "AddToShoppingCartAnimation.h"
 @interface AppProductViewController ()<UITableViewDelegate,UITableViewDataSource,AppProductMainCellViewDelegate,CustomScrollSelectViewDelegate,AppProdcutSelectSpecificationCellDelegate>
 /**
  左侧时间tableview
@@ -52,6 +53,8 @@
  产品列表
  */
 @property (nonatomic ,strong)  NSArray<GoodsList *> * goodsListInfoList;
+
+@property (nonatomic ,assign ) NSInteger count;
 @end
 
 @implementation AppProductViewController
@@ -284,6 +287,12 @@
             NSLog(@"删除");
         }else {
             NSLog(@"个数:%@, 角标%@",count,indexPath);
+			
+			if (count.integerValue > self.count) {
+				
+				[[AddToShoppingCartAnimation sharedAnimation] animationWith:self.view andPoint:rect.origin andEndPoint:CGPointMake(SCREEN_WIDTH/4 * 3, SCREEN_HEIGHT - 44)];
+			}
+			self.count = count.integerValue;
             
             [ShoppingCartChangeNumBussiness requestShoppingCartChangeNumWithToken:TOKEN
                                                                           goodsId:self.goodsListInfoList[indexPath.section].goodsListID

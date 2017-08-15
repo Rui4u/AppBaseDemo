@@ -9,22 +9,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AppBaseDemo/AppBaseClass/Home/ViewController/HomeViewController.m"
-            timestampString = "524457918.239379"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "187"
-            endingLineNumber = "187"
-            landmarkName = "-changeProcutNumberBagWithCount:withIndexPath:andTypeIndex:withRect:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "AppBaseDemo/AppBaseClass/Login/Bussiness/LoginBusiness.m"
             timestampString = "524457975.089269"
             startingColumnNumber = "9223372036854775807"
@@ -41,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AppBaseDemo/AppBaseClass/AllProduct/ProductDetail/ViewController/ProductDetailViewController.m"
-            timestampString = "524463552.339964"
+            filePath = "AppBaseDemo/AppBaseClass/ShoppingCart/Bussiness/ShoppingCartChangeNumBussiness.m"
+            timestampString = "524472330.23366"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
-            landmarkName = "-setBgScrollViewUI"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "+requestShoppingCartChangeNumWithToken:goodsId:specId:num:completionSuccessHandler:completionFailHandler:completionError:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -57,13 +41,61 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AppBaseDemo/AppBaseClass/AllProduct/ProductDetail/ViewController/ProductDetailViewController.m"
-            timestampString = "524463667.524011"
+            filePath = "AppBaseDemo/AppBaseClass/ShoppingCart/Bussiness/ShoppingCartChangeNumBussiness.m"
+            timestampString = "524472352.411614"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160"
-            landmarkName = "-setBgScrollViewUI"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "+requestShoppingCartChangeNumWithToken:goodsId:specId:num:completionSuccessHandler:completionFailHandler:completionError:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AppBaseDemo/AppBaseClass/ShoppingCart/Bussiness/ShoppingCartChangeNumBussiness.m"
+            timestampString = "524472353.117205"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "+requestShoppingCartChangeNumWithToken:goodsId:specId:num:completionSuccessHandler:completionFailHandler:completionError:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AppBaseDemo/AppBaseClass/ShoppingCart/Bussiness/ShoppingCartChangeNumBussiness.m"
+            timestampString = "524472353.747506"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "+requestShoppingCartChangeNumWithToken:goodsId:specId:num:completionSuccessHandler:completionFailHandler:completionError:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AppBaseDemo/AppBaseClass/AllProduct/ProductDetail/Bussiness/ProductDetailBussiness.m"
+            timestampString = "524472439.554394"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "+requestProductDetailWithToken:goodsId:completionSuccessHandler:completionFailHandler:completionError:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

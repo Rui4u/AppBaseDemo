@@ -14,8 +14,12 @@
 #import "ProcudtDetailedInformationView.h"
 #import "ProductDetailBussiness.h"
 #import  "ProductDetaiModel.h"
+#import "AddToShoppingCartAnimation.h"
 #import  "ProductDetailGuiGeInfo.h"
-@interface ProductDetailViewController ()<CustomScrollSelectViewDelegate,UIScrollViewDelegate>
+#import "AddToShoppingCartAnimation.h"
+#import "ShoppingCartChangeNumBussiness.h"
+
+@interface ProductDetailViewController () <ProductDetailTopViewDelegate,CustomScrollSelectViewDelegate,UIScrollViewDelegate>
 @property (nonatomic ,strong ) CustomScrollSelectView * customScrollSelectView; //顶部
 @property (nonatomic ,strong ) ProdcutDetailBottomView * prodcutDetailBottomView; //购物车
 @property (nonatomic ,strong ) ProductDetailTopView * productDetailTopView; //头部
@@ -30,6 +34,11 @@
  <#Description#>
  */
 @property (nonatomic ,assign) BOOL canScroll;
+
+/**
+ 记录上一个 判断是否需要出现红点
+ */
+@property (nonatomic ,assign ) NSInteger count;
 @end
 
 @implementation ProductDetailViewController
@@ -67,6 +76,29 @@
     [self.view bringSubviewToFront:_prodcutDetailBottomView];
     
     self.navBarView.alpha = 0;
+}
+
+-(void)changeNumberWith:(NSString *)count withRect:(CGRect)rect withGuiGeIndex:(NSInteger)index{
+	
+	if (count.integerValue > self.count) {
+		
+
+		CGRect endRect = [_prodcutDetailBottomView.numberLabel convertRect: _prodcutDetailBottomView.numberLabel.bounds toView:APP_DELEGATE.window];
+		
+		[[AddToShoppingCartAnimation sharedAnimation] animationWith:self.view andPoint:rect.origin andEndPoint:CGPointMake(endRect.origin.x +endRect.size.width, endRect.origin.y)];
+	}
+	self.count = count.integerValue;
+	[ShoppingCartChangeNumBussiness requestShoppingCartChangeNumWithToken:TOKEN
+																  goodsId:self.goodsDataSourse.goodsId
+																   specId:self.goodsDataSourse.guige[index].guigeID                                                               num:count
+												 completionSuccessHandler:^(NSString *succeed)
+	 {
+		 
+	 } completionFailHandler:^(NSString *failMessage) {
+		 
+	 } completionError:^(NSString *netWorkErrorMessage) {
+		 
+	 }];
 }
 #pragma mark - 点击反馈
 - (void)clickRightButton {
@@ -177,6 +209,7 @@
 - (void)setUPTopViewUI{
 	
 	_productDetailTopView = [[ProductDetailTopView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 800) withGootDataSourse:self.goodsDataSourse];
+	_productDetailTopView.delegate = self;
 	[self.bgScrollView addSubview:_productDetailTopView];
     
     UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 22, 50, 44)];
@@ -287,5 +320,8 @@
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
 
     self.canScroll = YES;
+}
+- (void)dealloc {
+
 }
 @end

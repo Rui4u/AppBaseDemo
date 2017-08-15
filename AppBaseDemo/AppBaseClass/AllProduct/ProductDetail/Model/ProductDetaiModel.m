@@ -14,10 +14,10 @@
              @"guige":@"Guige",
              };
 }
++ (NSDictionary *)replacedKeyFromPropertyName{
+	return @{@"goodsId" : @"id"};
+}
 @end
 @implementation ProductDetaiModel
 
-+ (NSDictionary *)replacedKeyFromPropertyName{
-    return @{@"goodsId" : @"id"};
-}
 @end

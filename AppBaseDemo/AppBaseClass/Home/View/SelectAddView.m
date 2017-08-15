@@ -92,7 +92,8 @@
     return NO;
 }
 - (void)didselectChangeNumber {
-    CGRect rect=[_addButton convertRect: _addButton.bounds toView:APP_DELEGATE.window];
+    CGRect rect=[_numberLabel convertRect: _numberLabel.bounds toView:APP_DELEGATE.window];
+	rect = CGRectMake(rect.origin.x + _numberLabel.width/2, rect.origin.y + _numberLabel.height/2, rect.size.width, rect.size.height);
     if ([self.delegate respondsToSelector:@selector(changeNumberWith:withRect:)]) {
         [self.delegate changeNumberWith:self.numberLabel.text withRect:rect];
     }

@@ -10,6 +10,8 @@
 @class Goods;
 @protocol ProductDetailTopViewDelegate <NSObject>
 - (void)clickPriceButtonWithIndex:(NSInteger) index;
+-(void)changeNumberWith:(NSString *)count withRect:(CGRect)rect withGuiGeIndex:(NSInteger )index;
+
 @end
 @interface ProductDetailTopView : UIView
 

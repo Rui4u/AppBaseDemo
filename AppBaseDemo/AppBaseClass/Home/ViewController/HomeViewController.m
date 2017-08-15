@@ -17,6 +17,7 @@
 #import "GetHomeBusiness.h"
 #import "ShoppingCartChangeNumBussiness.h"
 #import "ProductDetailViewController.h"
+#import "AddToShoppingCartAnimation.h"
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource,HomeProductListTableViewCellDelegate,SelectTypeViewDelegate>
 @property (nonatomic ,strong ) HomeTopView * topView;
 @property (nonatomic ,strong ) SelectTypeView * selectTypeView;
@@ -24,6 +25,7 @@
  数据源
  */
 @property (nonatomic ,strong) HomeDataModel *dataSourse;
+@property (nonatomic ,assign ) NSInteger count;
 @end
 
 @implementation HomeViewController
@@ -188,7 +190,15 @@
         NSLog(@"删除");
     }else {
         NSLog(@"个数:%@, 角标%@",count,indexPath);
-        
+		
+		if (count.integerValue > self.count) {
+			
+	
+				[[AddToShoppingCartAnimation sharedAnimation] animationWith:self.view andPoint:rect.origin andEndPoint:CGPointMake(SCREEN_WIDTH/4 * 3, SCREEN_HEIGHT - 44)];
+		}
+		self.count = count.integerValue;
+		
+		
         [ShoppingCartChangeNumBussiness requestShoppingCartChangeNumWithToken:TOKEN
                                                                       goodsId:self.dataSourse.ProductionInfoList[typeIndex].goodsList[indexPath.section].goodsListID
                                                                        specId:self.dataSourse.ProductionInfoList[typeIndex].goodsList[indexPath.section].guige[indexPath.row].guigeID

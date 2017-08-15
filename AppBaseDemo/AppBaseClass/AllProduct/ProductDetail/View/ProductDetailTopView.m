@@ -219,17 +219,12 @@
 }
 
 -(void)changeNumberWith:(NSString *)count withRect:(CGRect)rect{
-	   [ShoppingCartChangeNumBussiness requestShoppingCartChangeNumWithToken:TOKEN
-                                                                     goodsId:self.goodsDataSourse.goodsId
-                                                                      specId:self.goodsDataSourse.guige[self.lastButton.tag - 1000].guigeID                                                               num:count
-                                                    completionSuccessHandler:^(NSString *succeed)
-        {
-            
-        } completionFailHandler:^(NSString *failMessage) {
-            
-        } completionError:^(NSString *netWorkErrorMessage) {
-            
-        }];
+	
+	if ([self.delegate respondsToSelector:@selector(changeNumberWith:withRect:withGuiGeIndex:)]) {
+		[self.delegate changeNumberWith:count withRect:rect withGuiGeIndex:self.lastButton.tag - 1000];
+	}
+	
+
 }
 - (TopProductImageScrollView *)bannerScrollView {
 	if (!_bannerScrollView) {

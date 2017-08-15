@@ -11,7 +11,10 @@
 @interface ProdcutDetailBottomView : UIView
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *LabelWidth;
 
-
+/**
+ 数量
+ */
+@property (weak, nonatomic) IBOutlet UILabel *numberLabel;
 /**
  价钱
  */

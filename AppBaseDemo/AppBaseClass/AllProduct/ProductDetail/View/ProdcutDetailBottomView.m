@@ -14,10 +14,7 @@
  价钱
  */
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
-/**
- 数量
- */
-@property (weak, nonatomic) IBOutlet UILabel *numberLabel;
+
 
 @property (weak, nonatomic) IBOutlet UIButton *productCartButton;
 
