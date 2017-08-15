@@ -14,6 +14,7 @@
 @interface SelectAddView : UIView
 @property (nonatomic ,assign ) BOOL  isDiscount;
 
+@property (nonatomic ,copy ) NSString * carGoodsNum;
 /**
  <#Description#>
  */

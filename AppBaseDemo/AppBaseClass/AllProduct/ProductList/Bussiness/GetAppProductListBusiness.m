@@ -25,7 +25,7 @@
      {
          NSDictionary * responeMp = (NSDictionary * ) success ;
          GoodslistAllModel *result = [GoodslistAllModel mj_objectWithKeyValues:responeMp];
-
+		 
          
              completionHandler(result);
          

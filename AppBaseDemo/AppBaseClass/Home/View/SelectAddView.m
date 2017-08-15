@@ -100,6 +100,18 @@
     
     
 }
-
+- (void)setCarGoodsNum:(NSString *)carGoodsNum {
+	_carGoodsNum = carGoodsNum;
+	
+	if (carGoodsNum.integerValue > 0) {
+		self.reduceButton.hidden = NO;
+		self.numberLabel.hidden = NO;
+		
+	}else {
+		self.reduceButton.hidden = YES;
+		self.numberLabel.hidden = YES;
+	}
+	self.numberLabel.text = carGoodsNum;
+}
 
 @end

@@ -37,6 +37,8 @@
 
 //修改购物车个数
 #define kAddCarBussinessUrl            [NSString stringWithFormat :@"%@/gs/shopCar/addCar?",kHTTP_HOST_URL]
+//删除购物车
+#define kDleteCarBussinessUrl            [NSString stringWithFormat :@"%@/gs/shopCar/deleteCar?",kHTTP_HOST_URL]
 
 
 NS_ASSUME_NONNULL_BEGIN

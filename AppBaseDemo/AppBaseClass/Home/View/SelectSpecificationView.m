@@ -66,9 +66,15 @@
         self.averagePrice.x = CGRectGetMaxX(self.disCountView.frame) + 3;
 	}else {
         self.averagePrice.x = 0;
-		
 	}
 	self.disCountView.hidden = !_showDisCountView;
 	self.selectAddView.isDiscount = showDisCountView;
 }
+
+- (void)setCarGoodsNum:(NSString *)carGoodsNum {
+	_carGoodsNum = carGoodsNum;
+	self.selectAddView.carGoodsNum = carGoodsNum;
+}
+
+
 @end

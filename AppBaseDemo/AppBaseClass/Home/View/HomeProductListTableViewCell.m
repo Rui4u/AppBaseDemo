@@ -153,6 +153,7 @@
         Guige * guige = dataSourse.guige[i];
         
         SelectSpecificationView * selectSpecificationView = [[SelectSpecificationView alloc] initWithFrame:CGRectMake(8,i *selectViewHeight,self.bottomBgView.width- 8,65)];
+		selectSpecificationView.carGoodsNum = guige.carGoodsNum;
 		selectSpecificationView.index = i;
         selectSpecificationView.tag = 1000+ i;
         UITapGestureRecognizer *tapGesture=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(event:)];

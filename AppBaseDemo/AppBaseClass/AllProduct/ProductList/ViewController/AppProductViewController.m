@@ -20,6 +20,7 @@
 #import "ShoppingCartChangeNumBussiness.h"
 #import "ProductDetailViewController.h"
 #import "AddToShoppingCartAnimation.h"
+#import "DeleteCartBusiness.h"
 @interface AppProductViewController ()<UITableViewDelegate,UITableViewDataSource,AppProductMainCellViewDelegate,CustomScrollSelectViewDelegate,AppProdcutSelectSpecificationCellDelegate>
 /**
  左侧时间tableview
@@ -284,7 +285,27 @@
 -(void)changeProcutNumberBagWithCount:(NSString *)count withIndexPath:(NSIndexPath *)indexPath withRect:(CGRect)rect{
     
         if(count.integerValue == 0){
-            NSLog(@"删除");
+		//删除
+			NSMutableArray * goodListArray = [[NSMutableArray alloc] init];
+			NSMutableDictionary * goodInfoDict = [[NSMutableDictionary alloc] init];
+			NSMutableArray * goodsSpecArray = [[NSMutableArray alloc] init];
+			NSMutableDictionary * goodsSpecDict = [[NSMutableDictionary alloc] init];
+			
+			
+			goodsSpecDict = @{@"id":self.goodsListInfoList[indexPath.section].guige[indexPath.row].guigeID}.mutableCopy;
+			[goodsSpecArray addObject:goodsSpecDict];
+			[goodInfoDict  setValue:self.goodsListInfoList[indexPath.section].goodsListID forKey:@"id"];
+			[goodInfoDict  setValue:goodsSpecDict forKey:@"goodsSpec"];
+			
+			[goodListArray addObject:goodInfoDict];
+			
+			[DeleteCartBusiness requestDeleteCartWithToken:TOKEN goodsList:goodListArray completionSuccessHandler:^(NSString *getSelectedProductModel) {
+				
+			} completionFailHandler:^(NSString *failMessage) {
+				[self showToastWithMessage:failMessage showTime:1];
+			} completionError:^(NSString *netWorkErrorMessage) {
+				[self showToastWithMessage:netWorkErrorMessage showTime:1];
+			}];
         }else {
             NSLog(@"个数:%@, 角标%@",count,indexPath);
 			

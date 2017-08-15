@@ -109,8 +109,6 @@ typedef NS_ENUM(NSInteger , ButtonColor)
 
 /**
  左字右图
-
- @param btn <#btn description#>
  */
 - (void)setImageToRight;
 
@@ -124,7 +122,7 @@ typedef NS_ENUM(NSInteger , ButtonColor)
  创建的底部的button
 
  @param frame           <#frame description#>
- @param backgroundImage <#backgroundImage description#>
+ @param buttonColorType <#backgroundImage description#>
  @param title           <#title description#>
  @param titleColor      <#titleColor description#>
  @param target          <#target description#>

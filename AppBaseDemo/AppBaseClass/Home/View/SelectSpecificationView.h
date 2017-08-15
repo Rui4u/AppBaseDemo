@@ -46,4 +46,6 @@
 @property (nonatomic ,assign ) NSInteger index;
 
 @property (nonatomic ,weak ) id<SelectSpecificationViewDelegate> delegate;
+
+@property (nonatomic ,copy) NSString *carGoodsNum;
 @end
