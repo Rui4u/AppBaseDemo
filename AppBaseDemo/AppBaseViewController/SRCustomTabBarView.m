@@ -49,6 +49,17 @@
 #pragma mark - 设置UI
 - (void) privateSetUpUI {
 	
+    UIView * lineView  = [[UIView alloc] init];
+    lineView.backgroundColor = [UIColor colorWithHexString:Main_Line_Gary_Color];
+    [self addSubview:lineView];
+    
+    [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(1);
+        make.left.equalTo(self.mas_left);
+        make.right.equalTo(self.mas_right);
+        make.top.equalTo(self.mas_top);
+    }];
+    
 	self.frame = CGRectMake(0, SCREEN_HEIGHT -  49, SCREEN_WIDTH, 49);
 	self.backgroundColor = [UIColor whiteColor];
 	NSArray * imageArray = @[@"tabBarIcon_homeNormal",@"tabBarIcon_MineNormal",@"tabBarIcon_ChannelNormal",@"tabBarIcon_moreNormal"];

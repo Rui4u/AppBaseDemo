@@ -19,6 +19,8 @@
 @end
 
 @interface Guige :NSObject
+
+@property (nonatomic ,assign,getter=isSelected)BOOL selected;  //购物车是否选择
 @property (nonatomic , copy) NSString              * oldPrice;
 @property (nonatomic , copy) NSString              * currentPrice;
 @property (nonatomic , copy) NSString              * guigeID;
@@ -26,7 +28,7 @@
 @property (nonatomic , copy) NSString              * discount;
 @property (nonatomic , copy) NSString              * spec;
 @property (nonatomic , copy) NSString              * avgPrice;
-@property (nonatomic ,copy ) NSString			   * carGoodsNum;
+@property (nonatomic ,copy ) NSString			   * carGoodNum;
 @property (nonatomic ,copy ) NSString			   * tempAddGoodsNum;
 @property (nonatomic ,copy ) NSString			   * tempAddPrice;
 
@@ -35,7 +37,10 @@
 
 @interface Goods :NSObject
 @property (nonatomic ,assign) NSInteger height;
-@property (nonatomic ,assign , getter=isOpen) BOOL open;
+@property (nonatomic ,assign,getter=isSelected)BOOL selected;  //购物车是否选择
+@property (nonatomic ,assign , getter=isOpen) BOOL open; //列表是否打开规格
+@property (nonatomic ,copy)  NSString              *selectNum; //已选择数量
+@property (nonatomic ,copy)  NSString              *totolPriceNum; //已选择数量
 @property (nonatomic ,copy ) NSString			   * image;
 @property (nonatomic , copy) NSString              * feature;
 @property (nonatomic , copy) NSString              * place;
@@ -72,6 +77,9 @@
 @property (nonatomic , copy) NSString              * goodsId;;
 @property (nonatomic , copy) NSString              * goodsNum;
 @property (nonatomic , copy) NSString              * detailsImage;
+@property (nonatomic , copy) NSString              * goodSpecId;
+@property (nonatomic , copy) NSString              * carGoodNum;
+@property (nonatomic , copy) NSString              * addTime;
 
 
 @property (nonatomic ,copy ) NSString * cartTotalNum;

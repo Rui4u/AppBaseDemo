@@ -185,7 +185,7 @@
 			selectSpecificationView.showDisCountView = NO;
 		}
         
-        selectSpecificationView.carGoodsNum = guige.carGoodsNum;
+        selectSpecificationView.carGoodsNum = guige.carGoodNum;
 
         
         if (i != 0) {

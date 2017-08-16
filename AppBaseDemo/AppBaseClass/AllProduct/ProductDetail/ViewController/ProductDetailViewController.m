@@ -159,7 +159,7 @@
 - (void)changeShoppingCartNumberWithCurrent:(NSString *)count andIndex:(NSInteger)index {
     
     //获取差值
-    NSInteger tempAddNum =  count.integerValue - self.goodsDataSourse.guige[index].carGoodsNum.integerValue;
+    NSInteger tempAddNum =  count.integerValue - self.goodsDataSourse.guige[index].carGoodNum.integerValue;
     self.goodsDataSourse.guige[index].tempAddGoodsNum = [NSString stringWithFormat:@"%tu",tempAddNum];
    
     CGFloat addPrice = self.goodsDataSourse.guige[index].currentPrice.floatValue * tempAddNum;

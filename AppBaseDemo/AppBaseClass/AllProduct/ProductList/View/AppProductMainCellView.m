@@ -115,7 +115,7 @@
         }
     
 
-        _selectAddView.carGoodsNum = dataSourse.guige.firstObject.carGoodsNum;
+        _selectAddView.carGoodsNum = dataSourse.guige.firstObject.carGoodNum;
 
     if (dataSourse.guige.count > 1) {
         [self.addOpenOrCloseButton setImage:[UIImage imageNamed:@"selectGuiGe"] forState:UIControlStateNormal];

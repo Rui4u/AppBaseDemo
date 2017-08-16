@@ -8,6 +8,7 @@
 
 #import "ShoppingCartGuiGeTableViewCell.h"
 #import "SelectAddView.h"
+#import "ShoppingCartListModel.h"
 @interface ShoppingCartGuiGeTableViewCell()<SelectAddViewDelegate>
 
 @property (nonatomic ,strong) SelectAddView * selectAddView;
@@ -42,6 +43,10 @@
 
 - (IBAction)clickGuigeSelectButton:(UIButton *)sender {
     sender.selected = !sender.selected;
+    self.dataSourse.guige[_indexPath.row].selected = sender.selected;
+    if (self.selectShoppingCartGuiGeBlock) {
+        self.selectShoppingCartGuiGeBlock(self.indexPath);
+    }
 }
 #pragma - mark - d
 -(void)changeNumberWith:(NSString *)count withRect:(CGRect) rect{
@@ -55,4 +60,28 @@
     // Configure the view for the selected state
 }
 
+- (void)setDataSourse:(Goods *)dataSourse {
+    _dataSourse = dataSourse;
+    
+    Guige * guige = dataSourse.guige[_indexPath.row];
+    
+    _totalPriceLabel.text = [NSString stringWithFormat:@"{￥%@}/%@(%@斤)",guige.currentPrice,dataSourse.baseSpec,guige.totalWeight];
+    _averagePriceLabel.text = [NSString stringWithFormat:@"￥%@/%@",guige.avgPrice,dataSourse.baseSpec];
+    
+    
+    _totalPriceLabel.attributedText =
+    [NSMutableAttributedString setAttributeString:_totalPriceLabel.text
+                                             font:14
+                                        textcolor:[UIColor colorWithHexString:Main_Font_Red_Color]
+                                      secondcolor:[UIColor colorWithHexString:Main_Font_Gary_Color]
+                                       secondfont:14];
+    
+    
+    
+    _selectAddView.isDiscount = NO;
+    _selectAddView.carGoodsNum = guige.carGoodNum;
+ 
+    _guigeSelectButton.selected = guige.selected;
+
+}
 @end

@@ -119,6 +119,9 @@
 		2BC14DC01F31CD3500919808 /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BC14DB21F31CD3500919808 /* SBJsonTokeniser.m */; };
 		2BC14DC11F31CD3500919808 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BC14DB41F31CD3500919808 /* SBJsonUTF8Stream.m */; };
 		2BC14DC21F31CD3500919808 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BC14DB61F31CD3500919808 /* SBJsonWriter.m */; };
+		2BC60A6C1F448C880069D70B /* ShoppingCartListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BC60A6B1F448C880069D70B /* ShoppingCartListModel.m */; };
+		2BC60A6F1F4493BD0069D70B /* ShopCartListBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BC60A6E1F4493BD0069D70B /* ShopCartListBottomView.m */; };
+		2BC60A711F4493D10069D70B /* ShopCartListBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BC60A701F4493D10069D70B /* ShopCartListBottomView.xib */; };
 		2BD099361F433FFA008A1827 /* ShoppingCartGoodsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD099341F433FFA008A1827 /* ShoppingCartGoodsTableViewCell.m */; };
 		2BD099371F433FFA008A1827 /* ShoppingCartGoodsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BD099351F433FFA008A1827 /* ShoppingCartGoodsTableViewCell.xib */; };
 		2BD0993B1F4342D8008A1827 /* ShoppingCartGuiGeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD099391F4342D8008A1827 /* ShoppingCartGuiGeTableViewCell.m */; };
@@ -410,6 +413,11 @@
 		2BC14DB51F31CD3500919808 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		2BC14DB61F31CD3500919808 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		2BC14DC81F31D2CA00919808 /* BaseBussiness.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseBussiness.h; sourceTree = "<group>"; };
+		2BC60A6A1F448C880069D70B /* ShoppingCartListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingCartListModel.h; sourceTree = "<group>"; };
+		2BC60A6B1F448C880069D70B /* ShoppingCartListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCartListModel.m; sourceTree = "<group>"; };
+		2BC60A6D1F4493BD0069D70B /* ShopCartListBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopCartListBottomView.h; sourceTree = "<group>"; };
+		2BC60A6E1F4493BD0069D70B /* ShopCartListBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopCartListBottomView.m; sourceTree = "<group>"; };
+		2BC60A701F4493D10069D70B /* ShopCartListBottomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShopCartListBottomView.xib; sourceTree = "<group>"; };
 		2BD099331F433FFA008A1827 /* ShoppingCartGoodsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingCartGoodsTableViewCell.h; sourceTree = "<group>"; };
 		2BD099341F433FFA008A1827 /* ShoppingCartGoodsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCartGoodsTableViewCell.m; sourceTree = "<group>"; };
 		2BD099351F433FFA008A1827 /* ShoppingCartGoodsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShoppingCartGoodsTableViewCell.xib; sourceTree = "<group>"; };
@@ -937,6 +945,8 @@
 		2BB9D96A1F407CA00092A9CF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2BC60A6A1F448C880069D70B /* ShoppingCartListModel.h */,
+				2BC60A6B1F448C880069D70B /* ShoppingCartListModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -953,6 +963,9 @@
 				2BD099381F4342D8008A1827 /* ShoppingCartGuiGeTableViewCell.h */,
 				2BD099391F4342D8008A1827 /* ShoppingCartGuiGeTableViewCell.m */,
 				2BD0993A1F4342D8008A1827 /* ShoppingCartGuiGeTableViewCell.xib */,
+				2BC60A6D1F4493BD0069D70B /* ShopCartListBottomView.h */,
+				2BC60A6E1F4493BD0069D70B /* ShopCartListBottomView.m */,
+				2BC60A701F4493D10069D70B /* ShopCartListBottomView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1384,6 +1397,7 @@
 				2BD0996C1F4359B0008A1827 /* tabBarIcon_homeSelecetd@3x.png in Resources */,
 				2B2E10511F3C015D00092EAA /* CityNotInOpenCityView.xib in Resources */,
 				2B41F21B1F42ABB600CB36D0 /* ProductDetailGuiGeInfo.xib in Resources */,
+				2BC60A711F4493D10069D70B /* ShopCartListBottomView.xib in Resources */,
 				2BD0997B1F4359B0008A1827 /* tabBarIcon_wealthNormal@2x.png in Resources */,
 				2BD0997D1F4359B0008A1827 /* tabBarIcon_wealthSelecetd2@2x.png in Resources */,
 				2BFCFDEC1F413B63001DA10D /* AppProductMainCellView.xib in Resources */,
@@ -1517,6 +1531,7 @@
 				2B5AA4DD1F3DB74000C3EE31 /* HZCustomSearchBar.m in Sources */,
 				2B8FD7F31F32CC6F00DAB9B9 /* SelectLocationViewController.m in Sources */,
 				2B38703A1F29BC0C00228620 /* UILabel+SRUILabel.m in Sources */,
+				2BC60A6C1F448C880069D70B /* ShoppingCartListModel.m in Sources */,
 				2BC14DC21F31CD3500919808 /* SBJsonWriter.m in Sources */,
 				2BFCFDEE1F413B63001DA10D /* AppProductViewController.m in Sources */,
 				2BC14DBD1F31CD3500919808 /* SBJsonStreamWriter.m in Sources */,
@@ -1583,6 +1598,7 @@
 				2BD099481F435228008A1827 /* ProductRemoveListBussiness.m in Sources */,
 				2BFCFDED1F413B63001DA10D /* AppProductViewControllerLeftCell.m in Sources */,
 				2BD099361F433FFA008A1827 /* ShoppingCartGoodsTableViewCell.m in Sources */,
+				2BC60A6F1F4493BD0069D70B /* ShopCartListBottomView.m in Sources */,
 				2BFCFDE91F413B63001DA10D /* AppProdcutSelectSpecificationCell.m in Sources */,
 				2BFCFDEB1F413B63001DA10D /* AppProductMainCellView.m in Sources */,
 				2B0E70C01F41E86E0037B4A7 /* ProductDetaiModel.m in Sources */,

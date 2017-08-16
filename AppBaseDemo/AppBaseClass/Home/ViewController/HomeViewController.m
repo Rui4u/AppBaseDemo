@@ -208,11 +208,11 @@
     Goods * selectGoods = self.dataSourse.ProductionInfoList[typeIndex].goodsList[indexPath.section];
     Guige * selectGuige = selectGoods.guige[indexPath.row];
     
-    NSInteger tempAddNum = count.integerValue - selectGuige.carGoodsNum.integerValue;
+    NSInteger tempAddNum = count.integerValue - selectGuige.carGoodNum.integerValue;
 
     [APP_DELEGATE.customTabBar.tabBarView.shoppingCartButton setBadgeString:[NSString stringWithFormat:@"%tu",APP_DELEGATE.customTabBar.tabBarView.shoppingCartButton.badgeString.integerValue + tempAddNum]];
     
-    selectGuige.carGoodsNum = count;
+    selectGuige.carGoodNum = count;
     
     if(count.integerValue == 0){
         NSLog(@"删除");

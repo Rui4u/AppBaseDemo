@@ -7,7 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class Goods;
 @interface ShoppingCartGoodsTableViewCell : UITableViewCell
 
+/**
+ <#Description#>
+ */
+@property (nonatomic ,strong) Goods * dataSourse;
+
+/**
+ <#Description#>
+ */
+@property (nonatomic ,strong) NSIndexPath * indexPath;
+
+/**
+ <#Description#>
+ */
+@property (nonatomic ,copy) void(^selectShoppingCartGoodsBlock)(NSIndexPath *indexPath);
 @end

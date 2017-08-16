@@ -28,12 +28,7 @@
 + (NSDictionary *)replacedKeyFromPropertyName{
 	return @{@"guigeID" : @"id"};
 }
-- (NSString *)carGoodsNum {
-    if (_carGoodsNum == nil) {
-        _carGoodsNum = @"4";
-    }
-    return _carGoodsNum;
-}
+
 @end
 @implementation Goods
 
