@@ -1339,6 +1339,7 @@
 				TargetAttributes = {
 					2B386F751F29B69A00228620 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = GYDX769PJZ;
 						ProvisioningStyle = Automatic;
 					};
 					2B386F911F29B69A00228620 = {
@@ -1767,7 +1768,7 @@
 			baseConfigurationReference = D9138079B95F4444D4017C4A /* Pods-AppBaseDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = GYDX769PJZ;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_INPUT_FILETYPE = automatic;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1785,7 +1786,7 @@
 			baseConfigurationReference = FC3237A11D175D8A56FDA2A8 /* Pods-AppBaseDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = GYDX769PJZ;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_INPUT_FILETYPE = automatic;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

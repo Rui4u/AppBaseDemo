@@ -243,9 +243,7 @@
 		
 		if (count.integerValue > self.count) {
 			
-            CGRect endRect = [APP_DELEGATE.customTabBar.tabBarView.shoppingCartButton convertRect: APP_DELEGATE.customTabBar.tabBarView.shoppingCartButton.bounds toView:APP_DELEGATE.window];
-            
-				[[AddToShoppingCartAnimation sharedAnimation] animationWith:self.view andPoint:rect.origin andEndPoint:CGPointMake(endRect.origin.x +endRect.size.width, endRect.origin.y)];
+				[[AddToShoppingCartAnimation sharedAnimation] animationWith:self.view andPoint:rect.origin andEndPoint:CGPointMake(SCREEN_WIDTH/4 * 3 - SCREEN_WIDTH/8 + 10, SCREEN_HEIGHT - 44)];
 		}
 		self.count = count.integerValue;
 		

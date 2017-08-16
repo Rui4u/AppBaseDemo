@@ -310,7 +310,7 @@
 			
 			if (count.integerValue > self.count) {
 				
-				[[AddToShoppingCartAnimation sharedAnimation] animationWith:self.view andPoint:rect.origin andEndPoint:CGPointMake(SCREEN_WIDTH/4 * 3, SCREEN_HEIGHT - 44)];
+				[[AddToShoppingCartAnimation sharedAnimation] animationWith:self.view andPoint:rect.origin andEndPoint:CGPointMake(SCREEN_WIDTH/4 * 3 - SCREEN_WIDTH/8 + 10, SCREEN_HEIGHT - 44)];
 			}
 			self.count = count.integerValue;
             

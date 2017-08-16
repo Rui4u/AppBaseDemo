@@ -9,7 +9,8 @@
 #import "RootViewController.h"
 #import "HomeViewController.h"
 #import "AppProductViewController.h"
-
+#import "MoreViewController.h"
+#import "ShoppingCartViewController.h"
 @interface RootViewController ()<UITabBarControllerDelegate,SRCustomTabBarViewDelegate>
 
 
@@ -27,7 +28,7 @@
 /**
  我的财富
  */
-@property (nonatomic ,strong ) UIViewController * myTreasureViewController;
+@property (nonatomic ,strong ) ShoppingCartViewController * shoppingCartViewController;
 
 /**
  更多
@@ -107,7 +108,7 @@
 {
     if (self.isLogin)//未登录状态
     {
-        if ([viewController isEqual:self.myTreasureViewController])
+        if ([viewController isEqual:self.shoppingCartViewController])
         {
             __block NSInteger selectedIndex = [APP_DELEGATE.customTabBar.childViewControllers indexOfObject:viewController];
             NSLog(@"%tu",selectedIndex);
@@ -126,7 +127,7 @@
 	
 	self.currentViewController = viewController;
     if (!([viewController isKindOfClass:[self.moreViewController class]] ||
-          [viewController isKindOfClass:[self.myTreasureViewController class]]))
+          [viewController isKindOfClass:[self.shoppingCartViewController class]]))
     {
         [self privateReferRootViewWithBuy];
     }
@@ -181,7 +182,7 @@
     
     self.productViewController = [[AppProductViewController alloc] init];
 	
-    self.productViewController.title = @"产品中心";
+    self.productViewController.title = @"全部产品··";
     [self.productViewController.tabBarItem setTitleTextAttributes:selectAtts forState:UIControlStateSelected];
     
     self.productViewController.tabBarItem.image = [[UIImage imageNamed:@"icon_product_normal"]
@@ -190,20 +191,20 @@
     self.productViewController.tabBarItem.selectedImage = [[UIImage imageNamed:@"icon_product_select"]
                                                            imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
-    self.myTreasureViewController = [[UIViewController alloc] init];
-    self.myTreasureViewController.title = @"咨询管理";
-    [self.myTreasureViewController.tabBarItem setTitleTextAttributes:selectAtts forState:UIControlStateSelected];
+    self.shoppingCartViewController = [[ShoppingCartViewController alloc] init];
+    self.shoppingCartViewController.title = @"购物车";
+    [self.shoppingCartViewController.tabBarItem setTitleTextAttributes:selectAtts forState:UIControlStateSelected];
     
     
-    self.myTreasureViewController.tabBarItem.selectedImage = [[UIImage imageNamed:@"icon_wealth_select"]
+    self.shoppingCartViewController.tabBarItem.selectedImage = [[UIImage imageNamed:@"icon_wealth_select"]
                                                               imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
-    self.myTreasureViewController.tabBarItem.image = [[UIImage imageNamed:@"icon_wealth_normal"]
+    self.shoppingCartViewController.tabBarItem.image = [[UIImage imageNamed:@"icon_wealth_normal"]
                                                       imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
     
-    self.moreViewController = [[UIViewController alloc] init];
-    self.moreViewController.title = @"更多";
+    self.moreViewController = [[MoreViewController alloc] init];
+    self.moreViewController.title = @"我的";
     [self.moreViewController.tabBarItem setTitleTextAttributes:selectAtts forState:UIControlStateSelected];
     
     
@@ -217,7 +218,7 @@
 	
     [customTabBar addChildViewController:self.  homeViewController];
     [customTabBar addChildViewController:self.productViewController];
-    [customTabBar addChildViewController:self.myTreasureViewController];
+    [customTabBar addChildViewController:self.shoppingCartViewController];
     [customTabBar addChildViewController:self.moreViewController];
     
    	
