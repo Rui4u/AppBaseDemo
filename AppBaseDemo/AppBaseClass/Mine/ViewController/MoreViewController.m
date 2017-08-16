@@ -11,20 +11,53 @@
 @interface MoreViewController ()
 
 @property (weak, nonatomic) IBOutlet UIScrollView *bgScrollView;
+@property (weak, nonatomic) IBOutlet UILabel *userName;
+@property (weak, nonatomic) IBOutlet UIImageView *userLevelImage;
+@property (weak, nonatomic) IBOutlet UILabel *userLevel;
+@property (weak, nonatomic) IBOutlet UIImageView *userPic;
+@property (weak, nonatomic) IBOutlet UILabel *userManager;
+@property (weak, nonatomic) IBOutlet UIView *bottomView;
 
+@property (weak, nonatomic) IBOutlet UILabel *notLoginLabel;
+@property (nonatomic ,strong ) MoreBaseView * moreBaseView;
 @end
 
 @implementation MoreViewController
+
+- (IBAction)clickMyOrderButton:(UIButton *)sender {
+	
+	
+}
+- (IBAction)clickNormalToolsButton:(UIButton *)sender {
+	
+}
+
+- (IBAction)clickHelpCenterButton:(UIButton *)sender {
+	
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 	MoreBaseView * moreBaseView = [[NSBundle mainBundle] loadNibNamed:@"MoreBaseView" owner:self options:nil].firstObject;
-	moreBaseView.frame = CGRectMake(0, 0, 375, 667);
+	self.moreBaseView = moreBaseView;
+	moreBaseView.frame = CGRectMake(0, 0, SCREEN_WIDTH, moreBaseView.height);
 	[_bgScrollView addSubview:moreBaseView];
+	
+	
+	self.notLoginLabel.hidden = !isNotLogin;
+	self.userName.hidden = isNotLogin;
+	self.userLevel.hidden = isNotLogin;
+	self.userLevelImage.hidden = isNotLogin;
+	
 	
 }
 
+
+- (void)viewDidLayoutSubviews {
+	[super viewDidLayoutSubviews];
+	self.bgScrollView.contentSize = CGSizeMake(0, self.moreBaseView.height);
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
