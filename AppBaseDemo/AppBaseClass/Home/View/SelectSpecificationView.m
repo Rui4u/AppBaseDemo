@@ -46,7 +46,7 @@
 	SelectAddView * selectAddView = [[NSBundle mainBundle] loadNibNamed:@"SelectAddView" owner:self options:nil].firstObject;
 	self.selectAddView = selectAddView;
     selectAddView.delegate = self;
-	selectAddView.frame = CGRectMake(self.width - 90 - 10,imageView.bottom - 30 , 90 , 30);
+	selectAddView.frame = CGRectMake(self.width - 100,imageView.bottom - 30 , 100 , 30);
 	[self addSubview:selectAddView];
 
 }

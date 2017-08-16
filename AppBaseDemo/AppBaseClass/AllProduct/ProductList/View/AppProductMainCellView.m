@@ -59,9 +59,9 @@
     [self addSubview:_selectAddView];
     
     [_selectAddView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.mas_right).offset(-15);
+		make.right.equalTo(self.mas_right);
         make.bottom.equalTo(self.mas_bottom).offset(-15);
-        make.size.mas_offset(CGSizeMake(90, 30));
+        make.size.mas_offset(CGSizeMake(105, 30));
     }];
 }
 /*

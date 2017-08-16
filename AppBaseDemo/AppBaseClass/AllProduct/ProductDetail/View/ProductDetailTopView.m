@@ -139,7 +139,7 @@
 		SelectAddView *selectAddView = [[NSBundle mainBundle] loadNibNamed:@"SelectAddView" owner:self options:nil].firstObject;
 		selectAddView.delegate = self;
 		selectAddView.isDiscount = NO;
-		selectAddView.frame = CGRectMake(self.width - 90 - 10,(_priceBgView.height - 30)/2 , 90 , 30);
+		selectAddView.frame = CGRectMake(self.width - 100,(_priceBgView.height - 30)/2 , 100 , 30);
 		selectAddView;
 	});
 	
