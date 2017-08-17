@@ -14,7 +14,6 @@
 @property (nonatomic ,strong) SelectAddView * selectAddView;
 
 @property (weak, nonatomic) IBOutlet UILabel *totalPriceLabel;
-@property (weak, nonatomic) IBOutlet UIButton *guigeSelectButton;
 @property (weak, nonatomic) IBOutlet UILabel *averagePriceLabel;
 
 
@@ -48,9 +47,14 @@
         self.selectShoppingCartGuiGeBlock(self.indexPath);
     }
 }
-#pragma - mark - d
+#pragma - mark - 添加购物车代理
 -(void)changeNumberWith:(NSString *)count withRect:(CGRect) rect{
-
+	self.dataSourse.guige[_indexPath.row].carGoodNum = count;
+	
+	if([self.delegate respondsToSelector:@selector(ShoppingCartGuiGeTableViewCellchangeNumberWith:withRect:withIndexPath:)]){
+		[self.delegate ShoppingCartGuiGeTableViewCellchangeNumberWith:count withRect:rect withIndexPath:_indexPath];
+	}
+   
 }
 
 
@@ -84,4 +88,5 @@
     _guigeSelectButton.selected = guige.selected;
 
 }
+
 @end

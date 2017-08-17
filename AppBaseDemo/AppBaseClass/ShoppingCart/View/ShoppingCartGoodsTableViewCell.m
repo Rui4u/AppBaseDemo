@@ -20,6 +20,13 @@
 
 @end
 @implementation ShoppingCartGoodsTableViewCell
+
+- (void)selectAllOrCancelWith:(BOOL)selectAll {
+	if (selectAll) {
+		[self clickGoodSelectButton:self.goodSelectButton];
+	}
+
+}
 - (IBAction)clickGoodSelectButton:(UIButton *)sender {
     sender.selected = !sender.selected;
     self.dataSourse.selected = sender.selected;

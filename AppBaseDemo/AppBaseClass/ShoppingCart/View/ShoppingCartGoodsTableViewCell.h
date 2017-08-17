@@ -24,4 +24,6 @@
  <#Description#>
  */
 @property (nonatomic ,copy) void(^selectShoppingCartGoodsBlock)(NSIndexPath *indexPath);
+
+- (void)selectAllOrCancelWith:(BOOL)selectAll;
 @end

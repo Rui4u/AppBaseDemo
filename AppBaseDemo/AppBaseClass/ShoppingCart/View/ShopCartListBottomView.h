@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@protocol ShopCartListBottomViewDelegate<NSObject>
 
+- (void)clickSelectAllWithButtonSelected:(BOOL)selected;
+@end
 @interface ShopCartListBottomView : UIView
-
+@property (nonatomic ,weak ) id <ShopCartListBottomViewDelegate> delegate;
 @end

@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 @class Goods;
+
+@protocol ShoppingCartGuiGeTableViewCellDelegate <NSObject>
+
+
+-(void)ShoppingCartGuiGeTableViewCellchangeNumberWith:(NSString *)count withRect:(CGRect) rect withIndexPath:(NSIndexPath *)indexPath;
+
+
+@end
 @interface ShoppingCartGuiGeTableViewCell : UITableViewCell
 /**
  <#Description#>
@@ -21,4 +29,9 @@
 
 @property (nonatomic ,copy) void(^selectShoppingCartGuiGeBlock)(NSIndexPath *indexPath);
 
+@property (nonatomic ,weak ) id <ShoppingCartGuiGeTableViewCellDelegate> delegate;
+
+@property (weak, nonatomic) IBOutlet UIButton *guigeSelectButton;
+
+- (IBAction)clickGuigeSelectButton:(UIButton *)sender;
 @end

@@ -12,7 +12,7 @@
 #import "ShoppingCartListBussiness.h"
 #import "ShoppingCartListModel.h"
 #import "ShopCartListBottomView.h"
-@interface ShoppingCartViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface ShoppingCartViewController ()<UITableViewDelegate,UITableViewDataSource,ShoppingCartGuiGeTableViewCellDelegate,ShopCartListBottomViewDelegate>
 @property (nonatomic ,strong ) UITableView * mainTableView;
 
 /**
@@ -40,16 +40,31 @@
 
     _shopCartListBottomView = ({
         ShopCartListBottomView *shopCartListBottomView =[[NSBundle mainBundle] loadNibNamed:@"ShopCartListBottomView" owner:self options:nil].lastObject;
+		shopCartListBottomView.delegate = self;
         shopCartListBottomView;
     });
     
     [self.view addSubview:_shopCartListBottomView];
 }
+- (void)clickSelectAllWithButtonSelected:(BOOL)selected {
+	
+	for (Goods *good in self.shoppingCartListModel.CarInfoList) {
+		good.selected = selected;
+		for (Guige * guige in good.guige) {
+			guige.selected = selected;
+		}
+	}
+	[self.mainTableView reloadData];
+	
+	NSLog(@"请求接口");
 
+}
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     _shopCartListBottomView.frame = CGRectMake(0, _mainTableView.bottom, SCREEN_WIDTH, 50);
+	
 }
+
 - (void)pullToRefresh {
 
     [ShoppingCartListBussiness requestShoppingCartListWithToken:TOKEN completionSuccessHandler:^(ShoppingCartListModel *shoppingCartListModel) {
@@ -66,7 +81,16 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)ShoppingCartGuiGeTableViewCellchangeNumberWith:(NSString *)count withRect:(CGRect) rect withIndexPath:(NSIndexPath *)indexPath{
+	 ShoppingCartGuiGeTableViewCell * cell = (ShoppingCartGuiGeTableViewCell *)[self.mainTableView cellForRowAtIndexPath:indexPath];
+	
+	if(!cell.guigeSelectButton.selected) {
+		[cell clickGuigeSelectButton:cell.guigeSelectButton];
+	}else {
+		[self detailSelectdWith:indexPath withTypeBlock:self];
+	}
+	
+}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 72;
@@ -84,6 +108,30 @@
     return _shoppingCartListModel.CarInfoList[section].guige.count;
 }
 
+- (void)detailSelectdWith:(NSIndexPath *)indexPath withTypeBlock:(ShoppingCartViewController *) weakSelf{
+	
+	NSInteger totolNum = 0;
+	CGFloat totolNumPrice = 0;
+	BOOL selectAll = YES;
+	for (Guige * guige in weakSelf.shoppingCartListModel.CarInfoList[indexPath.section].guige ) {
+		if (guige.isSelected == NO) {
+			selectAll = NO;
+		}else {
+			totolNum += guige.carGoodNum.integerValue;
+			totolNumPrice += (guige.carGoodNum.integerValue *guige.currentPrice.floatValue);
+		}
+	}
+	
+	weakSelf.shoppingCartListModel.CarInfoList[indexPath.section].selectNum = [NSString stringWithFormat:@"%ld",totolNum];
+	weakSelf.shoppingCartListModel.CarInfoList[indexPath.section].totolPriceNum = [NSString stringWithFormat:@"%.2f",totolNumPrice];
+	if (selectAll) { //产品全选
+		weakSelf.shoppingCartListModel.CarInfoList[indexPath.section].selected = YES;
+	}else {
+		weakSelf.shoppingCartListModel.CarInfoList[indexPath.section].selected = NO;
+	}
+	[weakSelf.mainTableView reloadData];
+	NSLog(@"请求接口");
+}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
     static NSString * const ShoppingCartGuiGeTableViewCellID = @"ShoppingCartGuiGeTableViewCell";
@@ -95,31 +143,11 @@
 
     }
     cell.indexPath = indexPath;;
+	__weak typeof(self) weakSelf = self;
     cell.dataSourse = _shoppingCartListModel.CarInfoList[indexPath.section];
-    
-    __weak typeof(self) weakSelf = self;
+	cell.delegate = self;
     cell.selectShoppingCartGuiGeBlock = ^(NSIndexPath *indexPath) {
-        
-        NSInteger totolNum = 0;
-        CGFloat totolNumPrice = 0;
-        BOOL selectAll = YES;
-        for (Guige * guige in weakSelf.shoppingCartListModel.CarInfoList[indexPath.section].guige ) {
-            if (guige.isSelected == NO) {
-                selectAll = NO;
-            }else {
-                totolNum += guige.carGoodNum.integerValue;
-                totolNumPrice += (guige.carGoodNum.integerValue *guige.currentPrice.floatValue);
-            }
-        }
-        
-        weakSelf.shoppingCartListModel.CarInfoList[indexPath.section].selectNum = [NSString stringWithFormat:@"%ld",totolNum];
-        weakSelf.shoppingCartListModel.CarInfoList[indexPath.section].totolPriceNum = [NSString stringWithFormat:@"%.2f",totolNumPrice];
-        if (selectAll) { //产品全选
-            weakSelf.shoppingCartListModel.CarInfoList[indexPath.section].selected = YES;
-        }else {
-            weakSelf.shoppingCartListModel.CarInfoList[indexPath.section].selected = NO;
-        }
-        [weakSelf.mainTableView reloadData];
+		[self detailSelectdWith:indexPath withTypeBlock:weakSelf];
     };
     
     cell.selectionStyle = UITableViewCellSelectionStyleGray;
@@ -127,17 +155,25 @@
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+	
+	
+	ShoppingCartGoodsTableViewCell *header = (ShoppingCartGoodsTableViewCell *)[tableView dequeueReusableHeaderFooterViewWithIdentifier:@"ShoppingCartGoodsTableViewCellID"];
+	if (header == nil) {
+		header =  [[[NSBundle  mainBundle]  loadNibNamed:@"ShoppingCartGoodsTableViewCell" owner:self options:nil]  lastObject];
+		
+	}
+
+    header.dataSourse = _shoppingCartListModel.CarInfoList[section];
     
-    ShoppingCartGoodsTableViewCell * shoppingCartGoodsTableViewCell=  [[[NSBundle  mainBundle]  loadNibNamed:@"ShoppingCartGoodsTableViewCell" owner:self options:nil]  lastObject];
-    shoppingCartGoodsTableViewCell.dataSourse = _shoppingCartListModel.CarInfoList[section];
-    
-    shoppingCartGoodsTableViewCell.selectShoppingCartGoodsBlock = ^(NSIndexPath *indexPath) {
+    header.selectShoppingCartGoodsBlock = ^(NSIndexPath *indexPath) {
       
         [self.mainTableView reloadData];
+		NSLog(@"请求接口");
     };
-    return shoppingCartGoodsTableViewCell;
+    return header;
     
 }
+
 
 
 - (UITableView *)mainTableView {
