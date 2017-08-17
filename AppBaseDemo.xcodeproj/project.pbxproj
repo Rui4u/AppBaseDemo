@@ -70,6 +70,7 @@
 		2B90F8991F2ED5E800698C38 /* SelectViewTitle.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B90F8981F2ED5E800698C38 /* SelectViewTitle.xib */; };
 		2B90F89C1F2EDC0C00698C38 /* SelectViewTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B90F89B1F2EDC0C00698C38 /* SelectViewTitle.m */; };
 		2B93E8F01F4550F3007FF2A1 /* ShoppingCartManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B93E8EF1F4550F3007FF2A1 /* ShoppingCartManager.m */; };
+		2B93E8F31F4596B7007FF2A1 /* DealWithShoppingCartData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B93E8F21F4596B7007FF2A1 /* DealWithShoppingCartData.m */; };
 		2BA025171F2AD86B003EB25D /* TipLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA025161F2AD86B003EB25D /* TipLabel.m */; };
 		2BA025301F2AE470003EB25D /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA025271F2AE470003EB25D /* BaseViewController.m */; };
 		2BA025311F2AE470003EB25D /* CustomNavBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA025291F2AE470003EB25D /* CustomNavBarView.m */; };
@@ -317,6 +318,8 @@
 		2B90F89B1F2EDC0C00698C38 /* SelectViewTitle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectViewTitle.m; sourceTree = "<group>"; };
 		2B93E8EE1F4550F3007FF2A1 /* ShoppingCartManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingCartManager.h; sourceTree = "<group>"; };
 		2B93E8EF1F4550F3007FF2A1 /* ShoppingCartManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCartManager.m; sourceTree = "<group>"; };
+		2B93E8F11F4596B7007FF2A1 /* DealWithShoppingCartData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealWithShoppingCartData.h; sourceTree = "<group>"; };
+		2B93E8F21F4596B7007FF2A1 /* DealWithShoppingCartData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealWithShoppingCartData.m; sourceTree = "<group>"; };
 		2BA025151F2AD86B003EB25D /* TipLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipLabel.h; sourceTree = "<group>"; };
 		2BA025161F2AD86B003EB25D /* TipLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipLabel.m; sourceTree = "<group>"; };
 		2BA025181F2AD932003EB25D /* SRGlobalConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRGlobalConfig.h; sourceTree = "<group>"; };
@@ -926,6 +929,8 @@
 			children = (
 				2B93E8EE1F4550F3007FF2A1 /* ShoppingCartManager.h */,
 				2B93E8EF1F4550F3007FF2A1 /* ShoppingCartManager.m */,
+				2B93E8F11F4596B7007FF2A1 /* DealWithShoppingCartData.h */,
+				2B93E8F21F4596B7007FF2A1 /* DealWithShoppingCartData.m */,
 				2BB9D9691F407CA00092A9CF /* Bussiness */,
 				2BB9D96A1F407CA00092A9CF /* Model */,
 				2BB9D96B1F407CA00092A9CF /* View */,
@@ -1522,6 +1527,7 @@
 				2B2E109A1F3C0AF900092EAA /* BaseBussiness.m in Sources */,
 				2BA025301F2AE470003EB25D /* BaseViewController.m in Sources */,
 				2BC14DBB1F31CD3500919808 /* SBJsonStreamParserAdapter.m in Sources */,
+				2B93E8F31F4596B7007FF2A1 /* DealWithShoppingCartData.m in Sources */,
 				2BB9D9741F408C9E0092A9CF /* ShoppingCartChangeNumBussiness.m in Sources */,
 				2BA8DAB11F319BA9000190C1 /* DESEncryption.m in Sources */,
 				2B2E10A41F3C0EDF00092EAA /* GetHomeBusiness.m in Sources */,
