@@ -69,6 +69,7 @@
 		2B90F8971F2ECFF100698C38 /* SelectTypeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B90F8961F2ECFF100698C38 /* SelectTypeView.m */; };
 		2B90F8991F2ED5E800698C38 /* SelectViewTitle.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B90F8981F2ED5E800698C38 /* SelectViewTitle.xib */; };
 		2B90F89C1F2EDC0C00698C38 /* SelectViewTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B90F89B1F2EDC0C00698C38 /* SelectViewTitle.m */; };
+		2B93E8F01F4550F3007FF2A1 /* ShoppingCartManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B93E8EF1F4550F3007FF2A1 /* ShoppingCartManager.m */; };
 		2BA025171F2AD86B003EB25D /* TipLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA025161F2AD86B003EB25D /* TipLabel.m */; };
 		2BA025301F2AE470003EB25D /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA025271F2AE470003EB25D /* BaseViewController.m */; };
 		2BA025311F2AE470003EB25D /* CustomNavBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA025291F2AE470003EB25D /* CustomNavBarView.m */; };
@@ -314,6 +315,8 @@
 		2B90F8981F2ED5E800698C38 /* SelectViewTitle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectViewTitle.xib; sourceTree = "<group>"; };
 		2B90F89A1F2EDC0C00698C38 /* SelectViewTitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectViewTitle.h; sourceTree = "<group>"; };
 		2B90F89B1F2EDC0C00698C38 /* SelectViewTitle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectViewTitle.m; sourceTree = "<group>"; };
+		2B93E8EE1F4550F3007FF2A1 /* ShoppingCartManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingCartManager.h; sourceTree = "<group>"; };
+		2B93E8EF1F4550F3007FF2A1 /* ShoppingCartManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCartManager.m; sourceTree = "<group>"; };
 		2BA025151F2AD86B003EB25D /* TipLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipLabel.h; sourceTree = "<group>"; };
 		2BA025161F2AD86B003EB25D /* TipLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipLabel.m; sourceTree = "<group>"; };
 		2BA025181F2AD932003EB25D /* SRGlobalConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRGlobalConfig.h; sourceTree = "<group>"; };
@@ -921,6 +924,8 @@
 		2BB9D9681F407CA00092A9CF /* ShoppingCart */ = {
 			isa = PBXGroup;
 			children = (
+				2B93E8EE1F4550F3007FF2A1 /* ShoppingCartManager.h */,
+				2B93E8EF1F4550F3007FF2A1 /* ShoppingCartManager.m */,
 				2BB9D9691F407CA00092A9CF /* Bussiness */,
 				2BB9D96A1F407CA00092A9CF /* Model */,
 				2BB9D96B1F407CA00092A9CF /* View */,
@@ -1615,6 +1620,7 @@
 				2BBFAFF51F330181002506D1 /* RegisterBusiness.m in Sources */,
 				2B84607F1F419EB20013D26D /* ProductSpecificationParameterView.m in Sources */,
 				2B41F21E1F42C27200CB36D0 /* AddToShoppingCartAnimation.m in Sources */,
+				2B93E8F01F4550F3007FF2A1 /* ShoppingCartManager.m in Sources */,
 				2BBDCC4E1F34AD86003FE167 /* HomeDataModel.m in Sources */,
 				2BD099421F4349D2008A1827 /* ShoppingCartListBussiness.m in Sources */,
 				2BBFAFFF1F330AE8002506D1 /* LoginBusiness.m in Sources */,

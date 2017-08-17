@@ -67,12 +67,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(ShoppingCartNumberNotify)
+												 name:CNotificationShoppingCartNumberNotify
+											   object:nil];
+	//注册退出成功通知
+
     [self setUpCustomTabBar];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
+	
 }
 
 - (void)didReceiveMemoryWarning {
@@ -80,7 +86,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)ShoppingCartNumberNotify {
 
+	APP_DELEGATE.customTabBar.tabBarView.shoppingCartButton.badgeString = [NSString stringWithFormat:@"%tu",[ShoppingCartManager sharedManager].selectNumber];
+
+}
 
 #pragma mark - tabBar面包客
 
@@ -140,9 +150,6 @@
 
 
 
-- (void) privateReferRootViewWithBuy
-{
-}
 
 
 - (void)setUpCustomTabBar

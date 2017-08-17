@@ -8,17 +8,11 @@
 
 #import "CommonNotification.h"
 
-NSString * const CNotificationLogOut  = @"Notification_LogOut";
-NSString * const CNotificationLogInSucess = @"Notification_LogIn";
-NSString * const CNotificationGetMoreDataRefreshRootViewController = @"CNotificationGetMoreDataRefreshRootViewController";
-NSString * const CNotificationMoreDateRefreshRootVCWithBuy = @"CNotificationMoreDateRefreshRootVCWithBuy";
 
+NSString * const CNotificationLogOut = @"CNotificationLogOut";
+NSString * const CNotificationLogInSucess = @"CNotificationLogInSucess";//登录成功
 NSString * const LoginViewRootControllerBlock = @"LoginViewRootControllerBlock";  // 登录后登录控制器回调
-NSString * const CNotificationConfirmation = @"AlreadySubmitConfirmation"; //提交合格投资人
-NSString * const NotificationProductViewController = @"NotificationProductViewController"; //产品中心刷新
-NSString * const CNotificationUpdate = @"CNotificationUpdate" ;
-
-
+NSString * const CNotificationShoppingCartNumberNotify = @"CNotificationShoppingCartNumberNotify";
 
 @implementation CommonNotification
 

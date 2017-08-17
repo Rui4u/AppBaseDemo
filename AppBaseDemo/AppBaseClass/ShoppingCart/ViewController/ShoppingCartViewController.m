@@ -15,10 +15,6 @@
 @interface ShoppingCartViewController ()<UITableViewDelegate,UITableViewDataSource,ShoppingCartGuiGeTableViewCellDelegate,ShopCartListBottomViewDelegate>
 @property (nonatomic ,strong ) UITableView * mainTableView;
 
-/**
- <#Description#>
- */
-@property (nonatomic ,strong) ShoppingCartListModel *shoppingCartListModel;
 
 /**
  ShopCartListBottomView *shopCartListBottomView
@@ -48,13 +44,13 @@
 }
 - (void)clickSelectAllWithButtonSelected:(BOOL)selected {
 	
-	for (Goods *good in self.shoppingCartListModel.CarInfoList) {
+	for (Goods *good in [ShoppingCartManager sharedManager].CarInfoList) {
 		good.selected = selected;
 		for (Guige * guige in good.guige) {
 			guige.selected = selected;
 		}
 	}
-	[self.mainTableView reloadData];
+	[self customReloadeData];
 	
 	NSLog(@"请求接口");
 
@@ -68,8 +64,8 @@
 - (void)pullToRefresh {
 
     [ShoppingCartListBussiness requestShoppingCartListWithToken:TOKEN completionSuccessHandler:^(ShoppingCartListModel *shoppingCartListModel) {
-        self.shoppingCartListModel = shoppingCartListModel;
-        [self.mainTableView reloadData];
+		[ShoppingCartManager sharedManager].CarInfoList = shoppingCartListModel.CarInfoList;
+        [self customReloadeData];
         [self.mainTableView.mj_header endRefreshing];
     } completionFailHandler:^(NSString *failMessage) {
         
@@ -101,11 +97,11 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return _shoppingCartListModel.CarInfoList.count;
+    return [ShoppingCartManager sharedManager].CarInfoList.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _shoppingCartListModel.CarInfoList[section].guige.count;
+    return [ShoppingCartManager sharedManager].CarInfoList[section].guige.count;
 }
 
 - (void)detailSelectdWith:(NSIndexPath *)indexPath withTypeBlock:(ShoppingCartViewController *) weakSelf{
@@ -113,7 +109,7 @@
 	NSInteger totolNum = 0;
 	CGFloat totolNumPrice = 0;
 	BOOL selectAll = YES;
-	for (Guige * guige in weakSelf.shoppingCartListModel.CarInfoList[indexPath.section].guige ) {
+	for (Guige * guige in [ShoppingCartManager sharedManager].CarInfoList[indexPath.section].guige ) {
 		if (guige.isSelected == NO) {
 			selectAll = NO;
 		}else {
@@ -122,14 +118,14 @@
 		}
 	}
 	
-	weakSelf.shoppingCartListModel.CarInfoList[indexPath.section].selectNum = [NSString stringWithFormat:@"%ld",totolNum];
-	weakSelf.shoppingCartListModel.CarInfoList[indexPath.section].totolPriceNum = [NSString stringWithFormat:@"%.2f",totolNumPrice];
+	[ShoppingCartManager sharedManager].CarInfoList[indexPath.section].selectNum = [NSString stringWithFormat:@"%ld",totolNum];
+	[ShoppingCartManager sharedManager].CarInfoList[indexPath.section].totolPriceNum = [NSString stringWithFormat:@"%.2f",totolNumPrice];
 	if (selectAll) { //产品全选
-		weakSelf.shoppingCartListModel.CarInfoList[indexPath.section].selected = YES;
+		[ShoppingCartManager sharedManager].CarInfoList[indexPath.section].selected = YES;
 	}else {
-		weakSelf.shoppingCartListModel.CarInfoList[indexPath.section].selected = NO;
+		[ShoppingCartManager sharedManager].CarInfoList[indexPath.section].selected = NO;
 	}
-	[weakSelf.mainTableView reloadData];
+	[weakSelf customReloadeData];
 	NSLog(@"请求接口");
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -144,7 +140,7 @@
     }
     cell.indexPath = indexPath;;
 	__weak typeof(self) weakSelf = self;
-    cell.dataSourse = _shoppingCartListModel.CarInfoList[indexPath.section];
+    cell.dataSourse = [ShoppingCartManager sharedManager].CarInfoList[indexPath.section];
 	cell.delegate = self;
     cell.selectShoppingCartGuiGeBlock = ^(NSIndexPath *indexPath) {
 		[self detailSelectdWith:indexPath withTypeBlock:weakSelf];
@@ -163,11 +159,11 @@
 		
 	}
 
-    header.dataSourse = _shoppingCartListModel.CarInfoList[section];
+    header.dataSourse = [ShoppingCartManager sharedManager].CarInfoList[section];
     
     header.selectShoppingCartGoodsBlock = ^(NSIndexPath *indexPath) {
       
-        [self.mainTableView reloadData];
+        [self customReloadeData];
 		NSLog(@"请求接口");
     };
     return header;
@@ -190,6 +186,11 @@
     return _mainTableView;
 }
 
+- (void)customReloadeData {
 
+	 [CommonNotification postNotification:CNotificationShoppingCartNumberNotify userInfo:nil object:nil];
+	[self.mainTableView reloadData];
+	
+}
 
 @end

@@ -17,4 +17,6 @@
 #import "SRGlobalConfig.h"
 #import "AppDelegate.h"
 #import "CommonNotification.h"
+#import "ShoppingCartManager.h"
+#import "HomeDataModel.h"
 #endif /* PrefixHeader_pch */
