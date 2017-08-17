@@ -54,7 +54,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    self.goodsDataSourse.cartTotalNum = _prodcutDetailBottomView.numText; //发通知改变个数
+	
 }
 - (void)pullToRefresh {
     
@@ -87,7 +87,7 @@
     [self.view bringSubviewToFront:_prodcutDetailBottomView];
     
     self.bgScrollView.contentSize = CGSizeMake(0, self.productSpecificationParameterView.bottom + 20);
-    _prodcutDetailBottomView.numText = self.goodsDataSourse.cartTotalNum;
+    _prodcutDetailBottomView.numText = [NSString stringWithFormat:@"%tu",[ShoppingCartManager sharedManager].selectNumber];
     NSString * price = [NSString stringWithFormat:@"{价格：}{￥%@}",@"1231"];
     _prodcutDetailBottomView.priceText = price;
 }
@@ -97,15 +97,19 @@
     
     NSString * guigeId = self.goodsDataSourse.guige[index].guigeID;
     NSString * goodsId = self.goodsDataSourse.goodsID;
-    //改变个数
-    [self changeShoppingCartNumberWithCurrent:count andIndex:index];
-    
-    
-    
-    
+	self.goodsDataSourse.guige[index].carGoodNum = count;
+	
+	[[ShoppingCartManager sharedManager] addobjectWith:self.goodsDataSourse withGuiGeIndex:index];
+
+	[CommonNotification postNotification:CNotificationShoppingCartNumberNotify userInfo:nil object:nil];
+	//改变个数
+	[self changeShoppingCartNumberWithCurrent:count andIndex:index];
+	
     if(count.integerValue == 0){
         NSLog(@"删除");
-        
+		
+		[[ShoppingCartManager sharedManager] removeobjectWith:self.goodsDataSourse withGuiGeIndex:index];
+
         NSMutableArray * goodListArray = [[NSMutableArray alloc] init];
         NSMutableDictionary * goodInfoDict = [[NSMutableDictionary alloc] init];
         NSMutableArray * goodsSpecArray = [[NSMutableArray alloc] init];
@@ -158,26 +162,12 @@
 
 - (void)changeShoppingCartNumberWithCurrent:(NSString *)count andIndex:(NSInteger)index {
     
-    //获取差值
-    NSInteger tempAddNum =  count.integerValue - self.goodsDataSourse.guige[index].carGoodNum.integerValue;
-    self.goodsDataSourse.guige[index].tempAddGoodsNum = [NSString stringWithFormat:@"%tu",tempAddNum];
-   
-    CGFloat addPrice = self.goodsDataSourse.guige[index].currentPrice.floatValue * tempAddNum;
-     self.goodsDataSourse.guige[index].tempAddPrice =  [NSString stringWithFormat:@"%f",addPrice];
-    
-    //通过差值计算数量
-    NSInteger tempCarNum = 0;
-    addPrice = 0;
-    for (Guige * tempGuige in self.goodsDataSourse.guige) {
-        tempCarNum = tempCarNum + tempGuige.tempAddGoodsNum.integerValue;
-        addPrice = addPrice + tempGuige.tempAddPrice.floatValue;
-    }
-    tempCarNum = tempCarNum + self.goodsDataSourse.cartTotalNum.integerValue;
-    _prodcutDetailBottomView.numText = [NSString stringWithFormat:@"%tu",tempCarNum];
+	
+    _prodcutDetailBottomView.numText = [NSString stringWithFormat:@"%tu",[ShoppingCartManager sharedManager].selectNumber];
     
     
-    NSString * price = [NSString stringWithFormat:@"{价格：}{￥%@}",[NSString stringWithFormat:@"%.02f",addPrice + 1000]];
-    _prodcutDetailBottomView.priceText = price;
+//    NSString * price = [NSString stringWithFormat:@"{价格：}{￥%@}",[NSString stringWithFormat:@"%.02f",];
+//    _prodcutDetailBottomView.priceText = price;
 }
 #pragma mark - 点击反馈
 - (void)clickRightButton {

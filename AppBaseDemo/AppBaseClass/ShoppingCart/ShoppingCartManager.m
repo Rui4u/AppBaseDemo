@@ -60,6 +60,7 @@
 
 }
 - (void)addobjectWith:(Goods *)goods withGuiGeIndex:(NSInteger) index{
+	
 	Goods *	tempGoods = goods.copy;
 	BOOL hasGoodBool = NO;
 	BOOL hasGuiGeBool = NO;
@@ -80,6 +81,7 @@
 			}
 			if (!hasGuiGeBool) {
 				NSMutableArray *temp = hasGood.guige.mutableCopy;
+				goods.guige[index].selected = YES;
 				[temp addObject:tempGoods.guige[index]];
 				hasGood.guige = temp.copy;
 			}
@@ -89,7 +91,7 @@
 	}
 	
 	if (!hasGoodBool) {
-		
+		goods.guige[index].selected = YES;
 		tempGoods.guige = @[goods.guige[index]];
 		[self.CarInfoList addObject:tempGoods];
 	}

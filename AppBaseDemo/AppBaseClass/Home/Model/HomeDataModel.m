@@ -136,7 +136,6 @@
 		instance.carGoodNum = [self.carGoodNum copyWithZone:zone];
 		instance.detailsImage = [self.detailsImage copyWithZone:zone];
 		instance.goodSpecId = [self.goodSpecId copyWithZone:zone];
-		instance.cartTotalNum = [self.cartTotalNum copyWithZone:zone];
 	}
 	return instance;
 }
@@ -196,17 +195,11 @@
 		instance.carGoodNum = [self.carGoodNum mutableCopyWithZone:zone];
 		instance.detailsImage = [self.detailsImage mutableCopyWithZone:zone];
 		instance.goodSpecId = [self.goodSpecId mutableCopyWithZone:zone];
-		instance.cartTotalNum = [self.cartTotalNum mutableCopyWithZone:zone];
+
 	}
 	return instance;
 }
 
-- (NSString *)cartTotalNum {
-	if (_cartTotalNum == nil) {
-		_cartTotalNum = @"4";
-	}
-	return _cartTotalNum;
-}
 
 + (NSDictionary *)replacedKeyFromPropertyName{
 	return @{@"goodsID" : @"id"};

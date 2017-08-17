@@ -80,8 +80,6 @@
 @property (nonatomic , copy) NSString              * carGoodNum;
 @property (nonatomic , copy) NSString              * addTime;
 
-
-@property (nonatomic ,copy ) NSString * cartTotalNum;
 @end
 
 @interface ProductionInfoList :NSObject

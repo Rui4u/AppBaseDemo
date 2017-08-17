@@ -69,8 +69,8 @@
     }else {
         self.selectSpecificationView.showDisCountView = NO;
     }
-    self.selectSpecificationView.carGoodsNum = dataSourse.cartTotalNum;
-    
+    self.selectSpecificationView.carGoodsNum = dataSourse.guige[self.indexPath.row].carGoodNum;
+	
     
 }
 
