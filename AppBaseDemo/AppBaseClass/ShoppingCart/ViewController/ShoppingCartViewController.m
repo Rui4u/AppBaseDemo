@@ -64,7 +64,7 @@
 - (void)pullToRefresh {
 
     [ShoppingCartListBussiness requestShoppingCartListWithToken:TOKEN completionSuccessHandler:^(ShoppingCartListModel *shoppingCartListModel) {
-		[ShoppingCartManager sharedManager].CarInfoList = shoppingCartListModel.CarInfoList;
+		[ShoppingCartManager sharedManager].CarInfoList = shoppingCartListModel.CarInfoList.mutableCopy;
         [self customReloadeData];
         [self.mainTableView.mj_header endRefreshing];
     } completionFailHandler:^(NSString *failMessage) {

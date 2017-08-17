@@ -11,6 +11,8 @@
 #import "AppProductViewController.h"
 #import "MoreViewController.h"
 #import "ShoppingCartViewController.h"
+#import "ShoppingCartListBussiness.h"
+#import "ShoppingCartListModel.h"
 @interface RootViewController ()<UITabBarControllerDelegate,SRCustomTabBarViewDelegate>
 
 
@@ -71,6 +73,11 @@
 											 selector:@selector(ShoppingCartNumberNotify)
 												 name:CNotificationShoppingCartNumberNotify
 											   object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(CNotificationLogInSucessFuntion)
+												 name:CNotificationLogInSucess
+											   object:nil];
+
 	//注册退出成功通知
 
     [self setUpCustomTabBar];
@@ -85,6 +92,25 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - 登录成功
+
+- (void)CNotificationLogInSucessFuntion {
+	
+	
+	[ShoppingCartListBussiness requestShoppingCartListWithToken:TOKEN completionSuccessHandler:^(ShoppingCartListModel *shoppingCartListModel) {
+		[ShoppingCartManager sharedManager].CarInfoList = shoppingCartListModel.CarInfoList.mutableCopy;
+		[CommonNotification postNotification:CNotificationShoppingCartNumberNotify userInfo:nil object:nil];
+
+	} completionFailHandler:^(NSString *failMessage) {
+		[self showToastWithMessage:failMessage showTime:1];
+	} completionError:^(NSString *netWorkErrorMessage) {
+		[self showToastWithMessage:netWorkErrorMessage showTime:1];
+	}];
+
+}
+
+#pragma mark - 添加购物车通知
 
 - (void)ShoppingCartNumberNotify {
 
@@ -112,7 +138,6 @@
 	
 }
 
-
 // 实现点击选择前截取
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
 {
@@ -136,11 +161,7 @@
 {
 	
 	self.currentViewController = viewController;
-    if (!([viewController isKindOfClass:[self.moreViewController class]] ||
-          [viewController isKindOfClass:[self.shoppingCartViewController class]]))
-    {
-        [self privateReferRootViewWithBuy];
-    }
+ 
 }
 
 
@@ -230,6 +251,11 @@
     
    	
 	[customTabBar.tabBarView setlectNomalTabBar];
+	
+	if (!isNotLogin) {
+		[CommonNotification postNotification:CNotificationLogInSucess userInfo:nil object:nil];
+
+	}
 }
 
 

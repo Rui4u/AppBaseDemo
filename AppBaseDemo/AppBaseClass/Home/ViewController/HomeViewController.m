@@ -208,15 +208,19 @@
     Goods * selectGoods = self.dataSourse.ProductionInfoList[typeIndex].goodsList[indexPath.section];
     Guige * selectGuige = selectGoods.guige[indexPath.row];
     
-    NSInteger tempAddNum = count.integerValue - selectGuige.carGoodNum.integerValue;
+	selectGuige.carGoodNum = count;
+	selectGuige.selected = YES;
 
-    [APP_DELEGATE.customTabBar.tabBarView.shoppingCartButton setBadgeString:[NSString stringWithFormat:@"%tu",APP_DELEGATE.customTabBar.tabBarView.shoppingCartButton.badgeString.integerValue + tempAddNum]];
-    
-    selectGuige.carGoodNum = count;
-    
+	
+	[[ShoppingCartManager sharedManager] addobjectWith:selectGoods withGuiGeIndex:indexPath.row];
+	[CommonNotification postNotification:CNotificationShoppingCartNumberNotify userInfo:nil object:nil];
+
+	
     if(count.integerValue == 0){
         NSLog(@"删除");
 		
+		[[ShoppingCartManager sharedManager] removeobjectWith:selectGoods withGuiGeIndex:indexPath.row];
+
 		NSMutableArray * goodListArray = [[NSMutableArray alloc] init];
 		NSMutableDictionary * goodInfoDict = [[NSMutableDictionary alloc] init];
 		NSMutableArray * goodsSpecArray = [[NSMutableArray alloc] init];

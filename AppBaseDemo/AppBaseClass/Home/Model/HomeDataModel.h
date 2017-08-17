@@ -18,7 +18,7 @@
 
 @end
 
-@interface Guige :NSObject
+@interface Guige :NSObject<NSMutableCopying,NSCopying>
 
 @property (nonatomic ,assign,getter=isSelected)BOOL selected;  //购物车是否选择
 @property (nonatomic , copy) NSString              * oldPrice;
@@ -35,7 +35,7 @@
 
 @end
 
-@interface Goods :NSObject
+@interface Goods :NSObject<NSMutableCopying,NSCopying>
 @property (nonatomic ,assign) NSInteger height;
 @property (nonatomic ,assign,getter=isSelected)BOOL selected;  //购物车是否选择
 @property (nonatomic ,assign , getter=isOpen) BOOL open; //列表是否打开规格
@@ -74,7 +74,6 @@
 @property (nonatomic , copy) NSString              * modifyDate;
 @property (nonatomic , copy) NSString              * listId;
 @property (nonatomic , copy) NSString              * goodsState;
-@property (nonatomic , copy) NSString              * goodsId;;
 @property (nonatomic , copy) NSString              * goodsNum;
 @property (nonatomic , copy) NSString              * detailsImage;
 @property (nonatomic , copy) NSString              * goodSpecId;

@@ -14,8 +14,17 @@
  */
 @interface ShoppingCartManager : NSObject
 
-@property (nonatomic , strong) NSArray<Goods *>* CarInfoList;
+@property (nonatomic , strong) NSMutableArray<Goods *>* CarInfoList;
 
 @property (nonatomic ,assign ) NSInteger selectNumber;
 + (instancetype)sharedManager;
+
+/**
+ 添加购物车商品
+
+ @param goods <#goods description#>
+ */
+- (void)addobjectWith:(Goods *)goods withGuiGeIndex:(NSInteger) index;
+- (void)removeobjectWith:(Goods *)goods withGuiGeIndex:(NSInteger) index;
+
 @end
