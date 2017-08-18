@@ -83,6 +83,9 @@
                                 <state key="normal" title="再次购买">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="clickButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="CeC-Xi-1wq"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Wu-sy-Mrc">
                                 <rect key="frame" x="293" y="10" width="60" height="30"/>
@@ -90,6 +93,10 @@
                                 <state key="normal" title="取消进度">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="clickButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Unf-Nw-RPR"/>
+                                    <action selector="clickLeftButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="xnV-Nv-d2d"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -195,6 +202,15 @@
                     <constraint firstAttribute="bottom" secondItem="43a-ls-7VT" secondAttribute="bottom" id="wdr-cN-sew"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="categoryView" destination="0Vg-Vo-rdv" id="079-3C-bbI"/>
+                <outlet property="leftButton" destination="0Wu-sy-Mrc" id="Ojn-an-JK7"/>
+                <outlet property="moneyLabel" destination="u7a-lL-68H" id="C3F-gk-XQd"/>
+                <outlet property="orderTime" destination="NAx-9u-f4v" id="0en-6x-c9i"/>
+                <outlet property="productNumber" destination="Yur-oP-HRG" id="spG-Od-ONK"/>
+                <outlet property="rightButton" destination="UNM-NS-NAG" id="jLh-gU-0uz"/>
+                <outlet property="status" destination="WtR-iu-Iac" id="MkD-fh-jrx"/>
+            </connections>
             <point key="canvasLocation" x="-156.5" y="43.5"/>
         </tableViewCell>
     </objects>

@@ -93,7 +93,7 @@
 	
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-	return 5;
+	return self.orderListData.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -106,6 +106,9 @@
 		cell= (MyOrderListTableViewCell *)[[[NSBundle  mainBundle]  loadNibNamed:@"MyOrderListTableViewCell" owner:self options:nil]  lastObject];
 	
 	}
+	cell.orderListInfo = self.orderListData[indexPath.section];
+	cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
 	return cell;
 }
 
