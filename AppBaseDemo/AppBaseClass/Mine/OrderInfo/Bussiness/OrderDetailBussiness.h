@@ -31,7 +31,7 @@ typedef void (^OrderDetailErrorBlcok)(NSString * netWorkErrorMessage);
  @param completionError <#completionError description#>
  */
 + (void) requestOrderDetailWithToken : (NSString* ) token
-							  State:(NSString *)State
+							  orderId:(NSString *)orderId
 		  completionSuccessHandler : (OrderDetailSuccessBlock) completionHandler
 			 completionFailHandler : (OrderDetailFailBlock) completionFailHandler
 				   completionError : (OrderDetailErrorBlcok) completionError;

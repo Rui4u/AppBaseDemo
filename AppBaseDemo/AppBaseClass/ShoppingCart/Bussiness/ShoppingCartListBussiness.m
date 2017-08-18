@@ -25,7 +25,6 @@
      {
          NSDictionary * responeMp = (NSDictionary * ) success ;
          
-         NSLog(@"删除成功");
          ShoppingCartListModel * model = [ShoppingCartListModel mj_objectWithKeyValues:responeMp];
 
          completionHandler(model);

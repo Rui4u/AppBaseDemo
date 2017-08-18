@@ -11,14 +11,14 @@
 @implementation OrderListBussiness
 
 + (void) requestOrderListWithToken : (NSString* ) token
-							  State:(NSString *)State
+							  state:(NSString *)state
 				 completionSuccessHandler : (OrderListSuccessBlock) completionHandler
 					completionFailHandler : (OrderListFailBlock) completionFailHandler
 					completionError : (OrderListErrorBlcok) completionError
 {
 	NSMutableDictionary * body = [[NSMutableDictionary alloc]init];
 	[body setValue:token forKey:@"token"];
-	[body setValue:State forKey:@"State"];
+	[body setValue:state forKey:@"state"];
 	
 	
 	[BaseNetWorkClient jsonFormGetRequestWithUrl:kOrderListBussinessUrl

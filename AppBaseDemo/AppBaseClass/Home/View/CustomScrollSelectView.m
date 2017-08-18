@@ -179,7 +179,7 @@
 	
 	if(!_changeView){
 		
-		_changeView = [[UIView alloc] initWithFrame:CGRectMake(12,42, LabelWidth - 24, 2)];
+		_changeView = [[UIView alloc] initWithFrame:CGRectMake(12,self.height - 2, LabelWidth - 24, 2)];
 		_changeView.backgroundColor = self.textSelectColor;
 		
 	}

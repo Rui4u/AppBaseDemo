@@ -19,8 +19,19 @@ typedef void (^OrderListErrorBlcok)(NSString * netWorkErrorMessage);
  */
 @interface OrderListBussiness : BaseBussiness
 
+/**
+ <#Description#>
+ 
+ @param token <#token description#>
+ @param status  1 待发货，2待收货，3已完成
+
+ @param dataArray <#dataArray description#>
+ @param completionHandler <#completionHandler description#>
+ @param completionFailHandler <#completionFailHandler description#>
+ @param completionError <#completionError description#>
+ */
 + (void) requestOrderListWithToken : (NSString* ) token
-							orderId:(NSString *)orderId
+							  state:(NSString *)state
 				 completionSuccessHandler : (OrderListSuccessBlock) completionHandler
 					completionFailHandler : (OrderListFailBlock) completionFailHandler
 					completionError : (OrderListErrorBlcok) completionError;

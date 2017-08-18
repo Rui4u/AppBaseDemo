@@ -83,7 +83,6 @@
 		[self addSubview:iconButton];
         if ( i == 2) {
             self.shoppingCartButton = iconButton;
-            iconButton.badgeString = @"50";
         }
     
 		UILabel * iconButtonLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, iconButton.height -15, iconButton.width, 15)];

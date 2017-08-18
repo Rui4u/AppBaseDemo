@@ -62,6 +62,9 @@
 		2B6BE3521F46901700D0C915 /* OrderListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B6BE3511F46901700D0C915 /* OrderListModel.m */; };
 		2B6BE3551F4691C300D0C915 /* OrderDetailBussiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B6BE3541F4691C300D0C915 /* OrderDetailBussiness.m */; };
 		2B6BE3581F4691F100D0C915 /* OrderDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B6BE3571F4691F100D0C915 /* OrderDetailModel.m */; };
+		2B6BE35B1F46928C00D0C915 /* OrderListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B6BE35A1F46928C00D0C915 /* OrderListViewController.m */; };
+		2B6BE35F1F46B72B00D0C915 /* MyOrderListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B6BE35D1F46B72B00D0C915 /* MyOrderListTableViewCell.m */; };
+		2B6BE3601F46B72B00D0C915 /* MyOrderListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B6BE35E1F46B72B00D0C915 /* MyOrderListTableViewCell.xib */; };
 		2B7DCC021F3579CC00E88B38 /* HomeProductListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7DCC011F3579CC00E88B38 /* HomeProductListTableViewCell.m */; };
 		2B7DCC0C1F358CC400E88B38 /* SelectSpecificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7DCC0B1F358CC400E88B38 /* SelectSpecificationView.m */; };
 		2B8460691F41446E0013D26D /* ProdcutDetailBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B8460681F41446E0013D26D /* ProdcutDetailBottomView.xib */; };
@@ -318,6 +321,11 @@
 		2B6BE3541F4691C300D0C915 /* OrderDetailBussiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailBussiness.m; sourceTree = "<group>"; };
 		2B6BE3561F4691F100D0C915 /* OrderDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDetailModel.h; sourceTree = "<group>"; };
 		2B6BE3571F4691F100D0C915 /* OrderDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailModel.m; sourceTree = "<group>"; };
+		2B6BE3591F46928C00D0C915 /* OrderListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderListViewController.h; sourceTree = "<group>"; };
+		2B6BE35A1F46928C00D0C915 /* OrderListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderListViewController.m; sourceTree = "<group>"; };
+		2B6BE35C1F46B72B00D0C915 /* MyOrderListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOrderListTableViewCell.h; sourceTree = "<group>"; };
+		2B6BE35D1F46B72B00D0C915 /* MyOrderListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOrderListTableViewCell.m; sourceTree = "<group>"; };
+		2B6BE35E1F46B72B00D0C915 /* MyOrderListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyOrderListTableViewCell.xib; sourceTree = "<group>"; };
 		2B7DCC001F3579CC00E88B38 /* HomeProductListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeProductListTableViewCell.h; sourceTree = "<group>"; };
 		2B7DCC011F3579CC00E88B38 /* HomeProductListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeProductListTableViewCell.m; sourceTree = "<group>"; };
 		2B7DCC0A1F358CC400E88B38 /* SelectSpecificationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectSpecificationView.h; sourceTree = "<group>"; };
@@ -802,6 +810,9 @@
 		2B6BE3281F46826400D0C915 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2B6BE35C1F46B72B00D0C915 /* MyOrderListTableViewCell.h */,
+				2B6BE35D1F46B72B00D0C915 /* MyOrderListTableViewCell.m */,
+				2B6BE35E1F46B72B00D0C915 /* MyOrderListTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -809,6 +820,8 @@
 		2B6BE32C1F46826400D0C915 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				2B6BE3591F46928C00D0C915 /* OrderListViewController.h */,
+				2B6BE35A1F46928C00D0C915 /* OrderListViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1498,6 +1511,7 @@
 				2B2E10511F3C015D00092EAA /* CityNotInOpenCityView.xib in Resources */,
 				2B41F21B1F42ABB600CB36D0 /* ProductDetailGuiGeInfo.xib in Resources */,
 				2BC60A711F4493D10069D70B /* ShopCartListBottomView.xib in Resources */,
+				2B6BE3601F46B72B00D0C915 /* MyOrderListTableViewCell.xib in Resources */,
 				2BD0997B1F4359B0008A1827 /* tabBarIcon_wealthNormal@2x.png in Resources */,
 				2BD0997D1F4359B0008A1827 /* tabBarIcon_wealthSelecetd2@2x.png in Resources */,
 				2BFCFDEC1F413B63001DA10D /* AppProductMainCellView.xib in Resources */,
@@ -1639,6 +1653,7 @@
 				2BC60A6C1F448C880069D70B /* ShoppingCartListModel.m in Sources */,
 				2BC14DC21F31CD3500919808 /* SBJsonWriter.m in Sources */,
 				2BFCFDEE1F413B63001DA10D /* AppProductViewController.m in Sources */,
+				2B6BE35F1F46B72B00D0C915 /* MyOrderListTableViewCell.m in Sources */,
 				2BC14DBD1F31CD3500919808 /* SBJsonStreamWriter.m in Sources */,
 				2BD5D70D1F39871700BE1994 /* PinyinHelper.m in Sources */,
 				2B5AA4D71F3DA1BF00C3EE31 /* SelectAddView.m in Sources */,
@@ -1658,6 +1673,7 @@
 				2B6BE33D1F4682CE00D0C915 /* CountPriceBussiness.m in Sources */,
 				2BBFAFFB1F3301F6002506D1 /* Parser.m in Sources */,
 				2B90F8971F2ECFF100698C38 /* SelectTypeView.m in Sources */,
+				2B6BE35B1F46928C00D0C915 /* OrderListViewController.m in Sources */,
 				2BFCFDF11F413B9F001DA10D /* ProdcutDetailBottomView.m in Sources */,
 				2BAFB5121F333054001236B8 /* GetCityListBusiness.m in Sources */,
 				2B386F871F29B69A00228620 /* AppBaseDemo.xcdatamodeld in Sources */,

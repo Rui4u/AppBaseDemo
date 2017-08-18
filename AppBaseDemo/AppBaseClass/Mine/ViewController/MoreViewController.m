@@ -8,6 +8,7 @@
 
 #import "MoreViewController.h"
 #import "MoreBaseView.h"
+#import "OrderListViewController.h"
 @interface MoreViewController ()
 
 @property (weak, nonatomic) IBOutlet UIScrollView *bgScrollView;
@@ -25,7 +26,8 @@
 @implementation MoreViewController
 
 - (IBAction)clickMyOrderButton:(UIButton *)sender {
-	
+	OrderListViewController * orderListViewController = [[OrderListViewController alloc] init];
+	[self.navigationController pushViewController:orderListViewController animated:YES];
 	
 }
 - (IBAction)clickNormalToolsButton:(UIButton *)sender {
