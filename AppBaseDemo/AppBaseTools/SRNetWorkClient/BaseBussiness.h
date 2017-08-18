@@ -45,6 +45,28 @@
 #define kProductRemoveListBussinessUrl [NSString stringWithFormat :@"%@/gs/store/removeList?",kHTTP_HOST_URL]
 //购物车列表
 #define kShopCarListBussinessUrl [NSString stringWithFormat :@"%@/gs/shopCar/selectCar?",kHTTP_HOST_URL]
+//获取价格
+#define kCountPriceBussinessUrl [NSString stringWithFormat :@"%@/gs/shopCar/countPrice?",kHTTP_HOST_URL]
+
+
+//我的发票
+#define kCommonToolsInvoiceBussinessUrl [NSString stringWithFormat :@"%@/gs/commonTools/invoice?",kHTTP_HOST_URL]
+//新品需求需要的菜品
+#define kCommonToolsCategoryBussinessUrl [NSString stringWithFormat :@"%@/gs/commonTools/category?",kHTTP_HOST_URL]
+
+//新品需求需要的菜品保存
+#define kQuickFeedbackBussinessUrl [NSString stringWithFormat :@"%@/gs/commonTools/quickFeedback?",kHTTP_HOST_URL]
+
+
+
+//订单列表
+#define kOrderListBussinessUrl [NSString stringWithFormat :@"%@/gs/orderAPI/list?",kHTTP_HOST_URL]
+//订单列表
+#define kOrderDetailBussinessUrl [NSString stringWithFormat :@"%@/gs/orderAPI/show?",kHTTP_HOST_URL]
+
+
+
+
 
 NS_ASSUME_NONNULL_BEGIN
 typedef void (^netWorkFailBlock)(NSString * netWorkMeeage);
