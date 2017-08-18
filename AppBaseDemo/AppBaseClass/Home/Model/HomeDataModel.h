@@ -58,7 +58,7 @@
 @property (nonatomic , copy) NSString              * productCategory;
 @property (nonatomic , copy) NSString              * goodsBaseName;
 @property (nonatomic , copy) NSString              * isTop;
-@property (nonatomic , copy) NSString              * goodsID;
+@property (nonatomic , copy) NSString              * goodsId;
 @property (nonatomic , copy) NSString              * categoryIdOne;
 @property (nonatomic , copy) NSString              * goodsBaseType;
 @property (nonatomic , copy) NSString              * categoryIdTwo;
@@ -79,6 +79,7 @@
 @property (nonatomic , copy) NSString              * goodSpecId;
 @property (nonatomic , copy) NSString              * carGoodNum;
 @property (nonatomic , copy) NSString              * addTime;
+@property (nonatomic , copy) NSString              * goodsID;
 
 @end
 

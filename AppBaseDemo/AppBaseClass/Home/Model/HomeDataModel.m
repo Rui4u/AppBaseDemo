@@ -110,7 +110,7 @@
 		instance.productCategory = [self.productCategory copyWithZone:zone];
 		instance.goodsBaseName = [self.goodsBaseName copyWithZone:zone];
 		instance.isTop = [self.isTop copyWithZone:zone];
-		instance.goodsID = [self.goodsID copyWithZone:zone];
+		instance.goodsId = [self.goodsId copyWithZone:zone];
 	
 		instance.categoryIdOne = [self.categoryIdOne copyWithZone:zone];
 		instance.goodsBaseType = [self.goodsBaseType copyWithZone:zone];
@@ -136,6 +136,8 @@
 		instance.carGoodNum = [self.carGoodNum copyWithZone:zone];
 		instance.detailsImage = [self.detailsImage copyWithZone:zone];
 		instance.goodSpecId = [self.goodSpecId copyWithZone:zone];
+		instance.goodsID = [self.goodsID copyWithZone:zone];
+
 	}
 	return instance;
 }
@@ -169,7 +171,7 @@
 		instance.productCategory = [self.productCategory mutableCopyWithZone:zone];
 		instance.goodsBaseName = [self.goodsBaseName mutableCopyWithZone:zone];
 		instance.isTop = [self.isTop mutableCopyWithZone:zone];
-		instance.goodsID = [self.goodsID mutableCopyWithZone:zone];
+		instance.goodsId = [self.goodsId mutableCopyWithZone:zone];
 		
 		instance.categoryIdOne = [self.categoryIdOne mutableCopyWithZone:zone];
 		instance.goodsBaseType = [self.goodsBaseType mutableCopyWithZone:zone];
@@ -195,14 +197,21 @@
 		instance.carGoodNum = [self.carGoodNum mutableCopyWithZone:zone];
 		instance.detailsImage = [self.detailsImage mutableCopyWithZone:zone];
 		instance.goodSpecId = [self.goodSpecId mutableCopyWithZone:zone];
+		instance.goodsID = [self.goodsID mutableCopyWithZone:zone];
 
 	}
 	return instance;
 }
-
+- (NSString *)goodsId {
+	if (_goodsId) {
+		return _goodsId;
+	}
+	return _goodsID;
+}
 
 + (NSDictionary *)replacedKeyFromPropertyName{
-	return @{@"goodsID" : @"id"};
+	return @{@"goodsId" : @"id",
+			 @"goodsID" : @"goodsId"};
 }
 + (NSDictionary *)objectClassInArray{
 	return @{

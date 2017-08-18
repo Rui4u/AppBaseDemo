@@ -24,13 +24,15 @@
 			if (guige.selected) {
 				NSMutableDictionary * dict = [NSMutableDictionary dictionary];
 				[dict setObject:guige.guigeID forKey:@"id"];
-				[dict setObject:guige.carGoodNum forKey:@"specNum"];
+				[dict setObject:guige.carGoodNum forKey:@"CarGoodNum"];
 				[guigeArray addObject:dict];
 			}
 		}
 		if (guigeArray.count > 0) {
-			[dict setObject:@"id" forKey:goods.goodsID];
+			[dict setObject:goods.goodsId forKey:@"id"];
 			[dict setObject:guigeArray forKey:@"goodsSpec"];
+			[array addObject:dict];
+
 		}
 		
 	}

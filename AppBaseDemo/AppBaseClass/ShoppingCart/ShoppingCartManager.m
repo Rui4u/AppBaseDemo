@@ -42,7 +42,7 @@
 		
 		Goods * hasGood = self.CarInfoList[i];
 		//如果包含这个商品
-		if ([hasGood.goodsID isEqualToString:tempGoods.goodsID]) {
+		if ([hasGood.goodsId isEqualToString:tempGoods.goodsId]) {
 			
 			for ( int j = 0 ;j <hasGood.guige.count ; j ++ ) {
 				Guige * hasGuiGe = hasGood.guige[j];
@@ -68,7 +68,7 @@
 		
 		Goods * hasGood = self.CarInfoList[i];
 		//如果包含这个商品
-		if ([hasGood.goodsID isEqualToString:tempGoods.goodsID]) {
+		if ([hasGood.goodsId isEqualToString:tempGoods.goodsId]) {
 			
 			for ( int j = 0 ;j <hasGood.guige.count ; j ++ ) {
 				Guige * hasGuiGe = hasGood.guige[j];

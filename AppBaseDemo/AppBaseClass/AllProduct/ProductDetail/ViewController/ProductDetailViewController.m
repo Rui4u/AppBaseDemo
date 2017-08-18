@@ -96,7 +96,7 @@
 -(void)changeNumberWith:(NSString *)count withRect:(CGRect)rect withGuiGeIndex:(NSInteger)index{
     
     NSString * guigeId = self.goodsDataSourse.guige[index].guigeID;
-    NSString * goodsId = self.goodsDataSourse.goodsID;
+    NSString * goodsId = self.goodsDataSourse.goodsId;
 	self.goodsDataSourse.guige[index].carGoodNum = count;
 	
 	[[ShoppingCartManager sharedManager] addobjectWith:self.goodsDataSourse withGuiGeIndex:index];

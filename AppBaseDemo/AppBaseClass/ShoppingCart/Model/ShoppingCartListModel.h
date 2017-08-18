@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "HomeDataModel.h"
-
 @interface ShoppingCartListModel :NSObject
 @property (nonatomic , strong) NSArray<Goods *>              * CarInfoList;
 @property (nonatomic , copy) NSString              * carGoodsNum;

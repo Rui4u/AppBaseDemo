@@ -153,7 +153,7 @@
 #pragma mark 删除清单
 - (void)clickDeteleGoodsWith:(NSIndexPath *)indexPath {
 
-    [ProductRemoveListBussiness requestProductRemoveListWithToken:TOKEN goodsId:self.dataSourse.ProductionInfoList[indexPath.section].goodsList[indexPath.row].goodsID completionSuccessHandler:^(BOOL succeed) {
+    [ProductRemoveListBussiness requestProductRemoveListWithToken:TOKEN goodsId:self.dataSourse.ProductionInfoList[indexPath.section].goodsList[indexPath.row].goodsId completionSuccessHandler:^(BOOL succeed) {
         NSLog(@"删除清单成功");
     [self.dataSourse.ProductionInfoList[indexPath.section].goodsList removeObjectAtIndex:indexPath.row];
     
@@ -171,7 +171,7 @@
 - (void)clickGoToProductDetailWith:(NSIndexPath *)indexPath andGuiGeIndex:(NSInteger)index {
     
     ProductDetailViewController * productDetailViewController = [[ProductDetailViewController alloc] init];
-    productDetailViewController.goodsId = self.dataSourse.ProductionInfoList[indexPath.section].goodsList[indexPath.row].goodsID;
+    productDetailViewController.goodsId = self.dataSourse.ProductionInfoList[indexPath.section].goodsList[indexPath.row].goodsId;
     productDetailViewController.guigeId = self.dataSourse.ProductionInfoList[indexPath.section].goodsList[indexPath.row].guige[index].guigeID;
     [self.navigationController pushViewController:productDetailViewController animated:YES];
 
@@ -229,7 +229,7 @@
 		
 		goodsSpecDict = @{@"id":selectGuige.guigeID}.mutableCopy;
 		[goodsSpecArray addObject:goodsSpecDict];
-		[goodInfoDict  setValue:selectGoods.goodsID forKey:@"id"];
+		[goodInfoDict  setValue:selectGoods.goodsId forKey:@"id"];
 		[goodInfoDict  setValue:goodsSpecArray forKey:@"goodsSpec"];
 		
 		[goodListArray addObject:goodInfoDict];
@@ -253,7 +253,7 @@
 		
 		
         [ShoppingCartChangeNumBussiness requestShoppingCartChangeNumWithToken:TOKEN
-                                                                      goodsId:self.dataSourse.ProductionInfoList[typeIndex].goodsList[indexPath.section].goodsID
+                                                                      goodsId:self.dataSourse.ProductionInfoList[typeIndex].goodsList[indexPath.section].goodsId
                                                                        specId:self.dataSourse.ProductionInfoList[typeIndex].goodsList[indexPath.section].guige[indexPath.row].guigeID
                                                                           num:count
                                                      completionSuccessHandler:^(NSString *succeed)

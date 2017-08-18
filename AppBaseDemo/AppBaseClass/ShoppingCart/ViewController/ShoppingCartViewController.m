@@ -12,6 +12,8 @@
 #import "ShoppingCartListBussiness.h"
 #import "ShoppingCartListModel.h"
 #import "ShopCartListBottomView.h"
+#import "DealWithShoppingCartData.h"
+#import "CountPriceBussiness.h"
 @interface ShoppingCartViewController ()<UITableViewDelegate,UITableViewDataSource,ShoppingCartGuiGeTableViewCellDelegate,ShopCartListBottomViewDelegate>
 @property (nonatomic ,strong ) UITableView * mainTableView;
 
@@ -188,6 +190,16 @@
 
 - (void)customReloadeData {
 
+NSArray * array = [DealWithShoppingCartData dealWithShoppingCartDataWith:[ShoppingCartManager sharedManager].CarInfoList];
+	
+	
+	[CountPriceBussiness requestCountPriceWithToken:TOKEN status:@"1" goodsList:array completionSuccessHandler:^(CountPriceModel *getSelectedProductModel) {
+		
+	} completionFailHandler:^(NSString *failMessage) {
+		
+	} completionError:^(NSString *netWorkErrorMessage) {
+		
+	}];
 	 [CommonNotification postNotification:CNotificationShoppingCartNumberNotify userInfo:nil object:nil];
 	[self.mainTableView reloadData];
 	
