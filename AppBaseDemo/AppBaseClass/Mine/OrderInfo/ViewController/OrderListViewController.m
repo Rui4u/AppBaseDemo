@@ -10,11 +10,12 @@
 #import "OrderListBussiness.h"
 #import "MyOrderListTableViewCell.h"
 #import "CustomScrollSelectView.h"
+#import "OrderListModel.h"
 @interface OrderListViewController ()<UITableViewDelegate,UITableViewDataSource,CustomScrollSelectViewDelegate>
 
 @property (nonatomic ,strong ) UITableView * mainTableView;
 
-@property (nonatomic ,strong ) NSArray * orderListData;
+@property (nonatomic ,strong ) NSArray<OrderList *> * orderListData;
 
 @property (nonatomic ,strong ) CustomScrollSelectView * customScrollSelectView;
 @end
@@ -68,11 +69,12 @@
 
 	[OrderListBussiness requestOrderListWithToken:TOKEN state:@""
 						 completionSuccessHandler:^(OrderListModel *getSelectedProductModel) {
-							 
+							 self.orderListData = getSelectedProductModel.orderList;
+							 [self.mainTableView reloadData];
 						 } completionFailHandler:^(NSString *failMessage) {
-							 
+							 [self showToastWithMessage:failMessage showTime:1];
 						 } completionError:^(NSString *netWorkErrorMessage) {
-							 
+							 [self showToastWithMessage:netWorkErrorMessage showTime:1];
 						 }];
 }
 

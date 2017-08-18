@@ -157,125 +157,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AppBaseDemo/AppBaseClass/Mine/OrderInfo/ViewController/OrderListViewController.m"
-            timestampString = "524731033.441072"
+            filePath = "AppBaseDemo/AppBaseClass/Mine/OrderInfo/Bussiness/OrderListBussiness.m"
+            timestampString = "524731201.854562"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "-customScrollSelectView:didSelectWithProductTypeModel:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AppBaseDemo/AppBaseClass/Mine/OrderInfo/ViewController/OrderListViewController.m"
-            timestampString = "524731078.820203"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "-requestOrderList"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__43-[OrderListViewController requestOrderList]_block_invoke"
-                  moduleName = "AppBaseDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hzcf/Desktop/AppBaseDemo/AppBaseDemo/AppBaseClass/Mine/OrderInfo/ViewController/OrderListViewController.m"
-                  timestampString = "524732834.313305"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "72"
-                  endingLineNumber = "72"
-                  offsetFromSymbolStart = "52">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__43-[OrderListViewController requestOrderList]_block_invoke_2"
-                  moduleName = "AppBaseDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hzcf/Desktop/AppBaseDemo/AppBaseDemo/AppBaseClass/Mine/OrderInfo/ViewController/OrderListViewController.m"
-                  timestampString = "524732834.314739"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "74"
-                  endingLineNumber = "74"
-                  offsetFromSymbolStart = "52">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AppBaseDemo/AppBaseClass/Mine/OrderInfo/ViewController/OrderListViewController.m"
-            timestampString = "524731080.864101"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "-requestOrderList"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__43-[OrderListViewController requestOrderList]_block_invoke_2"
-                  moduleName = "AppBaseDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hzcf/Desktop/AppBaseDemo/AppBaseDemo/AppBaseClass/Mine/OrderInfo/ViewController/OrderListViewController.m"
-                  timestampString = "524732834.318409"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "74"
-                  endingLineNumber = "74"
-                  offsetFromSymbolStart = "52">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__43-[OrderListViewController requestOrderList]_block_invoke_3"
-                  moduleName = "AppBaseDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hzcf/Desktop/AppBaseDemo/AppBaseDemo/AppBaseClass/Mine/OrderInfo/ViewController/OrderListViewController.m"
-                  timestampString = "524732834.32005"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "76"
-                  endingLineNumber = "76"
-                  offsetFromSymbolStart = "52">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AppBaseDemo/AppBaseClass/Mine/OrderInfo/ViewController/OrderListViewController.m"
-            timestampString = "524731081.727887"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
-            landmarkName = "-requestOrderList"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "+requestOrderListWithToken:state:completionSuccessHandler:completionFailHandler:completionError:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -286,11 +174,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AppBaseDemo/AppBaseClass/Mine/OrderInfo/Bussiness/OrderListBussiness.m"
-            timestampString = "524731201.854562"
+            timestampString = "524734218.829873"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "+requestOrderListWithToken:state:completionSuccessHandler:completionFailHandler:completionError:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AppBaseDemo/AppBaseClass/Mine/OrderInfo/Bussiness/OrderListBussiness.m"
+            timestampString = "524734220.02443"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "+requestOrderListWithToken:state:completionSuccessHandler:completionFailHandler:completionError:"
             landmarkType = "7">
          </BreakpointContent>
