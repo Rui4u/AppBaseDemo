@@ -316,10 +316,8 @@
 #pragma mark - 底部去购物车UI
 - (void)setBottomViewUI {
     
-    _prodcutDetailBottomView =({
-        ProdcutDetailBottomView * prodcutDetailBottomView = [[NSBundle mainBundle] loadNibNamed:@"ProdcutDetailBottomView" owner:self options:nil].firstObject;
-        prodcutDetailBottomView;
-    });
+
+    _prodcutDetailBottomView = [[NSBundle mainBundle] loadNibNamed:@"ProdcutDetailBottomView" owner:self options:nil].firstObject;
     [self.view addSubview:_prodcutDetailBottomView];
     
     [_prodcutDetailBottomView mas_makeConstraints:^(MASConstraintMaker *make) {

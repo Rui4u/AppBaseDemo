@@ -28,10 +28,11 @@
                         <action selector="clcikGoProductCartButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="O9T-Ze-Mli"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="sb0-i3-46e">
-                    <rect key="frame" x="260" y="0.0" width="42" height="184"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="sb0-i3-46e">
+                    <rect key="frame" x="145" y="0.0" width="157" height="184"/>
                     <constraints>
-                        <constraint firstAttribute="width" priority="200" constant="42" id="5Ao-Uf-WUa"/>
+                        <constraint firstAttribute="height" constant="184" id="2rk-dl-CKR"/>
+                        <constraint firstAttribute="width" constant="157" id="fqL-NX-MK8"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
@@ -65,16 +66,15 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="sb0-i3-46e" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="0Cv-CV-A39"/>
                 <constraint firstItem="xs5-bA-j2g" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="-15" id="7E1-7h-39F"/>
+                <constraint firstItem="HCS-bL-qV7" firstAttribute="leading" secondItem="sb0-i3-46e" secondAttribute="trailing" constant="15" id="Bur-32-kSu"/>
                 <constraint firstItem="HCS-bL-qV7" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Hb6-vJ-wRU"/>
                 <constraint firstItem="swL-WA-dTs" firstAttribute="trailing" secondItem="xs5-bA-j2g" secondAttribute="trailing" id="Itu-0g-JH2"/>
-                <constraint firstItem="HCS-bL-qV7" firstAttribute="leading" secondItem="sb0-i3-46e" secondAttribute="trailing" constant="15" id="S4A-NM-FMa"/>
                 <constraint firstAttribute="bottom" secondItem="HCS-bL-qV7" secondAttribute="bottom" id="aSL-Jn-P8m"/>
                 <constraint firstItem="xs5-bA-j2g" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="jx8-Qv-pCv"/>
                 <constraint firstAttribute="trailing" secondItem="HCS-bL-qV7" secondAttribute="trailing" id="lUN-90-hg8"/>
-                <constraint firstAttribute="bottom" secondItem="sb0-i3-46e" secondAttribute="bottom" id="mZ6-Ef-Lf7"/>
                 <constraint firstItem="swL-WA-dTs" firstAttribute="top" secondItem="xs5-bA-j2g" secondAttribute="top" id="uXC-3Q-pCU"/>
+                <constraint firstItem="sb0-i3-46e" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="z97-CU-fvU"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

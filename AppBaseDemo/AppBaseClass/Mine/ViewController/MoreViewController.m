@@ -10,6 +10,7 @@
 #import "MoreBaseView.h"
 #import "OrderListViewController.h"
 #import "AccountManagementViewController.h"
+#import "NewDemandViewController.h"
 @interface MoreViewController ()
 
 @property (weak, nonatomic) IBOutlet UIScrollView *bgScrollView;
@@ -58,6 +59,9 @@
 }
 - (IBAction)clickNormalToolsButton:(UIButton *)sender {
 	
+    
+    NewDemandViewController * newDemandViewController = [[NewDemandViewController alloc] init];
+    [self.navigationController pushViewController:newDemandViewController animated:YES];
 }
 
 - (IBAction)clickHelpCenterButton:(UIButton *)sender {
