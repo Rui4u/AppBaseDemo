@@ -9,6 +9,7 @@
 #import "MoreViewController.h"
 #import "MoreBaseView.h"
 #import "OrderListViewController.h"
+#import "AccountManagementViewController.h"
 @interface MoreViewController ()
 
 @property (weak, nonatomic) IBOutlet UIScrollView *bgScrollView;
@@ -24,16 +25,36 @@
 @end
 
 @implementation MoreViewController
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    self.notLoginLabel.hidden = !isNotLogin;
+    self.userName.hidden = isNotLogin;
+    self.userLevel.hidden = isNotLogin;
+    self.userLevelImage.hidden = isNotLogin;
 
+}
 - (IBAction)clickMyOrderButton:(UIButton *)sender {
     
-    
+    if (isNotLogin) {
+        [self showLoginViewController:nil];
+        return;
+    }
     
 	OrderListViewController * orderListViewController = [[OrderListViewController alloc] init];
     orderListViewController.state = [NSString stringWithFormat:@"%ld",sender.tag - 1000];
 
 	[self.navigationController pushViewController:orderListViewController animated:YES];
 	
+}
+- (IBAction)clickUserManager:(id)sender {
+    
+    if (isNotLogin) {
+        [self showLoginViewController:nil];
+        return;
+    }
+    AccountManagementViewController * accountManagementViewController = [[AccountManagementViewController alloc] init];
+    [self.navigationController pushViewController:accountManagementViewController animated:YES];
 }
 - (IBAction)clickNormalToolsButton:(UIButton *)sender {
 	
@@ -51,15 +72,17 @@
 	moreBaseView.frame = CGRectMake(0, 0, SCREEN_WIDTH, moreBaseView.height);
 	[_bgScrollView addSubview:moreBaseView];
 	
-	
-	self.notLoginLabel.hidden = !isNotLogin;
-	self.userName.hidden = isNotLogin;
-	self.userLevel.hidden = isNotLogin;
-	self.userLevelImage.hidden = isNotLogin;
-	
+
+    
+    self.notLoginLabel.hidden = !isNotLogin;
+    self.userName.hidden = isNotLogin;
+    self.userLevel.hidden = isNotLogin;
+    self.userLevelImage.hidden = isNotLogin;
+    
     UITapGestureRecognizer*tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(loginIn)];
     
     [_notLoginLabel addGestureRecognizer:tapGesture];
+    _notLoginLabel.userInteractionEnabled = YES;
 	
 }
 - (void)loginIn {

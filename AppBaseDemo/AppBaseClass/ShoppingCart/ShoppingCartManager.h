@@ -30,4 +30,6 @@
 - (void)addobjectWith:(Goods *)goods withGuiGeIndex:(NSInteger) index;
 - (void)removeobjectWith:(Goods *)goods withGuiGeIndex:(NSInteger) index;
 
+
++ (UIViewController *)getCurrentVC;
 @end

@@ -128,7 +128,8 @@
 		if ([self.delegate respondsToSelector:@selector(selectCustomTabBarAtCurrentIndex:withLastIndex:)]) {
 			
 			NSInteger currentTag = _currentButton.tag - iconButtonTag;
-			NSInteger lastTag = _lastButton.tag - iconButtonTag;
+            NSInteger lastTag = 0;
+            
 			self.buttonLabelArray[currentTag].textColor = [UIColor orangeColor];
 			[self.delegate selectCustomTabBarAtCurrentIndex:currentTag withLastIndex:lastTag];
 			_currentButton.selected = YES;
@@ -151,6 +152,7 @@
     if ([self.delegate respondsToSelector:@selector(selectCustomTabBarAtCurrentIndex:withLastIndex:)]) {
         [self.delegate selectCustomTabBarAtCurrentIndex:currentTag withLastIndex:lastTag];
         _currentButton.selected = YES;
+        
     }
     _lastButton = _currentButton;
 	

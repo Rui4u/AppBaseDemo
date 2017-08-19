@@ -221,7 +221,7 @@
 #pragma mark - 点击添加删除购物车
 -(void)changeProcutNumberBagWithCount:(NSString *)count withIndexPath:(NSIndexPath *)indexPath andTypeIndex:(NSInteger)typeIndex withRect:(CGRect)rect{
     
-    
+   
     Goods * selectGoods = self.dataSourse.ProductionInfoList[typeIndex].goodsList[indexPath.section];
     Guige * selectGuige = selectGoods.guige[indexPath.row];
     

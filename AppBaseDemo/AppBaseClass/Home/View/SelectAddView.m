@@ -8,6 +8,7 @@
 
 #import "SelectAddView.h"
 #import "AddToCartKeyBoard.h"
+#import "LoginViewRootController.h"
 @interface SelectAddView ()<UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *numberLabel;
@@ -27,6 +28,7 @@
 }
 - (IBAction)clickReduceButton:(id)sender {
 	
+    if ([self isNotLoginBool]) return;
 	int i  = self.numberLabel.text.intValue;
 	i--;
 	if (i == 0) {
@@ -47,6 +49,8 @@
 }
 - (IBAction)clickAddButton:(id)sender {
 	
+    if ([self isNotLoginBool]) return;
+    
 	int i = self.numberLabel.text.intValue;
 	i++;
 	if (i > 999) {
@@ -93,6 +97,8 @@
 
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
 
+    if ([self isNotLoginBool]) return NO;
+    
     AddToCartKeyBoard * addToCartKeyBoard = [[NSBundle mainBundle] loadNibNamed:@"AddToCartKeyBoard" owner:self options:nil].lastObject;
     addToCartKeyBoard.frame = APP_DELEGATE.window.bounds;
     [APP_DELEGATE.window addSubview:addToCartKeyBoard];
@@ -114,6 +120,16 @@
     
     
 }
+- (BOOL ) isNotLoginBool {
+    BOOL isNotlogin =NO;
+    if (isNotLogin) {
+        [ [ShoppingCartManager getCurrentVC] presentViewController:[[LoginViewRootController alloc ]init] animated:YES completion:nil];
+        isNotlogin  =YES;
 
+    }else {
+        isNotlogin  =NO;
+    }
+    return isNotlogin;
+}
 
 @end

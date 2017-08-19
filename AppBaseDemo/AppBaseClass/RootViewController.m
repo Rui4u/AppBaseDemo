@@ -47,10 +47,7 @@
  是否登录
  */
 @property (nonatomic ,assign ) BOOL isLogin;
-/**
- 刷新rootVc
- */
-- (void) privateReferRootViewWithBuy ;
+
 
 - (void) privateReferRootReciveLogOutSucess ;
 
@@ -77,6 +74,11 @@
 											 selector:@selector(CNotificationLogInSucessFuntion)
 												 name:CNotificationLogInSucess
 											   object:nil];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(privateReferRootReciveLogOutSucess)
+                                                 name:CNotificationLogOut
+                                               object:nil];
 
 	//注册退出成功通知
 
@@ -116,6 +118,13 @@
 
 }
 
+#pragma mark - 退出成功
+-(void)privateReferRootReciveLogOutSucess {
+    
+    clearUserDefaults();
+
+
+}
 #pragma mark - 添加购物车通知
 
 - (void)ShoppingCartNumberNotify {
@@ -147,18 +156,7 @@
 // 实现点击选择前截取
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
 {
-    if (self.isLogin)//未登录状态
-    {
-        if ([viewController isEqual:self.shoppingCartViewController])
-        {
-            __block NSInteger selectedIndex = [APP_DELEGATE.customTabBar.childViewControllers indexOfObject:viewController];
-            NSLog(@"%tu",selectedIndex);
-            [super showLoginViewController:^(BOOL loginStatus) {
-				APP_DELEGATE.customTabBar.tabBarView.selectedIndex = selectedIndex;
-			}];
-            return NO;
-        }
-    }
+   
     if ([viewController isKindOfClass:[AppProductViewController class]]) {
         
         [CommonNotification postNotification:CNReLoadeAllProductList userInfo:nil object:nil];

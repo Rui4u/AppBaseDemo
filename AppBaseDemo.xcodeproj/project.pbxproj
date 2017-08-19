@@ -12,6 +12,8 @@
 		2B0E70C01F41E86E0037B4A7 /* ProductDetaiModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0E70BF1F41E86E0037B4A7 /* ProductDetaiModel.m */; };
 		2B10FAE61F47E47900801BEC /* MakeSureOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B10FAE41F47E47900801BEC /* MakeSureOrderViewController.m */; };
 		2B10FAE71F47E47900801BEC /* MakeSureOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B10FAE51F47E47900801BEC /* MakeSureOrderViewController.xib */; };
+		2B10FAEB1F482B1000801BEC /* AccountManagementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B10FAE91F482B1000801BEC /* AccountManagementViewController.m */; };
+		2B10FAEC1F482B1000801BEC /* AccountManagementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B10FAEA1F482B1000801BEC /* AccountManagementViewController.xib */; };
 		2B2E10511F3C015D00092EAA /* CityNotInOpenCityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B2E10501F3C015D00092EAA /* CityNotInOpenCityView.xib */; };
 		2B2E109A1F3C0AF900092EAA /* BaseBussiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2E10991F3C0A8800092EAA /* BaseBussiness.m */; };
 		2B2E10A41F3C0EDF00092EAA /* GetHomeBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2E109D1F3C0EDF00092EAA /* GetHomeBusiness.m */; };
@@ -225,6 +227,9 @@
 		2B10FAE31F47E47900801BEC /* MakeSureOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakeSureOrderViewController.h; sourceTree = "<group>"; };
 		2B10FAE41F47E47900801BEC /* MakeSureOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakeSureOrderViewController.m; sourceTree = "<group>"; };
 		2B10FAE51F47E47900801BEC /* MakeSureOrderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MakeSureOrderViewController.xib; sourceTree = "<group>"; };
+		2B10FAE81F482B1000801BEC /* AccountManagementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountManagementViewController.h; sourceTree = "<group>"; };
+		2B10FAE91F482B1000801BEC /* AccountManagementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountManagementViewController.m; sourceTree = "<group>"; };
+		2B10FAEA1F482B1000801BEC /* AccountManagementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountManagementViewController.xib; sourceTree = "<group>"; };
 		2B2E10501F3C015D00092EAA /* CityNotInOpenCityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CityNotInOpenCityView.xib; sourceTree = "<group>"; };
 		2B2E10991F3C0A8800092EAA /* BaseBussiness.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseBussiness.m; sourceTree = "<group>"; };
 		2B2E109C1F3C0EDF00092EAA /* GetHomeBusiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetHomeBusiness.h; sourceTree = "<group>"; };
@@ -847,6 +852,9 @@
 				2B6BE3321F46826400D0C915 /* MoreViewController.h */,
 				2B6BE3331F46826400D0C915 /* MoreViewController.m */,
 				2B6BE3341F46826400D0C915 /* MoreViewController.xib */,
+				2B10FAE81F482B1000801BEC /* AccountManagementViewController.h */,
+				2B10FAE91F482B1000801BEC /* AccountManagementViewController.m */,
+				2B10FAEA1F482B1000801BEC /* AccountManagementViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1537,6 +1545,7 @@
 				2BD099671F4359B0008A1827 /* tabBarIcon_ChannelSelected@3x.png in Resources */,
 				2B386F8C1F29B69A00228620 /* LaunchScreen.storyboard in Resources */,
 				2BD099781F4359B0008A1827 /* tabBarIcon_moreSelected1@2x.png in Resources */,
+				2B10FAEC1F482B1000801BEC /* AccountManagementViewController.xib in Resources */,
 				2BD0997C1F4359B0008A1827 /* tabBarIcon_wealthSelecetd1@2x.png in Resources */,
 				2BD099711F4359B0008A1827 /* tabBarIcon_MineSelecetd@2x.png in Resources */,
 				2BD0996B1F4359B0008A1827 /* tabBarIcon_homeSelecetd@2x.png in Resources */,
@@ -1679,6 +1688,7 @@
 				2BD0993B1F4342D8008A1827 /* ShoppingCartGuiGeTableViewCell.m in Sources */,
 				2B6BE3371F46826400D0C915 /* MoreBaseView.m in Sources */,
 				2BFCFDE51F413B63001DA10D /* GetSelectGoodsListBussiness.m in Sources */,
+				2B10FAEB1F482B1000801BEC /* AccountManagementViewController.m in Sources */,
 				2B3870381F29BC0C00228620 /* UIColor+SRColor.m in Sources */,
 				2B6BE33D1F4682CE00D0C915 /* CountPriceBussiness.m in Sources */,
 				2BBFAFFB1F3301F6002506D1 /* Parser.m in Sources */,
