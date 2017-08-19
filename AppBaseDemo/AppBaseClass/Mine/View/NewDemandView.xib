@@ -319,14 +319,32 @@
                         <constraint firstItem="e0u-pV-9BC" firstAttribute="top" secondItem="c2T-Yf-L2O" secondAttribute="bottom" constant="10" id="u6o-rN-DU6"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="711-Eq-nIm">
+                    <rect key="frame" x="15" y="620" width="345" height="45"/>
+                    <color key="backgroundColor" red="0.88235294119999996" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="Neq-0U-Ksq"/>
+                    </constraints>
+                    <state key="normal" title="提交反馈">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="hp7-Kk-XMP" secondAttribute="trailing" id="3mS-1J-6eX"/>
                 <constraint firstItem="OfA-th-yYT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="5zg-7k-EkL"/>
+                <constraint firstItem="711-Eq-nIm" firstAttribute="top" secondItem="61x-8J-v3B" secondAttribute="bottom" constant="20" id="793-bk-AZF"/>
                 <constraint firstItem="hp7-Kk-XMP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="8ej-Ct-ZQB"/>
                 <constraint firstItem="61x-8J-v3B" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="CPH-6V-hoK"/>
                 <constraint firstItem="61x-8J-v3B" firstAttribute="top" secondItem="02R-OJ-cHi" secondAttribute="bottom" constant="10" id="EaK-Rg-2Aq"/>
+                <constraint firstAttribute="trailing" secondItem="711-Eq-nIm" secondAttribute="trailing" constant="15" id="H6f-2e-wgu"/>
                 <constraint firstItem="W8f-LE-oFp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="64" id="LyW-kV-cRz"/>
                 <constraint firstAttribute="trailing" secondItem="rae-w2-pxT" secondAttribute="trailing" id="ZIR-Qn-U66"/>
                 <constraint firstAttribute="trailing" secondItem="W8f-LE-oFp" secondAttribute="trailing" id="ZZ5-L7-btk"/>
@@ -336,6 +354,7 @@
                 <constraint firstItem="rae-w2-pxT" firstAttribute="top" secondItem="W8f-LE-oFp" secondAttribute="bottom" id="fug-Yf-bfv"/>
                 <constraint firstItem="rae-w2-pxT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="gRz-tB-tmH"/>
                 <constraint firstItem="hp7-Kk-XMP" firstAttribute="top" secondItem="rae-w2-pxT" secondAttribute="bottom" id="iA4-rN-Aul"/>
+                <constraint firstItem="711-Eq-nIm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="p1z-PR-2Jc"/>
                 <constraint firstAttribute="trailing" secondItem="61x-8J-v3B" secondAttribute="trailing" id="uUU-Fa-Ndg"/>
                 <constraint firstItem="OfA-th-yYT" firstAttribute="top" secondItem="hp7-Kk-XMP" secondAttribute="bottom" id="uqj-mR-cWU"/>
                 <constraint firstAttribute="trailing" secondItem="OfA-th-yYT" secondAttribute="trailing" id="vwH-Bk-Vm2"/>
