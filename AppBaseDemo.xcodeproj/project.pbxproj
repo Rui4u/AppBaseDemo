@@ -14,6 +14,10 @@
 		2B10FAE71F47E47900801BEC /* MakeSureOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B10FAE51F47E47900801BEC /* MakeSureOrderViewController.xib */; };
 		2B10FAEB1F482B1000801BEC /* AccountManagementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B10FAE91F482B1000801BEC /* AccountManagementViewController.m */; };
 		2B10FAEC1F482B1000801BEC /* AccountManagementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B10FAEA1F482B1000801BEC /* AccountManagementViewController.xib */; };
+		2B10FAF01F483CD700801BEC /* NewDemandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B10FAEE1F483CD700801BEC /* NewDemandViewController.m */; };
+		2B10FAF11F483CD700801BEC /* NewDemandViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B10FAEF1F483CD700801BEC /* NewDemandViewController.xib */; };
+		2B10FAF41F483CF900801BEC /* NewDemandView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B10FAF31F483CF900801BEC /* NewDemandView.m */; };
+		2B10FAF61F483D0000801BEC /* NewDemandView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B10FAF51F483D0000801BEC /* NewDemandView.xib */; };
 		2B2E10511F3C015D00092EAA /* CityNotInOpenCityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B2E10501F3C015D00092EAA /* CityNotInOpenCityView.xib */; };
 		2B2E109A1F3C0AF900092EAA /* BaseBussiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2E10991F3C0A8800092EAA /* BaseBussiness.m */; };
 		2B2E10A41F3C0EDF00092EAA /* GetHomeBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2E109D1F3C0EDF00092EAA /* GetHomeBusiness.m */; };
@@ -230,6 +234,12 @@
 		2B10FAE81F482B1000801BEC /* AccountManagementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountManagementViewController.h; sourceTree = "<group>"; };
 		2B10FAE91F482B1000801BEC /* AccountManagementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountManagementViewController.m; sourceTree = "<group>"; };
 		2B10FAEA1F482B1000801BEC /* AccountManagementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountManagementViewController.xib; sourceTree = "<group>"; };
+		2B10FAED1F483CD700801BEC /* NewDemandViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewDemandViewController.h; sourceTree = "<group>"; };
+		2B10FAEE1F483CD700801BEC /* NewDemandViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewDemandViewController.m; sourceTree = "<group>"; };
+		2B10FAEF1F483CD700801BEC /* NewDemandViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewDemandViewController.xib; sourceTree = "<group>"; };
+		2B10FAF21F483CF900801BEC /* NewDemandView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewDemandView.h; sourceTree = "<group>"; };
+		2B10FAF31F483CF900801BEC /* NewDemandView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewDemandView.m; sourceTree = "<group>"; };
+		2B10FAF51F483D0000801BEC /* NewDemandView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewDemandView.xib; sourceTree = "<group>"; };
 		2B2E10501F3C015D00092EAA /* CityNotInOpenCityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CityNotInOpenCityView.xib; sourceTree = "<group>"; };
 		2B2E10991F3C0A8800092EAA /* BaseBussiness.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseBussiness.m; sourceTree = "<group>"; };
 		2B2E109C1F3C0EDF00092EAA /* GetHomeBusiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetHomeBusiness.h; sourceTree = "<group>"; };
@@ -842,6 +852,9 @@
 				2B6BE32E1F46826400D0C915 /* MoreBaseView.h */,
 				2B6BE32F1F46826400D0C915 /* MoreBaseView.m */,
 				2B6BE3301F46826400D0C915 /* MoreBaseView.xib */,
+				2B10FAF21F483CF900801BEC /* NewDemandView.h */,
+				2B10FAF51F483D0000801BEC /* NewDemandView.xib */,
+				2B10FAF31F483CF900801BEC /* NewDemandView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -855,6 +868,9 @@
 				2B10FAE81F482B1000801BEC /* AccountManagementViewController.h */,
 				2B10FAE91F482B1000801BEC /* AccountManagementViewController.m */,
 				2B10FAEA1F482B1000801BEC /* AccountManagementViewController.xib */,
+				2B10FAED1F483CD700801BEC /* NewDemandViewController.h */,
+				2B10FAEE1F483CD700801BEC /* NewDemandViewController.m */,
+				2B10FAEF1F483CD700801BEC /* NewDemandViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1533,6 +1549,7 @@
 				2BFCFDEC1F413B63001DA10D /* AppProductMainCellView.xib in Resources */,
 				2BD099691F4359B0008A1827 /* tabBarIcon_homeNormal@2x.png in Resources */,
 				2B8460761F418F0D0013D26D /* ProductInfoView.xib in Resources */,
+				2B10FAF61F483D0000801BEC /* NewDemandView.xib in Resources */,
 				2BD0993C1F4342D8008A1827 /* ShoppingCartGuiGeTableViewCell.xib in Resources */,
 				2B10FAE71F47E47900801BEC /* MakeSureOrderViewController.xib in Resources */,
 				2BD099741F4359B0008A1827 /* tabBarIcon_moreNormal@2x.png in Resources */,
@@ -1560,6 +1577,7 @@
 				2B386F891F29B69A00228620 /* Assets.xcassets in Resources */,
 				2B6BE33A1F46826400D0C915 /* MoreViewController.xib in Resources */,
 				2BD099721F4359B0008A1827 /* tabBarIcon_MineSelecetd@3x.png in Resources */,
+				2B10FAF11F483CD700801BEC /* NewDemandViewController.xib in Resources */,
 				2BD5D70E1F39871700BE1994 /* unicode_to_hanyu_pinyin.txt in Resources */,
 				2BD099791F4359B0008A1827 /* tabBarIcon_moreSelected2@2x.png in Resources */,
 				2BD0996F1F4359B0008A1827 /* tabBarIcon_MineNormal@2x.png in Resources */,
@@ -1693,8 +1711,10 @@
 				2B6BE33D1F4682CE00D0C915 /* CountPriceBussiness.m in Sources */,
 				2BBFAFFB1F3301F6002506D1 /* Parser.m in Sources */,
 				2B90F8971F2ECFF100698C38 /* SelectTypeView.m in Sources */,
+				2B10FAF01F483CD700801BEC /* NewDemandViewController.m in Sources */,
 				2B6BE35B1F46928C00D0C915 /* OrderListViewController.m in Sources */,
 				2BFCFDF11F413B9F001DA10D /* ProdcutDetailBottomView.m in Sources */,
+				2B10FAF41F483CF900801BEC /* NewDemandView.m in Sources */,
 				2BAFB5121F333054001236B8 /* GetCityListBusiness.m in Sources */,
 				2B386F871F29B69A00228620 /* AppBaseDemo.xcdatamodeld in Sources */,
 				2B7DCC021F3579CC00E88B38 /* HomeProductListTableViewCell.m in Sources */,
