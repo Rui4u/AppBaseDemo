@@ -41,7 +41,7 @@
 	self.automaticallyAdjustsScrollViewInsets = NO;
 	self.view.backgroundColor = [UIColor colorWithHexString:Main_BackGround_Color];
     _hud = [[MBProgressHUD alloc] init];
-    _hud.frame = self.view.bounds;
+    _hud.frame = CGRectMake(0, 0, SCREEN_WIDTH, self.view.height);
 	
 }
 
@@ -50,6 +50,7 @@
     if (!_hud.superview) {
         [self.view addSubview:_hud];
     }
+    [self.view bringSubviewToFront:_hud];
     [_hud showAnimated:YES];
 
 }

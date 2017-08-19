@@ -26,7 +26,12 @@
 @implementation MoreViewController
 
 - (IBAction)clickMyOrderButton:(UIButton *)sender {
+    
+    
+    
 	OrderListViewController * orderListViewController = [[OrderListViewController alloc] init];
+    orderListViewController.state = [NSString stringWithFormat:@"%ld",sender.tag - 1000];
+
 	[self.navigationController pushViewController:orderListViewController animated:YES];
 	
 }

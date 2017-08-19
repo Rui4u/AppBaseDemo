@@ -20,6 +20,12 @@
 				   operationFailure : (void(^)(NSString * ))  operationFailure
 							failure : (void(^)(NSError *)) failure {
 
+    
+//    if ([param objectForKey:@"token"] == nil ||[[param objectForKey:@"token"] isEqualToString:@""]) {
+//        
+//    	[ [self getCurrentVC] presentViewController:[[LoginViewRootController alloc ]init] animated:YES completion:nil];
+//        return;
+//    }
 	AFHTTPSessionManager * manager = [AFHTTPSessionManager manager];
 	manager.requestSerializer = [AFHTTPRequestSerializer serializer];
 	manager.responseSerializer = [AFJSONResponseSerializer serializer];

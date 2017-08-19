@@ -34,9 +34,9 @@
 		selectView.backgroundColor = [UIColor whiteColor];
 		selectView.delegate = self;
 		selectView.customTextAlignment = CustomTextAlignmentCenter;
-		selectView.dataSourse = @[@"全部",@"待付款",@"待发货",@"待收货"];
+		selectView.dataSourse = @[@"全部",@"待发货",@"待收货",@"已完成"];
 		[selectView reloadeData];
-		[selectView selectSwitchButtonAtIndex:0 withClick:YES];
+		[selectView selectSwitchButtonAtIndex:self.state.intValue withClick:YES];
 		selectView;
 	});
 	[self.view addSubview:_customScrollSelectView];
@@ -60,14 +60,16 @@
 }
 
 - (void)customScrollSelectView:(CustomScrollSelectView *)customScrollSelectView didSelectWithProductTypeModel:(NSInteger)index {
-
+    _state = [NSString stringWithFormat:@"%ld",index];
+    
 	[self requestOrderList];
 
 }
 
 - (void)requestOrderList {
 
-	[OrderListBussiness requestOrderListWithToken:TOKEN state:@""
+    
+	[OrderListBussiness requestOrderListWithToken:TOKEN state:self.state
 						 completionSuccessHandler:^(OrderListModel *getSelectedProductModel) {
 							 self.orderListData = getSelectedProductModel.orderList;
 							 [self.mainTableView reloadData];
@@ -133,6 +135,12 @@
 	return _mainTableView;
 }
 
+- (NSString *)state {
+    if ([_state isEqualToString:@"0"]) {
+        _state = @"";
+    }
+   return _state;
+}
 /*
 #pragma mark - Navigation
 
