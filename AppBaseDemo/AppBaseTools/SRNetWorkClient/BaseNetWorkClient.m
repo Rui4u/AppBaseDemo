@@ -12,6 +12,7 @@
 #import "NSObject+SBJson.h"
 #import "DESEncryption.h"
 #import "LoginViewRootController.h"
+#import "BaseViewController.h"
 @implementation BaseNetWorkClient
 + (void) jsonFormGetRequestWithUrl : (NSString  *)        url
 							  param : (NSDictionary *)     param
@@ -31,15 +32,22 @@
 	NSString * handlerDESEncryStr = [DESEncryption TripleDES:paramString
 											encryptOrDecrypt:(CCAlgorithm)kCCEncrypt key:@"scguoshu"];
 
+    id classVC =   [self getCurrentVC];
     
-    
-    
+    if ([classVC isKindOfClass:[BaseViewController class]]) {
+        [((BaseViewController *)classVC) showHUD];
+    }
 	
 	NSDictionary * dict = @{@"params":handlerDESEncryStr};
 	[manager GET:url parameters:dict progress:^(NSProgress * _Nonnull downloadProgress) {
 		
 	} success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
+        
+        if ([classVC isKindOfClass:[BaseViewController class]]) {
+            [((BaseViewController *)classVC) dismissHUD];
+        }
+ 
         [BaseNetWorkClient  handlerRequest:(NSDictionary *)responseObject
                                   succerss:success
                           operationFailure:operationFailure
@@ -47,6 +55,9 @@
                                        url:url];
         
 	} failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        if ([classVC isKindOfClass:[BaseViewController class]]) {
+            [((BaseViewController *)classVC) dismissHUD];
+        }
 		failure(error);
 	}];
 }
@@ -74,4 +85,45 @@
 
 
 }
+
+//获取当前屏幕显示的viewcontroller
++ (UIViewController *)getCurrentVC
+{
+    UIViewController *rootViewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+    
+    UIViewController *currentVC = [self getCurrentVCFrom:rootViewController];
+    
+    return currentVC;
+}
+
++ (UIViewController *)getCurrentVCFrom:(UIViewController *)rootVC
+{
+    UIViewController *currentVC;
+    
+    if ([rootVC presentedViewController]) {
+        // 视图是被presented出来的
+        
+        rootVC = [rootVC presentedViewController];
+    }
+    
+    if ([rootVC isEqual:APP_DELEGATE.rootViewController]) {
+        // 根视图为UITabBarController
+        
+        RootViewController *rootVC1 = (RootViewController *)rootVC;
+        currentVC = [self getCurrentVCFrom:rootVC1.mainTabBar.selectedViewController];
+        
+    } else if ([rootVC isKindOfClass:[UINavigationController class]]){
+        // 根视图为UINavigationController
+        
+        currentVC = [self getCurrentVCFrom:[(UINavigationController *)rootVC visibleViewController]];
+        
+    } else {
+        // 根视图为非导航类
+        
+        currentVC = rootVC;
+    }
+    
+    return currentVC;
+}
+
 @end

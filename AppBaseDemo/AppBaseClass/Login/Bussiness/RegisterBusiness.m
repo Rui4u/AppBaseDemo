@@ -7,6 +7,7 @@
 //
 
 #import "RegisterBusiness.h"
+#import "LoginBusiness.h"
 @implementation RegisterBusiness
 
 + (void) registerWithStoreTelephone : (NSString * ) storeTelephone
@@ -27,9 +28,24 @@
 	 {
 		 NSDictionary * responeMp = (NSDictionary * ) success ;
          
+         
          if ([[responeMp objectForKey:@"isSucceed"] isEqualToString:@"yes"]) {
-             completionHandler(YES);//注册成功
+             
+            
+             [LoginBusiness loginWithStoreTelephone:storeTelephone storePwd:storePwd completionSuccessHandler:^(BOOL isFinishInfo) {
+                
+                                  completionHandler(YES);//注册成功
+             } completionFailHandler:^(NSString *failMessage) {
+                 
+             } completionError:^(NSString *netWorkErrorMessage) {
+                 
+             }
+              ];
+              
+             
+             
          }
+         
 
 		 
 	 } operationFailure:^(id failure) {

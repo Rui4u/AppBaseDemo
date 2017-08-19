@@ -14,6 +14,11 @@ NSString * const CNotificationLogInSucess = @"CNotificationLogInSucess";//登录
 NSString * const LoginViewRootControllerBlock = @"LoginViewRootControllerBlock";  // 登录后登录控制器回调
 NSString * const CNotificationShoppingCartNumberNotify = @"CNotificationShoppingCartNumberNotify";
 
+NSString * const CNRefreashHomeData = @"CNRefreashHomeData";
+
+NSString * const CNReLoadeAllProductList = @"CNReLoadeAllProductList";
+NSString * const CNReLoadeShoppingCart = @"CNReLoadeShoppingCart";
+
 @implementation CommonNotification
 
 

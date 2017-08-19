@@ -24,7 +24,9 @@
 @implementation ProdcutDetailBottomView
 
 - (IBAction)clcikGoProductCartButton:(UIButton *)sender {
-	
+    if (self.gotoProductCart) {
+        self.gotoProductCart();
+    }
 	
 }
 

@@ -73,14 +73,19 @@
 	[self.customScrollSelectView reloadeData];
 
 
-	[self GetAppProductListBusiness];
+	[self GetAppProductListBusinessData];
 	[self.view addSubview:self.mainTableView];
 	[self.view addSubview:self.leftTimeQuantumTableView];
     
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(GetAppProductListBusinessData)
+                                                 name:CNReLoadeAllProductList
+                                               object:nil];
+    
 }
 
-- (void)GetAppProductListBusiness {
+- (void)GetAppProductListBusinessData {
 	[GetAppProductListBusiness requestGetAppProductListWithToken:TOKEN completionSuccessHandler:^(GoodslistAllModel *goodslistAllModel) {
 		
 		NSMutableArray * array = [NSMutableArray arrayWithCapacity:10];
@@ -283,7 +288,20 @@
 
 -(void)changeProcutNumberBagWithCount:(NSString *)count withIndexPath:(NSIndexPath *)indexPath withRect:(CGRect)rect{
     
+    Goods * selectGoods = self.goodsListInfoList[indexPath.section];
+    Guige *selectGuige = selectGoods.guige[indexPath.row];
+    selectGuige.carGoodNum = count;
+    selectGuige.selected = YES;
+    
+    
+    [[ShoppingCartManager sharedManager] addobjectWith:selectGoods withGuiGeIndex:indexPath.row];
+
+    
+    
         if(count.integerValue == 0){
+            
+            [[ShoppingCartManager sharedManager] removeobjectWith:selectGoods withGuiGeIndex:indexPath.row];
+
 		//删除
 			NSMutableArray * goodListArray = [[NSMutableArray alloc] init];
 			NSMutableDictionary * goodInfoDict = [[NSMutableDictionary alloc] init];
@@ -326,6 +344,8 @@
                  
              }];
         }
+    
+        [CommonNotification postNotification:CNotificationShoppingCartNumberNotify userInfo:nil object:nil];
 }
 
 

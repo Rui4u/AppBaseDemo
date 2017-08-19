@@ -9,5 +9,8 @@
 #import "BaseViewController.h"
 
 @interface ShoppingCartViewController : BaseViewController
-
+/**
+ <#Description#>
+ */
+@property (nonatomic ,assign) NAV_BAR_TYPE navBarType;
 @end

@@ -24,7 +24,7 @@
 			if (guige.selected) {
 				NSMutableDictionary * dict = [NSMutableDictionary dictionary];
 				[dict setObject:guige.guigeID forKey:@"id"];
-				[dict setObject:guige.carGoodNum forKey:@"CarGoodNum"];
+				[dict setObject:guige.carGoodNum forKey:@"carGoodNum"];
 				[guigeArray addObject:dict];
 			}
 		}

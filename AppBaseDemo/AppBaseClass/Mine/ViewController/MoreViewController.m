@@ -52,9 +52,19 @@
 	self.userLevel.hidden = isNotLogin;
 	self.userLevelImage.hidden = isNotLogin;
 	
+    UITapGestureRecognizer*tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(loginIn)];
+    
+    [_notLoginLabel addGestureRecognizer:tapGesture];
 	
 }
+- (void)loginIn {
 
+    [self showLoginViewController:^(BOOL loginStatus) {
+        
+        APP_DELEGATE.customTabBar.selectedIndex = 0;
+    }];
+    
+}
 
 - (void)viewDidLayoutSubviews {
 	[super viewDidLayoutSubviews];

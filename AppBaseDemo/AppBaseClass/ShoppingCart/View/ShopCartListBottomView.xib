@@ -21,9 +21,12 @@
                     <constraints>
                         <constraint firstAttribute="width" constant="120" id="4tO-IV-TZ4"/>
                     </constraints>
-                    <state key="normal" title="呵呵呵呵">
+                    <state key="normal" title="去购物车">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <connections>
+                        <action selector="clickGoShopingCart:" destination="iN0-l3-epB" eventType="touchUpInside" id="azt-KE-Uzr"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="Omp-ms-Ers">
                     <rect key="frame" x="343" y="5" width="150" height="13"/>
@@ -86,7 +89,10 @@
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="depositLabel" destination="wHr-rj-nk0" id="FEd-Jq-1mH"/>
+                <outlet property="goShopCartButton" destination="4LI-mv-hR7" id="Qqv-vs-WEr"/>
                 <outlet property="selectAllButton" destination="gld-4v-GiB" id="PU4-IY-775"/>
+                <outlet property="totalPrice" destination="Omp-ms-Ers" id="KR5-TD-f3p"/>
             </connections>
             <point key="canvasLocation" x="109" y="-314"/>
         </view>

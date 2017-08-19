@@ -14,6 +14,7 @@
 #import "ShopCartListBottomView.h"
 #import "DealWithShoppingCartData.h"
 #import "CountPriceBussiness.h"
+#import "CountPriceModel.h"
 @interface ShoppingCartViewController ()<UITableViewDelegate,UITableViewDataSource,ShoppingCartGuiGeTableViewCellDelegate,ShopCartListBottomViewDelegate>
 @property (nonatomic ,strong ) UITableView * mainTableView;
 
@@ -26,15 +27,23 @@
 
 @implementation ShoppingCartViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.mainTableView.mj_header beginRefreshing];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self.view addSubview:self.mainTableView];
-    [self initNavBarView:NAV_BAR_TYPE_ROOT_VIEW];
+    [self initNavBarView:self.navBarType];
     [self.navBarView setTitle:@"购物车"];
 
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(pullToRefresh)
+                                                 name:CNReLoadeShoppingCart
+                                               object:nil];
+    
     self.mainTableView.mj_header = [MJRefreshStateHeader headerWithRefreshingTarget:self refreshingAction:@selector(pullToRefresh)];
-    [self.mainTableView.mj_header beginRefreshing];
 
     _shopCartListBottomView = ({
         ShopCartListBottomView *shopCartListBottomView =[[NSBundle mainBundle] loadNibNamed:@"ShopCartListBottomView" owner:self options:nil].lastObject;
@@ -44,19 +53,8 @@
     
     [self.view addSubview:_shopCartListBottomView];
 }
-- (void)clickSelectAllWithButtonSelected:(BOOL)selected {
-	
-	for (Goods *good in [ShoppingCartManager sharedManager].CarInfoList) {
-		good.selected = selected;
-		for (Guige * guige in good.guige) {
-			guige.selected = selected;
-		}
-	}
-	[self customReloadeData];
-	
-	NSLog(@"请求接口");
 
-}
+
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     _shopCartListBottomView.frame = CGRectMake(0, _mainTableView.bottom, SCREEN_WIDTH, 50);
@@ -65,6 +63,7 @@
 
 - (void)pullToRefresh {
 
+    
     [ShoppingCartListBussiness requestShoppingCartListWithToken:TOKEN completionSuccessHandler:^(ShoppingCartListModel *shoppingCartListModel) {
 		[ShoppingCartManager sharedManager].CarInfoList = shoppingCartListModel.CarInfoList.mutableCopy;
         [self customReloadeData];
@@ -88,6 +87,26 @@
 		[self detailSelectdWith:indexPath withTypeBlock:self];
 	}
 	
+}
+#pragma  mark - 去结算
+- (void)goToSettle {
+
+    
+    
+}
+
+- (void)clickSelectAllWithButtonSelected:(BOOL)selected {
+    
+    for (Goods *good in [ShoppingCartManager sharedManager].CarInfoList) {
+        good.selected = selected;
+        for (Guige * guige in good.guige) {
+            guige.selected = selected;
+        }
+    }
+    [self customReloadeData];
+    
+    NSLog(@"请求接口");
+    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -177,7 +196,12 @@
 - (UITableView *)mainTableView {
     
     if (!_mainTableView) {
+        
         _mainTableView = [[UITableView alloc] initWithFrame:CGRectMake(0,NAV_BAR_HEIGHT,SCREEN_WIDTH,SCREEN_HEIGHT - NAV_BAR_HEIGHT - 49 - 50) style:UITableViewStyleGrouped];
+        
+        if (self.navBarType == NAV_BAR_TYPE_SECOND_LEVEL_VIEW) {
+         _mainTableView.frame =  CGRectMake(0,NAV_BAR_HEIGHT,SCREEN_WIDTH,SCREEN_HEIGHT - NAV_BAR_HEIGHT - 50);
+        }
         _mainTableView.delegate = self;
         _mainTableView.dataSource = self;
         _mainTableView.backgroundColor = [UIColor colorWithHexString:@"ffffff"];
@@ -190,18 +214,55 @@
 
 - (void)customReloadeData {
 
-NSArray * array = [DealWithShoppingCartData dealWithShoppingCartDataWith:[ShoppingCartManager sharedManager].CarInfoList];
+    [CommonNotification postNotification:CNotificationShoppingCartNumberNotify userInfo:nil object:nil];
+    [self.mainTableView reloadData];
+    
+    
+    NSArray * array = [DealWithShoppingCartData dealWithShoppingCartDataWith:[ShoppingCartManager sharedManager].CarInfoList];
 	
-	
-	[CountPriceBussiness requestCountPriceWithToken:TOKEN status:@"1" goodsList:array completionSuccessHandler:^(CountPriceModel *getSelectedProductModel) {
-		
-	} completionFailHandler:^(NSString *failMessage) {
-		
+    if (array.count == 0) {
+        [self showToastWithMessage:@"请选择要结算的商品" showTime:1];
+        
+        _shopCartListBottomView.totalPrice.attributedText =
+        [NSMutableAttributedString setAttributeString:[NSString stringWithFormat:@"总价:{￥0.00}"]
+                                                 font:12
+                                            textcolor:[UIColor colorWithHexString:Main_Font_Red_Color]
+                                          secondcolor:[UIColor colorWithHexString:Main_Font_Black_Color]
+                                           secondfont:12];
+        _shopCartListBottomView.totalPrice.textAlignment = NSTextAlignmentRight;
+        
+        _shopCartListBottomView.depositLabel.text = [NSString stringWithFormat:@"含押金:￥0.00"];
+        return;
+    }
+    
+    _shopCartListBottomView.isCalculation = YES;
+
+
+    [CountPriceBussiness requestCountPriceWithToken:TOKEN status:@"1" goodsList:array completionSuccessHandler:^(CountPriceModel *getSelectedProductModel) {
+
+            
+    _shopCartListBottomView.isCalculation = NO;
+        _shopCartListBottomView.totalPrice.attributedText =
+        [NSMutableAttributedString setAttributeString:[NSString stringWithFormat:@"总价:{￥%@}",getSelectedProductModel.totalcurrentPrice]
+                                                 font:12
+                                            textcolor:[UIColor colorWithHexString:Main_Font_Red_Color]
+                                          secondcolor:[UIColor colorWithHexString:Main_Font_Black_Color]
+                                           secondfont:12];
+        _shopCartListBottomView.totalPrice.textAlignment = NSTextAlignmentRight;
+        
+        _shopCartListBottomView.depositLabel.text = [NSString stringWithFormat:@"含押金:￥%@",getSelectedProductModel.totalcashPeldge];
+        
+        [ShoppingCartManager sharedManager].totolPrice = getSelectedProductModel.totalcurrentPrice;
+    } completionFailHandler:^(NSString *failMessage) {
+        _shopCartListBottomView.isCalculation = NO;
+        [self showToastWithMessage:failMessage showTime:1];
+        
 	} completionError:^(NSString *netWorkErrorMessage) {
-		
+		_shopCartListBottomView.isCalculation = NO;
+        [self showToastWithMessage:netWorkErrorMessage showTime:1];
 	}];
-	 [CommonNotification postNotification:CNotificationShoppingCartNumberNotify userInfo:nil object:nil];
-	[self.mainTableView reloadData];
+    
+	
 	
 }
 

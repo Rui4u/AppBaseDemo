@@ -32,8 +32,21 @@
 
 @implementation HomeViewController
 
+- (void)CNRefreashHomeData {
+
+    [self.backScrollView.mj_header beginRefreshing];
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(CNRefreashHomeData)
+                                                 name:CNRefreashHomeData
+                                               object:nil];
+    
     // Do any additional setup after loading the view.
 	self.topView= [[HomeTopView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, HEIGHT_AUTO(259))];
 	self.rearTopView = self.topView;
@@ -70,15 +83,16 @@
 - (void)pullToRefresh {
 
     if (isNotLogin) {
-        [self showLoginViewController:^(BOOL loginStatus) {
-			[self.backScrollView.mj_header beginRefreshing];
-		}];
+        [self showLoginViewController:nil];
         [self.backScrollView.mj_header endRefreshing];
         return;
     }
     
+    
 	[GetHomeBusiness requestGetHomeWithToken:TOKEN completionSuccessHandler:^(HomeDataModel *homeDataModel)
 	 {
+         
+
 		 self.dataSourse = homeDataModel;
 		 self.topView.homeDataModel = homeDataModel;
 		 [(UITableView *)self.frontScrollView reloadData];
@@ -92,10 +106,13 @@
 	 } completionFailHandler:^(NSString *failMessage) {
 		 [self showToastWithMessage:failMessage showTime:1];
 		 [self.backScrollView.mj_header endRefreshing];
+         
 
 	 } completionError:^(NSString *netWorkErrorMessage) {
 		 [self.backScrollView.mj_header endRefreshing];
 		 [self showToastWithMessage:netWorkErrorMessage showTime:1];
+         
+
 	 }];
 
 }
@@ -213,7 +230,7 @@
 
 	
 	[[ShoppingCartManager sharedManager] addobjectWith:selectGoods withGuiGeIndex:indexPath.row];
-	[CommonNotification postNotification:CNotificationShoppingCartNumberNotify userInfo:nil object:nil];
+
 
 	
     if(count.integerValue == 0){
@@ -265,6 +282,8 @@
             [self showToastWithMessage:netWorkErrorMessage showTime:1];
         }];
     }
+    
+    	[CommonNotification postNotification:CNotificationShoppingCartNumberNotify userInfo:nil object:nil];
 }
 
 

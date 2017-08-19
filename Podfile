@@ -11,4 +11,5 @@ pod 'MJRefresh'
 pod 'Masonry'
 pod 'BaiduMapKit'
 pod 'MJExtension'
+pod 'MBProgressHUD', '~> 1.0.0'
 end

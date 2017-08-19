@@ -12,6 +12,9 @@ extern NSString * const CNotificationLogOut;          //退出
 extern NSString * const CNotificationLogInSucess;     //登录成功
 extern NSString * const LoginViewRootControllerBlock ;// 登录后登录控制器回调
 extern NSString * const CNotificationShoppingCartNumberNotify ;// 购物车
+extern NSString * const CNRefreashHomeData ;// 刷新首页
+extern NSString * const CNReLoadeAllProductList ;// 刷新全部菜品
+extern NSString * const CNReLoadeShoppingCart ;// 刷新购物车
 
 
 

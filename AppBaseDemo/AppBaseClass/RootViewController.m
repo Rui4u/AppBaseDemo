@@ -97,9 +97,15 @@
 
 - (void)CNotificationLogInSucessFuntion {
 	
+    [[NSNotificationCenter defaultCenter] postNotificationName:CNRefreashHomeData object:nil userInfo:nil];
+    
 	
-	[ShoppingCartListBussiness requestShoppingCartListWithToken:TOKEN completionSuccessHandler:^(ShoppingCartListModel *shoppingCartListModel) {
+	[ShoppingCartListBussiness requestShoppingCartListWithToken:TOKEN
+                                       completionSuccessHandler:^(ShoppingCartListModel *shoppingCartListModel)
+    {
 		[ShoppingCartManager sharedManager].CarInfoList = shoppingCartListModel.CarInfoList.mutableCopy;
+                                   
+        [self ShoppingCartNumberNotify];
 		[CommonNotification postNotification:CNotificationShoppingCartNumberNotify userInfo:nil object:nil];
 
 	} completionFailHandler:^(NSString *failMessage) {
@@ -152,6 +158,15 @@
 			}];
             return NO;
         }
+    }
+    if ([viewController isKindOfClass:[AppProductViewController class]]) {
+        
+        [CommonNotification postNotification:CNReLoadeAllProductList userInfo:nil object:nil];
+
+    }else if ([viewController isKindOfClass:[ShoppingCartViewController class]]) {
+        
+        [CommonNotification postNotification:CNReLoadeShoppingCart userInfo:nil object:nil];
+        
     }
     return YES;
 }
@@ -230,7 +245,7 @@
     self.shoppingCartViewController.tabBarItem.image = [[UIImage imageNamed:@"icon_wealth_normal"]
                                                       imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
-    
+    self.shoppingCartViewController.navBarType = NAV_BAR_TYPE_ROOT_VIEW;
     self.moreViewController = [[MoreViewController alloc] init];
     self.moreViewController.title = @"我的";
     [self.moreViewController.tabBarItem setTitleTextAttributes:selectAtts forState:UIControlStateSelected];

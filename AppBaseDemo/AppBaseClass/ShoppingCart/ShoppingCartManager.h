@@ -17,6 +17,9 @@
 @property (nonatomic , strong) NSMutableArray<Goods *>* CarInfoList;
 
 @property (nonatomic ,assign ) NSInteger selectNumber;
+
+@property (nonatomic ,strong ) NSString *totolPrice;
+
 + (instancetype)sharedManager;
 
 /**

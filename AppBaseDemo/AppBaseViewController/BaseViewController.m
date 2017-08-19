@@ -25,6 +25,10 @@
 
 @property (nonatomic , strong) DispatchTimer * dispatchTimer;
 
+/**
+ <#Description#>
+ */
+@property (nonatomic ,strong) MBProgressHUD *hud;
 @end
 
 @implementation BaseViewController
@@ -36,10 +40,22 @@
 	self.navigationController.navigationBar.hidden = YES;
 	self.automaticallyAdjustsScrollViewInsets = NO;
 	self.view.backgroundColor = [UIColor colorWithHexString:Main_BackGround_Color];
-	
+    _hud = [[MBProgressHUD alloc] init];
+    _hud.frame = self.view.bounds;
 	
 }
 
+- (void)showHUD {
+
+    if (!_hud.superview) {
+        [self.view addSubview:_hud];
+    }
+    [_hud showAnimated:YES];
+
+}
+- (void)dismissHUD {
+    [_hud hideAnimated:YES];
+}
 
 - (void)didReceiveMemoryWarning {
 	[super didReceiveMemoryWarning];

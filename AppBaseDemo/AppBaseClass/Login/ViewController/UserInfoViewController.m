@@ -50,6 +50,8 @@
 							
 		[self dismissViewControllerAnimated:YES completion:nil];
 		[self showToastWithMessage:@"提交成功" showTime:1];
+        
+        
 	} completionFailHandler:^(NSString *failMessage) {
 		
 	} completionError:^(NSString *netWorkErrorMessage) {

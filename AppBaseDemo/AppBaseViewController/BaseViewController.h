@@ -57,5 +57,9 @@ typedef NS_ENUM ( NSInteger , SearchType) {
              countDownBtn:(UIButton *)countDownBtn
         againAcquireColor:(NSString *)againAcquireColor
            countDownColor:(NSString *)countDownColor;
+
+- (void)showHUD;
+- (void)dismissHUD;
+
 @end
 

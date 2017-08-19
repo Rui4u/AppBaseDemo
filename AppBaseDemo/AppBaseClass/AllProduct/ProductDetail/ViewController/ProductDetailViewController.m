@@ -20,6 +20,10 @@
 #import "ShoppingCartChangeNumBussiness.h"
 #import "DeleteCartBusiness.h"
 #import "ProductAddListBussiness.h"
+#import "DealWithShoppingCartData.h"
+#import "CountPriceBussiness.h"
+#import "CountPriceModel.h"
+#import "ShoppingCartViewController.h"
 @interface ProductDetailViewController () <ProductDetailTopViewDelegate,CustomScrollSelectViewDelegate,UIScrollViewDelegate>
 @property (nonatomic ,strong ) CustomScrollSelectView * customScrollSelectView; //顶部
 @property (nonatomic ,strong ) ProdcutDetailBottomView * prodcutDetailBottomView; //购物车
@@ -46,6 +50,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+
     [self setNavUI];
     [self setBottomViewUI];
     [self pullToRefresh];
@@ -58,16 +64,20 @@
 }
 - (void)pullToRefresh {
     
+    
     [ProductDetailBussiness requestProductDetailWithToken:TOKEN goodsId:self.goodsId completionSuccessHandler:^(ProductDetaiModel *productModel) {
+        
         
         self.goodsDataSourse = productModel.goods;
         [self reloadeData];
         [self.bgScrollView.mj_header endRefreshing];
         
     } completionFailHandler:^(NSString *failMessage) {
+        
         [self showToastWithMessage:failMessage showTime:1];
         [self.bgScrollView.mj_header endRefreshing];
     } completionError:^(NSString *netWorkErrorMessage) {
+        
         [self showToastWithMessage:netWorkErrorMessage showTime:1];
         [self.bgScrollView.mj_header endRefreshing];
     }];
@@ -88,8 +98,7 @@
     
     self.bgScrollView.contentSize = CGSizeMake(0, self.productSpecificationParameterView.bottom + 20);
     _prodcutDetailBottomView.numText = [NSString stringWithFormat:@"%tu",[ShoppingCartManager sharedManager].selectNumber];
-    NSString * price = [NSString stringWithFormat:@"{价格：}{￥%@}",@"1231"];
-    _prodcutDetailBottomView.priceText = price;
+    [self changeShoppingCartNumberWithCurrent:@"" andIndex:1];
 }
 
 #pragma - 点击添加产品回调
@@ -102,8 +111,6 @@
 	[[ShoppingCartManager sharedManager] addobjectWith:self.goodsDataSourse withGuiGeIndex:index];
 
 	[CommonNotification postNotification:CNotificationShoppingCartNumberNotify userInfo:nil object:nil];
-	//改变个数
-	[self changeShoppingCartNumberWithCurrent:count andIndex:index];
 	
     if(count.integerValue == 0){
         NSLog(@"删除");
@@ -155,6 +162,9 @@
              [self showToastWithMessage:netWorkErrorMessage showTime:1];
          }];
     }
+    //改变个数
+    [self changeShoppingCartNumberWithCurrent:count andIndex:index];
+
 }
 
 
@@ -166,8 +176,23 @@
     _prodcutDetailBottomView.numText = [NSString stringWithFormat:@"%tu",[ShoppingCartManager sharedManager].selectNumber];
     
     
-//    NSString * price = [NSString stringWithFormat:@"{价格：}{￥%@}",[NSString stringWithFormat:@"%.02f",];
-//    _prodcutDetailBottomView.priceText = price;
+    
+    NSArray * array = [DealWithShoppingCartData dealWithShoppingCartDataWith:[ShoppingCartManager sharedManager].CarInfoList];
+    
+    
+    
+    [CountPriceBussiness requestCountPriceWithToken:TOKEN status:@"1" goodsList:array completionSuccessHandler:^(CountPriceModel *getSelectedProductModel) {
+        
+        _prodcutDetailBottomView.priceText = [NSString stringWithFormat:@"总价:{￥%@}",getSelectedProductModel.totalcurrentPrice];
+        
+    } completionFailHandler:^(NSString *failMessage) {
+        [self showToastWithMessage:failMessage showTime:1];
+        
+    } completionError:^(NSString *netWorkErrorMessage) {
+        [self showToastWithMessage:netWorkErrorMessage showTime:1];
+    }];
+    
+
 }
 #pragma mark - 点击反馈
 - (void)clickRightButton {
@@ -303,6 +328,14 @@
         make.bottom.equalTo(self.view.mas_bottom);
         make.height.equalTo(@60);
     }];
+    
+    __weak typeof(self) weakSelf = self;
+    _prodcutDetailBottomView.gotoProductCart = ^{
+        ShoppingCartViewController * shoppingCartViewController = [[ShoppingCartViewController alloc] init];
+        
+        shoppingCartViewController.navBarType = NAV_BAR_TYPE_SECOND_LEVEL_VIEW;
+        [weakSelf.navigationController pushViewController:shoppingCartViewController animated:YES];
+    };
 }
 
 #pragma mark - navbar

@@ -10,6 +10,8 @@
 		2B09B0DB1F3F604B00C7B3B2 /* DispatchTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B09B0DA1F3F604B00C7B3B2 /* DispatchTimer.m */; };
 		2B0E70BD1F41C3ED0037B4A7 /* ProductDetailBussiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0E70BC1F41C3ED0037B4A7 /* ProductDetailBussiness.m */; };
 		2B0E70C01F41E86E0037B4A7 /* ProductDetaiModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0E70BF1F41E86E0037B4A7 /* ProductDetaiModel.m */; };
+		2B10FAE61F47E47900801BEC /* MakeSureOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B10FAE41F47E47900801BEC /* MakeSureOrderViewController.m */; };
+		2B10FAE71F47E47900801BEC /* MakeSureOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B10FAE51F47E47900801BEC /* MakeSureOrderViewController.xib */; };
 		2B2E10511F3C015D00092EAA /* CityNotInOpenCityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B2E10501F3C015D00092EAA /* CityNotInOpenCityView.xib */; };
 		2B2E109A1F3C0AF900092EAA /* BaseBussiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2E10991F3C0A8800092EAA /* BaseBussiness.m */; };
 		2B2E10A41F3C0EDF00092EAA /* GetHomeBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2E109D1F3C0EDF00092EAA /* GetHomeBusiness.m */; };
@@ -220,6 +222,9 @@
 		2B0E70BC1F41C3ED0037B4A7 /* ProductDetailBussiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailBussiness.m; sourceTree = "<group>"; };
 		2B0E70BE1F41E86E0037B4A7 /* ProductDetaiModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetaiModel.h; sourceTree = "<group>"; };
 		2B0E70BF1F41E86E0037B4A7 /* ProductDetaiModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetaiModel.m; sourceTree = "<group>"; };
+		2B10FAE31F47E47900801BEC /* MakeSureOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakeSureOrderViewController.h; sourceTree = "<group>"; };
+		2B10FAE41F47E47900801BEC /* MakeSureOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakeSureOrderViewController.m; sourceTree = "<group>"; };
+		2B10FAE51F47E47900801BEC /* MakeSureOrderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MakeSureOrderViewController.xib; sourceTree = "<group>"; };
 		2B2E10501F3C015D00092EAA /* CityNotInOpenCityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CityNotInOpenCityView.xib; sourceTree = "<group>"; };
 		2B2E10991F3C0A8800092EAA /* BaseBussiness.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseBussiness.m; sourceTree = "<group>"; };
 		2B2E109C1F3C0EDF00092EAA /* GetHomeBusiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetHomeBusiness.h; sourceTree = "<group>"; };
@@ -1089,6 +1094,9 @@
 			children = (
 				2BD0993D1F434487008A1827 /* ShoppingCartViewController.h */,
 				2BD0993E1F434487008A1827 /* ShoppingCartViewController.m */,
+				2B10FAE31F47E47900801BEC /* MakeSureOrderViewController.h */,
+				2B10FAE41F47E47900801BEC /* MakeSureOrderViewController.m */,
+				2B10FAE51F47E47900801BEC /* MakeSureOrderViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1518,6 +1526,7 @@
 				2BD099691F4359B0008A1827 /* tabBarIcon_homeNormal@2x.png in Resources */,
 				2B8460761F418F0D0013D26D /* ProductInfoView.xib in Resources */,
 				2BD0993C1F4342D8008A1827 /* ShoppingCartGuiGeTableViewCell.xib in Resources */,
+				2B10FAE71F47E47900801BEC /* MakeSureOrderViewController.xib in Resources */,
 				2BD099741F4359B0008A1827 /* tabBarIcon_moreNormal@2x.png in Resources */,
 				2BBDCC501F34B422003FE167 /* Directions.geojson in Resources */,
 				2B8460711F417F880013D26D /* ProductDetailTitleView.xib in Resources */,
@@ -1663,6 +1672,7 @@
 				2B84606F1F417F7F0013D26D /* ProductDetailTitleView.m in Sources */,
 				2BC14DB81F31CD3500919808 /* SBJsonParser.m in Sources */,
 				2B5AA4E01F3DB83400C3EE31 /* CommonSearchController.m in Sources */,
+				2B10FAE61F47E47900801BEC /* MakeSureOrderViewController.m in Sources */,
 				2B580D681F38592400AEA6BF /* ViewController.mm in Sources */,
 				2BD0993F1F434487008A1827 /* ShoppingCartViewController.m in Sources */,
 				2B6BE3391F46826400D0C915 /* MoreViewController.m in Sources */,

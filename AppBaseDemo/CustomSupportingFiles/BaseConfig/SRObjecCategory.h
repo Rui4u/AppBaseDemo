@@ -30,6 +30,7 @@
 #import <MJExtension.h>
 #import "BaseNetWorkClient.h"
 #import "SRCustomLabel.h"
+#import <MBProgressHUD.h>
 
 
 #endif /*   SRObjecCategory_h */

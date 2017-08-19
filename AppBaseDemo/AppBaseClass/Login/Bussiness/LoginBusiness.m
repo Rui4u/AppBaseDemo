@@ -7,6 +7,7 @@
 //
 
 #import "LoginBusiness.h"
+
 @implementation LoginBusiness
 + (void) loginWithStoreTelephone : (NSString * ) storeTelephone
                            storePwd : (NSString * ) storePwd
@@ -26,6 +27,8 @@
      {
          NSDictionary * responeMp = (NSDictionary * ) success ;
          
+
+         
          if ([[success valueForKey:@"isFinish"] isEqualToString:@"1"]) {
              completionHandler (YES);
          }else {
@@ -34,7 +37,9 @@
          
          saveDataUserDefaultForValueKey([success valueForKey:@"token"] , @"token");
          saveDataUserDefaultForValueKey([success valueForKey:@"isFinish"] , @"isFinish");
-
+         
+         [[NSNotificationCenter defaultCenter] postNotificationName:CNotificationLogInSucess object:nil userInfo:nil];
+         
          
      } operationFailure:^(id failure) {
          
