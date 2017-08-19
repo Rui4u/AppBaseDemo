@@ -13,8 +13,8 @@
 @implementation ShopCartListBottomView
 - (IBAction)clickGoShopingCart:(UIButton *)sender {
     
-    if ([self.delegate respondsToSelector:@selector(clickSelectAllWithButtonSelected:)]) {
-        [self.delegate clickSelectAllWithButtonSelected:sender.selected];
+    if ([self.delegate respondsToSelector:@selector(goToSettle)]) {
+        [self.delegate goToSettle];
     }
 }
 - (IBAction)clickSelectAll:(UIButton *)sender {

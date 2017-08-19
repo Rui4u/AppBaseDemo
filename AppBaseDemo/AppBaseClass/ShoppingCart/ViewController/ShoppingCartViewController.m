@@ -79,14 +79,26 @@
     // Dispose of any resources that can be recreated.
 }
 -(void)ShoppingCartGuiGeTableViewCellchangeNumberWith:(NSString *)count withRect:(CGRect) rect withIndexPath:(NSIndexPath *)indexPath{
+    
+    
 	 ShoppingCartGuiGeTableViewCell * cell = (ShoppingCartGuiGeTableViewCell *)[self.mainTableView cellForRowAtIndexPath:indexPath];
 	
-	if(!cell.guigeSelectButton.selected) {
-		[cell clickGuigeSelectButton:cell.guigeSelectButton];
-	}else {
-		[self detailSelectdWith:indexPath withTypeBlock:self];
-	}
+    if ([count isEqualToString:@"0"]) {
+        [[ShoppingCartManager sharedManager]removeobjectWith:[ShoppingCartManager sharedManager].CarInfoList[indexPath.section] withGuiGeIndex:indexPath.row];
+        [self customReloadeData];
+    }else {
+    
+        if(!cell.guigeSelectButton.selected) {
+            [cell clickGuigeSelectButton:cell.guigeSelectButton];
+        }else {
+            [self detailSelectdWith:indexPath withTypeBlock:self];
+        }
+    }
+    
+    
 	
+    
+    
 }
 #pragma  mark - 去结算
 - (void)goToSettle {
@@ -138,6 +150,7 @@
 			totolNumPrice += (guige.carGoodNum.integerValue *guige.currentPrice.floatValue);
 		}
 	}
+    
 	
 	[ShoppingCartManager sharedManager].CarInfoList[indexPath.section].selectNum = [NSString stringWithFormat:@"%ld",totolNum];
 	[ShoppingCartManager sharedManager].CarInfoList[indexPath.section].totolPriceNum = [NSString stringWithFormat:@"%.2f",totolNumPrice];
