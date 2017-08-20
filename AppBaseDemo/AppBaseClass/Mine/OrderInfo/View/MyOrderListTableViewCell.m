@@ -68,6 +68,13 @@
 		UIImageView * imageView = [[UIImageView alloc] init];
 		imageView.frame = CGRectMake(15 +(64.6) * i , 5, 54.5, 54.5);
 		[self.categoryView addSubview:imageView];
+        
+        
+        if (imageView.right > _categoryView.width) {
+            imageView.hidden = YES;
+        }else {
+            imageView.hidden = NO;
+        }
 		[imageView sd_setImageWithURL:[NSURL URLWithString:goods.image] placeholderImage:nil];
 	}
 }

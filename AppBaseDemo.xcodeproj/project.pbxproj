@@ -42,6 +42,17 @@
 		2B38703D1F29BC0C00228620 /* NSArray+ ZXPUnicode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3870281F29BC0C00228620 /* NSArray+ ZXPUnicode.m */; };
 		2B38703E1F29BC0C00228620 /* NSDictionary+ZXPUnicode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B38702B1F29BC0C00228620 /* NSDictionary+ZXPUnicode.m */; };
 		2B38703F1F29BC0C00228620 /* NSObject+ZXPUnicode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B38702D1F29BC0C00228620 /* NSObject+ZXPUnicode.m */; };
+		2B3FD7C41F4924E5003DE7C3 /* FillOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3FD7C21F4924E5003DE7C3 /* FillOrderViewController.m */; };
+		2B3FD7CE1F4926A1003DE7C3 /* FillOrderUserInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3FD7CC1F4926A1003DE7C3 /* FillOrderUserInfoCell.m */; };
+		2B3FD7CF1F4926A1003DE7C3 /* FillOrderUserInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B3FD7CD1F4926A1003DE7C3 /* FillOrderUserInfoCell.xib */; };
+		2B3FD7D31F4927DA003DE7C3 /* ProductCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3FD7D11F4927DA003DE7C3 /* ProductCategoryCell.m */; };
+		2B3FD7D41F4927DA003DE7C3 /* ProductCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B3FD7D21F4927DA003DE7C3 /* ProductCategoryCell.xib */; };
+		2B3FD7D81F4929E3003DE7C3 /* FillOrderSelectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3FD7D61F4929E3003DE7C3 /* FillOrderSelectTableViewCell.m */; };
+		2B3FD7D91F4929E3003DE7C3 /* FillOrderSelectTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B3FD7D71F4929E3003DE7C3 /* FillOrderSelectTableViewCell.xib */; };
+		2B3FD7E21F492AB2003DE7C3 /* FillOrderNomailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3FD7E01F492AB2003DE7C3 /* FillOrderNomailCell.m */; };
+		2B3FD7E31F492AB2003DE7C3 /* FillOrderNomailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B3FD7E11F492AB2003DE7C3 /* FillOrderNomailCell.xib */; };
+		2B3FD7E71F49307B003DE7C3 /* FillOrderBussiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3FD7E61F49307B003DE7C3 /* FillOrderBussiness.m */; };
+		2B3FD7EA1F493133003DE7C3 /* FillOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3FD7E91F493133003DE7C3 /* FillOrderModel.m */; };
 		2B41F2131F429C6300CB36D0 /* TopProductImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B41F2121F429C6300CB36D0 /* TopProductImageScrollView.m */; };
 		2B41F2191F42ABAD00CB36D0 /* ProductDetailGuiGeInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B41F2181F42ABAD00CB36D0 /* ProductDetailGuiGeInfo.m */; };
 		2B41F21B1F42ABB600CB36D0 /* ProductDetailGuiGeInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B41F21A1F42ABB600CB36D0 /* ProductDetailGuiGeInfo.xib */; };
@@ -289,6 +300,24 @@
 		2B3870301F29BC0C00228620 /* SRObjecCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRObjecCategory.h; sourceTree = "<group>"; };
 		2B3870311F29BC0C00228620 /* SRViewConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRViewConfig.h; sourceTree = "<group>"; };
 		2B3870321F29BC0C00228620 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		2B3FD7C11F4924E5003DE7C3 /* FillOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FillOrderViewController.h; sourceTree = "<group>"; };
+		2B3FD7C21F4924E5003DE7C3 /* FillOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FillOrderViewController.m; sourceTree = "<group>"; };
+		2B3FD7CB1F4926A1003DE7C3 /* FillOrderUserInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FillOrderUserInfoCell.h; sourceTree = "<group>"; };
+		2B3FD7CC1F4926A1003DE7C3 /* FillOrderUserInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FillOrderUserInfoCell.m; sourceTree = "<group>"; };
+		2B3FD7CD1F4926A1003DE7C3 /* FillOrderUserInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FillOrderUserInfoCell.xib; sourceTree = "<group>"; };
+		2B3FD7D01F4927DA003DE7C3 /* ProductCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCategoryCell.h; sourceTree = "<group>"; };
+		2B3FD7D11F4927DA003DE7C3 /* ProductCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCategoryCell.m; sourceTree = "<group>"; };
+		2B3FD7D21F4927DA003DE7C3 /* ProductCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductCategoryCell.xib; sourceTree = "<group>"; };
+		2B3FD7D51F4929E3003DE7C3 /* FillOrderSelectTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FillOrderSelectTableViewCell.h; sourceTree = "<group>"; };
+		2B3FD7D61F4929E3003DE7C3 /* FillOrderSelectTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FillOrderSelectTableViewCell.m; sourceTree = "<group>"; };
+		2B3FD7D71F4929E3003DE7C3 /* FillOrderSelectTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FillOrderSelectTableViewCell.xib; sourceTree = "<group>"; };
+		2B3FD7DF1F492AB2003DE7C3 /* FillOrderNomailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FillOrderNomailCell.h; sourceTree = "<group>"; };
+		2B3FD7E01F492AB2003DE7C3 /* FillOrderNomailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FillOrderNomailCell.m; sourceTree = "<group>"; };
+		2B3FD7E11F492AB2003DE7C3 /* FillOrderNomailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FillOrderNomailCell.xib; sourceTree = "<group>"; };
+		2B3FD7E51F49307B003DE7C3 /* FillOrderBussiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FillOrderBussiness.h; sourceTree = "<group>"; };
+		2B3FD7E61F49307B003DE7C3 /* FillOrderBussiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FillOrderBussiness.m; sourceTree = "<group>"; };
+		2B3FD7E81F493133003DE7C3 /* FillOrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FillOrderModel.h; sourceTree = "<group>"; };
+		2B3FD7E91F493133003DE7C3 /* FillOrderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FillOrderModel.m; sourceTree = "<group>"; };
 		2B41F2111F429C6300CB36D0 /* TopProductImageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopProductImageScrollView.h; sourceTree = "<group>"; };
 		2B41F2121F429C6300CB36D0 /* TopProductImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopProductImageScrollView.m; sourceTree = "<group>"; };
 		2B41F2171F42ABAD00CB36D0 /* ProductDetailGuiGeInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailGuiGeInfo.h; sourceTree = "<group>"; };
@@ -759,6 +788,25 @@
 			path = BaseConfig;
 			sourceTree = "<group>";
 		};
+		2B3FD7E41F492FBA003DE7C3 /* FillOrderView */ = {
+			isa = PBXGroup;
+			children = (
+				2B3FD7CB1F4926A1003DE7C3 /* FillOrderUserInfoCell.h */,
+				2B3FD7CC1F4926A1003DE7C3 /* FillOrderUserInfoCell.m */,
+				2B3FD7CD1F4926A1003DE7C3 /* FillOrderUserInfoCell.xib */,
+				2B3FD7D01F4927DA003DE7C3 /* ProductCategoryCell.h */,
+				2B3FD7D11F4927DA003DE7C3 /* ProductCategoryCell.m */,
+				2B3FD7D21F4927DA003DE7C3 /* ProductCategoryCell.xib */,
+				2B3FD7D51F4929E3003DE7C3 /* FillOrderSelectTableViewCell.h */,
+				2B3FD7D61F4929E3003DE7C3 /* FillOrderSelectTableViewCell.m */,
+				2B3FD7D71F4929E3003DE7C3 /* FillOrderSelectTableViewCell.xib */,
+				2B3FD7DF1F492AB2003DE7C3 /* FillOrderNomailCell.h */,
+				2B3FD7E01F492AB2003DE7C3 /* FillOrderNomailCell.m */,
+				2B3FD7E11F492AB2003DE7C3 /* FillOrderNomailCell.xib */,
+			);
+			name = FillOrderView;
+			sourceTree = "<group>";
+		};
 		2B6BE3221F46826400D0C915 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
@@ -812,6 +860,8 @@
 				2B6BE34E1F468FE700D0C915 /* OrderListBussiness.m */,
 				2B6BE3531F4691C300D0C915 /* OrderDetailBussiness.h */,
 				2B6BE3541F4691C300D0C915 /* OrderDetailBussiness.m */,
+				2B3FD7E51F49307B003DE7C3 /* FillOrderBussiness.h */,
+				2B3FD7E61F49307B003DE7C3 /* FillOrderBussiness.m */,
 			);
 			path = Bussiness;
 			sourceTree = "<group>";
@@ -823,6 +873,8 @@
 				2B6BE3511F46901700D0C915 /* OrderListModel.m */,
 				2B6BE3561F4691F100D0C915 /* OrderDetailModel.h */,
 				2B6BE3571F4691F100D0C915 /* OrderDetailModel.m */,
+				2B3FD7E81F493133003DE7C3 /* FillOrderModel.h */,
+				2B3FD7E91F493133003DE7C3 /* FillOrderModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -830,6 +882,7 @@
 		2B6BE3281F46826400D0C915 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2B3FD7E41F492FBA003DE7C3 /* FillOrderView */,
 				2B6BE35C1F46B72B00D0C915 /* MyOrderListTableViewCell.h */,
 				2B6BE35D1F46B72B00D0C915 /* MyOrderListTableViewCell.m */,
 				2B6BE35E1F46B72B00D0C915 /* MyOrderListTableViewCell.xib */,
@@ -842,6 +895,8 @@
 			children = (
 				2B6BE3591F46928C00D0C915 /* OrderListViewController.h */,
 				2B6BE35A1F46928C00D0C915 /* OrderListViewController.m */,
+				2B3FD7C11F4924E5003DE7C3 /* FillOrderViewController.h */,
+				2B3FD7C21F4924E5003DE7C3 /* FillOrderViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1550,6 +1605,7 @@
 				2BD099691F4359B0008A1827 /* tabBarIcon_homeNormal@2x.png in Resources */,
 				2B8460761F418F0D0013D26D /* ProductInfoView.xib in Resources */,
 				2B10FAF61F483D0000801BEC /* NewDemandView.xib in Resources */,
+				2B3FD7D41F4927DA003DE7C3 /* ProductCategoryCell.xib in Resources */,
 				2BD0993C1F4342D8008A1827 /* ShoppingCartGuiGeTableViewCell.xib in Resources */,
 				2B10FAE71F47E47900801BEC /* MakeSureOrderViewController.xib in Resources */,
 				2BD099741F4359B0008A1827 /* tabBarIcon_moreNormal@2x.png in Resources */,
@@ -1558,6 +1614,7 @@
 				2BD099681F4359B0008A1827 /* tabBarIcon_homeIn@2x.png in Resources */,
 				2BD099371F433FFA008A1827 /* ShoppingCartGoodsTableViewCell.xib in Resources */,
 				2BD099641F4359B0008A1827 /* tabBarIcon_ChannelNormal@2x.png in Resources */,
+				2B3FD7D91F4929E3003DE7C3 /* FillOrderSelectTableViewCell.xib in Resources */,
 				2B6BE3381F46826400D0C915 /* MoreBaseView.xib in Resources */,
 				2BD099671F4359B0008A1827 /* tabBarIcon_ChannelSelected@3x.png in Resources */,
 				2B386F8C1F29B69A00228620 /* LaunchScreen.storyboard in Resources */,
@@ -1588,6 +1645,8 @@
 				2BA709281F3A9FCB00B0B520 /* UserInfoViewController.xib in Resources */,
 				2BD099751F4359B0008A1827 /* tabBarIcon_moreNormal@3x.png in Resources */,
 				2BB9D9711F407CCA0092A9CF /* AddToCartKeyBoard.xib in Resources */,
+				2B3FD7CF1F4926A1003DE7C3 /* FillOrderUserInfoCell.xib in Resources */,
+				2B3FD7E31F492AB2003DE7C3 /* FillOrderNomailCell.xib in Resources */,
 				2BD099701F4359B0008A1827 /* tabBarIcon_MineNormal@3x.png in Resources */,
 				2BD099651F4359B0008A1827 /* tabBarIcon_ChannelNormal@3x.png in Resources */,
 				2BD099771F4359B0008A1827 /* tabBarIcon_moreSelecetd@3x.png in Resources */,
@@ -1680,6 +1739,7 @@
 				2B3870351F29BC0C00228620 /* NSString+SRDoc.m in Sources */,
 				2B3870361F29BC0C00228620 /* NSString+SRString.m in Sources */,
 				2BD5D70A1F39871700BE1994 /* NSString+PinYin4Cocoa.m in Sources */,
+				2B3FD7EA1F493133003DE7C3 /* FillOrderModel.m in Sources */,
 				2BD5D7071F39871700BE1994 /* ChineseInclude.m in Sources */,
 				2B5AA4DD1F3DB74000C3EE31 /* HZCustomSearchBar.m in Sources */,
 				2B8FD7F31F32CC6F00DAB9B9 /* SelectLocationViewController.m in Sources */,
@@ -1687,6 +1747,7 @@
 				2B6BE3401F46830D00D0C915 /* CountPriceModel.m in Sources */,
 				2B6BE3431F4683AF00D0C915 /* MyInvoiceBussiness.m in Sources */,
 				2BC60A6C1F448C880069D70B /* ShoppingCartListModel.m in Sources */,
+				2B3FD7D31F4927DA003DE7C3 /* ProductCategoryCell.m in Sources */,
 				2BC14DC21F31CD3500919808 /* SBJsonWriter.m in Sources */,
 				2BFCFDEE1F413B63001DA10D /* AppProductViewController.m in Sources */,
 				2B6BE35F1F46B72B00D0C915 /* MyOrderListTableViewCell.m in Sources */,
@@ -1697,6 +1758,7 @@
 				2B3870371F29BC0C00228620 /* UIButton+SRButton.m in Sources */,
 				2BA025171F2AD86B003EB25D /* TipLabel.m in Sources */,
 				2B84606F1F417F7F0013D26D /* ProductDetailTitleView.m in Sources */,
+				2B3FD7D81F4929E3003DE7C3 /* FillOrderSelectTableViewCell.m in Sources */,
 				2BC14DB81F31CD3500919808 /* SBJsonParser.m in Sources */,
 				2B5AA4E01F3DB83400C3EE31 /* CommonSearchController.m in Sources */,
 				2B10FAE61F47E47900801BEC /* MakeSureOrderViewController.m in Sources */,
@@ -1737,6 +1799,7 @@
 				2BC14D8F1F31AE5800919808 /* LoginViewController.m in Sources */,
 				2BBDCC561F34BC6B003FE167 /* SelectCityModel.m in Sources */,
 				2BD5D7081F39871700BE1994 /* ChineseToPinyinResource.m in Sources */,
+				2B3FD7CE1F4926A1003DE7C3 /* FillOrderUserInfoCell.m in Sources */,
 				2BC14DBF1F31CD3500919808 /* SBJsonStreamWriterState.m in Sources */,
 				2B41F2131F429C6300CB36D0 /* TopProductImageScrollView.m in Sources */,
 				2B3870391F29BC0C00228620 /* UIImage+SRImage.m in Sources */,
@@ -1764,6 +1827,7 @@
 				2B6BE34C1F468F4800D0C915 /* NewProductDemandSaveBussiness.m in Sources */,
 				2BC60A6F1F4493BD0069D70B /* ShopCartListBottomView.m in Sources */,
 				2BFCFDE91F413B63001DA10D /* AppProdcutSelectSpecificationCell.m in Sources */,
+				2B3FD7E71F49307B003DE7C3 /* FillOrderBussiness.m in Sources */,
 				2BFCFDEB1F413B63001DA10D /* AppProductMainCellView.m in Sources */,
 				2B0E70C01F41E86E0037B4A7 /* ProductDetaiModel.m in Sources */,
 				2BC14DC11F31CD3500919808 /* SBJsonUTF8Stream.m in Sources */,
@@ -1776,6 +1840,7 @@
 				2BA709331F3B087800B0B520 /* StoreInfoBusiness.m in Sources */,
 				2B6BE3581F4691F100D0C915 /* OrderDetailModel.m in Sources */,
 				2BA025491F2B0C09003EB25D /* HomeViewController.m in Sources */,
+				2B3FD7E21F492AB2003DE7C3 /* FillOrderNomailCell.m in Sources */,
 				2BC14DB91F31CD3500919808 /* SBJsonStreamParser.m in Sources */,
 				2BC14DB71F31CD3500919808 /* NSObject+SBJson.m in Sources */,
 				2BBFAFF51F330181002506D1 /* RegisterBusiness.m in Sources */,
@@ -1787,6 +1852,7 @@
 				2BBFAFFF1F330AE8002506D1 /* LoginBusiness.m in Sources */,
 				2BA709431F3B1E6300B0B520 /* CityNotInOpenCityView.m in Sources */,
 				2B38703D1F29BC0C00228620 /* NSArray+ ZXPUnicode.m in Sources */,
+				2B3FD7C41F4924E5003DE7C3 /* FillOrderViewController.m in Sources */,
 				2BA0254F1F2B0D57003EB25D /* CustomPageView.m in Sources */,
 				2BBFAFFC1F3301F6002506D1 /* ParserManager.m in Sources */,
 				2BC14D981F31B64B00919808 /* RegisterViewController.m in Sources */,

@@ -63,7 +63,8 @@
 #define kOrderListBussinessUrl [NSString stringWithFormat :@"%@/gs/orderAPI/list?",kHTTP_HOST_URL]
 //订单列表
 #define kOrderDetailBussinessUrl [NSString stringWithFormat :@"%@/gs/orderAPI/show?",kHTTP_HOST_URL]
-
+//填写订单
+#define kFillOrderBussinessUrl [NSString stringWithFormat :@"%@/gs/orderAPI/submitOrder?",kHTTP_HOST_URL]
 
 
 

@@ -15,6 +15,7 @@
 #import "DealWithShoppingCartData.h"
 #import "CountPriceBussiness.h"
 #import "CountPriceModel.h"
+#import "FillOrderViewController.h"
 @interface ShoppingCartViewController ()<UITableViewDelegate,UITableViewDataSource,ShoppingCartGuiGeTableViewCellDelegate,ShopCartListBottomViewDelegate>
 @property (nonatomic ,strong ) UITableView * mainTableView;
 
@@ -23,6 +24,11 @@
  ShopCartListBottomView *shopCartListBottomView
  */
 @property (nonatomic ,strong) ShopCartListBottomView *shopCartListBottomView ;
+
+/**
+ <#Description#>
+ */
+@property (nonatomic ,strong) NSArray * calculationArray;
 @end
 
 @implementation ShoppingCartViewController
@@ -103,7 +109,9 @@
 #pragma  mark - 去结算
 - (void)goToSettle {
 
-    
+    FillOrderViewController * fillOrderViewController = [[FillOrderViewController alloc] init];
+    fillOrderViewController.calculationArray = _calculationArray;
+    [self.navigationController pushViewController:fillOrderViewController animated:YES];
     
 }
 
@@ -232,7 +240,7 @@
     
     
     NSArray * array = [DealWithShoppingCartData dealWithShoppingCartDataWith:[ShoppingCartManager sharedManager].CarInfoList];
-	
+    self.calculationArray = array;
     if (array.count == 0) {
         [self showToastWithMessage:@"请选择要结算的商品" showTime:1];
         
