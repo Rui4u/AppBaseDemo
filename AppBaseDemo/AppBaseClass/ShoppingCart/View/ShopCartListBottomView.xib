@@ -21,7 +21,7 @@
                     <constraints>
                         <constraint firstAttribute="width" constant="120" id="4tO-IV-TZ4"/>
                     </constraints>
-                    <state key="normal" title="去购物车">
+                    <state key="normal" title="去结算">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
