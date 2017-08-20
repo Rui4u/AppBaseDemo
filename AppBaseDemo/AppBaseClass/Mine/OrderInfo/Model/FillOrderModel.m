@@ -8,6 +8,12 @@
 
 #import "FillOrderModel.h"
 
+
+@implementation Store
++ (NSDictionary *)replacedKeyFromPropertyName{
+    return @{@"storeId" : @"id"};
+}
+@end
 @implementation FGoodsSpec
 + (NSDictionary *)replacedKeyFromPropertyName{
     return @{@"GoodsSpecId" : @"id"};

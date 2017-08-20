@@ -53,6 +53,8 @@
 		2B3FD7E31F492AB2003DE7C3 /* FillOrderNomailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B3FD7E11F492AB2003DE7C3 /* FillOrderNomailCell.xib */; };
 		2B3FD7E71F49307B003DE7C3 /* FillOrderBussiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3FD7E61F49307B003DE7C3 /* FillOrderBussiness.m */; };
 		2B3FD7EA1F493133003DE7C3 /* FillOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3FD7E91F493133003DE7C3 /* FillOrderModel.m */; };
+		2B3FD7ED1F4962CF003DE7C3 /* FillOrderBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3FD7EC1F4962CF003DE7C3 /* FillOrderBottomView.m */; };
+		2B3FD7EF1F4962DE003DE7C3 /* FillOrderBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B3FD7EE1F4962DE003DE7C3 /* FillOrderBottomView.xib */; };
 		2B41F2131F429C6300CB36D0 /* TopProductImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B41F2121F429C6300CB36D0 /* TopProductImageScrollView.m */; };
 		2B41F2191F42ABAD00CB36D0 /* ProductDetailGuiGeInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B41F2181F42ABAD00CB36D0 /* ProductDetailGuiGeInfo.m */; };
 		2B41F21B1F42ABB600CB36D0 /* ProductDetailGuiGeInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B41F21A1F42ABB600CB36D0 /* ProductDetailGuiGeInfo.xib */; };
@@ -318,6 +320,9 @@
 		2B3FD7E61F49307B003DE7C3 /* FillOrderBussiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FillOrderBussiness.m; sourceTree = "<group>"; };
 		2B3FD7E81F493133003DE7C3 /* FillOrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FillOrderModel.h; sourceTree = "<group>"; };
 		2B3FD7E91F493133003DE7C3 /* FillOrderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FillOrderModel.m; sourceTree = "<group>"; };
+		2B3FD7EB1F4962CF003DE7C3 /* FillOrderBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FillOrderBottomView.h; sourceTree = "<group>"; };
+		2B3FD7EC1F4962CF003DE7C3 /* FillOrderBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FillOrderBottomView.m; sourceTree = "<group>"; };
+		2B3FD7EE1F4962DE003DE7C3 /* FillOrderBottomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FillOrderBottomView.xib; sourceTree = "<group>"; };
 		2B41F2111F429C6300CB36D0 /* TopProductImageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopProductImageScrollView.h; sourceTree = "<group>"; };
 		2B41F2121F429C6300CB36D0 /* TopProductImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopProductImageScrollView.m; sourceTree = "<group>"; };
 		2B41F2171F42ABAD00CB36D0 /* ProductDetailGuiGeInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailGuiGeInfo.h; sourceTree = "<group>"; };
@@ -803,6 +808,9 @@
 				2B3FD7DF1F492AB2003DE7C3 /* FillOrderNomailCell.h */,
 				2B3FD7E01F492AB2003DE7C3 /* FillOrderNomailCell.m */,
 				2B3FD7E11F492AB2003DE7C3 /* FillOrderNomailCell.xib */,
+				2B3FD7EB1F4962CF003DE7C3 /* FillOrderBottomView.h */,
+				2B3FD7EC1F4962CF003DE7C3 /* FillOrderBottomView.m */,
+				2B3FD7EE1F4962DE003DE7C3 /* FillOrderBottomView.xib */,
 			);
 			name = FillOrderView;
 			sourceTree = "<group>";
@@ -1633,6 +1641,7 @@
 				2BD0997A1F4359B0008A1827 /* tabBarIcon_wealthIn@2x.png in Resources */,
 				2B386F891F29B69A00228620 /* Assets.xcassets in Resources */,
 				2B6BE33A1F46826400D0C915 /* MoreViewController.xib in Resources */,
+				2B3FD7EF1F4962DE003DE7C3 /* FillOrderBottomView.xib in Resources */,
 				2BD099721F4359B0008A1827 /* tabBarIcon_MineSelecetd@3x.png in Resources */,
 				2B10FAF11F483CD700801BEC /* NewDemandViewController.xib in Resources */,
 				2BD5D70E1F39871700BE1994 /* unicode_to_hanyu_pinyin.txt in Resources */,
@@ -1748,6 +1757,7 @@
 				2B6BE3431F4683AF00D0C915 /* MyInvoiceBussiness.m in Sources */,
 				2BC60A6C1F448C880069D70B /* ShoppingCartListModel.m in Sources */,
 				2B3FD7D31F4927DA003DE7C3 /* ProductCategoryCell.m in Sources */,
+				2B3FD7ED1F4962CF003DE7C3 /* FillOrderBottomView.m in Sources */,
 				2BC14DC21F31CD3500919808 /* SBJsonWriter.m in Sources */,
 				2BFCFDEE1F413B63001DA10D /* AppProductViewController.m in Sources */,
 				2B6BE35F1F46B72B00D0C915 /* MyOrderListTableViewCell.m in Sources */,

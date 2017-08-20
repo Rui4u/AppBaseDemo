@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="FillOrderBottomView">
+            <rect key="frame" x="0.0" y="0.0" width="338" height="105"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0VF-EV-PsK" customClass="ShopCartListBottomView">
+                    <rect key="frame" x="0.0" y="0.0" width="338" height="105"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DSJ-WJ-xf7">
+                            <rect key="frame" x="218" y="0.0" width="120" height="105"/>
+                            <color key="backgroundColor" red="0.18823529410000001" green="0.78039215689999997" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="120" id="xFk-u8-MwP"/>
+                            </constraints>
+                            <state key="normal" title="提交订单">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="clickGoShopingCart:" destination="0VF-EV-PsK" eventType="touchUpInside" id="Brf-vi-AWk"/>
+                                <action selector="clikdSubmitOrder:" destination="iN0-l3-epB" eventType="touchUpInside" id="yYc-fi-KQ3"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="Ezg-Sy-3ZQ">
+                            <rect key="frame" x="67" y="0.0" width="151" height="105"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" red="0.93333333333333335" green="0.36078431372549019" blue="0.33725490196078434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="实付款:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTd-aO-5Xy">
+                            <rect key="frame" x="15" y="0.0" width="52" height="105"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="52" id="5RR-FH-KR7"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XUm-we-tN7">
+                            <rect key="frame" x="0.0" y="0.0" width="338" height="1"/>
+                            <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="5yK-Lo-3kc"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="DTd-aO-5Xy" firstAttribute="leading" secondItem="0VF-EV-PsK" secondAttribute="leading" constant="15" id="2QU-Au-0wc"/>
+                        <constraint firstAttribute="bottom" secondItem="DSJ-WJ-xf7" secondAttribute="bottom" id="3FL-Xj-wWf"/>
+                        <constraint firstItem="DSJ-WJ-xf7" firstAttribute="leading" secondItem="Ezg-Sy-3ZQ" secondAttribute="trailing" id="76z-oH-jwK"/>
+                        <constraint firstAttribute="trailing" secondItem="DSJ-WJ-xf7" secondAttribute="trailing" id="8hJ-rs-Zwe"/>
+                        <constraint firstItem="XUm-we-tN7" firstAttribute="top" secondItem="0VF-EV-PsK" secondAttribute="top" id="RUU-kg-9Od"/>
+                        <constraint firstAttribute="bottom" secondItem="Ezg-Sy-3ZQ" secondAttribute="bottom" id="diS-jm-OiE"/>
+                        <constraint firstItem="XUm-we-tN7" firstAttribute="leading" secondItem="0VF-EV-PsK" secondAttribute="leading" id="fkP-Ta-u78"/>
+                        <constraint firstItem="Ezg-Sy-3ZQ" firstAttribute="top" secondItem="0VF-EV-PsK" secondAttribute="top" id="joT-HJ-6Et"/>
+                        <constraint firstItem="DSJ-WJ-xf7" firstAttribute="top" secondItem="0VF-EV-PsK" secondAttribute="top" id="kpZ-GR-hjQ"/>
+                        <constraint firstItem="DTd-aO-5Xy" firstAttribute="top" secondItem="0VF-EV-PsK" secondAttribute="top" id="oHo-6P-0g3"/>
+                        <constraint firstItem="Ezg-Sy-3ZQ" firstAttribute="leading" secondItem="DTd-aO-5Xy" secondAttribute="trailing" id="sCt-zw-SWG"/>
+                        <constraint firstAttribute="bottom" secondItem="DTd-aO-5Xy" secondAttribute="bottom" id="xx6-AA-Pah"/>
+                        <constraint firstAttribute="trailing" secondItem="XUm-we-tN7" secondAttribute="trailing" id="ymo-gK-z7Q"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="goShopCartButton" destination="DSJ-WJ-xf7" id="SuT-m0-XjT"/>
+                        <outlet property="totalPrice" destination="Ezg-Sy-3ZQ" id="mVS-p3-lTN"/>
+                    </connections>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="0VF-EV-PsK" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="PMr-fg-eaE"/>
+                <constraint firstAttribute="trailing" secondItem="0VF-EV-PsK" secondAttribute="trailing" id="VJN-h2-Y3S"/>
+                <constraint firstItem="0VF-EV-PsK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="eG7-7y-AMf"/>
+                <constraint firstAttribute="bottom" secondItem="0VF-EV-PsK" secondAttribute="bottom" id="waa-14-wCA"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="priceLabel" destination="Ezg-Sy-3ZQ" id="LBZ-B9-ktu"/>
+            </connections>
+            <point key="canvasLocation" x="18" y="-288.5"/>
+        </view>
+    </objects>
+</document>

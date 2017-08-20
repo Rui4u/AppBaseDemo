@@ -9,7 +9,23 @@
 #import <Foundation/Foundation.h>
 
 
+@interface Store :NSObject
+@property (nonatomic , copy) NSString              * storeId;
+@property (nonatomic , copy) NSString              * storeStatus;
+@property (nonatomic , copy) NSString              * uuid;
+@property (nonatomic , copy) NSString              * deleteStatus;
+@property (nonatomic , copy) NSString              * storeTelephone;
+@property (nonatomic , copy) NSString              * storeAddress;
+@property (nonatomic , copy) NSString              * cityCode;
+@property (nonatomic , copy) NSString              * storeApprove;
+@property (nonatomic , copy) NSString              * token;
+@property (nonatomic , copy) NSString              * managerName;
+@property (nonatomic , copy) NSString              * addTime;
+@property (nonatomic , copy) NSString              * storePwd;
+@property (nonatomic , copy) NSString              * storeName;
+@property (nonatomic , copy) NSString              * isFinish;
 
+@end
 @interface FGoodsSpec :NSObject
 @property (nonatomic , copy) NSString              * GoodsSpecId;
 @property (nonatomic , copy) NSString              * discount;
@@ -64,5 +80,6 @@
 @property (nonatomic , copy) NSString              * totalcashPeldge;
 @property (nonatomic , copy) NSString              * totalcurrentPrice;
 @property (nonatomic , copy) NSString              * totalPrice;
+@property (nonatomic , strong) Store              * store;
 
 @end

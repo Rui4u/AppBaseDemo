@@ -13,7 +13,7 @@
 #import "FillOrderNomailCell.h"
 #import "FillOrderBussiness.h"
 #import "FillOrderModel.h"
-
+#import "FillOrderBottomView.h"
 @interface FillOrderViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic) UITableView *mainTableView;
 
@@ -39,8 +39,12 @@
     [self initNavBarView:NAV_BAR_TYPE_SECOND_LEVEL_VIEW];
     [self.navBarView setTitle:@"完善信息"];
     
+    FillOrderBottomView * fillOrderBottomView  = [[[NSBundle mainBundle] loadNibNamed:@"FillOrderBottomView" owner:self options:nil] lastObject];
+    fillOrderBottomView.frame =CGRectMake(0, SCREEN_HEIGHT - 50, SCREEN_WIDTH, 50);
+    [self.view addSubview:fillOrderBottomView];
     [FillOrderBussiness requestFillOrderWithToken:TOKEN goodsList:self.calculationArray completionSuccessHandler:^(FillOrderModel *getFillOrderModel) {
         self.getFillOrderModel = getFillOrderModel;
+        fillOrderBottomView.priceLabel.text = [NSString stringWithFormat:@"￥%@",self.getFillOrderModel.totalcurrentPrice];
         [self.mainTableView reloadData];
         
     } completionFailHandler:^(NSString *failMessage) {
@@ -102,6 +106,7 @@
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
 
         }
+        cell.store = self.getFillOrderModel.store;
 
         return cell;
     }else if (indexPath.section == 1) {
@@ -174,7 +179,7 @@
 - (UITableView *)mainTableView {
     
     if (!_mainTableView) {
-        _mainTableView = [[UITableView alloc] initWithFrame:CGRectMake(0,NAV_BAR_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGHT -NAV_BAR_HEIGHT) style:UITableViewStyleGrouped];
+        _mainTableView = [[UITableView alloc] initWithFrame:CGRectMake(0,NAV_BAR_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGHT -NAV_BAR_HEIGHT - 50) style:UITableViewStyleGrouped];
         _mainTableView.delegate = self;
         _mainTableView.dataSource = self;
         _mainTableView.backgroundColor = [UIColor colorWithHexString:@"eeeeee"];

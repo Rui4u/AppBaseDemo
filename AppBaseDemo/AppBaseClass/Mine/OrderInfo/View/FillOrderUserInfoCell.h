@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class Store;
 @interface FillOrderUserInfoCell : UITableViewCell
+@property (nonatomic , strong) Store *store;
 
 @end

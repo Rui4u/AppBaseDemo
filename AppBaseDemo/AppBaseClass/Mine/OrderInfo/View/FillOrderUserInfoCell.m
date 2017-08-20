@@ -7,7 +7,14 @@
 //
 
 #import "FillOrderUserInfoCell.h"
+#import "FillOrderModel.h"
 
+@interface FillOrderUserInfoCell ()
+@property (weak, nonatomic) IBOutlet UILabel *userName;
+@property (weak, nonatomic) IBOutlet UILabel *adressLabel;
+@property (weak, nonatomic) IBOutlet UILabel *phoneNumber;
+
+@end
 @implementation FillOrderUserInfoCell
 
 - (void)awakeFromNib {
@@ -20,5 +27,13 @@
 
     // Configure the view for the selected state
 }
+- (void)setStore:(Store *)store {
 
+    _store = store;
+    _userName.text = store.managerName;
+    _adressLabel.text = store.storeAddress;
+    _phoneNumber.text = store.storeTelephone;
+
+
+}
 @end
