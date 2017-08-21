@@ -8,6 +8,7 @@
 
 #import "NewDemandViewController.h"
 #import "NewDemandView.h"
+#import "SRCustomDataPicker.h"
 @interface NewDemandViewController ()<UITextFieldDelegate,UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *mainScrollView;
 @property (weak, nonatomic) IBOutlet UITextField *productName;
@@ -18,10 +19,14 @@
 @property (weak, nonatomic) IBOutlet UITextField *priceLabel;
 @property (weak, nonatomic) IBOutlet UITextView *RemarksText;
 @property (weak, nonatomic) IBOutlet UITextField *contactInformation;
-
+@property (nonatomic ,strong ) SRCustomDataPicker * dataPicker;
 @end
 
 @implementation NewDemandViewController
+- (IBAction)clikcSelectCategory:(UIButton *)sender {
+	[_dataPicker showDataPicker];
+	
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -40,7 +45,9 @@
     _priceLabel.delegate = self;
     _RemarksText.delegate = self;
     _contactInformation.delegate = self;
-
+	_dataPicker = [[SRCustomDataPicker alloc] init];
+	
+	[self.view addSubview:_dataPicker];
 }
 
 - (void)didReceiveMemoryWarning {

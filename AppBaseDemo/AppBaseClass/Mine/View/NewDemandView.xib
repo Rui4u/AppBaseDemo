@@ -86,26 +86,28 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ahu-Bx-hlQ">
-                            <rect key="frame" x="80" y="0.0" width="285" height="43"/>
-                            <nil key="textColor"/>
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMy-E2-kTb">
+                            <rect key="frame" x="126" y="0.0" width="249" height="43"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
+                            <state key="normal" title="选择产品分类(必选)"/>
+                            <connections>
+                                <action selector="clikcSelectCategory:" destination="-1" eventType="touchUpInside" id="5gO-vc-yL5"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="edN-Kh-JeA" secondAttribute="bottom" id="0nf-KJ-8e3"/>
                         <constraint firstItem="qAN-FQ-QQg" firstAttribute="leading" secondItem="rae-w2-pxT" secondAttribute="leading" constant="10" id="9jQ-HF-3wq"/>
+                        <constraint firstItem="wMy-E2-kTb" firstAttribute="top" secondItem="rae-w2-pxT" secondAttribute="top" id="FYa-Ft-nea"/>
                         <constraint firstAttribute="height" constant="44" id="GN7-pa-EUR"/>
-                        <constraint firstItem="Ahu-Bx-hlQ" firstAttribute="leading" secondItem="qAN-FQ-QQg" secondAttribute="trailing" constant="10" id="LFY-bI-7Ck"/>
                         <constraint firstItem="edN-Kh-JeA" firstAttribute="top" secondItem="qAN-FQ-QQg" secondAttribute="bottom" id="LR8-Gc-kOa"/>
-                        <constraint firstAttribute="trailing" secondItem="Ahu-Bx-hlQ" secondAttribute="trailing" constant="10" id="ReA-HF-Rs2"/>
                         <constraint firstItem="qAN-FQ-QQg" firstAttribute="top" secondItem="rae-w2-pxT" secondAttribute="top" id="Snr-dJ-2BS"/>
                         <constraint firstAttribute="height" relation="lessThanOrEqual" constant="44" id="VoN-XK-4VL"/>
-                        <constraint firstItem="Ahu-Bx-hlQ" firstAttribute="top" secondItem="rae-w2-pxT" secondAttribute="top" id="dnG-pT-ANh"/>
-                        <constraint firstItem="edN-Kh-JeA" firstAttribute="top" secondItem="Ahu-Bx-hlQ" secondAttribute="bottom" id="hdW-Zw-udi"/>
+                        <constraint firstItem="edN-Kh-JeA" firstAttribute="top" secondItem="wMy-E2-kTb" secondAttribute="bottom" id="hZv-3s-bXc"/>
+                        <constraint firstAttribute="trailing" secondItem="wMy-E2-kTb" secondAttribute="trailing" id="iwP-Xw-4am"/>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="p7C-4h-Etv"/>
+                        <constraint firstItem="wMy-E2-kTb" firstAttribute="leading" secondItem="qAN-FQ-QQg" secondAttribute="trailing" constant="10" id="pan-8K-s8Y"/>
                         <constraint firstItem="edN-Kh-JeA" firstAttribute="leading" secondItem="rae-w2-pxT" secondAttribute="leading" id="pig-uR-2mw"/>
                         <constraint firstAttribute="trailing" secondItem="edN-Kh-JeA" secondAttribute="trailing" id="uwh-dr-CSn"/>
                     </constraints>

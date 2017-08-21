@@ -21,6 +21,8 @@
 @interface Guige :NSObject<NSMutableCopying,NSCopying>
 
 @property (nonatomic ,assign,getter=isSelected)BOOL selected;  //购物车是否选择
+
+@property (nonatomic ,copy ) NSString * state;
 @property (nonatomic , copy) NSString              * oldPrice;
 @property (nonatomic , copy) NSString              * currentPrice;
 @property (nonatomic , copy) NSString              * guigeID;

@@ -24,8 +24,29 @@
 	return @{@"activityID" : @"id"};
 }
 @end
-@implementation Guige
 
+
+@implementation Guige
+@synthesize selected = _selected;
+
+- (void)setSelected:(BOOL)selected {
+	_selected = selected;
+	if (_selected == YES) {
+		self.state = @"1";
+	}else {
+		self.state = @"0";
+	}
+}
+
+- (BOOL)isSelected {
+	
+	if ([self.state isEqualToString:@"1"]) {
+		return YES;
+	}else {
+		return NO;
+	}
+
+}
 - (id)copyWithZone:(NSZone *)zone {
 	Guige *instance = [[Guige alloc] init];
 	if (instance) {
@@ -33,6 +54,8 @@
 		
 		
 		instance.oldPrice = [self.oldPrice copyWithZone:zone];
+		instance.state = [self.state copyWithZone:zone];
+
 		instance.currentPrice = [self.currentPrice copyWithZone:zone];
 		instance.totalWeight = [self.totalWeight copyWithZone:zone];
 		instance.guigeID = [self.guigeID copyWithZone:zone];
@@ -55,8 +78,8 @@
 		if (instance) {
 			instance.selected = self.selected;
 			
-			
 			instance.oldPrice = [self.oldPrice mutableCopyWithZone:zone];
+			instance.state = [self.state mutableCopyWithZone:zone];
 			
 			instance.currentPrice = [self.currentPrice mutableCopyWithZone:zone];
 			instance.totalWeight = [self.totalWeight mutableCopyWithZone:zone];
