@@ -52,7 +52,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-
+    
     [self setNavUI];
     [self setBottomViewUI];
     [self pullToRefresh];
@@ -61,7 +61,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-	
+    
 }
 - (void)pullToRefresh {
     
@@ -86,7 +86,7 @@
 }
 #pragma mark - 刷新数据
 - (void)reloadeData {
-
+    
     self.navBarView.alpha = 0;
     [self.view addSubview:self.bgScrollView];
     
@@ -107,17 +107,17 @@
     
     NSString * guigeId = self.goodsDataSourse.guige[index].guigeID;
     NSString * goodsId = self.goodsDataSourse.goodsId;
-	self.goodsDataSourse.guige[index].carGoodNum = count;
-	
-	[[ShoppingCartManager sharedManager] addobjectWith:self.goodsDataSourse withGuiGeIndex:index];
-
-	[CommonNotification postNotification:CNotificationShoppingCartNumberNotify userInfo:nil object:nil];
-	
+    self.goodsDataSourse.guige[index].carGoodNum = count;
+    
+    [[ShoppingCartManager sharedManager] addobjectWith:self.goodsDataSourse withGuiGeIndex:index];
+    
+    [CommonNotification postNotification:CNotificationShoppingCartNumberNotify userInfo:nil object:nil];
+    
     if(count.integerValue == 0){
         NSLog(@"删除");
-		
-		[[ShoppingCartManager sharedManager] removeobjectWith:self.goodsDataSourse withGuiGeIndex:index];
-
+        
+        [[ShoppingCartManager sharedManager] removeobjectWith:self.goodsDataSourse withGuiGeIndex:index];
+        
         NSMutableArray * goodListArray = [[NSMutableArray alloc] init];
         NSMutableDictionary * goodInfoDict = [[NSMutableDictionary alloc] init];
         NSMutableArray * goodsSpecArray = [[NSMutableArray alloc] init];
@@ -165,7 +165,7 @@
     }
     //改变个数
     [self changeShoppingCartNumberWithCurrent:count andIndex:index];
-
+    
 }
 
 
@@ -173,7 +173,7 @@
 
 - (void)changeShoppingCartNumberWithCurrent:(NSString *)count andIndex:(NSInteger)index {
     
-	
+    
     _prodcutDetailBottomView.numText = [NSString stringWithFormat:@"%tu",[ShoppingCartManager sharedManager].selectNumber];
     
     
@@ -193,7 +193,7 @@
         [self showToastWithMessage:netWorkErrorMessage showTime:1];
     }];
     
-
+    
 }
 #pragma mark - 点击反馈
 - (void)clickRightButton {
@@ -203,47 +203,40 @@
 
 #pragma mark - 设置产品信息UI
 - (void)setUpProcudtDetailedInformationViewUI {
-
+    
     _procudtDetailedInformationView = [[NSBundle mainBundle]loadNibNamed:@"ProcudtDetailedInformationView"
-                                                                       owner:self
-                                                                     options:nil].firstObject;
+                                                                   owner:self
+                                                                 options:nil].firstObject;
     [_bgScrollView addSubview:_procudtDetailedInformationView];
     CGFloat tempHeight = 50;
-    NSArray * detailInfoImage = [_goodsDataSourse.detailsImage componentsSeparatedByString:@","];
-    for (int i = 0; i <detailInfoImage.count; i++) {
-        
-//        UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 50 + i * (AutoHeight(200) + 10), SCREEN_WIDTH, AutoHeight(300))];
-//        [imageView sd_setImageWithURL:[NSURL URLWithString:detailInfoImage[i]] placeholderImage:nil];
-//        [_procudtDetailedInformationView addSubview:imageView];
-		
-		        ProductDetailWebView * webView = [[ProductDetailWebView alloc] initWithFrame:CGRectMake(0, 50 + i * (AutoHeight(200) + 10), SCREEN_WIDTH, AutoHeight(300))];
-			[webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.baidu.com"]]];
-
-		        [_procudtDetailedInformationView addSubview:webView];
-		webView.delegate = self;
-		int totalHeight = [[webView stringByEvaluatingJavaScriptFromString:@"document.documentElement.scrollHeight"] intValue];
-		webView.scrollView.scrollEnabled = NO;
-
-		tempHeight = totalHeight;
-    }
     
-		_procudtDetailedInformationView.frame = CGRectMake(0, CGRectGetMaxY(_productDetailTopView.frame) , SCREEN_WIDTH, tempHeight);
+    ProductDetailWebView * webView = [[ProductDetailWebView alloc] initWithFrame:CGRectMake(0, 50, SCREEN_WIDTH, AutoHeight(300))];
+    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_goodsDataSourse.detailsImage]]];
+    
+    [_procudtDetailedInformationView addSubview:webView];
+    webView.delegate = self;
+    int totalHeight = [[webView stringByEvaluatingJavaScriptFromString:@"document.documentElement.scrollHeight"] intValue];
+    webView.scrollView.scrollEnabled = NO;
+    
+    tempHeight = totalHeight;
+    
+    _procudtDetailedInformationView.frame = CGRectMake(0, CGRectGetMaxY(_productDetailTopView.frame) , SCREEN_WIDTH, tempHeight);
 }
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
-	CGSize fittingSize = [webView sizeThatFits:CGSizeZero];
-	NSLog(@"webView:%@",NSStringFromCGSize(fittingSize));
-	
-	webView.height = fittingSize.height;
-	_procudtDetailedInformationView.frame = CGRectMake(0, CGRectGetMaxY(_productDetailTopView.frame) , SCREEN_WIDTH, webView.height);
-	[self reloadeFrame];
-
+    CGSize fittingSize = [webView sizeThatFits:CGSizeZero];
+    NSLog(@"webView:%@",NSStringFromCGSize(fittingSize));
+    
+    webView.height = fittingSize.height;
+    _procudtDetailedInformationView.frame = CGRectMake(0, CGRectGetMaxY(_productDetailTopView.frame) , SCREEN_WIDTH, webView.height);
+    [self reloadeFrame];
+    
 }
 
 - (void)reloadeFrame {
-
-	self.productSpecificationParameterView.frame = CGRectMake(0, self.procudtDetailedInformationView.bottom + 10, SCREEN_WIDTH, self.productSpecificationParameterView.height);
-	self.bgScrollView.contentSize = CGSizeMake(0, self.productSpecificationParameterView.bottom + 20);
-
+    
+    self.productSpecificationParameterView.frame = CGRectMake(0, self.procudtDetailedInformationView.bottom + 10, SCREEN_WIDTH, self.productSpecificationParameterView.height);
+    self.bgScrollView.contentSize = CGSizeMake(0, self.productSpecificationParameterView.bottom + 20);
+    
 }
 #pragma 设置产品规格UI
 - (void) setUpProductSpecificationParameterViewUI{
@@ -300,7 +293,7 @@
     
     self.productSpecificationParameterView.frame = CGRectMake(0, self.procudtDetailedInformationView.bottom + 10, SCREEN_WIDTH, tempHeight);
     
-
+    
 }
 
 #pragma mark - 顶部View
@@ -340,7 +333,7 @@
 #pragma mark - 底部去购物车UI
 - (void)setBottomViewUI {
     
-
+    
     _prodcutDetailBottomView = [[NSBundle mainBundle] loadNibNamed:@"ProdcutDetailBottomView" owner:self options:nil].firstObject;
     [self.view addSubview:_prodcutDetailBottomView];
     

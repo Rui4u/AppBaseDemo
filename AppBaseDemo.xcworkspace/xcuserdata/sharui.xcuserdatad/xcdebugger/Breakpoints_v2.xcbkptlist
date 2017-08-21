@@ -67,92 +67,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AppBaseDemo/AppBaseClass/Mine/ViewController/NewDemandViewController.m"
-            timestampString = "524980784.598877"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "-clickSubmitButton:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AppBaseDemo/AppBaseClass/Mine/Bussiness/NewProductDemandSaveBussiness.m"
-            timestampString = "524980914.583494"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "+requestNewProductDemandSaveWithToken:goodsName:goodsCategoryId:goodsSpec:upplier:price:telephone:remark:completionSuccessHandler:completionFailHandler:completionError:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AppBaseDemo/AppBaseClass/Mine/Bussiness/NewProductDemandSaveBussiness.m"
-            timestampString = "524980939.676662"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "+requestNewProductDemandSaveWithToken:goodsName:goodsCategoryId:goodsSpec:upplier:price:telephone:remark:completionSuccessHandler:completionFailHandler:completionError:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AppBaseDemo/AppBaseClass/Mine/Bussiness/NewProductDemandSaveBussiness.m"
-            timestampString = "524981274.121967"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "+requestNewProductDemandSaveWithToken:goodsName:goodsCategoryId:goodsSpec:upplier:price:telephone:remark:completionSuccessHandler:completionFailHandler:completionError:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AppBaseDemo/AppBaseClass/Mine/Bussiness/NewProductDemandSaveBussiness.m"
-            timestampString = "524981275.194624"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "+requestNewProductDemandSaveWithToken:goodsName:goodsCategoryId:goodsSpec:upplier:price:telephone:remark:completionSuccessHandler:completionFailHandler:completionError:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "AppBaseDemo/AppBaseClass/ShoppingCart/Bussiness/ShoppingCartListBussiness.m"
-            timestampString = "524999271.087276"
+            timestampString = "525014921.677422"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
             landmarkName = "+requestShoppingCartListWithToken:completionSuccessHandler:completionFailHandler:completionError:"
             landmarkType = "7">
          </BreakpointContent>
@@ -163,13 +83,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AppBaseDemo/AppBaseClass/ShoppingCart/ViewController/ShoppingCartViewController.m"
-            timestampString = "524999852.714193"
+            filePath = "AppBaseDemo/AppBaseClass/AllProduct/ProductDetail/Bussiness/ProductDetailBussiness.m"
+            timestampString = "525015024.052649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170"
-            landmarkName = "-detailSelectdWith:withTypeBlock:"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "+requestProductDetailWithToken:goodsId:completionSuccessHandler:completionFailHandler:completionError:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -180,12 +100,75 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AppBaseDemo/AppBaseClass/ShoppingCart/ViewController/ShoppingCartViewController.m"
-            timestampString = "524999874.695654"
+            timestampString = "525017378.140165"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "188"
-            endingLineNumber = "188"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
+            landmarkName = "-ShoppingCartGuiGeTableViewCellchangeNumberWith:withRect:withIndexPath:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ShoppingCartViewController ShoppingCartGuiGeTableViewCellchangeNumberWith:withRect:withIndexPath:]"
+                  moduleName = "AppBaseDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sharui/Desktop/AppBaseDemo/AppBaseDemo/AppBaseClass/ShoppingCart/ViewController/ShoppingCartViewController.m"
+                  timestampString = "525020804.343282"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "118"
+                  endingLineNumber = "118"
+                  offsetFromSymbolStart = "1193">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__100-[ShoppingCartViewController ShoppingCartGuiGeTableViewCellchangeNumberWith:withRect:withIndexPath:]_block_invoke"
+                  moduleName = "AppBaseDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sharui/Desktop/AppBaseDemo/AppBaseDemo/AppBaseClass/ShoppingCart/ViewController/ShoppingCartViewController.m"
+                  timestampString = "525020804.344928"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "118"
+                  endingLineNumber = "118"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__100-[ShoppingCartViewController ShoppingCartGuiGeTableViewCellchangeNumberWith:withRect:withIndexPath:]_block_invoke_2"
+                  moduleName = "AppBaseDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sharui/Desktop/AppBaseDemo/AppBaseDemo/AppBaseClass/ShoppingCart/ViewController/ShoppingCartViewController.m"
+                  timestampString = "525020804.34666"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "118"
+                  endingLineNumber = "118"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AppBaseDemo/AppBaseClass/ShoppingCart/ViewController/ShoppingCartViewController.m"
+            timestampString = "525017378.89959"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "-ShoppingCartGuiGeTableViewCellchangeNumberWith:withRect:withIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -195,46 +178,78 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AppBaseDemo/AppBaseClass/ShoppingCart/Bussiness/CountPriceBussiness.m"
-            timestampString = "525000039.267567"
+            filePath = "AppBaseDemo/AppBaseClass/ShoppingCart/ViewController/ShoppingCartViewController.m"
+            timestampString = "525017381.643672"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "-ShoppingCartGuiGeTableViewCellchangeNumberWith:withRect:withIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AppBaseDemo/AppBaseClass/ShoppingCart/ShoppingCartManager.m"
+            timestampString = "525020802.594994"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "-removeobjectWith:withGuiGeIndex:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AppBaseDemo/AppBaseClass/ShoppingCart/ShoppingCartManager.m"
+            timestampString = "525020875.00652"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "25"
             endingLineNumber = "25"
-            landmarkName = "+requestCountPriceWithToken:status:goodsList:completionSuccessHandler:completionFailHandler:completionError:"
+            landmarkName = "-selectNumber"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AppBaseDemo/AppBaseClass/ShoppingCart/Bussiness/CountPriceBussiness.m"
-            timestampString = "525000041.921927"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "+requestCountPriceWithToken:status:goodsList:completionSuccessHandler:completionFailHandler:completionError:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AppBaseDemo/AppBaseClass/ShoppingCart/ViewController/ShoppingCartViewController.m"
-            timestampString = "525000058.80144"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "239"
-            endingLineNumber = "239"
-            landmarkName = "-customReloadeData"
-            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ShoppingCartManager selectNumber]"
+                  moduleName = "AppBaseDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sharui/Desktop/AppBaseDemo/AppBaseDemo/AppBaseClass/ShoppingCart/ShoppingCartManager.m"
+                  timestampString = "525020875.218796"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "66">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ShoppingCartManager selectNumber]"
+                  moduleName = "AppBaseDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sharui/Desktop/AppBaseDemo/AppBaseDemo/AppBaseClass/ShoppingCart/ShoppingCartManager.m"
+                  timestampString = "525020875.220555"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "76">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

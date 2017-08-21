@@ -16,6 +16,8 @@
 #import "CountPriceBussiness.h"
 #import "CountPriceModel.h"
 #import "FillOrderViewController.h"
+#import "ShoppingCartChangeNumBussiness.h"
+#import "DeleteCartBusiness.h"
 @interface ShoppingCartViewController ()<UITableViewDelegate,UITableViewDataSource,ShoppingCartGuiGeTableViewCellDelegate,ShopCartListBottomViewDelegate>
 @property (nonatomic ,strong ) UITableView * mainTableView;
 
@@ -87,11 +89,42 @@
 -(void)ShoppingCartGuiGeTableViewCellchangeNumberWith:(NSString *)count withRect:(CGRect) rect withIndexPath:(NSIndexPath *)indexPath{
     
     
+    
+   
 	 ShoppingCartGuiGeTableViewCell * cell = (ShoppingCartGuiGeTableViewCell *)[self.mainTableView cellForRowAtIndexPath:indexPath];
 	
     if ([count isEqualToString:@"0"]) {
+        
+        
+        
+        
+        Goods * selectGoods = [ShoppingCartManager sharedManager].CarInfoList[indexPath.section];
+        Guige * selectGuige = selectGoods.guige[indexPath.row];
+        
+        NSMutableArray * goodListArray = [[NSMutableArray alloc] init];
+        NSMutableDictionary * goodInfoDict = [[NSMutableDictionary alloc] init];
+        NSMutableArray * goodsSpecArray = [[NSMutableArray alloc] init];
+        NSMutableDictionary * goodsSpecDict = [[NSMutableDictionary alloc] init];
+        
+        goodsSpecDict = @{@"id":selectGuige.guigeID}.mutableCopy;
+        [goodsSpecArray addObject:goodsSpecDict];
+        [goodInfoDict  setValue:selectGoods.goodsId forKey:@"id"];
+        [goodInfoDict  setValue:goodsSpecArray forKey:@"goodsSpec"];
+        
+        [goodListArray addObject:goodInfoDict];
+        
+        [DeleteCartBusiness requestDeleteCartWithToken:TOKEN goodsList:goodListArray completionSuccessHandler:^(NSString *getSelectedProductModel) {
+            
+        } completionFailHandler:^(NSString *failMessage) {
+            [self showToastWithMessage:failMessage showTime:1];
+        } completionError:^(NSString *netWorkErrorMessage) {
+            [self showToastWithMessage:netWorkErrorMessage showTime:1];
+        }];
+        
+        //删除
         [[ShoppingCartManager sharedManager]removeobjectWith:[ShoppingCartManager sharedManager].CarInfoList[indexPath.section] withGuiGeIndex:indexPath.row];
         [self customReloadeData];
+
     }else {
     
         if(!cell.guigeSelectButton.selected) {
@@ -99,6 +132,20 @@
         }else {
             [self detailSelectdWith:indexPath withTypeBlock:self];
         }
+        
+        [ShoppingCartChangeNumBussiness requestShoppingCartChangeNumWithToken:TOKEN
+                                                                      goodsId:[ShoppingCartManager sharedManager].CarInfoList[indexPath.section].goodsId
+                                                                       specId:[ShoppingCartManager sharedManager].CarInfoList[indexPath.section].guige[indexPath.row].guigeID
+                                                                          num:count
+                                                     completionSuccessHandler:^(NSString *succeed)
+         {
+             
+         } completionFailHandler:^(NSString *failMessage) {
+             [self showToastWithMessage:failMessage showTime:1];
+         } completionError:^(NSString *netWorkErrorMessage) {
+             [self showToastWithMessage:netWorkErrorMessage showTime:1];
+         }];
+
     }
     
     
@@ -186,7 +233,8 @@
 	cell.delegate = self;
     cell.selectShoppingCartGuiGeBlock = ^(NSIndexPath *indexPath) {
 		[self detailSelectdWith:indexPath withTypeBlock:weakSelf];
-    };
+        
+            };
     
     cell.selectionStyle = UITableViewCellSelectionStyleGray;
     return cell;

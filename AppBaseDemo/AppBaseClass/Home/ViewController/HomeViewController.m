@@ -66,7 +66,7 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     tableViewList.contentInset = UIEdgeInsetsMake(0, 0, 44, 0);
 	[self setUpSuperViewViewControllerUI];
-	self.DraggingHeight = 20 ;
+	self.DraggingHeight = 10 ;
     [self initNavBarView:NAV_BAR_TYPE_ROOT_VIEW];
     
 

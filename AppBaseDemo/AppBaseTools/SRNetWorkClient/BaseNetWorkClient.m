@@ -49,6 +49,7 @@
 		
 	} success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
+        NSLog(@"succeed=\n%@\n",url);
         
         if ([classVC isKindOfClass:[BaseViewController class]]) {
             [((BaseViewController *)classVC) dismissHUD];
@@ -61,6 +62,8 @@
                                        url:url];
         
 	} failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        NSLog(@"failure=\n%@\n",url);
         if ([classVC isKindOfClass:[BaseViewController class]]) {
             [((BaseViewController *)classVC) dismissHUD];
         }
