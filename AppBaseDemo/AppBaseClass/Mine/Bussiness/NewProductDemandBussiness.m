@@ -24,9 +24,9 @@
 	 {
 		 NSDictionary * responeMp = (NSDictionary * ) success ;
 		 
-		 NewProductDemandModel * model = [NewProductDemandModel mj_objectWithKeyValues:responeMp];
+		 NSArray <NewProductDemandModel *> * modelArray = [NewProductDemandModel mj_objectArrayWithKeyValuesArray:[success objectForKey:@"GoodsCategory"]];
 		 
-		 completionHandler(model);
+		 completionHandler(modelArray);
 		 
 		 
 	 } operationFailure:^(id failure) {

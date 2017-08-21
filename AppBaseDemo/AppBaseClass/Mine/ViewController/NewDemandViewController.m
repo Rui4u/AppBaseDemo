@@ -9,7 +9,10 @@
 #import "NewDemandViewController.h"
 #import "NewDemandView.h"
 #import "SRCustomDataPicker.h"
+#import  "NewProductDemandBussiness.h"
+#import "NewProductDemandSaveBussiness.h"
 @interface NewDemandViewController ()<UITextFieldDelegate,UITextViewDelegate>
+@property (weak, nonatomic) IBOutlet UIButton *selectCategoryButton;
 @property (weak, nonatomic) IBOutlet UIScrollView *mainScrollView;
 @property (weak, nonatomic) IBOutlet UITextField *productName;
 @property (weak, nonatomic) IBOutlet UITextField *productBand;
@@ -19,11 +22,43 @@
 @property (weak, nonatomic) IBOutlet UITextField *priceLabel;
 @property (weak, nonatomic) IBOutlet UITextView *RemarksText;
 @property (weak, nonatomic) IBOutlet UITextField *contactInformation;
+@property (weak, nonatomic) IBOutlet UIButton *submitButton;
 @property (nonatomic ,strong ) SRCustomDataPicker * dataPicker;
+@property (nonatomic ,strong ) NewProductDemandModel * selectModel;
 @end
 
 @implementation NewDemandViewController
+- (IBAction)clickSubmitButton:(UIButton *)sender {
+	
+	if (self.selectModel ==nil) {
+		[self showToastWithMessage:@"请选择类别" showTime:1];
+		return;
+		
+	}
+	
+	[NewProductDemandSaveBussiness requestNewProductDemandSaveWithToken:TOKEN
+															  goodsName:self.productName.text
+														goodsCategoryId:self.selectModel.categoryId
+															  goodsSpec:self.productGuige.text
+																upplier:self.supplierText.text
+																  price:self.priceLabel.text
+															  telephone:self.contactInformation.text
+																 remark:self.RemarksText.text
+											   completionSuccessHandler:^(BOOL succeed)
+	{
+		
+		[self.navigationController popViewControllerAnimated:YES];
+	} completionFailHandler:^(NSString *failMessage)
+	{
+		[self showToastWithMessage:failMessage showTime:1];
+	
+	} completionError:^(NSString *netWorkErrorMessage) {
+		[self showToastWithMessage:netWorkErrorMessage showTime:1];
+	}];
+}
 - (IBAction)clikcSelectCategory:(UIButton *)sender {
+	self.submitButton.enabled = YES;
+	self.submitButton.backgroundColor = [UIColor colorWithHexString:Main_Font_Green_Color];
 	[_dataPicker showDataPicker];
 	
 }
@@ -47,8 +82,43 @@
     _contactInformation.delegate = self;
 	_dataPicker = [[SRCustomDataPicker alloc] init];
 	
+	
+	_supplierText.layer.masksToBounds = YES;
+	_supplierText.layer.cornerRadius = 5;
+	_supplierText.layer.borderWidth = 1;
+	_supplierText.layer.borderColor = [[UIColor colorWithHexString:Main_Line_Gary_Color] CGColor];
+	
+	_RemarksText.layer.masksToBounds = YES;
+	_RemarksText.layer.cornerRadius = 5;
+	_RemarksText.layer.borderWidth = 1;
+	_RemarksText.layer.borderColor = [[UIColor colorWithHexString:Main_Line_Gary_Color] CGColor];
+	
+	
+	__weak typeof(self) weakSelf = self;
+	_dataPicker.selectCategory = ^(NewProductDemandModel *model) {
+		weakSelf.selectModel = model;
+		[weakSelf.selectCategoryButton setTitle:model.categoryName forState:UIControlStateNormal];
+	};
+	
 	[self.view addSubview:_dataPicker];
+	self.mainScrollView.mj_header = [MJRefreshStateHeader headerWithRefreshingTarget:self refreshingAction:@selector(pullToRefresh)];
+	[self.mainScrollView.mj_header beginRefreshing];
 }
+
+- (void)pullToRefresh {
+
+	[NewProductDemandBussiness requestNewProductDemandWithToken:TOKEN completionSuccessHandler:^(NSArray<NewProductDemandModel *> *modelArray) {
+		_dataPicker.dataSourse = @[modelArray];
+		[_dataPicker relodeData];
+		[self.mainScrollView.mj_header endRefreshing];
+
+	} completionFailHandler:^(NSString *failMessage) {
+		[self showToastWithMessage:failMessage showTime:1];
+		[self.mainScrollView.mj_header endRefreshing];
+	} completionError:^(NSString *netWorkErrorMessage) {
+		[self.mainScrollView.mj_header endRefreshing];
+		[self showToastWithMessage:netWorkErrorMessage showTime:1];
+	}];}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -76,6 +146,8 @@
     
     return YES;
 }
+
+
 /*
 #pragma mark - Navigation
 

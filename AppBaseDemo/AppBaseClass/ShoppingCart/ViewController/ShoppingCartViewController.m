@@ -253,7 +253,8 @@
         _shopCartListBottomView.totalPrice.textAlignment = NSTextAlignmentRight;
         
         _shopCartListBottomView.depositLabel.text = [NSString stringWithFormat:@"含押金:￥0.00"];
-        return;
+		[self deleteSelected];
+		return;
     }
     
     _shopCartListBottomView.isCalculation = YES;
@@ -282,9 +283,28 @@
 		_shopCartListBottomView.isCalculation = NO;
         [self showToastWithMessage:netWorkErrorMessage showTime:1];
 	}];
-    
+	
+	[self deleteSelected];
 	
 	
 }
+- (void)deleteSelected {
+	
+	NSArray *deleteArray = [DealWithShoppingCartData deleteDealWithShoppingCartDataWith:[ShoppingCartManager sharedManager].CarInfoList];
 
+	[CountPriceBussiness requestCountPriceWithToken:TOKEN status:@"0" goodsList:deleteArray completionSuccessHandler:^(CountPriceModel *getSelectedProductModel) {
+		
+	} completionFailHandler:^(NSString *failMessage) {
+		_shopCartListBottomView.isCalculation = NO;
+		[self showToastWithMessage:failMessage showTime:1];
+		
+	} completionError:^(NSString *netWorkErrorMessage) {
+		_shopCartListBottomView.isCalculation = NO;
+		[self showToastWithMessage:netWorkErrorMessage showTime:1];
+	}];
+	
+	
+
+
+}
 @end

@@ -10,5 +10,5 @@
 #import "ShoppingCartListModel.h"
 @interface DealWithShoppingCartData : NSObject
 + (NSArray *)dealWithShoppingCartDataWith:(NSArray <Goods * >* )cartList;
-
++ (NSArray *)deleteDealWithShoppingCartDataWith:(NSArray <Goods * >* )cartList;
 @end

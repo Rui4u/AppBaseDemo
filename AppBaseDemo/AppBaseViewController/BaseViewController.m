@@ -50,6 +50,8 @@
     if (!_hud.superview) {
         [self.view addSubview:_hud];
     }
+	
+	_hud.frame = CGRectMake(0, 0, SCREEN_WIDTH, self.view.height);
     [self.view bringSubviewToFront:_hud];
     [_hud showAnimated:YES];
 

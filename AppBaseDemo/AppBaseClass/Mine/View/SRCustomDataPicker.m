@@ -68,8 +68,13 @@
 	
 	for ( int i = 0; i < self.dataSourse.count; i ++) {
 		NSInteger index = [self.pickerView selectedRowInComponent: i];
-		NSString * name = [[self.dataSourse objectAtIndex:i] objectAtIndex:index];
+		NSString * name = [[self.dataSourse objectAtIndex:i] objectAtIndex:index].categoryName;
 		NSLog(@"%@",name);
+	}
+	if (self.selectCategory) {
+		NSInteger index = [self.pickerView selectedRowInComponent: 0];
+		
+		self.selectCategory([[self.dataSourse objectAtIndex:0] objectAtIndex:index]);
 	}
 	[self dismissView];
 
@@ -104,14 +109,14 @@
 
 //每行文本
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
-		return self.dataSourse[component][row];
+		return self.dataSourse[component][row].categoryName;
 }
 
 //替换text居中 这里可以解决地址显示不全问题（根据需要自行定义，颜色，frame，font）
 -(UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
 	UILabel * textLabel = [UILabel creatLabelWithText:@"" FontOfSize:13 textColor:@"333333"];
 	
-	textLabel.text = self.dataSourse[component][row];
+	textLabel.text = self.dataSourse[component][row].categoryName;
 	textLabel.textAlignment = NSTextAlignmentCenter;
 	textLabel.frame = CGRectMake(0, 0, SCREEN_WIDTH/self.dataSourse.count, 35);
 	textLabel.backgroundColor = self.pickerView.backgroundColor;

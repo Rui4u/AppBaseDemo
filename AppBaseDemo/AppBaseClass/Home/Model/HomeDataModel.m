@@ -32,15 +32,15 @@
 - (void)setSelected:(BOOL)selected {
 	_selected = selected;
 	if (_selected == YES) {
-		self.state = @"1";
+		self.carGoodState = @"1";
 	}else {
-		self.state = @"0";
+		self.carGoodState = @"0";
 	}
 }
 
 - (BOOL)isSelected {
 	
-	if ([self.state isEqualToString:@"1"]) {
+	if ([self.carGoodState isEqualToString:@"1"]) {
 		return YES;
 	}else {
 		return NO;
@@ -54,7 +54,7 @@
 		
 		
 		instance.oldPrice = [self.oldPrice copyWithZone:zone];
-		instance.state = [self.state copyWithZone:zone];
+		instance.carGoodState = [self.carGoodState copyWithZone:zone];
 
 		instance.currentPrice = [self.currentPrice copyWithZone:zone];
 		instance.totalWeight = [self.totalWeight copyWithZone:zone];
@@ -79,7 +79,7 @@
 			instance.selected = self.selected;
 			
 			instance.oldPrice = [self.oldPrice mutableCopyWithZone:zone];
-			instance.state = [self.state mutableCopyWithZone:zone];
+			instance.carGoodState = [self.carGoodState mutableCopyWithZone:zone];
 			
 			instance.currentPrice = [self.currentPrice mutableCopyWithZone:zone];
 			instance.totalWeight = [self.totalWeight mutableCopyWithZone:zone];
@@ -103,7 +103,16 @@
 
 @end
 @implementation Goods 
-
+- (BOOL)isSelected {
+	BOOL tempisSelected = YES;
+	for (Guige *guige in self.guige) {
+		tempisSelected	= guige.selected;
+		if (tempisSelected == NO) {
+			return NO;
+		}
+	}
+	return YES;
+}
 - (id)copyWithZone:(NSZone *)zone {
 	Goods *instance = [[Goods alloc] init];
 	if (instance) {

@@ -19,7 +19,22 @@ typedef void (^NewProductDemandSaveErrorBlcok)(NSString * netWorkErrorMessage);
  */
 @interface NewProductDemandSaveBussiness : BaseBussiness
 
+//goodsName  商品名称
+//goodsCategoryId  选择分类
+//goodsSpec  商品规格
+//upplier	供货商
+//price  参考价格
+//telephone  联系方式
+//remark   备注
+
 + (void) requestNewProductDemandSaveWithToken : (NSString* ) token
+									 goodsName:(NSString *)goodsName
+							   goodsCategoryId:(NSString *)goodsCategoryId
+									 goodsSpec:(NSString *)goodsSpec
+									   upplier:(NSString *)upplier
+										 price:(NSString *)price
+									 telephone:(NSString *)telephone
+										remark:(NSString *)remark
 				 completionSuccessHandler : (NewProductDemandSaveSuccessBlock) completionHandler
 					completionFailHandler : (NewProductDemandSaveFailBlock) completionFailHandler
 						  completionError : (NewProductDemandSaveErrorBlcok) completionError;

@@ -7,13 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "NewProductDemandModel.h"
 @interface SRCustomDataPicker : UIView
 
 /**
  数据源二维数组
  */
-@property (nonatomic ,strong ) NSArray <NSArray *>* dataSourse;
+@property (nonatomic ,strong ) NSArray <NSArray <NewProductDemandModel *>*>* dataSourse;
 - (void)showDataPicker;
 - (void)relodeData;
+@property (nonatomic ,strong ) void(^selectCategory)(NewProductDemandModel *model);
 @end

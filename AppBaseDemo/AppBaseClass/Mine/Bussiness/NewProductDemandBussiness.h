@@ -10,7 +10,7 @@
 @class NewProductDemandModel;
 
 
-typedef void (^NewProductDemandSuccessBlock)(NewProductDemandModel * getSelectedProductModel);
+typedef void (^NewProductDemandSuccessBlock)(NSArray <NewProductDemandModel *> *modelArray);
 typedef void (^NewProductDemandFailBlock) (NSString * failMessage);
 typedef void (^NewProductDemandErrorBlcok)(NSString * netWorkErrorMessage);
 
