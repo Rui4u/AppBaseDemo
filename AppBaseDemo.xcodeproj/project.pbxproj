@@ -130,6 +130,7 @@
 		2BB9D9711F407CCA0092A9CF /* AddToCartKeyBoard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BB9D9701F407CCA0092A9CF /* AddToCartKeyBoard.xib */; };
 		2BB9D9741F408C9E0092A9CF /* ShoppingCartChangeNumBussiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BB9D9731F408C9E0092A9CF /* ShoppingCartChangeNumBussiness.m */; };
 		2BBCFC4D1F4A776300FCA0C9 /* SRCustomDataPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBCFC4C1F4A776300FCA0C9 /* SRCustomDataPicker.m */; };
+		2BBCFC631F4AE64000FCA0C9 /* ProductDetailWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBCFC621F4AE64000FCA0C9 /* ProductDetailWebView.m */; };
 		2BBDCC4E1F34AD86003FE167 /* HomeDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBDCC4D1F34AD86003FE167 /* HomeDataModel.m */; };
 		2BBDCC501F34B422003FE167 /* Directions.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 2BBDCC4F1F34B422003FE167 /* Directions.geojson */; };
 		2BBDCC561F34BC6B003FE167 /* SelectCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBDCC551F34BC6B003FE167 /* SelectCityModel.m */; };
@@ -463,6 +464,8 @@
 		2BB9D9731F408C9E0092A9CF /* ShoppingCartChangeNumBussiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCartChangeNumBussiness.m; sourceTree = "<group>"; };
 		2BBCFC4B1F4A776300FCA0C9 /* SRCustomDataPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRCustomDataPicker.h; sourceTree = "<group>"; };
 		2BBCFC4C1F4A776300FCA0C9 /* SRCustomDataPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRCustomDataPicker.m; sourceTree = "<group>"; };
+		2BBCFC611F4AE64000FCA0C9 /* ProductDetailWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailWebView.h; sourceTree = "<group>"; };
+		2BBCFC621F4AE64000FCA0C9 /* ProductDetailWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailWebView.m; sourceTree = "<group>"; };
 		2BBDCC4C1F34AD86003FE167 /* HomeDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeDataModel.h; sourceTree = "<group>"; };
 		2BBDCC4D1F34AD86003FE167 /* HomeDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeDataModel.m; sourceTree = "<group>"; };
 		2BBDCC4F1F34B422003FE167 /* Directions.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Directions.geojson; sourceTree = "<group>"; };
@@ -1408,6 +1411,8 @@
 				2B41F2171F42ABAD00CB36D0 /* ProductDetailGuiGeInfo.h */,
 				2B41F2181F42ABAD00CB36D0 /* ProductDetailGuiGeInfo.m */,
 				2B41F21A1F42ABB600CB36D0 /* ProductDetailGuiGeInfo.xib */,
+				2BBCFC611F4AE64000FCA0C9 /* ProductDetailWebView.h */,
+				2BBCFC621F4AE64000FCA0C9 /* ProductDetailWebView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1845,6 +1850,7 @@
 				2BFCFDE91F413B63001DA10D /* AppProdcutSelectSpecificationCell.m in Sources */,
 				2B3FD7E71F49307B003DE7C3 /* FillOrderBussiness.m in Sources */,
 				2BFCFDEB1F413B63001DA10D /* AppProductMainCellView.m in Sources */,
+				2BBCFC631F4AE64000FCA0C9 /* ProductDetailWebView.m in Sources */,
 				2B0E70C01F41E86E0037B4A7 /* ProductDetaiModel.m in Sources */,
 				2BC14DC11F31CD3500919808 /* SBJsonUTF8Stream.m in Sources */,
 				2BC14DBA1F31CD3500919808 /* SBJsonStreamParserAccumulator.m in Sources */,

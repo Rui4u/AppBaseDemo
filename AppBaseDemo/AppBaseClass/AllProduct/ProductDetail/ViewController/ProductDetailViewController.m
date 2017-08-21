@@ -23,8 +23,9 @@
 #import "DealWithShoppingCartData.h"
 #import "CountPriceBussiness.h"
 #import "CountPriceModel.h"
+#import "ProductDetailWebView.h"
 #import "ShoppingCartViewController.h"
-@interface ProductDetailViewController () <ProductDetailTopViewDelegate,CustomScrollSelectViewDelegate,UIScrollViewDelegate>
+@interface ProductDetailViewController () <ProductDetailTopViewDelegate,CustomScrollSelectViewDelegate,UIScrollViewDelegate,UIWebViewDelegate>
 @property (nonatomic ,strong ) CustomScrollSelectView * customScrollSelectView; //顶部
 @property (nonatomic ,strong ) ProdcutDetailBottomView * prodcutDetailBottomView; //购物车
 @property (nonatomic ,strong ) ProductDetailTopView * productDetailTopView; //头部
@@ -211,16 +212,39 @@
     NSArray * detailInfoImage = [_goodsDataSourse.detailsImage componentsSeparatedByString:@","];
     for (int i = 0; i <detailInfoImage.count; i++) {
         
-        UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 50 + i * (AutoHeight(200) + 10), SCREEN_WIDTH, AutoHeight(300))];
-        [imageView sd_setImageWithURL:[NSURL URLWithString:detailInfoImage[i]] placeholderImage:nil];
-        [_procudtDetailedInformationView addSubview:imageView];
-        tempHeight = imageView.bottom;
+//        UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 50 + i * (AutoHeight(200) + 10), SCREEN_WIDTH, AutoHeight(300))];
+//        [imageView sd_setImageWithURL:[NSURL URLWithString:detailInfoImage[i]] placeholderImage:nil];
+//        [_procudtDetailedInformationView addSubview:imageView];
+		
+		        ProductDetailWebView * webView = [[ProductDetailWebView alloc] initWithFrame:CGRectMake(0, 50 + i * (AutoHeight(200) + 10), SCREEN_WIDTH, AutoHeight(300))];
+			[webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.baidu.com"]]];
+
+		        [_procudtDetailedInformationView addSubview:webView];
+		webView.delegate = self;
+		int totalHeight = [[webView stringByEvaluatingJavaScriptFromString:@"document.documentElement.scrollHeight"] intValue];
+		webView.scrollView.scrollEnabled = NO;
+
+		tempHeight = totalHeight;
     }
-    _procudtDetailedInformationView.frame = CGRectMake(0, CGRectGetMaxY(_productDetailTopView.frame) , SCREEN_WIDTH, tempHeight);
     
+		_procudtDetailedInformationView.frame = CGRectMake(0, CGRectGetMaxY(_productDetailTopView.frame) , SCREEN_WIDTH, tempHeight);
+}
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+	CGSize fittingSize = [webView sizeThatFits:CGSizeZero];
+	NSLog(@"webView:%@",NSStringFromCGSize(fittingSize));
+	
+	webView.height = fittingSize.height;
+	_procudtDetailedInformationView.frame = CGRectMake(0, CGRectGetMaxY(_productDetailTopView.frame) , SCREEN_WIDTH, webView.height);
+	[self reloadeFrame];
 
 }
 
+- (void)reloadeFrame {
+
+	self.productSpecificationParameterView.frame = CGRectMake(0, self.procudtDetailedInformationView.bottom + 10, SCREEN_WIDTH, self.productSpecificationParameterView.height);
+	self.bgScrollView.contentSize = CGSizeMake(0, self.productSpecificationParameterView.bottom + 20);
+
+}
 #pragma 设置产品规格UI
 - (void) setUpProductSpecificationParameterViewUI{
     self.productSpecificationParameterView = [[NSBundle mainBundle]loadNibNamed:@"ProductSpecificationParameterView"
