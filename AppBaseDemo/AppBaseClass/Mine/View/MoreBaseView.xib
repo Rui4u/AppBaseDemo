@@ -674,7 +674,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xBT-RD-Pqa">
                                     <rect key="frame" x="290.5" y="0.0" width="96.5" height="79.5"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FhO-DY-pdU">
+                                        <button opaque="NO" tag="1004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FhO-DY-pdU">
                                             <rect key="frame" x="0.0" y="0.0" width="96.5" height="79.5"/>
                                             <connections>
                                                 <action selector="clickNormalToolsButton:" destination="-1" eventType="touchUpInside" id="kTw-qW-MeJ"/>
@@ -721,7 +721,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q0s-Oi-zWL">
                                     <rect key="frame" x="0.0" y="80.5" width="96.5" height="79.5"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yAV-3p-bdu">
+                                        <button opaque="NO" tag="1005" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yAV-3p-bdu">
                                             <rect key="frame" x="0.0" y="0.0" width="96.5" height="79.5"/>
                                             <connections>
                                                 <action selector="clickNormalToolsButton:" destination="-1" eventType="touchUpInside" id="lPP-WL-dW2"/>
