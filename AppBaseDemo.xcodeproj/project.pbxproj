@@ -64,6 +64,7 @@
 		2B4C35B11F4BFDA300B22431 /* MyInvoiceInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B4C35B01F4BFDA300B22431 /* MyInvoiceInfoView.xib */; };
 		2B4C35B51F4C057000B22431 /* MyInvoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C35B31F4C057000B22431 /* MyInvoiceViewController.m */; };
 		2B4C35B61F4C057000B22431 /* MyInvoiceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B4C35B41F4C057000B22431 /* MyInvoiceViewController.xib */; };
+		2B4C35BE1F4C1AA500B22431 /* CommonListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C35BD1F4C1AA500B22431 /* CommonListViewController.m */; };
 		2B580D651F38582900AEA6BF /* UserLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B580D641F38582900AEA6BF /* UserLocationViewController.m */; };
 		2B580D681F38592400AEA6BF /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2B580D671F38592400AEA6BF /* ViewController.mm */; };
 		2B580D6B1F385A8E00AEA6BF /* BaiduMapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B580D6A1F385A8E00AEA6BF /* BaiduMapManager.m */; };
@@ -344,6 +345,8 @@
 		2B4C35B21F4C057000B22431 /* MyInvoiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInvoiceViewController.h; sourceTree = "<group>"; };
 		2B4C35B31F4C057000B22431 /* MyInvoiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInvoiceViewController.m; sourceTree = "<group>"; };
 		2B4C35B41F4C057000B22431 /* MyInvoiceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyInvoiceViewController.xib; sourceTree = "<group>"; };
+		2B4C35BC1F4C1AA500B22431 /* CommonListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonListViewController.h; sourceTree = "<group>"; };
+		2B4C35BD1F4C1AA500B22431 /* CommonListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonListViewController.m; sourceTree = "<group>"; };
 		2B580D631F38582900AEA6BF /* UserLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserLocationViewController.h; sourceTree = "<group>"; };
 		2B580D641F38582900AEA6BF /* UserLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserLocationViewController.m; sourceTree = "<group>"; };
 		2B580D661F38592400AEA6BF /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -829,6 +832,47 @@
 				2B3FD7EE1F4962DE003DE7C3 /* FillOrderBottomView.xib */,
 			);
 			name = FillOrderView;
+			sourceTree = "<group>";
+		};
+		2B4C35B71F4C1A8100B22431 /* CommonList */ = {
+			isa = PBXGroup;
+			children = (
+				2B4C35B81F4C1A8100B22431 /* Bussiness */,
+				2B4C35B91F4C1A8100B22431 /* Model */,
+				2B4C35BA1F4C1A8100B22431 /* View */,
+				2B4C35BB1F4C1A8100B22431 /* ViewController */,
+			);
+			path = CommonList;
+			sourceTree = "<group>";
+		};
+		2B4C35B81F4C1A8100B22431 /* Bussiness */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Bussiness;
+			sourceTree = "<group>";
+		};
+		2B4C35B91F4C1A8100B22431 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2B4C35BA1F4C1A8100B22431 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2B4C35BB1F4C1A8100B22431 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2B4C35BC1F4C1AA500B22431 /* CommonListViewController.h */,
+				2B4C35BD1F4C1AA500B22431 /* CommonListViewController.m */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		2B6BE3221F46826400D0C915 /* Mine */ = {
@@ -1394,6 +1438,7 @@
 		2BFCFDC41F413B63001DA10D /* AllProduct */ = {
 			isa = PBXGroup;
 			children = (
+				2B4C35B71F4C1A8100B22431 /* CommonList */,
 				2BFCFDC51F413B63001DA10D /* ProductDetail */,
 				2BFCFDCA1F413B63001DA10D /* ProductList */,
 			);
@@ -1800,6 +1845,7 @@
 				2B3FD7D81F4929E3003DE7C3 /* FillOrderSelectTableViewCell.m in Sources */,
 				2BC14DB81F31CD3500919808 /* SBJsonParser.m in Sources */,
 				2B5AA4E01F3DB83400C3EE31 /* CommonSearchController.m in Sources */,
+				2B4C35BE1F4C1AA500B22431 /* CommonListViewController.m in Sources */,
 				2B10FAE61F47E47900801BEC /* MakeSureOrderViewController.m in Sources */,
 				2B580D681F38592400AEA6BF /* ViewController.mm in Sources */,
 				2BD0993F1F434487008A1827 /* ShoppingCartViewController.m in Sources */,

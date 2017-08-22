@@ -116,7 +116,7 @@
                   moduleName = "AppBaseDemo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/hzcf/Desktop/AppBaseDemo/AppBaseDemo/AppBaseClass/ShoppingCart/ViewController/ShoppingCartViewController.m"
-                  timestampString = "525080769.807678"
+                  timestampString = "525082453.45969"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "118"
@@ -131,7 +131,7 @@
                   moduleName = "AppBaseDemo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/hzcf/Desktop/AppBaseDemo/AppBaseDemo/AppBaseClass/ShoppingCart/ViewController/ShoppingCartViewController.m"
-                  timestampString = "525080769.809389"
+                  timestampString = "525082453.461486"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "118"
@@ -146,7 +146,7 @@
                   moduleName = "AppBaseDemo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/hzcf/Desktop/AppBaseDemo/AppBaseDemo/AppBaseClass/ShoppingCart/ViewController/ShoppingCartViewController.m"
-                  timestampString = "525080769.811255"
+                  timestampString = "525082453.463664"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "118"
@@ -227,7 +227,7 @@
                   moduleName = "AppBaseDemo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/hzcf/Desktop/AppBaseDemo/AppBaseDemo/AppBaseClass/ShoppingCart/ShoppingCartManager.m"
-                  timestampString = "525080769.902382"
+                  timestampString = "525082453.78118"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "26"
@@ -242,7 +242,7 @@
                   moduleName = "AppBaseDemo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/hzcf/Desktop/AppBaseDemo/AppBaseDemo/AppBaseClass/ShoppingCart/ShoppingCartManager.m"
-                  timestampString = "525080769.904071"
+                  timestampString = "525082453.783282"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "26"
@@ -265,6 +265,70 @@
             startingLineNumber = "132"
             endingLineNumber = "132"
             landmarkName = "-textFieldShouldBeginEditing:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AppBaseDemo/AppBaseClass/AllProduct/CommonList/ViewController/CommonListViewController.m"
+            timestampString = "525082336.66601"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
+            landmarkName = "-tableView:heightForRowAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AppBaseDemo/AppBaseClass/AllProduct/CommonList/ViewController/CommonListViewController.m"
+            timestampString = "525082336.66601"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
+            landmarkName = "-tableView:heightForHeaderInSection:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AppBaseDemo/AppBaseClass/AllProduct/CommonList/ViewController/CommonListViewController.m"
+            timestampString = "525082421.977601"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
+            landmarkName = "-clickDeteleGoodsWith:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AppBaseDemo/AppBaseClass/AllProduct/ProductDetail/Bussiness/ProductRemoveListBussiness.m"
+            timestampString = "525082444.687591"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "+requestProductRemoveListWithToken:goodsId:completionSuccessHandler:completionFailHandler:completionError:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -13,6 +13,7 @@
 #import "ShoppingCartViewController.h"
 #import "ShoppingCartListBussiness.h"
 #import "ShoppingCartListModel.h"
+#import "CommonListViewController.h"
 @interface RootViewController ()<UITabBarControllerDelegate,SRCustomTabBarViewDelegate>
 
 
@@ -23,19 +24,23 @@
 @property (nonatomic ,strong ) HomeViewController * homeViewController;
 
 /**
+ 清单
+ */
+@property (nonatomic ,strong ) CommonListViewController *commonListViewController;
+/**
  产品中心
  */
 @property (nonatomic ,strong ) AppProductViewController * productViewController;
 
 /**
- 我的财富
+ 购物车
  */
 @property (nonatomic ,strong ) ShoppingCartViewController * shoppingCartViewController;
 
 /**
- 更多
+ 我的
  */
-@property (nonatomic ,strong ) UIViewController * moreViewController;
+@property (nonatomic ,strong ) MoreViewController * moreViewController;
 
 
 /**
@@ -223,7 +228,7 @@
     
     self.productViewController = [[AppProductViewController alloc] init];
 	
-    self.productViewController.title = @"全部产品··";
+    self.productViewController.title = @"全部产品";
     [self.productViewController.tabBarItem setTitleTextAttributes:selectAtts forState:UIControlStateSelected];
     
     self.productViewController.tabBarItem.image = [[UIImage imageNamed:@"icon_product_normal"]
@@ -231,7 +236,20 @@
     
     self.productViewController.tabBarItem.selectedImage = [[UIImage imageNamed:@"icon_product_select"]
                                                            imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    
+	
+	
+	self.commonListViewController = [[CommonListViewController alloc] init];
+	
+	self.commonListViewController.title = @"购物清单";
+	[self.commonListViewController.tabBarItem setTitleTextAttributes:selectAtts forState:UIControlStateSelected];
+	
+	self.commonListViewController.tabBarItem.image = [[UIImage imageNamed:@"icon_product_normal"]
+												   imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+	
+	self.commonListViewController.tabBarItem.selectedImage = [[UIImage imageNamed:@"icon_product_select"]
+														   imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+	
+	
     self.shoppingCartViewController = [[ShoppingCartViewController alloc] init];
     self.shoppingCartViewController.title = @"购物车";
     [self.shoppingCartViewController.tabBarItem setTitleTextAttributes:selectAtts forState:UIControlStateSelected];
@@ -257,10 +275,13 @@
     
     
 	
-    [customTabBar addChildViewController:self.  homeViewController];
+    [customTabBar addChildViewController:self. homeViewController];
     [customTabBar addChildViewController:self.productViewController];
+	[customTabBar addChildViewController:self.commonListViewController];
     [customTabBar addChildViewController:self.shoppingCartViewController];
     [customTabBar addChildViewController:self.moreViewController];
+	
+	
     
    	
 	[customTabBar.tabBarView setlectNomalTabBar];

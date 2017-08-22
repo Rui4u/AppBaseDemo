@@ -62,10 +62,10 @@
     
 	self.frame = CGRectMake(0, SCREEN_HEIGHT -  49, SCREEN_WIDTH, 49);
 	self.backgroundColor = [UIColor whiteColor];
-	NSArray * imageArray = @[@"tabBarIcon_homeNormal",@"tabBarIcon_MineNormal",@"tabBarIcon_ChannelNormal",@"tabBarIcon_moreNormal"];
-	NSArray * imageSelectedArray = @[@"tabBarIcon_homeSelecetd",@"tabBarIcon_MineSelecetd",@"tabBarIcon_ChannelSelected",@"tabBarIcon_moreSelecetd"];
+	NSArray * imageArray = @[@"tabBarIcon_homeNormal",@"tabBarIcon_MineNormal",@"tabBarIcon_ChannelNormal",@"tabBarIcon_moreNormal",@"tabBarIcon_moreNormal"];
+	NSArray * imageSelectedArray = @[@"tabBarIcon_homeSelecetd",@"tabBarIcon_MineSelecetd",@"tabBarIcon_ChannelSelected",@"tabBarIcon_moreSelecetd",@"tabBarIcon_moreSelecetd"];
 
-	NSArray * nameArray = @[@"首页",@"我的",@"频道",@"更多"];
+	NSArray * nameArray = @[@"首页",@"产品中心",@"常用清单",@"购物车",@"我的"];
 	
 	for (int  i = 0; i < imageArray.count; i++ ) {
 		
@@ -81,7 +81,7 @@
 		iconButton.titleLabel.font = [UIFont systemFontOfSize:12];
 		[iconButton addTarget:self action:@selector(selectCustomTabBarButton:) forControlEvents:UIControlEventTouchUpInside];
 		[self addSubview:iconButton];
-        if ( i == 2) {
+        if ( i == 3) {
             self.shoppingCartButton = iconButton;
         }
     
@@ -152,7 +152,9 @@
     if ([self.delegate respondsToSelector:@selector(selectCustomTabBarAtCurrentIndex:withLastIndex:)]) {
         [self.delegate selectCustomTabBarAtCurrentIndex:currentTag withLastIndex:lastTag];
         _currentButton.selected = YES;
-        
+		self.buttonLabelArray[lastTag].textColor = [UIColor colorWithHexString:Main_Font_Black_Color];
+		self.buttonLabelArray[currentTag].textColor = [UIColor orangeColor];
+		
     }
     _lastButton = _currentButton;
 	
