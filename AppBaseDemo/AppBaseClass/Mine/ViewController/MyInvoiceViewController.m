@@ -152,16 +152,8 @@
 }
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
 	if (self.canScrollCloseKeyBoard) {
-		[self.InvoiceHeader resignFirstResponder];
-		[self.taxpayerIdentificationNumber resignFirstResponder];
-		[self.registeredAddress resignFirstResponder];
-		[self.registeredPhone resignFirstResponder];
-		[self.bankAccount resignFirstResponder];
-		[self.billingTime resignFirstResponder];
-		[self.firstInvoiceStartDate resignFirstResponder];
-		[self.bank resignFirstResponder];
-		[self.mailbox resignFirstResponder];
-	
+
+		[self.view endEditing:YES];
 	}
 }
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {

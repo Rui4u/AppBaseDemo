@@ -20,7 +20,7 @@
 
 @implementation LoginViewController
 - (IBAction)clickLoginButton:(UIButton *)sender {
-    
+	[self.view endEditing:YES];
     NSLog(@"点击登录");
     [LoginBusiness loginWithStoreTelephone:self.phoneNumberTextField.text storePwd:self.userPwdTextField.text completionSuccessHandler:^(BOOL isFinishInfo) {
         

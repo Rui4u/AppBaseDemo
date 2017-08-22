@@ -188,14 +188,7 @@
 }
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
 	if (self.canScrollCloseKeyBoard) {
-		
-		[_productName resignFirstResponder];
-		[_productBand resignFirstResponder];
-		[_productGuige resignFirstResponder];
-		[_supplierText resignFirstResponder];
-		[_priceLabel resignFirstResponder];
-		[_RemarksText resignFirstResponder];
-		[_contactInformation resignFirstResponder];
+		[self.view endEditing:YES];
 	}
 }
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
