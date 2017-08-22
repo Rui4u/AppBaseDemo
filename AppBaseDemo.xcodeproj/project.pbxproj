@@ -60,6 +60,10 @@
 		2B41F21B1F42ABB600CB36D0 /* ProductDetailGuiGeInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B41F21A1F42ABB600CB36D0 /* ProductDetailGuiGeInfo.xib */; };
 		2B41F21E1F42C27200CB36D0 /* AddToShoppingCartAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B41F21D1F42C27200CB36D0 /* AddToShoppingCartAnimation.m */; };
 		2B41F2241F42F83B00CB36D0 /* DeleteCartBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B41F2231F42F83B00CB36D0 /* DeleteCartBusiness.m */; };
+		2B4C35AF1F4BFD9500B22431 /* MyInvoiceInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C35AE1F4BFD9500B22431 /* MyInvoiceInfoView.m */; };
+		2B4C35B11F4BFDA300B22431 /* MyInvoiceInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B4C35B01F4BFDA300B22431 /* MyInvoiceInfoView.xib */; };
+		2B4C35B51F4C057000B22431 /* MyInvoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C35B31F4C057000B22431 /* MyInvoiceViewController.m */; };
+		2B4C35B61F4C057000B22431 /* MyInvoiceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B4C35B41F4C057000B22431 /* MyInvoiceViewController.xib */; };
 		2B580D651F38582900AEA6BF /* UserLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B580D641F38582900AEA6BF /* UserLocationViewController.m */; };
 		2B580D681F38592400AEA6BF /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2B580D671F38592400AEA6BF /* ViewController.mm */; };
 		2B580D6B1F385A8E00AEA6BF /* BaiduMapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B580D6A1F385A8E00AEA6BF /* BaiduMapManager.m */; };
@@ -334,6 +338,12 @@
 		2B41F21D1F42C27200CB36D0 /* AddToShoppingCartAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddToShoppingCartAnimation.m; sourceTree = "<group>"; };
 		2B41F2221F42F83B00CB36D0 /* DeleteCartBusiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeleteCartBusiness.h; sourceTree = "<group>"; };
 		2B41F2231F42F83B00CB36D0 /* DeleteCartBusiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteCartBusiness.m; sourceTree = "<group>"; };
+		2B4C35AD1F4BFD9500B22431 /* MyInvoiceInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInvoiceInfoView.h; sourceTree = "<group>"; };
+		2B4C35AE1F4BFD9500B22431 /* MyInvoiceInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInvoiceInfoView.m; sourceTree = "<group>"; };
+		2B4C35B01F4BFDA300B22431 /* MyInvoiceInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyInvoiceInfoView.xib; sourceTree = "<group>"; };
+		2B4C35B21F4C057000B22431 /* MyInvoiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInvoiceViewController.h; sourceTree = "<group>"; };
+		2B4C35B31F4C057000B22431 /* MyInvoiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInvoiceViewController.m; sourceTree = "<group>"; };
+		2B4C35B41F4C057000B22431 /* MyInvoiceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyInvoiceViewController.xib; sourceTree = "<group>"; };
 		2B580D631F38582900AEA6BF /* UserLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserLocationViewController.h; sourceTree = "<group>"; };
 		2B580D641F38582900AEA6BF /* UserLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserLocationViewController.m; sourceTree = "<group>"; };
 		2B580D661F38592400AEA6BF /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -924,8 +934,11 @@
 				2B6BE32F1F46826400D0C915 /* MoreBaseView.m */,
 				2B6BE3301F46826400D0C915 /* MoreBaseView.xib */,
 				2B10FAF21F483CF900801BEC /* NewDemandView.h */,
-				2B10FAF51F483D0000801BEC /* NewDemandView.xib */,
 				2B10FAF31F483CF900801BEC /* NewDemandView.m */,
+				2B10FAF51F483D0000801BEC /* NewDemandView.xib */,
+				2B4C35AD1F4BFD9500B22431 /* MyInvoiceInfoView.h */,
+				2B4C35AE1F4BFD9500B22431 /* MyInvoiceInfoView.m */,
+				2B4C35B01F4BFDA300B22431 /* MyInvoiceInfoView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -942,6 +955,9 @@
 				2B10FAED1F483CD700801BEC /* NewDemandViewController.h */,
 				2B10FAEE1F483CD700801BEC /* NewDemandViewController.m */,
 				2B10FAEF1F483CD700801BEC /* NewDemandViewController.xib */,
+				2B4C35B21F4C057000B22431 /* MyInvoiceViewController.h */,
+				2B4C35B31F4C057000B22431 /* MyInvoiceViewController.m */,
+				2B4C35B41F4C057000B22431 /* MyInvoiceViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1659,6 +1675,7 @@
 				2BD0996F1F4359B0008A1827 /* tabBarIcon_MineNormal@2x.png in Resources */,
 				2B5AA4D41F3DA13600C3EE31 /* SelectAddView.xib in Resources */,
 				2BD0996E1F4359B0008A1827 /* tabBarIcon_homeSelecetd2@2x.png in Resources */,
+				2B4C35B61F4C057000B22431 /* MyInvoiceViewController.xib in Resources */,
 				2BC14D901F31AE5800919808 /* LoginViewController.xib in Resources */,
 				2B84607C1F419DDD0013D26D /* ProcudtDetailedInformationView.xib in Resources */,
 				2BA709281F3A9FCB00B0B520 /* UserInfoViewController.xib in Resources */,
@@ -1671,6 +1688,7 @@
 				2BD099771F4359B0008A1827 /* tabBarIcon_moreSelecetd@3x.png in Resources */,
 				2B386F841F29B69A00228620 /* Main.storyboard in Resources */,
 				2BC14D991F31B64B00919808 /* RegisterViewController.xib in Resources */,
+				2B4C35B11F4BFDA300B22431 /* MyInvoiceInfoView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1764,6 +1782,7 @@
 				2B8FD7F31F32CC6F00DAB9B9 /* SelectLocationViewController.m in Sources */,
 				2B38703A1F29BC0C00228620 /* UILabel+SRUILabel.m in Sources */,
 				2B6BE3401F46830D00D0C915 /* CountPriceModel.m in Sources */,
+				2B4C35B51F4C057000B22431 /* MyInvoiceViewController.m in Sources */,
 				2B6BE3431F4683AF00D0C915 /* MyInvoiceBussiness.m in Sources */,
 				2BC60A6C1F448C880069D70B /* ShoppingCartListModel.m in Sources */,
 				2B3FD7D31F4927DA003DE7C3 /* ProductCategoryCell.m in Sources */,
@@ -1880,6 +1899,7 @@
 				2BC14D981F31B64B00919808 /* RegisterViewController.m in Sources */,
 				2BA8DAB61F319BCE000190C1 /* GTMBase64.m in Sources */,
 				2B38703E1F29BC0C00228620 /* NSDictionary+ZXPUnicode.m in Sources */,
+				2B4C35AF1F4BFD9500B22431 /* MyInvoiceInfoView.m in Sources */,
 				2B90F8941F2EC86200698C38 /* CustomScrollSelectView.m in Sources */,
 				2B5AA4DA1F3DB19400C3EE31 /* SRCustomLabel.m in Sources */,
 				2BA709361F3B0F7600B0B520 /* storeAdressInfoModel.m in Sources */,

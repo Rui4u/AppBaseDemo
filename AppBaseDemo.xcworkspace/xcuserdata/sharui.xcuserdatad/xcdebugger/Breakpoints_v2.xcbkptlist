@@ -115,13 +115,13 @@
                   symbolName = "-[ShoppingCartViewController ShoppingCartGuiGeTableViewCellchangeNumberWith:withRect:withIndexPath:]"
                   moduleName = "AppBaseDemo"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sharui/Desktop/AppBaseDemo/AppBaseDemo/AppBaseClass/ShoppingCart/ViewController/ShoppingCartViewController.m"
-                  timestampString = "525020804.343282"
+                  urlString = "file:///Users/hzcf/Desktop/AppBaseDemo/AppBaseDemo/AppBaseClass/ShoppingCart/ViewController/ShoppingCartViewController.m"
+                  timestampString = "525080769.807678"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "118"
                   endingLineNumber = "118"
-                  offsetFromSymbolStart = "1193">
+                  offsetFromSymbolStart = "1284">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -130,13 +130,13 @@
                   symbolName = "__100-[ShoppingCartViewController ShoppingCartGuiGeTableViewCellchangeNumberWith:withRect:withIndexPath:]_block_invoke"
                   moduleName = "AppBaseDemo"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sharui/Desktop/AppBaseDemo/AppBaseDemo/AppBaseClass/ShoppingCart/ViewController/ShoppingCartViewController.m"
-                  timestampString = "525020804.344928"
+                  urlString = "file:///Users/hzcf/Desktop/AppBaseDemo/AppBaseDemo/AppBaseClass/ShoppingCart/ViewController/ShoppingCartViewController.m"
+                  timestampString = "525080769.809389"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "118"
                   endingLineNumber = "118"
-                  offsetFromSymbolStart = "52">
+                  offsetFromSymbolStart = "56">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -145,13 +145,13 @@
                   symbolName = "__100-[ShoppingCartViewController ShoppingCartGuiGeTableViewCellchangeNumberWith:withRect:withIndexPath:]_block_invoke_2"
                   moduleName = "AppBaseDemo"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sharui/Desktop/AppBaseDemo/AppBaseDemo/AppBaseClass/ShoppingCart/ViewController/ShoppingCartViewController.m"
-                  timestampString = "525020804.34666"
+                  urlString = "file:///Users/hzcf/Desktop/AppBaseDemo/AppBaseDemo/AppBaseClass/ShoppingCart/ViewController/ShoppingCartViewController.m"
+                  timestampString = "525080769.811255"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "118"
                   endingLineNumber = "118"
-                  offsetFromSymbolStart = "16">
+                  offsetFromSymbolStart = "24">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -226,13 +226,13 @@
                   symbolName = "-[ShoppingCartManager selectNumber]"
                   moduleName = "AppBaseDemo"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sharui/Desktop/AppBaseDemo/AppBaseDemo/AppBaseClass/ShoppingCart/ShoppingCartManager.m"
-                  timestampString = "525020875.218796"
+                  urlString = "file:///Users/hzcf/Desktop/AppBaseDemo/AppBaseDemo/AppBaseClass/ShoppingCart/ShoppingCartManager.m"
+                  timestampString = "525080769.902382"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "26"
                   endingLineNumber = "26"
-                  offsetFromSymbolStart = "66">
+                  offsetFromSymbolStart = "84">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -241,15 +241,31 @@
                   symbolName = "-[ShoppingCartManager selectNumber]"
                   moduleName = "AppBaseDemo"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sharui/Desktop/AppBaseDemo/AppBaseDemo/AppBaseClass/ShoppingCart/ShoppingCartManager.m"
-                  timestampString = "525020875.220555"
+                  urlString = "file:///Users/hzcf/Desktop/AppBaseDemo/AppBaseDemo/AppBaseClass/ShoppingCart/ShoppingCartManager.m"
+                  timestampString = "525080769.904071"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "26"
                   endingLineNumber = "26"
-                  offsetFromSymbolStart = "76">
+                  offsetFromSymbolStart = "108">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AppBaseDemo/AppBaseClass/Mine/ViewController/MyInvoiceViewController.m"
+            timestampString = "525080554.386695"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
+            landmarkName = "-textFieldShouldBeginEditing:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -11,7 +11,8 @@
 #import "SRCustomDataPicker.h"
 #import  "NewProductDemandBussiness.h"
 #import "NewProductDemandSaveBussiness.h"
-@interface NewDemandViewController ()<UITextFieldDelegate,UITextViewDelegate>
+
+@interface NewDemandViewController ()<UITextFieldDelegate,UITextViewDelegate,UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *selectCategoryButton;
 @property (weak, nonatomic) IBOutlet UIScrollView *mainScrollView;
 @property (weak, nonatomic) IBOutlet UITextField *productName;
@@ -25,6 +26,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *submitButton;
 @property (nonatomic ,strong ) SRCustomDataPicker * dataPicker;
 @property (nonatomic ,strong ) NewProductDemandModel * selectModel;
+@property (nonatomic ,assign ) BOOL canScrollCloseKeyBoard;
+
 @end
 
 @implementation NewDemandViewController
@@ -57,6 +60,16 @@
 	}];
 }
 - (IBAction)clikcSelectCategory:(UIButton *)sender {
+	
+	[_productName resignFirstResponder];
+	[_productBand resignFirstResponder];
+	[_productGuige resignFirstResponder];
+	[_supplierText resignFirstResponder];
+	[_priceLabel resignFirstResponder];
+	[_RemarksText resignFirstResponder];
+	[_contactInformation resignFirstResponder];
+	
+
 	self.submitButton.enabled = YES;
 	self.submitButton.backgroundColor = [UIColor colorWithHexString:Main_Font_Green_Color];
 	[_dataPicker showDataPicker];
@@ -82,6 +95,8 @@
     _contactInformation.delegate = self;
 	_dataPicker = [[SRCustomDataPicker alloc] init];
 	
+
+	
 	
 	_supplierText.layer.masksToBounds = YES;
 	_supplierText.layer.cornerRadius = 5;
@@ -103,6 +118,8 @@
 	[self.view addSubview:_dataPicker];
 	self.mainScrollView.mj_header = [MJRefreshStateHeader headerWithRefreshingTarget:self refreshingAction:@selector(pullToRefresh)];
 	[self.mainScrollView.mj_header beginRefreshing];
+	self.mainScrollView.delegate = self;
+	
 }
 
 - (void)pullToRefresh {
@@ -129,23 +146,63 @@
 - (void)textViewDidBeginEditing:(UITextView *)textView {
     
     CGRect rect=[textView convertRect: textView.bounds toView:APP_DELEGATE.window];
+	self.canScrollCloseKeyBoard = YES;
+
     if ((_mainScrollView.contentOffset.y  + rect.origin.y - 200) > 0) {
+		self.canScrollCloseKeyBoard = NO;
         [self.mainScrollView setContentOffset:CGPointMake(0, _mainScrollView.contentOffset.y  + rect.origin.y - 200) animated:YES];
     }
     
     
 
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+
+	CGRect rect=[textField convertRect: textField.bounds toView:APP_DELEGATE.window];
+	self.canScrollCloseKeyBoard = YES;
+	
+	if ((_mainScrollView.contentOffset.y  + rect.origin.y - 200) > 0) {
+		self.canScrollCloseKeyBoard = NO;
+		[self.mainScrollView setContentOffset:CGPointMake(0, _mainScrollView.contentOffset.y  + rect.origin.y - 200) animated:YES];
+	}
+}
+- (BOOL)textViewShouldEndEditing:(UITextView *)textView {
+
+	self.canScrollCloseKeyBoard = NO;
+	
+
+	return YES;
 }
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
 
-    
-    CGRect rect=[textField convertRect: textField.bounds toView:APP_DELEGATE.window];
-    if ((_mainScrollView.contentOffset.y  + rect.origin.y - 200) > 0) {
-        [self.mainScrollView setContentOffset:CGPointMake(0, _mainScrollView.contentOffset.y  + rect.origin.y - 200) animated:YES];
-    }
-    
+	self.canScrollCloseKeyBoard = NO;
+	
     return YES;
 }
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+
+	
+
+}
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+	if (self.canScrollCloseKeyBoard) {
+		
+		[_productName resignFirstResponder];
+		[_productBand resignFirstResponder];
+		[_productGuige resignFirstResponder];
+		[_supplierText resignFirstResponder];
+		[_priceLabel resignFirstResponder];
+		[_RemarksText resignFirstResponder];
+		[_contactInformation resignFirstResponder];
+	}
+}
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
+	
+	self.canScrollCloseKeyBoard = YES;
+}
+
 
 
 /*

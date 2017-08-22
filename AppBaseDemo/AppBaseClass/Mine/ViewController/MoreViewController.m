@@ -11,6 +11,7 @@
 #import "OrderListViewController.h"
 #import "AccountManagementViewController.h"
 #import "NewDemandViewController.h"
+#import "MyInvoiceViewController.h"
 @interface MoreViewController ()
 
 @property (weak, nonatomic) IBOutlet UIScrollView *bgScrollView;
@@ -58,14 +59,22 @@
     [self.navigationController pushViewController:accountManagementViewController animated:YES];
 }
 - (IBAction)clickNormalToolsButton:(UIButton *)sender {
+	NSInteger tag = sender.tag - 1000;
+	if (tag == 4) {
+		NewDemandViewController * newDemandViewController = [[NewDemandViewController alloc] init];
+		[self.navigationController pushViewController:newDemandViewController animated:YES];
+	}else if (tag == 5){
 	
-    
-    NewDemandViewController * newDemandViewController = [[NewDemandViewController alloc] init];
-    [self.navigationController pushViewController:newDemandViewController animated:YES];
+		MyInvoiceViewController * myInvoiceViewController = [[MyInvoiceViewController alloc] init];
+		[self.navigationController pushViewController:myInvoiceViewController animated:YES];
+	}else {
+		[self showToastWithMessage:@"暂未开通" showTime:1];
+	}
+	
 }
 
 - (IBAction)clickHelpCenterButton:(UIButton *)sender {
-	
+	[self showToastWithMessage:@"暂未开通" showTime:1];
 }
 
 - (void)viewDidLoad {
