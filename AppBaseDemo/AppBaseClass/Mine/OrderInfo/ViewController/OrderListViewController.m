@@ -11,6 +11,7 @@
 #import "MyOrderListTableViewCell.h"
 #import "CustomScrollSelectView.h"
 #import "OrderListModel.h"
+#import "OrderDetailViewController.h"
 @interface OrderListViewController ()<UITableViewDelegate,UITableViewDataSource,CustomScrollSelectViewDelegate>
 
 @property (nonatomic ,strong ) UITableView * mainTableView;
@@ -114,6 +115,15 @@
 	return cell;
 }
 
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+
+	//订单详情
+	OrderDetailViewController *orderDetailViewController = [[OrderDetailViewController alloc] init];
+	orderDetailViewController.orderId = self.orderListData[indexPath.section].orderId;
+	[self.navigationController pushViewController:orderDetailViewController animated:YES];
+
+}
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 	return 195;
 }

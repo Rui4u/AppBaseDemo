@@ -89,6 +89,8 @@
         [BaseViewController showToastWithMessage:[[resquest valueForKey:@"header"] valueForKey:@"errorMsg"] showTime:1];
 		//token失效跳转登录界面
 		[[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:[[LoginViewRootController alloc ]init] animated:YES completion:nil];
+		[APP_DELEGATE.navgationController popToRootViewControllerAnimated:YES];
+		APP_DELEGATE.customTabBar.selectedIndex = 0;
 
 	}
 

@@ -40,8 +40,8 @@
 	self.navigationController.navigationBar.hidden = YES;
 	self.automaticallyAdjustsScrollViewInsets = NO;
 	self.view.backgroundColor = [UIColor colorWithHexString:Main_BackGround_Color];
-    _hud = [[MBProgressHUD alloc] init];
-    _hud.frame = CGRectMake(0, 0, SCREEN_WIDTH, self.view.height);
+    _hud = [[MBProgressHUD alloc] initWithView:self.view];
+	_hud.center = self.view.center;
 	
 }
 
@@ -51,9 +51,11 @@
         [self.view addSubview:_hud];
     }
 	
-	_hud.frame = CGRectMake(0, 0, SCREEN_WIDTH, self.view.height);
+	_hud.center = self.view.center;
     [self.view bringSubviewToFront:_hud];
     [_hud showAnimated:YES];
+	
+
 
 }
 - (void)dismissHUD {
