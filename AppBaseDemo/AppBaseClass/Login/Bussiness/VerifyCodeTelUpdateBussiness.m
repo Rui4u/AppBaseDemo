@@ -11,12 +11,15 @@
 @implementation VerifyCodeTelUpdateBussiness
 
 + (void) requestStoreInfoWithPhoneNum:(NSString *)phoneNum
+						   verifyCode:(NSString *)verifyCode
 			completionSuccessHandler : (VerifyCodeTelUpdateSuccessBlock) completionHandler
 			   completionFailHandler : (VerifyCodeTelUpdateFailBlock) completionFailHandler
 					 completionError : (VerifyCodeTelUpdateErrorBlcok) completionError;
 {
 	NSMutableDictionary * body = [[NSMutableDictionary alloc]init];
 	[body setValue:phoneNum forKey:@"phoneNum"];
+	[body setValue:verifyCode forKey:@"verifyCode"];
+
 	
 	
 	[BaseNetWorkClient jsonFormGetRequestWithUrl:KVerifyCodeTelUpdateBussinessUrl

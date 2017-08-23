@@ -17,6 +17,7 @@ typedef void (^VerifyCodeTelUpdateErrorBlcok)(NSString * netWorkErrorMessage);
  */
 @interface VerifyCodeTelUpdateBussiness : BaseBussiness
 + (void) requestStoreInfoWithPhoneNum : (NSString *) phoneNum
+							verifyCode:(NSString *)verifyCode
 		  completionSuccessHandler : (VerifyCodeTelUpdateSuccessBlock) completionHandler
 			 completionFailHandler : (VerifyCodeTelUpdateFailBlock) completionFailHandler
 				   completionError : (VerifyCodeTelUpdateErrorBlcok) completionError;
