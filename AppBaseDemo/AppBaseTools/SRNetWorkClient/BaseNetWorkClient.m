@@ -90,7 +90,7 @@
 		//token失效跳转登录界面
 		[[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:[[LoginViewRootController alloc ]init] animated:YES completion:nil];
 		[APP_DELEGATE.navgationController popToRootViewControllerAnimated:YES];
-		APP_DELEGATE.customTabBar.selectedIndex = 0;
+		APP_DELEGATE.customTabBar.tabBarView.selectedIndex = 0;
 
 	}
 
