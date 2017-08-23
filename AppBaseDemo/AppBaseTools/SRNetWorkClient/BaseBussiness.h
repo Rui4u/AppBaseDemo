@@ -23,6 +23,11 @@
 #define kCityListBusinessUrl                 [NSString stringWithFormat :@"%@/gs/city/listAPI?",kHTTP_HOST_URL]
 //完善用户信息
 #define KStoreInfoBussinessUrl            [NSString stringWithFormat :@"%@/gs/store/update?",kHTTP_HOST_URL]
+//短信接口
+#define KSendVCodeUpdateBussinessUrl            [NSString stringWithFormat :@"%@/gs/store/sendVCodeUpdate?",kHTTP_HOST_URL]
+
+//验证接口
+#define KVerifyCodeTelUpdateBussinessUrl            [NSString stringWithFormat :@"%@/gs/store/verifyCodeTelUpdate?",kHTTP_HOST_URL]
 
 
 //首页

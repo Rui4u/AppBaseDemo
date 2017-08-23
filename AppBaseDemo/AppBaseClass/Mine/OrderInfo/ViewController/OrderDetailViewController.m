@@ -19,8 +19,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-	self.mainTableView.delegate = self;
+	[self initNavBarView:NAV_BAR_TYPE_SECOND_LEVEL_VIEW];
+	[self.navBarView setTitle:@"订单详情"];
 	
+	self.mainTableView.delegate = self;
 	
 	[OrderDetailBussiness requestOrderDetailWithToken:TOKEN orderId:self.orderId completionSuccessHandler:^(OrderDetailModel *getSelectedProductModel)
 	{

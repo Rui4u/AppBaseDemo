@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B0973EA1F4D8FEF000B581B /* SendVCodeUpdateBussiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0973E91F4D8FEF000B581B /* SendVCodeUpdateBussiness.m */; };
+		2B0973ED1F4D90F8000B581B /* VerifyCodeTelUpdateBussiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0973EC1F4D90F8000B581B /* VerifyCodeTelUpdateBussiness.m */; };
 		2B09B0DB1F3F604B00C7B3B2 /* DispatchTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B09B0DA1F3F604B00C7B3B2 /* DispatchTimer.m */; };
 		2B0E70BD1F41C3ED0037B4A7 /* ProductDetailBussiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0E70BC1F41C3ED0037B4A7 /* ProductDetailBussiness.m */; };
 		2B0E70C01F41E86E0037B4A7 /* ProductDetaiModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0E70BF1F41E86E0037B4A7 /* ProductDetaiModel.m */; };
@@ -246,6 +248,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B0973E81F4D8FEF000B581B /* SendVCodeUpdateBussiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendVCodeUpdateBussiness.h; sourceTree = "<group>"; };
+		2B0973E91F4D8FEF000B581B /* SendVCodeUpdateBussiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendVCodeUpdateBussiness.m; sourceTree = "<group>"; };
+		2B0973EB1F4D90F8000B581B /* VerifyCodeTelUpdateBussiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerifyCodeTelUpdateBussiness.h; sourceTree = "<group>"; };
+		2B0973EC1F4D90F8000B581B /* VerifyCodeTelUpdateBussiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerifyCodeTelUpdateBussiness.m; sourceTree = "<group>"; };
 		2B09B0D91F3F604B00C7B3B2 /* DispatchTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DispatchTimer.h; sourceTree = "<group>"; };
 		2B09B0DA1F3F604B00C7B3B2 /* DispatchTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DispatchTimer.m; sourceTree = "<group>"; };
 		2B0E70BB1F41C3ED0037B4A7 /* ProductDetailBussiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailBussiness.h; sourceTree = "<group>"; };
@@ -1390,6 +1396,10 @@
 				2BAFB5111F333054001236B8 /* GetCityListBusiness.m */,
 				2BA709311F3B087800B0B520 /* StoreInfoBusiness.h */,
 				2BA709321F3B087800B0B520 /* StoreInfoBusiness.m */,
+				2B0973E81F4D8FEF000B581B /* SendVCodeUpdateBussiness.h */,
+				2B0973E91F4D8FEF000B581B /* SendVCodeUpdateBussiness.m */,
+				2B0973EB1F4D90F8000B581B /* VerifyCodeTelUpdateBussiness.h */,
+				2B0973EC1F4D90F8000B581B /* VerifyCodeTelUpdateBussiness.m */,
 			);
 			path = Bussiness;
 			sourceTree = "<group>";
@@ -1886,6 +1896,7 @@
 				2B7DCC021F3579CC00E88B38 /* HomeProductListTableViewCell.m in Sources */,
 				2BBFAFEF1F32F4B0002506D1 /* NSDictionary+SRExtension.m in Sources */,
 				2BA025371F2B05E9003EB25D /* CustomViewController.m in Sources */,
+				2B0973EA1F4D8FEF000B581B /* SendVCodeUpdateBussiness.m in Sources */,
 				2BD5D70B1F39871700BE1994 /* PinyinFormatter.m in Sources */,
 				2BD5D7091F39871700BE1994 /* HanyuPinyinOutputFormat.m in Sources */,
 				2BA0253B1F2B0658003EB25D /* BaseNetWorkClient.m in Sources */,
@@ -1903,6 +1914,7 @@
 				2BC14D8F1F31AE5800919808 /* LoginViewController.m in Sources */,
 				2BBDCC561F34BC6B003FE167 /* SelectCityModel.m in Sources */,
 				2BD5D7081F39871700BE1994 /* ChineseToPinyinResource.m in Sources */,
+				2B0973ED1F4D90F8000B581B /* VerifyCodeTelUpdateBussiness.m in Sources */,
 				2B3FD7CE1F4926A1003DE7C3 /* FillOrderUserInfoCell.m in Sources */,
 				2BC14DBF1F31CD3500919808 /* SBJsonStreamWriterState.m in Sources */,
 				2B41F2131F429C6300CB36D0 /* TopProductImageScrollView.m in Sources */,
