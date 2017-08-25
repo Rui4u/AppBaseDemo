@@ -34,7 +34,7 @@ typedef void (^RegisterErrorBlcok)(NSString * netWorkErrorMessage);
 
 + (void) registerWithStoreTelephone : (NSString * ) storeTelephone
 						   storePwd : (NSString * ) storePwd
-				   verificationCode : (NSString * ) verificationCode
+						   phoneNum : (NSString * ) phoneNum
      completionSuccessHandler : (RegisterSuccessBlock) completionHandler
 			  completionFailHandler : (RegisterFailBlock) completionFailHandler
 					completionError : (RegisterErrorBlcok) completionError;
