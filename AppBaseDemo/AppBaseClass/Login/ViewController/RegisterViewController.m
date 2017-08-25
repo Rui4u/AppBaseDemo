@@ -9,6 +9,7 @@
 #import "RegisterViewController.h"
 #import "RegisterBusiness.h"
 #import "UserInfoViewController.h"
+#import "SendVCodeUpdateBussiness.h"
 @interface RegisterViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumber;
 @property (weak, nonatomic) IBOutlet UITextField *verificationCode;
@@ -32,7 +33,25 @@
     }
 }
 - (IBAction)clickGetVerificationCoderButton:(UIButton *)sender {
+	
+	if ([self.phoneNumber.text isEqualToString: @""] || self.phoneNumber.text == nil) {
+		[self showToastWithMessage:@"请输入手机号" showTime:1];
+		return;
+	}
+	
     [self openTimerWithTime:60 countDownBtn:sender againAcquireColor:Main_Font_Green_Color countDownColor:Main_Font_Gary_Color];
+	
+	[SendVCodeUpdateBussiness requestStoreInfoWithPhoneNum:self.phoneNumber.text completionSuccessHandler:^(BOOL succeed) {
+		
+		[self showToastWithMessage:@"验证码发送成功" showTime:1];
+
+	} completionFailHandler:^(NSString *failMessage) {
+		[self showToastWithMessage:failMessage showTime:1];
+
+	} completionError:^(NSString *netWorkErrorMessage) {
+		[self showToastWithMessage:netWorkErrorMessage showTime:1];
+
+	}];
     NSLog(@"验证码");
 
 }
@@ -46,8 +65,8 @@
 - (IBAction)clickRegisterButton:(UIButton *)sender {
     NSLog(@"注册");
 
-    
-    
+	[self.view endEditing:YES];
+	
     [RegisterBusiness registerWithStoreTelephone:self.phoneNumber.text
                                         storePwd:self.userPassword.text
                                 verificationCode:nil completionSuccessHandler:^(BOOL sucessFlag)

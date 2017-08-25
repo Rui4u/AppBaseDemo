@@ -25,6 +25,7 @@
 #import "CountPriceModel.h"
 #import "ProductDetailWebView.h"
 #import "ShoppingCartViewController.h"
+#import "ProductRemoveListBussiness.h"
 @interface ProductDetailViewController () <ProductDetailTopViewDelegate,CustomScrollSelectViewDelegate,UIScrollViewDelegate,UIWebViewDelegate>
 @property (nonatomic ,strong ) CustomScrollSelectView * customScrollSelectView; //顶部
 @property (nonatomic ,strong ) ProdcutDetailBottomView * prodcutDetailBottomView; //购物车
@@ -315,24 +316,36 @@
     
     __weak typeof(self) weakSelf = self;
     _productDetailTopView.clickAddProductListButton = ^(UIButton *sender) {
-        sender.selected = YES;
-        [ProductAddListBussiness requestProductAddListWithToken:TOKEN goodsId:weakSelf.goodsId completionSuccessHandler:^(BOOL succeed) {
-            NSLog(@"加入清单成功");
-            
-            sender.selected = succeed;
-            sender.enabled = !succeed;
-            
-        } completionFailHandler:^(NSString *failMessage) {
-            [weakSelf showToastWithMessage:failMessage showTime:1];
-        } completionError:^(NSString *netWorkErrorMessage) {
-            [weakSelf showToastWithMessage:netWorkErrorMessage showTime:1];
-        }];
+		sender.selected = !sender.selected;
+		if (sender.selected) {
+			[ProductAddListBussiness requestProductAddListWithToken:TOKEN goodsId:weakSelf.goodsId completionSuccessHandler:^(BOOL succeed) {
+				NSLog(@"加入清单成功");
+				
+				sender.selected = succeed;
+				
+			} completionFailHandler:^(NSString *failMessage) {
+				[weakSelf showToastWithMessage:failMessage showTime:1];
+			} completionError:^(NSString *netWorkErrorMessage) {
+				[weakSelf showToastWithMessage:netWorkErrorMessage showTime:1];
+			}];
+		}else {
+			[ProductRemoveListBussiness requestProductRemoveListWithToken:TOKEN goodsId:weakSelf.goodsId completionSuccessHandler:^(BOOL succeed) {
+				NSLog(@"删除清单成功");
+				sender.selected = NO;
+				
+			} completionFailHandler:^(NSString *failMessage) {
+				[weakSelf showToastWithMessage:failMessage showTime:1];
+			} completionError:^(NSString *netWorkErrorMessage) {
+				[weakSelf showToastWithMessage:netWorkErrorMessage showTime:1];
+			}];
+		}
+		
     };
 }
 
 #pragma mark - 底部去购物车UI
 - (void)setBottomViewUI {
-    
+	
     
     _prodcutDetailBottomView = [[NSBundle mainBundle] loadNibNamed:@"ProdcutDetailBottomView" owner:self options:nil].firstObject;
     [self.view addSubview:_prodcutDetailBottomView];

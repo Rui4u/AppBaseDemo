@@ -81,8 +81,9 @@
     
     if (![_goodsDataSourse.listId isEqualToString:@"0"]) { //已加入清单
         _productDetailTitleView.addProductListButton.selected = YES;
-        _productDetailTitleView.addProductListButton.enabled = NO;
-    }
+	}else {
+		_productDetailTitleView.addProductListButton.selected = NO;
+	}
     __weak typeof(self) weakSelf = self;
      _productDetailTitleView.clickAddProductListButton = ^(UIButton *sender) {
          weakSelf.clickAddProductListButton(sender);
