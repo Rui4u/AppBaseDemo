@@ -69,7 +69,7 @@
 	
     [RegisterBusiness registerWithStoreTelephone:self.phoneNumber.text
                                         storePwd:self.userPassword.text
-										phoneNum:self.verificationCode.text
+									verifyCode:self.verificationCode.text
 						completionSuccessHandler:^(BOOL sucessFlag)
     {
         if (sucessFlag == YES) [self showToastWithMessage:@"注册成功" showTime:1];

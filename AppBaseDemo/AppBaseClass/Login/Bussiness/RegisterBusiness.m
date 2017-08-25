@@ -12,7 +12,7 @@
 
 + (void) registerWithStoreTelephone : (NSString * ) storeTelephone
 						   storePwd : (NSString * ) storePwd
-						   phoneNum : (NSString * ) phoneNum
+						   verifyCode : (NSString * ) verifyCode
      completionSuccessHandler : (RegisterSuccessBlock) completionHandler
 			  completionFailHandler : (RegisterFailBlock) completionFailHandler
 					completionError : (RegisterErrorBlcok) completionError
@@ -20,7 +20,7 @@
 	NSMutableDictionary * body = [[NSMutableDictionary alloc]init];
 	[body setValue:storePwd forKey:@"storePwd"];
 	[body setValue:storeTelephone forKey:@"storeTelephone"];
-	[body setValue:phoneNum forKey:@"phoneNum"];
+	[body setValue:verifyCode forKey:@"verifyCode"];
 	
 	
 	[BaseNetWorkClient jsonFormGetRequestWithUrl:kRegisterBusinessUrl
