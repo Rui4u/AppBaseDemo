@@ -342,20 +342,20 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="62z-jP-Nfm">
                             <rect key="frame" x="0.0" y="45" width="129" height="70"/>
                             <subviews>
-                                <button opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PYf-Sq-Msb">
+                                <button opaque="NO" tag="1002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PYf-Sq-Msb">
                                     <rect key="frame" x="0.0" y="0.0" width="129" height="70"/>
                                     <connections>
                                         <action selector="clickMyOrderButton:" destination="-1" eventType="touchUpInside" id="Yip-r0-nqB"/>
                                     </connections>
                                 </button>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WechatIMG13" translatesAutoresizingMaskIntoConstraints="NO" id="5gz-0T-zRn">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="waitPay" translatesAutoresizingMaskIntoConstraints="NO" id="5gz-0T-zRn">
                                     <rect key="frame" x="54.5" y="15" width="20" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="20" id="Dom-eK-u4e"/>
                                         <constraint firstAttribute="width" constant="20" id="JHc-g4-QkL"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="待发货" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kjc-HW-IWJ">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="待付款" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kjc-HW-IWJ">
                                     <rect key="frame" x="0.0" y="44" width="129" height="16"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <nil key="textColor"/>
@@ -379,20 +379,20 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZAN-aI-qJT">
                             <rect key="frame" x="129" y="45" width="129" height="70"/>
                             <subviews>
-                                <button opaque="NO" tag="1002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Hh-DB-BQV">
+                                <button opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Hh-DB-BQV">
                                     <rect key="frame" x="0.0" y="0.0" width="129" height="70"/>
                                     <connections>
                                         <action selector="clickMyOrderButton:" destination="-1" eventType="touchUpInside" id="QFL-42-4Sw"/>
                                     </connections>
                                 </button>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WechatIMG13" translatesAutoresizingMaskIntoConstraints="NO" id="T6A-tf-rby">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="waitSendGoods" translatesAutoresizingMaskIntoConstraints="NO" id="T6A-tf-rby">
                                     <rect key="frame" x="54.5" y="15" width="20" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="20" id="fRE-77-lST"/>
                                         <constraint firstAttribute="width" constant="20" id="wse-QD-1Ij"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="待收货" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCO-Yg-emP">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="待发货" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCO-Yg-emP">
                                     <rect key="frame" x="0.0" y="44" width="129" height="16"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <nil key="textColor"/>
@@ -422,14 +422,14 @@
                                         <action selector="clickMyOrderButton:" destination="-1" eventType="touchUpInside" id="paH-g5-fHY"/>
                                     </connections>
                                 </button>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WechatIMG13" translatesAutoresizingMaskIntoConstraints="NO" id="det-4x-l5Q">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="waitForReceiving" translatesAutoresizingMaskIntoConstraints="NO" id="det-4x-l5Q">
                                     <rect key="frame" x="55" y="15" width="20" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="20" id="OsK-P6-UqS"/>
                                         <constraint firstAttribute="width" constant="20" id="aBu-s8-0zn"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已完成" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qji-rE-ijy">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="待收货" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qji-rE-ijy">
                                     <rect key="frame" x="0.0" y="44" width="129" height="16"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <nil key="textColor"/>
@@ -1477,5 +1477,8 @@
     <resources>
         <image name="WechatIMG13" width="31" height="26"/>
         <image name="icon_rightArrow" width="9" height="16"/>
+        <image name="waitForReceiving" width="22" height="22"/>
+        <image name="waitPay" width="22" height="22"/>
+        <image name="waitSendGoods" width="22" height="22"/>
     </resources>
 </document>

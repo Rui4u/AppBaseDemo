@@ -62,8 +62,8 @@
     
 	self.frame = CGRectMake(0, SCREEN_HEIGHT -  49, SCREEN_WIDTH, 49);
 	self.backgroundColor = [UIColor whiteColor];
-	NSArray * imageArray = @[@"tabBarIcon_homeNormal",@"tabBarIcon_MineNormal",@"tabBarIcon_ChannelNormal",@"tabBarIcon_moreNormal",@"tabBarIcon_moreNormal"];
-	NSArray * imageSelectedArray = @[@"tabBarIcon_homeSelecetd",@"tabBarIcon_MineSelecetd",@"tabBarIcon_ChannelSelected",@"tabBarIcon_moreSelecetd",@"tabBarIcon_moreSelecetd"];
+	NSArray * imageArray = @[@"tabbar_homeNormal",@"tabbar_detailedListNormal",@"tabbar_productNormal",@"tabbar_productCartNormal",@"tabbar_MineNormal"];
+	NSArray * imageSelectedArray = @[@"tabbar_homeSelect",@"tabbar_detailedListSelect",@"tabbar_productSelect",@"tabbar_productCartSelect",@"tabbar_MineSelect"];
 
 	NSArray * nameArray = @[@"首页",@"产品中心",@"常用清单",@"购物车",@"我的"];
 	
@@ -153,7 +153,7 @@
         [self.delegate selectCustomTabBarAtCurrentIndex:currentTag withLastIndex:lastTag];
         _currentButton.selected = YES;
 		self.buttonLabelArray[lastTag].textColor = [UIColor colorWithHexString:Main_Font_Black_Color];
-		self.buttonLabelArray[currentTag].textColor = [UIColor orangeColor];
+		self.buttonLabelArray[currentTag].textColor = [UIColor colorWithHexString:Main_Font_Green_Color];
 		
     }
     _lastButton = _currentButton;

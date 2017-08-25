@@ -31,8 +31,7 @@
     [self addSubview:totolPriceLabel];
     
 
-	UIImageView * imageView = [[UIImageView alloc] initWithImage:nil];
-	imageView.backgroundColor = [UIColor randomOfColor];
+	UIImageView * imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"discount"]];
 	imageView.frame = CGRectMake(0, totolPriceLabel.bottom + 12, 16, 16);
 	self.disCountView = imageView;
 	[self addSubview:self.disCountView];

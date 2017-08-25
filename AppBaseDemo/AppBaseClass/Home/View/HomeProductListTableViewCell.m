@@ -65,12 +65,11 @@
 - (void)privateSetUpUI {
 
     self.bgView = [[UIView alloc] initWithFrame:CGRectMake(5, 5, SCREEN_WIDTH - 10, 100)];
-//    self.bgView.backgroundColor = [UIColor randomOfColor];
+
     [self.contentView addSubview:self.bgView];
     
     self.iconView = [[UIImageView alloc] initWithFrame:CGRectMake(8, 8, 65, 65)];
     [self.bgView addSubview:self.iconView];
-//    self.iconView.backgroundColor = [UIColor randomOfColor];
 
     self.topBgView = [[UIView alloc] initWithFrame:CGRectMake(self.iconView.right + 10, self.iconView.y,self.bgView.width - self.iconView.right -10 , 40)];
     [self.bgView addSubview:self.topBgView];
