@@ -9,9 +9,11 @@
 #import "OrderDetailViewController.h"
 #import "OrderDetailTableViewCell.h"
 #import "OrderDetailBussiness.h"
+#import "OrderDetailModel.h"
 @interface OrderDetailViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *mainTableView;
 
+@property (nonatomic ,strong ) OrderDetailModel * orderModel;
 @end
 
 @implementation OrderDetailViewController
@@ -21,12 +23,13 @@
     // Do any additional setup after loading the view from its nib.
 	[self initNavBarView:NAV_BAR_TYPE_SECOND_LEVEL_VIEW];
 	[self.navBarView setTitle:@"订单详情"];
-	
+	self.mainTableView.dataSource = self;
 	self.mainTableView.delegate = self;
 	
 	[OrderDetailBussiness requestOrderDetailWithToken:TOKEN orderId:self.orderId completionSuccessHandler:^(OrderDetailModel *getSelectedProductModel)
 	{
-		
+		self.orderModel = getSelectedProductModel;
+		[self.mainTableView reloadData];
 	} completionFailHandler:^(NSString *failMessage) {
 		
 	} completionError:^(NSString *netWorkErrorMessage) {
@@ -51,13 +54,16 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	
-	return 1;
+	return self.orderModel.orderDetails.goods.count;
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 	//    return self.orderListData.count;
 	return 5;
 }
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 
+	return 100;
+}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	
 
@@ -68,10 +74,16 @@
 			cell= (OrderDetailTableViewCell *)[[[NSBundle  mainBundle]  loadNibNamed:@"OrderDetailTableViewCell" owner:self options:nil]  lastObject];
 			cell.selectionStyle = UITableViewCellSelectionStyleNone;
 			
-		}		
+		}
+	
+		cell.good = self.orderModel.orderDetails.goods[indexPath.row];
+	
 		return cell;
 	
 }
+
+
+
 /*
 #pragma mark - Navigation
 

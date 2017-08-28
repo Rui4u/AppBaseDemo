@@ -120,7 +120,7 @@
 
 	//订单详情
 	OrderDetailViewController *orderDetailViewController = [[OrderDetailViewController alloc] init];
-	orderDetailViewController.orderId = self.orderListData[indexPath.section].orderId;
+	orderDetailViewController.orderId = self.orderListData[indexPath.section].orderListId;
 	[self.navigationController pushViewController:orderDetailViewController animated:YES];
 
 }

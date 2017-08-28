@@ -14,6 +14,8 @@
 #import "FillOrderBussiness.h"
 #import "FillOrderModel.h"
 #import "FillOrderBottomView.h"
+#import "DoOrderBussiness.h"
+#import "DealWithShoppingCartData.h"
 @interface FillOrderViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic) UITableView *mainTableView;
 
@@ -42,6 +44,22 @@
     FillOrderBottomView * fillOrderBottomView  = [[[NSBundle mainBundle] loadNibNamed:@"FillOrderBottomView" owner:self options:nil] lastObject];
     fillOrderBottomView.frame =CGRectMake(0, SCREEN_HEIGHT - 50, SCREEN_WIDTH, 50);
     [self.view addSubview:fillOrderBottomView];
+	
+	fillOrderBottomView.submitButtonBlock = ^{
+		
+		
+		NSArray * array = [DealWithShoppingCartData dealWithShoppingCartDataWith:[ShoppingCartManager sharedManager].CarInfoList];
+		
+		[DoOrderBussiness requestDoOrderWithToken:TOKEN addressId:self.getFillOrderModel.store.storeId orederType:@"1" carImageInfo:array completionSuccessHandler:^(NSDictionary *dict) {
+			
+		} completionFailHandler:^(NSString *failMessage) {
+			
+		} completionError:^(NSString *netWorkErrorMessage) {
+			
+		}];
+		
+	};
+	
     [FillOrderBussiness requestFillOrderWithToken:TOKEN goodsList:self.calculationArray completionSuccessHandler:^(FillOrderModel *getFillOrderModel) {
         self.getFillOrderModel = getFillOrderModel;
         fillOrderBottomView.priceLabel.text = [NSString stringWithFormat:@"￥%@",self.getFillOrderModel.totalcurrentPrice];

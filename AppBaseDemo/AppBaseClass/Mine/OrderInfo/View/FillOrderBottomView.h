@@ -13,4 +13,6 @@
  <#Description#>
  */
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+
+@property (nonatomic ,copy ) void (^submitButtonBlock)();
 @end

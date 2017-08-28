@@ -23,6 +23,7 @@
 + (NSDictionary *)replacedKeyFromPropertyName{
 	return @{@"orderListId" : @"id"};
 }
+
 + (NSDictionary *)objectClassInArray{
 	return @{
 			 @"goods":@"OrderGoods"

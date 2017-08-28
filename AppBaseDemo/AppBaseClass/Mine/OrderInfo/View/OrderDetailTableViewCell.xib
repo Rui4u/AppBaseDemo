@@ -76,6 +76,13 @@
                     <constraint firstItem="SCh-YG-RQ1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="xFz-6Z-hmg"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="imageVIew" destination="SCh-YG-RQ1" id="LTb-s5-22M"/>
+                <outlet property="priceIamge" destination="KP4-IJ-kSm" id="myt-ge-Y55"/>
+                <outlet property="productDes" destination="yJh-xb-qqC" id="IHF-9n-Mue"/>
+                <outlet property="productName" destination="CHz-Ht-zlS" id="gPj-BW-h0B"/>
+                <outlet property="totalPrice" destination="WTK-gl-1Ex" id="9dK-QG-iLc"/>
+            </connections>
             <point key="canvasLocation" x="74" y="144"/>
         </tableViewCell>
     </objects>

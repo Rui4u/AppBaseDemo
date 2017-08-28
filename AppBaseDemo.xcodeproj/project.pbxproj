@@ -189,6 +189,8 @@
 		2BD5D70E1F39871700BE1994 /* unicode_to_hanyu_pinyin.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2BD5D7041F39871700BE1994 /* unicode_to_hanyu_pinyin.txt */; };
 		2BD5D70F1F39871700BE1994 /* ZYPinYinSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD5D7061F39871700BE1994 /* ZYPinYinSearch.m */; };
 		2BD5D7181F39925100BE1994 /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD5D7161F39925100BE1994 /* UserInfoViewController.m */; };
+		2BE920011F53AE5400A2DD9C /* DoOrderBussiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE920001F53AE5400A2DD9C /* DoOrderBussiness.m */; };
+		2BE920071F53E87A00A2DD9C /* SearchAppProductListBussiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE920061F53E87A00A2DD9C /* SearchAppProductListBussiness.m */; };
 		2BFCFDE41F413B63001DA10D /* GetAppProductListBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFCFDCD1F413B63001DA10D /* GetAppProductListBusiness.m */; };
 		2BFCFDE51F413B63001DA10D /* GetSelectGoodsListBussiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFCFDCF1F413B63001DA10D /* GetSelectGoodsListBussiness.m */; };
 		2BFCFDE71F413B63001DA10D /* GetSelectedProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFCFDD41F413B63001DA10D /* GetSelectedProductModel.m */; };
@@ -558,6 +560,10 @@
 		2BD5D7061F39871700BE1994 /* ZYPinYinSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYPinYinSearch.m; sourceTree = "<group>"; };
 		2BD5D7151F39925100BE1994 /* UserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoViewController.h; sourceTree = "<group>"; };
 		2BD5D7161F39925100BE1994 /* UserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoViewController.m; sourceTree = "<group>"; };
+		2BE91FFF1F53AE5400A2DD9C /* DoOrderBussiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoOrderBussiness.h; sourceTree = "<group>"; };
+		2BE920001F53AE5400A2DD9C /* DoOrderBussiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoOrderBussiness.m; sourceTree = "<group>"; };
+		2BE920051F53E87A00A2DD9C /* SearchAppProductListBussiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchAppProductListBussiness.h; sourceTree = "<group>"; };
+		2BE920061F53E87A00A2DD9C /* SearchAppProductListBussiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchAppProductListBussiness.m; sourceTree = "<group>"; };
 		2BFCFDCC1F413B63001DA10D /* GetAppProductListBusiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetAppProductListBusiness.h; sourceTree = "<group>"; };
 		2BFCFDCD1F413B63001DA10D /* GetAppProductListBusiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetAppProductListBusiness.m; sourceTree = "<group>"; };
 		2BFCFDCE1F413B63001DA10D /* GetSelectGoodsListBussiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetSelectGoodsListBussiness.h; sourceTree = "<group>"; };
@@ -894,6 +900,8 @@
 				2B6BE3541F4691C300D0C915 /* OrderDetailBussiness.m */,
 				2B3FD7E51F49307B003DE7C3 /* FillOrderBussiness.h */,
 				2B3FD7E61F49307B003DE7C3 /* FillOrderBussiness.m */,
+				2BE91FFF1F53AE5400A2DD9C /* DoOrderBussiness.h */,
+				2BE920001F53AE5400A2DD9C /* DoOrderBussiness.m */,
 			);
 			path = Bussiness;
 			sourceTree = "<group>";
@@ -1445,6 +1453,8 @@
 				2BFCFDCD1F413B63001DA10D /* GetAppProductListBusiness.m */,
 				2BFCFDCE1F413B63001DA10D /* GetSelectGoodsListBussiness.h */,
 				2BFCFDCF1F413B63001DA10D /* GetSelectGoodsListBussiness.m */,
+				2BE920051F53E87A00A2DD9C /* SearchAppProductListBussiness.h */,
+				2BE920061F53E87A00A2DD9C /* SearchAppProductListBussiness.m */,
 			);
 			path = Bussiness;
 			sourceTree = "<group>";
@@ -1723,6 +1733,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B2E109A1F3C0AF900092EAA /* BaseBussiness.m in Sources */,
+				2BE920011F53AE5400A2DD9C /* DoOrderBussiness.m in Sources */,
 				2BA025301F2AE470003EB25D /* BaseViewController.m in Sources */,
 				2B6BE3521F46901700D0C915 /* OrderListModel.m in Sources */,
 				2BC14DBB1F31CD3500919808 /* SBJsonStreamParserAdapter.m in Sources */,
@@ -1842,6 +1853,7 @@
 				2B386F7B1F29B69A00228620 /* main.m in Sources */,
 				2B6BE3551F4691C300D0C915 /* OrderDetailBussiness.m in Sources */,
 				2B3870341F29BC0C00228620 /* NSMutableAttributedString+SRSpecial.m in Sources */,
+				2BE920071F53E87A00A2DD9C /* SearchAppProductListBussiness.m in Sources */,
 				2B38703C1F29BC0C00228620 /* UIView+SRExtension.m in Sources */,
 				2BA709331F3B087800B0B520 /* StoreInfoBusiness.m in Sources */,
 				2B6BE3581F4691F100D0C915 /* OrderDetailModel.m in Sources */,

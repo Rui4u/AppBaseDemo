@@ -12,8 +12,11 @@
 @end
 @implementation FillOrderBottomView
 - (IBAction)clikdSubmitOrder:(id)sender {
-    
-    
+	if (self.submitButtonBlock) {
+		self.submitButtonBlock();
+	}
+	
+	
 }
 
 /*

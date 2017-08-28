@@ -39,6 +39,8 @@
 //选择类目商品
 #define kProductDetailBussinessUrl            [NSString stringWithFormat :@"%@/gs/goods/selectGoods?",kHTTP_HOST_URL]
 
+//搜索
+#define kSearchGoodsListlBussinessUrl            [NSString stringWithFormat :@"%@/gs/goods/selectGoodsByName?",kHTTP_HOST_URL]
 
 //修改购物车个数
 #define kAddCarBussinessUrl            [NSString stringWithFormat :@"%@/gs/shopCar/addCar?",kHTTP_HOST_URL]
@@ -70,8 +72,8 @@
 #define kOrderDetailBussinessUrl [NSString stringWithFormat :@"%@/gs/orderAPI/show?",kHTTP_HOST_URL]
 //填写订单
 #define kFillOrderBussinessUrl [NSString stringWithFormat :@"%@/gs/orderAPI/submitOrder?",kHTTP_HOST_URL]
-
-
+//下单
+#define kDoOrderBussinessUrl [NSString stringWithFormat :@"%@/gs/orderAPI/buildOrder?",kHTTP_HOST_URL]
 
 
 NS_ASSUME_NONNULL_BEGIN
