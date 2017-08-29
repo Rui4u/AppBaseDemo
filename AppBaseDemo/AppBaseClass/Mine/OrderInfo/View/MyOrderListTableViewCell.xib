@@ -95,7 +95,6 @@
                                 </state>
                                 <connections>
                                     <action selector="clickButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Unf-Nw-RPR"/>
-                                    <action selector="clickLeftButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="xnV-Nv-d2d"/>
                                 </connections>
                             </button>
                         </subviews>

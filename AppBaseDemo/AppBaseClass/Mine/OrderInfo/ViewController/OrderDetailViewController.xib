@@ -21,17 +21,71 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gGw-2z-LLZ">
-                    <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                    <rect key="frame" x="0.0" y="64" width="375" height="553"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bxL-FE-MFY">
+                    <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nZf-uh-1s0">
+                            <rect key="frame" x="15" y="0.0" width="360" height="1"/>
+                            <color key="backgroundColor" red="0.86666666670000003" green="0.86666666670000003" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="cOG-Mu-8sT"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXC-g1-Qj2">
+                            <rect key="frame" x="300" y="10" width="60" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="60" id="Far-v1-TbV"/>
+                                <constraint firstAttribute="height" constant="30" id="cae-Uv-EgC"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <state key="normal" title="再次购买">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="buyAgain:" destination="-1" eventType="touchUpInside" id="s7H-gW-V3D"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DaT-wm-Q2o">
+                            <rect key="frame" x="225" y="10" width="60" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <state key="normal" title="取消进度">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="cancelOrder:" destination="-1" eventType="touchUpInside" id="Hol-wa-PQL"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="2JR-ae-qTU"/>
+                        <constraint firstItem="hXC-g1-Qj2" firstAttribute="leading" secondItem="DaT-wm-Q2o" secondAttribute="trailing" constant="15" id="8xQ-aw-NCc"/>
+                        <constraint firstItem="nZf-uh-1s0" firstAttribute="leading" secondItem="bxL-FE-MFY" secondAttribute="leading" constant="15" id="BYb-WS-tUL"/>
+                        <constraint firstItem="nZf-uh-1s0" firstAttribute="top" secondItem="bxL-FE-MFY" secondAttribute="top" id="Bsa-02-nOz"/>
+                        <constraint firstItem="DaT-wm-Q2o" firstAttribute="height" secondItem="hXC-g1-Qj2" secondAttribute="height" id="G2N-W0-ifG"/>
+                        <constraint firstAttribute="height" constant="50" id="JIB-PE-Knv"/>
+                        <constraint firstAttribute="trailing" secondItem="nZf-uh-1s0" secondAttribute="trailing" id="SDR-WH-e7q"/>
+                        <constraint firstAttribute="trailing" secondItem="hXC-g1-Qj2" secondAttribute="trailing" constant="15" id="bVP-Vy-ZRo"/>
+                        <constraint firstItem="DaT-wm-Q2o" firstAttribute="centerY" secondItem="hXC-g1-Qj2" secondAttribute="centerY" id="glB-tb-jvy"/>
+                        <constraint firstItem="DaT-wm-Q2o" firstAttribute="width" secondItem="hXC-g1-Qj2" secondAttribute="width" id="j3c-v8-yr1"/>
+                        <constraint firstItem="hXC-g1-Qj2" firstAttribute="centerY" secondItem="bxL-FE-MFY" secondAttribute="centerY" id="oAL-xh-vMS"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="bxL-FE-MFY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="3hj-sR-Ee4"/>
                 <constraint firstAttribute="trailing" secondItem="gGw-2z-LLZ" secondAttribute="trailing" id="7Lo-uX-PEZ"/>
                 <constraint firstItem="gGw-2z-LLZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9E0-0u-eL8"/>
+                <constraint firstAttribute="trailing" secondItem="bxL-FE-MFY" secondAttribute="trailing" id="Ls5-cd-2bX"/>
                 <constraint firstItem="gGw-2z-LLZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="QpH-p7-nrL"/>
-                <constraint firstAttribute="bottom" secondItem="gGw-2z-LLZ" secondAttribute="bottom" id="rCQ-hB-O45"/>
+                <constraint firstItem="bxL-FE-MFY" firstAttribute="top" secondItem="gGw-2z-LLZ" secondAttribute="bottom" id="Wx7-Xa-NGS"/>
+                <constraint firstAttribute="bottom" secondItem="bxL-FE-MFY" secondAttribute="bottom" id="h3S-9L-3Ar"/>
             </constraints>
+            <point key="canvasLocation" x="33.5" y="54.5"/>
         </view>
     </objects>
 </document>

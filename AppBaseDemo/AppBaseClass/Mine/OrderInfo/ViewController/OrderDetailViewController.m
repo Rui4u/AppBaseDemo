@@ -10,6 +10,8 @@
 #import "OrderDetailTableViewCell.h"
 #import "OrderDetailBussiness.h"
 #import "OrderDetailModel.h"
+#import "FillOrderNomailCell.h"
+
 @interface OrderDetailViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *mainTableView;
 
@@ -36,6 +38,10 @@
 		
 	}];
 }
+- (IBAction)cancelOrder:(id)sender {
+}
+- (IBAction)buyAgain:(id)sender {
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -46,27 +52,37 @@
 #pragma mark - UITableViewDataSourse
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-	return 0.1;
+	if (section == 0) {
+		return 30;
+	}else {
+		return 10;
+	}
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-	return 10;
+	return .1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	
-	return self.orderModel.orderDetails.goods.count;
+	if (section == 0) return self.orderModel.orderDetails.goods.count;
+	else  if (section == 1) return 3;
+	else  if (section == 2) return 5;
+	else return 1;
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 	//    return self.orderListData.count;
-	return 5;
+	return 3;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-
-	return 100;
+	if (indexPath.section ==0) {
+		return 58;
+	}else {
+		return 37;
+	}
+	
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	
-
+	if (indexPath.section ==0) {
 		OrderDetailTableViewCell * cell;
 		
 		cell = [tableView dequeueReusableCellWithIdentifier:@"OrderDetailTableViewCellID"];
@@ -75,23 +91,41 @@
 			cell.selectionStyle = UITableViewCellSelectionStyleNone;
 			
 		}
-	
+		
 		cell.good = self.orderModel.orderDetails.goods[indexPath.row];
-	
+		cell.selectionStyle = UITableViewCellSelectionStyleNone;
 		return cell;
+		
+	}else {
 	
+		FillOrderNomailCell * cell;
+		
+		cell = [tableView dequeueReusableCellWithIdentifier:@"FillOrderNomailCellID"];
+		if (cell == nil) {
+			cell= (FillOrderNomailCell *)[[[NSBundle  mainBundle]  loadNibNamed:@"FillOrderNomailCell" owner:self options:nil]  lastObject];
+			cell.selectionStyle = UITableViewCellSelectionStyleNone;
+			
+		}
+		NSArray * array;
+		if (indexPath.section == 1) {
+			array = @[@[@"下单商品金额",@"无可用优惠券"],
+					  @[@"运费",@"无可用运费券"],
+					  @[@"总计",@"无可用运费券"]];
+		}else{
+			array = @[@[@"收货人",@"无可用优惠券"],
+					  @[@"收货地址",@"无可用运费券"],
+					  @[@"支付方式",@"无可用运费券"],
+					  @[@"下单时间",@"无可用运费券"],
+					  @[@"预计送达",@"无可用运费券"]];
+
+			}
+		cell.dataSourse = array[indexPath.row];
+		return cell;
+	}
 }
 
 
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -10,7 +10,7 @@
 
 @interface OrderListViewController : BaseViewController
 /**
- 1代发货  2代付款 3 已完成 空 全部
+ 订单状态 0 待配货 1 待发货，2待收货，3已完成，4已取消  //外面传进来 全部+1  因为前面还有全部 全部是0
  */
 @property (nonatomic ,strong) NSString * state;
 @end

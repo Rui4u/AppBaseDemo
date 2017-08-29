@@ -35,7 +35,7 @@
 		selectView.backgroundColor = [UIColor whiteColor];
 		selectView.delegate = self;
 		selectView.customTextAlignment = CustomTextAlignmentCenter;
-		selectView.dataSourse = @[@"全部",@"待发货",@"待收货",@"已完成"];
+		selectView.dataSourse = @[@"全部",@"待配货",@"待发货",@"待收货",@"已完成",@"已取消"];
 		[selectView reloadeData];
 		[selectView selectSwitchButtonAtIndex:self.state.intValue withClick:YES];
 		selectView;
@@ -61,7 +61,7 @@
 }
 
 - (void)customScrollSelectView:(CustomScrollSelectView *)customScrollSelectView didSelectWithProductTypeModel:(NSInteger)index {
-    _state = [NSString stringWithFormat:@"%ld",index];
+    _state = [NSString stringWithFormat:@"%ld",index -1];
     
 	[self requestOrderList];
 
@@ -140,16 +140,21 @@
 		_mainTableView.delegate = self;
 		_mainTableView.dataSource = self;
 		_mainTableView.backgroundColor = [UIColor colorWithHexString:@"eeeeee"];
+		
 	}
 	
 	return _mainTableView;
 }
 
 - (NSString *)state {
-    if ([_state isEqualToString:@"0"]) {
+    if ([_state isEqualToString:@"-1"]) {
         _state = @"";
     }
    return _state;
+}
+- (void)back {
+	APP_DELEGATE.customTabBar.tabBarView.selectedIndex = 4;
+	[self.navigationController popToRootViewControllerAnimated:YES];
 }
 /*
 #pragma mark - Navigation

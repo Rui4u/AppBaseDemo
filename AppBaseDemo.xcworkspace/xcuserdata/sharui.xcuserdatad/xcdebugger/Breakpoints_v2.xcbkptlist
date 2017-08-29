@@ -26,7 +26,7 @@
                   moduleName = "AppBaseDemo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/hzcf/Desktop/AppBaseDemo/AppBaseDemo/AppBaseClass/Home/ViewController/HomeViewController.m"
-                  timestampString = "525667528.044128"
+                  timestampString = "525679475.860019"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "171"
@@ -41,7 +41,7 @@
                   moduleName = "AppBaseDemo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/hzcf/Desktop/AppBaseDemo/AppBaseDemo/AppBaseClass/Home/ViewController/HomeViewController.m"
-                  timestampString = "525667528.045698"
+                  timestampString = "525679475.862993"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "171"
@@ -185,22 +185,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AppBaseDemo/AppBaseClass/Mine/OrderInfo/Bussiness/OrderListBussiness.m"
-            timestampString = "525579041.868969"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "+requestOrderListWithToken:state:completionSuccessHandler:completionFailHandler:completionError:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "AppBaseDemo/AppBaseClass/Mine/OrderInfo/Bussiness/OrderDetailBussiness.m"
             timestampString = "525579996.177284"
             startingColumnNumber = "9223372036854775807"
@@ -313,22 +297,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AppBaseDemo/AppBaseClass/Mine/OrderInfo/ViewController/OrderDetailViewController.m"
-            timestampString = "525592436.325079"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "AppBaseDemo/AppBaseClass/AllProduct/ProductList/Bussiness/SearchAppProductListBussiness.m"
             timestampString = "525593408.069441"
             startingColumnNumber = "9223372036854775807"
@@ -393,13 +361,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AppBaseDemo/AppBaseTools/CommonSearchController.m"
-            timestampString = "525665095.800631"
+            filePath = "AppBaseDemo/AppBaseClass/AllProduct/SearchList/ViewController/SearchListViewController.m"
+            timestampString = "525667415.433967"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "203"
-            endingLineNumber = "203"
-            landmarkName = "-clickSearchButton:"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
+            landmarkName = "-changeProcutNumberBagWithCount:withIndexPath:andTypeIndex:withRect:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -409,13 +377,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AppBaseDemo/AppBaseClass/AllProduct/SearchList/ViewController/SearchListViewController.m"
-            timestampString = "525667415.433967"
+            filePath = "AppBaseDemo/AppBaseClass/Mine/OrderInfo/ViewController/OrderListViewController.m"
+            timestampString = "525678129.283264"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
-            landmarkName = "-changeProcutNumberBagWithCount:withIndexPath:andTypeIndex:withRect:"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "-requestOrderList"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

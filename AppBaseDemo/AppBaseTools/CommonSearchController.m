@@ -121,85 +121,16 @@
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
 
     NSLog(@"%@",self.searchBar.text);
-//    switch ((int)self.searchType)
-//    {
-//        case SearchType_AgentName://搜索面包客
-//        {
-//            SearchListViewController * vc = [[SearchListViewController alloc] init];
-//            vc.searchListType = SearchListType_agent;
-//            vc.keyword = self.searchBar.text;
-//            vc.sitId = self.siteId;
-//            vc.searchFrom = self.searchFromVC;
-//            vc.productId = self.productId;
-//            vc.placeholderStr = self.inputText;
-//            [self.navigationController pushViewController:vc animated:YES];
-//            
-//        }
-//            break;
-//        case SearchType_ShopName://搜索店铺
-//        {
-//            SearchListViewController * vc = [[SearchListViewController alloc] init];
-//            vc.searchListType = SearchListType_shop;
-//            vc.keyword = self.searchBar.text;
-//            vc.sitId = self.siteId;
-//            vc.searchFrom = self.searchFromVC;
-//            vc.productId = self.productId;
-//            vc.placeholderStr = self.inputText;
-//            [self.navigationController pushViewController:vc animated:YES];
-//
-//        }
-//            break;
-//        case
-//        SearchType_SabourUnion:
-//        {
-//            
-//        }
-//            break;
-//        case (SearchType_AgentName|SearchType_ShopName)://搜索面包客和店铺
-//        {
-//            SearchListViewController * vc = [[SearchListViewController alloc] init];
-//            vc.searchListType = SearchListType_default;
-//            vc.keyword = self.searchBar.text;
-//            vc.sitId = self.siteId;
-//            vc.searchFrom = self.searchFromVC;
-//            vc.productId = self.productId;
-//            vc.placeholderStr = self.inputText;
-//            [self.navigationController pushViewController:vc animated:YES];
-//        }
-//            break;
-//        case (SearchType_AgentName|SearchType_SabourUnion):
-//        {
-//            
-//        }
-//            break;
-//        case (SearchType_ShopName|SearchType_SabourUnion):
-//        {
-//            
-//        }
-//            break;
-//        case (SearchType_AgentName|SearchType_ShopName|SearchType_SabourUnion):
-//        {
-//            
-//        }
-//            break;
-//        default:
-//            break;
-//    }
 }
 
 - (void)clickSearchButton:(UIButton *)sender {
     if ([sender.titleLabel.text isEqualToString:@"搜索"]) {
-//        [self.searchBar resignFirstResponder];
-////        self.searchBar.text = @"";
-//        [self.searchDataArray removeAllObjects];
-//        [self.searchHeadTableView reloadData];
-//        [self.navigationController popViewControllerAnimated:YES];
 		
 		
 		[SearchAppProductListBussiness requestSearchAppProductListWithToken:TOKEN goodName:self.searchBar.text completionSuccessHandler:^(GetSelectedProductModel *getSelectedProductModel) {
 			
 			SearchListViewController * search = [[SearchListViewController alloc] init];
-			search.goodsListInfoList = getSelectedProductModel.goodsListInfoList;
+			search.goodsListInfoList = [NSMutableArray arrayWithArray:getSelectedProductModel.goodsListInfoList];
 			[self.navigationController pushViewController:search animated:YES];
 			
 		} completionFailHandler:^(NSString *failMessage) {
@@ -253,13 +184,14 @@
         [searchField setValue:[UIColor colorWithHexString:@"8d8d8e"] forKeyPath:@"_placeholderLabel.textColor"];
         [searchField setValue:[UIFont boldSystemFontOfSize:13] forKeyPath:@"_placeholderLabel.font"];
         
-        searchField.textColor = [UIColor colorWithHexString:@"ffffff"];
-        
-        
+        searchField.textColor = [UIColor colorWithHexString:@"333333"];
+
+
+		
         searchBar.delegate = self;
         searchBar.showsCancelButton = NO;
         [_searchBarView addSubview:searchBar];
-        UIImage* searchBarBg = [self GetImageWithColor:[UIColor colorWithHexString:@"232226"] andHeight:searchBar.height];
+		UIImage* searchBarBg = [self GetImageWithColor:[UIColor colorWithHexString:@"ffffff"] andHeight:searchBar.height];
         //设置背景图片
         [searchBar setBackgroundImage:searchBarBg];
         //设置背景色
@@ -267,7 +199,7 @@
         //设置文本框背景
         [searchBar setSearchFieldBackgroundImage:searchBarBg forState:UIControlStateNormal];
         searchBar.layer.masksToBounds = YES;
-        searchBar.layer.cornerRadius = 2;
+        searchBar.layer.cornerRadius = 15;
         
         UIButton *searchButton = [[UIButton alloc ]initWithFrame:CGRectMake(CGRectGetMaxX(searchBar.frame), 0, WIDTH_AUTO(55), _searchBarView.height)];
         self.searchButton = searchButton;

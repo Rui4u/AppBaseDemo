@@ -44,8 +44,8 @@
     }
     
 	OrderListViewController * orderListViewController = [[OrderListViewController alloc] init];
-    orderListViewController.state = [NSString stringWithFormat:@"%ld",sender.tag - 1000];
-
+    orderListViewController.state = [NSString stringWithFormat:@"%ld",sender.tag - 1000 + 1];//-1 是全部
+	
 	[self.navigationController pushViewController:orderListViewController animated:YES];
 	
 }
