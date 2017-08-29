@@ -11,9 +11,8 @@
 #import "HZCustomSearchBar.h"
 typedef NS_ENUM ( NSInteger , SearchType) {
 	
-	SearchType_AgentName = 1, //面包客
-	SearchType_ShopName = 1 << 1,// 店铺名
-	SearchType_SabourUnion  = 1 << 2//团队
+	SearchType_Push = 1, //面包客
+	SearchType_Pop
 	
 };
 

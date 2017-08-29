@@ -75,7 +75,7 @@
 	
 	
 	[self initSearchBarViewWithPlaceholder:@"鸡蛋"
-							withSearchType:SearchType_AgentName|SearchType_ShopName];
+							withSearchType:SearchType_Push];
     self.searchBar.searchBarBackgroundColor = [UIColor colorWithWhite:0 alpha:.3];
 
 }
@@ -118,8 +118,6 @@
 }
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
-	UserLocationViewController * vc = [[UserLocationViewController alloc] init];
-	[self presentViewController:vc animated:YES completion:nil];
 
 }
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {

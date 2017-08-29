@@ -79,6 +79,7 @@
 		2B5AA4DA1F3DB19400C3EE31 /* SRCustomLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5AA4D91F3DB19400C3EE31 /* SRCustomLabel.m */; };
 		2B5AA4DD1F3DB74000C3EE31 /* HZCustomSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5AA4DC1F3DB74000C3EE31 /* HZCustomSearchBar.m */; };
 		2B5AA4E01F3DB83400C3EE31 /* CommonSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5AA4DF1F3DB83400C3EE31 /* CommonSearchController.m */; };
+		2B6AB99F1F55002400F45222 /* SearchListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B6AB99E1F55002400F45222 /* SearchListViewController.m */; };
 		2B6BE3371F46826400D0C915 /* MoreBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B6BE32F1F46826400D0C915 /* MoreBaseView.m */; };
 		2B6BE3381F46826400D0C915 /* MoreBaseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B6BE3301F46826400D0C915 /* MoreBaseView.xib */; };
 		2B6BE3391F46826400D0C915 /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B6BE3331F46826400D0C915 /* MoreViewController.m */; };
@@ -355,6 +356,8 @@
 		2B5AA4DC1F3DB74000C3EE31 /* HZCustomSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZCustomSearchBar.m; sourceTree = "<group>"; };
 		2B5AA4DE1F3DB83400C3EE31 /* CommonSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonSearchController.h; sourceTree = "<group>"; };
 		2B5AA4DF1F3DB83400C3EE31 /* CommonSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonSearchController.m; sourceTree = "<group>"; };
+		2B6AB99D1F55002400F45222 /* SearchListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchListViewController.h; sourceTree = "<group>"; };
+		2B6AB99E1F55002400F45222 /* SearchListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchListViewController.m; sourceTree = "<group>"; };
 		2B6BE32E1F46826400D0C915 /* MoreBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreBaseView.h; sourceTree = "<group>"; };
 		2B6BE32F1F46826400D0C915 /* MoreBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreBaseView.m; sourceTree = "<group>"; };
 		2B6BE3301F46826400D0C915 /* MoreBaseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreBaseView.xib; sourceTree = "<group>"; };
@@ -841,6 +844,47 @@
 			children = (
 				2B4C35BC1F4C1AA500B22431 /* CommonListViewController.h */,
 				2B4C35BD1F4C1AA500B22431 /* CommonListViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		2B6AB9981F55002400F45222 /* SearchList */ = {
+			isa = PBXGroup;
+			children = (
+				2B6AB9991F55002400F45222 /* Bussiness */,
+				2B6AB99A1F55002400F45222 /* Model */,
+				2B6AB99B1F55002400F45222 /* View */,
+				2B6AB99C1F55002400F45222 /* ViewController */,
+			);
+			path = SearchList;
+			sourceTree = "<group>";
+		};
+		2B6AB9991F55002400F45222 /* Bussiness */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Bussiness;
+			sourceTree = "<group>";
+		};
+		2B6AB99A1F55002400F45222 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2B6AB99B1F55002400F45222 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2B6AB99C1F55002400F45222 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2B6AB99D1F55002400F45222 /* SearchListViewController.h */,
+				2B6AB99E1F55002400F45222 /* SearchListViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1386,6 +1430,7 @@
 		2BFCFDC41F413B63001DA10D /* AllProduct */ = {
 			isa = PBXGroup;
 			children = (
+				2B6AB9981F55002400F45222 /* SearchList */,
 				2B4C35B71F4C1A8100B22431 /* CommonList */,
 				2BFCFDC51F413B63001DA10D /* ProductDetail */,
 				2BFCFDCA1F413B63001DA10D /* ProductList */,
@@ -1810,6 +1855,7 @@
 				2B84606C1F417C850013D26D /* ProductDetailTopView.m in Sources */,
 				2BFCFDE41F413B63001DA10D /* GetAppProductListBusiness.m in Sources */,
 				2BA025311F2AE470003EB25D /* CustomNavBarView.m in Sources */,
+				2B6AB99F1F55002400F45222 /* SearchListViewController.m in Sources */,
 				2BC14D8F1F31AE5800919808 /* LoginViewController.m in Sources */,
 				2BBDCC561F34BC6B003FE167 /* SelectCityModel.m in Sources */,
 				2BD5D7081F39871700BE1994 /* ChineseToPinyinResource.m in Sources */,

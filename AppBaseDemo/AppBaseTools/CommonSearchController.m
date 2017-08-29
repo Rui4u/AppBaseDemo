@@ -8,6 +8,7 @@
 
 #import "CommonSearchController.h"
 #import "SearchAppProductListBussiness.h"
+#import "SearchListViewController.h"
 @interface CommonSearchController ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate>
 
 /**
@@ -196,6 +197,10 @@
 		
 		
 		[SearchAppProductListBussiness requestSearchAppProductListWithToken:TOKEN goodName:self.searchBar.text completionSuccessHandler:^(GetSelectedProductModel *getSelectedProductModel) {
+			
+			SearchListViewController * search = [[SearchListViewController alloc] init];
+			search.goodsListInfoList = getSelectedProductModel.goodsListInfoList;
+			[self.navigationController pushViewController:search animated:YES];
 			
 		} completionFailHandler:^(NSString *failMessage) {
 			

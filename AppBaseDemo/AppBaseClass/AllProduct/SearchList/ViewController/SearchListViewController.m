@@ -1,12 +1,12 @@
 //
-//  CommonListViewController.m
+//  SearchListViewController.m
 //  AppBaseDemo
 //
 //  Created by sharui on 2017/8/22.
 //  Copyright © 2017年 sharui. All rights reserved.
 //
 
-#import "CommonListViewController.h"
+#import "SearchListViewController.h"
 #import "HomeTopView.h"
 #import "SelectTypeView.h"
 #import "LoginViewRootController.h"
@@ -20,18 +20,12 @@
 #import "AddToShoppingCartAnimation.h"
 #import "DeleteCartBusiness.h"
 #import "ProductRemoveListBussiness.h"
-@interface CommonListViewController ()<UITableViewDelegate,UITableViewDataSource,HomeProductListTableViewCellDelegate,SelectTypeViewDelegate>
-@property (nonatomic ,strong ) SelectTypeView * selectTypeView;
-/**
- 数据源
- */
-@property (nonatomic ,strong) HomeDataModel *dataSourse;
-
+@interface SearchListViewController ()<UITableViewDelegate,UITableViewDataSource,HomeProductListTableViewCellDelegate,SelectTypeViewDelegate>
 @property (nonatomic ,strong ) UITableView * tableViewList;
 @property (nonatomic ,assign ) NSInteger count;
 @end
 
-@implementation CommonListViewController
+@implementation SearchListViewController
 
 - (void)CNRefreashHomeData {
 	[self.tableViewList.mj_header beginRefreshing];
@@ -41,100 +35,43 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
-	[self initNavBarView:NAV_BAR_TYPE_ROOT_VIEW];
-	[[NSNotificationCenter defaultCenter] addObserver:self
-											 selector:@selector(CNRefreashHomeData)
-												 name:CNRefreashHomeData
-											   object:nil];
-	
-	self.selectTypeView = [[SelectTypeView alloc] initWithFrame:CGRectMake(0, NAV_BAR_HEIGHT, SCREEN_WIDTH, 74)];
-	self.selectTypeView.delegate = self;
-	self.selectTypeView.backgroundColor = [UIColor whiteColor];
-	[self.view addSubview:self.selectTypeView];
+	[self initNavBarView:NAV_BAR_TYPE_SECOND_LEVEL_VIEW];
 	
 	
-	_tableViewList = [[UITableView alloc] initWithFrame:CGRectMake(0, self.selectTypeView.bottom, SCREEN_WIDTH, SCREEN_HEIGHT - self.selectTypeView.bottom) style:UITableViewStyleGrouped];
+	_tableViewList = [[UITableView alloc] initWithFrame:CGRectMake(0, NAV_BAR_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGHT - NAV_BAR_HEIGHT) style:UITableViewStylePlain];
 	
 	_tableViewList.separatorStyle = UITableViewCellSelectionStyleNone;
 	_tableViewList.dataSource = self;
 	_tableViewList.delegate = self;
 	_tableViewList.contentInset = UIEdgeInsetsMake(0, 0, 44, 0);
 	[self.view addSubview:_tableViewList];
-	
-	_tableViewList.mj_header = [MJRefreshStateHeader headerWithRefreshingTarget:self refreshingAction:@selector(pullToRefresh)];
-	[_tableViewList.mj_header beginRefreshing];
-	
+	[self.tableViewList reloadData];
 	
 	[self initSearchBarViewWithPlaceholder:@"鸡蛋"
-							withSearchType:SearchType_Push];
+							withSearchType:SearchType_Pop];
 	self.searchBar.searchBarBackgroundColor = [UIColor colorWithWhite:0 alpha:.3];
 	
 }
-#pragma mark - 网络请求
-- (void)pullToRefresh {
-	
-	if (isNotLogin) {
-		[self showLoginViewController:nil];
-		[self.tableViewList.mj_header endRefreshing];
-		return;
-	}
-	
-	
-	[GetHomeBusiness requestGetHomeWithToken:TOKEN completionSuccessHandler:^(HomeDataModel *homeDataModel)
-	 {
-		 
-		 
-		 self.dataSourse = homeDataModel;
-		 [self.tableViewList reloadData];
-		 [self.tableViewList.mj_header endRefreshing];
-			NSMutableArray * selectTitle = [NSMutableArray arrayWithCapacity:3];
-		 for (ProductionInfoList *infoList in self.dataSourse.ProductionInfoList) {
-			 [selectTitle addObject:infoList.goodsBaseType];
-		 }
-		 self.selectTypeView.dataSourse = selectTitle;
-		 
-	 } completionFailHandler:^(NSString *failMessage) {
-		 [self showToastWithMessage:failMessage showTime:1];
-		 [self.tableViewList.mj_header endRefreshing];
-		 
-		 
-	 } completionError:^(NSString *netWorkErrorMessage) {
-		 [self.tableViewList.mj_header endRefreshing];
-		 [self showToastWithMessage:netWorkErrorMessage showTime:1];
-		 
-		 
-	 }];
-	
-}
+
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
 	
 }
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-	SRCustomLabel * label = [SRCustomLabel creatLabelWithText: self.dataSourse.ProductionInfoList[section].goodsBaseType FontOfSize:12 textColor:Main_Font_Black_Color];
-	label.textInsets = UIEdgeInsetsMake(0, 15, 0, 0);
-	label.backgroundColor = [UIColor colorWithHexString:Main_BackGround_Color];
-	
-	return label;
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	
-	return self.dataSourse.ProductionInfoList[section].goodsList.count;
+	return self.goodsListInfoList.count;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-	return 35;
+	return .1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
 	return .1;
 }
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-	return self.dataSourse.ProductionInfoList.count;
-}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-	return self.dataSourse.ProductionInfoList[indexPath.section].goodsList[indexPath.row].height;
+	return self.goodsListInfoList[indexPath.row].height;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -148,8 +85,7 @@
 		cell.delegate = self;
 	}
 	cell.indexPath = indexPath;
-	cell.dataSourse = self.dataSourse.ProductionInfoList[indexPath.section].goodsList[indexPath.row];
-	[self.selectTypeView.customScrollSelectView selectSwitchButtonAtIndex:indexPath.section withClick:NO];
+	cell.dataSourse = self.goodsListInfoList[indexPath.row];
 	return cell;
 	
 	
@@ -158,9 +94,9 @@
 #pragma mark 删除清单
 - (void)clickDeteleGoodsWith:(NSIndexPath *)indexPath {
 	
-	[ProductRemoveListBussiness requestProductRemoveListWithToken:TOKEN goodsId:self.dataSourse.ProductionInfoList[indexPath.section].goodsList[indexPath.row].goodsId completionSuccessHandler:^(BOOL succeed) {
+	[ProductRemoveListBussiness requestProductRemoveListWithToken:TOKEN goodsId:self.goodsListInfoList[indexPath.row].goodsId completionSuccessHandler:^(BOOL succeed) {
 		NSLog(@"删除清单成功");
-		[self.dataSourse.ProductionInfoList[indexPath.section].goodsList removeObjectAtIndex:indexPath.row];
+		[self.goodsListInfoList removeObjectAtIndex:indexPath.row];
 		
 		[(UITableView *)self.tableViewList reloadData];
 		
@@ -176,8 +112,8 @@
 - (void)clickGoToProductDetailWith:(NSIndexPath *)indexPath andGuiGeIndex:(NSInteger)index {
 	
 	ProductDetailViewController * productDetailViewController = [[ProductDetailViewController alloc] init];
-	productDetailViewController.goodsId = self.dataSourse.ProductionInfoList[indexPath.section].goodsList[indexPath.row].goodsId;
-	productDetailViewController.guigeId = self.dataSourse.ProductionInfoList[indexPath.section].goodsList[indexPath.row].guige[index].guigeID;
+	productDetailViewController.goodsId = self.goodsListInfoList[indexPath.row].goodsId;
+	productDetailViewController.guigeId = self.goodsListInfoList[indexPath.row].guige[index].guigeID;
 	[self.navigationController pushViewController:productDetailViewController animated:YES];
 	
 	
@@ -203,7 +139,7 @@
 -(void)changeProcutNumberBagWithCount:(NSString *)count withIndexPath:(NSIndexPath *)indexPath andTypeIndex:(NSInteger)typeIndex withRect:(CGRect)rect{
 	
 	
-	Goods * selectGoods = self.dataSourse.ProductionInfoList[typeIndex].goodsList[indexPath.section];
+	Goods * selectGoods = self.goodsListInfoList[indexPath.section];
 	Guige * selectGuige = selectGoods.guige[indexPath.row];
 	
 	selectGuige.carGoodNum = count;
@@ -251,8 +187,8 @@
 		
 		
 		[ShoppingCartChangeNumBussiness requestShoppingCartChangeNumWithToken:TOKEN
-																	  goodsId:self.dataSourse.ProductionInfoList[typeIndex].goodsList[indexPath.section].goodsId
-																	   specId:self.dataSourse.ProductionInfoList[typeIndex].goodsList[indexPath.section].guige[indexPath.row].guigeID
+																	  goodsId:selectGoods.goodsId
+																	   specId:selectGuige.guigeID
 																		  num:count
 													 completionSuccessHandler:^(NSString *succeed)
 		 {

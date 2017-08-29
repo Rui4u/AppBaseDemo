@@ -16,6 +16,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+	_selectButton.selected = YES;
     // Initialization code
 }
 - (IBAction)clickSelectButton:(UIButton *)sender {

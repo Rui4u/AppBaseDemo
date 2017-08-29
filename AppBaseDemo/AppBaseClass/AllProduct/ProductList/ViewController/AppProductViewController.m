@@ -64,7 +64,7 @@
     // Do any additional setup after loading the view.
 	[self initNavBarView:NAV_BAR_TYPE_ROOT_VIEW];
     
-    [self initSearchBarViewWithPlaceholder:@"鸡蛋" withSearchType:SearchType_AgentName|SearchType_ShopName];
+	[self initSearchBarViewWithPlaceholder:@"鸡蛋" withSearchType:SearchType_Push];
 	self.customScrollSelectView = [[CustomScrollSelectView alloc]
                                    initWithFrame:CGRectMake(0, NAV_BAR_HEIGHT, SCREEN_WIDTH, 48)];
 	[self.view addSubview:self.customScrollSelectView];

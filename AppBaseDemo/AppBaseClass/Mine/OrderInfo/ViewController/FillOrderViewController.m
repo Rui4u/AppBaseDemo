@@ -90,7 +90,7 @@
     
     NSArray * array;
     if (section == 2) {
-        NSArray * array = @[@"在线支付",@"货到付款"];
+        NSArray * array = @[/*@"在线支付",*/@"货到付款"];
         return array.count;
     }
     if (section == 3) {

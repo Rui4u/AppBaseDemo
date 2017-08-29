@@ -129,6 +129,7 @@
 	self.searchType = searchType;
 	self.searchBarPlaceholder = placeholder;
 	
+	
 	HZCustomSearchBar *searchBar;
 	if (self.navBarType == NAV_BAR_TYPE_SECOND_LEVEL_VIEW ) {
 		searchBar = [[HZCustomSearchBar alloc]initWithFrame:CGRectMake(55, NAV_BAR_HEIGHT - 30 - 7, SCREEN_WIDTH - 70, 30)];
@@ -152,12 +153,16 @@
 - (void)searchBarShouldBeginEditing
 {
 	
+	
+	if (self.searchType == SearchType_Pop) {
+		[self.navigationController popViewControllerAnimated:YES];
+	}else {
 		CommonSearchController * commonSearchController = [[CommonSearchController alloc] init];
 		commonSearchController.searchType = self.searchType;
 		commonSearchController.searchBarPlaceholder = self.searchBarPlaceholder;
 		
 		[self.navigationController pushViewController:commonSearchController animated:YES];
-		
+	}
 	
 }
 
