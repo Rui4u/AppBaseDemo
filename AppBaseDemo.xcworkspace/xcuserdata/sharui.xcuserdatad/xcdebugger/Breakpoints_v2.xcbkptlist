@@ -26,7 +26,7 @@
                   moduleName = "AppBaseDemo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sharui/Desktop/AppBaseDemo/AppBaseDemo/AppBaseClass/Home/ViewController/HomeViewController.m"
-                  timestampString = "525865483.12865"
+                  timestampString = "526137496.939772"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "171"
@@ -41,7 +41,7 @@
                   moduleName = "AppBaseDemo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sharui/Desktop/AppBaseDemo/AppBaseDemo/AppBaseClass/Home/ViewController/HomeViewController.m"
-                  timestampString = "525865483.130623"
+                  timestampString = "526137496.941362"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "171"
@@ -400,6 +400,38 @@
             startingLineNumber = "23"
             endingLineNumber = "23"
             landmarkName = "+requestProductAddListWithToken:goodsId:completionSuccessHandler:completionFailHandler:completionError:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AppBaseDemo/AppBaseClass/Login/Bussiness/LoginBusiness.m"
+            timestampString = "526137327.292653"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "+loginWithStoreTelephone:storePwd:completionSuccessHandler:completionFailHandler:completionError:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AppBaseDemo/AppBaseClass/Login/ViewController/UserInfoViewController.m"
+            timestampString = "526137494.114928"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "-clickSelectStoreAdressTextField:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
