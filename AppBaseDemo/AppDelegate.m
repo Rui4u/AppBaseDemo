@@ -40,8 +40,6 @@
 	//隐藏navigationController naviagtionBar
 	self.navgationController.navigationBar.hidden = YES;
 	[self.window makeKeyAndVisible];
-
-    [self.navgationController pushViewController:[UserLocationViewController new] animated:YES];
 	return YES;
 }
 
