@@ -82,15 +82,15 @@
 
     }
 	else if ( [[[resquest valueForKey:@"header"]valueForKey:@"errorCode"] isEqualToString:@"-4"]) {
-//		clearUserDefaults();
+		clearUserDefaults();
 
 		BLOCK_SAFE_RUN(handlerException,[[resquest valueForKey:@"header"] valueForKey:@"errorMsg"]);
         
         [BaseViewController showToastWithMessage:[[resquest valueForKey:@"header"] valueForKey:@"errorMsg"] showTime:1];
 		//token失效跳转登录界面
-//		[[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:[[LoginViewRootController alloc ]init] animated:YES completion:nil];
-//		[APP_DELEGATE.navgationController popToRootViewControllerAnimated:YES];
-//		APP_DELEGATE.customTabBar.tabBarView.selectedIndex = 0;
+		[[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:[[LoginViewRootController alloc ]init] animated:YES completion:nil];
+		[APP_DELEGATE.navgationController popToRootViewControllerAnimated:YES];
+		APP_DELEGATE.customTabBar.tabBarView.selectedIndex = 0;
 
 	}
 

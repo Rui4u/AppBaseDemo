@@ -28,7 +28,7 @@
                         <action selector="clcikGoProductCartButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="O9T-Ze-Mli"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="sb0-i3-46e">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="sb0-i3-46e">
                     <rect key="frame" x="145" y="0.0" width="157" height="184"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="184" id="2rk-dl-CKR"/>
@@ -38,13 +38,13 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xs5-bA-j2g">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xs5-bA-j2g">
                     <rect key="frame" x="15" y="-15" width="44" height="44"/>
-                    <color key="backgroundColor" red="0.18823529410000001" green="0.78039215689999997" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="44" id="ZCm-7M-hCI"/>
                         <constraint firstAttribute="height" constant="44" id="cRy-j8-YSY"/>
                     </constraints>
+                    <state key="normal" image="tabbar_productCartSelect"/>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="15" translatesAutoresizingMaskIntoConstraints="NO" id="swL-WA-dTs">
                     <rect key="frame" x="44" y="-15" width="15" height="15"/>
@@ -91,4 +91,7 @@
             <point key="canvasLocation" x="-93.5" y="128"/>
         </view>
     </objects>
+    <resources>
+        <image name="tabbar_productCartSelect" width="23" height="23"/>
+    </resources>
 </document>

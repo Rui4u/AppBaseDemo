@@ -32,7 +32,7 @@
                                 <action selector="clikdSubmitOrder:" destination="iN0-l3-epB" eventType="touchUpInside" id="yYc-fi-KQ3"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="Ezg-Sy-3ZQ">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="Ezg-Sy-3ZQ">
                             <rect key="frame" x="67" y="0.0" width="151" height="105"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <color key="textColor" red="0.93333333333333335" green="0.36078431372549019" blue="0.33725490196078434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

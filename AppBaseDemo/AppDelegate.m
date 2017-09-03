@@ -12,7 +12,7 @@
 #import "LoginViewRootController.h"
 #import "MoreViewController.h"
 #import "OrderListViewController.h"
-
+#import "UserLocationViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -41,7 +41,7 @@
 	self.navgationController.navigationBar.hidden = YES;
 	[self.window makeKeyAndVisible];
 
-	
+    [self.navgationController pushViewController:[UserLocationViewController new] animated:YES];
 	return YES;
 }
 
