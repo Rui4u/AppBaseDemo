@@ -37,6 +37,14 @@
 	 {
 		 NSDictionary * responeMp = (NSDictionary * ) success ;
 		 
+		 
+		 NSArray * infoArray = [[success objectForKey:@"store"] allKeys];
+		 for (int i = 0 ; i < infoArray.count; i ++) {
+			 if (![infoArray[i] isEqualToString:@"token"]){
+				 saveDataUserDefaultForValueKey([[success objectForKey:@"store"] valueForKey:infoArray[i]] , infoArray[i]);
+			 }
+		 }
+		 
 		 if ([[responeMp objectForKey:@"isSucceed"] isEqualToString:@"yes"]) {
 			 completionHandler(YES);//注册成功
 		 }else {

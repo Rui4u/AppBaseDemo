@@ -34,6 +34,8 @@
     self.userName.hidden = isNotLogin;
     self.userLevel.hidden = isNotLogin;
     self.userLevelImage.hidden = isNotLogin;
+	
+	self.userName.text = (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:@"managerName"];
 
 }
 - (IBAction)clickMyOrderButton:(UIButton *)sender {
@@ -91,7 +93,10 @@
     self.userName.hidden = isNotLogin;
     self.userLevel.hidden = isNotLogin;
     self.userLevelImage.hidden = isNotLogin;
-    
+	
+	self.userName.text = (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:@"managerName"];
+
+	
     UITapGestureRecognizer*tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(loginIn)];
     
     [_notLoginLabel addGestureRecognizer:tapGesture];
