@@ -7,12 +7,18 @@
 //
 
 #import "AccountManagementViewController.h"
-
+#import "UpdatePasswordViewController.h"
 @interface AccountManagementViewController ()
 
 @end
 
 @implementation AccountManagementViewController
+- (IBAction)updatePwd:(id)sender {
+	
+	UpdatePasswordViewController * updatePasswordViewController = [[UpdatePasswordViewController alloc] init];
+	[self.navigationController pushViewController:updatePasswordViewController animated:YES];
+	
+}
 - (IBAction)clickLoginOut:(id)sender {
     APP_DELEGATE.customTabBar.tabBarView.selectedIndex = 0;
     [self.navigationController popViewControllerAnimated:YES];
