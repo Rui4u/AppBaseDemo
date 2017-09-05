@@ -44,6 +44,9 @@
          saveDataUserDefaultForValueKey([success valueForKey:@"isFinish"] , @"isFinish");
          
          [[NSNotificationCenter defaultCenter] postNotificationName:CNotificationLogInSucess object:nil userInfo:nil];
+		 
+		 [APP_DELEGATE.navgationController popToRootViewControllerAnimated:YES];
+		 APP_DELEGATE.customTabBar.tabBarView.selectedIndex = 0;
          
          
      } operationFailure:^(id failure) {

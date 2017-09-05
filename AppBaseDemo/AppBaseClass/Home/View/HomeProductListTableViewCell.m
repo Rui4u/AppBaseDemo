@@ -10,6 +10,7 @@
 #import "SelectSpecificationView.h"
 #import "HomeDataModel.h"
 #import "SelectAddView.h"
+#import "NewCustomAlertView.h"
 @interface HomeProductListTableViewCell () <SelectSpecificationViewDelegate>
 
 /**
@@ -231,9 +232,25 @@
 	
 }
 - (void)clickDeteleButton:(UIButton *)sender {
-    if ([self.delegate respondsToSelector:@selector(clickDeteleGoodsWith:)]) {
-        [self.delegate clickDeteleGoodsWith:self.indexPath];
-    }
+	UILabel * view = [UILabel creatLabelWithText:@"是否删除清单" FontOfSize:14 textColor:@"333333"];
+	NewCustomAlertView * newCustomAlertView = [[NewCustomAlertView alloc] init];
+	newCustomAlertView.alertViewWidth  = SCREEN_WIDTH - 24;
+	newCustomAlertView.contentView = view;
+	newCustomAlertView.contentViewHeight = 50 + 15;
+	newCustomAlertView.buttonTitleArray  = @[@"取消",@"确定"];
+	newCustomAlertView.buttonColorArray = @[@"333333",Main_Font_Green_Color];
+	newCustomAlertView.titleLabelText = @"提示";
+	[newCustomAlertView reloadData];
+	
+	newCustomAlertView.clickBlock = ^(NSInteger index) {
+		if (index == 1) {
+			if ([self.delegate respondsToSelector:@selector(clickDeteleGoodsWith:)]) {
+				[self.delegate clickDeteleGoodsWith:self.indexPath];
+			}
+		}
+	};
+	
+	
 
 }
 @end

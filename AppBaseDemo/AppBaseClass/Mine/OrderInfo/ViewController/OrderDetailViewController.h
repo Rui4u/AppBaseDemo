@@ -10,4 +10,6 @@
 
 @interface OrderDetailViewController : BaseViewController
 @property (nonatomic ,copy ) NSString * orderId;
+
+@property (nonatomic ,copy ) void(^cancelBlock)();
 @end

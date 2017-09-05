@@ -99,6 +99,9 @@
 		2B6BE3601F46B72B00D0C915 /* MyOrderListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B6BE35E1F46B72B00D0C915 /* MyOrderListTableViewCell.xib */; };
 		2B7DCC021F3579CC00E88B38 /* HomeProductListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7DCC011F3579CC00E88B38 /* HomeProductListTableViewCell.m */; };
 		2B7DCC0C1F358CC400E88B38 /* SelectSpecificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7DCC0B1F358CC400E88B38 /* SelectSpecificationView.m */; };
+		2B815AE41F5E3708006A622C /* CancelOrderBussiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B815AE31F5E3708006A622C /* CancelOrderBussiness.m */; };
+		2B815AE71F5E37B8006A622C /* UpdatePwdBussiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B815AE61F5E37B8006A622C /* UpdatePwdBussiness.m */; };
+		2B815AEA1F5E3CE1006A622C /* NewCustomAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B815AE91F5E3CE1006A622C /* NewCustomAlertView.m */; };
 		2B8460691F41446E0013D26D /* ProdcutDetailBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B8460681F41446E0013D26D /* ProdcutDetailBottomView.xib */; };
 		2B84606C1F417C850013D26D /* ProductDetailTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B84606B1F417C850013D26D /* ProductDetailTopView.m */; };
 		2B84606F1F417F7F0013D26D /* ProductDetailTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B84606E1F417F7F0013D26D /* ProductDetailTitleView.m */; };
@@ -393,6 +396,12 @@
 		2B7DCC011F3579CC00E88B38 /* HomeProductListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeProductListTableViewCell.m; sourceTree = "<group>"; };
 		2B7DCC0A1F358CC400E88B38 /* SelectSpecificationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectSpecificationView.h; sourceTree = "<group>"; };
 		2B7DCC0B1F358CC400E88B38 /* SelectSpecificationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectSpecificationView.m; sourceTree = "<group>"; };
+		2B815AE21F5E3708006A622C /* CancelOrderBussiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CancelOrderBussiness.h; sourceTree = "<group>"; };
+		2B815AE31F5E3708006A622C /* CancelOrderBussiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CancelOrderBussiness.m; sourceTree = "<group>"; };
+		2B815AE51F5E37B8006A622C /* UpdatePwdBussiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdatePwdBussiness.h; sourceTree = "<group>"; };
+		2B815AE61F5E37B8006A622C /* UpdatePwdBussiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdatePwdBussiness.m; sourceTree = "<group>"; };
+		2B815AE81F5E3CE1006A622C /* NewCustomAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewCustomAlertView.h; sourceTree = "<group>"; };
+		2B815AE91F5E3CE1006A622C /* NewCustomAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewCustomAlertView.m; sourceTree = "<group>"; };
 		2B8460681F41446E0013D26D /* ProdcutDetailBottomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProdcutDetailBottomView.xib; sourceTree = "<group>"; };
 		2B84606A1F417C850013D26D /* ProductDetailTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailTopView.h; sourceTree = "<group>"; };
 		2B84606B1F417C850013D26D /* ProductDetailTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailTopView.m; sourceTree = "<group>"; };
@@ -946,6 +955,8 @@
 				2B3FD7E61F49307B003DE7C3 /* FillOrderBussiness.m */,
 				2BE91FFF1F53AE5400A2DD9C /* DoOrderBussiness.h */,
 				2BE920001F53AE5400A2DD9C /* DoOrderBussiness.m */,
+				2B815AE21F5E3708006A622C /* CancelOrderBussiness.h */,
+				2B815AE31F5E3708006A622C /* CancelOrderBussiness.m */,
 			);
 			path = Bussiness;
 			sourceTree = "<group>";
@@ -1048,6 +1059,8 @@
 		2BA025131F2AD85E003EB25D /* AppBaseTools */ = {
 			isa = PBXGroup;
 			children = (
+				2B815AE81F5E3CE1006A622C /* NewCustomAlertView.h */,
+				2B815AE91F5E3CE1006A622C /* NewCustomAlertView.m */,
 				2B5AA4DB1F3DB74000C3EE31 /* HZCustomSearchBar.h */,
 				2B5AA4DC1F3DB74000C3EE31 /* HZCustomSearchBar.m */,
 				2B5AA4DE1F3DB83400C3EE31 /* CommonSearchController.h */,
@@ -1399,6 +1412,8 @@
 				2B0973E91F4D8FEF000B581B /* SendVCodeUpdateBussiness.m */,
 				2B0973EB1F4D90F8000B581B /* VerifyCodeTelUpdateBussiness.h */,
 				2B0973EC1F4D90F8000B581B /* VerifyCodeTelUpdateBussiness.m */,
+				2B815AE51F5E37B8006A622C /* UpdatePwdBussiness.h */,
+				2B815AE61F5E37B8006A622C /* UpdatePwdBussiness.m */,
 			);
 			path = Bussiness;
 			sourceTree = "<group>";
@@ -1816,6 +1831,7 @@
 				2B84606F1F417F7F0013D26D /* ProductDetailTitleView.m in Sources */,
 				2B3FD7D81F4929E3003DE7C3 /* FillOrderSelectTableViewCell.m in Sources */,
 				2BC14DB81F31CD3500919808 /* SBJsonParser.m in Sources */,
+				2B815AEA1F5E3CE1006A622C /* NewCustomAlertView.m in Sources */,
 				2B5AA4E01F3DB83400C3EE31 /* CommonSearchController.m in Sources */,
 				2B50F3291F4D2AD100C28A20 /* OrderDetailViewController.m in Sources */,
 				2B4C35BE1F4C1AA500B22431 /* CommonListViewController.m in Sources */,
@@ -1869,6 +1885,7 @@
 				2BD5D7181F39925100BE1994 /* UserInfoViewController.m in Sources */,
 				2BFCFDEA1F413B63001DA10D /* AppProductMainCell.m in Sources */,
 				2BD5D70C1F39871700BE1994 /* PinYinForObjc.m in Sources */,
+				2B815AE71F5E37B8006A622C /* UpdatePwdBussiness.m in Sources */,
 				2BFCFDE71F413B63001DA10D /* GetSelectedProductModel.m in Sources */,
 				2B8460791F419DAC0013D26D /* ProcudtDetailedInformationView.m in Sources */,
 				2BA0253F1F2B06AD003EB25D /* RootViewController.m in Sources */,
@@ -1895,6 +1912,7 @@
 				2B0E70C01F41E86E0037B4A7 /* ProductDetaiModel.m in Sources */,
 				2BC14DC11F31CD3500919808 /* SBJsonUTF8Stream.m in Sources */,
 				2BC14DBA1F31CD3500919808 /* SBJsonStreamParserAccumulator.m in Sources */,
+				2B815AE41F5E3708006A622C /* CancelOrderBussiness.m in Sources */,
 				2BA025331F2AE470003EB25D /* SRCustomTabBarController.m in Sources */,
 				2B386F7B1F29B69A00228620 /* main.m in Sources */,
 				2B6BE3551F4691C300D0C915 /* OrderDetailBussiness.m in Sources */,

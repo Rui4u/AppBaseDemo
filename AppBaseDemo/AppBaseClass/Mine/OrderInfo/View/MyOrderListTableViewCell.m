@@ -8,6 +8,7 @@
 
 #import "MyOrderListTableViewCell.h"
 #import "OrderListModel.h"
+#import "NewCustomAlertView.h"
 @interface MyOrderListTableViewCell()
 
 @property (weak, nonatomic) IBOutlet UIView *categoryView;
@@ -21,6 +22,35 @@
 @end
 @implementation MyOrderListTableViewCell
 - (IBAction)clickButton:(UIButton *)sender {
+	
+	if ([sender.titleLabel.text isEqualToString:@"取消进度"]) {
+		
+		UILabel * view = [UILabel creatLabelWithText:@"是否取消订单" FontOfSize:14 textColor:@"333333"];
+		NewCustomAlertView * newCustomAlertView = [[NewCustomAlertView alloc] init];
+		newCustomAlertView.alertViewWidth  = SCREEN_WIDTH - 24;
+		newCustomAlertView.contentView = view;
+		newCustomAlertView.contentViewHeight = 50 + 15;
+		newCustomAlertView.buttonTitleArray  = @[@"取消",@"确定"];
+		newCustomAlertView.buttonColorArray = @[@"333333",Main_Font_Green_Color];
+		newCustomAlertView.titleLabelText = @"取消订单";
+		[newCustomAlertView reloadData];
+		
+		newCustomAlertView.clickBlock = ^(NSInteger index) {
+			
+			if (index == 1) {
+				if (self.cancelOrderBlock) {
+					self.cancelOrderBlock(self.orderListInfo.orderListId);
+				}
+			}
+		};
+		
+	}else {
+		if (self.buyAgainBlock) {
+			self.buyAgainBlock();
+		}
+	
+	}
+	
 }
 
 - (void)awakeFromNib {
@@ -37,13 +67,29 @@
 
 - (void)setOrderListInfo:(OrderList *)orderListInfo {
 
+	_orderListInfo = orderListInfo;
 	for (id view in self.categoryView.subviews) {
 		
 		[view removeFromSuperview];
 	}
 	
 	self.orderTime.text = orderListInfo.addTime;
-	self.status.text = self.orderListInfo.orderStatus;
+	NSString * statusStr;
+	if (self.orderListInfo.orderStatus.intValue == 0) {
+		statusStr = @"待配货";
+	}else if (self.orderListInfo.orderStatus.intValue == 1) {
+		statusStr = @"待发货";
+	}else if (self.orderListInfo.orderStatus.intValue == 2) {
+		statusStr = @"待收货";
+	}else if (self.orderListInfo.orderStatus.intValue == 3) {
+		statusStr = @"已完成";
+	}else if (self.orderListInfo.orderStatus.intValue == 3) {
+		statusStr = @"已取消";
+	}else
+		
+//	0待配货 1 待发货，2待收货，3已完成，4已取消
+	
+	
 	
 	_productNumber.attributedText =
 	[NSMutableAttributedString setAttributeString: [NSString stringWithFormat:@"共{%ld}类商品",orderListInfo.goods.count]

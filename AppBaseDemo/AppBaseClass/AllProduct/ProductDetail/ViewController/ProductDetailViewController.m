@@ -66,7 +66,12 @@
 }
 - (void)pullToRefresh {
     
-    
+	
+	if (isNotLogin) {
+		[self showLoginViewController:nil];
+		 return;
+	}
+	
     [ProductDetailBussiness requestProductDetailWithToken:TOKEN goodsId:self.goodsId completionSuccessHandler:^(ProductDetaiModel *productModel) {
         
         
@@ -317,11 +322,15 @@
     __weak typeof(self) weakSelf = self;
     _productDetailTopView.clickAddProductListButton = ^(UIButton *sender) {
 		sender.selected = !sender.selected;
+		
+		
 		if (sender.selected) {
 			[ProductAddListBussiness requestProductAddListWithToken:TOKEN goodsId:weakSelf.goodsId completionSuccessHandler:^(BOOL succeed) {
 				NSLog(@"加入清单成功");
 				
 				sender.selected = succeed;
+				
+				[[NSNotificationCenter defaultCenter] postNotificationName:CNRefreashHomeData object:nil userInfo:nil];
 				
 			} completionFailHandler:^(NSString *failMessage) {
 				[weakSelf showToastWithMessage:failMessage showTime:1];
@@ -331,7 +340,10 @@
 		}else {
 			[ProductRemoveListBussiness requestProductRemoveListWithToken:TOKEN goodsId:weakSelf.goodsId completionSuccessHandler:^(BOOL succeed) {
 				NSLog(@"删除清单成功");
+				
 				sender.selected = NO;
+				
+				[[NSNotificationCenter defaultCenter] postNotificationName:CNRefreashHomeData object:nil userInfo:nil];
 				
 			} completionFailHandler:^(NSString *failMessage) {
 				[weakSelf showToastWithMessage:failMessage showTime:1];

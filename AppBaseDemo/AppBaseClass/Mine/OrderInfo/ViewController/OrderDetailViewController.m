@@ -11,6 +11,8 @@
 #import "OrderDetailBussiness.h"
 #import "OrderDetailModel.h"
 #import "FillOrderNomailCell.h"
+#import "NewCustomAlertView.h"
+#import "CancelOrderBussiness.h"
 
 @interface OrderDetailViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *mainTableView;
@@ -39,6 +41,39 @@
 	}];
 }
 - (IBAction)cancelOrder:(id)sender {
+	UILabel * view = [UILabel creatLabelWithText:@"是否取消订单" FontOfSize:14 textColor:@"333333"];
+	NewCustomAlertView * newCustomAlertView = [[NewCustomAlertView alloc] init];
+	newCustomAlertView.alertViewWidth  = SCREEN_WIDTH - 24;
+	newCustomAlertView.contentView = view;
+	newCustomAlertView.contentViewHeight = 50 + 15;
+	newCustomAlertView.buttonTitleArray  = @[@"取消",@"确定"];
+	newCustomAlertView.buttonColorArray = @[@"333333",Main_Font_Green_Color];
+	newCustomAlertView.titleLabelText = @"取消订单";
+	[newCustomAlertView reloadData];
+	
+	newCustomAlertView.clickBlock = ^(NSInteger index) {
+		
+		if (index == 1) {
+			[CancelOrderBussiness requestCancelOrderWithToken:TOKEN orderId:self.orderId completionSuccessHandler:^(NSDictionary *dict) {
+				
+				[self showToastWithMessage:@"取消成功" showTime:1];
+				
+				[self.navigationController popViewControllerAnimated:YES];
+				
+				if (self.cancelBlock) {
+					self.cancelBlock();
+				}
+				
+			} completionFailHandler:^(NSString *failMessage) {
+				
+			} completionError:^(NSString *netWorkErrorMessage) {
+				
+			}];
+		}
+	};
+
+	
+	
 }
 - (IBAction)buyAgain:(id)sender {
 }

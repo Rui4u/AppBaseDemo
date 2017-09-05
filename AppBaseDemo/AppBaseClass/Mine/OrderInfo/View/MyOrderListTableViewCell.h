@@ -11,4 +11,8 @@
 @interface MyOrderListTableViewCell : UITableViewCell
 
 @property (nonatomic ,strong ) OrderList * orderListInfo;
+
+@property (nonatomic ,copy ) void(^cancelOrderBlock)(NSString * stringId);
+
+@property (nonatomic ,copy ) void(^buyAgainBlock)();
 @end

@@ -20,6 +20,7 @@
 #import "AddToShoppingCartAnimation.h"
 #import "DeleteCartBusiness.h"
 #import "ProductRemoveListBussiness.h"
+#import "NewCustomAlertView.h"
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource,HomeProductListTableViewCellDelegate,SelectTypeViewDelegate>
 @property (nonatomic ,strong ) HomeTopView * topView;
 @property (nonatomic ,strong ) SelectTypeView * selectTypeView;
@@ -168,6 +169,8 @@
 #pragma mark 删除清单
 - (void)clickDeteleGoodsWith:(NSIndexPath *)indexPath {
 
+	
+
     [ProductRemoveListBussiness requestProductRemoveListWithToken:TOKEN goodsId:self.dataSourse.ProductionInfoList[indexPath.section].goodsList[indexPath.row].goodsId completionSuccessHandler:^(BOOL succeed) {
         NSLog(@"删除清单成功");
     [self.dataSourse.ProductionInfoList[indexPath.section].goodsList removeObjectAtIndex:indexPath.row];
@@ -184,7 +187,9 @@
 
 #pragma mark - 去详情
 - (void)clickGoToProductDetailWith:(NSIndexPath *)indexPath andGuiGeIndex:(NSInteger)index {
-    
+	
+	
+	
     ProductDetailViewController * productDetailViewController = [[ProductDetailViewController alloc] init];
     productDetailViewController.goodsId = self.dataSourse.ProductionInfoList[indexPath.section].goodsList[indexPath.row].goodsId;
     productDetailViewController.guigeId = self.dataSourse.ProductionInfoList[indexPath.section].goodsList[indexPath.row].guige[index].guigeID;

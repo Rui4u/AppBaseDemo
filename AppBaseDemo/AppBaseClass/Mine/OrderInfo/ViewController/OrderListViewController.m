@@ -12,11 +12,12 @@
 #import "CustomScrollSelectView.h"
 #import "OrderListModel.h"
 #import "OrderDetailViewController.h"
+#import "CancelOrderBussiness.h"
 @interface OrderListViewController ()<UITableViewDelegate,UITableViewDataSource,CustomScrollSelectViewDelegate>
 
 @property (nonatomic ,strong ) UITableView * mainTableView;
 
-@property (nonatomic ,strong ) NSArray<OrderList *> * orderListData;
+@property (nonatomic ,strong ) NSMutableArray<OrderList *> * orderListData;
 
 @property (nonatomic ,strong ) CustomScrollSelectView * customScrollSelectView;
 @end
@@ -72,7 +73,7 @@
     
 	[OrderListBussiness requestOrderListWithToken:TOKEN state:self.state
 						 completionSuccessHandler:^(OrderListModel *getSelectedProductModel) {
-							 self.orderListData = getSelectedProductModel.orderList;
+							 self.orderListData = [NSMutableArray arrayWithArray: getSelectedProductModel.orderList];
 							 [self.mainTableView reloadData];
 						 } completionFailHandler:^(NSString *failMessage) {
 							 [self showToastWithMessage:failMessage showTime:1];
@@ -111,7 +112,26 @@
 	}
 	cell.orderListInfo = self.orderListData[indexPath.section];
 	cell.selectionStyle = UITableViewCellSelectionStyleNone;
-
+	
+	__weak typeof(self) weakSelf = self;
+	
+	cell.cancelOrderBlock = ^(NSString *orderId) {
+	
+		[CancelOrderBussiness requestCancelOrderWithToken:TOKEN orderId:orderId completionSuccessHandler:^(NSDictionary *dict) {
+			
+			[self showToastWithMessage:@"取消成功" showTime:1];
+			[weakSelf.orderListData removeObjectAtIndex:[indexPath row]];  //删除_data数组里的数据
+			[weakSelf.mainTableView reloadData];
+			
+		} completionFailHandler:^(NSString *failMessage) {
+			
+		} completionError:^(NSString *netWorkErrorMessage) {
+			
+		}];
+	};
+	cell.buyAgainBlock = ^{
+		
+	};
 	return cell;
 }
 
@@ -120,8 +140,14 @@
 
 	//订单详情
 	OrderDetailViewController *orderDetailViewController = [[OrderDetailViewController alloc] init];
+	
 	orderDetailViewController.orderId = self.orderListData[indexPath.section].orderListId;
 	[self.navigationController pushViewController:orderDetailViewController animated:YES];
+	
+	__weak typeof(self) weakSelf = self;
+	orderDetailViewController.cancelBlock = ^{
+		[weakSelf requestOrderList];
+	};
 
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

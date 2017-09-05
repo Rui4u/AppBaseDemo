@@ -19,6 +19,9 @@
 #define kRegisterBusinessUrl                 [NSString stringWithFormat :@"%@/gs/store/insert?",kHTTP_HOST_URL]
 //登录
 #define kLoginBusinessUrl                 [NSString stringWithFormat :@"%@/gs/store/login?",kHTTP_HOST_URL]
+//修改密码
+#define KUpdatePwdBussinessUrl                 [NSString stringWithFormat :@"%@/gs/store/updatePwd?",kHTTP_HOST_URL]
+
 //开通城市列表
 #define kCityListBusinessUrl                 [NSString stringWithFormat :@"%@/gs/city/listAPI?",kHTTP_HOST_URL]
 //完善用户信息
@@ -74,8 +77,8 @@
 #define kFillOrderBussinessUrl [NSString stringWithFormat :@"%@/gs/orderAPI/submitOrder?",kHTTP_HOST_URL]
 //下单
 #define kDoOrderBussinessUrl [NSString stringWithFormat :@"%@/gs/orderAPI/buildOrder?",kHTTP_HOST_URL]
-
-
+//取消订单
+#define kCancelOrderBussinessUrl [NSString stringWithFormat :@"%@/gs/orderAPI/cancelOrder?",kHTTP_HOST_URL]
 NS_ASSUME_NONNULL_BEGIN
 typedef void (^netWorkFailBlock)(NSString * netWorkMeeage);
 
