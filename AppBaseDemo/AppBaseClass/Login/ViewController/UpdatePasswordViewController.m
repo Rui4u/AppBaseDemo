@@ -22,6 +22,9 @@
 	[self.view endEditing:YES];
 	NSLog(@"点击修改");
 	[UpdatePwdBussiness requestStoreInfoWithToken:TOKEN oldPwd:self.oldPwdLabel.text newPwd:self.updatePwdLabel.text completionSuccessHandler:^(BOOL succeed) {
+		
+		
+		[self showToastWithMessage:@"修改密码成功 请重新登录" showTime:1];
 		clearUserDefaults();
 		[self showLoginViewController:nil];
 		[self.navigationController popToRootViewControllerAnimated:YES];
