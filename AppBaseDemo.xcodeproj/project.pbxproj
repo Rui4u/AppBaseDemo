@@ -606,6 +606,13 @@
 		2BC60A6D1F4493BD0069D70B /* ShopCartListBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopCartListBottomView.h; sourceTree = "<group>"; };
 		2BC60A6E1F4493BD0069D70B /* ShopCartListBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopCartListBottomView.m; sourceTree = "<group>"; };
 		2BC60A701F4493D10069D70B /* ShopCartListBottomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShopCartListBottomView.xib; sourceTree = "<group>"; };
+		2BCF4A841F6BA133000C2AC3 /* AddInfoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddInfoVC.h; sourceTree = "<group>"; };
+		2BCF4A851F6BA133000C2AC3 /* AddInfoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddInfoVC.m; sourceTree = "<group>"; };
+		2BCF4A861F6BA133000C2AC3 /* PaySelectVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaySelectVC.h; sourceTree = "<group>"; };
+		2BCF4A871F6BA133000C2AC3 /* PaySelectVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaySelectVC.m; sourceTree = "<group>"; };
+		2BCF4A881F6BA133000C2AC3 /* payStatusVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = payStatusVC.h; sourceTree = "<group>"; };
+		2BCF4A891F6BA133000C2AC3 /* payStatusVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = payStatusVC.m; sourceTree = "<group>"; };
+		2BCF4A8A1F6BA133000C2AC3 /* payStatusVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = payStatusVC.xib; sourceTree = "<group>"; };
 		2BD099331F433FFA008A1827 /* ShoppingCartGoodsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingCartGoodsTableViewCell.h; sourceTree = "<group>"; };
 		2BD099341F433FFA008A1827 /* ShoppingCartGoodsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCartGoodsTableViewCell.m; sourceTree = "<group>"; };
 		2BD099351F433FFA008A1827 /* ShoppingCartGoodsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShoppingCartGoodsTableViewCell.xib; sourceTree = "<group>"; };
@@ -1373,6 +1380,7 @@
 		2BB9D9681F407CA00092A9CF /* ShoppingCart */ = {
 			isa = PBXGroup;
 			children = (
+				2BCF4A831F6BA133000C2AC3 /* PaySelectedVC */,
 				2B93E8EE1F4550F3007FF2A1 /* ShoppingCartManager.h */,
 				2B93E8EF1F4550F3007FF2A1 /* ShoppingCartManager.m */,
 				2B93E8F11F4596B7007FF2A1 /* DealWithShoppingCartData.h */,
@@ -1571,6 +1579,20 @@
 				2B815AE61F5E37B8006A622C /* UpdatePwdBussiness.m */,
 			);
 			path = Bussiness;
+			sourceTree = "<group>";
+		};
+		2BCF4A831F6BA133000C2AC3 /* PaySelectedVC */ = {
+			isa = PBXGroup;
+			children = (
+				2BCF4A841F6BA133000C2AC3 /* AddInfoVC.h */,
+				2BCF4A851F6BA133000C2AC3 /* AddInfoVC.m */,
+				2BCF4A861F6BA133000C2AC3 /* PaySelectVC.h */,
+				2BCF4A871F6BA133000C2AC3 /* PaySelectVC.m */,
+				2BCF4A881F6BA133000C2AC3 /* payStatusVC.h */,
+				2BCF4A891F6BA133000C2AC3 /* payStatusVC.m */,
+				2BCF4A8A1F6BA133000C2AC3 /* payStatusVC.xib */,
+			);
+			path = PaySelectedVC;
 			sourceTree = "<group>";
 		};
 		2BD5D6F51F39871700BE1994 /* PinYinSearchLib */ = {

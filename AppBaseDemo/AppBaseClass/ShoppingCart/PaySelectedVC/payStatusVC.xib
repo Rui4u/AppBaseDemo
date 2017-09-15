@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="payStatusVC">
+            <connections>
+                <outlet property="payStatusImageView" destination="YLs-6O-vZi" id="KsC-Xs-G7a"/>
+                <outlet property="payStatusLabel" destination="l4h-H3-GxG" id="ch5-uY-qnv"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zXa-f4-3w9">
+                    <rect key="frame" x="0.0" y="264" width="375" height="12"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="12" id="IIp-We-d0j"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner.png" translatesAutoresizingMaskIntoConstraints="NO" id="XWb-qn-NiB">
+                    <rect key="frame" x="0.0" y="306" width="375" height="160"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="160" id="5M6-dN-U4v"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="psM-GX-vfk">
+                    <rect key="frame" x="0.0" y="64" width="375" height="185"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="支付成功" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l4h-H3-GxG">
+                            <rect key="frame" x="0.0" y="127" width="375" height="17"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="17" id="CCI-Rk-bvK"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YLs-6O-vZi">
+                            <rect key="frame" x="152.5" y="42" width="70" height="70"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="70" id="EhU-fR-aSB"/>
+                                <constraint firstAttribute="width" constant="70" id="qTo-AM-EJm"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="l4h-H3-GxG" firstAttribute="top" secondItem="YLs-6O-vZi" secondAttribute="bottom" constant="15" id="9rR-gD-BM1"/>
+                        <constraint firstAttribute="trailing" secondItem="l4h-H3-GxG" secondAttribute="trailing" id="BJ5-A8-1P5"/>
+                        <constraint firstItem="YLs-6O-vZi" firstAttribute="centerX" secondItem="psM-GX-vfk" secondAttribute="centerX" id="NGl-Eh-Fnu"/>
+                        <constraint firstItem="YLs-6O-vZi" firstAttribute="top" secondItem="psM-GX-vfk" secondAttribute="top" constant="42" id="TL2-yk-Xz3"/>
+                        <constraint firstItem="l4h-H3-GxG" firstAttribute="leading" secondItem="psM-GX-vfk" secondAttribute="leading" id="omt-7V-6PM"/>
+                        <constraint firstAttribute="height" constant="185" id="uQ7-4H-eyW"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="XWb-qn-NiB" firstAttribute="top" secondItem="zXa-f4-3w9" secondAttribute="bottom" constant="30" id="0OW-eA-gYw"/>
+                <constraint firstItem="zXa-f4-3w9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="3CX-3U-tFO"/>
+                <constraint firstAttribute="trailing" secondItem="XWb-qn-NiB" secondAttribute="trailing" id="3jd-l0-3oe"/>
+                <constraint firstAttribute="trailing" secondItem="psM-GX-vfk" secondAttribute="trailing" id="ASm-7d-w2J"/>
+                <constraint firstItem="psM-GX-vfk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="Bqa-1b-ani"/>
+                <constraint firstItem="XWb-qn-NiB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="So0-BZ-aLC"/>
+                <constraint firstAttribute="trailing" secondItem="zXa-f4-3w9" secondAttribute="trailing" id="fhD-hr-Iav"/>
+                <constraint firstItem="zXa-f4-3w9" firstAttribute="top" secondItem="psM-GX-vfk" secondAttribute="bottom" constant="15" id="pXZ-nd-Jke"/>
+                <constraint firstItem="psM-GX-vfk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="vdF-pH-kKZ"/>
+            </constraints>
+            <point key="canvasLocation" x="262" y="292"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="banner.png" width="375" height="145"/>
+    </resources>
+</document>
