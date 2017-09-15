@@ -142,6 +142,9 @@
 		2BA8DAB11F319BA9000190C1 /* DESEncryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA8DAB01F319BA9000190C1 /* DESEncryption.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		2BA8DAB61F319BCE000190C1 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA8DAB41F319BCE000190C1 /* GTMBase64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -Wno-shorten-64-to-32"; }; };
 		2BA9AAC81F4FD18E0035672C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BA9AAC71F4FD18E0035672C /* Assets.xcassets */; };
+		2BAF5D291F6B6E560057B516 /* WXApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BAF5D231F6B6C600057B516 /* WXApiManager.m */; };
+		2BAF5D2A1F6B6E600057B516 /* WXApiResponseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BAF5D251F6B6C600057B516 /* WXApiResponseHandler.m */; };
+		2BAF5D2B1F6B6E690057B516 /* WeChaPayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BAF5D281F6B6C600057B516 /* WeChaPayModel.m */; };
 		2BAFB5121F333054001236B8 /* GetCityListBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BAFB5111F333054001236B8 /* GetCityListBusiness.m */; };
 		2BB9D96F1F407CC10092A9CF /* AddToCartKeyBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BB9D96E1F407CC10092A9CF /* AddToCartKeyBoard.m */; };
 		2BB9D9711F407CCA0092A9CF /* AddToCartKeyBoard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BB9D9701F407CCA0092A9CF /* AddToCartKeyBoard.xib */; };
@@ -477,6 +480,12 @@
 		2BA8DAB41F319BCE000190C1 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
 		2BA8DAB51F319BCE000190C1 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
 		2BA9AAC71F4FD18E0035672C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2BAF5D221F6B6C600057B516 /* WXApiManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXApiManager.h; sourceTree = "<group>"; };
+		2BAF5D231F6B6C600057B516 /* WXApiManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXApiManager.m; sourceTree = "<group>"; };
+		2BAF5D241F6B6C600057B516 /* WXApiResponseHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXApiResponseHandler.h; sourceTree = "<group>"; };
+		2BAF5D251F6B6C600057B516 /* WXApiResponseHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXApiResponseHandler.m; sourceTree = "<group>"; };
+		2BAF5D271F6B6C600057B516 /* WeChaPayModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeChaPayModel.h; sourceTree = "<group>"; };
+		2BAF5D281F6B6C600057B516 /* WeChaPayModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeChaPayModel.m; sourceTree = "<group>"; };
 		2BAFB5101F333054001236B8 /* GetCityListBusiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetCityListBusiness.h; sourceTree = "<group>"; };
 		2BAFB5111F333054001236B8 /* GetCityListBusiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetCityListBusiness.m; sourceTree = "<group>"; };
 		2BB9D96D1F407CC10092A9CF /* AddToCartKeyBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddToCartKeyBoard.h; sourceTree = "<group>"; };
@@ -1064,6 +1073,7 @@
 		2BA025131F2AD85E003EB25D /* AppBaseTools */ = {
 			isa = PBXGroup;
 			children = (
+				2BAF5D211F6B6C600057B516 /* WXPay */,
 				2B815AE81F5E3CE1006A622C /* NewCustomAlertView.h */,
 				2B815AE91F5E3CE1006A622C /* NewCustomAlertView.m */,
 				2B5AA4DB1F3DB74000C3EE31 /* HZCustomSearchBar.h */,
@@ -1221,6 +1231,27 @@
 				2BA8DAB51F319BCE000190C1 /* GTMDefines.h */,
 			);
 			path = GTMBase64;
+			sourceTree = "<group>";
+		};
+		2BAF5D211F6B6C600057B516 /* WXPay */ = {
+			isa = PBXGroup;
+			children = (
+				2BAF5D221F6B6C600057B516 /* WXApiManager.h */,
+				2BAF5D231F6B6C600057B516 /* WXApiManager.m */,
+				2BAF5D241F6B6C600057B516 /* WXApiResponseHandler.h */,
+				2BAF5D251F6B6C600057B516 /* WXApiResponseHandler.m */,
+				2BAF5D261F6B6C600057B516 /* WXPayModel */,
+			);
+			path = WXPay;
+			sourceTree = "<group>";
+		};
+		2BAF5D261F6B6C600057B516 /* WXPayModel */ = {
+			isa = PBXGroup;
+			children = (
+				2BAF5D271F6B6C600057B516 /* WeChaPayModel.h */,
+				2BAF5D281F6B6C600057B516 /* WeChaPayModel.m */,
+			);
+			path = WXPayModel;
 			sourceTree = "<group>";
 		};
 		2BB9D9681F407CA00092A9CF /* ShoppingCart */ = {
@@ -1801,6 +1832,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BAF5D2B1F6B6E690057B516 /* WeChaPayModel.m in Sources */,
+				2BAF5D2A1F6B6E600057B516 /* WXApiResponseHandler.m in Sources */,
+				2BAF5D291F6B6E560057B516 /* WXApiManager.m in Sources */,
 				2B2E109A1F3C0AF900092EAA /* BaseBussiness.m in Sources */,
 				2BE920011F53AE5400A2DD9C /* DoOrderBussiness.m in Sources */,
 				2BA025301F2AE470003EB25D /* BaseViewController.m in Sources */,

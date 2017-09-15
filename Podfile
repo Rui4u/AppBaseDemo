@@ -12,4 +12,5 @@ pod 'Masonry'
 pod 'BaiduMapKit'
 pod 'MJExtension'
 pod 'MBProgressHUD', '~> 1.0.0'
+pod 'WechatOpenSDK'
 end

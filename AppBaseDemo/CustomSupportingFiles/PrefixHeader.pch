@@ -19,4 +19,5 @@
 #import "CommonNotification.h"
 #import "ShoppingCartManager.h"
 #import "HomeDataModel.h"
+#import "WXApiManager.h"
 #endif /* PrefixHeader_pch */
