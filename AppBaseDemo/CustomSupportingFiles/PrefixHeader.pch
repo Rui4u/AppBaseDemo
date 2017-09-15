@@ -19,5 +19,8 @@
 #import "CommonNotification.h"
 #import "ShoppingCartManager.h"
 #import "HomeDataModel.h"
+#import "WXApi.h"
 #import "WXApiManager.h"
+#import <AlipaySDK/AlipaySDK.h>
+#import "ALiPayApiManager.h"
 #endif /* PrefixHeader_pch */
