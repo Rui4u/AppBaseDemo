@@ -72,9 +72,9 @@
 - (void)back {
 
     [self dismissViewControllerAnimated:YES completion:nil];
-    [APP_DELEGATE.navgationCtrller.childViewControllers enumerateObjectsUsingBlock:^(__kindof UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    [APP_DELEGATE.navgationController.childViewControllers enumerateObjectsUsingBlock:^(__kindof UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if ([obj isKindOfClass:[RootViewController class]]) {
-            [APP_DELEGATE.navgationCtrller popToViewController:obj animated:NO];
+            [APP_DELEGATE.navgationController popToViewController:obj animated:NO];
             return;
         
         }

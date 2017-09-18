@@ -17,6 +17,7 @@
 #import "DoOrderBussiness.h"
 #import "DealWithShoppingCartData.h"
 #import "OrderListViewController.h"
+#import "PaySelectVC.h"
 @interface FillOrderViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic) UITableView *mainTableView;
 
@@ -51,20 +52,28 @@
 		
 		NSArray * array = [DealWithShoppingCartData dealWithShoppingCartDataWith:[ShoppingCartManager sharedManager].CarInfoList];
 		
-		[DoOrderBussiness requestDoOrderWithToken:TOKEN addressId:self.getFillOrderModel.store.storeId orederType:@"1" carImageInfo:array completionSuccessHandler:^(NSDictionary *dict) {
+		if (YES) {
 			
-			[self showToastWithMessage:@"下单成功" showTime:1];
+			PaySelectVC * paySelectVC  = [[PaySelectVC alloc] init];
+			[self.navigationController pushViewController:paySelectVC animated:YES];
 			
-			OrderListViewController * orderListViewController = [[OrderListViewController alloc] init];
-			orderListViewController.state = @"1";
-			[self.navigationController pushViewController:orderListViewController animated:YES];
-			
-			
-		} completionFailHandler:^(NSString *failMessage) {
-			
-		} completionError:^(NSString *netWorkErrorMessage) {
-			
-		}];
+		}else {
+	
+			[DoOrderBussiness requestDoOrderWithToken:TOKEN addressId:self.getFillOrderModel.store.storeId orederType:@"1" carImageInfo:array completionSuccessHandler:^(NSDictionary *dict) {
+				
+				[self showToastWithMessage:@"下单成功" showTime:1];
+				
+				OrderListViewController * orderListViewController = [[OrderListViewController alloc] init];
+				orderListViewController.state = @"1";
+				[self.navigationController pushViewController:orderListViewController animated:YES];
+				
+				
+			} completionFailHandler:^(NSString *failMessage) {
+				
+			} completionError:^(NSString *netWorkErrorMessage) {
+				
+			}];
+		}
 		
 	};
 	

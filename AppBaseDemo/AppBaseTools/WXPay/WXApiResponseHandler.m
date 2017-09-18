@@ -26,25 +26,25 @@
 {
     if(weChaPayModel != nil)
     {
-        NSString * status           = weChaPayModel.msg;
-        NSString * partnerId        = weChaPayModel.partnerId;
+        NSString * status           = weChaPayModel.message;
+        NSString * partnerId        = weChaPayModel.partnerid;
         if ([status isEqualToString:@"OK"])
         {
-            NSString *stamp         = weChaPayModel.timeStamp;
+            NSString *stamp         = weChaPayModel.timestamp;
             //调起微信支付
             PayReq * req            = [[PayReq alloc] init];
             req.partnerId           = partnerId;
-            req.prepayId            = weChaPayModel.prepayId;   
-            req.nonceStr            = weChaPayModel.nonceStr;
+            req.prepayId            = weChaPayModel.prepayid;
+            req.nonceStr            = weChaPayModel.noncestr;
             req.timeStamp           = [stamp intValue];
             req.package             = weChaPayModel.package;
             req.sign                = weChaPayModel.sign;
             [WXApi sendReq:req];
-            return weChaPayModel.msg;
+            return weChaPayModel.message;
         }
         else
         {
-            return weChaPayModel.msg;
+            return weChaPayModel.message;
         }
     }
     else

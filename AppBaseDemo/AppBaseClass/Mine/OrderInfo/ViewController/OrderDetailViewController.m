@@ -83,11 +83,36 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+	
+	if (section == 0) {
+		
+	UIView * view = [[UIView alloc] init];
+		
+		UILabel * label = [[UILabel alloc] init];
+		label.text =[NSString stringWithFormat:@"订单号:%@",self.self.orderModel.orderDetails.orderId];
+		label.textAlignment = NSTextAlignmentLeft;
+		label.frame = CGRectMake(10, 0, SCREEN_WIDTH, 30);
+		[view addSubview:label];
+		
+		UILabel * statuslabel = [[UILabel alloc] init];
+		statuslabel.text =[NSString stringWithFormat:@"%@",self.self.orderModel.orderDetails.orderStatus];
+		statuslabel.textAlignment = NSTextAlignmentRight;
+		statuslabel.frame = CGRectMake(-10, 0, SCREEN_WIDTH, 30);
+		[view addSubview:label];
+		
+		return view;
+	}else {
+		
+		return  [[UIView alloc] init];
+	}
+}
 
 #pragma mark - UITableViewDataSourse
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
 	if (section == 0) {
+		
 		return 30;
 	}else {
 		return 10;
@@ -100,7 +125,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	if (section == 0) return self.orderModel.orderDetails.goods.count;
 	else  if (section == 1) return 3;
-	else  if (section == 2) return 5;
+	else  if (section == 2) return 4;
 	else return 1;
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -109,7 +134,13 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 	if (indexPath.section ==0) {
-		return 58;
+		
+		if (self.orderModel.orderDetails.goods.count == 1) {
+			return 58;
+		}else {
+			return 58 + (self.orderModel.orderDetails.goods[indexPath.row].goodsSpec.count - 1) * 21;
+			
+		}
 	}else {
 		return 37;
 	}
@@ -143,17 +174,26 @@
 		}
 		NSArray * array;
 		if (indexPath.section == 1) {
-			array = @[@[@"下单商品金额",@"无可用优惠券"],
-					  @[@"运费",@"无可用运费券"],
-					  @[@"总计",@"无可用运费券"]];
+			
+			if(self.orderModel.orderDetails.totalPrice != nil && self.orderModel.orderDetails.totalPrice!= nil
+			   ) {
+				array = @[@[@"下单商品金额",self.orderModel.orderDetails.totalPrice],
+						  @[@"运费",@"无可用运费券"],
+						  @[@"总计",self.orderModel.orderDetails.totalPrice]];
+				
+			}
+			
 		}else{
-			array = @[@[@"收货人",@"无可用优惠券"],
-					  @[@"收货地址",@"无可用运费券"],
-					  @[@"支付方式",@"无可用运费券"],
-					  @[@"下单时间",@"无可用运费券"],
-					  @[@"预计送达",@"无可用运费券"]];
+			if(self.orderModel.orderDetails.trueName != nil && self.orderModel.orderDetails.storeAddress!= nil &&
+			   self.orderModel.orderDetails.addTime != nil
+			   ) {
+			array = @[@[@"收货人",self.orderModel.orderDetails.trueName],
+					  @[@"收货地址",self.orderModel.orderDetails.storeAddress],
+					  @[@"下单时间",self.orderModel.orderDetails.addTime],
+					  @[@"预计送达",@"预计送达"]];
 
 			}
+		}
 		cell.dataSourse = array[indexPath.row];
 		return cell;
 	}

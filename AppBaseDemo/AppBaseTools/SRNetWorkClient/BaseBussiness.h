@@ -79,6 +79,12 @@
 #define kDoOrderBussinessUrl [NSString stringWithFormat :@"%@/gs/orderAPI/buildOrder?",kHTTP_HOST_URL]
 //取消订单
 #define kCancelOrderBussinessUrl [NSString stringWithFormat :@"%@/gs/orderAPI/cancelOrder?",kHTTP_HOST_URL]
+
+//微信
+#define kExecuteWXPayBussinessUrl [NSString stringWithFormat :@"%@/gs/config/pay?",kHTTP_HOST_URL]
+//支付宝
+#define kExecuteAliPayBussinessUrl [NSString stringWithFormat :@"%@/gs/config/getOrder?",kHTTP_HOST_URL]
+
 NS_ASSUME_NONNULL_BEGIN
 typedef void (^netWorkFailBlock)(NSString * netWorkMeeage);
 

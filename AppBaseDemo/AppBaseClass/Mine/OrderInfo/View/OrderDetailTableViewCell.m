@@ -15,12 +15,15 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *productName;
 @property (weak, nonatomic) IBOutlet UIImageView *imageVIew;
+
+@property (nonatomic ,strong ) UIView * bottomView;
 @end
 @implementation OrderDetailTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+	[self.contentView addSubview:self.bottomView];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -36,6 +39,22 @@
 	self.productDes.text = [NSString stringWithFormat:@"￥%@*%@",good.goodsSpec.firstObject.spec,good.goodsSpec.firstObject.goodsAmount];
 	[self.imageVIew sd_setImageWithURL:[NSURL URLWithString:good.image] placeholderImage:nil];
 
-
+	for (UIView *view in self.bottomView.subviews) {
+		[view removeFromSuperview];
+	}
+	
+	for (int i = 1 ;i <good.goodsSpec.count; i ++) {
+		UILabel * label = [UILabel creatLabelWithText:[NSString stringWithFormat:@"￥%@*%@",good.goodsSpec.firstObject.spec,good.goodsSpec.firstObject.goodsAmount] FontOfSize:14 textColor:@"33333"];
+		label.frame = CGRectMake(self.productDes.x, self.productDes.bottom + 21 * (i - 1), 100, 21);
+		[self.bottomView addSubview:label];
+	}
+	
+}
+- (UIView *)bottomView {
+	
+	if (_bottomView == nil) {
+		_bottomView = [[UIView alloc] init];
+	}
+	return _bottomView;
 }
 @end

@@ -79,7 +79,7 @@
 	// Dispose of any resources that can be recreated.
 }
 - (void)back{
-	[self dismissViewControllerAnimated:YES completion:nil];
+	[self.navigationController popViewControllerAnimated:YES];
 }
 
 /*

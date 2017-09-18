@@ -20,6 +20,19 @@
 		2B10FAF11F483CD700801BEC /* NewDemandViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B10FAEF1F483CD700801BEC /* NewDemandViewController.xib */; };
 		2B10FAF41F483CF900801BEC /* NewDemandView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B10FAF31F483CF900801BEC /* NewDemandView.m */; };
 		2B10FAF61F483D0000801BEC /* NewDemandView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B10FAF51F483D0000801BEC /* NewDemandView.xib */; };
+		2B15E7FB1F6F640300C2760F /* base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BAF5D371F6B7E3C0057B516 /* base64.m */; };
+		2B15E7FC1F6F640300C2760F /* DataSigner.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BAF5D3A1F6B7E3C0057B516 /* DataSigner.m */; };
+		2B15E7FD1F6F640300C2760F /* DataVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BAF5D3C1F6B7E3C0057B516 /* DataVerifier.m */; };
+		2B15E7FE1F6F640300C2760F /* MD5DataSigner.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BAF5D3E1F6B7E3C0057B516 /* MD5DataSigner.m */; };
+		2B15E7FF1F6F640300C2760F /* NSDataEx.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BAF5D401F6B7E3C0057B516 /* NSDataEx.m */; };
+		2B15E8001F6F640300C2760F /* openssl_wrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BAF5D421F6B7E3C0057B516 /* openssl_wrapper.m */; };
+		2B15E8011F6F640300C2760F /* RSADataSigner.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BAF5D441F6B7E3C0057B516 /* RSADataSigner.m */; };
+		2B15E8021F6F640300C2760F /* RSADataVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BAF5D461F6B7E3C0057B516 /* RSADataVerifier.m */; };
+		2B15E8541F6F673000C2760F /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BAF5D311F6B7E3C0057B516 /* libcrypto.a */; };
+		2B15E8551F6F673000C2760F /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BAF5D321F6B7E3C0057B516 /* libssl.a */; };
+		2B15E8561F6F67A200C2760F /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BAF5D5F1F6B7F8C0057B516 /* AlipaySDK.framework */; };
+		2B15E8A41F6F685C00C2760F /* PaySelectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BCF4A871F6BA133000C2AC3 /* PaySelectVC.m */; };
+		2B15E8A51F6F685C00C2760F /* payStatusVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BCF4A891F6BA133000C2AC3 /* payStatusVC.m */; };
 		2B2E10511F3C015D00092EAA /* CityNotInOpenCityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B2E10501F3C015D00092EAA /* CityNotInOpenCityView.xib */; };
 		2B2E109A1F3C0AF900092EAA /* BaseBussiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2E10991F3C0A8800092EAA /* BaseBussiness.m */; };
 		2B2E10A41F3C0EDF00092EAA /* GetHomeBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2E109D1F3C0EDF00092EAA /* GetHomeBusiness.m */; };
@@ -121,6 +134,9 @@
 		2B90F89C1F2EDC0C00698C38 /* SelectViewTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B90F89B1F2EDC0C00698C38 /* SelectViewTitle.m */; };
 		2B93E8F01F4550F3007FF2A1 /* ShoppingCartManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B93E8EF1F4550F3007FF2A1 /* ShoppingCartManager.m */; };
 		2B93E8F31F4596B7007FF2A1 /* DealWithShoppingCartData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B93E8F21F4596B7007FF2A1 /* DealWithShoppingCartData.m */; };
+		2B9A5EA41F6F692F007DB3F9 /* ExecuteWXPayBussiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9A5EA31F6F692F007DB3F9 /* ExecuteWXPayBussiness.m */; };
+		2B9A5EA71F6F693D007DB3F9 /* ExecuteAliPayBussiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9A5EA61F6F693D007DB3F9 /* ExecuteAliPayBussiness.m */; };
+		2B9A5EAA1F6F69DF007DB3F9 /* WeChaPayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9A5EA91F6F69DF007DB3F9 /* WeChaPayModel.m */; };
 		2BA025171F2AD86B003EB25D /* TipLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA025161F2AD86B003EB25D /* TipLabel.m */; };
 		2BA025301F2AE470003EB25D /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA025271F2AE470003EB25D /* BaseViewController.m */; };
 		2BA025311F2AE470003EB25D /* CustomNavBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA025291F2AE470003EB25D /* CustomNavBarView.m */; };
@@ -144,7 +160,6 @@
 		2BA9AAC81F4FD18E0035672C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BA9AAC71F4FD18E0035672C /* Assets.xcassets */; };
 		2BAF5D291F6B6E560057B516 /* WXApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BAF5D231F6B6C600057B516 /* WXApiManager.m */; };
 		2BAF5D2A1F6B6E600057B516 /* WXApiResponseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BAF5D251F6B6C600057B516 /* WXApiResponseHandler.m */; };
-		2BAF5D2B1F6B6E690057B516 /* WeChaPayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BAF5D281F6B6C600057B516 /* WeChaPayModel.m */; };
 		2BAF5D481F6B7ECD0057B516 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BAF5D471F6B7ECD0057B516 /* libc++.tbd */; };
 		2BAF5D4A1F6B7ED30057B516 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BAF5D491F6B7ED30057B516 /* libz.tbd */; };
 		2BAF5D4C1F6B7EDD0057B516 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BAF5D4B1F6B7EDD0057B516 /* SystemConfiguration.framework */; };
@@ -156,7 +171,6 @@
 		2BAF5D581F6B7F070057B516 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BAF5D571F6B7F070057B516 /* Foundation.framework */; };
 		2BAF5D5A1F6B7F0F0057B516 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BAF5D591F6B7F0F0057B516 /* CFNetwork.framework */; };
 		2BAF5D5C1F6B7F170057B516 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BAF5D5B1F6B7F170057B516 /* CoreMotion.framework */; };
-		2BAF5D601F6B7FB00057B516 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BAF5D5F1F6B7F8C0057B516 /* AlipaySDK.framework */; };
 		2BAF5D611F6B80000057B516 /* ALiPayApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BAF5D2E1F6B7E3C0057B516 /* ALiPayApiManager.m */; };
 		2BAF5D621F6B80080057B516 /* ALiPayApiResponseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BAF5D301F6B7E3C0057B516 /* ALiPayApiResponseHandler.m */; };
 		2BAF5D631F6B80130057B516 /* Order.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BAF5D341F6B7E3C0057B516 /* Order.m */; };
@@ -270,6 +284,82 @@
 		2B10FAF21F483CF900801BEC /* NewDemandView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewDemandView.h; sourceTree = "<group>"; };
 		2B10FAF31F483CF900801BEC /* NewDemandView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewDemandView.m; sourceTree = "<group>"; };
 		2B10FAF51F483D0000801BEC /* NewDemandView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewDemandView.xib; sourceTree = "<group>"; };
+		2B15E8521F6F657200C2760F /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlipaySDK.framework; path = AppBaseDemo/AlipaySDK.framework; sourceTree = "<group>"; };
+		2B15E8581F6F680C00C2760F /* aes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = aes.h; sourceTree = "<group>"; };
+		2B15E8591F6F680C00C2760F /* asn1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = asn1.h; sourceTree = "<group>"; };
+		2B15E85A1F6F680C00C2760F /* asn1_mac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = asn1_mac.h; sourceTree = "<group>"; };
+		2B15E85B1F6F680C00C2760F /* asn1t.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = asn1t.h; sourceTree = "<group>"; };
+		2B15E85C1F6F680C00C2760F /* bio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bio.h; sourceTree = "<group>"; };
+		2B15E85D1F6F680C00C2760F /* blowfish.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = blowfish.h; sourceTree = "<group>"; };
+		2B15E85E1F6F680C00C2760F /* bn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bn.h; sourceTree = "<group>"; };
+		2B15E85F1F6F680C00C2760F /* buffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = buffer.h; sourceTree = "<group>"; };
+		2B15E8601F6F680C00C2760F /* camellia.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = camellia.h; sourceTree = "<group>"; };
+		2B15E8611F6F680C00C2760F /* cast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cast.h; sourceTree = "<group>"; };
+		2B15E8621F6F680C00C2760F /* cmac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cmac.h; sourceTree = "<group>"; };
+		2B15E8631F6F680C00C2760F /* cms.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cms.h; sourceTree = "<group>"; };
+		2B15E8641F6F680C00C2760F /* comp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = comp.h; sourceTree = "<group>"; };
+		2B15E8651F6F680C00C2760F /* conf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = conf.h; sourceTree = "<group>"; };
+		2B15E8661F6F680C00C2760F /* conf_api.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = conf_api.h; sourceTree = "<group>"; };
+		2B15E8671F6F680C00C2760F /* crypto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto.h; sourceTree = "<group>"; };
+		2B15E8681F6F680C00C2760F /* des.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = des.h; sourceTree = "<group>"; };
+		2B15E8691F6F680C00C2760F /* des_old.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = des_old.h; sourceTree = "<group>"; };
+		2B15E86A1F6F680C00C2760F /* dh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dh.h; sourceTree = "<group>"; };
+		2B15E86B1F6F680C00C2760F /* dsa.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dsa.h; sourceTree = "<group>"; };
+		2B15E86C1F6F680C00C2760F /* dso.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dso.h; sourceTree = "<group>"; };
+		2B15E86D1F6F680C00C2760F /* dtls1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dtls1.h; sourceTree = "<group>"; };
+		2B15E86E1F6F680C00C2760F /* e_os2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = e_os2.h; sourceTree = "<group>"; };
+		2B15E86F1F6F680C00C2760F /* ebcdic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ebcdic.h; sourceTree = "<group>"; };
+		2B15E8701F6F680C00C2760F /* ec.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ec.h; sourceTree = "<group>"; };
+		2B15E8711F6F680C00C2760F /* ecdh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ecdh.h; sourceTree = "<group>"; };
+		2B15E8721F6F680C00C2760F /* ecdsa.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ecdsa.h; sourceTree = "<group>"; };
+		2B15E8731F6F680C00C2760F /* engine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = engine.h; sourceTree = "<group>"; };
+		2B15E8741F6F680C00C2760F /* err.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = err.h; sourceTree = "<group>"; };
+		2B15E8751F6F680C00C2760F /* evp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = evp.h; sourceTree = "<group>"; };
+		2B15E8761F6F680C00C2760F /* hmac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hmac.h; sourceTree = "<group>"; };
+		2B15E8771F6F680C00C2760F /* idea.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = idea.h; sourceTree = "<group>"; };
+		2B15E8781F6F680C00C2760F /* krb5_asn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = krb5_asn.h; sourceTree = "<group>"; };
+		2B15E8791F6F680C00C2760F /* kssl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kssl.h; sourceTree = "<group>"; };
+		2B15E87A1F6F680C00C2760F /* lhash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = lhash.h; sourceTree = "<group>"; };
+		2B15E87B1F6F680C00C2760F /* md4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = md4.h; sourceTree = "<group>"; };
+		2B15E87C1F6F680C00C2760F /* md5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = md5.h; sourceTree = "<group>"; };
+		2B15E87D1F6F680C00C2760F /* mdc2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mdc2.h; sourceTree = "<group>"; };
+		2B15E87E1F6F680C00C2760F /* modes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = modes.h; sourceTree = "<group>"; };
+		2B15E87F1F6F680C00C2760F /* obj_mac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = obj_mac.h; sourceTree = "<group>"; };
+		2B15E8801F6F680C00C2760F /* objects.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = objects.h; sourceTree = "<group>"; };
+		2B15E8811F6F680C00C2760F /* ocsp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ocsp.h; sourceTree = "<group>"; };
+		2B15E8821F6F680C00C2760F /* opensslconf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = opensslconf.h; sourceTree = "<group>"; };
+		2B15E8831F6F680C00C2760F /* opensslv.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = opensslv.h; sourceTree = "<group>"; };
+		2B15E8841F6F680C00C2760F /* ossl_typ.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ossl_typ.h; sourceTree = "<group>"; };
+		2B15E8851F6F680C00C2760F /* pem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pem.h; sourceTree = "<group>"; };
+		2B15E8861F6F680C00C2760F /* pem2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pem2.h; sourceTree = "<group>"; };
+		2B15E8871F6F680C00C2760F /* pkcs12.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pkcs12.h; sourceTree = "<group>"; };
+		2B15E8881F6F680C00C2760F /* pkcs7.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pkcs7.h; sourceTree = "<group>"; };
+		2B15E8891F6F680C00C2760F /* pqueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pqueue.h; sourceTree = "<group>"; };
+		2B15E88A1F6F680C00C2760F /* rand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rand.h; sourceTree = "<group>"; };
+		2B15E88B1F6F680C00C2760F /* rc2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rc2.h; sourceTree = "<group>"; };
+		2B15E88C1F6F680C00C2760F /* rc4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rc4.h; sourceTree = "<group>"; };
+		2B15E88D1F6F680C00C2760F /* ripemd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ripemd.h; sourceTree = "<group>"; };
+		2B15E88E1F6F680C00C2760F /* rsa.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rsa.h; sourceTree = "<group>"; };
+		2B15E88F1F6F680C00C2760F /* safestack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = safestack.h; sourceTree = "<group>"; };
+		2B15E8901F6F680C00C2760F /* seed.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = seed.h; sourceTree = "<group>"; };
+		2B15E8911F6F680C00C2760F /* sha.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sha.h; sourceTree = "<group>"; };
+		2B15E8921F6F680C00C2760F /* srp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = srp.h; sourceTree = "<group>"; };
+		2B15E8931F6F680C00C2760F /* srtp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = srtp.h; sourceTree = "<group>"; };
+		2B15E8941F6F680C00C2760F /* ssl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ssl.h; sourceTree = "<group>"; };
+		2B15E8951F6F680C00C2760F /* ssl2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ssl2.h; sourceTree = "<group>"; };
+		2B15E8961F6F680C00C2760F /* ssl23.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ssl23.h; sourceTree = "<group>"; };
+		2B15E8971F6F680C00C2760F /* ssl3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ssl3.h; sourceTree = "<group>"; };
+		2B15E8981F6F680C00C2760F /* stack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stack.h; sourceTree = "<group>"; };
+		2B15E8991F6F680C00C2760F /* symhacks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = symhacks.h; sourceTree = "<group>"; };
+		2B15E89A1F6F680C00C2760F /* tls1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tls1.h; sourceTree = "<group>"; };
+		2B15E89B1F6F680C00C2760F /* ts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ts.h; sourceTree = "<group>"; };
+		2B15E89C1F6F680C00C2760F /* txt_db.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = txt_db.h; sourceTree = "<group>"; };
+		2B15E89D1F6F680C00C2760F /* ui.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ui.h; sourceTree = "<group>"; };
+		2B15E89E1F6F680C00C2760F /* ui_compat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ui_compat.h; sourceTree = "<group>"; };
+		2B15E89F1F6F680C00C2760F /* whrlpool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = whrlpool.h; sourceTree = "<group>"; };
+		2B15E8A01F6F680C00C2760F /* x509.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = x509.h; sourceTree = "<group>"; };
+		2B15E8A11F6F680C00C2760F /* x509_vfy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = x509_vfy.h; sourceTree = "<group>"; };
+		2B15E8A21F6F680C00C2760F /* x509v3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = x509v3.h; sourceTree = "<group>"; };
 		2B2E10501F3C015D00092EAA /* CityNotInOpenCityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CityNotInOpenCityView.xib; sourceTree = "<group>"; };
 		2B2E10991F3C0A8800092EAA /* BaseBussiness.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseBussiness.m; sourceTree = "<group>"; };
 		2B2E109C1F3C0EDF00092EAA /* GetHomeBusiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetHomeBusiness.h; sourceTree = "<group>"; };
@@ -453,6 +543,12 @@
 		2B93E8EF1F4550F3007FF2A1 /* ShoppingCartManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCartManager.m; sourceTree = "<group>"; };
 		2B93E8F11F4596B7007FF2A1 /* DealWithShoppingCartData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealWithShoppingCartData.h; sourceTree = "<group>"; };
 		2B93E8F21F4596B7007FF2A1 /* DealWithShoppingCartData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealWithShoppingCartData.m; sourceTree = "<group>"; };
+		2B9A5EA21F6F692F007DB3F9 /* ExecuteWXPayBussiness.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExecuteWXPayBussiness.h; sourceTree = "<group>"; };
+		2B9A5EA31F6F692F007DB3F9 /* ExecuteWXPayBussiness.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExecuteWXPayBussiness.m; sourceTree = "<group>"; };
+		2B9A5EA51F6F693D007DB3F9 /* ExecuteAliPayBussiness.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExecuteAliPayBussiness.h; sourceTree = "<group>"; };
+		2B9A5EA61F6F693D007DB3F9 /* ExecuteAliPayBussiness.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExecuteAliPayBussiness.m; sourceTree = "<group>"; };
+		2B9A5EA81F6F69DF007DB3F9 /* WeChaPayModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeChaPayModel.h; sourceTree = "<group>"; };
+		2B9A5EA91F6F69DF007DB3F9 /* WeChaPayModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeChaPayModel.m; sourceTree = "<group>"; };
 		2BA025151F2AD86B003EB25D /* TipLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipLabel.h; sourceTree = "<group>"; };
 		2BA025161F2AD86B003EB25D /* TipLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipLabel.m; sourceTree = "<group>"; };
 		2BA025181F2AD932003EB25D /* SRGlobalConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRGlobalConfig.h; sourceTree = "<group>"; };
@@ -499,8 +595,6 @@
 		2BAF5D231F6B6C600057B516 /* WXApiManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXApiManager.m; sourceTree = "<group>"; };
 		2BAF5D241F6B6C600057B516 /* WXApiResponseHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXApiResponseHandler.h; sourceTree = "<group>"; };
 		2BAF5D251F6B6C600057B516 /* WXApiResponseHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXApiResponseHandler.m; sourceTree = "<group>"; };
-		2BAF5D271F6B6C600057B516 /* WeChaPayModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeChaPayModel.h; sourceTree = "<group>"; };
-		2BAF5D281F6B6C600057B516 /* WeChaPayModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeChaPayModel.m; sourceTree = "<group>"; };
 		2BAF5D2D1F6B7E3C0057B516 /* ALiPayApiManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALiPayApiManager.h; sourceTree = "<group>"; };
 		2BAF5D2E1F6B7E3C0057B516 /* ALiPayApiManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALiPayApiManager.m; sourceTree = "<group>"; };
 		2BAF5D2F1F6B7E3C0057B516 /* ALiPayApiResponseHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALiPayApiResponseHandler.h; sourceTree = "<group>"; };
@@ -606,8 +700,6 @@
 		2BC60A6D1F4493BD0069D70B /* ShopCartListBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopCartListBottomView.h; sourceTree = "<group>"; };
 		2BC60A6E1F4493BD0069D70B /* ShopCartListBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopCartListBottomView.m; sourceTree = "<group>"; };
 		2BC60A701F4493D10069D70B /* ShopCartListBottomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShopCartListBottomView.xib; sourceTree = "<group>"; };
-		2BCF4A841F6BA133000C2AC3 /* AddInfoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddInfoVC.h; sourceTree = "<group>"; };
-		2BCF4A851F6BA133000C2AC3 /* AddInfoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddInfoVC.m; sourceTree = "<group>"; };
 		2BCF4A861F6BA133000C2AC3 /* PaySelectVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaySelectVC.h; sourceTree = "<group>"; };
 		2BCF4A871F6BA133000C2AC3 /* PaySelectVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaySelectVC.m; sourceTree = "<group>"; };
 		2BCF4A881F6BA133000C2AC3 /* payStatusVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = payStatusVC.h; sourceTree = "<group>"; };
@@ -683,7 +775,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BAF5D601F6B7FB00057B516 /* AlipaySDK.framework in Frameworks */,
+				2B15E8561F6F67A200C2760F /* AlipaySDK.framework in Frameworks */,
+				2B15E8541F6F673000C2760F /* libcrypto.a in Frameworks */,
+				2B15E8551F6F673000C2760F /* libssl.a in Frameworks */,
 				2BAF5D5C1F6B7F170057B516 /* CoreMotion.framework in Frameworks */,
 				2BAF5D5A1F6B7F0F0057B516 /* CFNetwork.framework in Frameworks */,
 				2BAF5D581F6B7F070057B516 /* Foundation.framework in Frameworks */,
@@ -737,6 +831,89 @@
 			);
 			path = Model;
 			sourceTree = "<group>";
+		};
+		2B15E8571F6F680C00C2760F /* openssl */ = {
+			isa = PBXGroup;
+			children = (
+				2B15E8581F6F680C00C2760F /* aes.h */,
+				2B15E8591F6F680C00C2760F /* asn1.h */,
+				2B15E85A1F6F680C00C2760F /* asn1_mac.h */,
+				2B15E85B1F6F680C00C2760F /* asn1t.h */,
+				2B15E85C1F6F680C00C2760F /* bio.h */,
+				2B15E85D1F6F680C00C2760F /* blowfish.h */,
+				2B15E85E1F6F680C00C2760F /* bn.h */,
+				2B15E85F1F6F680C00C2760F /* buffer.h */,
+				2B15E8601F6F680C00C2760F /* camellia.h */,
+				2B15E8611F6F680C00C2760F /* cast.h */,
+				2B15E8621F6F680C00C2760F /* cmac.h */,
+				2B15E8631F6F680C00C2760F /* cms.h */,
+				2B15E8641F6F680C00C2760F /* comp.h */,
+				2B15E8651F6F680C00C2760F /* conf.h */,
+				2B15E8661F6F680C00C2760F /* conf_api.h */,
+				2B15E8671F6F680C00C2760F /* crypto.h */,
+				2B15E8681F6F680C00C2760F /* des.h */,
+				2B15E8691F6F680C00C2760F /* des_old.h */,
+				2B15E86A1F6F680C00C2760F /* dh.h */,
+				2B15E86B1F6F680C00C2760F /* dsa.h */,
+				2B15E86C1F6F680C00C2760F /* dso.h */,
+				2B15E86D1F6F680C00C2760F /* dtls1.h */,
+				2B15E86E1F6F680C00C2760F /* e_os2.h */,
+				2B15E86F1F6F680C00C2760F /* ebcdic.h */,
+				2B15E8701F6F680C00C2760F /* ec.h */,
+				2B15E8711F6F680C00C2760F /* ecdh.h */,
+				2B15E8721F6F680C00C2760F /* ecdsa.h */,
+				2B15E8731F6F680C00C2760F /* engine.h */,
+				2B15E8741F6F680C00C2760F /* err.h */,
+				2B15E8751F6F680C00C2760F /* evp.h */,
+				2B15E8761F6F680C00C2760F /* hmac.h */,
+				2B15E8771F6F680C00C2760F /* idea.h */,
+				2B15E8781F6F680C00C2760F /* krb5_asn.h */,
+				2B15E8791F6F680C00C2760F /* kssl.h */,
+				2B15E87A1F6F680C00C2760F /* lhash.h */,
+				2B15E87B1F6F680C00C2760F /* md4.h */,
+				2B15E87C1F6F680C00C2760F /* md5.h */,
+				2B15E87D1F6F680C00C2760F /* mdc2.h */,
+				2B15E87E1F6F680C00C2760F /* modes.h */,
+				2B15E87F1F6F680C00C2760F /* obj_mac.h */,
+				2B15E8801F6F680C00C2760F /* objects.h */,
+				2B15E8811F6F680C00C2760F /* ocsp.h */,
+				2B15E8821F6F680C00C2760F /* opensslconf.h */,
+				2B15E8831F6F680C00C2760F /* opensslv.h */,
+				2B15E8841F6F680C00C2760F /* ossl_typ.h */,
+				2B15E8851F6F680C00C2760F /* pem.h */,
+				2B15E8861F6F680C00C2760F /* pem2.h */,
+				2B15E8871F6F680C00C2760F /* pkcs12.h */,
+				2B15E8881F6F680C00C2760F /* pkcs7.h */,
+				2B15E8891F6F680C00C2760F /* pqueue.h */,
+				2B15E88A1F6F680C00C2760F /* rand.h */,
+				2B15E88B1F6F680C00C2760F /* rc2.h */,
+				2B15E88C1F6F680C00C2760F /* rc4.h */,
+				2B15E88D1F6F680C00C2760F /* ripemd.h */,
+				2B15E88E1F6F680C00C2760F /* rsa.h */,
+				2B15E88F1F6F680C00C2760F /* safestack.h */,
+				2B15E8901F6F680C00C2760F /* seed.h */,
+				2B15E8911F6F680C00C2760F /* sha.h */,
+				2B15E8921F6F680C00C2760F /* srp.h */,
+				2B15E8931F6F680C00C2760F /* srtp.h */,
+				2B15E8941F6F680C00C2760F /* ssl.h */,
+				2B15E8951F6F680C00C2760F /* ssl2.h */,
+				2B15E8961F6F680C00C2760F /* ssl23.h */,
+				2B15E8971F6F680C00C2760F /* ssl3.h */,
+				2B15E8981F6F680C00C2760F /* stack.h */,
+				2B15E8991F6F680C00C2760F /* symhacks.h */,
+				2B15E89A1F6F680C00C2760F /* tls1.h */,
+				2B15E89B1F6F680C00C2760F /* ts.h */,
+				2B15E89C1F6F680C00C2760F /* txt_db.h */,
+				2B15E89D1F6F680C00C2760F /* ui.h */,
+				2B15E89E1F6F680C00C2760F /* ui_compat.h */,
+				2B15E89F1F6F680C00C2760F /* whrlpool.h */,
+				2B15E8A01F6F680C00C2760F /* x509.h */,
+				2B15E8A11F6F680C00C2760F /* x509_vfy.h */,
+				2B15E8A21F6F680C00C2760F /* x509v3.h */,
+			);
+			name = openssl;
+			path = AppBaseDemo/AppBaseTools/ALiPay/openssl;
+			sourceTree = SOURCE_ROOT;
 		};
 		2B2E109B1F3C0EDF00092EAA /* Bussiness */ = {
 			isa = PBXGroup;
@@ -1321,8 +1498,6 @@
 		2BAF5D261F6B6C600057B516 /* WXPayModel */ = {
 			isa = PBXGroup;
 			children = (
-				2BAF5D271F6B6C600057B516 /* WeChaPayModel.h */,
-				2BAF5D281F6B6C600057B516 /* WeChaPayModel.m */,
 			);
 			path = WXPayModel;
 			sourceTree = "<group>";
@@ -1371,6 +1546,7 @@
 		2BAF5D5D1F6B7F8C0057B516 /* ALiPayTool */ = {
 			isa = PBXGroup;
 			children = (
+				2B15E8571F6F680C00C2760F /* openssl */,
 				2BAF5D5E1F6B7F8C0057B516 /* AlipaySDK.bundle */,
 				2BAF5D5F1F6B7F8C0057B516 /* AlipaySDK.framework */,
 			);
@@ -1404,6 +1580,10 @@
 				2BD099411F4349D2008A1827 /* ShoppingCartListBussiness.m */,
 				2B6BE33B1F4682CE00D0C915 /* CountPriceBussiness.h */,
 				2B6BE33C1F4682CE00D0C915 /* CountPriceBussiness.m */,
+				2B9A5EA21F6F692F007DB3F9 /* ExecuteWXPayBussiness.h */,
+				2B9A5EA31F6F692F007DB3F9 /* ExecuteWXPayBussiness.m */,
+				2B9A5EA51F6F693D007DB3F9 /* ExecuteAliPayBussiness.h */,
+				2B9A5EA61F6F693D007DB3F9 /* ExecuteAliPayBussiness.m */,
 			);
 			path = Bussiness;
 			sourceTree = "<group>";
@@ -1415,6 +1595,8 @@
 				2BC60A6B1F448C880069D70B /* ShoppingCartListModel.m */,
 				2B6BE33E1F46830D00D0C915 /* CountPriceModel.h */,
 				2B6BE33F1F46830D00D0C915 /* CountPriceModel.m */,
+				2B9A5EA81F6F69DF007DB3F9 /* WeChaPayModel.h */,
+				2B9A5EA91F6F69DF007DB3F9 /* WeChaPayModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1584,8 +1766,6 @@
 		2BCF4A831F6BA133000C2AC3 /* PaySelectedVC */ = {
 			isa = PBXGroup;
 			children = (
-				2BCF4A841F6BA133000C2AC3 /* AddInfoVC.h */,
-				2BCF4A851F6BA133000C2AC3 /* AddInfoVC.m */,
 				2BCF4A861F6BA133000C2AC3 /* PaySelectVC.h */,
 				2BCF4A871F6BA133000C2AC3 /* PaySelectVC.m */,
 				2BCF4A881F6BA133000C2AC3 /* payStatusVC.h */,
@@ -1744,6 +1924,7 @@
 		94B244F5B69C63A1CEBC1238 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2B15E8521F6F657200C2760F /* AlipaySDK.framework */,
 				2BAF5D5B1F6B7F170057B516 /* CoreMotion.framework */,
 				2BAF5D591F6B7F0F0057B516 /* CFNetwork.framework */,
 				2BAF5D571F6B7F070057B516 /* Foundation.framework */,
@@ -1981,10 +2162,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B15E8A41F6F685C00C2760F /* PaySelectVC.m in Sources */,
+				2B15E8A51F6F685C00C2760F /* payStatusVC.m in Sources */,
+				2B15E7FB1F6F640300C2760F /* base64.m in Sources */,
+				2B15E7FC1F6F640300C2760F /* DataSigner.m in Sources */,
+				2B15E7FD1F6F640300C2760F /* DataVerifier.m in Sources */,
+				2B15E7FE1F6F640300C2760F /* MD5DataSigner.m in Sources */,
+				2B15E7FF1F6F640300C2760F /* NSDataEx.m in Sources */,
+				2B9A5EAA1F6F69DF007DB3F9 /* WeChaPayModel.m in Sources */,
+				2B15E8001F6F640300C2760F /* openssl_wrapper.m in Sources */,
+				2B15E8011F6F640300C2760F /* RSADataSigner.m in Sources */,
+				2B15E8021F6F640300C2760F /* RSADataVerifier.m in Sources */,
 				2BAF5D631F6B80130057B516 /* Order.m in Sources */,
 				2BAF5D621F6B80080057B516 /* ALiPayApiResponseHandler.m in Sources */,
 				2BAF5D611F6B80000057B516 /* ALiPayApiManager.m in Sources */,
-				2BAF5D2B1F6B6E690057B516 /* WeChaPayModel.m in Sources */,
 				2BAF5D2A1F6B6E600057B516 /* WXApiResponseHandler.m in Sources */,
 				2BAF5D291F6B6E560057B516 /* WXApiManager.m in Sources */,
 				2B2E109A1F3C0AF900092EAA /* BaseBussiness.m in Sources */,
@@ -2062,6 +2253,7 @@
 				2B8460741F418F040013D26D /* ProductInfoView.m in Sources */,
 				2BC14DBE1F31CD3500919808 /* SBJsonStreamWriterAccumulator.m in Sources */,
 				2BFCFDE81F413B63001DA10D /* GoodslistAllModel.m in Sources */,
+				2B9A5EA41F6F692F007DB3F9 /* ExecuteWXPayBussiness.m in Sources */,
 				2BFCFDF41F413ED8001DA10D /* ProductDetailViewController.m in Sources */,
 				2BC14DBC1F31CD3500919808 /* SBJsonStreamParserState.m in Sources */,
 				2B84606C1F417C850013D26D /* ProductDetailTopView.m in Sources */,
@@ -2080,6 +2272,7 @@
 				2BD5D70F1F39871700BE1994 /* ZYPinYinSearch.m in Sources */,
 				2BD5D7181F39925100BE1994 /* UserInfoViewController.m in Sources */,
 				2BFCFDEA1F413B63001DA10D /* AppProductMainCell.m in Sources */,
+				2B9A5EA71F6F693D007DB3F9 /* ExecuteAliPayBussiness.m in Sources */,
 				2BD5D70C1F39871700BE1994 /* PinYinForObjc.m in Sources */,
 				2B815AE71F5E37B8006A622C /* UpdatePwdBussiness.m in Sources */,
 				2BFCFDE71F413B63001DA10D /* GetSelectedProductModel.m in Sources */,
@@ -2303,14 +2496,32 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AppBaseDemo/AppBaseTools/ALiPay/ALiPayTool",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/AppBaseDemo",
 				);
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_INPUT_FILETYPE = automatic;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/AppBaseDemo/CustomSupportingFiles/PrefixHeader.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/BaiduMapKit\"",
+					"\"${PODS_ROOT}/Headers/Public/MBProgressHUD\"",
+					"\"${PODS_ROOT}/Headers/Public/MJExtension\"",
+					"\"${PODS_ROOT}/Headers/Public/MJRefresh\"",
+					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"$(PROJECT_DIR)/AppBaseDemo/AppBaseTools/ALiPay",
+				);
 				INFOPLIST_FILE = AppBaseDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AppBaseDemo/AppBaseTools/ALiPay",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sharui.Demo.AppBaseDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -2325,14 +2536,32 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AppBaseDemo/AppBaseTools/ALiPay/ALiPayTool",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/AppBaseDemo",
 				);
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_INPUT_FILETYPE = automatic;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/AppBaseDemo/CustomSupportingFiles/PrefixHeader.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/BaiduMapKit\"",
+					"\"${PODS_ROOT}/Headers/Public/MBProgressHUD\"",
+					"\"${PODS_ROOT}/Headers/Public/MJExtension\"",
+					"\"${PODS_ROOT}/Headers/Public/MJRefresh\"",
+					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"$(PROJECT_DIR)/AppBaseDemo/AppBaseTools/ALiPay",
+				);
 				INFOPLIST_FILE = AppBaseDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AppBaseDemo/AppBaseTools/ALiPay",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sharui.Demo.AppBaseDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

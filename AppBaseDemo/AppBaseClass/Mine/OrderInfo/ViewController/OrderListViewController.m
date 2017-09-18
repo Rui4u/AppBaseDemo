@@ -66,6 +66,13 @@
     
 	[self requestOrderList];
 
+	
+	//订单详情
+	OrderDetailViewController *orderDetailViewController = [[OrderDetailViewController alloc] init];
+	
+	orderDetailViewController.orderId = @"117";
+	[self.navigationController pushViewController:orderDetailViewController animated:YES];
+	
 }
 
 - (void)requestOrderList {

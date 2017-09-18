@@ -12,6 +12,8 @@
 #import "payStatusVC.h"
 #import "ALiPayApiResponseHandler.h"
 #import "ALiPayApiManager.h"
+#import "ExecuteWXPayBussiness.h"
+#import "ExecuteAliPayBussiness.h"
 @interface PaySelectVC ()<WXApiManagerDelegate,ALiApiManagerDelegate>
 
 @end
@@ -67,49 +69,34 @@
 {
     NSString * changelType;
     switch (changelBtn.tag - 10000) {
-        case 0:
-            changelType = WECHANT;
-            break;
-        case 1:
-            changelType = ALI_PAY;
-        default:
+        case 0: {
+			[ExecuteWXPayBussiness requestExecuteWXPayWithToken:TOKEN price:@"300" completionSuccessHandler:^(WeChaPayModel *weChaPayModel) {
+				
+				[WXApiResponseHandler jumpToWxPayWithData:weChaPayModel];
+				
+			} completionFailHandler:^(NSString *failMessage) {
+				
+			} completionError:^(NSString *netWorkErrorMessage) {
+				
+			}];
+			
+		}
+			break;
+		case 1: {
+			
+			[ExecuteAliPayBussiness requestExecuteAliPayWithToken:TOKEN price:@"300" completionSuccessHandler:^(NSString *orderInfoStr) {
+				[ALiPayApiResponseHandler jumpToALiPayWithData:orderInfoStr];
+
+			} completionFailHandler:^(NSString *failMessage) {
+				
+			} completionError:^(NSString *netWorkErrorMessage) {
+				
+			}];
+		}
+		default:
             break;
     }
-     ///  去支付
-    
-    [ExecutePayBusiness executePayWithToken:TOKEN
-                                  paymentId:self.paymentId
-                                 payChannel:changelType
-                   completionSuccessHandler:^(NSString *alipayInfo, WeChaPayModel *weChaPayModel) {
-                       
-                       
-                        if ([changelType isEqualToString:ALI_PAY]) {
-//                       NSArray *aliPayArray = [alipayInfo componentsSeparatedByString:@"&"];
-//                       
-//                       NSMutableDictionary * aliPayDict = [NSMutableDictionary dictionary];
-//                       
-//                       
-//                       for (int i = 0; i < aliPayArray.count; i ++) {
-//                           NSArray *aliPayArrayTemp = [(NSString *)aliPayArray[i] componentsSeparatedByString:@"="];
-//                           [aliPayDict setValue:[(NSString *)aliPayArrayTemp.lastObject stringByReplacingOccurrencesOfString:@"\"" withString:@""]forKey:[(NSString *)aliPayArrayTemp.firstObject stringByReplacingOccurrencesOfString:@"\"" withString:@""]];
-//                       }
-                       
-                       [ALiPayApiResponseHandler jumpToALiPayWithData:alipayInfo];
-                        }
-                       //微信
-                       if ([changelType isEqualToString:WECHANT]) {
-                           [WXApiResponseHandler jumpToWxPayWithData:weChaPayModel];
-                       }
-                       
-                       
-                       
-                   }
-                      completionFailHandler:^(NSString *failMessage) {
-                          
-                      }
-                            completionError:^(NSString * netWorkErrorMessage){
-                                
-                            }];
+
 
 
 }
