@@ -284,7 +284,6 @@
 		2B10FAF21F483CF900801BEC /* NewDemandView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewDemandView.h; sourceTree = "<group>"; };
 		2B10FAF31F483CF900801BEC /* NewDemandView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewDemandView.m; sourceTree = "<group>"; };
 		2B10FAF51F483D0000801BEC /* NewDemandView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewDemandView.xib; sourceTree = "<group>"; };
-		2B15E8521F6F657200C2760F /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlipaySDK.framework; path = AppBaseDemo/AlipaySDK.framework; sourceTree = "<group>"; };
 		2B15E8581F6F680C00C2760F /* aes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = aes.h; sourceTree = "<group>"; };
 		2B15E8591F6F680C00C2760F /* asn1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = asn1.h; sourceTree = "<group>"; };
 		2B15E85A1F6F680C00C2760F /* asn1_mac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = asn1_mac.h; sourceTree = "<group>"; };
@@ -1924,7 +1923,6 @@
 		94B244F5B69C63A1CEBC1238 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2B15E8521F6F657200C2760F /* AlipaySDK.framework */,
 				2BAF5D5B1F6B7F170057B516 /* CoreMotion.framework */,
 				2BAF5D591F6B7F0F0057B516 /* CFNetwork.framework */,
 				2BAF5D571F6B7F070057B516 /* Foundation.framework */,
