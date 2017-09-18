@@ -81,6 +81,8 @@
 		statusStr = @"待发货";
 	}else if (self.orderListInfo.orderStatus.intValue == 2) {
 		statusStr = @"待收货";
+        [self.rightButton setTitle:@"去结算" forState:UIControlStateNormal];
+        
 	}else if (self.orderListInfo.orderStatus.intValue == 3) {
 		statusStr = @"已完成";
 	}else if (self.orderListInfo.orderStatus.intValue == 3) {

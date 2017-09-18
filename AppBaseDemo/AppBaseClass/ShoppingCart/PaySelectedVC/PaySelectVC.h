@@ -11,5 +11,9 @@
  *  选择支付方式  支付宝&微信
  */
 @interface PaySelectVC : BaseViewController
-@property (nonatomic ,copy) NSString * paymentId;
+@property (nonatomic ,copy) NSString * orderNumber;
+/**
+ <#Description#>
+ */
+@property (nonatomic ,copy) NSString * totolPrice;
 @end

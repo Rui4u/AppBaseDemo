@@ -70,8 +70,8 @@
     NSString * changelType;
     switch (changelBtn.tag - 10000) {
         case 0: {
-			[ExecuteWXPayBussiness requestExecuteWXPayWithToken:TOKEN price:@"300" completionSuccessHandler:^(WeChaPayModel *weChaPayModel) {
-				
+			[ExecuteWXPayBussiness requestExecuteWXPayWithToken:TOKEN price:self.totolPrice orderNum:self.orderNumber completionSuccessHandler:^(WeChaPayModel *weChaPayModel) {
+                
 				[WXApiResponseHandler jumpToWxPayWithData:weChaPayModel];
 				
 			} completionFailHandler:^(NSString *failMessage) {
@@ -84,8 +84,9 @@
 			break;
 		case 1: {
 			
-			[ExecuteAliPayBussiness requestExecuteAliPayWithToken:TOKEN price:@"300" completionSuccessHandler:^(NSString *orderInfoStr) {
-				[ALiPayApiResponseHandler jumpToALiPayWithData:orderInfoStr];
+			[ExecuteAliPayBussiness requestExecuteAliPayWithToken:TOKEN price:self.totolPrice orderNum:self.orderNumber completionSuccessHandler:^(NSString *orderInfoStr) {
+                
+                [ALiPayApiResponseHandler jumpToALiPayWithData:orderInfoStr];
 
 			} completionFailHandler:^(NSString *failMessage) {
 				

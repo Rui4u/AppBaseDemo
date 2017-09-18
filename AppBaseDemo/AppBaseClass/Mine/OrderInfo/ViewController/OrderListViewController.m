@@ -13,6 +13,8 @@
 #import "OrderListModel.h"
 #import "OrderDetailViewController.h"
 #import "CancelOrderBussiness.h"
+#import "ExecuteWXPayBussiness.h"
+#import "PaySelectVC.h"
 @interface OrderListViewController ()<UITableViewDelegate,UITableViewDataSource,CustomScrollSelectViewDelegate>
 
 @property (nonatomic ,strong ) UITableView * mainTableView;
@@ -67,11 +69,11 @@
 	[self requestOrderList];
 
 	
-	//订单详情
-	OrderDetailViewController *orderDetailViewController = [[OrderDetailViewController alloc] init];
-	
-	orderDetailViewController.orderId = @"117";
-	[self.navigationController pushViewController:orderDetailViewController animated:YES];
+//	//订单详情
+//	OrderDetailViewController *orderDetailViewController = [[OrderDetailViewController alloc] init];
+//	
+//	orderDetailViewController.orderId = @"117";
+//	[self.navigationController pushViewController:orderDetailViewController animated:YES];
 	
 }
 
@@ -137,6 +139,12 @@
 		}];
 	};
 	cell.buyAgainBlock = ^{
+        
+        PaySelectVC * paySelectVC = [[PaySelectVC alloc] init];
+        paySelectVC.totolPrice = self.orderListData[indexPath.section].totalPrice;
+        paySelectVC.orderNumber = self.orderListData[indexPath.section].orderListId;
+        [self.navigationController pushViewController:paySelectVC animated:YES];
+//
 		
 	};
 	return cell;

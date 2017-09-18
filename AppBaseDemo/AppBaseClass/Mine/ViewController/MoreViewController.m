@@ -85,9 +85,17 @@
 	MoreBaseView * moreBaseView = [[NSBundle mainBundle] loadNibNamed:@"MoreBaseView" owner:self options:nil].firstObject;
 	self.moreBaseView = moreBaseView;
 	moreBaseView.frame = CGRectMake(0, 0, SCREEN_WIDTH, moreBaseView.height);
+    
 	[_bgScrollView addSubview:moreBaseView];
 	
+    [moreBaseView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.bgScrollView.mas_left);
+        make.width.mas_equalTo(SCREEN_WIDTH);
+        make.top.equalTo(self.bgScrollView.mas_top);
+        make.height.mas_equalTo(moreBaseView.height);
+    }];
 
+    
     
     self.notLoginLabel.hidden = !isNotLogin;
     self.userName.hidden = isNotLogin;

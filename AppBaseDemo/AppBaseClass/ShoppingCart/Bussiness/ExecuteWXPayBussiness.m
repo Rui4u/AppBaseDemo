@@ -11,14 +11,16 @@
 @implementation ExecuteWXPayBussiness
 
 + (void) requestExecuteWXPayWithToken : (NSString* ) token
-								 price:(NSString *)price
+								 price:(NSString *)totalPrice
+                              orderNum:(NSString *)orderNum
 			 completionSuccessHandler : (ExecuteWXPaySuccessBlock) completionHandler
 				completionFailHandler : (ExecuteWXPayFailBlock) completionFailHandler
 					  completionError : (ExecuteWXPayErrorBlcok) completionError;
 {
 	NSMutableDictionary * body = [[NSMutableDictionary alloc]init];
-//	[body setValue:token forKey:@"token"];
-//	[body setValue:price forKey:@"price"];
+	[body setValue:token forKey:@"token"];
+	[body setValue:orderNum forKey:@"orderNum"];
+    [body setValue:totalPrice forKey:@"totalPrice"];
 	
 	[BaseNetWorkClient jsonFormGetRequestWithUrl:kExecuteWXPayBussinessUrl
 										   param:body

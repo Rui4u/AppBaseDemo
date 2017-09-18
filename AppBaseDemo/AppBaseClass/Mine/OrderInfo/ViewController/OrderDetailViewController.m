@@ -24,6 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.mainTableView.backgroundColor = [UIColor clearColor];
     // Do any additional setup after loading the view from its nib.
 	[self initNavBarView:NAV_BAR_TYPE_SECOND_LEVEL_VIEW];
 	[self.navBarView setTitle:@"订单详情"];
@@ -88,7 +89,7 @@
 	if (section == 0) {
 		
 	UIView * view = [[UIView alloc] init];
-		
+        view.backgroundColor = [UIColor whiteColor];
 		UILabel * label = [[UILabel alloc] init];
 		label.text =[NSString stringWithFormat:@"订单号:%@",self.self.orderModel.orderDetails.orderId];
 		label.textAlignment = NSTextAlignmentLeft;
@@ -160,6 +161,7 @@
 		
 		cell.good = self.orderModel.orderDetails.goods[indexPath.row];
 		cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.backgroundColor = [UIColor whiteColor];
 		return cell;
 		
 	}else {
@@ -194,6 +196,7 @@
 
 			}
 		}
+        cell.backgroundColor = [UIColor whiteColor];
 		cell.dataSourse = array[indexPath.row];
 		return cell;
 	}

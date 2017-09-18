@@ -241,6 +241,7 @@
 		2BFCFDEE1F413B63001DA10D /* AppProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFCFDE31F413B63001DA10D /* AppProductViewController.m */; };
 		2BFCFDF11F413B9F001DA10D /* ProdcutDetailBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFCFDF01F413B9F001DA10D /* ProdcutDetailBottomView.m */; };
 		2BFCFDF41F413ED8001DA10D /* ProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFCFDF31F413ED8001DA10D /* ProductDetailViewController.m */; };
+		2BFCFE891F7008A70052024E /* payStatusVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BCF4A8A1F6BA133000C2AC3 /* payStatusVC.xib */; };
 		65403DF437BA47C28C5B3CF7 /* libPods-AppBaseDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0152959586DFB41568D4F5C /* libPods-AppBaseDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -2049,6 +2050,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BFCFE891F7008A70052024E /* payStatusVC.xib in Resources */,
 				2B8460691F41446E0013D26D /* ProdcutDetailBottomView.xib in Resources */,
 				2B2E10511F3C015D00092EAA /* CityNotInOpenCityView.xib in Resources */,
 				2B41F21B1F42ABB600CB36D0 /* ProductDetailGuiGeInfo.xib in Resources */,
@@ -2522,6 +2524,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sharui.Demo.AppBaseDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -2562,6 +2565,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sharui.Demo.AppBaseDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -28,8 +28,8 @@
     {
         NSString * status           = weChaPayModel.message;
         NSString * partnerId        = weChaPayModel.partnerid;
-        if ([status isEqualToString:@"OK"])
-        {
+//        if ([status isEqualToString:@"OK"])
+//        {
             NSString *stamp         = weChaPayModel.timestamp;
             //调起微信支付
             PayReq * req            = [[PayReq alloc] init];
@@ -41,11 +41,11 @@
             req.sign                = weChaPayModel.sign;
             [WXApi sendReq:req];
             return weChaPayModel.message;
-        }
-        else
-        {
-            return weChaPayModel.message;
-        }
+//        }
+//        else
+//        {
+//            return weChaPayModel.message;
+//        }
     }
     else
     {

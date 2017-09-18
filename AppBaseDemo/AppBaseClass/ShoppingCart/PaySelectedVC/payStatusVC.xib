@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -30,12 +30,6 @@
                     <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner.png" translatesAutoresizingMaskIntoConstraints="NO" id="XWb-qn-NiB">
-                    <rect key="frame" x="0.0" y="306" width="375" height="160"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="160" id="5M6-dN-U4v"/>
-                    </constraints>
-                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="psM-GX-vfk">
                     <rect key="frame" x="0.0" y="64" width="375" height="185"/>
                     <subviews>
@@ -66,23 +60,40 @@
                         <constraint firstAttribute="height" constant="185" id="uQ7-4H-eyW"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p9T-0c-QPz">
+                    <rect key="frame" x="15" y="276" width="345" height="45"/>
+                    <color key="backgroundColor" red="0.18823529410000001" green="0.78039215689999997" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="DU4-E3-gUC"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="iPE-Uv-UC6"/>
+                    </constraints>
+                    <state key="normal" title="返回">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="back:" destination="-1" eventType="touchUpInside" id="nFD-5R-Bq7"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="XWb-qn-NiB" firstAttribute="top" secondItem="zXa-f4-3w9" secondAttribute="bottom" constant="30" id="0OW-eA-gYw"/>
                 <constraint firstItem="zXa-f4-3w9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="3CX-3U-tFO"/>
-                <constraint firstAttribute="trailing" secondItem="XWb-qn-NiB" secondAttribute="trailing" id="3jd-l0-3oe"/>
                 <constraint firstAttribute="trailing" secondItem="psM-GX-vfk" secondAttribute="trailing" id="ASm-7d-w2J"/>
                 <constraint firstItem="psM-GX-vfk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="Bqa-1b-ani"/>
-                <constraint firstItem="XWb-qn-NiB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="So0-BZ-aLC"/>
+                <constraint firstAttribute="trailing" secondItem="p9T-0c-QPz" secondAttribute="trailing" constant="15" id="KJV-lc-U7i"/>
+                <constraint firstItem="p9T-0c-QPz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="Vmk-lp-zws"/>
                 <constraint firstAttribute="trailing" secondItem="zXa-f4-3w9" secondAttribute="trailing" id="fhD-hr-Iav"/>
                 <constraint firstItem="zXa-f4-3w9" firstAttribute="top" secondItem="psM-GX-vfk" secondAttribute="bottom" constant="15" id="pXZ-nd-Jke"/>
                 <constraint firstItem="psM-GX-vfk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="vdF-pH-kKZ"/>
+                <constraint firstItem="p9T-0c-QPz" firstAttribute="top" secondItem="zXa-f4-3w9" secondAttribute="bottom" id="wr2-46-Op1"/>
             </constraints>
-            <point key="canvasLocation" x="262" y="292"/>
+            <point key="canvasLocation" x="261.5" y="291.5"/>
         </view>
     </objects>
-    <resources>
-        <image name="banner.png" width="375" height="145"/>
-    </resources>
 </document>

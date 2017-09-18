@@ -18,10 +18,11 @@ typedef void (^ExecuteAliPayErrorBlcok)(NSString * netWorkErrorMessage);
 
 
 + (void) requestExecuteAliPayWithToken : (NSString* ) token
-								 price:(NSString *)price
-			 completionSuccessHandler : (ExecuteAliPaySuccessBlock) completionHandler
-				completionFailHandler : (ExecuteAliPayFailBlock) completionFailHandler
-					  completionError : (ExecuteAliPayErrorBlcok) completionError;
+                                  price:(NSString *)totalPrice
+                               orderNum:(NSString *)orderNum
+              completionSuccessHandler : (ExecuteAliPaySuccessBlock) completionHandler
+                 completionFailHandler : (ExecuteAliPayFailBlock) completionFailHandler
+                       completionError : (ExecuteAliPayErrorBlcok) completionError;;
 
 
 @end

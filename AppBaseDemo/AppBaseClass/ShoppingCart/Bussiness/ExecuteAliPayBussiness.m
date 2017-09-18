@@ -11,14 +11,16 @@
 @implementation ExecuteAliPayBussiness
 
 + (void) requestExecuteAliPayWithToken : (NSString* ) token
-								 price:(NSString *)price
+                                  price:(NSString *)totalPrice
+                               orderNum:(NSString *)orderNum
 			 completionSuccessHandler : (ExecuteAliPaySuccessBlock) completionHandler
 				completionFailHandler : (ExecuteAliPayFailBlock) completionFailHandler
 					  completionError : (ExecuteAliPayErrorBlcok) completionError;
 {
 	NSMutableDictionary * body = [[NSMutableDictionary alloc]init];
-//	[body setValue:token forKey:@"token"];
-//	[body setValue:price forKey:@"price"];
+    [body setValue:token forKey:@"token"];
+    [body setValue:orderNum forKey:@"orderNum"];
+    [body setValue:totalPrice forKey:@"totalPrice"];
 	
 	[BaseNetWorkClient jsonFormGetRequestWithUrl:kExecuteAliPayBussinessUrl
 										   param:body
@@ -26,7 +28,7 @@
 	 {
 		 NSDictionary * responeMp = (NSDictionary * ) success ;
 		 
-		 completionHandler([responeMp objectForKey:@"response"]);
+		 completionHandler(responeMp);
 		 
 		 
 	 } operationFailure:^(id failure) {

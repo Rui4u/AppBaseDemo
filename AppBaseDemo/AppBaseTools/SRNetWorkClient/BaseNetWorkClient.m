@@ -30,7 +30,7 @@
 	manager.requestSerializer = [AFHTTPRequestSerializer serializer];
 	manager.responseSerializer = [AFJSONResponseSerializer serializer];
 
-	manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json",@"text/html" , @"text/javascript", nil];
+	manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json",@"text/html" , @"text/javascript",@"text/plain", nil];
 	
 
 	NSString * paramString = [param JSONRepresentation];

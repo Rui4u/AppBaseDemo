@@ -30,10 +30,11 @@ typedef void (^ExecuteWXPayErrorBlcok)(NSString * netWorkErrorMessage);
  @param completionError <#completionError description#>
  */
 + (void) requestExecuteWXPayWithToken : (NSString* ) token
-							  price:(NSString *)price
-		   completionSuccessHandler : (ExecuteWXPaySuccessBlock) completionHandler
-			  completionFailHandler : (ExecuteWXPayFailBlock) completionFailHandler
-					completionError : (ExecuteWXPayErrorBlcok) completionError;
+                                 price:(NSString *)totalPrice
+                              orderNum:(NSString *)orderNum
+             completionSuccessHandler : (ExecuteWXPaySuccessBlock) completionHandler
+                completionFailHandler : (ExecuteWXPayFailBlock) completionFailHandler
+                      completionError : (ExecuteWXPayErrorBlcok) completionError;
 
 
 @end
