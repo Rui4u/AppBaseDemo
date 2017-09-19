@@ -50,7 +50,7 @@
                         <action selector="clickReduceButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="VKF-cK-dyb"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Oy-jO-Jbm">
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Oy-jO-Jbm">
                     <rect key="frame" x="24" y="75.5" width="70" height="30"/>
                     <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -58,7 +58,15 @@
                         <constraint firstAttribute="width" constant="70" id="sRr-fI-wYx"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                    <state key="normal" title="赶紧选购"/>
+                    <state key="normal" title="赶紧选购">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <action selector="clickAddButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="pdX-Tn-aWS"/>
                     </connections>

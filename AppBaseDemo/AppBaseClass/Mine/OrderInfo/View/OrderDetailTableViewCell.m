@@ -42,7 +42,7 @@
 	
 	self.productName.text = good.fullName;
 	self.productDes.text = [NSString stringWithFormat:@"￥%@*%@",good.goodsSpec.firstObject.spec,good.goodsSpec.firstObject.goodsAmount];
-	[self.imageVIew sd_setImageWithURL:[NSURL URLWithString:good.image] placeholderImage:nil];
+	[self.imageVIew sd_setImageWithURL:[NSURL URLWithString:good.image] placeholderImage:[UIImage imageNamed:@"guess_bancai"]];
 	self.imageVIew.contentMode = UIViewContentModeScaleAspectFill;
 	self.imageVIew.layer.masksToBounds = YES;
 	for (UIView *view in self.bottomView.subviews) {

@@ -38,7 +38,7 @@
 		
         imageView.frame = CGRectMake((105) * i , 5, 105- 10, 105- 10);
         [self.bgView addSubview:imageView];
-        [imageView sd_setImageWithURL:[NSURL URLWithString:carInfo[i].image] placeholderImage:nil];
+        [imageView sd_setImageWithURL:[NSURL URLWithString:carInfo[i].image] placeholderImage:[UIImage imageNamed:@"guess_bancai"]];
         if (imageView.right > _bgView.width) {
             imageView.hidden = YES;
         }else {

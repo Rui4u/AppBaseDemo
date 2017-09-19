@@ -120,7 +120,15 @@
         _selectAddView.carGoodsNum = dataSourse.guige.firstObject.carGoodNum;
 
     if (dataSourse.guige.count > 1) {
-        [self.addOpenOrCloseButton setImage:[UIImage imageNamed:@"selectGuiGe"] forState:UIControlStateNormal];
+        
+        [self.addOpenOrCloseButton setTitle:@"选规格" forState:UIControlStateNormal];
+        self.addOpenOrCloseButton.layer.borderWidth = 1;
+        self.addOpenOrCloseButton.layer.borderColor = [UIColor colorWithHexString:Main_Font_Green_Color].CGColor;
+        [self.addOpenOrCloseButton setTitleColor:[UIColor colorWithHexString:Main_Font_Green_Color] forState:UIControlStateNormal];
+        self.addOpenOrCloseButton.layer.masksToBounds = YES;
+        self.addOpenOrCloseButton.layer.repeatCount = 3;
+        self.addOpenOrCloseButton.titleLabel.font = [UIFont systemFontOfSize:14];
+        
         self.selectAddView.hidden = YES;
         self.addOpenOrCloseButton.hidden = NO;
     } else {

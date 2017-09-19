@@ -293,7 +293,8 @@
 
 	UIButton *location = [[UIButton alloc] init];
 	[location addTarget:self action:@selector(clickLocationButton:) forControlEvents:UIControlEventTouchUpInside];
-	location.backgroundColor =[UIColor  randomOfColor];
+    [location setImage:[UIImage imageNamed:@"map_location"] forState:UIControlStateNormal];
+
 	[_mapView addSubview:location];
 	
 	[location mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -304,8 +305,8 @@
 	
 	UIButton *downZoom = [[UIButton alloc] init];
 	[downZoom addTarget:self action:@selector(clickDownButton:) forControlEvents:UIControlEventTouchUpInside];
-	downZoom.backgroundColor =[UIColor  randomOfColor];
-	[_mapView addSubview:downZoom];
+    [downZoom setImage:[UIImage imageNamed:@"map_jianhao"] forState:UIControlStateNormal];
+    [_mapView addSubview:downZoom];
 	
 	[downZoom mas_makeConstraints:^(MASConstraintMaker *make) {
 		make.right.equalTo(_mapView.mas_right).offset(-15);
@@ -315,7 +316,7 @@
 	
 	UIButton *upZoom = [[UIButton alloc] init];
 	[upZoom addTarget:self action:@selector(clickUpButton:) forControlEvents:UIControlEventTouchUpInside];
-	upZoom.backgroundColor =[UIColor  randomOfColor];
+    [upZoom setImage:[UIImage imageNamed:@"map_jiahao"] forState:UIControlStateNormal];
 	[_mapView addSubview:upZoom];
 	
 	[upZoom mas_makeConstraints:^(MASConstraintMaker *make) {

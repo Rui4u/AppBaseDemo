@@ -98,7 +98,7 @@
                                       secondcolor:[UIColor colorWithHexString:Main_Font_Gary_Color]
                                        secondfont:12];
     
-    [self.goodPic sd_setImageWithURL:[NSURL URLWithString:dataSourse.image] placeholderImage:nil];
+    [self.goodPic sd_setImageWithURL:[NSURL URLWithString:dataSourse.image] placeholderImage:[UIImage imageNamed:@"guess_bancai"]];
     _goodSelectButton.selected = dataSourse.selected;
 }
 

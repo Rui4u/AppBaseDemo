@@ -133,7 +133,7 @@
         }else {
             imageView.hidden = NO;
         }
-		[imageView sd_setImageWithURL:[NSURL URLWithString:goods.image] placeholderImage:nil];
+		[imageView sd_setImageWithURL:[NSURL URLWithString:goods.image] placeholderImage:[UIImage imageNamed:@"guess_bancai"]];
 	}
 }
 @end
