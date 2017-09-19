@@ -24,7 +24,6 @@
     [super viewDidLoad];
     
     [self initNavBarView:NAV_BAR_TYPE_SECOND_LEVEL_VIEW];
-    self.navBarView.backgroundColor = [UIColor colorWithHexString:@"d43c33"];
     [self.navBarView setTitle:@"支付"];
     [WXApiManager sharedManager].delegate = self;
     [ALiPayApiManager sharedManager].delegate = self;
@@ -67,7 +66,7 @@
 
 - (void) goToPayWithpayChannel:(UIButton *)changelBtn
 {
-    NSString * changelType;
+	
     switch (changelBtn.tag - 10000) {
         case 0: {
 			[ExecuteWXPayBussiness requestExecuteWXPayWithToken:TOKEN price:self.totolPrice orderNum:self.orderNumber completionSuccessHandler:^(WeChaPayModel *weChaPayModel) {

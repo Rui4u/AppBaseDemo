@@ -135,13 +135,7 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 	if (indexPath.section ==0) {
-		
-		if (self.orderModel.orderDetails.goods.count == 1) {
-			return 58;
-		}else {
-			return 58 + (self.orderModel.orderDetails.goods[indexPath.row].goodsSpec.count - 1) * 21;
-			
-		}
+		return 58 + (self.orderModel.orderDetails.goods[indexPath.row].goodsSpec.count - 1) * 21;
 	}else {
 		return 37;
 	}

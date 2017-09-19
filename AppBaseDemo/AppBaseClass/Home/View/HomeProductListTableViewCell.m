@@ -70,6 +70,8 @@
     [self.contentView addSubview:self.bgView];
     
     self.iconView = [[UIImageView alloc] initWithFrame:CGRectMake(8, 8, 65, 65)];
+	self.iconView.contentMode = UIViewContentModeScaleAspectFill;
+	self.iconView.layer.masksToBounds = YES;
     [self.bgView addSubview:self.iconView];
 
     self.topBgView = [[UIView alloc] initWithFrame:CGRectMake(self.iconView.right + 10, self.iconView.y,self.bgView.width - self.iconView.right -10 , 40)];

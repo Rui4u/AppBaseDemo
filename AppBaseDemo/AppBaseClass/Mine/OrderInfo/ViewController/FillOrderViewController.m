@@ -52,12 +52,6 @@
 		
 		NSArray * array = [DealWithShoppingCartData dealWithShoppingCartDataWith:[ShoppingCartManager sharedManager].CarInfoList];
 		
-		if (YES) {
-			
-			PaySelectVC * paySelectVC  = [[PaySelectVC alloc] init];
-			[self.navigationController pushViewController:paySelectVC animated:YES];
-			
-		}else {
 	
 			[DoOrderBussiness requestDoOrderWithToken:TOKEN addressId:self.getFillOrderModel.store.storeId orederType:@"1" carImageInfo:array completionSuccessHandler:^(NSDictionary *dict) {
 				
@@ -73,7 +67,6 @@
 			} completionError:^(NSString *netWorkErrorMessage) {
 				
 			}];
-		}
 		
 	};
 	

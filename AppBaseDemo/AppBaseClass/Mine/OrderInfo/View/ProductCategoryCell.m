@@ -32,6 +32,10 @@
     for (int i = 0 ; i <carInfo.count ; i ++ ) {
         
         UIImageView * imageView = [[UIImageView alloc] init];
+		
+		imageView.contentMode = UIViewContentModeScaleAspectFill;
+		imageView.layer.masksToBounds = YES;
+		
         imageView.frame = CGRectMake((105) * i , 5, 105- 10, 105- 10);
         [self.bgView addSubview:imageView];
         [imageView sd_setImageWithURL:[NSURL URLWithString:carInfo[i].image] placeholderImage:nil];

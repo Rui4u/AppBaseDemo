@@ -63,6 +63,8 @@
         make.bottom.equalTo(self.mas_bottom).offset(-15);
         make.size.mas_offset(CGSizeMake(105, 30));
     }];
+	self.productImage.contentMode = UIViewContentModeScaleAspectFill;
+	self.productImage.layer.masksToBounds = YES;
 }
 /*
 // Only override drawRect: if you perform custom drawing.

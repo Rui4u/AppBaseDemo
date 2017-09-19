@@ -44,7 +44,8 @@
 			}
 		};
 		
-	}else {
+	}else if ([sender.titleLabel.text isEqualToString:@"去结算"]) {
+		
 		if (self.buyAgainBlock) {
 			self.buyAgainBlock();
 		}
@@ -66,7 +67,8 @@
 
 
 - (void)setOrderListInfo:(OrderList *)orderListInfo {
-
+	self.leftButton.hidden = YES;
+	
 	_orderListInfo = orderListInfo;
 	for (id view in self.categoryView.subviews) {
 		
@@ -75,19 +77,25 @@
 	
 	self.orderTime.text = orderListInfo.addTime;
 	NSString * statusStr;
+	
 	if (self.orderListInfo.orderStatus.intValue == 0) {
 		statusStr = @"待配货";
+		[self.rightButton setTitle:@"取消进度" forState:UIControlStateNormal];
 	}else if (self.orderListInfo.orderStatus.intValue == 1) {
 		statusStr = @"待发货";
+		[self.rightButton setTitle:@"取消进度" forState:UIControlStateNormal];
 	}else if (self.orderListInfo.orderStatus.intValue == 2) {
 		statusStr = @"待收货";
         [self.rightButton setTitle:@"去结算" forState:UIControlStateNormal];
-        
 	}else if (self.orderListInfo.orderStatus.intValue == 3) {
 		statusStr = @"已完成";
-	}else if (self.orderListInfo.orderStatus.intValue == 3) {
+		[self.rightButton setTitle:@"订单已完成" forState:UIControlStateNormal];
+
+	}else if (self.orderListInfo.orderStatus.intValue == 4) {
 		statusStr = @"已取消";
-	}else
+		[self.rightButton setTitle:@"订单已取消" forState:UIControlStateNormal];
+	}
+	self.status.text = statusStr;
 		
 //	0待配货 1 待发货，2待收货，3已完成，4已取消
 	
@@ -114,6 +122,8 @@
 		OrderGoods *goods = orderListInfo.goods[i];
 		
 		UIImageView * imageView = [[UIImageView alloc] init];
+		imageView.contentMode = UIViewContentModeScaleAspectFill;
+		imageView.layer.masksToBounds = YES;
 		imageView.frame = CGRectMake(15 +(64.6) * i , 5, 54.5, 54.5);
 		[self.categoryView addSubview:imageView];
         

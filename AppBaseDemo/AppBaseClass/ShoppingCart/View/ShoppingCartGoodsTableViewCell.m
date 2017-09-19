@@ -57,6 +57,9 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+	self.goodPic.contentMode = UIViewContentModeScaleAspectFill;
+	self.goodPic.layer.masksToBounds = YES;
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

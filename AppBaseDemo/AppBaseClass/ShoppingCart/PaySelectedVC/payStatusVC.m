@@ -25,7 +25,11 @@
     // Do any additional setup after loading the view from its nib.
     
     [self initNavBarView:NAV_BAR_TYPE_ROOT_VIEW];
-    
+	
+	self.payStatusImageView.contentMode = UIViewContentModeScaleAspectFill;
+	self.payStatusImageView.layer.masksToBounds = YES;
+
+	
     UIButton * userCenter = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 12 - 44, 20, 44, 44)];
     [userCenter addTarget: self action:@selector(payComplete) forControlEvents:UIControlEventTouchUpInside];
     [userCenter setTitle:@"完成" forState:UIControlStateNormal];
@@ -63,9 +67,9 @@
  *  支付完成
  */
 - (void)payComplete {
-    
-    
-    [self back];
+	
+	[self.navigationController popToViewController:self.navigationController.childViewControllers[self.navigationController.childViewControllers.count -2] animated:YES];
+	
 }
 
 

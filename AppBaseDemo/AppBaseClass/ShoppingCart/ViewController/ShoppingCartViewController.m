@@ -156,6 +156,11 @@
 #pragma  mark - 去结算
 - (void)goToSettle {
 
+	if(_calculationArray.count == 0){
+		[self showToastWithMessage:@"请选择商品" showTime:1];
+		return;
+	}
+	
     FillOrderViewController * fillOrderViewController = [[FillOrderViewController alloc] init];
     fillOrderViewController.calculationArray = _calculationArray;
     [self.navigationController pushViewController:fillOrderViewController animated:YES];
