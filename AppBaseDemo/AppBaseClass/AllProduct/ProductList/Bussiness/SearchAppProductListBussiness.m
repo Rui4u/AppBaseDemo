@@ -21,7 +21,8 @@
 	NSMutableDictionary * body = [[NSMutableDictionary alloc]init];
 	[body setValue:token forKey:@"token"];
 	[body setValue:goodName forKey:@"goodName"];
-	
+	[body setValue:CITYCODE forKey:@"cityCode"];
+
 	[BaseNetWorkClient jsonFormGetRequestWithUrl:kSearchGoodsListlBussinessUrl
 										   param:body
 										 success:^(id success)

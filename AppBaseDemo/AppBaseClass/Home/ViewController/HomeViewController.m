@@ -79,6 +79,49 @@
 							withSearchType:SearchType_Push];
     self.searchBar.searchBarBackgroundColor = [UIColor colorWithWhite:0 alpha:.3];
 
+	
+	
+	UIButton * rightButton = [UIButton quickCreateButtonWithFrame:CGRectMake(SCREEN_WIDTH-AutoHeight(50)- 5, 20 + (44 - 30)/2, AutoHeight(50), 30)
+															   title:@"位置"
+														   addTarget:self
+															  action:@"selectedLocation"];
+	rightButton.titleLabel.font = [UIFont systemFontOfSize:15];
+	rightButton.layer.masksToBounds = YES;
+	rightButton.layer.cornerRadius = 15;
+	rightButton.backgroundColor = [UIColor colorWithWhite:0 alpha:.3];
+	[rightButton setTitleColor:[UIColor colorWithHexString:@"ffffff"] forState:UIControlStateNormal];
+	[self.navBarView addSubview:rightButton];
+	
+
+	UIButton * leftButton = [UIButton quickCreateButtonWithFrame:CGRectMake(5, 20 + (44 - 30)/2, AutoHeight(50), 30)
+															title:@"呵呵"
+														addTarget:self
+														   action:@"selectedSevire"];
+	leftButton.titleLabel.font = [UIFont systemFontOfSize:15];
+	leftButton.layer.masksToBounds = YES;
+	leftButton.layer.cornerRadius = 15;
+	leftButton.backgroundColor = [UIColor colorWithWhite:0 alpha:.3];
+	[leftButton setTitleColor:[UIColor colorWithHexString:@"ffffff"] forState:UIControlStateNormal];
+	[self.navBarView addSubview:leftButton];
+	
+	
+}
+- (void)selectedSevire {
+	
+	
+	
+}
+
+- (void)selectedLocation {
+	
+	
+	UserLocationViewController * userLocationViewController = [[UserLocationViewController alloc] init];
+	[self.navigationController pushViewController:userLocationViewController animated:YES];
+	userLocationViewController.locationBlock = ^(NSDictionary *dict) {
+		saveDataUserDefaultForValueKey([dict objectForKey:@"adCode"] , @"cityCode");
+		[self.backScrollView.mj_header beginRefreshing];
+
+	};
 }
 #pragma mark - 网络请求
 - (void)pullToRefresh {

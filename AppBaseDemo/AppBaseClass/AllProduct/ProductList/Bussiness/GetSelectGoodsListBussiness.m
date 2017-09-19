@@ -23,6 +23,7 @@
 	[body setValue:token forKey:@"token"];
 	[body setValue:parented forKey:@"parentId"];
 	[body setValue:categoryIdTwo forKey:@"categoryIdTwo"];
+	[body setValue:CITYCODE forKey:@"cityCode"];
 	
 	
 	[BaseNetWorkClient jsonFormGetRequestWithUrl:kSelectGoodsListlBussinessUrl

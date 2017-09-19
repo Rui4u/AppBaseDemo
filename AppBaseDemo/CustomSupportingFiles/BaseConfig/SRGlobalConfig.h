@@ -30,6 +30,8 @@
 
 #pragma mark - token值
 #define TOKEN    (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]
+#define CITYCODE    (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:@"cityCode"]
+
 #pragma mark - 是否完善信息 1 完善0 未完善
 #define IsFinish    (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:@"isFinish"]
 
