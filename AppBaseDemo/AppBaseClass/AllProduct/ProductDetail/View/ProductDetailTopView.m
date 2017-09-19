@@ -198,10 +198,11 @@
         
         
 		[priceButton setTitle:[NSString stringWithFormat:@"1*%@(%@斤)",self.goodsDataSourse.baseSpec,titleArray[index].totalWeight ] forState:UIControlStateNormal];
-		[priceButton setTitleColor:[UIColor colorWithHexString:Main_Button_Gary_Color] forState:UIControlStateNormal];
-		[priceButton setTitleColor:[UIColor colorWithHexString:Main_Font_Green_Color] forState:UIControlStateSelected];
+		[priceButton setTitleColor:[UIColor colorWithHexString:@"ffffff"] forState:UIControlStateNormal];
+		[priceButton setTitleColor:[UIColor colorWithHexString:@"ffffff"] forState:UIControlStateSelected];
 		priceButton.titleLabel.font = [UIFont systemFontOfSize:12];
-		priceButton.backgroundColor = [UIColor randomOfColor];
+		priceButton.backgroundColor = [UIColor colorWithHexString:Main_Button_Gary_Color];
+
 		priceButton.tag = 1000 + index;
 		[_specificationBgView addSubview:priceButton];
 		_specificationBgView.height = priceButton.bottom + 10;
@@ -216,6 +217,8 @@
 - (void)selectButton:(UIButton *)sender {
 	self.lastButton.selected = NO;
 	sender.selected = YES;
+	sender.backgroundColor = [UIColor colorWithHexString:Main_Font_Green_Color];
+	self.lastButton.backgroundColor = [UIColor colorWithHexString:Main_Button_Gary_Color];
     NSInteger tag = sender.tag - 1000;
     NSString * string = [NSString stringWithFormat:@"￥%@*%@(%@斤)",self.goodsDataSourse.guige[tag].currentPrice,self.goodsDataSourse.baseSpec,self.goodsDataSourse.guige[tag].totalWeight];
     self.priceDesLabel.text = string;

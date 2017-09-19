@@ -58,8 +58,8 @@
 
 
 - (void)setUpHeadLineView {
-	NSArray * titleArray = @[@"开始购买",@"常用清单",@"活动中心",@"我的订单"];
-	CGFloat width = SCREEN_WIDTH/4.0;
+	NSArray * titleArray = @[@"开始购买",@"常用清单",@"我的订单"];
+	CGFloat width = SCREEN_WIDTH/titleArray.count;
 	CGFloat height = SCREEN_WIDTH/4.0;
 	UIView * headLineView = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.bannerScrollView.frame), SCREEN_WIDTH, height)];
     headLineView.backgroundColor = [UIColor colorWithHexString:@"ffffff"];
@@ -69,6 +69,8 @@
 	for (int i = 0 ; i < titleArray.count; i ++) {
 		
 		LCVerticalBadgeBtn * view = [[LCVerticalBadgeBtn alloc] init];
+		view.tag = i;
+		[view addTarget:self action:@selector(selectGoToVC:) forControlEvents:UIControlEventTouchUpInside];
 		[view setImage:[UIImage imageNamed:@"homeLoginTemp"] forState:UIControlStateNormal];
 		[view setTitle:titleArray[i] forState:UIControlStateNormal];
 		view.titleLabel.font = [UIFont systemFontOfSize:12];
@@ -77,7 +79,14 @@
 		[headLineView addSubview:view];
 	}
 }
-
+- (void)selectGoToVC:(UIButton *)sener{
+	
+	if (self.topSelected) {
+		self.topSelected(sener.tag);
+	}
+	
+	
+}
 
 - (TopAdvertisementView *)bannerScrollView {
 	if (!_bannerScrollView) {

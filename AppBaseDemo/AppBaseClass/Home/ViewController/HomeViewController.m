@@ -21,6 +21,7 @@
 #import "DeleteCartBusiness.h"
 #import "ProductRemoveListBussiness.h"
 #import "NewCustomAlertView.h"
+#import "OrderListViewController.h"
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource,HomeProductListTableViewCellDelegate,SelectTypeViewDelegate>
 @property (nonatomic ,strong ) HomeTopView * topView;
 @property (nonatomic ,strong ) SelectTypeView * selectTypeView;
@@ -50,6 +51,20 @@
     
     // Do any additional setup after loading the view.
 	self.topView= [[HomeTopView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, HEIGHT_AUTO(259))];
+	__weak typeof(self) weakself = self;
+	self.topView.topSelected = ^(NSInteger index) {
+		if (index == 0) {
+			APP_DELEGATE.customTabBar.tabBarView.selectedIndex = 1;
+		}else if (index == 1) {
+			APP_DELEGATE.customTabBar.tabBarView.selectedIndex = 2;
+		}else if (index == 2) {
+			//订单
+			OrderListViewController * orderListViewController = [[OrderListViewController alloc] init];
+			orderListViewController.state = @"1";
+			[weakself.navigationController pushViewController:orderListViewController animated:YES];
+			
+		}
+	};
 	self.rearTopView = self.topView;
 
 

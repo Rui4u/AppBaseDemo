@@ -54,7 +54,7 @@ static NSString * const reuseIdentifier = @"ProductImageScrollView";
 	UIImageView * iamgeView =[[UIImageView alloc] initWithFrame:_collectionView.bounds];
 	[iamgeView sd_setImageWithURL:[NSURL URLWithString:self.dataSourse[indexPath.item]]];
 	
-	cell.backgroundView.contentMode = UIViewContentModeScaleAspectFill;
+	iamgeView.contentMode = UIViewContentModeScaleAspectFit;
 	cell.backgroundView = iamgeView;
 	
 	cell.size = self.bounds.size;

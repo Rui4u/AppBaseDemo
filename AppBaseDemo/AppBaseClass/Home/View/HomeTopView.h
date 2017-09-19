@@ -10,4 +10,6 @@
 @class HomeDataModel;
 @interface HomeTopView : UIView
 @property (nonatomic ,strong ) HomeDataModel * homeDataModel;
+
+@property (nonatomic ,copy ) void(^topSelected)(NSInteger index);
 @end
