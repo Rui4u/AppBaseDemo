@@ -30,6 +30,7 @@
  */
 @property (nonatomic ,strong) HomeDataModel *dataSourse;
 @property (nonatomic ,assign ) NSInteger count;
+@property (nonatomic ,strong ) UIButton * rightButton;
 @end
 
 @implementation HomeViewController
@@ -37,8 +38,10 @@
 - (void)CNRefreashHomeData {
 
     [self.backScrollView.mj_header beginRefreshing];
-    
+	[_rightButton setTitle:CITYNAME forState:UIControlStateNormal];
+	 
 }
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -96,17 +99,19 @@
     self.searchBar.searchBarBackgroundColor = [UIColor colorWithWhite:0 alpha:.3];
 
 	
-	
-	UIButton * rightButton = [UIButton quickCreateButtonWithFrame:CGRectMake(SCREEN_WIDTH-AutoHeight(50)- 5, 20 + (44 - 30)/2, AutoHeight(50), 30)
-															   title:@"位置"
-														   addTarget:self
-															  action:@"selectedLocation"];
-	rightButton.titleLabel.font = [UIFont systemFontOfSize:15];
-	rightButton.layer.masksToBounds = YES;
-	rightButton.layer.cornerRadius = 15;
-	rightButton.backgroundColor = [UIColor colorWithWhite:0 alpha:.3];
-	[rightButton setTitleColor:[UIColor colorWithHexString:@"ffffff"] forState:UIControlStateNormal];
-	[self.navBarView addSubview:rightButton];
+	_rightButton = ({
+		UIButton * rightButton = [UIButton quickCreateButtonWithFrame:CGRectMake(SCREEN_WIDTH-AutoHeight(50)- 5, 20 + (44 - 30)/2, AutoHeight(50), 30)
+																title:@"位置"
+															addTarget:self
+															   action:@"selectedLocation"];
+		rightButton.titleLabel.font = [UIFont systemFontOfSize:15];
+		rightButton.layer.masksToBounds = YES;
+		rightButton.layer.cornerRadius = 15;
+		rightButton.backgroundColor = [UIColor colorWithWhite:0 alpha:.3];
+		[rightButton setTitleColor:[UIColor colorWithHexString:@"ffffff"] forState:UIControlStateNormal];
+		rightButton;
+	});
+	[self.navBarView addSubview:_rightButton];
 	
 
 	UIButton * leftButton = [UIButton quickCreateButtonWithFrame:CGRectMake(5, 20 + (44 - 30)/2, AutoHeight(50), 30)
@@ -135,6 +140,7 @@
 	[self.navigationController pushViewController:userLocationViewController animated:YES];
 	userLocationViewController.locationBlock = ^(NSDictionary *dict) {
 		saveDataUserDefaultForValueKey([dict objectForKey:@"adCode"] , @"cityCode");
+		[_rightButton setTitle:[dict objectForKey:@"city"] forState:UIControlStateNormal];
 		[self.backScrollView.mj_header beginRefreshing];
 
 	};

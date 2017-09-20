@@ -520,6 +520,7 @@
 			NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
 			[dict setValue:self.dataSource[indexPath.row].address forKey:@"address"];
 			[dict setValue:self.dataSource[indexPath.row].name forKey:@"name"];
+			[dict setValue:self.dataSource[indexPath.row].city forKey:@"city"];
 			[dict setValue:[NSString stringWithFormat:@"%f",self.dataSource[indexPath.row].pt.latitude] forKey:@"latitude"];
 			[dict setValue:[NSString stringWithFormat:@"%f",self.dataSource[indexPath.row].pt.longitude] forKey:@"longitude"];
 			[dict setValue:self.currentAdCode forKey:@"adCode"];

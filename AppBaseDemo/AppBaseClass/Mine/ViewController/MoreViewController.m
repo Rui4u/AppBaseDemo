@@ -65,11 +65,14 @@
 	if (tag == 4) {
 		NewDemandViewController * newDemandViewController = [[NewDemandViewController alloc] init];
 		[self.navigationController pushViewController:newDemandViewController animated:YES];
-	}else if (tag == 5){
+	}else if (tag == 3){
 	
 		MyInvoiceViewController * myInvoiceViewController = [[MyInvoiceViewController alloc] init];
 		[self.navigationController pushViewController:myInvoiceViewController animated:YES];
-	}else {
+	}else if (tag == 2){
+		APP_DELEGATE.customTabBar.tabBarView.selectedIndex = 2;
+		
+	}else{
 		[self showToastWithMessage:@"暂未开通" showTime:1];
 	}
 	

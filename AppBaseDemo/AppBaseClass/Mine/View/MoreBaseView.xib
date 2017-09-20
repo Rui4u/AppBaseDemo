@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -358,7 +358,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ghz-lB-ImV">
                                     <rect key="frame" x="0.0" y="0.0" width="97" height="77"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qGH-vh-ySl">
+                                        <button opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qGH-vh-ySl">
                                             <rect key="frame" x="0.0" y="0.0" width="97" height="77"/>
                                             <connections>
                                                 <action selector="clickNormalToolsButton:" destination="-1" eventType="touchUpInside" id="OYP-i8-UPq"/>
@@ -405,13 +405,13 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RFC-uZ-fPB">
                                     <rect key="frame" x="97" y="0.0" width="96.5" height="77"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3pR-YJ-C97">
+                                        <button opaque="NO" tag="1002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3pR-YJ-C97">
                                             <rect key="frame" x="0.0" y="0.0" width="96.5" height="77"/>
                                             <connections>
                                                 <action selector="clickNormalToolsButton:" destination="-1" eventType="touchUpInside" id="yze-kN-iOh"/>
                                             </connections>
                                         </button>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qingdan" translatesAutoresizingMaskIntoConstraints="NO" id="9nK-mu-7Gz">
+                                        <imageView userInteractionEnabled="NO" tag="1001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qingdan" translatesAutoresizingMaskIntoConstraints="NO" id="9nK-mu-7Gz">
                                             <rect key="frame" x="38.5" y="15" width="20" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="20" id="e9m-t0-WS3"/>
@@ -452,13 +452,13 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4wo-pm-2Tj">
                                     <rect key="frame" x="193.5" y="0.0" width="97" height="77"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="on9-7p-Kja">
+                                        <button opaque="NO" tag="1003" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="on9-7p-Kja">
                                             <rect key="frame" x="0.0" y="0.0" width="97" height="77"/>
                                             <connections>
                                                 <action selector="clickNormalToolsButton:" destination="-1" eventType="touchUpInside" id="qSx-ZF-Qsl"/>
                                             </connections>
                                         </button>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wodefapiao" translatesAutoresizingMaskIntoConstraints="NO" id="x1x-dZ-k9j">
+                                        <imageView userInteractionEnabled="NO" tag="1002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wodefapiao" translatesAutoresizingMaskIntoConstraints="NO" id="x1x-dZ-k9j">
                                             <rect key="frame" x="39" y="15" width="20" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="20" id="0an-BG-MlW"/>
@@ -624,7 +624,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xAu-nw-Zen">
                                     <rect key="frame" x="0.0" y="0.0" width="97" height="79.5"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhg-DY-rc6">
+                                        <button opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhg-DY-rc6">
                                             <rect key="frame" x="0.0" y="0.0" width="97" height="79.5"/>
                                             <connections>
                                                 <action selector="clickHelpCenterButton:" destination="-1" eventType="touchUpInside" id="S6i-y6-mxG"/>
@@ -671,7 +671,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Geb-dE-1ec">
                                     <rect key="frame" x="97" y="0.0" width="96.5" height="79.5"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jL2-XQ-BE7">
+                                        <button opaque="NO" tag="1002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jL2-XQ-BE7">
                                             <rect key="frame" x="0.0" y="0.0" width="96.5" height="79.5"/>
                                             <connections>
                                                 <action selector="clickHelpCenterButton:" destination="-1" eventType="touchUpInside" id="hDw-Ht-Cv5"/>
@@ -718,7 +718,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0zD-5Y-9Ng">
                                     <rect key="frame" x="193.5" y="0.0" width="97" height="79.5"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6HH-t9-giO">
+                                        <button opaque="NO" tag="1003" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6HH-t9-giO">
                                             <rect key="frame" x="0.0" y="0.0" width="97" height="79.5"/>
                                             <connections>
                                                 <action selector="clickHelpCenterButton:" destination="-1" eventType="touchUpInside" id="sca-So-T2U"/>
@@ -765,7 +765,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hnk-a1-hZ8">
                                     <rect key="frame" x="290.5" y="0.0" width="96.5" height="79.5"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OQa-g8-J8k">
+                                        <button opaque="NO" tag="1004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OQa-g8-J8k">
                                             <rect key="frame" x="0.0" y="0.0" width="96.5" height="79.5"/>
                                             <connections>
                                                 <action selector="clickHelpCenterButton:" destination="-1" eventType="touchUpInside" id="kVe-LJ-2ua"/>
@@ -812,7 +812,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eTi-R7-Ncw">
                                     <rect key="frame" x="0.0" y="80.5" width="96.5" height="79.5"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H3t-x1-psq">
+                                        <button opaque="NO" tag="1005" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H3t-x1-psq">
                                             <rect key="frame" x="0.0" y="0.0" width="96.5" height="79.5"/>
                                             <connections>
                                                 <action selector="clickHelpCenterButton:" destination="-1" eventType="touchUpInside" id="i0B-Iq-VGJ"/>
