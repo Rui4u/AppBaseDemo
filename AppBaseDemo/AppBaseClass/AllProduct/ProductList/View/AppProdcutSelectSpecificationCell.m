@@ -51,7 +51,7 @@
     _dataSourse = dataSourse;
     
    
-    if (dataSourse.brand == nil) {
+    if (dataSourse.brand == nil || [dataSourse.brand isEqualToString:@""]) {
         self.selectSpecificationView.totolPriceLabel.text = [NSString stringWithFormat:@"%@ %@",dataSourse.fullName,dataSourse.feature];
         
     }else{

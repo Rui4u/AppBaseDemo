@@ -60,7 +60,7 @@
 	_productDetailTitleView = [[NSBundle mainBundle] loadNibNamed:@"ProductDetailTitleView" owner:self options:nil].firstObject;
 	[self addSubview:_productDetailTitleView];
 	
-	if (_goodsDataSourse.brand == nil) {
+	if (_goodsDataSourse.brand == nil  || [_goodsDataSourse.brand isEqualToString:@""]) {
 		_goodsDataSourse.brand = @"";
 	}else{
 		_goodsDataSourse.brand = [NSString stringWithFormat:@"[%@]",_goodsDataSourse.brand];

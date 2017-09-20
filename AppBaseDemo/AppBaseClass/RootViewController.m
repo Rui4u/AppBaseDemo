@@ -14,6 +14,7 @@
 #import "ShoppingCartListBussiness.h"
 #import "ShoppingCartListModel.h"
 #import "CommonListViewController.h"
+#import "KSGuideManager.h"
 @interface RootViewController ()<UITabBarControllerDelegate,SRCustomTabBarViewDelegate>
 
 
@@ -193,7 +194,7 @@
 
 - (void)setUpCustomTabBar
 {
-    
+	[self showGuide];
     SRCustomTabBarController *customTabBar = [[SRCustomTabBarController alloc] init];
 	self.customTabBar = customTabBar;
     customTabBar.delegate = self;
@@ -303,5 +304,19 @@
         _currentViewController = self.  homeViewController;
     }
     return _currentViewController;
+}
+
+- (void)showGuide
+{
+	
+	NSMutableArray *paths = [NSMutableArray new];
+	
+	[paths addObject:[[NSBundle mainBundle] pathForResource:@"guide1" ofType:@"png"]];
+	[paths addObject:[[NSBundle mainBundle] pathForResource:@"guide2" ofType:@"png"]];
+	[paths addObject:[[NSBundle mainBundle] pathForResource:@"guide3" ofType:@"png"]];
+	[paths addObject:[[NSBundle mainBundle] pathForResource:@"guide4" ofType:@"png"]];
+	
+	[[KSGuideManager shared] showGuideViewWithImages:paths];
+	
 }
 @end

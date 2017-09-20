@@ -129,7 +129,7 @@
 - (void)setDataSourse:(Goods *)dataSourse {
     _dataSourse = dataSourse;
 	
-	if (dataSourse.brand == nil) {
+	if (dataSourse.brand == nil || [dataSourse.brand isEqualToString:@""]) {
         self.titleLabel.text = [NSString stringWithFormat:@"%@ %@",dataSourse.fullName,dataSourse.feature];
 			
 	}else{

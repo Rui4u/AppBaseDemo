@@ -52,7 +52,7 @@ static NSString * const reuseIdentifier = @"AdvertisementView";
     UICollectionViewCell *cell  = [collectionView dequeueReusableCellWithReuseIdentifier:@"AdvertisementView" forIndexPath:indexPath];
 
     UIImageView * iamgeView =[[UIImageView alloc] initWithFrame:_collectionView.bounds];
-    [iamgeView sd_setImageWithURL:[NSURL URLWithString:self.bannerListArray[indexPath.item].url]];
+    [iamgeView sd_setImageWithURL:[NSURL URLWithString:self.bannerListArray[indexPath.item].url] placeholderImage:[UIImage imageNamed:@"picNomail2"]];
 	
 	
     cell.backgroundView = iamgeView;

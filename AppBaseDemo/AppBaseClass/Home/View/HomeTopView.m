@@ -108,7 +108,7 @@
 	self.bannerScrollView.bannerListArray = homeDataModel.bannerList;
 	[self.bannerScrollView.collectionView reloadData];
 	NSString * iamgeUrl = homeDataModel.activityList.firstObject.activityImg;
-	[self.bottomAdv sd_setBackgroundImageWithURL:[NSURL URLWithString:iamgeUrl] forState:UIControlStateNormal];
+	[self.bottomAdv sd_setBackgroundImageWithURL:[NSURL URLWithString:iamgeUrl] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"picNomail2"]] ;
 }
 
 
