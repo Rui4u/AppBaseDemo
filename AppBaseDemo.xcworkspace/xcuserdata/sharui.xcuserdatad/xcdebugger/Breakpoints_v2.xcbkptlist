@@ -84,11 +84,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AppBaseDemo/AppBaseClass/ShoppingCart/PaySelectedVC/PaySelectVC.m"
-            timestampString = "527653500.710751"
+            timestampString = "527659394.817942"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "PaySelectVC"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AppBaseDemo/AppBaseClass/ShoppingCart/PaySelectedVC/PaySelectVC.m"
+            timestampString = "527659394.818228"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "-paySuccessd"
             landmarkType = "7">
          </BreakpointContent>
@@ -100,28 +116,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AppBaseDemo/AppBaseClass/ShoppingCart/PaySelectedVC/PaySelectVC.m"
-            timestampString = "527653500.710812"
+            timestampString = "527659394.818288"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "-payFail"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AppBaseDemo/AppBaseClass/ShoppingCart/PaySelectedVC/PaySelectVC.m"
-            timestampString = "527653500.710856"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
-            landmarkName = "-payCancel"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -243,54 +243,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AppBaseDemo/AppBaseClass/ShoppingCart/PaySelectedVC/PaySelectVC.m"
-            timestampString = "527653500.711041"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
-            landmarkName = "-goToPayWithpayChannel:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__37-[PaySelectVC goToPayWithpayChannel:]_block_invoke_4"
-                  moduleName = "AppBaseDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hzcf/Desktop/AppBaseDemo/AppBaseDemo/AppBaseClass/ShoppingCart/PaySelectedVC/PaySelectVC.m"
-                  timestampString = "527652245.093873"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "90"
-                  endingLineNumber = "90"
-                  offsetFromSymbolStart = "86">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__37-[PaySelectVC goToPayWithpayChannel:]_block_invoke_5"
-                  moduleName = "AppBaseDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hzcf/Desktop/AppBaseDemo/AppBaseDemo/AppBaseClass/ShoppingCart/PaySelectedVC/PaySelectVC.m"
-                  timestampString = "527652245.096679"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "92"
-                  endingLineNumber = "92"
-                  offsetFromSymbolStart = "52">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "AppBaseDemo/AppBaseClass/ShoppingCart/Bussiness/ExecuteAliPayBussiness.m"
             timestampString = "527437129.243789"
             startingColumnNumber = "9223372036854775807"
@@ -355,40 +307,8 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AppBaseDemo/AppBaseClass/Mine/ViewController/MoreViewController.m"
-            timestampString = "527654260.437735"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "-privateReferRootReciveLogOutSucess"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AppBaseDemo/AppBaseClass/Mine/OrderInfo/ViewController/OrderDetailViewController.m"
-            timestampString = "527654260.438205"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "AppBaseDemo/AppBaseClass/Mine/OrderInfo/Bussiness/OrderDetailBussiness.m"
-            timestampString = "527652542.535444"
+            timestampString = "527658473.328814"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"

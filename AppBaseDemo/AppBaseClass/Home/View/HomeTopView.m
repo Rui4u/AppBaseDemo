@@ -91,7 +91,7 @@
 - (TopAdvertisementView *)bannerScrollView {
 	if (!_bannerScrollView) {
 		
-		_bannerScrollView = [[TopAdvertisementView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, AutoHeight(130))];
+		_bannerScrollView = [[TopAdvertisementView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, AutoHeight(150))];
 		_bannerScrollView.delegate = self;
 	}
 	return _bannerScrollView;

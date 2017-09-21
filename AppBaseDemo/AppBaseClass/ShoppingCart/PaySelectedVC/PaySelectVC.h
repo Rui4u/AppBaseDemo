@@ -15,5 +15,7 @@
 /**
  <#Description#>
  */
+@property (nonatomic ,copy ) NSString * orderIdNumber;
 @property (nonatomic ,copy) NSString * totolPrice;
+
 @end

@@ -15,62 +15,23 @@
 #import "ExecuteWXPayBussiness.h"
 #import "ExecuteAliPayBussiness.h"
 @interface PaySelectVC ()<WXApiManagerDelegate,ALiApiManagerDelegate>
+@property (weak, nonatomic) IBOutlet UIButton *aliPayButton;
+@property (weak, nonatomic) IBOutlet UIButton *wxPayButton;
 
+@property (nonatomic ,assign ) NSInteger currentTag;
+
+@property (nonatomic ,strong ) UIButton * lastBtn;
+@property (weak, nonatomic) IBOutlet UILabel *orderNumberLabel;
+@property (weak, nonatomic) IBOutlet UILabel *priceNumber;
 @end
 
 @implementation PaySelectVC
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    [self initNavBarView:NAV_BAR_TYPE_SECOND_LEVEL_VIEW];
-    [self.navBarView setTitle:@"支付"];
-    [WXApiManager sharedManager].delegate = self;
-    [ALiPayApiManager sharedManager].delegate = self;
-    [self privateBuildUI];
-}
-
-#pragma mark - 构建UI
-- (void)privateBuildUI
-{
-    UIButton * wxImageView = [[UIButton alloc] init];
-    [wxImageView setImage:[UIImage imageNamed:@"weixin"] forState:UIControlStateNormal];
-    wxImageView.tag = 10000;
-    [wxImageView addTarget:self action:@selector(goToPayWithpayChannel:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:wxImageView];
-    
-    [wxImageView mas_makeConstraints:^(MASConstraintMaker *make)
-     {
-         make.top.equalTo(self.view.mas_top).offset(NAV_BAR_HEIGHT + 30);
-         make.left.equalTo(self.view.mas_left).offset(30);
-         make.size.mas_equalTo(CGSizeMake(SCREEN_WIDTH - 60, (SCREEN_HEIGHT - NAV_BAR_HEIGHT - 90)/2));
-     }];
-    wxImageView.layer.backgroundColor = [UIColor colorWithHexString:@"f0f0f0"].CGColor;
-    
-    
-    UIButton * zhifubaoImageView = [[UIButton alloc] init];
-    [zhifubaoImageView setImage:[UIImage imageNamed:@"zhifubao"] forState:UIControlStateNormal];
-    [zhifubaoImageView addTarget:self action:@selector(goToPayWithpayChannel:) forControlEvents:UIControlEventTouchUpInside];
-    zhifubaoImageView.tag = 10001;
-
-    [self.view addSubview:zhifubaoImageView];
-    zhifubaoImageView.layer.backgroundColor = [UIColor colorWithHexString:@"f0f0f0"].CGColor;
-    
-    [zhifubaoImageView mas_makeConstraints:^(MASConstraintMaker *make)
-     {
-         make.top.equalTo(wxImageView.mas_bottom).offset(30);
-         make.left.equalTo(self.view.mas_left).offset(30);
-         make.size.mas_equalTo(CGSizeMake(SCREEN_WIDTH - 60, (SCREEN_HEIGHT - NAV_BAR_HEIGHT - 90)/2));
-     }];
-}
-
-- (void) goToPayWithpayChannel:(UIButton *)changelBtn
-{
+- (IBAction)sureButton:(id)sender {
 	
-    switch (changelBtn.tag - 10000) {
-        case 0: {
+	switch (self.currentTag) {
+		case 0: {
 			[ExecuteWXPayBussiness requestExecuteWXPayWithToken:TOKEN price:self.totolPrice orderNum:self.orderNumber completionSuccessHandler:^(WeChaPayModel *weChaPayModel) {
-                
+				
 				[WXApiResponseHandler jumpToWxPayWithData:weChaPayModel];
 				
 			} completionFailHandler:^(NSString *failMessage) {
@@ -84,9 +45,9 @@
 		case 1: {
 			
 			[ExecuteAliPayBussiness requestExecuteAliPayWithToken:TOKEN price:self.totolPrice orderNum:self.orderNumber completionSuccessHandler:^(NSString *orderInfoStr) {
-                
-                [ALiPayApiResponseHandler jumpToALiPayWithData:orderInfoStr];
-
+				
+				[ALiPayApiResponseHandler jumpToALiPayWithData:orderInfoStr];
+				
 			} completionFailHandler:^(NSString *failMessage) {
 				
 			} completionError:^(NSString *netWorkErrorMessage) {
@@ -94,9 +55,30 @@
 			}];
 		}
 		default:
-            break;
-    }
+			break;
+	}
 
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [self initNavBarView:NAV_BAR_TYPE_SECOND_LEVEL_VIEW];
+    [self.navBarView setTitle:@"支付"];
+    [WXApiManager sharedManager].delegate = self;
+    [ALiPayApiManager sharedManager].delegate = self;
+	self.orderNumberLabel.text = self.orderIdNumber;
+	self.priceNumber.text = self.totolPrice;
+	[self goToPayWith:self.aliPayButton];
+	
+}
+
+
+- (IBAction)goToPayWith:(UIButton *)changelBtn {
+	changelBtn.selected = YES;
+	self.currentTag = changelBtn.tag - 10000;
+	self.lastBtn.selected = NO;
+	self.lastBtn = changelBtn;
 
 
 }

@@ -41,7 +41,7 @@
 	_good = good;
 	
 	self.productName.text = good.fullName;
-	self.productDes.text = [NSString stringWithFormat:@"￥%@*%@",good.goodsSpec.firstObject.spec,good.goodsSpec.firstObject.goodsAmount];
+	self.productDes.text = [NSString stringWithFormat:@"￥%@/%@          X%@" ,good.goodsSpec.firstObject.currentPrice,good.goodsSpec.firstObject.spec,good.goodsSpec.firstObject.goodsAmount];
 	[self.imageVIew sd_setImageWithURL:[NSURL URLWithString:good.image] placeholderImage:[UIImage imageNamed:@"guess_bancai"]];
 	self.imageVIew.contentMode = UIViewContentModeScaleAspectFill;
 	self.imageVIew.layer.masksToBounds = YES;
@@ -51,8 +51,9 @@
 	
 	for (int i = 1 ;i <good.goodsSpec.count; i ++) {
 		
-		UILabel * label = [UILabel creatLabelWithText:[NSString stringWithFormat:@"￥%@*%@",good.goodsSpec.firstObject.spec,good.goodsSpec.firstObject.goodsAmount] FontOfSize:12 textColor:Main_Font_Gary_Color];
-		label.frame = CGRectMake(self.productDes.x, self.productDes.bottom + 21 * (i - 1), 100, 21);
+		UILabel * label = [UILabel creatLabelWithText:[NSString stringWithFormat:@"￥%@/%@          X%@" ,good.goodsSpec[i].currentPrice,good.goodsSpec[i].spec,good.goodsSpec[i].goodsAmount] FontOfSize:12 textColor:@"3333333"];
+		label.textAlignment = NSTextAlignmentRight;
+		label.frame = CGRectMake(0, self.productDes.bottom + 25 * (i - 1), SCREEN_WIDTH - 30, 25);
 		[self.bottomView addSubview:label];
 	}
 	

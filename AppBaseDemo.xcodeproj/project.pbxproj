@@ -232,6 +232,9 @@
 		2BDA7E4A1F734C1100265FFF /* guide3.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BDA7E441F734BEC00265FFF /* guide3.png */; };
 		2BDA7E4B1F734C1100265FFF /* guide4.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BDA7E451F734BEC00265FFF /* guide4.png */; };
 		2BDA7E4C1F734C2000265FFF /* KSGuideManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDA7E471F734BEC00265FFF /* KSGuideManager.m */; };
+		2BDA7E501F735EA200265FFF /* ServerCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDA7E4E1F735EA200265FFF /* ServerCenterViewController.m */; };
+		2BDA7E511F735EA200265FFF /* ServerCenterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BDA7E4F1F735EA200265FFF /* ServerCenterViewController.xib */; };
+		2BDA7E531F7369DC00265FFF /* PaySelectVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BDA7E521F7369DC00265FFF /* PaySelectVC.xib */; };
 		2BE920011F53AE5400A2DD9C /* DoOrderBussiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE920001F53AE5400A2DD9C /* DoOrderBussiness.m */; };
 		2BE920071F53E87A00A2DD9C /* SearchAppProductListBussiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE920061F53E87A00A2DD9C /* SearchAppProductListBussiness.m */; };
 		2BFCFDE41F413B63001DA10D /* GetAppProductListBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFCFDCD1F413B63001DA10D /* GetAppProductListBusiness.m */; };
@@ -749,6 +752,10 @@
 		2BDA7E451F734BEC00265FFF /* guide4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guide4.png; sourceTree = "<group>"; };
 		2BDA7E461F734BEC00265FFF /* KSGuideManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSGuideManager.h; sourceTree = "<group>"; };
 		2BDA7E471F734BEC00265FFF /* KSGuideManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSGuideManager.m; sourceTree = "<group>"; };
+		2BDA7E4D1F735EA200265FFF /* ServerCenterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServerCenterViewController.h; sourceTree = "<group>"; };
+		2BDA7E4E1F735EA200265FFF /* ServerCenterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ServerCenterViewController.m; sourceTree = "<group>"; };
+		2BDA7E4F1F735EA200265FFF /* ServerCenterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServerCenterViewController.xib; sourceTree = "<group>"; };
+		2BDA7E521F7369DC00265FFF /* PaySelectVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaySelectVC.xib; sourceTree = "<group>"; };
 		2BE91FFF1F53AE5400A2DD9C /* DoOrderBussiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoOrderBussiness.h; sourceTree = "<group>"; };
 		2BE920001F53AE5400A2DD9C /* DoOrderBussiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoOrderBussiness.m; sourceTree = "<group>"; };
 		2BE920051F53E87A00A2DD9C /* SearchAppProductListBussiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchAppProductListBussiness.h; sourceTree = "<group>"; };
@@ -1309,6 +1316,9 @@
 				2B4C35B21F4C057000B22431 /* MyInvoiceViewController.h */,
 				2B4C35B31F4C057000B22431 /* MyInvoiceViewController.m */,
 				2B4C35B41F4C057000B22431 /* MyInvoiceViewController.xib */,
+				2BDA7E4D1F735EA200265FFF /* ServerCenterViewController.h */,
+				2BDA7E4E1F735EA200265FFF /* ServerCenterViewController.m */,
+				2BDA7E4F1F735EA200265FFF /* ServerCenterViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1780,6 +1790,7 @@
 			children = (
 				2BCF4A861F6BA133000C2AC3 /* PaySelectVC.h */,
 				2BCF4A871F6BA133000C2AC3 /* PaySelectVC.m */,
+				2BDA7E521F7369DC00265FFF /* PaySelectVC.xib */,
 				2BCF4A881F6BA133000C2AC3 /* payStatusVC.h */,
 				2BCF4A891F6BA133000C2AC3 /* payStatusVC.m */,
 				2BCF4A8A1F6BA133000C2AC3 /* payStatusVC.xib */,
@@ -2106,6 +2117,7 @@
 				2B3FD7D91F4929E3003DE7C3 /* FillOrderSelectTableViewCell.xib in Resources */,
 				2B6BE3381F46826400D0C915 /* MoreBaseView.xib in Resources */,
 				2B386F8C1F29B69A00228620 /* LaunchScreen.storyboard in Resources */,
+				2BDA7E531F7369DC00265FFF /* PaySelectVC.xib in Resources */,
 				2B10FAEC1F482B1000801BEC /* AccountManagementViewController.xib in Resources */,
 				2B50F32A1F4D2AD100C28A20 /* OrderDetailViewController.xib in Resources */,
 				2BA9AAC81F4FD18E0035672C /* Assets.xcassets in Resources */,
@@ -2125,6 +2137,7 @@
 				2B3FD7CF1F4926A1003DE7C3 /* FillOrderUserInfoCell.xib in Resources */,
 				2B3FD7E31F492AB2003DE7C3 /* FillOrderNomailCell.xib in Resources */,
 				2B386F841F29B69A00228620 /* Main.storyboard in Resources */,
+				2BDA7E511F735EA200265FFF /* ServerCenterViewController.xib in Resources */,
 				2BC14D991F31B64B00919808 /* RegisterViewController.xib in Resources */,
 				2B4C35B11F4BFDA300B22431 /* MyInvoiceInfoView.xib in Resources */,
 			);
@@ -2378,6 +2391,7 @@
 				2B580D6B1F385A8E00AEA6BF /* BaiduMapManager.m in Sources */,
 				2B6BE3461F46868200D0C915 /* NewProductDemandBussiness.m in Sources */,
 				2B41F2191F42ABAD00CB36D0 /* ProductDetailGuiGeInfo.m in Sources */,
+				2BDA7E501F735EA200265FFF /* ServerCenterViewController.m in Sources */,
 				2B0E70BD1F41C3ED0037B4A7 /* ProductDetailBussiness.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

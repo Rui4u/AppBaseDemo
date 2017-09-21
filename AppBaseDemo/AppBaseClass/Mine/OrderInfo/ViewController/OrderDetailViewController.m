@@ -107,6 +107,7 @@
 		PaySelectVC * paySelectVC = [[PaySelectVC alloc] init];
 		paySelectVC.totolPrice = self.orderModel.orderDetails.totalPrice;
 		paySelectVC.orderNumber = self.orderId;
+		paySelectVC.orderIdNumber = self.orderModel.orderDetails.orderId;
 		[self.navigationController pushViewController:paySelectVC animated:YES];
 		
 	}
@@ -172,7 +173,7 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 	if (indexPath.section ==0) {
-		return 58 + (self.orderModel.orderDetails.goods[indexPath.row].goodsSpec.count - 1) * 21;
+		return 58 + (self.orderModel.orderDetails.goods[indexPath.row].goodsSpec.count - 1) * 25;
 	}else {
 		return 37;
 	}
@@ -217,15 +218,31 @@
 			}
 			
 		}else{
-			if(self.orderModel.orderDetails.trueName != nil && self.orderModel.orderDetails.storeAddress!= nil &&
-			   self.orderModel.orderDetails.addTime != nil
-			   ) {
-			array = @[@[@"收货人",self.orderModel.orderDetails.trueName],
-					  @[@"收货地址",self.orderModel.orderDetails.storeAddress],
-					  @[@"下单时间",self.orderModel.orderDetails.addTime],
-					  @[@"预计送达",@"预计送达"]];
-
+			NSString * trueName;
+			NSString * storeAddress;
+			NSString * addTime;
+			if(self.orderModel.orderDetails.trueName == nil){
+				trueName = @"";
+			}else {
+				trueName = self.orderModel.orderDetails.trueName;
 			}
+			if(self.orderModel.orderDetails.storeAddress== nil){
+				storeAddress = @"";
+			}else {
+				storeAddress = self.orderModel.orderDetails.storeAddress;
+				
+			}
+			if(self.orderModel.orderDetails.addTime == nil){
+				addTime = @"";
+			}else {
+				addTime = self.orderModel.orderDetails.addTime;
+			}
+			
+			array = @[@[@"收货人",trueName],
+					  @[@"收货地址",storeAddress],
+					  @[@"下单时间",addTime],
+					  @[@"预计送达",@"一天后"]];
+
 		}
         cell.backgroundColor = [UIColor whiteColor];
 		cell.dataSourse = array[indexPath.row];

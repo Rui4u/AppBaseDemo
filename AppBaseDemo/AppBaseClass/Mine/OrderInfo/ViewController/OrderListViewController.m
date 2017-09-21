@@ -149,6 +149,7 @@
         PaySelectVC * paySelectVC = [[PaySelectVC alloc] init];
         paySelectVC.totolPrice = self.orderListData[indexPath.section].totalPrice;
         paySelectVC.orderNumber = self.orderListData[indexPath.section].orderListId;
+		paySelectVC.orderIdNumber = self.orderListData[indexPath.section].orderId;
         [self.navigationController pushViewController:paySelectVC animated:YES];
 //
 		
