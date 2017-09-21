@@ -1517,16 +1517,8 @@
 				2BAF5D231F6B6C600057B516 /* WXApiManager.m */,
 				2BAF5D241F6B6C600057B516 /* WXApiResponseHandler.h */,
 				2BAF5D251F6B6C600057B516 /* WXApiResponseHandler.m */,
-				2BAF5D261F6B6C600057B516 /* WXPayModel */,
 			);
 			path = WXPay;
-			sourceTree = "<group>";
-		};
-		2BAF5D261F6B6C600057B516 /* WXPayModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = WXPayModel;
 			sourceTree = "<group>";
 		};
 		2BAF5D2C1F6B7E3C0057B516 /* ALiPay */ = {
