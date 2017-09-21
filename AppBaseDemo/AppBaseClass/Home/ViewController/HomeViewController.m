@@ -35,6 +35,10 @@
 
 @implementation HomeViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	
+}
 - (void)CNRefreashHomeData {
 
     [self.backScrollView.mj_header beginRefreshing];

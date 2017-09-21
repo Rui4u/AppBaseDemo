@@ -79,7 +79,7 @@
                                     <constraint firstAttribute="width" constant="100" id="gla-NM-QTm"/>
                                     <constraint firstAttribute="height" constant="30" id="jNR-5y-3eY"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <state key="normal" title="再次购买">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>

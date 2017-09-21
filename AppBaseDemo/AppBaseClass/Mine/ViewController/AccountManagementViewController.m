@@ -9,6 +9,8 @@
 #import "AccountManagementViewController.h"
 #import "UpdatePasswordViewController.h"
 @interface AccountManagementViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *userName;
+@property (weak, nonatomic) IBOutlet UILabel *storeName;
 
 @end
 
@@ -30,6 +32,10 @@
     [super viewDidLoad];
     [self initNavBarView:NAV_BAR_TYPE_SECOND_LEVEL_VIEW];
     [self.navBarView setTitle:@"用户管理"];
+	
+	self.userName.text = (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:@"managerName"];
+	self.storeName.text = (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:@"storeAddress"];
+
 }
 
 - (void)didReceiveMemoryWarning {

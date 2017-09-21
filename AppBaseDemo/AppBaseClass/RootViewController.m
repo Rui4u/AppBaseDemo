@@ -276,7 +276,7 @@
     
     
 	
-    [customTabBar addChildViewController:self. homeViewController];
+    [customTabBar addChildViewController:self.homeViewController];
     [customTabBar addChildViewController:self.productViewController];
 	[customTabBar addChildViewController:self.commonListViewController];
     [customTabBar addChildViewController:self.shoppingCartViewController];

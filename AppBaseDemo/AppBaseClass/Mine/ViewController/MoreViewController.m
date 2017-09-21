@@ -16,10 +16,10 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *bgScrollView;
 @property (weak, nonatomic) IBOutlet UILabel *userName;
-@property (weak, nonatomic) IBOutlet UIImageView *userLevelImage;
-@property (weak, nonatomic) IBOutlet UILabel *userLevel;
+@property (weak, nonatomic) IBOutlet UILabel *storeName;
+
 @property (weak, nonatomic) IBOutlet UIImageView *userPic;
-@property (weak, nonatomic) IBOutlet UILabel *userManager;
+
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
 
 @property (weak, nonatomic) IBOutlet UILabel *notLoginLabel;
@@ -27,17 +27,21 @@
 @end
 
 @implementation MoreViewController
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    self.notLoginLabel.hidden = !isNotLogin;
-    self.userName.hidden = isNotLogin;
-    self.userLevel.hidden = isNotLogin;
-    self.userLevelImage.hidden = isNotLogin;
+
+- (void)privateReferRootReciveLogOutSucess {
+	
+	clearUserDefaults();
+	self.notLoginLabel.hidden = !isNotLogin;
+	self.userName.hidden = isNotLogin;
+	self.storeName.hidden = isNotLogin;
 	
 	self.userName.text = (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:@"managerName"];
+	self.storeName.text = (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:@"storeAddress"];
+
 
 }
+
+
 - (IBAction)clickMyOrderButton:(UIButton *)sender {
     
     if (isNotLogin) {
@@ -98,14 +102,17 @@
         make.height.mas_equalTo(moreBaseView.height);
     }];
 
-    
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(privateReferRootReciveLogOutSucess)
+												 name:CNotificationLogOut
+											   object:nil];
     
     self.notLoginLabel.hidden = !isNotLogin;
     self.userName.hidden = isNotLogin;
-    self.userLevel.hidden = isNotLogin;
-    self.userLevelImage.hidden = isNotLogin;
+    self.storeName.hidden = isNotLogin;
 	
 	self.userName.text = (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:@"managerName"];
+	self.storeName.text = (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:@"storeAddress"];
 
 	
     UITapGestureRecognizer*tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(loginIn)];

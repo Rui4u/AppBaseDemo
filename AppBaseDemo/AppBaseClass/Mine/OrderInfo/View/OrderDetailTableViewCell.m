@@ -50,7 +50,8 @@
 	}
 	
 	for (int i = 1 ;i <good.goodsSpec.count; i ++) {
-		UILabel * label = [UILabel creatLabelWithText:[NSString stringWithFormat:@"￥%@*%@",good.goodsSpec.firstObject.spec,good.goodsSpec.firstObject.goodsAmount] FontOfSize:14 textColor:@"33333"];
+		
+		UILabel * label = [UILabel creatLabelWithText:[NSString stringWithFormat:@"￥%@*%@",good.goodsSpec.firstObject.spec,good.goodsSpec.firstObject.goodsAmount] FontOfSize:12 textColor:Main_Font_Gary_Color];
 		label.frame = CGRectMake(self.productDes.x, self.productDes.bottom + 21 * (i - 1), 100, 21);
 		[self.bottomView addSubview:label];
 	}

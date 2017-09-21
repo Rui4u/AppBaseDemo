@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OrderDetailViewController">
             <connections>
                 <outlet property="mainTableView" destination="gGw-2z-LLZ" id="997-c7-Ltc"/>
+                <outlet property="rightButton" destination="hXC-g1-Qj2" id="NbB-bR-dRW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -34,43 +35,29 @@
                                 <constraint firstAttribute="height" constant="1" id="cOG-Mu-8sT"/>
                             </constraints>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXC-g1-Qj2">
-                            <rect key="frame" x="300" y="10" width="60" height="30"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXC-g1-Qj2">
+                            <rect key="frame" x="260" y="9.5" width="100" height="30"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="60" id="Far-v1-TbV"/>
+                                <constraint firstAttribute="width" constant="100" id="Far-v1-TbV"/>
                                 <constraint firstAttribute="height" constant="30" id="cae-Uv-EgC"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                             <state key="normal" title="再次购买">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
-                                <action selector="buyAgain:" destination="-1" eventType="touchUpInside" id="s7H-gW-V3D"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DaT-wm-Q2o">
-                            <rect key="frame" x="225" y="10" width="60" height="30"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <state key="normal" title="取消进度">
-                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="cancelOrder:" destination="-1" eventType="touchUpInside" id="Hol-wa-PQL"/>
+                                <action selector="cancelOrder:" destination="-1" eventType="touchUpInside" id="K9F-Rw-Glo"/>
                             </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="2JR-ae-qTU"/>
-                        <constraint firstItem="hXC-g1-Qj2" firstAttribute="leading" secondItem="DaT-wm-Q2o" secondAttribute="trailing" constant="15" id="8xQ-aw-NCc"/>
                         <constraint firstItem="nZf-uh-1s0" firstAttribute="leading" secondItem="bxL-FE-MFY" secondAttribute="leading" constant="15" id="BYb-WS-tUL"/>
                         <constraint firstItem="nZf-uh-1s0" firstAttribute="top" secondItem="bxL-FE-MFY" secondAttribute="top" id="Bsa-02-nOz"/>
-                        <constraint firstItem="DaT-wm-Q2o" firstAttribute="height" secondItem="hXC-g1-Qj2" secondAttribute="height" id="G2N-W0-ifG"/>
                         <constraint firstAttribute="height" constant="50" id="JIB-PE-Knv"/>
                         <constraint firstAttribute="trailing" secondItem="nZf-uh-1s0" secondAttribute="trailing" id="SDR-WH-e7q"/>
                         <constraint firstAttribute="trailing" secondItem="hXC-g1-Qj2" secondAttribute="trailing" constant="15" id="bVP-Vy-ZRo"/>
-                        <constraint firstItem="DaT-wm-Q2o" firstAttribute="centerY" secondItem="hXC-g1-Qj2" secondAttribute="centerY" id="glB-tb-jvy"/>
-                        <constraint firstItem="DaT-wm-Q2o" firstAttribute="width" secondItem="hXC-g1-Qj2" secondAttribute="width" id="j3c-v8-yr1"/>
                         <constraint firstItem="hXC-g1-Qj2" firstAttribute="centerY" secondItem="bxL-FE-MFY" secondAttribute="centerY" id="oAL-xh-vMS"/>
                     </constraints>
                 </view>
