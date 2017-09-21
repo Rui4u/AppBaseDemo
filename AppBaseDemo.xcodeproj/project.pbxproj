@@ -127,11 +127,6 @@
 		2B84607C1F419DDD0013D26D /* ProcudtDetailedInformationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B84607B1F419DDD0013D26D /* ProcudtDetailedInformationView.xib */; };
 		2B84607F1F419EB20013D26D /* ProductSpecificationParameterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B84607E1F419EB20013D26D /* ProductSpecificationParameterView.m */; };
 		2B8460811F419EBE0013D26D /* ProductSpecificationParameterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B8460801F419EBE0013D26D /* ProductSpecificationParameterView.xib */; };
-		2B857EA21F71FBBA00AD1AB1 /* KSGuideManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B857EA11F71FBA700AD1AB1 /* KSGuideManager.m */; };
-		2B857EA81F71FD1500AD1AB1 /* guide1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B857EA41F71FC1400AD1AB1 /* guide1.png */; };
-		2B857EA91F71FD1500AD1AB1 /* guide2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B857EA51F71FC1400AD1AB1 /* guide2.png */; };
-		2B857EAA1F71FD1500AD1AB1 /* guide3.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B857EA61F71FC1400AD1AB1 /* guide3.png */; };
-		2B857EAB1F71FD1500AD1AB1 /* guide4.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B857EA71F71FC1400AD1AB1 /* guide4.png */; };
 		2B8FD7F31F32CC6F00DAB9B9 /* SelectLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8FD7F21F32CC6F00DAB9B9 /* SelectLocationViewController.m */; };
 		2B90F8941F2EC86200698C38 /* CustomScrollSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B90F8931F2EC86200698C38 /* CustomScrollSelectView.m */; };
 		2B90F8971F2ECFF100698C38 /* SelectTypeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B90F8961F2ECFF100698C38 /* SelectTypeView.m */; };
@@ -232,6 +227,11 @@
 		2BD5D70E1F39871700BE1994 /* unicode_to_hanyu_pinyin.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2BD5D7041F39871700BE1994 /* unicode_to_hanyu_pinyin.txt */; };
 		2BD5D70F1F39871700BE1994 /* ZYPinYinSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD5D7061F39871700BE1994 /* ZYPinYinSearch.m */; };
 		2BD5D7181F39925100BE1994 /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD5D7161F39925100BE1994 /* UserInfoViewController.m */; };
+		2BDA7E481F734C1100265FFF /* guide1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BDA7E421F734BEC00265FFF /* guide1.png */; };
+		2BDA7E491F734C1100265FFF /* guide2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BDA7E431F734BEC00265FFF /* guide2.png */; };
+		2BDA7E4A1F734C1100265FFF /* guide3.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BDA7E441F734BEC00265FFF /* guide3.png */; };
+		2BDA7E4B1F734C1100265FFF /* guide4.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BDA7E451F734BEC00265FFF /* guide4.png */; };
+		2BDA7E4C1F734C2000265FFF /* KSGuideManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDA7E471F734BEC00265FFF /* KSGuideManager.m */; };
 		2BE920011F53AE5400A2DD9C /* DoOrderBussiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE920001F53AE5400A2DD9C /* DoOrderBussiness.m */; };
 		2BE920071F53E87A00A2DD9C /* SearchAppProductListBussiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE920061F53E87A00A2DD9C /* SearchAppProductListBussiness.m */; };
 		2BFCFDE41F413B63001DA10D /* GetAppProductListBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFCFDCD1F413B63001DA10D /* GetAppProductListBusiness.m */; };
@@ -535,12 +535,6 @@
 		2B84607D1F419EB20013D26D /* ProductSpecificationParameterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductSpecificationParameterView.h; sourceTree = "<group>"; };
 		2B84607E1F419EB20013D26D /* ProductSpecificationParameterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductSpecificationParameterView.m; sourceTree = "<group>"; };
 		2B8460801F419EBE0013D26D /* ProductSpecificationParameterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductSpecificationParameterView.xib; sourceTree = "<group>"; };
-		2B857EA01F71FBA700AD1AB1 /* KSGuideManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSGuideManager.h; sourceTree = "<group>"; };
-		2B857EA11F71FBA700AD1AB1 /* KSGuideManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSGuideManager.m; sourceTree = "<group>"; };
-		2B857EA41F71FC1400AD1AB1 /* guide1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guide1.png; sourceTree = "<group>"; };
-		2B857EA51F71FC1400AD1AB1 /* guide2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guide2.png; sourceTree = "<group>"; };
-		2B857EA61F71FC1400AD1AB1 /* guide3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guide3.png; sourceTree = "<group>"; };
-		2B857EA71F71FC1400AD1AB1 /* guide4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guide4.png; sourceTree = "<group>"; };
 		2B8FD7F11F32CC6F00DAB9B9 /* SelectLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectLocationViewController.h; sourceTree = "<group>"; };
 		2B8FD7F21F32CC6F00DAB9B9 /* SelectLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectLocationViewController.m; sourceTree = "<group>"; };
 		2B90F8921F2EC86200698C38 /* CustomScrollSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomScrollSelectView.h; sourceTree = "<group>"; };
@@ -749,6 +743,12 @@
 		2BD5D7061F39871700BE1994 /* ZYPinYinSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYPinYinSearch.m; sourceTree = "<group>"; };
 		2BD5D7151F39925100BE1994 /* UserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoViewController.h; sourceTree = "<group>"; };
 		2BD5D7161F39925100BE1994 /* UserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoViewController.m; sourceTree = "<group>"; };
+		2BDA7E421F734BEC00265FFF /* guide1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guide1.png; sourceTree = "<group>"; };
+		2BDA7E431F734BEC00265FFF /* guide2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guide2.png; sourceTree = "<group>"; };
+		2BDA7E441F734BEC00265FFF /* guide3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guide3.png; sourceTree = "<group>"; };
+		2BDA7E451F734BEC00265FFF /* guide4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guide4.png; sourceTree = "<group>"; };
+		2BDA7E461F734BEC00265FFF /* KSGuideManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSGuideManager.h; sourceTree = "<group>"; };
+		2BDA7E471F734BEC00265FFF /* KSGuideManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSGuideManager.m; sourceTree = "<group>"; };
 		2BE91FFF1F53AE5400A2DD9C /* DoOrderBussiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoOrderBussiness.h; sourceTree = "<group>"; };
 		2BE920001F53AE5400A2DD9C /* DoOrderBussiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoOrderBussiness.m; sourceTree = "<group>"; };
 		2BE920051F53E87A00A2DD9C /* SearchAppProductListBussiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchAppProductListBussiness.h; sourceTree = "<group>"; };
@@ -1330,32 +1330,10 @@
 			name = ProductTopView;
 			sourceTree = "<group>";
 		};
-		2B857E9F1F71FBA700AD1AB1 /* KSGuideManager */ = {
-			isa = PBXGroup;
-			children = (
-				2B857EA31F71FC1400AD1AB1 /* GuideResource */,
-				2B857EA01F71FBA700AD1AB1 /* KSGuideManager.h */,
-				2B857EA11F71FBA700AD1AB1 /* KSGuideManager.m */,
-			);
-			name = KSGuideManager;
-			path = ../../../Ios/HZAgentClient_iOS/HZAgentiOSClient/ThirdFrameworks/KSGuideManager;
-			sourceTree = "<group>";
-		};
-		2B857EA31F71FC1400AD1AB1 /* GuideResource */ = {
-			isa = PBXGroup;
-			children = (
-				2B857EA41F71FC1400AD1AB1 /* guide1.png */,
-				2B857EA51F71FC1400AD1AB1 /* guide2.png */,
-				2B857EA61F71FC1400AD1AB1 /* guide3.png */,
-				2B857EA71F71FC1400AD1AB1 /* guide4.png */,
-			);
-			path = GuideResource;
-			sourceTree = "<group>";
-		};
 		2BA025131F2AD85E003EB25D /* AppBaseTools */ = {
 			isa = PBXGroup;
 			children = (
-				2B857E9F1F71FBA700AD1AB1 /* KSGuideManager */,
+				2BDA7E401F734BEC00265FFF /* KSGuideManager */,
 				2BAF5D2C1F6B7E3C0057B516 /* ALiPay */,
 				2BAF5D211F6B6C600057B516 /* WXPay */,
 				2B815AE81F5E3CE1006A622C /* NewCustomAlertView.h */,
@@ -1833,6 +1811,27 @@
 			path = PinYinSearchLib;
 			sourceTree = "<group>";
 		};
+		2BDA7E401F734BEC00265FFF /* KSGuideManager */ = {
+			isa = PBXGroup;
+			children = (
+				2BDA7E411F734BEC00265FFF /* GuideResource */,
+				2BDA7E461F734BEC00265FFF /* KSGuideManager.h */,
+				2BDA7E471F734BEC00265FFF /* KSGuideManager.m */,
+			);
+			path = KSGuideManager;
+			sourceTree = "<group>";
+		};
+		2BDA7E411F734BEC00265FFF /* GuideResource */ = {
+			isa = PBXGroup;
+			children = (
+				2BDA7E421F734BEC00265FFF /* guide1.png */,
+				2BDA7E431F734BEC00265FFF /* guide2.png */,
+				2BDA7E441F734BEC00265FFF /* guide3.png */,
+				2BDA7E451F734BEC00265FFF /* guide4.png */,
+			);
+			path = GuideResource;
+			sourceTree = "<group>";
+		};
 		2BFCFDC41F413B63001DA10D /* AllProduct */ = {
 			isa = PBXGroup;
 			children = (
@@ -2084,10 +2083,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B857EA81F71FD1500AD1AB1 /* guide1.png in Resources */,
-				2B857EA91F71FD1500AD1AB1 /* guide2.png in Resources */,
-				2B857EAA1F71FD1500AD1AB1 /* guide3.png in Resources */,
-				2B857EAB1F71FD1500AD1AB1 /* guide4.png in Resources */,
+				2BDA7E481F734C1100265FFF /* guide1.png in Resources */,
+				2BDA7E491F734C1100265FFF /* guide2.png in Resources */,
+				2BDA7E4A1F734C1100265FFF /* guide3.png in Resources */,
+				2BDA7E4B1F734C1100265FFF /* guide4.png in Resources */,
 				2BFCFE891F7008A70052024E /* payStatusVC.xib in Resources */,
 				2B8460691F41446E0013D26D /* ProdcutDetailBottomView.xib in Resources */,
 				2B2E10511F3C015D00092EAA /* CityNotInOpenCityView.xib in Resources */,
@@ -2200,7 +2199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B857EA21F71FBBA00AD1AB1 /* KSGuideManager.m in Sources */,
+				2BDA7E4C1F734C2000265FFF /* KSGuideManager.m in Sources */,
 				2B15E8A41F6F685C00C2760F /* PaySelectVC.m in Sources */,
 				2B15E8A51F6F685C00C2760F /* payStatusVC.m in Sources */,
 				2B15E7FB1F6F640300C2760F /* base64.m in Sources */,
@@ -2534,6 +2533,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = NV2899W536;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AppBaseDemo/AppBaseTools/ALiPay/ALiPayTool",
@@ -2579,6 +2579,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = NV2899W536;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AppBaseDemo/AppBaseTools/ALiPay/ALiPayTool",
