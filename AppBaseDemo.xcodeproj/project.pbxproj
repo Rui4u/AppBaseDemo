@@ -151,6 +151,7 @@
 		2BA0254F1F2B0D57003EB25D /* CustomPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA0254E1F2B0D57003EB25D /* CustomPageView.m */; };
 		2BA025521F2B108D003EB25D /* HomeTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA025511F2B108D003EB25D /* HomeTopView.m */; };
 		2BA025551F2B2A15003EB25D /* RecommendProductView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA025541F2B2A15003EB25D /* RecommendProductView.m */; };
+		2BA062FD1F73B43300850945 /* QuestionBussiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA062FC1F73B43300850945 /* QuestionBussiness.m */; };
 		2BA709281F3A9FCB00B0B520 /* UserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BA709271F3A9FCB00B0B520 /* UserInfoViewController.xib */; };
 		2BA709331F3B087800B0B520 /* StoreInfoBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA709321F3B087800B0B520 /* StoreInfoBusiness.m */; };
 		2BA709361F3B0F7600B0B520 /* storeAdressInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA709351F3B0F7600B0B520 /* storeAdressInfoModel.m */; };
@@ -586,6 +587,8 @@
 		2BA025511F2B108D003EB25D /* HomeTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTopView.m; sourceTree = "<group>"; };
 		2BA025531F2B2A15003EB25D /* RecommendProductView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendProductView.h; sourceTree = "<group>"; };
 		2BA025541F2B2A15003EB25D /* RecommendProductView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendProductView.m; sourceTree = "<group>"; };
+		2BA062FB1F73B43300850945 /* QuestionBussiness.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuestionBussiness.h; sourceTree = "<group>"; };
+		2BA062FC1F73B43300850945 /* QuestionBussiness.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuestionBussiness.m; sourceTree = "<group>"; };
 		2BA709271F3A9FCB00B0B520 /* UserInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInfoViewController.xib; sourceTree = "<group>"; };
 		2BA709311F3B087800B0B520 /* StoreInfoBusiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreInfoBusiness.h; sourceTree = "<group>"; };
 		2BA709321F3B087800B0B520 /* StoreInfoBusiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreInfoBusiness.m; sourceTree = "<group>"; };
@@ -1200,6 +1203,8 @@
 				2B6BE3451F46868200D0C915 /* NewProductDemandBussiness.m */,
 				2B6BE34A1F468F4800D0C915 /* NewProductDemandSaveBussiness.h */,
 				2B6BE34B1F468F4800D0C915 /* NewProductDemandSaveBussiness.m */,
+				2BA062FB1F73B43300850945 /* QuestionBussiness.h */,
+				2BA062FC1F73B43300850945 /* QuestionBussiness.m */,
 			);
 			name = NewProductDemandBussiness;
 			path = Bussiness;
@@ -2275,6 +2280,7 @@
 				2B10FAE61F47E47900801BEC /* MakeSureOrderViewController.m in Sources */,
 				2B580D681F38592400AEA6BF /* ViewController.mm in Sources */,
 				2BD0993F1F434487008A1827 /* ShoppingCartViewController.m in Sources */,
+				2BA062FD1F73B43300850945 /* QuestionBussiness.m in Sources */,
 				2B815AEE1F5E7F8D006A622C /* UpdatePasswordViewController.m in Sources */,
 				2B6BE3391F46826400D0C915 /* MoreViewController.m in Sources */,
 				2BD0993B1F4342D8008A1827 /* ShoppingCartGuiGeTableViewCell.m in Sources */,

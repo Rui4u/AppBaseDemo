@@ -59,6 +59,7 @@
 #define kCountPriceBussinessUrl [NSString stringWithFormat :@"%@/gs/shopCar/countPrice?",kHTTP_HOST_URL]
 
 
+#define kQuestionBussinessUrl [NSString stringWithFormat :@"%@/gs/question/listAPI?",kHTTP_HOST_URL]
 //我的发票
 #define kCommonToolsInvoiceBussinessUrl [NSString stringWithFormat :@"%@/gs/commonTools/invoice?",kHTTP_HOST_URL]
 //新品需求需要的菜品
