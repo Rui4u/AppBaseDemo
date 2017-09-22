@@ -8,6 +8,8 @@
 
 #import "ServerCenterViewController.h"
 #import "QuestionViewController.h"
+#import "ProtocolViewController.h"
+#import "NewDemandViewController.h"
 @interface ServerCenterViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *mainTableView;
 @property (weak, nonatomic) IBOutlet UIButton *leftButton;
@@ -24,7 +26,8 @@
 }
 
 - (IBAction)rightButton:(id)sender {
-    
+	NewDemandViewController * newDemandViewController = [[NewDemandViewController alloc] init];
+	[self.navigationController pushViewController:newDemandViewController animated:YES];
     
 }
 - (void)viewDidLoad {
@@ -57,6 +60,29 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	if (indexPath.row == 0) {
+		NSString *path = [[NSBundle mainBundle] pathForResource:@"protocolText" ofType:@"text"];
+		NSString *content = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+		
+		ProtocolViewController * protocolViewController = [[ProtocolViewController alloc] init];
+		protocolViewController.textStr = content;
+		protocolViewController.titlestr = @"服务条款";
+		[self.navigationController pushViewController:protocolViewController animated:YES];
+	}else if (indexPath.row == 1){
+		
+		NSString *path = [[NSBundle mainBundle] pathForResource:@"shouhouzhunze" ofType:@"text"];
+		NSString *content = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+		
+		ProtocolViewController * protocolViewController = [[ProtocolViewController alloc] init];
+		protocolViewController.titlestr = @"售后准则";
+		protocolViewController.textStr = content;
+		[self.navigationController pushViewController:protocolViewController animated:YES];
+		
+	}
+	
+	
 }
 
 

@@ -26,9 +26,8 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VhP-Rn-RTt" userLabel="topView">
                     <rect key="frame" x="0.0" y="0.0" width="387" height="130"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="e3Y-NP-h1B">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="touxiang.png" translatesAutoresizingMaskIntoConstraints="NO" id="e3Y-NP-h1B">
                             <rect key="frame" x="15" y="59" width="56" height="56"/>
-                            <color key="backgroundColor" red="1" green="0.59448706939999996" blue="0.15847802929999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="56" id="OS4-yl-L5h"/>
                                 <constraint firstAttribute="height" constant="56" id="Tlx-fv-twX"/>
@@ -1058,6 +1057,7 @@
         <image name="qingdan" width="20" height="20"/>
         <image name="saomaDown" width="30" height="30"/>
         <image name="serverCenter" width="20" height="20"/>
+        <image name="touxiang.png" width="448" height="448"/>
         <image name="waitForReceiving" width="22" height="22"/>
         <image name="waitPay" width="22" height="22"/>
         <image name="waitSendGoods" width="22" height="22"/>

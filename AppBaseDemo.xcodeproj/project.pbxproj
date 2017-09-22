@@ -33,6 +33,14 @@
 		2B15E8561F6F67A200C2760F /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BAF5D5F1F6B7F8C0057B516 /* AlipaySDK.framework */; };
 		2B15E8A41F6F685C00C2760F /* PaySelectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BCF4A871F6BA133000C2AC3 /* PaySelectVC.m */; };
 		2B15E8A51F6F685C00C2760F /* payStatusVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BCF4A891F6BA133000C2AC3 /* payStatusVC.m */; };
+		2B1A2F3E1F74A29B0026B561 /* ProtocolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1A2F3C1F74A29B0026B561 /* ProtocolViewController.m */; };
+		2B1A2F3F1F74A29B0026B561 /* ProtocolViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B1A2F3D1F74A29B0026B561 /* ProtocolViewController.xib */; };
+		2B1A2F481F74A4C80026B561 /* protocolText.text in Resources */ = {isa = PBXBuildFile; fileRef = 2B1A2F471F74A4B80026B561 /* protocolText.text */; };
+		2B1A2F4A1F74A5580026B561 /* shouhouzhunze.text in Resources */ = {isa = PBXBuildFile; fileRef = 2B1A2F491F74A54D0026B561 /* shouhouzhunze.text */; };
+		2B1A2F4E1F74A73A0026B561 /* ErweimaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1A2F4C1F74A73A0026B561 /* ErweimaViewController.m */; };
+		2B1A2F4F1F74A73A0026B561 /* ErweimaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B1A2F4D1F74A73A0026B561 /* ErweimaViewController.xib */; };
+		2B1A2F521F74A86D0026B561 /* erweima.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B1A2F511F74A8610026B561 /* erweima.png */; };
+		2B1A2F531F74A8720026B561 /* touxiang.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B1A2F501F74A8610026B561 /* touxiang.png */; };
 		2B2E10511F3C015D00092EAA /* CityNotInOpenCityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B2E10501F3C015D00092EAA /* CityNotInOpenCityView.xib */; };
 		2B2E109A1F3C0AF900092EAA /* BaseBussiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2E10991F3C0A8800092EAA /* BaseBussiness.m */; };
 		2B2E10A41F3C0EDF00092EAA /* GetHomeBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2E109D1F3C0EDF00092EAA /* GetHomeBusiness.m */; };
@@ -374,6 +382,16 @@
 		2B15E8A01F6F680C00C2760F /* x509.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = x509.h; sourceTree = "<group>"; };
 		2B15E8A11F6F680C00C2760F /* x509_vfy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = x509_vfy.h; sourceTree = "<group>"; };
 		2B15E8A21F6F680C00C2760F /* x509v3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = x509v3.h; sourceTree = "<group>"; };
+		2B1A2F3B1F74A29B0026B561 /* ProtocolViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProtocolViewController.h; sourceTree = "<group>"; };
+		2B1A2F3C1F74A29B0026B561 /* ProtocolViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProtocolViewController.m; sourceTree = "<group>"; };
+		2B1A2F3D1F74A29B0026B561 /* ProtocolViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProtocolViewController.xib; sourceTree = "<group>"; };
+		2B1A2F471F74A4B80026B561 /* protocolText.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = protocolText.text; sourceTree = "<group>"; };
+		2B1A2F491F74A54D0026B561 /* shouhouzhunze.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = shouhouzhunze.text; sourceTree = "<group>"; };
+		2B1A2F4B1F74A73A0026B561 /* ErweimaViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ErweimaViewController.h; sourceTree = "<group>"; };
+		2B1A2F4C1F74A73A0026B561 /* ErweimaViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ErweimaViewController.m; sourceTree = "<group>"; };
+		2B1A2F4D1F74A73A0026B561 /* ErweimaViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ErweimaViewController.xib; sourceTree = "<group>"; };
+		2B1A2F501F74A8610026B561 /* touxiang.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = touxiang.png; sourceTree = "<group>"; };
+		2B1A2F511F74A8610026B561 /* erweima.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = erweima.png; sourceTree = "<group>"; };
 		2B2E10501F3C015D00092EAA /* CityNotInOpenCityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CityNotInOpenCityView.xib; sourceTree = "<group>"; };
 		2B2E10991F3C0A8800092EAA /* BaseBussiness.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseBussiness.m; sourceTree = "<group>"; };
 		2B2E109C1F3C0EDF00092EAA /* GetHomeBusiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetHomeBusiness.h; sourceTree = "<group>"; };
@@ -1306,6 +1324,8 @@
 		2B6BE32D1F46826400D0C915 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2B1A2F471F74A4B80026B561 /* protocolText.text */,
+				2B1A2F491F74A54D0026B561 /* shouhouzhunze.text */,
 				2BBCFC4B1F4A776300FCA0C9 /* SRCustomDataPicker.h */,
 				2BBCFC4C1F4A776300FCA0C9 /* SRCustomDataPicker.m */,
 				2B6BE32E1F46826400D0C915 /* MoreBaseView.h */,
@@ -1317,6 +1337,9 @@
 				2B4C35AD1F4BFD9500B22431 /* MyInvoiceInfoView.h */,
 				2B4C35AE1F4BFD9500B22431 /* MyInvoiceInfoView.m */,
 				2B4C35B01F4BFDA300B22431 /* MyInvoiceInfoView.xib */,
+				2B1A2F3B1F74A29B0026B561 /* ProtocolViewController.h */,
+				2B1A2F3C1F74A29B0026B561 /* ProtocolViewController.m */,
+				2B1A2F3D1F74A29B0026B561 /* ProtocolViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1324,6 +1347,8 @@
 		2B6BE3311F46826400D0C915 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				2B1A2F511F74A8610026B561 /* erweima.png */,
+				2B1A2F501F74A8610026B561 /* touxiang.png */,
 				2B6BE3321F46826400D0C915 /* MoreViewController.h */,
 				2B6BE3331F46826400D0C915 /* MoreViewController.m */,
 				2B6BE3341F46826400D0C915 /* MoreViewController.xib */,
@@ -1345,6 +1370,9 @@
 				2BCA35D11F748CB900A3CA92 /* QuestionDetailViewController.h */,
 				2BCA35D21F748CB900A3CA92 /* QuestionDetailViewController.m */,
 				2BCA35D31F748CB900A3CA92 /* QuestionDetailViewController.xib */,
+				2B1A2F4B1F74A73A0026B561 /* ErweimaViewController.h */,
+				2B1A2F4C1F74A73A0026B561 /* ErweimaViewController.m */,
+				2B1A2F4D1F74A73A0026B561 /* ErweimaViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -2112,7 +2140,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B1A2F531F74A8720026B561 /* touxiang.png in Resources */,
+				2B1A2F521F74A86D0026B561 /* erweima.png in Resources */,
+				2B1A2F4A1F74A5580026B561 /* shouhouzhunze.text in Resources */,
+				2B1A2F481F74A4C80026B561 /* protocolText.text in Resources */,
 				2BDA7E481F734C1100265FFF /* guide1.png in Resources */,
+				2B1A2F4F1F74A73A0026B561 /* ErweimaViewController.xib in Resources */,
 				2BDA7E491F734C1100265FFF /* guide2.png in Resources */,
 				2BDA7E4A1F734C1100265FFF /* guide3.png in Resources */,
 				2BDA7E4B1F734C1100265FFF /* guide4.png in Resources */,
@@ -2138,6 +2171,7 @@
 				2B6BE3381F46826400D0C915 /* MoreBaseView.xib in Resources */,
 				2B386F8C1F29B69A00228620 /* LaunchScreen.storyboard in Resources */,
 				2BDA7E531F7369DC00265FFF /* PaySelectVC.xib in Resources */,
+				2B1A2F3F1F74A29B0026B561 /* ProtocolViewController.xib in Resources */,
 				2B10FAEC1F482B1000801BEC /* AccountManagementViewController.xib in Resources */,
 				2B50F32A1F4D2AD100C28A20 /* OrderDetailViewController.xib in Resources */,
 				2BA9AAC81F4FD18E0035672C /* Assets.xcassets in Resources */,
@@ -2238,6 +2272,7 @@
 				2B15E8A51F6F685C00C2760F /* payStatusVC.m in Sources */,
 				2B15E7FB1F6F640300C2760F /* base64.m in Sources */,
 				2B15E7FC1F6F640300C2760F /* DataSigner.m in Sources */,
+				2B1A2F3E1F74A29B0026B561 /* ProtocolViewController.m in Sources */,
 				2B15E7FD1F6F640300C2760F /* DataVerifier.m in Sources */,
 				2B15E7FE1F6F640300C2760F /* MD5DataSigner.m in Sources */,
 				2B15E7FF1F6F640300C2760F /* NSDataEx.m in Sources */,
@@ -2288,6 +2323,7 @@
 				2B3870371F29BC0C00228620 /* UIButton+SRButton.m in Sources */,
 				2BA025171F2AD86B003EB25D /* TipLabel.m in Sources */,
 				2B84606F1F417F7F0013D26D /* ProductDetailTitleView.m in Sources */,
+				2B1A2F4E1F74A73A0026B561 /* ErweimaViewController.m in Sources */,
 				2B3FD7D81F4929E3003DE7C3 /* FillOrderSelectTableViewCell.m in Sources */,
 				2BC14DB81F31CD3500919808 /* SBJsonParser.m in Sources */,
 				2B815AEA1F5E3CE1006A622C /* NewCustomAlertView.m in Sources */,

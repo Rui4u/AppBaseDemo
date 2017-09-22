@@ -12,6 +12,10 @@
 #import "AccountManagementViewController.h"
 #import "NewDemandViewController.h"
 #import "MyInvoiceViewController.h"
+#import "ProtocolViewController.h"
+#import "QuestionViewController.h"
+#import "ServerCenterViewController.h"
+#import "ErweimaViewController.h"
 @interface MoreViewController ()
 
 @property (weak, nonatomic) IBOutlet UIScrollView *bgScrollView;
@@ -83,7 +87,40 @@
 }
 
 - (IBAction)clickHelpCenterButton:(UIButton *)sender {
-	[self showToastWithMessage:@"暂未开通" showTime:1];
+	
+	NSInteger tag = sender.tag - 1000;
+	if (tag == 1) {
+	
+		QuestionViewController * protocolViewController = [[QuestionViewController alloc] init];
+		[self.navigationController pushViewController:protocolViewController animated:YES];
+	}else if (tag == 2){
+	
+		ServerCenterViewController * serverCenterViewController = [[ServerCenterViewController alloc] init
+														   ];
+		[self.navigationController pushViewController:serverCenterViewController animated:YES];
+	}else if (tag == 5){
+		
+		
+		ErweimaViewController * serverCenterViewController = [[ErweimaViewController alloc] init
+																   ];
+		[self.navigationController pushViewController:serverCenterViewController animated:YES];
+		
+	}else {
+		
+		UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"拨打电话"
+																				 message:@"028-26222908"
+																		  preferredStyle:UIAlertControllerStyleAlert];
+		UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+		UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"呼叫" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
+								   {
+									   [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel:%@",@"028-26222908"]]];
+								   }];
+		[alertController addAction:cancelAction];
+		[alertController addAction:okAction];
+		
+		
+		[self presentViewController:alertController animated:YES completion:nil];
+	}
 }
 
 - (void)viewDidLoad {

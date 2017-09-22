@@ -28,7 +28,7 @@
     self.mainTableView.dataSource = self;
     [self.mainTableView reloadData];
     [self initNavBarView:NAV_BAR_TYPE_SECOND_LEVEL_VIEW];
-    [self.navBarView setTitle:@"客户服务"];
+    [self.navBarView setTitle:@"常见问题"];
     
     [QuestionBussiness requestQuestionWithToken:TOKEN completionSuccessHandler:^(QuestionModel *succeed) {
         self.model = succeed;
