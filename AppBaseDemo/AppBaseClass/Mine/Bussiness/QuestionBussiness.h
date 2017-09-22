@@ -10,7 +10,7 @@
 @class QuestionModel;
 
 
-typedef void (^QuestionSuccessBlock)(BOOL succeed);
+typedef void (^QuestionSuccessBlock)(QuestionModel* succeed);
 typedef void (^QuestionFailBlock) (NSString * failMessage);
 typedef void (^QuestionErrorBlcok)(NSString * netWorkErrorMessage);
 

@@ -7,7 +7,7 @@
 //
 
 #import "ServerCenterViewController.h"
-
+#import "QuestionViewController.h"
 @interface ServerCenterViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *mainTableView;
 @property (weak, nonatomic) IBOutlet UIButton *leftButton;
@@ -17,7 +17,16 @@
 @end
 
 @implementation ServerCenterViewController
+- (IBAction)leftButton:(id)sender {
+    
+    QuestionViewController * ques = [[QuestionViewController alloc] init];
+    [self.navigationController pushViewController:ques animated:YES];
+}
 
+- (IBAction)rightButton:(id)sender {
+    
+    
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -49,6 +58,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 /*
 #pragma mark - Navigation

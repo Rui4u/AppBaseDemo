@@ -7,7 +7,7 @@
 //
 
 #import "QuestionBussiness.h"
-
+#import  "QuestionModel.h"
 @implementation QuestionBussiness
 
 + (void) requestQuestionWithToken : (NSString* ) token
@@ -25,9 +25,11 @@
 		 NSDictionary * responeMp = (NSDictionary * ) success ;
 		 
 		 NSLog(@"删除成功");
-		 completionHandler(YES);
 		 
-		 
+         QuestionModel *model  = [QuestionModel mj_objectWithKeyValues:responeMp];
+         completionHandler(model);
+         
+
 	 } operationFailure:^(id failure) {
 		 
 		 completionFailHandler(failure);

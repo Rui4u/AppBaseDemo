@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ServerCenterViewController">
             <connections>
-                <outlet property="leftButton" destination="KVS-WD-cId" id="f49-1m-dcI"/>
+                <outlet property="leftButton" destination="2SB-Q6-nX9" id="6W1-60-rr3"/>
                 <outlet property="mainTableView" destination="Izg-Pe-Ezs" id="n1F-NA-u6W"/>
-                <outlet property="rightButton" destination="2SB-Q6-nX9" id="do8-9j-Omo"/>
+                <outlet property="rightButton" destination="KVS-WD-cId" id="KWy-7V-gbD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -41,6 +41,9 @@
                                     <subviews>
                                         <button opaque="NO" tag="1002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KVS-WD-cId">
                                             <rect key="frame" x="0.0" y="0.0" width="187.5" height="69"/>
+                                            <connections>
+                                                <action selector="rightButton:" destination="-1" eventType="touchUpInside" id="wsp-D8-SYF"/>
+                                            </connections>
                                         </button>
                                         <imageView userInteractionEnabled="NO" tag="1001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qingdan" translatesAutoresizingMaskIntoConstraints="NO" id="QIV-7l-bIC">
                                             <rect key="frame" x="84" y="15" width="20" height="20"/>
@@ -85,6 +88,9 @@
                                     <subviews>
                                         <button opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2SB-Q6-nX9">
                                             <rect key="frame" x="0.0" y="0.0" width="187.5" height="69"/>
+                                            <connections>
+                                                <action selector="leftButton:" destination="-1" eventType="touchUpInside" id="Lcv-AT-Ffq"/>
+                                            </connections>
                                         </button>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yaoshi" translatesAutoresizingMaskIntoConstraints="NO" id="Ikk-jP-r2q">
                                             <rect key="frame" x="84" y="15" width="20" height="20"/>
@@ -164,7 +170,7 @@
                         <constraint firstAttribute="height" constant="70" id="mFs-v2-OlX"/>
                     </constraints>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Izg-Pe-Ezs">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Izg-Pe-Ezs">
                     <rect key="frame" x="0.0" y="144" width="375" height="132"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>

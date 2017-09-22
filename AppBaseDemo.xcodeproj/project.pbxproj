@@ -210,6 +210,11 @@
 		2BC60A6C1F448C880069D70B /* ShoppingCartListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BC60A6B1F448C880069D70B /* ShoppingCartListModel.m */; };
 		2BC60A6F1F4493BD0069D70B /* ShopCartListBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BC60A6E1F4493BD0069D70B /* ShopCartListBottomView.m */; };
 		2BC60A711F4493D10069D70B /* ShopCartListBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BC60A701F4493D10069D70B /* ShopCartListBottomView.xib */; };
+		2BCA35C61F74870200A3CA92 /* QuestionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BCA35C51F74870200A3CA92 /* QuestionModel.m */; };
+		2BCA35CA1F7489F300A3CA92 /* QuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BCA35C81F7489F300A3CA92 /* QuestionViewController.m */; };
+		2BCA35CB1F7489F300A3CA92 /* QuestionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BCA35C91F7489F300A3CA92 /* QuestionViewController.xib */; };
+		2BCA35D41F748CB900A3CA92 /* QuestionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BCA35D21F748CB900A3CA92 /* QuestionDetailViewController.m */; };
+		2BCA35D51F748CB900A3CA92 /* QuestionDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BCA35D31F748CB900A3CA92 /* QuestionDetailViewController.xib */; };
 		2BD099361F433FFA008A1827 /* ShoppingCartGoodsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD099341F433FFA008A1827 /* ShoppingCartGoodsTableViewCell.m */; };
 		2BD099371F433FFA008A1827 /* ShoppingCartGoodsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BD099351F433FFA008A1827 /* ShoppingCartGoodsTableViewCell.xib */; };
 		2BD0993B1F4342D8008A1827 /* ShoppingCartGuiGeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD099391F4342D8008A1827 /* ShoppingCartGuiGeTableViewCell.m */; };
@@ -711,6 +716,14 @@
 		2BC60A6D1F4493BD0069D70B /* ShopCartListBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopCartListBottomView.h; sourceTree = "<group>"; };
 		2BC60A6E1F4493BD0069D70B /* ShopCartListBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopCartListBottomView.m; sourceTree = "<group>"; };
 		2BC60A701F4493D10069D70B /* ShopCartListBottomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShopCartListBottomView.xib; sourceTree = "<group>"; };
+		2BCA35C41F74870200A3CA92 /* QuestionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionModel.h; sourceTree = "<group>"; };
+		2BCA35C51F74870200A3CA92 /* QuestionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionModel.m; sourceTree = "<group>"; };
+		2BCA35C71F7489F300A3CA92 /* QuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionViewController.h; sourceTree = "<group>"; };
+		2BCA35C81F7489F300A3CA92 /* QuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionViewController.m; sourceTree = "<group>"; };
+		2BCA35C91F7489F300A3CA92 /* QuestionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionViewController.xib; sourceTree = "<group>"; };
+		2BCA35D11F748CB900A3CA92 /* QuestionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionDetailViewController.h; sourceTree = "<group>"; };
+		2BCA35D21F748CB900A3CA92 /* QuestionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionDetailViewController.m; sourceTree = "<group>"; };
+		2BCA35D31F748CB900A3CA92 /* QuestionDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionDetailViewController.xib; sourceTree = "<group>"; };
 		2BCF4A861F6BA133000C2AC3 /* PaySelectVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaySelectVC.h; sourceTree = "<group>"; };
 		2BCF4A871F6BA133000C2AC3 /* PaySelectVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaySelectVC.m; sourceTree = "<group>"; };
 		2BCF4A881F6BA133000C2AC3 /* payStatusVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = payStatusVC.h; sourceTree = "<group>"; };
@@ -1215,6 +1228,8 @@
 			children = (
 				2B6BE3471F4686DD00D0C915 /* NewProductDemandModel.h */,
 				2B6BE3481F4686DD00D0C915 /* NewProductDemandModel.m */,
+				2BCA35C41F74870200A3CA92 /* QuestionModel.h */,
+				2BCA35C51F74870200A3CA92 /* QuestionModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1324,6 +1339,12 @@
 				2BDA7E4D1F735EA200265FFF /* ServerCenterViewController.h */,
 				2BDA7E4E1F735EA200265FFF /* ServerCenterViewController.m */,
 				2BDA7E4F1F735EA200265FFF /* ServerCenterViewController.xib */,
+				2BCA35C71F7489F300A3CA92 /* QuestionViewController.h */,
+				2BCA35C81F7489F300A3CA92 /* QuestionViewController.m */,
+				2BCA35C91F7489F300A3CA92 /* QuestionViewController.xib */,
+				2BCA35D11F748CB900A3CA92 /* QuestionDetailViewController.h */,
+				2BCA35D21F748CB900A3CA92 /* QuestionDetailViewController.m */,
+				2BCA35D31F748CB900A3CA92 /* QuestionDetailViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -2105,6 +2126,7 @@
 				2BFCFDEC1F413B63001DA10D /* AppProductMainCellView.xib in Resources */,
 				2B8460761F418F0D0013D26D /* ProductInfoView.xib in Resources */,
 				2B10FAF61F483D0000801BEC /* NewDemandView.xib in Resources */,
+				2BCA35CB1F7489F300A3CA92 /* QuestionViewController.xib in Resources */,
 				2B3FD7D41F4927DA003DE7C3 /* ProductCategoryCell.xib in Resources */,
 				2BD0993C1F4342D8008A1827 /* ShoppingCartGuiGeTableViewCell.xib in Resources */,
 				2B10FAE71F47E47900801BEC /* MakeSureOrderViewController.xib in Resources */,
@@ -2112,6 +2134,7 @@
 				2B8460711F417F880013D26D /* ProductDetailTitleView.xib in Resources */,
 				2BD099371F433FFA008A1827 /* ShoppingCartGoodsTableViewCell.xib in Resources */,
 				2B3FD7D91F4929E3003DE7C3 /* FillOrderSelectTableViewCell.xib in Resources */,
+				2BCA35D51F748CB900A3CA92 /* QuestionDetailViewController.xib in Resources */,
 				2B6BE3381F46826400D0C915 /* MoreBaseView.xib in Resources */,
 				2B386F8C1F29B69A00228620 /* LaunchScreen.storyboard in Resources */,
 				2BDA7E531F7369DC00265FFF /* PaySelectVC.xib in Resources */,
@@ -2209,6 +2232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BCA35D41F748CB900A3CA92 /* QuestionDetailViewController.m in Sources */,
 				2BDA7E4C1F734C2000265FFF /* KSGuideManager.m in Sources */,
 				2B15E8A41F6F685C00C2760F /* PaySelectVC.m in Sources */,
 				2B15E8A51F6F685C00C2760F /* payStatusVC.m in Sources */,
@@ -2219,6 +2243,7 @@
 				2B15E7FF1F6F640300C2760F /* NSDataEx.m in Sources */,
 				2B9A5EAA1F6F69DF007DB3F9 /* WeChaPayModel.m in Sources */,
 				2B15E8001F6F640300C2760F /* openssl_wrapper.m in Sources */,
+				2BCA35CA1F7489F300A3CA92 /* QuestionViewController.m in Sources */,
 				2B15E8011F6F640300C2760F /* RSADataSigner.m in Sources */,
 				2B15E8021F6F640300C2760F /* RSADataVerifier.m in Sources */,
 				2BAF5D631F6B80130057B516 /* Order.m in Sources */,
@@ -2288,6 +2313,7 @@
 				2BFCFDF11F413B9F001DA10D /* ProdcutDetailBottomView.m in Sources */,
 				2B10FAF41F483CF900801BEC /* NewDemandView.m in Sources */,
 				2BAFB5121F333054001236B8 /* GetCityListBusiness.m in Sources */,
+				2BCA35C61F74870200A3CA92 /* QuestionModel.m in Sources */,
 				2B386F871F29B69A00228620 /* AppBaseDemo.xcdatamodeld in Sources */,
 				2B7DCC021F3579CC00E88B38 /* HomeProductListTableViewCell.m in Sources */,
 				2BBFAFEF1F32F4B0002506D1 /* NSDictionary+SRExtension.m in Sources */,

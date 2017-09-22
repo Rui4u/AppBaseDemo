@@ -66,12 +66,13 @@
 	self.headLineView = headLineView;
 	[self addSubview:headLineView];
 	
+    NSArray * imageArray =@[@"home_goumai",@"home_qingdan",@"home_dingdan"];
 	for (int i = 0 ; i < titleArray.count; i ++) {
 		
 		LCVerticalBadgeBtn * view = [[LCVerticalBadgeBtn alloc] init];
 		view.tag = i;
 		[view addTarget:self action:@selector(selectGoToVC:) forControlEvents:UIControlEventTouchUpInside];
-		[view setImage:[UIImage imageNamed:@"homeLoginTemp"] forState:UIControlStateNormal];
+		[view setImage:[UIImage imageNamed:imageArray[i]] forState:UIControlStateNormal];
 		[view setTitle:titleArray[i] forState:UIControlStateNormal];
 		view.titleLabel.font = [UIFont systemFontOfSize:12];
 		[view setTitleColor:[UIColor colorWithHexString:Main_Font_Black_Color] forState:UIControlStateNormal];
