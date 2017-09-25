@@ -136,6 +136,8 @@
         self.selectAddView.hidden = NO;
         self.addOpenOrCloseButton.hidden = YES;
     }
+    
+    [self bringSubviewToFront:self.addOpenOrCloseButton];
 }
 
 @end

@@ -105,22 +105,37 @@
 																   ];
 		[self.navigationController pushViewController:serverCenterViewController animated:YES];
 		
-	}else {
+	}else if (tag == 3){
 		
 		UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"拨打电话"
-																				 message:@"028-26222908"
+																				 message:@"18111109450"
 																		  preferredStyle:UIAlertControllerStyleAlert];
 		UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
 		UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"呼叫" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
 								   {
-									   [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel:%@",@"028-26222908"]]];
+									   [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel:%@",@"18111109450"]]];
 								   }];
 		[alertController addAction:cancelAction];
 		[alertController addAction:okAction];
 		
 		
 		[self presentViewController:alertController animated:YES completion:nil];
-	}
+    }else if (tag == 4){
+        
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"拨打电话"
+                                                                                 message:@"028-26222908"
+                                                                          preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"呼叫" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
+                                   {
+                                       [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel:%@",@"028-26222908"]]];
+                                   }];
+        [alertController addAction:cancelAction];
+        [alertController addAction:okAction];
+        
+        
+        [self presentViewController:alertController animated:YES completion:nil];
+    }
 }
 
 - (void)viewDidLoad {
