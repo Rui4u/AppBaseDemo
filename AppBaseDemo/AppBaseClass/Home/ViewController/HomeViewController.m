@@ -141,7 +141,11 @@
 }
 
 - (void)selectedLocation {
-	
+        if (isNotLogin) {
+            [self showLoginViewController:nil];
+            [self.backScrollView.mj_header endRefreshing];
+            return;
+        }
 	
 	UserLocationViewController * userLocationViewController = [[UserLocationViewController alloc] init];
 	[self.navigationController pushViewController:userLocationViewController animated:YES];
