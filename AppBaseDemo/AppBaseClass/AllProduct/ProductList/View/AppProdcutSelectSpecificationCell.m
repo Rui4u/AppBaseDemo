@@ -61,7 +61,7 @@
         self.selectSpecificationView.totolPriceLabel.text = [NSString stringWithFormat:@"[%@]%@ %@",dataSourse.brand,dataSourse.fullName,dataSourse.feature];
     }
     
-    self.selectSpecificationView.averagePrice.text = [NSString stringWithFormat:@"￥%@/%@",dataSourse.guige[self.indexPath.row].avgPrice,dataSourse.baseSpec];
+    self.selectSpecificationView.averagePrice.text = [NSString stringWithFormat:@"￥%@元/%@",dataSourse.guige[self.indexPath.row].avgPrice,dataSourse.baseSpec];
     
     
     if ([dataSourse.discount isEqualToString:@"1"]) {

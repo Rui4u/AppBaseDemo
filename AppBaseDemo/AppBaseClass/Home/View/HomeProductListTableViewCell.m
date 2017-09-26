@@ -168,8 +168,8 @@
 		selectSpecificationView.delegate = self;
         [self.bottomBgView addSubview:selectSpecificationView];
 		
-        selectSpecificationView.totolPriceLabel.text = [NSString stringWithFormat:@"￥%@/%@(%@斤)",guige.currentPrice,dataSourse.baseSpec,guige.totalWeight];
-		selectSpecificationView.averagePrice.text = [NSString stringWithFormat:@"{￥%@}/%@",guige.avgPrice,dataSourse.baseSpec];
+        selectSpecificationView.totolPriceLabel.text = [NSString stringWithFormat:@"￥%@元/%@(%@斤)",guige.currentPrice,dataSourse.baseSpec,guige.totalWeight];
+		selectSpecificationView.averagePrice.text = [NSString stringWithFormat:@"{￥%@}元/%@",guige.avgPrice,dataSourse.baseSpec];
 		
         
         selectSpecificationView.averagePrice.attributedText =

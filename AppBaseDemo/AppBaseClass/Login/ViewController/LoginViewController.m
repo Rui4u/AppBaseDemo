@@ -51,7 +51,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-	[self initNavBarView:NAV_BAR_TYPE_ROOT_VIEW];
+	[self initNavBarView:NAV_BAR_TYPE_SECOND_LEVEL_VIEW];
 	[self.navBarView setTitle:@"登录"];
 	
 	UIButton * registerButton = [UIButton quickCreateButtonWithFrame:CGRectMake(SCREEN_WIDTH-AutoHeight(60)- 20, 20, AutoHeight(60), AutoHeight(44))
