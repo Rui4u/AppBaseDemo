@@ -22,6 +22,13 @@
 - (IBAction)clickLoginButton:(UIButton *)sender {
 	[self.view endEditing:YES];
     NSLog(@"点击登录");
+	
+	if (![self.phoneNumberTextField.text isValidateMobile])
+	{
+		[self showToastWithMessage:@"请输入正确手机号码" showTime:1.0f];
+		return ;
+		
+	}
     [LoginBusiness loginWithStoreTelephone:self.phoneNumberTextField.text storePwd:self.userPwdTextField.text completionSuccessHandler:^(BOOL isFinishInfo) {
         
     
@@ -53,6 +60,9 @@
     [super viewDidLoad];
 	[self initNavBarView:NAV_BAR_TYPE_SECOND_LEVEL_VIEW];
 	[self.navBarView setTitle:@"登录"];
+	
+
+	
 	
 	UIButton * registerButton = [UIButton quickCreateButtonWithFrame:CGRectMake(SCREEN_WIDTH-AutoHeight(60)- 20, 20, AutoHeight(60), AutoHeight(44))
 													  title:@"注册"
