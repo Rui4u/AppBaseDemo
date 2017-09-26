@@ -76,7 +76,7 @@
 		[view setTitle:titleArray[i] forState:UIControlStateNormal];
 		view.titleLabel.font = [UIFont systemFontOfSize:12];
 		[view setTitleColor:[UIColor colorWithHexString:Main_Font_Black_Color] forState:UIControlStateNormal];
-		view.frame = CGRectMake(i * width, 0, width, height);
+		view.frame = CGRectMake(i * width, 10, width, height);
 		[headLineView addSubview:view];
 	}
 }
@@ -92,7 +92,7 @@
 - (TopAdvertisementView *)bannerScrollView {
 	if (!_bannerScrollView) {
 		
-		_bannerScrollView = [[TopAdvertisementView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, AutoHeight(150))];
+		_bannerScrollView = [[TopAdvertisementView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, AutoHeight(180))];
 		_bannerScrollView.delegate = self;
 	}
 	return _bannerScrollView;

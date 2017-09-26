@@ -58,7 +58,7 @@
                                                object:nil];
     
     // Do any additional setup after loading the view.
-	self.topView= [[HomeTopView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, HEIGHT_AUTO(279))];
+	self.topView= [[HomeTopView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, HEIGHT_AUTO(309))];
 	__weak typeof(self) weakself = self;
 	self.topView.topSelected = ^(NSInteger index) {
 		if (index == 0) {
