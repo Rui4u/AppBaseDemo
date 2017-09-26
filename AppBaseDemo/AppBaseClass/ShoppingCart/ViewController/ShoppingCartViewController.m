@@ -46,6 +46,8 @@
     [self initNavBarView:self.navBarType];
     [self.navBarView setTitle:@"购物车"];
 
+    
+    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(pullToRefresh)
                                                  name:CNReLoadeShoppingCart
@@ -71,6 +73,11 @@
 
 - (void)pullToRefresh {
 
+        if (isNotLogin) {
+            [self showLoginViewController:nil];
+            [self.mainTableView.mj_header endRefreshing];
+            return;
+        }
     
     [ShoppingCartListBussiness requestShoppingCartListWithToken:TOKEN completionSuccessHandler:^(ShoppingCartListModel *shoppingCartListModel) {
 		[ShoppingCartManager sharedManager].CarInfoList = shoppingCartListModel.CarInfoList.mutableCopy;

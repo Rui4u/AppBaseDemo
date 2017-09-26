@@ -154,13 +154,13 @@
 }
 #pragma mark - 网络请求
 - (void)pullToRefresh {
-
-    if (isNotLogin) {
-        [self showLoginViewController:nil];
-        [self.backScrollView.mj_header endRefreshing];
-        return;
-    }
-    
+//
+//    if (isNotLogin) {
+//        [self showLoginViewController:nil];
+//        [self.backScrollView.mj_header endRefreshing];
+//        return;
+//    }
+//
     
 	[GetHomeBusiness requestGetHomeWithToken:TOKEN completionSuccessHandler:^(HomeDataModel *homeDataModel)
 	 {
