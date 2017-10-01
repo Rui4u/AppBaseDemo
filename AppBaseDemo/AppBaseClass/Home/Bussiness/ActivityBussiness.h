@@ -9,7 +9,7 @@
 #import "BaseBussiness.h"
 #import "GetSelectedProductModel.h"
 
-typedef void (^ActivitySuccessBlock)(GetSelectedProductModel * model);
+typedef void (^ActivitySuccessBlock)(HomeDataModel * model);
 typedef void (^ActivityFailBlock) (NSString * failMessage);
 typedef void (^ActivityErrorBlcok)(NSString * netWorkErrorMessage);
 

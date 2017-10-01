@@ -141,6 +141,11 @@
     
     self.topView.clickHuodongSucceed = ^(NSString *huodongId) {
         
+        if (isNotLogin) {
+            [self showLoginViewController:nil];
+            [self.backScrollView.mj_header endRefreshing];
+            return;
+        }
         ActivityViewController * search = [[ActivityViewController alloc] init];
         search.huodongId = huodongId;
         [self.navigationController pushViewController:search animated:YES];

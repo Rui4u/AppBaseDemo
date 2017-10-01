@@ -26,7 +26,7 @@
                                          success:^(id success)
      {
          NSDictionary * responeMp = (NSDictionary * ) success ;
-         GetSelectedProductModel *result = [GetSelectedProductModel mj_objectWithKeyValues:responeMp];
+         HomeDataModel *result = [HomeDataModel mj_objectWithKeyValues:responeMp];
 
          completionHandler(result);
          

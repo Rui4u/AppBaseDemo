@@ -29,7 +29,7 @@
 /**
  数据源
  */
-@property (nonatomic ,strong) NSMutableArray<Goods*> * goodsListInfoList;
+@property (nonatomic ,strong) HomeDataModel * dataSourse;
 
 @end
 
@@ -60,10 +60,10 @@
     
     [ActivityBussiness requestActivityWithToken:TOKEN
                                      activityId:self.huodongId
-                       completionSuccessHandler:^(GetSelectedProductModel *model)
+                       completionSuccessHandler:^(HomeDataModel *model)
      
      {
-         self.goodsListInfoList = model.goodsListInfoList;
+         self.dataSourse = model;
          [self.tableViewList reloadData];
      } completionFailHandler:^(NSString *failMessage) {
         
@@ -76,21 +76,23 @@
     [super viewDidAppear:animated];
     
 }
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return self.goodsListInfoList.count;
+    return self.dataSourse.ProductionInfoList[section].goodsList.count;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return .1;
+    return 35;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     return .1;
 }
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return self.dataSourse.ProductionInfoList.count;
+}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return self.goodsListInfoList[indexPath.row].height;
+    return self.dataSourse.ProductionInfoList[indexPath.section].goodsList[indexPath.row].height;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -104,7 +106,8 @@
         cell.delegate = self;
     }
     cell.indexPath = indexPath;
-    cell.dataSourse = self.goodsListInfoList[indexPath.row];
+    cell.dataSourse = self.dataSourse.ProductionInfoList[indexPath.section].goodsList[indexPath.row];
+
     return cell;
     
     
@@ -113,11 +116,13 @@
 #pragma mark 删除清单
 - (void)clickDeteleGoodsWith:(NSIndexPath *)indexPath {
     
-    [ProductRemoveListBussiness requestProductRemoveListWithToken:TOKEN goodsId:self.goodsListInfoList[indexPath.row].goodsId completionSuccessHandler:^(BOOL succeed) {
+    
+    
+    [ProductRemoveListBussiness requestProductRemoveListWithToken:TOKEN goodsId:self.dataSourse.ProductionInfoList[indexPath.section].goodsList[indexPath.row].goodsId completionSuccessHandler:^(BOOL succeed) {
         NSLog(@"删除清单成功");
-        [self.goodsListInfoList removeObjectAtIndex:indexPath.row];
+        [self.dataSourse.ProductionInfoList[indexPath.section].goodsList removeObjectAtIndex:indexPath.row];
         
-        [(UITableView *)self.tableViewList reloadData];
+        [self.tableViewList reloadData];
         
     } completionFailHandler:^(NSString *failMessage) {
         [self showToastWithMessage:failMessage showTime:1];
@@ -130,9 +135,11 @@
 #pragma mark - 去详情
 - (void)clickGoToProductDetailWith:(NSIndexPath *)indexPath andGuiGeIndex:(NSInteger)index {
     
+    
+    
     ProductDetailViewController * productDetailViewController = [[ProductDetailViewController alloc] init];
-    productDetailViewController.goodsId = self.goodsListInfoList[indexPath.row].goodsId;
-    productDetailViewController.guigeId = self.goodsListInfoList[indexPath.row].guige[index].guigeID;
+    productDetailViewController.goodsId = self.dataSourse.ProductionInfoList[indexPath.section].goodsList[indexPath.row].goodsId;
+    productDetailViewController.guigeId = self.dataSourse.ProductionInfoList[indexPath.section].goodsList[indexPath.row].guige[index].guigeID;
     [self.navigationController pushViewController:productDetailViewController animated:YES];
     
     
@@ -146,19 +153,20 @@
     self.tableViewList.contentOffset = CGPointMake(0,0);
     
 }
+
+
 #pragma mark - 打开关闭规格
 - (void)ClickSelectSpecificationWithIndexPath:(NSIndexPath *)indexPath {
     
-    [(UITableView *)self.tableViewList reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
+    [self.tableViewList reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
     
 }
-
 
 #pragma mark - 点击添加删除购物车
 -(void)changeProcutNumberBagWithCount:(NSString *)count withIndexPath:(NSIndexPath *)indexPath andTypeIndex:(NSInteger)typeIndex withRect:(CGRect)rect{
     
     
-    Goods * selectGoods = self.goodsListInfoList[indexPath.section];
+    Goods * selectGoods = self.dataSourse.ProductionInfoList[typeIndex].goodsList[indexPath.section];
     Guige * selectGuige = selectGoods.guige[indexPath.row];
     
     selectGuige.carGoodNum = count;
@@ -206,8 +214,8 @@
         
         
         [ShoppingCartChangeNumBussiness requestShoppingCartChangeNumWithToken:TOKEN
-                                                                      goodsId:selectGoods.goodsId
-                                                                       specId:selectGuige.guigeID
+                                                                      goodsId:self.dataSourse.ProductionInfoList[typeIndex].goodsList[indexPath.section].goodsId
+                                                                       specId:self.dataSourse.ProductionInfoList[typeIndex].goodsList[indexPath.section].guige[indexPath.row].guigeID
                                                                           num:count
                                                      completionSuccessHandler:^(NSString *succeed)
          {
@@ -220,12 +228,6 @@
     }
     
     [CommonNotification postNotification:CNotificationShoppingCartNumberNotify userInfo:nil object:nil];
-}
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
