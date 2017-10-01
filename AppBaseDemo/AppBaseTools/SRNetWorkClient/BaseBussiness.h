@@ -33,6 +33,9 @@
 #define KVerifyCodeTelUpdateBussinessUrl            [NSString stringWithFormat :@"%@/gs/store/verifyCodeTelUpdate?",kHTTP_HOST_URL]
 
 
+//活动
+#define KactivityAPIBussinessUrl            [NSString stringWithFormat :@"%@/gs/activityAPI/list?",kHTTP_HOST_URL]
+
 //首页
 #define KHomeBussinessUrl            [NSString stringWithFormat :@"%@/gs/index/indexList?",kHTTP_HOST_URL]
 //全部商品
@@ -86,6 +89,11 @@
 //支付宝
 #define kExecuteAliPayBussinessUrl [NSString stringWithFormat :@"%@/gs/config/getOrder?",kHTTP_HOST_URL]
 
+
+
+
+//更新
+#define KcheckVersionIosBussinessUrl            [NSString stringWithFormat :@"%@/gs/config/checkVersionIos?",kHTTP_HOST_URL]
 NS_ASSUME_NONNULL_BEGIN
 typedef void (^netWorkFailBlock)(NSString * netWorkMeeage);
 

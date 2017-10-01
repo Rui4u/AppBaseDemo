@@ -53,8 +53,15 @@
 	[self addSubview:self.bottomAdv];
 	self.height =CGRectGetMaxY(self.bottomAdv.frame);
 	[self.bottomAdv sd_setBackgroundImageWithURL:[NSURL URLWithString:self.homeDataModel.activityList.firstObject.activityImg] forState:UIControlStateNormal];
+    [self.bottomAdv addTarget:self action:@selector(selectorclickHuodongButton:) forControlEvents:UIControlEventTouchUpInside];
 }
 
+- (void)selectorclickHuodongButton:(UIButton *)sender {
+    if (self.clickHuodongSucceed) {
+        self.clickHuodongSucceed(self.homeDataModel.activityList.firstObject.activityID);
+    }
+    
+}
 
 
 - (void)setUpHeadLineView {
@@ -109,6 +116,9 @@
 	self.bannerScrollView.bannerListArray = homeDataModel.bannerList;
 	[self.bannerScrollView.collectionView reloadData];
 	NSString * iamgeUrl = homeDataModel.activityList.firstObject.activityImg;
+    if (iamgeUrl == nil) {
+        [self.bottomAdv setBackgroundImage:[UIImage imageNamed:@"picNomail2"] forState:UIControlStateNormal];
+    }
 	[self.bottomAdv sd_setBackgroundImageWithURL:[NSURL URLWithString:iamgeUrl] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"picNomail2"]] ;
 }
 

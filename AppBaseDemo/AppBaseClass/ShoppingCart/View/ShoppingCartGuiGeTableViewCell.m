@@ -70,7 +70,7 @@
     Guige * guige = dataSourse.guige[_indexPath.row];
     
     _totalPriceLabel.text = [NSString stringWithFormat:@"{￥%@}元/%@(%@斤)",guige.currentPrice,dataSourse.baseSpec,guige.totalWeight];
-    _averagePriceLabel.text = [NSString stringWithFormat:@"￥%@元/%@",guige.avgPrice,dataSourse.baseSpec];
+    _averagePriceLabel.text = [NSString stringWithFormat:@"￥%@元/斤",guige.avgPrice];
     
     
     _totalPriceLabel.attributedText =

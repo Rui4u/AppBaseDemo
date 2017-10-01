@@ -23,6 +23,10 @@
 #import "NewCustomAlertView.h"
 #import "OrderListViewController.h"
 #import "ServerCenterViewController.h"
+#import "CheackVersionBussiness.h"
+#import "NewCustomAlertView.h"
+#import "ActivityBussiness.h"
+#import "ActivityViewController.h"
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource,HomeProductListTableViewCellDelegate,SelectTypeViewDelegate>
 @property (nonatomic ,strong ) HomeTopView * topView;
 @property (nonatomic ,strong ) SelectTypeView * selectTypeView;
@@ -130,7 +134,66 @@
 	leftButton.backgroundColor = [UIColor colorWithWhite:0 alpha:.3];
 	[self.navBarView addSubview:leftButton];
 	
-	
+    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+    NSString *app_build = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
+    NSLog(@"%@",infoDictionary);
+    
+    
+    self.topView.clickHuodongSucceed = ^(NSString *huodongId) {
+        
+        ActivityViewController * search = [[ActivityViewController alloc] init];
+        search.huodongId = huodongId;
+        [self.navigationController pushViewController:search animated:YES];
+      
+       
+    };
+    
+    
+    [CheackVersionBussiness requestCheackVersionWithVersionMumber:app_build completionSuccessHandler:^(NSDictionary *upadataInfo) {
+        if ([upadataInfo objectForKey:@"isSucceed"]) {
+//
+            
+            UILabel * view = [UILabel creatLabelWithText:@"有新版本更新,是否进入App Store进行更新" FontOfSize:14 textColor:@"333333"];
+            NewCustomAlertView * newCustomAlertView = [[NewCustomAlertView alloc] init];
+            newCustomAlertView.alertViewWidth  = SCREEN_WIDTH - 24;
+            newCustomAlertView.contentView = view;
+            newCustomAlertView.contentViewHeight = 50 + 15;
+            newCustomAlertView.buttonTitleArray  = @[@"取消",@"确定"];
+            newCustomAlertView.buttonColorArray = @[@"333333",Main_Font_Green_Color];
+            newCustomAlertView.titleLabelText = @"提示";
+            [newCustomAlertView reloadData];
+            
+            newCustomAlertView.clickBlock = ^(NSInteger index) {
+                
+                if (index == 1) {
+                    
+                    NSString * string = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/us/app/id%@",@"1288390411"];//app id
+                    NSURL * url = [NSURL URLWithString:string];
+                    
+                    if ([[UIApplication sharedApplication] canOpenURL:url]) {
+                        if (iOS10Later) {
+                            [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:^(BOOL success) {
+                                NSLog(@"success = %d",success);
+                            }];
+                        }else{
+                            [[UIApplication sharedApplication] openURL:url];
+                        }
+                    }
+                    
+                }else {
+                    
+                }
+            };
+        }else {
+            
+            
+        }
+
+    } completionFailHandler:^(NSString *failMessage) {
+        
+    } completionError:^(NSString *netWorkErrorMessage) {
+        
+    }];
 }
 - (void)selectedSevire {
 	

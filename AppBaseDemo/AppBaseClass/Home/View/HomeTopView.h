@@ -12,4 +12,7 @@
 @property (nonatomic ,strong ) HomeDataModel * homeDataModel;
 
 @property (nonatomic ,copy ) void(^topSelected)(NSInteger index);
+
+@property (nonatomic ,copy ) void(^clickHuodongSucceed)(NSString * huodongId);
+
 @end

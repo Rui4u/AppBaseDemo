@@ -129,6 +129,7 @@
 		
 		[SearchAppProductListBussiness requestSearchAppProductListWithToken:TOKEN goodName:self.searchBar.text completionSuccessHandler:^(GetSelectedProductModel *getSelectedProductModel) {
 			
+            
 			SearchListViewController * search = [[SearchListViewController alloc] init];
 			search.goodsListInfoList = [NSMutableArray arrayWithArray:getSelectedProductModel.goodsListInfoList];
 			[self.navigationController pushViewController:search animated:YES];

@@ -77,6 +77,9 @@
 		2B3FD7EA1F493133003DE7C3 /* FillOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3FD7E91F493133003DE7C3 /* FillOrderModel.m */; };
 		2B3FD7ED1F4962CF003DE7C3 /* FillOrderBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3FD7EC1F4962CF003DE7C3 /* FillOrderBottomView.m */; };
 		2B3FD7EF1F4962DE003DE7C3 /* FillOrderBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B3FD7EE1F4962DE003DE7C3 /* FillOrderBottomView.xib */; };
+		2B4141EB1F81139A00B75BDE /* CheackVersionBussiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4141EA1F81139A00B75BDE /* CheackVersionBussiness.m */; };
+		2B4141EE1F811C4D00B75BDE /* ActivityBussiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4141ED1F811C4D00B75BDE /* ActivityBussiness.m */; };
+		2B4141F11F811DD500B75BDE /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4141F01F811DD500B75BDE /* ActivityViewController.m */; };
 		2B41F2131F429C6300CB36D0 /* TopProductImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B41F2121F429C6300CB36D0 /* TopProductImageScrollView.m */; };
 		2B41F2191F42ABAD00CB36D0 /* ProductDetailGuiGeInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B41F2181F42ABAD00CB36D0 /* ProductDetailGuiGeInfo.m */; };
 		2B41F21B1F42ABB600CB36D0 /* ProductDetailGuiGeInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B41F21A1F42ABB600CB36D0 /* ProductDetailGuiGeInfo.xib */; };
@@ -461,6 +464,12 @@
 		2B3FD7EB1F4962CF003DE7C3 /* FillOrderBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FillOrderBottomView.h; sourceTree = "<group>"; };
 		2B3FD7EC1F4962CF003DE7C3 /* FillOrderBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FillOrderBottomView.m; sourceTree = "<group>"; };
 		2B3FD7EE1F4962DE003DE7C3 /* FillOrderBottomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FillOrderBottomView.xib; sourceTree = "<group>"; };
+		2B4141E91F81139A00B75BDE /* CheackVersionBussiness.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheackVersionBussiness.h; sourceTree = "<group>"; };
+		2B4141EA1F81139A00B75BDE /* CheackVersionBussiness.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheackVersionBussiness.m; sourceTree = "<group>"; };
+		2B4141EC1F811C4D00B75BDE /* ActivityBussiness.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityBussiness.h; sourceTree = "<group>"; };
+		2B4141ED1F811C4D00B75BDE /* ActivityBussiness.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityBussiness.m; sourceTree = "<group>"; };
+		2B4141EF1F811DD500B75BDE /* ActivityViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
+		2B4141F01F811DD500B75BDE /* ActivityViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityViewController.m; sourceTree = "<group>"; };
 		2B41F2111F429C6300CB36D0 /* TopProductImageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopProductImageScrollView.h; sourceTree = "<group>"; };
 		2B41F2121F429C6300CB36D0 /* TopProductImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopProductImageScrollView.m; sourceTree = "<group>"; };
 		2B41F2171F42ABAD00CB36D0 /* ProductDetailGuiGeInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailGuiGeInfo.h; sourceTree = "<group>"; };
@@ -972,6 +981,10 @@
 			children = (
 				2B2E109C1F3C0EDF00092EAA /* GetHomeBusiness.h */,
 				2B2E109D1F3C0EDF00092EAA /* GetHomeBusiness.m */,
+				2B4141E91F81139A00B75BDE /* CheackVersionBussiness.h */,
+				2B4141EA1F81139A00B75BDE /* CheackVersionBussiness.m */,
+				2B4141EC1F811C4D00B75BDE /* ActivityBussiness.h */,
+				2B4141ED1F811C4D00B75BDE /* ActivityBussiness.m */,
 			);
 			path = Bussiness;
 			sourceTree = "<group>";
@@ -1536,6 +1549,8 @@
 			children = (
 				2BA025471F2B0C09003EB25D /* HomeViewController.h */,
 				2BA025481F2B0C09003EB25D /* HomeViewController.m */,
+				2B4141EF1F811DD500B75BDE /* ActivityViewController.h */,
+				2B4141F01F811DD500B75BDE /* ActivityViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -2299,6 +2314,7 @@
 				2BD099451F434AAB008A1827 /* ProductAddListBussiness.m in Sources */,
 				2B41F2241F42F83B00CB36D0 /* DeleteCartBusiness.m in Sources */,
 				2BA025341F2AE470003EB25D /* SRCustomTabBarView.m in Sources */,
+				2B4141EE1F811C4D00B75BDE /* ActivityBussiness.m in Sources */,
 				2B3870351F29BC0C00228620 /* NSString+SRDoc.m in Sources */,
 				2B3870361F29BC0C00228620 /* NSString+SRString.m in Sources */,
 				2BD5D70A1F39871700BE1994 /* NSString+PinYin4Cocoa.m in Sources */,
@@ -2421,6 +2437,7 @@
 				2B38703C1F29BC0C00228620 /* UIView+SRExtension.m in Sources */,
 				2BA709331F3B087800B0B520 /* StoreInfoBusiness.m in Sources */,
 				2B6BE3581F4691F100D0C915 /* OrderDetailModel.m in Sources */,
+				2B4141EB1F81139A00B75BDE /* CheackVersionBussiness.m in Sources */,
 				2BA025491F2B0C09003EB25D /* HomeViewController.m in Sources */,
 				2B3FD7E21F492AB2003DE7C3 /* FillOrderNomailCell.m in Sources */,
 				2BC14DB91F31CD3500919808 /* SBJsonStreamParser.m in Sources */,
@@ -2433,6 +2450,7 @@
 				2BBDCC4E1F34AD86003FE167 /* HomeDataModel.m in Sources */,
 				2BD099421F4349D2008A1827 /* ShoppingCartListBussiness.m in Sources */,
 				2BBFAFFF1F330AE8002506D1 /* LoginBusiness.m in Sources */,
+				2B4141F11F811DD500B75BDE /* ActivityViewController.m in Sources */,
 				2BA709431F3B1E6300B0B520 /* CityNotInOpenCityView.m in Sources */,
 				2B38703D1F29BC0C00228620 /* NSArray+ ZXPUnicode.m in Sources */,
 				2B3FD7C41F4924E5003DE7C3 /* FillOrderViewController.m in Sources */,

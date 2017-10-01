@@ -38,6 +38,10 @@
 @property (nonatomic , copy) NSString              * orderStatus;
 @property (nonatomic , copy) NSString              * totalPrice;
 @property (nonatomic , copy) NSString              * trueName;
+@property (nonatomic , copy) NSString              * time;
+@property (nonatomic , copy) NSString              * yujiTime;
+@property (nonatomic , copy) NSString              * okTime;
+
 
 @end
 

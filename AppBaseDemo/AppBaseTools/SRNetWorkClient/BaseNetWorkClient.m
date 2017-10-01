@@ -93,7 +93,9 @@
 		[APP_DELEGATE.navgationController popToRootViewControllerAnimated:YES];
 		APP_DELEGATE.customTabBar.tabBarView.selectedIndex = 0;
 
-	}
+    }else {
+        BLOCK_SAFE_RUN(handlerException,[[resquest valueForKey:@"header"] valueForKey:@"errorMsg"]);
+    }
 
 
 }

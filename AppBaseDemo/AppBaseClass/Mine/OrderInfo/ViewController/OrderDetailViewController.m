@@ -221,6 +221,7 @@
 			NSString * trueName;
 			NSString * storeAddress;
 			NSString * addTime;
+            NSString * finishTime;
 			if(self.orderModel.orderDetails.trueName == nil){
 				trueName = @"";
 			}else {
@@ -235,13 +236,77 @@
 			if(self.orderModel.orderDetails.addTime == nil){
 				addTime = @"";
 			}else {
-				addTime = self.orderModel.orderDetails.addTime;
+				addTime = self.orderModel.orderDetails.time;
 			}
+            
+            
 			
-			array = @[@[@"收货人",trueName],
-					  @[@"收货地址",storeAddress],
-					  @[@"下单时间",addTime],
-					  @[@"预计送达",@"一天后"]];
+            
+            if (self.orderModel.orderDetails.orderStatus.intValue == 0) {
+                _statusStr = @"待配货";
+                if(self.orderModel.orderDetails.yujiTime == nil){
+                    finishTime = @"";
+                }else {
+                    finishTime = self.orderModel.orderDetails.yujiTime;
+                }
+                array = @[@[@"收货人",trueName],
+                          @[@"收货地址",storeAddress],
+                          @[@"下单时间",addTime],
+                          @[@"预计时间",finishTime]];
+                
+            }else if (self.orderModel.orderDetails.orderStatus.integerValue == 1) {
+
+                _statusStr = @"待发货";
+                if(self.orderModel.orderDetails.yujiTime == nil){
+                    finishTime = @"";
+                }else {
+                    finishTime = self.orderModel.orderDetails.yujiTime;
+                }
+                array = @[@[@"收货人",trueName],
+                          @[@"收货地址",storeAddress],
+                          @[@"下单时间",addTime],
+                          @[@"预计时间",finishTime]];
+                
+            }else if (self.orderModel.orderDetails.orderStatus.integerValue == 2) {
+                _statusStr = @"待收货";
+                if(self.orderModel.orderDetails.yujiTime == nil){
+                    finishTime = @"";
+                }else {
+                    finishTime = self.orderModel.orderDetails.yujiTime;
+                }
+                array = @[@[@"收货人",trueName],
+                          @[@"收货地址",storeAddress],
+                          @[@"下单时间",addTime],
+                          @[@"预计时间",finishTime]];
+                
+            }else if (self.orderModel.orderDetails.orderStatus.integerValue == 3) {
+                
+//                _statusStr = @"已完成";
+                if(self.orderModel.orderDetails.okTime == nil){
+                    finishTime = @"";
+                }else {
+                    finishTime = self.orderModel.orderDetails.okTime;
+                }
+                array = @[@[@"收货人",trueName],
+                          @[@"收货地址",storeAddress],
+                          @[@"下单时间",addTime],
+                          @[@"完成时间",finishTime]];
+                
+            }else if (self.orderModel.orderDetails.orderStatus.integerValue == 4) {
+                
+//                _statusStr = @"已取消";
+                if(self.orderModel.orderDetails.okTime == nil){
+                    finishTime = @"";
+                }else {
+                    finishTime = self.orderModel.orderDetails.okTime;
+                }
+                array = @[@[@"收货人",trueName],
+                          @[@"收货地址",storeAddress],
+                          @[@"下单时间",addTime],
+                          @[@"完成时间",finishTime]];
+                
+            }
+		
 
 		}
         cell.backgroundColor = [UIColor whiteColor];
