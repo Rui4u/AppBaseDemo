@@ -76,6 +76,7 @@
 											 selector:@selector(ShoppingCartNumberNotify)
 												 name:CNotificationShoppingCartNumberNotify
 											   object:nil];
+    
 	[[NSNotificationCenter defaultCenter] addObserver:self
 											 selector:@selector(CNotificationLogInSucessFuntion)
 												 name:CNotificationLogInSucess
@@ -128,6 +129,10 @@
 -(void)privateReferRootReciveLogOutSucess {
     
     clearUserDefaults();
+    [ShoppingCartManager sharedManager].CarInfoList = nil;
+    
+    [self ShoppingCartNumberNotify];
+
 
 
 }

@@ -24,6 +24,7 @@
 - (IBAction)clickLoginOut:(id)sender {
     APP_DELEGATE.customTabBar.tabBarView.selectedIndex = 0;
     [self.navigationController popViewControllerAnimated:YES];
+    clearUserDefaults();
     [CommonNotification postNotification:CNotificationLogOut userInfo:nil object:nil];
 
 }

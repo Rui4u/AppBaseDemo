@@ -34,7 +34,7 @@
 
 - (void)privateReferRootReciveLogOutSucess {
 	
-	clearUserDefaults();
+	
 	self.notLoginLabel.hidden = !isNotLogin;
 	self.userName.hidden = isNotLogin;
 	self.storeName.hidden = isNotLogin;
@@ -43,6 +43,15 @@
 	self.storeName.text = (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:@"storeAddress"];
 
 
+}
+-(void)CNotificationLogInSucessFuntion{
+    self.notLoginLabel.hidden = !isNotLogin;
+    self.userName.hidden = isNotLogin;
+    self.storeName.hidden = isNotLogin;
+    
+    self.userName.text = (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:@"managerName"];
+    self.storeName.text = (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:@"storeAddress"];
+    
 }
 
 
@@ -172,6 +181,10 @@
     [_notLoginLabel addGestureRecognizer:tapGesture];
     _notLoginLabel.userInteractionEnabled = YES;
 	
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(CNotificationLogInSucessFuntion)
+                                                 name:CNotificationLogInSucess
+                                               object:nil];
 }
 - (void)loginIn {
 
