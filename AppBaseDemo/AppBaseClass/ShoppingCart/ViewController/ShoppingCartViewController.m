@@ -74,6 +74,7 @@
 - (void)pullToRefresh {
 
         if (isNotLogin) {
+             [self.mainTableView reloadData];
             [self showLoginViewController:nil];
             [self.mainTableView.mj_header endRefreshing];
             return;
