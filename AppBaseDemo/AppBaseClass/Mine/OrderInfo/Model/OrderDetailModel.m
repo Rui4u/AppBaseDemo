@@ -32,11 +32,6 @@
     return [self dataFormat:_okTime];
 }
 
-- (NSString *)yujiTime {
-    return [self dataFormat:_yujiTime];
-    
-    
-}
 
 - (NSString *)dataFormat:(NSString *)string{
     if (string.length == 0) {
@@ -45,10 +40,10 @@
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
     [formatter setDateStyle:NSDateFormatterMediumStyle];
     [formatter setTimeStyle:NSDateFormatterShortStyle];
-    [formatter setDateFormat:@"yyyy年MM月dd日 HH:mm"];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm"];
     
     // 毫秒值转化为秒
-    NSDate* date = [NSDate dateWithTimeIntervalSince1970:[_time doubleValue]];
+    NSDate* date = [NSDate dateWithTimeIntervalSince1970:[string doubleValue]];
     return  [formatter stringFromDate:date];
     
 }
