@@ -51,17 +51,10 @@
     _dataSourse = dataSourse;
     
    
-    if (dataSourse.brand == nil || [dataSourse.brand isEqualToString:@""]) {
-        self.selectSpecificationView.totolPriceLabel.text = [NSString stringWithFormat:@"%@ %@",dataSourse.fullName,dataSourse.feature];
-        
-    }else{
-        if (dataSourse.feature == nil) {
-            dataSourse.feature = @"";
-        }
-        self.selectSpecificationView.totolPriceLabel.text = [NSString stringWithFormat:@"[%@]%@ %@",dataSourse.brand,dataSourse.fullName,dataSourse.feature];
-    }
+    self.selectSpecificationView.totolPriceLabel.text = [NSString stringWithFormat:@"￥%@/%@(%@斤)",dataSourse.guige.firstObject.currentPrice,dataSourse.baseSpec,dataSourse.guige[self.indexPath.row].totalWeight];
     
-    self.selectSpecificationView.averagePrice.text = [NSString stringWithFormat:@"￥%@元/%@",dataSourse.guige[self.indexPath.row].avgPrice,dataSourse.baseSpec];
+    self.selectSpecificationView.averagePrice.text = [NSString stringWithFormat:@"￥%@元/斤",dataSourse.guige[self.indexPath.row].avgPrice];
+
     
     
     if ([dataSourse.discount isEqualToString:@"1"]) {

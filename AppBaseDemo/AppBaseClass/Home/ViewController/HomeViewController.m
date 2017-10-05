@@ -339,7 +339,7 @@
     productDetailViewController.guigeId = self.dataSourse.ProductionInfoList[indexPath.section].goodsList[indexPath.row].guige[index].guigeID;
     [self.navigationController pushViewController:productDetailViewController animated:YES];
 
-
+  
 }
 
 #pragma mark -选择产品类型
@@ -362,7 +362,7 @@
 
         self.navBarView.backgroundColor = [UIColor colorWithWhite:1 alpha:scrollView.contentOffset.y/60.0];
     }
-	
+	 
 }
 
 #pragma mark - 点击添加删除购物车
