@@ -17,6 +17,7 @@
 
 //注册
 #define kRegisterBusinessUrl                 [NSString stringWithFormat :@"%@/gs/store/insert?",kHTTP_HOST_URL]
+
 //登录
 #define kLoginBusinessUrl                 [NSString stringWithFormat :@"%@/gs/store/login?",kHTTP_HOST_URL]
 //修改密码
@@ -31,6 +32,11 @@
 
 //验证接口
 #define KVerifyCodeTelUpdateBussinessUrl            [NSString stringWithFormat :@"%@/gs/store/verifyCodeTelUpdate?",kHTTP_HOST_URL]
+
+//忘记密码
+#define kForgetPasswordBusinessUrl                 [NSString stringWithFormat :@"%@/gs/store/insert?",kHTTP_HOST_URL]
+//忘记密码验证接口
+#define KForgetSendVCodeUpdateBussinessUrl            [NSString stringWithFormat :@"%@/gs/store/verifyCodeTelUpdate?",kHTTP_HOST_URL]
 
 
 //活动

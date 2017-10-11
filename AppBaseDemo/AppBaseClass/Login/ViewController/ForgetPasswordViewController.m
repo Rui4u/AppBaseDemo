@@ -8,10 +8,9 @@
 
 #import "ForgetPasswordViewController.h"
 
-#import "RegisterViewController.h"
-#import "RegisterBusiness.h"
+#import "ForgetPasswordBusiness.h"
 #import "UserInfoViewController.h"
-#import "SendVCodeUpdateBussiness.h"
+#import "ForgetSendVCodeUpdateBussiness.h"
 @interface ForgetPasswordViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumber;
 @property (weak, nonatomic) IBOutlet UITextField *verificationCode;
@@ -48,7 +47,7 @@
 	}
 	[self openTimerWithTime:60 countDownBtn:sender againAcquireColor:Main_Font_Green_Color countDownColor:Main_Font_Gary_Color];
 	
-	[SendVCodeUpdateBussiness requestStoreInfoWithPhoneNum:self.phoneNumber.text completionSuccessHandler:^(BOOL succeed) {
+	[ForgetSendVCodeUpdateBussiness requestStoreInfoWithPhoneNum:self.phoneNumber.text completionSuccessHandler:^(BOOL succeed) {
 		
 		[self showToastWithMessage:@"验证码发送成功" showTime:1];
 		
@@ -81,12 +80,12 @@
 		return;
 	}
 	
-	[RegisterBusiness registerWithStoreTelephone:self.phoneNumber.text
-										storePwd:self.userPassword.text
-									  verifyCode:self.verificationCode.text
-						completionSuccessHandler:^(BOOL sucessFlag)
+	[ForgetPasswordBusiness ForgetPasswordWithStoreTelephone:self.phoneNumber.text
+													storePwd:self.userPassword.text
+												  verifyCode:self.verificationCode.text
+									completionSuccessHandler:^(BOOL sucessFlag)
 	 {
-		 if (sucessFlag == YES) [self showToastWithMessage:@"注册成功" showTime:1];
+		 if (sucessFlag == YES) [self showToastWithMessage:@"修改成功" showTime:1];
 		 
 		 [self back];
 		 
