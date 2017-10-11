@@ -62,8 +62,8 @@
     
 	self.frame = CGRectMake(0, SCREEN_HEIGHT -  49, SCREEN_WIDTH, 49);
 	self.backgroundColor = [UIColor whiteColor];
-	NSArray * imageArray = @[@"tabbar_homeNormal",@"tabbar_detailedListNormal",@"tabbar_productNormal",@"tabbar_productCartNormal",@"tabbar_MineNormal"];
-	NSArray * imageSelectedArray = @[@"tabbar_homeSelect",@"tabbar_detailedListSelect",@"tabbar_productSelect",@"tabbar_productCartSelect",@"tabbar_MineSelect"];
+	NSArray * imageArray = @[@"tabbar_homeNormal",@"tabbar_productNormal",@"tabbar_detailedListNormal",@"tabbar_productCartNormal",@"tabbar_MineNormal"];
+	NSArray * imageSelectedArray = @[@"tabbar_homeSelect",@"tabbar_productSelect",@"tabbar_detailedListSelect",@"tabbar_productCartSelect",@"tabbar_MineSelect"];
 
 	NSArray * nameArray = @[@"首页",@"产品中心",@"常用清单",@"购物车",@"我的"];
 	

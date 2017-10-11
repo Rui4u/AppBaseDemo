@@ -11,6 +11,7 @@
 #import "LoginBusiness.h"
 #import "SelectLocationViewController.h"
 #import "UserInfoViewController.h"
+#import "ForgetPasswordViewController.h"
 @interface LoginViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumberTextField;
 @property (weak, nonatomic) IBOutlet UITextField *userPwdTextField;
@@ -55,6 +56,11 @@
     
     self.userPwdTextField.secureTextEntry = !self.userPwdTextField.secureTextEntry;
     sender.selected = !sender.selected;
+}
+- (IBAction)forgetPassword:(UIButton *)sender {
+	
+	ForgetPasswordViewController * forgetPasswordViewController = [[ForgetPasswordViewController alloc] init];
+	[self.navigationController pushViewController:forgetPasswordViewController animated:YES];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

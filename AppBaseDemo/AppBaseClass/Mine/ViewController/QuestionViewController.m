@@ -53,6 +53,7 @@
         cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
         cell.textLabel.text = self.model.questionList[indexPath.section].questions[indexPath.row].question;
         cell.textLabel.font = [UIFont systemFontOfSize:12];
+		cell.textLabel.numberOfLines = 0;
     }
     return cell;
 }

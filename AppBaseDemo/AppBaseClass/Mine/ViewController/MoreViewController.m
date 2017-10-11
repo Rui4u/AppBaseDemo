@@ -63,7 +63,7 @@
     }
     
 	OrderListViewController * orderListViewController = [[OrderListViewController alloc] init];
-    orderListViewController.state = [NSString stringWithFormat:@"%ld",sender.tag - 1000 + 1];//-1 是全部
+	orderListViewController.state = [NSString stringWithFormat:@"%zd",sender.tag - 1000 + 1];//-1 是全部
 	
 	[self.navigationController pushViewController:orderListViewController animated:YES];
 	
@@ -90,7 +90,24 @@
 		APP_DELEGATE.customTabBar.tabBarView.selectedIndex = 2;
 		
 	}else{
-		[self showToastWithMessage:@"暂未开通" showTime:1];
+		
+		if (isNotLogin) {
+			[self showLoginViewController:nil];
+			return;
+		}
+		NSString *path = [[NSBundle mainBundle] pathForResource:@"protocolText" ofType:@"text"];
+		NSString *content = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+		
+		NSString * string = [NSString stringWithFormat:@"商户信息\n\n商户ID:%@\n\n门店名称:%@\n\n负责人:%@\n\n负责人电话:%@\n\n%@",
+							 (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:@"id"],
+							 (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:@"storeName"],
+							  (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:@"managerName"],
+							 (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:@"storeTelephone"]
+							 ,content];
+		ProtocolViewController * protocolViewController = [[ProtocolViewController alloc] init];
+		protocolViewController.textStr = string;
+		protocolViewController.titlestr = @"商户钥匙托管电子协议";
+		[self.navigationController pushViewController:protocolViewController animated:YES];
 	}
 	
 }

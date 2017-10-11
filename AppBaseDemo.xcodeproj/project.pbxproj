@@ -121,6 +121,8 @@
 		2B6BE35B1F46928C00D0C915 /* OrderListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B6BE35A1F46928C00D0C915 /* OrderListViewController.m */; };
 		2B6BE35F1F46B72B00D0C915 /* MyOrderListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B6BE35D1F46B72B00D0C915 /* MyOrderListTableViewCell.m */; };
 		2B6BE3601F46B72B00D0C915 /* MyOrderListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B6BE35E1F46B72B00D0C915 /* MyOrderListTableViewCell.xib */; };
+		2B781FA91F8DE74600B597CE /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B781FA71F8DE74600B597CE /* ForgetPasswordViewController.m */; };
+		2B781FAA1F8DE74600B597CE /* ForgetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B781FA81F8DE74600B597CE /* ForgetPasswordViewController.xib */; };
 		2B7DCC021F3579CC00E88B38 /* HomeProductListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7DCC011F3579CC00E88B38 /* HomeProductListTableViewCell.m */; };
 		2B7DCC0C1F358CC400E88B38 /* SelectSpecificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7DCC0B1F358CC400E88B38 /* SelectSpecificationView.m */; };
 		2B815AE41F5E3708006A622C /* CancelOrderBussiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B815AE31F5E3708006A622C /* CancelOrderBussiness.m */; };
@@ -543,6 +545,9 @@
 		2B6BE35C1F46B72B00D0C915 /* MyOrderListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOrderListTableViewCell.h; sourceTree = "<group>"; };
 		2B6BE35D1F46B72B00D0C915 /* MyOrderListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOrderListTableViewCell.m; sourceTree = "<group>"; };
 		2B6BE35E1F46B72B00D0C915 /* MyOrderListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyOrderListTableViewCell.xib; sourceTree = "<group>"; };
+		2B781FA61F8DE74600B597CE /* ForgetPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordViewController.h; sourceTree = "<group>"; };
+		2B781FA71F8DE74600B597CE /* ForgetPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordViewController.m; sourceTree = "<group>"; };
+		2B781FA81F8DE74600B597CE /* ForgetPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgetPasswordViewController.xib; sourceTree = "<group>"; };
 		2B7DCC001F3579CC00E88B38 /* HomeProductListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeProductListTableViewCell.h; sourceTree = "<group>"; };
 		2B7DCC011F3579CC00E88B38 /* HomeProductListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeProductListTableViewCell.m; sourceTree = "<group>"; };
 		2B7DCC0A1F358CC400E88B38 /* SelectSpecificationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectSpecificationView.h; sourceTree = "<group>"; };
@@ -1746,6 +1751,9 @@
 				2BC14D951F31B64B00919808 /* RegisterViewController.h */,
 				2BC14D961F31B64B00919808 /* RegisterViewController.m */,
 				2BC14D971F31B64B00919808 /* RegisterViewController.xib */,
+				2B781FA61F8DE74600B597CE /* ForgetPasswordViewController.h */,
+				2B781FA71F8DE74600B597CE /* ForgetPasswordViewController.m */,
+				2B781FA81F8DE74600B597CE /* ForgetPasswordViewController.xib */,
 				2B8FD7F11F32CC6F00DAB9B9 /* SelectLocationViewController.h */,
 				2B8FD7F21F32CC6F00DAB9B9 /* SelectLocationViewController.m */,
 				2B580D631F38582900AEA6BF /* UserLocationViewController.h */,
@@ -2132,6 +2140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B1A2F531F74A8720026B561 /* touxiang.png in Resources */,
+				2B781FAA1F8DE74600B597CE /* ForgetPasswordViewController.xib in Resources */,
 				2B1A2F521F74A86D0026B561 /* erweima.png in Resources */,
 				2B1A2F4A1F74A5580026B561 /* shouhouzhunze.text in Resources */,
 				2B1A2F481F74A4C80026B561 /* protocolText.text in Resources */,
@@ -2312,6 +2321,7 @@
 				2BD5D70D1F39871700BE1994 /* PinyinHelper.m in Sources */,
 				2B5AA4D71F3DA1BF00C3EE31 /* SelectAddView.m in Sources */,
 				2BC14D8B1F31AE2D00919808 /* LoginViewRootController.m in Sources */,
+				2B781FA91F8DE74600B597CE /* ForgetPasswordViewController.m in Sources */,
 				2B3870371F29BC0C00228620 /* UIButton+SRButton.m in Sources */,
 				2BA025171F2AD86B003EB25D /* TipLabel.m in Sources */,
 				2B84606F1F417F7F0013D26D /* ProductDetailTitleView.m in Sources */,
