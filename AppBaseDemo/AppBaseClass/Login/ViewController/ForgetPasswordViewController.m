@@ -10,7 +10,7 @@
 
 #import "ForgetPasswordBusiness.h"
 #import "UserInfoViewController.h"
-#import "ForgetSendVCodeUpdateBussiness.h"
+#import "SendVCodeUpdateBussiness.h"
 @interface ForgetPasswordViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumber;
 @property (weak, nonatomic) IBOutlet UITextField *verificationCode;
@@ -47,7 +47,7 @@
 	}
 	[self openTimerWithTime:60 countDownBtn:sender againAcquireColor:Main_Font_Green_Color countDownColor:Main_Font_Gary_Color];
 	
-	[ForgetSendVCodeUpdateBussiness requestStoreInfoWithPhoneNum:self.phoneNumber.text completionSuccessHandler:^(BOOL succeed) {
+	[SendVCodeUpdateBussiness requestStoreInfoWithPhoneNum:self.phoneNumber.text completionSuccessHandler:^(BOOL succeed) {
 		
 		[self showToastWithMessage:@"验证码发送成功" showTime:1];
 		

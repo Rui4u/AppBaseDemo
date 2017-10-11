@@ -34,10 +34,9 @@
 #define KVerifyCodeTelUpdateBussinessUrl            [NSString stringWithFormat :@"%@/gs/store/verifyCodeTelUpdate?",kHTTP_HOST_URL]
 
 //忘记密码
-#define kForgetPasswordBusinessUrl                 [NSString stringWithFormat :@"%@/gs/store/insert?",kHTTP_HOST_URL]
+#define kForgetPasswordBusinessUrl                 [NSString stringWithFormat :@"%@/gs/store/forgetPwd?",kHTTP_HOST_URL]
 //忘记密码验证接口
 #define KForgetSendVCodeUpdateBussinessUrl            [NSString stringWithFormat :@"%@/gs/store/verifyCodeTelUpdate?",kHTTP_HOST_URL]
-
 
 //活动
 #define KactivityAPIBussinessUrl            [NSString stringWithFormat :@"%@/gs/activityAPI/list?",kHTTP_HOST_URL]

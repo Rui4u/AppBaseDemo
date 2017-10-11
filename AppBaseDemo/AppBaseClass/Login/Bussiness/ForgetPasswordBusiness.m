@@ -18,7 +18,7 @@
 					completionError : (ForgetPasswordErrorBlcok) completionError
 {
 	NSMutableDictionary * body = [[NSMutableDictionary alloc]init];
-	[body setValue:storePwd forKey:@"storePwd"];
+	[body setValue:storePwd forKey:@"newPwd"];
 	[body setValue:storeTelephone forKey:@"storeTelephone"];
 	[body setValue:verifyCode forKey:@"verifyCode"];
 	
