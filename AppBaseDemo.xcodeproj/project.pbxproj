@@ -104,6 +104,7 @@
 		2B5AA4DD1F3DB74000C3EE31 /* HZCustomSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5AA4DC1F3DB74000C3EE31 /* HZCustomSearchBar.m */; };
 		2B5AA4E01F3DB83400C3EE31 /* CommonSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5AA4DF1F3DB83400C3EE31 /* CommonSearchController.m */; };
 		2B6AB99F1F55002400F45222 /* SearchListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B6AB99E1F55002400F45222 /* SearchListViewController.m */; };
+		2B6B6C321F8DFF400051B137 /* electronicKey.text in Resources */ = {isa = PBXBuildFile; fileRef = 2B6B6C311F8DFF310051B137 /* electronicKey.text */; };
 		2B6BE3371F46826400D0C915 /* MoreBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B6BE32F1F46826400D0C915 /* MoreBaseView.m */; };
 		2B6BE3381F46826400D0C915 /* MoreBaseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B6BE3301F46826400D0C915 /* MoreBaseView.xib */; };
 		2B6BE3391F46826400D0C915 /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B6BE3331F46826400D0C915 /* MoreViewController.m */; };
@@ -516,6 +517,7 @@
 		2B5AA4DF1F3DB83400C3EE31 /* CommonSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonSearchController.m; sourceTree = "<group>"; };
 		2B6AB99D1F55002400F45222 /* SearchListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchListViewController.h; sourceTree = "<group>"; };
 		2B6AB99E1F55002400F45222 /* SearchListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchListViewController.m; sourceTree = "<group>"; };
+		2B6B6C311F8DFF310051B137 /* electronicKey.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = electronicKey.text; sourceTree = "<group>"; };
 		2B6BE32E1F46826400D0C915 /* MoreBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreBaseView.h; sourceTree = "<group>"; };
 		2B6BE32F1F46826400D0C915 /* MoreBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreBaseView.m; sourceTree = "<group>"; };
 		2B6BE3301F46826400D0C915 /* MoreBaseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreBaseView.xib; sourceTree = "<group>"; };
@@ -1349,6 +1351,7 @@
 			children = (
 				2B1A2F511F74A8610026B561 /* erweima.png */,
 				2B1A2F501F74A8610026B561 /* touxiang.png */,
+				2B6B6C311F8DFF310051B137 /* electronicKey.text */,
 				2B6BE3321F46826400D0C915 /* MoreViewController.h */,
 				2B6BE3331F46826400D0C915 /* MoreViewController.m */,
 				2B6BE3341F46826400D0C915 /* MoreViewController.xib */,
@@ -2149,6 +2152,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B6B6C321F8DFF400051B137 /* electronicKey.text in Resources */,
 				2B1A2F531F74A8720026B561 /* touxiang.png in Resources */,
 				2B781FAA1F8DE74600B597CE /* ForgetPasswordViewController.xib in Resources */,
 				2B1A2F521F74A86D0026B561 /* erweima.png in Resources */,

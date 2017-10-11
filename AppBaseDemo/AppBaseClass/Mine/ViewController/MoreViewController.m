@@ -95,7 +95,7 @@
 			[self showLoginViewController:nil];
 			return;
 		}
-		NSString *path = [[NSBundle mainBundle] pathForResource:@"protocolText" ofType:@"text"];
+		NSString *path = [[NSBundle mainBundle] pathForResource:@"electronicKey" ofType:@"text"];
 		NSString *content = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
 		
 		NSString * string = [NSString stringWithFormat:@"商户信息\n\n商户ID:%@\n\n门店名称:%@\n\n负责人:%@\n\n负责人电话:%@\n\n协议内容\n\n%@",
