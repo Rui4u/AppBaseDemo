@@ -292,11 +292,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AppBaseDemo/AppBaseClass/Login/ViewController/UserLocationViewController.m"
-            timestampString = "527580287.969322"
+            timestampString = "529558176.065095"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "520"
-            endingLineNumber = "520"
+            startingLineNumber = "532"
+            endingLineNumber = "532"
             landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -449,22 +449,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AppBaseDemo/AppBaseClass/Home/ViewController/HomeViewController.m"
-            timestampString = "528161490.963308"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "AppBaseDemo/AppBaseClass/Login/Bussiness/LoginBusiness.m"
             timestampString = "529395306.110852"
             startingColumnNumber = "9223372036854775807"
@@ -530,7 +514,7 @@
                   moduleName = "AppBaseDemo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/hzcf/Desktop/AppBaseDemo/AppBaseDemo/AppBaseClass/Login/ViewController/ForgetPasswordViewController.m"
-                  timestampString = "529398531.821158"
+                  timestampString = "529558156.614835"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -545,7 +529,7 @@
                   moduleName = "AppBaseDemo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/hzcf/Desktop/AppBaseDemo/AppBaseDemo/AppBaseClass/Login/ViewController/ForgetPasswordViewController.m"
-                  timestampString = "529398531.82363"
+                  timestampString = "529558156.616215"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -642,7 +626,7 @@
                   moduleName = "AppBaseDemo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/hzcf/Desktop/AppBaseDemo/AppBaseDemo/AppBaseClass/Login/ViewController/ForgetPasswordViewController.m"
-                  timestampString = "529398586.640926"
+                  timestampString = "529558156.635363"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "50"
@@ -657,7 +641,7 @@
                   moduleName = "AppBaseDemo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/hzcf/Desktop/AppBaseDemo/AppBaseDemo/AppBaseClass/Login/ViewController/ForgetPasswordViewController.m"
-                  timestampString = "529398586.642894"
+                  timestampString = "529558156.637357"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "52"
@@ -673,13 +657,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AppBaseDemo/AppBaseTools/SRNetWorkClient/BaseNetWorkClient.m"
-            timestampString = "529398619.649083"
+            filePath = "AppBaseDemo/AppBaseClass/Login/ViewController/UserLocationViewController.m"
+            timestampString = "529558176.065671"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "+jsonFormGetRequestWithUrl:param:success:operationFailure:failure:"
+            startingLineNumber = "207"
+            endingLineNumber = "207"
+            landmarkName = "-clickSureButton:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -689,13 +673,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AppBaseDemo/AppBaseTools/SRNetWorkClient/BaseNetWorkClient.m"
-            timestampString = "529398620.925963"
+            filePath = "AppBaseDemo/AppBaseClass/Login/ViewController/UserLocationViewController.m"
+            timestampString = "529558176.065903"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "+jsonFormGetRequestWithUrl:param:success:operationFailure:failure:"
+            startingLineNumber = "521"
+            endingLineNumber = "521"
+            landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

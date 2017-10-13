@@ -205,7 +205,19 @@
 
 - (void)clickSureButton:(UIButton *)sender {
 	
-
+	if (self.locationBlock) {
+		NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+		[dict setValue:self.dataSource.firstObject.address forKey:@"address"];
+		[dict setValue:self.dataSource.firstObject.name forKey:@"name"];
+		[dict setValue:self.dataSource.firstObject.city forKey:@"city"];
+		[dict setValue:[NSString stringWithFormat:@"%f",self.dataSource.firstObject.pt.latitude] forKey:@"latitude"];
+		[dict setValue:[NSString stringWithFormat:@"%f",self.dataSource.firstObject.pt.longitude] forKey:@"longitude"];
+		[dict setValue:self.currentAdCode forKey:@"adCode"];
+		if ([dict objectForKey:@"city"] != nil) {
+			self.locationBlock(dict);
+		}
+		[self.navigationController popViewControllerAnimated:YES];
+	}
 
 }
 
