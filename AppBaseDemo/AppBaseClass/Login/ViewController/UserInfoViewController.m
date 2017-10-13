@@ -47,9 +47,19 @@
 										  adCode:[self.storeInfo objectForKey:@"adCode"]
 						completionSuccessHandler:^(BOOL succeed)
 	{
-							
+	
+		
+		
+		saveDataUserDefaultForValueKey(self.managerNameTextField.text , @"managerName");
+		
+		saveDataUserDefaultForValueKey(self.storeAdressButton.titleLabel.text, @"storeAddress");
+		
 		[self dismissViewControllerAnimated:YES completion:nil];
+		[self.navigationController popToRootViewControllerAnimated:YES];
+
 		[self showToastWithMessage:@"提交成功" showTime:1];
+		[[NSNotificationCenter defaultCenter] postNotificationName:CNotificationLogInSucess object:nil userInfo:nil];
+
         
         
 	} completionFailHandler:^(NSString *failMessage) {

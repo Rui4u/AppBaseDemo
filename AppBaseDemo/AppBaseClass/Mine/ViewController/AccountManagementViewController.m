@@ -8,6 +8,7 @@
 
 #import "AccountManagementViewController.h"
 #import "UpdatePasswordViewController.h"
+#import  "AccountViewController.h"
 @interface AccountManagementViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *userName;
 @property (weak, nonatomic) IBOutlet UILabel *storeName;
@@ -35,8 +36,17 @@
     [self.navBarView setTitle:@"用户管理"];
 	
 	self.userName.text = (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:@"managerName"];
-	self.storeName.text = (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:@"storeAddress"];
+//	self.storeName.text = (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:@"storeAddress"];
 
+	
+	UITapGestureRecognizer*tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(Actiondo:)];
+	self.storeName.userInteractionEnabled = YES;
+	[self.storeName addGestureRecognizer:tapGesture];
+}
+-(void)Actiondo:(id)sender{
+	AccountViewController * accountViewController = [[AccountViewController alloc] init];
+	[self.navigationController pushViewController:accountViewController animated:YES];
+	
 }
 
 - (void)didReceiveMemoryWarning {

@@ -64,6 +64,10 @@
 		2B38703D1F29BC0C00228620 /* NSArray+ ZXPUnicode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3870281F29BC0C00228620 /* NSArray+ ZXPUnicode.m */; };
 		2B38703E1F29BC0C00228620 /* NSDictionary+ZXPUnicode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B38702B1F29BC0C00228620 /* NSDictionary+ZXPUnicode.m */; };
 		2B38703F1F29BC0C00228620 /* NSObject+ZXPUnicode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B38702D1F29BC0C00228620 /* NSObject+ZXPUnicode.m */; };
+		2B3ADE1D1F90A6BA00F5C5C2 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3ADE1B1F90A6BA00F5C5C2 /* AccountViewController.m */; };
+		2B3ADE201F90AA3500F5C5C2 /* AccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B3ADE1F1F90AA0D00F5C5C2 /* AccountViewController.xib */; };
+		2B3ADE241F90AC5200F5C5C2 /* AccountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3ADE221F90AC5200F5C5C2 /* AccountTableViewCell.m */; };
+		2B3ADE251F90AC5200F5C5C2 /* AccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B3ADE231F90AC5200F5C5C2 /* AccountTableViewCell.xib */; };
 		2B3FD7C41F4924E5003DE7C3 /* FillOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3FD7C21F4924E5003DE7C3 /* FillOrderViewController.m */; };
 		2B3FD7CE1F4926A1003DE7C3 /* FillOrderUserInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3FD7CC1F4926A1003DE7C3 /* FillOrderUserInfoCell.m */; };
 		2B3FD7CF1F4926A1003DE7C3 /* FillOrderUserInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B3FD7CD1F4926A1003DE7C3 /* FillOrderUserInfoCell.xib */; };
@@ -448,6 +452,12 @@
 		2B3870301F29BC0C00228620 /* SRObjecCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRObjecCategory.h; sourceTree = "<group>"; };
 		2B3870311F29BC0C00228620 /* SRViewConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRViewConfig.h; sourceTree = "<group>"; };
 		2B3870321F29BC0C00228620 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		2B3ADE1A1F90A6BA00F5C5C2 /* AccountViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
+		2B3ADE1B1F90A6BA00F5C5C2 /* AccountViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
+		2B3ADE1F1F90AA0D00F5C5C2 /* AccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountViewController.xib; sourceTree = "<group>"; };
+		2B3ADE211F90AC5200F5C5C2 /* AccountTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccountTableViewCell.h; sourceTree = "<group>"; };
+		2B3ADE221F90AC5200F5C5C2 /* AccountTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccountTableViewCell.m; sourceTree = "<group>"; };
+		2B3ADE231F90AC5200F5C5C2 /* AccountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountTableViewCell.xib; sourceTree = "<group>"; };
 		2B3FD7C11F4924E5003DE7C3 /* FillOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FillOrderViewController.h; sourceTree = "<group>"; };
 		2B3FD7C21F4924E5003DE7C3 /* FillOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FillOrderViewController.m; sourceTree = "<group>"; };
 		2B3FD7CB1F4926A1003DE7C3 /* FillOrderUserInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FillOrderUserInfoCell.h; sourceTree = "<group>"; };
@@ -1342,6 +1352,9 @@
 				2B1A2F3B1F74A29B0026B561 /* ProtocolViewController.h */,
 				2B1A2F3C1F74A29B0026B561 /* ProtocolViewController.m */,
 				2B1A2F3D1F74A29B0026B561 /* ProtocolViewController.xib */,
+				2B3ADE211F90AC5200F5C5C2 /* AccountTableViewCell.h */,
+				2B3ADE221F90AC5200F5C5C2 /* AccountTableViewCell.m */,
+				2B3ADE231F90AC5200F5C5C2 /* AccountTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1358,6 +1371,9 @@
 				2B10FAE81F482B1000801BEC /* AccountManagementViewController.h */,
 				2B10FAE91F482B1000801BEC /* AccountManagementViewController.m */,
 				2B10FAEA1F482B1000801BEC /* AccountManagementViewController.xib */,
+				2B3ADE1A1F90A6BA00F5C5C2 /* AccountViewController.h */,
+				2B3ADE1F1F90AA0D00F5C5C2 /* AccountViewController.xib */,
+				2B3ADE1B1F90A6BA00F5C5C2 /* AccountViewController.m */,
 				2B10FAED1F483CD700801BEC /* NewDemandViewController.h */,
 				2B10FAEE1F483CD700801BEC /* NewDemandViewController.m */,
 				2B10FAEF1F483CD700801BEC /* NewDemandViewController.xib */,
@@ -2152,6 +2168,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B3ADE201F90AA3500F5C5C2 /* AccountViewController.xib in Resources */,
 				2B6B6C321F8DFF400051B137 /* electronicKey.text in Resources */,
 				2B1A2F531F74A8720026B561 /* touxiang.png in Resources */,
 				2B781FAA1F8DE74600B597CE /* ForgetPasswordViewController.xib in Resources */,
@@ -2196,6 +2213,7 @@
 				2B3FD7EF1F4962DE003DE7C3 /* FillOrderBottomView.xib in Resources */,
 				2B10FAF11F483CD700801BEC /* NewDemandViewController.xib in Resources */,
 				2BD5D70E1F39871700BE1994 /* unicode_to_hanyu_pinyin.txt in Resources */,
+				2B3ADE251F90AC5200F5C5C2 /* AccountTableViewCell.xib in Resources */,
 				2B5AA4D41F3DA13600C3EE31 /* SelectAddView.xib in Resources */,
 				2B4C35B61F4C057000B22431 /* MyInvoiceViewController.xib in Resources */,
 				2BC14D901F31AE5800919808 /* LoginViewController.xib in Resources */,
@@ -2291,6 +2309,7 @@
 				2B15E7FE1F6F640300C2760F /* MD5DataSigner.m in Sources */,
 				2B15E7FF1F6F640300C2760F /* NSDataEx.m in Sources */,
 				2B9A5EAA1F6F69DF007DB3F9 /* WeChaPayModel.m in Sources */,
+				2B3ADE241F90AC5200F5C5C2 /* AccountTableViewCell.m in Sources */,
 				2B15E8001F6F640300C2760F /* openssl_wrapper.m in Sources */,
 				2BCA35CA1F7489F300A3CA92 /* QuestionViewController.m in Sources */,
 				2B15E8011F6F640300C2760F /* RSADataSigner.m in Sources */,
@@ -2422,6 +2441,7 @@
 				2BD099361F433FFA008A1827 /* ShoppingCartGoodsTableViewCell.m in Sources */,
 				2B6BE34C1F468F4800D0C915 /* NewProductDemandSaveBussiness.m in Sources */,
 				2BC60A6F1F4493BD0069D70B /* ShopCartListBottomView.m in Sources */,
+				2B3ADE1D1F90A6BA00F5C5C2 /* AccountViewController.m in Sources */,
 				2BFCFDE91F413B63001DA10D /* AppProdcutSelectSpecificationCell.m in Sources */,
 				2B3FD7E71F49307B003DE7C3 /* FillOrderBussiness.m in Sources */,
 				2BFCFDEB1F413B63001DA10D /* AppProductMainCellView.m in Sources */,

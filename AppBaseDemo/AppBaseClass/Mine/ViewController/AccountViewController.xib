@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AccountViewController">
+            <connections>
+                <outlet property="mainTableView" destination="c4Q-Ai-ceN" id="arm-2C-hxV"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="c4Q-Ai-ceN">
+                    <rect key="frame" x="0.0" y="64" width="375" height="553"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cE0-0N-QJd">
+                    <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                    <color key="backgroundColor" red="0.18823529410000001" green="0.78039215689999997" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="修改地址">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="clickChangeLocation:" destination="-1" eventType="touchUpInside" id="sve-qa-IwR"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="c4Q-Ai-ceN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="BcV-f2-oEm"/>
+                <constraint firstItem="cE0-0N-QJd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="FFY-uY-hLB"/>
+                <constraint firstItem="c4Q-Ai-ceN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="FNE-ah-riE"/>
+                <constraint firstAttribute="bottom" secondItem="c4Q-Ai-ceN" secondAttribute="bottom" constant="50" id="cek-kt-smz"/>
+                <constraint firstAttribute="trailing" secondItem="cE0-0N-QJd" secondAttribute="trailing" id="dQl-R7-A8f"/>
+                <constraint firstItem="cE0-0N-QJd" firstAttribute="top" secondItem="c4Q-Ai-ceN" secondAttribute="bottom" id="e6c-IL-iLV"/>
+                <constraint firstAttribute="bottom" secondItem="cE0-0N-QJd" secondAttribute="bottom" id="iZm-DJ-e85"/>
+                <constraint firstAttribute="trailing" secondItem="c4Q-Ai-ceN" secondAttribute="trailing" id="uqS-bg-bsX"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
