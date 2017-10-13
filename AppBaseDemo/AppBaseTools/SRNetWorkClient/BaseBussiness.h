@@ -94,9 +94,11 @@
 //支付宝
 #define kExecuteAliPayBussinessUrl [NSString stringWithFormat :@"%@/gs/config/getOrder?",kHTTP_HOST_URL]
 
+#define klistByStoreIDBussinessUrl            [NSString stringWithFormat :@"%@/gs/addressAPI/listByStoreId?",kHTTP_HOST_URL]
 
+#define kSaveAccountBussinessUrl     [NSString stringWithFormat :@"%@/gs/addressAPI/insert?",kHTTP_HOST_URL]
 
-
+#define kUpdateforaddressBussinessUrl  [NSString stringWithFormat :@"%@/gs/addressAPI/updateforaddress?",kHTTP_HOST_URL]
 //更新
 #define KcheckVersionIosBussinessUrl            [NSString stringWithFormat :@"%@/gs/config/checkVersionIos?",kHTTP_HOST_URL]
 NS_ASSUME_NONNULL_BEGIN

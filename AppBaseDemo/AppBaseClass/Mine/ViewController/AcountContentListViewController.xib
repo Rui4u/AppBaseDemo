@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AcountContentListViewController">
+            <connections>
+                <outlet property="mainTableView" destination="ggL-sy-VHS" id="sYB-5W-CkF"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ggL-sy-VHS">
+                    <rect key="frame" x="0.0" y="64" width="375" height="553"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jb6-6H-vJk">
+                    <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                    <color key="backgroundColor" red="0.18823529410000001" green="0.78039215689999997" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="添加联系人">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="clickAddContent:" destination="-1" eventType="touchUpInside" id="KG2-az-Q4y"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="jb6-6H-vJk" secondAttribute="bottom" id="7h0-jP-xxi"/>
+                <constraint firstAttribute="bottom" secondItem="ggL-sy-VHS" secondAttribute="bottom" constant="50" id="9Lp-vb-ioY"/>
+                <constraint firstItem="jb6-6H-vJk" firstAttribute="top" secondItem="ggL-sy-VHS" secondAttribute="bottom" id="IZN-vi-qyq"/>
+                <constraint firstAttribute="trailing" secondItem="jb6-6H-vJk" secondAttribute="trailing" id="PxP-LG-bGQ"/>
+                <constraint firstAttribute="trailing" secondItem="ggL-sy-VHS" secondAttribute="trailing" id="ZLH-cm-NOq"/>
+                <constraint firstItem="ggL-sy-VHS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="iZX-o6-KWw"/>
+                <constraint firstItem="jb6-6H-vJk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="mNv-T7-A5W"/>
+                <constraint firstItem="ggL-sy-VHS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="yr7-ii-LP6"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

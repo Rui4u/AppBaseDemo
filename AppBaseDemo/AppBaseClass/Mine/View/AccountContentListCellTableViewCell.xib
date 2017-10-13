@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="AccountContentListCellTableViewCellID" selectionStyle="default" indentationWidth="10" rowHeight="187" id="KGk-i7-Jjw" customClass="AccountContentListCellTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="409" height="187"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="409" height="186.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8KT-dL-F4B">
+                        <rect key="frame" x="0.0" y="0.0" width="409" height="50"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYF-uf-WMU">
+                                <rect key="frame" x="15" y="0.0" width="70" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="6xv-5T-Wvw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crA-YZ-fIU">
+                                <rect key="frame" x="85" y="0.0" width="309" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="fYF-uf-WMU" secondAttribute="bottom" id="3aG-zU-VBU"/>
+                            <constraint firstAttribute="trailing" secondItem="crA-YZ-fIU" secondAttribute="trailing" constant="15" id="AJk-1O-WuD"/>
+                            <constraint firstItem="fYF-uf-WMU" firstAttribute="top" secondItem="8KT-dL-F4B" secondAttribute="top" id="EPB-DJ-Hyo"/>
+                            <constraint firstAttribute="bottom" secondItem="crA-YZ-fIU" secondAttribute="bottom" id="HdF-6A-wfj"/>
+                            <constraint firstAttribute="height" constant="50" id="dQ1-le-TYS"/>
+                            <constraint firstItem="crA-YZ-fIU" firstAttribute="top" secondItem="8KT-dL-F4B" secondAttribute="top" id="deg-JK-Rhf"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="oIg-fH-sOb"/>
+                            <constraint firstItem="crA-YZ-fIU" firstAttribute="leading" secondItem="fYF-uf-WMU" secondAttribute="trailing" id="tH9-Rz-WdK"/>
+                            <constraint firstItem="fYF-uf-WMU" firstAttribute="leading" secondItem="8KT-dL-F4B" secondAttribute="leading" constant="15" id="wq7-zJ-iUV"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U9b-xy-hfC">
+                        <rect key="frame" x="8" y="50" width="393" height="128.5"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4i-ds-71H">
+                                <rect key="frame" x="7" y="48.5" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="Y8s-vM-gce"/>
+                                    <constraint firstAttribute="width" constant="32" id="zse-wm-OVq"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="check_box_default"/>
+                                <state key="selected" image="check_box_right"/>
+                                <connections>
+                                    <action selector="clickButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="hDU-iU-9G9"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="设置默认收货地址" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gl-Xa-XHA">
+                                <rect key="frame" x="54" y="0.0" width="339" height="128.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="8gl-Xa-XHA" secondAttribute="bottom" id="BSt-N1-Ffi"/>
+                            <constraint firstItem="8gl-Xa-XHA" firstAttribute="top" secondItem="U9b-xy-hfC" secondAttribute="top" id="KKu-su-WiP"/>
+                            <constraint firstAttribute="trailing" secondItem="8gl-Xa-XHA" secondAttribute="trailing" id="NBW-K8-JTl"/>
+                            <constraint firstItem="x4i-ds-71H" firstAttribute="centerY" secondItem="U9b-xy-hfC" secondAttribute="centerY" id="TQz-8T-xKf"/>
+                            <constraint firstItem="8gl-Xa-XHA" firstAttribute="leading" secondItem="x4i-ds-71H" secondAttribute="trailing" constant="15" id="Tg8-f0-dRt"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="8KT-dL-F4B" secondAttribute="trailing" id="8Gd-t0-Wdg"/>
+                    <constraint firstItem="x4i-ds-71H" firstAttribute="leading" secondItem="fYF-uf-WMU" secondAttribute="leading" id="CR1-Wi-HWP"/>
+                    <constraint firstAttribute="trailing" secondItem="8KT-dL-F4B" secondAttribute="trailing" id="Hon-XH-7lA"/>
+                    <constraint firstItem="U9b-xy-hfC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="NzN-Hm-NYc"/>
+                    <constraint firstItem="8KT-dL-F4B" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="V7x-RW-jPy"/>
+                    <constraint firstItem="U9b-xy-hfC" firstAttribute="top" secondItem="8KT-dL-F4B" secondAttribute="bottom" id="cBw-ul-QKH"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="U9b-xy-hfC" secondAttribute="trailing" id="dSf-4B-h21"/>
+                    <constraint firstItem="8KT-dL-F4B" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="nKY-Cc-XXh"/>
+                    <constraint firstItem="8KT-dL-F4B" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="tTI-tt-zry"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="U9b-xy-hfC" secondAttribute="bottom" id="v2u-R9-74K"/>
+                    <constraint firstItem="8KT-dL-F4B" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="vZn-WU-DPx"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="button" destination="x4i-ds-71H" id="NfR-DJ-aub"/>
+                <outlet property="name" destination="fYF-uf-WMU" id="odH-dv-xzB"/>
+                <outlet property="phone" destination="crA-YZ-fIU" id="5UX-C4-GJO"/>
+            </connections>
+            <point key="canvasLocation" x="78.5" y="179.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="check_box_default" width="32" height="32"/>
+        <image name="check_box_right" width="32" height="32"/>
+    </resources>
+</document>

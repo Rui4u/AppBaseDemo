@@ -8,6 +8,7 @@
 
 #import "AccountViewController.h"
 #import "AccountTableViewCell.h"
+#import "AcountContentListViewController.h"
 #import "UserInfoViewController.h"
 @interface AccountViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *mainTableView;
@@ -121,6 +122,14 @@
 		}
 	}
 	return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	
+	if (indexPath.section == 2 && indexPath.row == 0) {
+		AcountContentListViewController * acountContentListViewController = [[AcountContentListViewController alloc] init];
+		[self.navigationController pushViewController:acountContentListViewController animated:YES];
+	}
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {

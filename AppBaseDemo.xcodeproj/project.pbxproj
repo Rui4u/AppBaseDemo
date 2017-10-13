@@ -68,6 +68,15 @@
 		2B3ADE201F90AA3500F5C5C2 /* AccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B3ADE1F1F90AA0D00F5C5C2 /* AccountViewController.xib */; };
 		2B3ADE241F90AC5200F5C5C2 /* AccountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3ADE221F90AC5200F5C5C2 /* AccountTableViewCell.m */; };
 		2B3ADE251F90AC5200F5C5C2 /* AccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B3ADE231F90AC5200F5C5C2 /* AccountTableViewCell.xib */; };
+		2B3ADE291F90B71800F5C5C2 /* AcountContentListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3ADE271F90B71800F5C5C2 /* AcountContentListViewController.m */; };
+		2B3ADE2A1F90B71800F5C5C2 /* AcountContentListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B3ADE281F90B71800F5C5C2 /* AcountContentListViewController.xib */; };
+		2B3ADE2D1F90B80900F5C5C2 /* listByStoreIDBussiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3ADE2C1F90B80900F5C5C2 /* listByStoreIDBussiness.m */; };
+		2B3ADE311F90BA0A00F5C5C2 /* AddAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3ADE2F1F90BA0A00F5C5C2 /* AddAccountViewController.m */; };
+		2B3ADE321F90BA0A00F5C5C2 /* AddAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B3ADE301F90BA0A00F5C5C2 /* AddAccountViewController.xib */; };
+		2B3ADE351F90BB6200F5C5C2 /* SaveAccountBussiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3ADE341F90BB6200F5C5C2 /* SaveAccountBussiness.m */; };
+		2B3ADE3C1F90BDFA00F5C5C2 /* AccountContentListCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3ADE3A1F90BDFA00F5C5C2 /* AccountContentListCellTableViewCell.m */; };
+		2B3ADE3D1F90BDFA00F5C5C2 /* AccountContentListCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B3ADE3B1F90BDFA00F5C5C2 /* AccountContentListCellTableViewCell.xib */; };
+		2B3ADE401F90C1D500F5C5C2 /* UpdateforaddressBussiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3ADE3F1F90C1D500F5C5C2 /* UpdateforaddressBussiness.m */; };
 		2B3FD7C41F4924E5003DE7C3 /* FillOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3FD7C21F4924E5003DE7C3 /* FillOrderViewController.m */; };
 		2B3FD7CE1F4926A1003DE7C3 /* FillOrderUserInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3FD7CC1F4926A1003DE7C3 /* FillOrderUserInfoCell.m */; };
 		2B3FD7CF1F4926A1003DE7C3 /* FillOrderUserInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B3FD7CD1F4926A1003DE7C3 /* FillOrderUserInfoCell.xib */; };
@@ -458,6 +467,21 @@
 		2B3ADE211F90AC5200F5C5C2 /* AccountTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccountTableViewCell.h; sourceTree = "<group>"; };
 		2B3ADE221F90AC5200F5C5C2 /* AccountTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccountTableViewCell.m; sourceTree = "<group>"; };
 		2B3ADE231F90AC5200F5C5C2 /* AccountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountTableViewCell.xib; sourceTree = "<group>"; };
+		2B3ADE261F90B71800F5C5C2 /* AcountContentListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AcountContentListViewController.h; sourceTree = "<group>"; };
+		2B3ADE271F90B71800F5C5C2 /* AcountContentListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AcountContentListViewController.m; sourceTree = "<group>"; };
+		2B3ADE281F90B71800F5C5C2 /* AcountContentListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AcountContentListViewController.xib; sourceTree = "<group>"; };
+		2B3ADE2B1F90B80900F5C5C2 /* listByStoreIDBussiness.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = listByStoreIDBussiness.h; sourceTree = "<group>"; };
+		2B3ADE2C1F90B80900F5C5C2 /* listByStoreIDBussiness.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = listByStoreIDBussiness.m; sourceTree = "<group>"; };
+		2B3ADE2E1F90BA0A00F5C5C2 /* AddAccountViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddAccountViewController.h; sourceTree = "<group>"; };
+		2B3ADE2F1F90BA0A00F5C5C2 /* AddAccountViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddAccountViewController.m; sourceTree = "<group>"; };
+		2B3ADE301F90BA0A00F5C5C2 /* AddAccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddAccountViewController.xib; sourceTree = "<group>"; };
+		2B3ADE331F90BB6200F5C5C2 /* SaveAccountBussiness.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SaveAccountBussiness.h; sourceTree = "<group>"; };
+		2B3ADE341F90BB6200F5C5C2 /* SaveAccountBussiness.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SaveAccountBussiness.m; sourceTree = "<group>"; };
+		2B3ADE391F90BDFA00F5C5C2 /* AccountContentListCellTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccountContentListCellTableViewCell.h; sourceTree = "<group>"; };
+		2B3ADE3A1F90BDFA00F5C5C2 /* AccountContentListCellTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccountContentListCellTableViewCell.m; sourceTree = "<group>"; };
+		2B3ADE3B1F90BDFA00F5C5C2 /* AccountContentListCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountContentListCellTableViewCell.xib; sourceTree = "<group>"; };
+		2B3ADE3E1F90C1D500F5C5C2 /* UpdateforaddressBussiness.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UpdateforaddressBussiness.h; sourceTree = "<group>"; };
+		2B3ADE3F1F90C1D500F5C5C2 /* UpdateforaddressBussiness.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UpdateforaddressBussiness.m; sourceTree = "<group>"; };
 		2B3FD7C11F4924E5003DE7C3 /* FillOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FillOrderViewController.h; sourceTree = "<group>"; };
 		2B3FD7C21F4924E5003DE7C3 /* FillOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FillOrderViewController.m; sourceTree = "<group>"; };
 		2B3FD7CB1F4926A1003DE7C3 /* FillOrderUserInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FillOrderUserInfoCell.h; sourceTree = "<group>"; };
@@ -1248,6 +1272,12 @@
 				2B6BE34B1F468F4800D0C915 /* NewProductDemandSaveBussiness.m */,
 				2BA062FB1F73B43300850945 /* QuestionBussiness.h */,
 				2BA062FC1F73B43300850945 /* QuestionBussiness.m */,
+				2B3ADE2B1F90B80900F5C5C2 /* listByStoreIDBussiness.h */,
+				2B3ADE2C1F90B80900F5C5C2 /* listByStoreIDBussiness.m */,
+				2B3ADE331F90BB6200F5C5C2 /* SaveAccountBussiness.h */,
+				2B3ADE341F90BB6200F5C5C2 /* SaveAccountBussiness.m */,
+				2B3ADE3E1F90C1D500F5C5C2 /* UpdateforaddressBussiness.h */,
+				2B3ADE3F1F90C1D500F5C5C2 /* UpdateforaddressBussiness.m */,
 			);
 			name = NewProductDemandBussiness;
 			path = Bussiness;
@@ -1355,6 +1385,9 @@
 				2B3ADE211F90AC5200F5C5C2 /* AccountTableViewCell.h */,
 				2B3ADE221F90AC5200F5C5C2 /* AccountTableViewCell.m */,
 				2B3ADE231F90AC5200F5C5C2 /* AccountTableViewCell.xib */,
+				2B3ADE391F90BDFA00F5C5C2 /* AccountContentListCellTableViewCell.h */,
+				2B3ADE3A1F90BDFA00F5C5C2 /* AccountContentListCellTableViewCell.m */,
+				2B3ADE3B1F90BDFA00F5C5C2 /* AccountContentListCellTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1374,6 +1407,12 @@
 				2B3ADE1A1F90A6BA00F5C5C2 /* AccountViewController.h */,
 				2B3ADE1F1F90AA0D00F5C5C2 /* AccountViewController.xib */,
 				2B3ADE1B1F90A6BA00F5C5C2 /* AccountViewController.m */,
+				2B3ADE261F90B71800F5C5C2 /* AcountContentListViewController.h */,
+				2B3ADE271F90B71800F5C5C2 /* AcountContentListViewController.m */,
+				2B3ADE281F90B71800F5C5C2 /* AcountContentListViewController.xib */,
+				2B3ADE2E1F90BA0A00F5C5C2 /* AddAccountViewController.h */,
+				2B3ADE2F1F90BA0A00F5C5C2 /* AddAccountViewController.m */,
+				2B3ADE301F90BA0A00F5C5C2 /* AddAccountViewController.xib */,
 				2B10FAED1F483CD700801BEC /* NewDemandViewController.h */,
 				2B10FAEE1F483CD700801BEC /* NewDemandViewController.m */,
 				2B10FAEF1F483CD700801BEC /* NewDemandViewController.xib */,
@@ -2190,6 +2229,7 @@
 				2BFCFDEC1F413B63001DA10D /* AppProductMainCellView.xib in Resources */,
 				2B8460761F418F0D0013D26D /* ProductInfoView.xib in Resources */,
 				2B10FAF61F483D0000801BEC /* NewDemandView.xib in Resources */,
+				2B3ADE321F90BA0A00F5C5C2 /* AddAccountViewController.xib in Resources */,
 				2BCA35CB1F7489F300A3CA92 /* QuestionViewController.xib in Resources */,
 				2B3FD7D41F4927DA003DE7C3 /* ProductCategoryCell.xib in Resources */,
 				2BD0993C1F4342D8008A1827 /* ShoppingCartGuiGeTableViewCell.xib in Resources */,
@@ -2201,6 +2241,7 @@
 				2BCA35D51F748CB900A3CA92 /* QuestionDetailViewController.xib in Resources */,
 				2B6BE3381F46826400D0C915 /* MoreBaseView.xib in Resources */,
 				2B386F8C1F29B69A00228620 /* LaunchScreen.storyboard in Resources */,
+				2B3ADE2A1F90B71800F5C5C2 /* AcountContentListViewController.xib in Resources */,
 				2BDA7E531F7369DC00265FFF /* PaySelectVC.xib in Resources */,
 				2B1A2F3F1F74A29B0026B561 /* ProtocolViewController.xib in Resources */,
 				2B10FAEC1F482B1000801BEC /* AccountManagementViewController.xib in Resources */,
@@ -2218,6 +2259,7 @@
 				2B4C35B61F4C057000B22431 /* MyInvoiceViewController.xib in Resources */,
 				2BC14D901F31AE5800919808 /* LoginViewController.xib in Resources */,
 				2B84607C1F419DDD0013D26D /* ProcudtDetailedInformationView.xib in Resources */,
+				2B3ADE3D1F90BDFA00F5C5C2 /* AccountContentListCellTableViewCell.xib in Resources */,
 				2BA709281F3A9FCB00B0B520 /* UserInfoViewController.xib in Resources */,
 				2BB9D9711F407CCA0092A9CF /* AddToCartKeyBoard.xib in Resources */,
 				2B3FD7CF1F4926A1003DE7C3 /* FillOrderUserInfoCell.xib in Resources */,
@@ -2322,12 +2364,14 @@
 				2B2E109A1F3C0AF900092EAA /* BaseBussiness.m in Sources */,
 				2BE920011F53AE5400A2DD9C /* DoOrderBussiness.m in Sources */,
 				2BA025301F2AE470003EB25D /* BaseViewController.m in Sources */,
+				2B3ADE311F90BA0A00F5C5C2 /* AddAccountViewController.m in Sources */,
 				2B6BE3521F46901700D0C915 /* OrderListModel.m in Sources */,
 				2BC14DBB1F31CD3500919808 /* SBJsonStreamParserAdapter.m in Sources */,
 				2B93E8F31F4596B7007FF2A1 /* DealWithShoppingCartData.m in Sources */,
 				2BB9D9741F408C9E0092A9CF /* ShoppingCartChangeNumBussiness.m in Sources */,
 				2BA8DAB11F319BA9000190C1 /* DESEncryption.m in Sources */,
 				2B6BE34F1F468FE700D0C915 /* OrderListBussiness.m in Sources */,
+				2B3ADE3C1F90BDFA00F5C5C2 /* AccountContentListCellTableViewCell.m in Sources */,
 				2B2E10A41F3C0EDF00092EAA /* GetHomeBusiness.m in Sources */,
 				2BD099451F434AAB008A1827 /* ProductAddListBussiness.m in Sources */,
 				2B41F2241F42F83B00CB36D0 /* DeleteCartBusiness.m in Sources */,
@@ -2402,6 +2446,7 @@
 				2BFCFDE81F413B63001DA10D /* GoodslistAllModel.m in Sources */,
 				2B9A5EA41F6F692F007DB3F9 /* ExecuteWXPayBussiness.m in Sources */,
 				2BFCFDF41F413ED8001DA10D /* ProductDetailViewController.m in Sources */,
+				2B3ADE2D1F90B80900F5C5C2 /* listByStoreIDBussiness.m in Sources */,
 				2BC14DBC1F31CD3500919808 /* SBJsonStreamParserState.m in Sources */,
 				2B84606C1F417C850013D26D /* ProductDetailTopView.m in Sources */,
 				2BFCFDE41F413B63001DA10D /* GetAppProductListBusiness.m in Sources */,
@@ -2426,6 +2471,7 @@
 				2B8460791F419DAC0013D26D /* ProcudtDetailedInformationView.m in Sources */,
 				2BA0253F1F2B06AD003EB25D /* RootViewController.m in Sources */,
 				2B5AA4C91F3D886F00C3EE31 /* LCVerticalBadgeBtn.m in Sources */,
+				2B3ADE291F90B71800F5C5C2 /* AcountContentListViewController.m in Sources */,
 				2B38703F1F29BC0C00228620 /* NSObject+ZXPUnicode.m in Sources */,
 				2BC14DC01F31CD3500919808 /* SBJsonTokeniser.m in Sources */,
 				2BA025521F2B108D003EB25D /* HomeTopView.m in Sources */,
@@ -2465,6 +2511,7 @@
 				2BC14DB71F31CD3500919808 /* NSObject+SBJson.m in Sources */,
 				2BBFAFF51F330181002506D1 /* RegisterBusiness.m in Sources */,
 				2B84607F1F419EB20013D26D /* ProductSpecificationParameterView.m in Sources */,
+				2B3ADE401F90C1D500F5C5C2 /* UpdateforaddressBussiness.m in Sources */,
 				2B50F32E1F4D2AEF00C28A20 /* OrderDetailTableViewCell.m in Sources */,
 				2B41F21E1F42C27200CB36D0 /* AddToShoppingCartAnimation.m in Sources */,
 				2B93E8F01F4550F3007FF2A1 /* ShoppingCartManager.m in Sources */,
@@ -2489,6 +2536,7 @@
 				2BB9D96F1F407CC10092A9CF /* AddToCartKeyBoard.m in Sources */,
 				2BA025551F2B2A15003EB25D /* RecommendProductView.m in Sources */,
 				2B580D6B1F385A8E00AEA6BF /* BaiduMapManager.m in Sources */,
+				2B3ADE351F90BB6200F5C5C2 /* SaveAccountBussiness.m in Sources */,
 				2B6BE3461F46868200D0C915 /* NewProductDemandBussiness.m in Sources */,
 				2B41F2191F42ABAD00CB36D0 /* ProductDetailGuiGeInfo.m in Sources */,
 				2BDA7E501F735EA200265FFF /* ServerCenterViewController.m in Sources */,
