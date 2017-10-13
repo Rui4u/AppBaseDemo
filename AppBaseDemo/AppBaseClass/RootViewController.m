@@ -89,7 +89,29 @@
 
 	//注册退出成功通知
 
-    [self setUpCustomTabBar];
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(statusFrameChanged:)
+												 name:UIApplicationWillChangeStatusBarFrameNotification
+											   object:nil];
+	[self setUpCustomTabBar];
+	
+}
+
+-(void) statusFrameChanged:(NSNotification*) note
+{
+	CGRect statusBarFrame = [note.userInfo[UIApplicationStatusBarFrameUserInfoKey] CGRectValue];
+	CGFloat statusHeight = statusBarFrame.size.height - 20;
+
+	UIScreen *screen = [UIScreen mainScreen];
+	CGRect viewRect = screen.bounds;
+
+	viewRect.size.height -= statusHeight;
+	viewRect.origin.y = statusHeight;
+
+	self.navigationController.view.frame = viewRect;
+	self.customTabBar.view.frame = self.navigationController.view.bounds;
+	[self.view setNeedsLayout];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -200,6 +222,10 @@
 - (void)setUpCustomTabBar
 {
 	[self showGuide];
+	
+
+	
+	
     SRCustomTabBarController *customTabBar = [[SRCustomTabBarController alloc] init];
 	self.customTabBar = customTabBar;
     customTabBar.delegate = self;
@@ -210,14 +236,27 @@
 	customTabBar.tabBarView.delegate = self;
 	
     self.mainTabBar = customTabBar;
-    
+	
+	
+	CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
+	CGFloat statusHeight = statusBarFrame.size.height - 20;
+	UIScreen *screen = [UIScreen mainScreen];
+	CGRect viewRect = screen.bounds;
+	viewRect.size.height -= statusHeight;
+	viewRect.origin.y = statusHeight;
+	self.navigationController.view.frame = viewRect;
+	self.customTabBar.view.frame = self.navigationController.view.bounds;
+	
+	[self.customTabBar.view setNeedsLayout];
     NSMutableDictionary *selectAtts=[NSMutableDictionary dictionary];
     // 更改文字大小
     selectAtts[NSFontAttributeName]=[UIFont systemFontOfSize:12];
     // 更改文字颜色
 	selectAtts[NSForegroundColorAttributeName] = [UIColor colorWithHexString:Main_Font_Green_Color];
 	
-    
+	
+	
+	
     
     self.homeViewController = [[HomeViewController alloc] init];
     self.  homeViewController.title = @"首页";

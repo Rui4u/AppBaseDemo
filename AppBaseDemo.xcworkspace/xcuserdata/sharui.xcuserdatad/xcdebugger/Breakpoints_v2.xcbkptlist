@@ -417,38 +417,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AppBaseDemo/AppBaseClass/ShoppingCart/Bussiness/ShoppingCartListBussiness.m"
-            timestampString = "529388725.884334"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "+requestShoppingCartListWithToken:completionSuccessHandler:completionFailHandler:completionError:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AppBaseDemo/AppBaseClass/RootViewController.m"
-            timestampString = "528161401.767217"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
-            landmarkName = "-CNotificationLogInSucessFuntion"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "AppBaseDemo/AppBaseClass/Login/Bussiness/LoginBusiness.m"
             timestampString = "529395306.110852"
             startingColumnNumber = "9223372036854775807"
@@ -510,16 +478,31 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
+                  symbolName = "__64-[ForgetPasswordViewController clickGetVerificationCoderButton:]_block_invoke.42"
+                  moduleName = "AppBaseDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hzcf/Desktop/AppBaseDemo/AppBaseDemo/AppBaseClass/Login/ViewController/ForgetPasswordViewController.m"
+                  timestampString = "529566734.454931"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
                   symbolName = "__copy_helper_block_.43"
                   moduleName = "AppBaseDemo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/hzcf/Desktop/AppBaseDemo/AppBaseDemo/AppBaseClass/Login/ViewController/ForgetPasswordViewController.m"
-                  timestampString = "529558156.614835"
+                  timestampString = "529566734.456438"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "4">
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "51">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -529,12 +512,12 @@
                   moduleName = "AppBaseDemo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/hzcf/Desktop/AppBaseDemo/AppBaseDemo/AppBaseClass/Login/ViewController/ForgetPasswordViewController.m"
-                  timestampString = "529558156.616215"
+                  timestampString = "529566734.457965"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "4">
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "29">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -626,12 +609,12 @@
                   moduleName = "AppBaseDemo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/hzcf/Desktop/AppBaseDemo/AppBaseDemo/AppBaseClass/Login/ViewController/ForgetPasswordViewController.m"
-                  timestampString = "529558156.635363"
+                  timestampString = "529566734.474108"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "50"
                   endingLineNumber = "50"
-                  offsetFromSymbolStart = "180">
+                  offsetFromSymbolStart = "323">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -641,12 +624,12 @@
                   moduleName = "AppBaseDemo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/hzcf/Desktop/AppBaseDemo/AppBaseDemo/AppBaseClass/Login/ViewController/ForgetPasswordViewController.m"
-                  timestampString = "529558156.637357"
+                  timestampString = "529566734.475527"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "52"
-                  endingLineNumber = "52"
-                  offsetFromSymbolStart = "4">
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "30">
                </Location>
             </Locations>
          </BreakpointContent>

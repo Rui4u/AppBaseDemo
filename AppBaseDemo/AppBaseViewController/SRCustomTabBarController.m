@@ -18,7 +18,8 @@
 		SRCustomTabBarView * tabBarView = [[SRCustomTabBarView alloc] init];
 		self.tabBarView = tabBarView;
 		[self.view addSubview:tabBarView];
-        
+		
+		
         [tabBarView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.view.mas_left);
             make.right.equalTo(self.view.mas_right);
@@ -26,9 +27,27 @@
             make.height.mas_equalTo(49);
         }];
 	}
+//	[[NSNotificationCenter defaultCenter] addObserver:self
+//											 selector:@selector(statusFrameChanged:)
+//												 name:UIApplicationWillChangeStatusBarFrameNotification
+//											   object:nil];
 	return self;
 }
 
 
+//-(void) statusFrameChanged:(NSNotification*) note
+//{
+//	CGRect statusBarFrame = [note.userInfo[UIApplicationStatusBarFrameUserInfoKey] CGRectValue];
+//	CGFloat statusHeight = statusBarFrame.size.height;
+//
+//	UIScreen *screen = [UIScreen mainScreen];
+//	CGRect viewRect = screen.bounds;
+//
+//	viewRect.size.height -= statusHeight;
+//	viewRect.origin.y = statusHeight;
+//
+//	self.view.frame = viewRect;
+//	[self.view setNeedsLayout];
+//}
 
 @end
