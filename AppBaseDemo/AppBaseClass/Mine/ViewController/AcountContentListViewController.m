@@ -102,9 +102,10 @@
 
 - (void)updateforaddressId:(NSString *)addressId{
 	
-	[UpdateforaddressBussiness requestUpdateforaddressWithToken:TOKEN addressId:addressId completionSuccessHandler:^(NSDictionary *succeed) {
+	
+	[UpdateforaddressBussiness requestUpdateforaddressWithToken:TOKEN addressId:[NSString stringWithFormat:@"%@",addressId] completionSuccessHandler:^(NSDictionary *succeed) {
 		
-		[self showToastWithMessage:@"添加成功" showTime:1];
+		[self showToastWithMessage:@"设置成功" showTime:1];
 		[self.mainTableView.mj_header beginRefreshing];
 	} completionFailHandler:^(NSString *failMessage) {
 		
