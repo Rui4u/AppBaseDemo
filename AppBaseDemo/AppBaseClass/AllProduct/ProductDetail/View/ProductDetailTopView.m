@@ -223,7 +223,8 @@
     NSString * string = [NSString stringWithFormat:@"￥%@*%@(%@斤)",self.goodsDataSourse.guige[tag].currentPrice,self.goodsDataSourse.baseSpec,self.goodsDataSourse.guige[tag].totalWeight];
     self.priceDesLabel.text = string;
     self.advPrice.text = [NSString stringWithFormat:@"￥%@/斤",self.goodsDataSourse.guige[tag].avgPrice];
-    
+    self.advPrice.hidden = ([self.goodsDataSourse.guige[tag].showState intValue] != 1);
+
     _selectAddView.carGoodsNum = [NSString stringWithFormat:@"%tu",self.goodsDataSourse.guige[tag].carGoodNum.integerValue + self.goodsDataSourse.guige[tag].tempAddGoodsNum.integerValue];
   
 	self.lastButton = sender;

@@ -55,7 +55,8 @@
     
     self.selectSpecificationView.averagePrice.text = [NSString stringWithFormat:@"￥%@元/斤",dataSourse.guige[self.indexPath.row].avgPrice];
 
-    
+    self.selectSpecificationView.averagePrice.hidden = ([dataSourse.guige[self.indexPath.row].showState intValue] != 1);
+
     
     if ([dataSourse.discount isEqualToString:@"1"]) {
         self.selectSpecificationView.showDisCountView = YES;

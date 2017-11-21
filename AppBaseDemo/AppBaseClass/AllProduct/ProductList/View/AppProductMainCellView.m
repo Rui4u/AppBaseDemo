@@ -96,7 +96,7 @@
 
     self.selectSpecificationView.averagePrice.text = [NSString stringWithFormat:@"{￥%@}{/斤}",dataSourse.guige.firstObject.avgPrice];
     
-    
+    self.selectSpecificationView.averagePrice.hidden = ([dataSourse.guige.firstObject.showState intValue] != 1);
   
     self.selectSpecificationView.averagePrice.attributedText =
     [NSMutableAttributedString setAttributeString:self.selectSpecificationView.averagePrice.text

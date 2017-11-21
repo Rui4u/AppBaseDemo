@@ -12,7 +12,7 @@
 
 
 
-#define kHTTP_HOST_URL  @"http://47.92.117.38:8088"
+#define kHTTP_HOST_URL  @"http://sijixian.cn"
 
 
 //注册

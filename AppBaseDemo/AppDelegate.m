@@ -42,7 +42,7 @@
 	//隐藏navigationController naviagtionBar
 	self.navgationController.navigationBar.hidden = YES;
 	[self.window makeKeyAndVisible];
-    [WXApi registerApp:@"wx99232a8b4a618cab"];
+    [WXApi registerApp:@"wx4475250f68d9a5ae"];
      
      
 

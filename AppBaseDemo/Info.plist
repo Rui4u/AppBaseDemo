@@ -27,7 +27,7 @@
 			<string>weixin</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>wx99232a8b4a618cab</string>
+				<string>wx4475250f68d9a5ae</string>
 			</array>
 		</dict>
 		<dict>
@@ -37,7 +37,7 @@
 			<string>wechat</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>wx99232a8b4a618cab</string>
+				<string>wx4475250f68d9a5ae</string>
 			</array>
 		</dict>
 		<dict>
@@ -47,7 +47,7 @@
 			<string>alipay</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.sharui.Demo.AppBaseDemo</string>
+				<string>com.sharui.SiJiXian</string>
 			</array>
 		</dict>
 	</array>

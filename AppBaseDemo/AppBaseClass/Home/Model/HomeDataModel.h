@@ -34,7 +34,10 @@
 @property (nonatomic ,copy ) NSString			   * tempAddGoodsNum;
 @property (nonatomic ,copy ) NSString			   * tempAddPrice;
 
-
+/**
+ <#Description#>
+ */
+@property (nonatomic ,copy) NSString * showState;
 @end
 
 @interface Goods :NSObject<NSMutableCopying,NSCopying>
