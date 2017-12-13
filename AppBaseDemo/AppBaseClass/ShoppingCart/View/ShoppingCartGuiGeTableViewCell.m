@@ -69,10 +69,17 @@
     
     Guige * guige = dataSourse.guige[_indexPath.row];
     
-    _totalPriceLabel.text = [NSString stringWithFormat:@"{￥%@}元/%@(%@斤)",guige.currentPrice,dataSourse.baseSpec,guige.totalWeight];
     _averagePriceLabel.text = [NSString stringWithFormat:@"￥%@元/斤",guige.avgPrice];
-    _averagePriceLabel.hidden = ([guige.showState intValue] != 1);
-
+    
+    if ([guige.showState intValue] != 1) {
+        _averagePriceLabel.hidden = YES;
+        _totalPriceLabel.text = [NSString stringWithFormat:@"{￥%@}元/%@",guige.currentPrice,dataSourse.baseSpec];
+    }else {
+        _averagePriceLabel.hidden = NO;
+        _totalPriceLabel.text = [NSString stringWithFormat:@"{￥%@}元/%@(%@斤)",guige.currentPrice,dataSourse.baseSpec,guige.totalWeight];
+    }
+    
+    
     
     _totalPriceLabel.attributedText =
     [NSMutableAttributedString setAttributeString:_totalPriceLabel.text

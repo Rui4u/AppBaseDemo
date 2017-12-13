@@ -51,12 +51,18 @@
     _dataSourse = dataSourse;
     
    
-    self.selectSpecificationView.totolPriceLabel.text = [NSString stringWithFormat:@"￥%@/%@(%@斤)",dataSourse.guige[self.indexPath.row].currentPrice,dataSourse.baseSpec,dataSourse.guige[self.indexPath.row].totalWeight];
+   
     
     self.selectSpecificationView.averagePrice.text = [NSString stringWithFormat:@"￥%@元/斤",dataSourse.guige[self.indexPath.row].avgPrice];
 
-    self.selectSpecificationView.averagePrice.hidden = ([dataSourse.guige[self.indexPath.row].showState intValue] != 1);
-
+    
+    if ([dataSourse.guige[self.indexPath.row].showState intValue] != 1) {
+        self.selectSpecificationView.averagePrice.hidden = YES;
+        self.selectSpecificationView.totolPriceLabel.text = [NSString stringWithFormat:@"￥%@/%@",dataSourse.guige[self.indexPath.row].currentPrice,dataSourse.baseSpec];
+    }else {
+        self.selectSpecificationView.averagePrice.hidden = NO;
+        self.selectSpecificationView.totolPriceLabel.text = [NSString stringWithFormat:@"￥%@/%@(%@斤)",dataSourse.guige[self.indexPath.row].currentPrice,dataSourse.baseSpec,dataSourse.guige[self.indexPath.row].totalWeight];
+    }
     
     if ([dataSourse.discount isEqualToString:@"1"]) {
         self.selectSpecificationView.showDisCountView = YES;

@@ -92,12 +92,21 @@
     [self.productImage sd_setImageWithURL:[NSURL URLWithString:dataSourse.image] placeholderImage:[UIImage imageNamed:@"guess_bancai"]];
     
     
-    self.selectSpecificationView.totolPriceLabel.text = [NSString stringWithFormat:@"￥%@元/%@(%@斤)",dataSourse.guige.firstObject.currentPrice,dataSourse.baseSpec,dataSourse.guige.firstObject.totalWeight];
+
 
     self.selectSpecificationView.averagePrice.text = [NSString stringWithFormat:@"{￥%@}{/斤}",dataSourse.guige.firstObject.avgPrice];
     
-    self.selectSpecificationView.averagePrice.hidden = ([dataSourse.guige.firstObject.showState intValue] != 1);
   
+    
+    if ([dataSourse.guige.firstObject.showState intValue] != 1) {
+         self.selectSpecificationView.averagePrice.hidden = YES;
+         self.selectSpecificationView.totolPriceLabel.text = [NSString stringWithFormat:@"￥%@元/%@",dataSourse.guige.firstObject.currentPrice,dataSourse.baseSpec];
+    }else {
+         self.selectSpecificationView.averagePrice.hidden = NO;
+         self.selectSpecificationView.totolPriceLabel.text = [NSString stringWithFormat:@"￥%@元/%@(%@斤)",dataSourse.guige.firstObject.currentPrice,dataSourse.baseSpec,dataSourse.guige.firstObject.totalWeight];
+    }
+    
+    
     self.selectSpecificationView.averagePrice.attributedText =
     [NSMutableAttributedString setAttributeString:self.selectSpecificationView.averagePrice.text
                                              font:15

@@ -73,8 +73,8 @@
                   symbolName = "-[AcountContentListViewController updateforaddressId:]"
                   moduleName = "AppBaseDemo"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sharui/Desktop/AppBaseDemo/AppBaseDemo/AppBaseClass/Mine/ViewController/AcountContentListViewController.m"
-                  timestampString = "532960210.598515"
+                  urlString = "file:///Users/admin/Desktop/SeasonShop/AppBaseDemo/AppBaseClass/Mine/ViewController/AcountContentListViewController.m"
+                  timestampString = "534823742.821"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "106"
@@ -88,8 +88,8 @@
                   symbolName = "__54-[AcountContentListViewController updateforaddressId:]_block_invoke"
                   moduleName = "AppBaseDemo"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sharui/Desktop/AppBaseDemo/AppBaseDemo/AppBaseClass/Mine/ViewController/AcountContentListViewController.m"
-                  timestampString = "532960210.599961"
+                  urlString = "file:///Users/admin/Desktop/SeasonShop/AppBaseDemo/AppBaseClass/Mine/ViewController/AcountContentListViewController.m"
+                  timestampString = "534823742.824403"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "108"
@@ -185,8 +185,8 @@
                   symbolName = "-[AppProductViewController GetAppProductListBusinessData]"
                   moduleName = "AppBaseDemo"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sharui/Desktop/AppBaseDemo/AppBaseDemo/AppBaseClass/AllProduct/ProductList/ViewController/AppProductViewController.m"
-                  timestampString = "532960210.6163"
+                  urlString = "file:///Users/admin/Desktop/SeasonShop/AppBaseDemo/AppBaseClass/AllProduct/ProductList/ViewController/AppProductViewController.m"
+                  timestampString = "534823742.84495"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "89"
@@ -200,8 +200,8 @@
                   symbolName = "__57-[AppProductViewController GetAppProductListBusinessData]_block_invoke"
                   moduleName = "AppBaseDemo"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sharui/Desktop/AppBaseDemo/AppBaseDemo/AppBaseClass/AllProduct/ProductList/ViewController/AppProductViewController.m"
-                  timestampString = "532960210.617719"
+                  urlString = "file:///Users/admin/Desktop/SeasonShop/AppBaseDemo/AppBaseClass/AllProduct/ProductList/ViewController/AppProductViewController.m"
+                  timestampString = "534823742.847003"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "91"
@@ -234,7 +234,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AppBaseDemo/AppBaseViewController/SRCustomTabBarView.m"
-            timestampString = "532960343.314755"
+            timestampString = "534823843.785456"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "121"
@@ -288,6 +288,22 @@
             startingLineNumber = "33"
             endingLineNumber = "33"
             landmarkName = "+requestGetSelectGoodsListWithToken:parented:categoryIdTwo:completionSuccessHandler:completionFailHandler:completionError:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AppBaseDemo/AppBaseTools/SRNetWorkClient/BaseNetWorkClient.m"
+            timestampString = "534823742.727349"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "+jsonFormGetRequestWithUrl:param:success:operationFailure:failure:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
